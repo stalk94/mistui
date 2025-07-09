@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Source+Sans+3:wght@400;700&family=Merriweather:wght@400;700&family=Raleway:wght@400;600&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@tailwind utilities;
+
+ 
+@plugin "daisyui/theme" {
+    name: "dark";
+    default: true;
+    
+    /* fonts */
+    --font-family-base: 'Roboto', sans-serif;
+    --font-family-roboto: 'Roboto', sans-serif;
+    --font-family-inter: 'Inter', sans-serif;
+    --font-family-open: 'Open Sans', sans-serif;
+    --font-family-poppins: 'Poppins', sans-serif;
+    --font-family-lato: 'Lato', sans-serif;
+    --font-family-montserrat: 'Montserrat', sans-serif;
+    --font-family-source: 'Source Sans 3', sans-serif;
+    --font-family-merriweather: 'Merriweather', serif;
+    --font-family-raleway: 'Raleway', sans-serif;
+
+    /* base */
+    --color-bg: #222222;
+
+    --color-base-100: rgba(255, 255, 255, 0.05);
+    --color-base-200: rgb(45, 45, 45, 0.15);
+    --color-base-300: rgb(58, 58, 58);
+    --color-base-400: rgb(50, 52, 54);
+
+    --color-primary: rgba(3, 242, 246, 1);
+    --color-secondary: teal;
+
+    /* button hover */
+    --text-select-content: rgba(255, 255, 255);
+    --text-primary-content: rgba(255, 255, 255, 0.6);
+    --text-secondary-content: rgba(255, 255, 255, 0.6);
+
+
+    --btn-color: var(--color-base-100);                  /* фон кнопки  */
+   
+    --btn-hover-bg: var(--color-base-300);            /* фон при hover */
+    --btn-hover-color: var(--text-primary-content);   /* цвет текста при hover */
+    --btn-hover-border-color: var(--color-base-400);  /* граница при hover */
+    --btn-focus-scale: 0.95;                          /* scale при фокусе */
+    --btn-active-bg: var(--color-base-400);           /* фон при active */
+    --btn-active-border-color: var(--color-base-400); /* граница при active */
+    --btn-disabled-bg: var(--color-base-100);
+    --btn-disabled-color: var(--text-primary-content);
+    --btn-disabled-border-color: var(--color-base-300);
+    
+}
+
+
+.btn-select {
+    background-color: var(--color-neutral-500);
+    color: var(--text-select-content)
+}
+.no-separator li+li::before {
+    content: none;
+    display: none;
+}
+/* обводка инпутов в фокусе */
+.input-focus {
+	outline-color: gray;
+	transition: outline-color 0.6s ease, border-color 0.6s ease;
+}
+.input-focus:focus-within {
+	border-width: 1px;
+	outline-width: 1px;
+	outline-color: #ffffff60;
+	border-color: #ffffffb1;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(0.25rem /* 4px */ * 1.5) /* 0.375rem = 6px */;
+    white-space: nowrap;
+    color: color-mix(in oklab, currentColor 60%, transparent);
+    &:has(input) {
+        cursor: pointer;
+    }
+    &:is(.input > *, .select > *) {
+        display: flex;
+        height: calc(100% - 0.5rem /* 8px */);
+        align-items: center;
+        padding-inline: calc(0.25rem /* 4px */ * 3) /* 0.75rem = 12px */;
+        white-space: nowrap;
+        font-size: inherit;
+        &:first-child {
+            margin-inline-start: calc(0.25rem /* 4px */ * -3) /* -0.75rem = -12px */;
+            margin-inline-end: calc(0.25rem /* 4px */ * 3) /* 0.75rem = 12px */;
+            border-inline-end: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+        }
+        &:last-child {
+            margin-inline-start: calc(0.25rem /* 4px */ * 3) /* 0.75rem = 12px */;
+            margin-inline-end: calc(0.25rem /* 4px */ * -3) /* -0.75rem = -12px */;
+            border-inline-start: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+            padding-inline: calc(0.25rem /* 4px */ * 3);
+        }
+    }
+}
+.label:is(.input > *, .select > *):first-child:has(button, span),
+.label:is(.input > *, .select > *):last-child:has(button, span) {
+	padding-inline: 0rem;
+}
+.label:first-child :is(button, span),
+.label:last-child :is(button, span) {
+	height: 100%;
+	width: 100%;
+	padding-inline: calc(0.25rem /* 4px */ * 3);
+}
+
+
+
+/* fonts */
+[data-font="inter"] {
+  --font-family-base: 'Inter', sans-serif;
+}
+[data-font="roboto"] {
+  --font-family-base: 'Roboto', sans-serif;
+}
+[data-font="mono"] {
+  --font-family-base: 'Fira Code', monospace;
+}
+
+
+@layer base {
+    .main {
+        font-family: var(--font-family-base);
+    }
+}

@@ -1,0 +1,36 @@
+:global(.colorPicker) {
+	display: flex;
+}
+
+:global(.colorPicker[data-flex-row]) {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+
+/*  контейнер выбора цвета */
+:global(.react-colorful__saturation) {
+	cursor: text;
+	height: 100%;
+	border-radius: 4px;
+}
+
+
+/* контейнер для hue + alpha slider */
+:global(.react-colorful__hue),
+:global(.react-colorful__alpha) {
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 6px;
+	margin-top: 20px;
+}
+
+/* ползунки */
+:global(.colorPicker .react-colorful__pointer) {
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	border: 2px solid rgb(199, 199, 199);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
