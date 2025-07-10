@@ -2,8 +2,7 @@ import type { ToggleButtonGroupProps } from './type';
 import { FormWrapper } from './atomize';
 import { useCache } from './hooks';
 import { useTheme } from '../theme';
-import { useUids } from '../hooks/uuid';
-import { useCallback } from 'react';
+
 
 
 export default function ToggleButtonGroup({
@@ -13,11 +12,11 @@ export default function ToggleButtonGroup({
     size,
     color,
     onlyId,
+    style,
     variant,
     ...props
 }: ToggleButtonGroupProps) {
     const { styles } = useTheme();
-    const uid = useUids('button-group');
     const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
     const [select, setSelect] = useCache(value);
 
@@ -26,40 +25,16 @@ export default function ToggleButtonGroup({
         const cur = current?.id !== undefined ? current?.id : current;
         onChange?.(onlyId ? cur : current);
     }
-    const getColorHover = useCallback((key: 'backgroundColor' | 'color') => {
-        const inlneBg = props?.style?.background ?? props?.style?.backgroundColor;
-        const inlneTxt = props?.style?.color;
-
-        if (key === 'backgroundColor') return (inlneBg
-            ? styles?.button?.background(inlneBg, 'hover')
-            : styles?.button?.background(variant, 'hover')
-        );
-        else return (inlneTxt
-            ? styles?.button?.color(inlneTxt, 'hover')
-            : styles?.button?.color(variant, 'hover')
-        );
-    }, [props?.style, variant]);
     
-
     return (
         <FormWrapper
             size={size}
             disabledVisibility
             { ...props }
         >
-            <style>
-                {`
-                    button[data-id="${uid}"]:hover {
-                        color: ${getColorHover('color')};
-                        backgroundColor: ${getColorHover('backgroundColor')};
-                    }
-                `}
-            </style>
-
             <div className="join flex-wrap w-full gap-y-[1px]">
                 {items.map((opt, index) => (
                     <button
-                        data-id={uid}
                         key={opt?.id ?? index}
                         className={`
                             join-item 
@@ -69,6 +44,17 @@ export default function ToggleButtonGroup({
                             ${getSize}
                             ${select === opt && 'btn-select'}
                         `}
+                        style={{
+                            backgroundColor: (select !== opt 
+                                ? styles?.button?.backgroundColor 
+                                : styles?.button?.backgroundActiveColor
+                            ),
+                            color: (select !== opt
+                                ? styles?.button?.color
+                                : styles?.button?.color
+                            ),
+                            ...style,
+                        }}
                         onClick={() => handleChange(opt)}
                         children={
                             (opt?.id !== undefined) 

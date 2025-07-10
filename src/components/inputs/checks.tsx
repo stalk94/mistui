@@ -1,5 +1,6 @@
 import type { CheckBoxInputProps } from './type';
 import { FormWrapper } from './atomize';
+import { useTheme } from '../theme';
 import clsx from 'clsx';
 
 
@@ -14,6 +15,9 @@ export default function CheckBoxInput({
     className,
     ...props 
 }: CheckBoxInputProps) {
+    const { styles } = useTheme();
+    const { backgroundColor, ...styleRest } = style;
+
     const sizes = {
         xs: 'w-4 h-4',
         sm: 'w-5 h-5',
@@ -30,13 +34,14 @@ export default function CheckBoxInput({
         xl: 'top-2',
         auto: 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2'
     }
+     
 
 
     return (
         <FormWrapper 
             size={size} 
             disabledVisibility
-            style={style}
+            style={styleRest}
             { ...props }
         >
             <label className={`relative inline-flex ${top[size]??top.auto} items-center cursor-pointer`}>
@@ -44,16 +49,21 @@ export default function CheckBoxInput({
                 
                 {/* обводка */}
                 <div 
+                    style={{
+                        color: styles?.input?.fontColor, 
+                        borderStyle: (style?.borderStyle ?? styles?.input?.borderStyle),
+                        borderWidth: styles?.input?.borderWidth,
+                        borderColor: (style?.borderColor ?? styles?.input?.borderColor),
+                        backgroundColor: (style?.backgroundColor ?? styles?.input?.checkBoxBackground),
+                    }}
                     className={clsx(`
                         ${sizes[size] ?? sizes.auto}
                         border-1
-                        border-[${style?.borderColor ?? 'var(--input-color)'}]
-                        ${color && `border-${color}`}
-                        opacity-20
+                        border-[var(--input-color)]
                         rounded
                         transition-all
                         duration-200
-                        peer-checked:opacity-80
+                        peer-checked:brightness-200
                         flex items-center justify-center
                     `, className)}
                 />

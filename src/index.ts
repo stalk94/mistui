@@ -34,7 +34,6 @@ export { default as LeftSideBarAndTool } from './components/nav-bars/tool-left';
 
 // Акордеон нормальный
 export { default as Accordion } from './components/acordeon';
-export type { AccordionProps } from './components/';
 
 // всплываюшие информационные окна
 export { AlertProvider, useAlert } from './components/alert';
@@ -42,8 +41,6 @@ export type { AlertManagerProps } from './components/alert';
 
 // иконки флажки
 export { default as Flag } from './components/tools/flag';
-// кнопка с поведением выпадаюшего списка
-export { default as SelectButton } from './components/popup/select.button';
 
 // выпадаюшее меню при наведении на элемент с кастомным содержимым
 export { default as HoverPopover } from './components/popup/HoverPopover';

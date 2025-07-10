@@ -59,6 +59,8 @@ export function FormWrapper({
                 style={{ 
                     color: styles?.input?.fontColor, 
                     borderColor: styles?.input?.borderColor,
+                    borderStyle: styles?.input?.borderStyle,
+                    borderWidth: !disabledVisibility && styles?.input?.borderWidth,
                     backgroundColor: !disabledVisibility && styles?.input?.backgroundColor,
                     ...styleInput, 
                 }}

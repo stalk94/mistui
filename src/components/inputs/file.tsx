@@ -15,6 +15,8 @@ export default function FileInput({
     accept, 
     maxSize, 
     onError, 
+    styleInput,
+    style,
     ...props 
 }: FileInputProps) {
     const { styles } = useTheme();
@@ -62,6 +64,8 @@ export default function FileInput({
     return (
         <FormWrapper
             size={size}
+            styleInput={styleInput}
+            style={style}
             labelLeft={
                 <button
                     type='button'
@@ -99,18 +103,18 @@ export default function FileInput({
                 className="w-full flex items-center cursor-pointer"
                 onClick={() => fileRef.current?.click()}
             >
-                {/* placeholder, file name*/}
+                {/* placeholder, file name, progressLine */}
                 { !progress
                     ? (files?.name
                         ? <span 
                             style={{
-                                color: styles?.input?.fontColor
+                                color: (style.color ?? styles?.input?.fontColor)
                             }}
                          >
                             { files?.name }
                          </span>
                         : <span 
-                            style={{color: styles?.input?.placeholderColor}} 
+                            style={{ color: styles?.input?.placeholderColor }} 
                             className='text-neutral-500'
                          >
                             { placeholder ?? 'Загрузить файл' }

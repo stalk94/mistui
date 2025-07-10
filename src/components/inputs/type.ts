@@ -1,27 +1,30 @@
 import { ClassValue } from 'clsx';
 
-//////////////////////////////////////////////////////////////////
-//      CONFIGS
-///////////////////////////////////////////////////////////////////
-interface BaseConfig {
-
-}
-interface SliderConfig {
-    'track-height'?: number
-    'track-color'?: string
-    'track-fill-height'?: number
-    'track-fill-color'?: string
-    'thumb-color'?: string
-    'thumb-height'?: number
-    'thumb-width'?: number
-    'thumb:hover-color'?: string
-}
 
 //////////////////////////////////////////////////////////////////
-//      COMPONENTS PROPS
+//      Fragments
 ///////////////////////////////////////////////////////////////////
+type InputStyle = {
+    /** это прокидывается на сам инпут input class      
+     * 
+     *    color:  цвет ввода
+     *    borderColor: input бордюрка
+     *    borderStyle:       
+     *    borderWidth:      
+     *    backgroundColor:  input фон
+    */
+    styleInput?: React.CSSProperties
+}
+type ItemSelect = {
+    id: string | number
+    label: string | React.ReactElement
+}
+type ItemSelectFilter = {
+    id: string | number
+    label: string
+}
 
-export type LabelProps = {
+export type LabelProps = InputStyle & {
     'data-id'?: string | number
     /** отключить видимость формы */
     disabledVisibility?: boolean
@@ -36,8 +39,6 @@ export type LabelProps = {
     validator?: string | React.ReactElement | boolean
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
-    /** это прокидывается на сам инпут input class */
-    styleInput?: React.CSSProperties
     className?: ClassValue
 }
 export type LabelTopProps = {
@@ -48,7 +49,6 @@ export type LabelTopProps = {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     style?: React.CSSProperties
 }
-
 export type LabelsSliderProps = {
     children: any
     labelLeft?: string | React.ReactElement
@@ -74,8 +74,10 @@ type ValidatorByType = {
     textarea: Pick<ValidatorProps, 'minlength' | 'maxlength'>;
 }
 
-
-export type BaseProps = {
+//////////////////////////////////////////////////////////////////
+//      COMPONENTS PROPS
+///////////////////////////////////////////////////////////////////
+export type BaseProps = InputStyle & {
     required?: boolean
     type: 'text' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'tel' | 'url' | 'time' | 'datetime-local' | 'search'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -90,8 +92,6 @@ export type BaseProps = {
     value?: string | number
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
-    /** это прокидывается на сам инпут input class */
-    styleInput?: React.CSSProperties
     onChange?: React.Dispatch<React.SetStateAction<number|string>> | ((val: string)=> void)
     className?: ClassValue
 }
@@ -125,10 +125,6 @@ export type FileInputProps = {
     className?: ClassValue
 }
 
-type ItemSelect = {
-    id: string | number
-    label: string | React.ReactElement
-}
 export type SelectInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     value?: string
     color?: string
@@ -157,12 +153,22 @@ export type CheckBoxInputProps = {
     className?: ClassValue
 }
 
-export type SwitchBoxInputProps = Omit<CheckBoxInputProps, 'type'> & {
-    value: boolean
+export type RadioInputProps = CheckBoxInputProps & {
+    styleThumb?: {
+        thumbColor?: React.CSSProperties['backgroundColor'] 
+    }
 }
 
+export type SwitchBoxInputProps = Omit<CheckBoxInputProps, 'type'> & {
+    value: boolean
+    styleThumb?: {
+        borderColor?: React.CSSProperties['borderColor']
+        backgroundColor?: React.CSSProperties['backgroundColor']
+        iconColor?: React.CSSProperties['backgroundColor']
+    }
+}
 
-export type SliderInputProps = {
+export type SliderInputProps = InputStyle & {
     'data-id'?: string | number
     disableForm?: boolean
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -171,7 +177,6 @@ export type SliderInputProps = {
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
     value?: number | number[]
-    config?: SliderConfig
     onChange?: (val: number | number[])=> void
     /** вызывается в конце перетаскивания */
     onChangeEnd?: (val: number)=> void
@@ -180,11 +185,16 @@ export type SliderInputProps = {
     step?: number
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
-    /** это прокидывается на сам инпут input class */
-    styleInput?: React.CSSProperties
+    styleTrack?: React.CSSProperties
+    styleRange?: React.CSSProperties
+    styleThumb?: React.CSSProperties
     className?: ClassValue
 }
 
+
+//////////////////////////////////////////////////////////////////
+//      BUTTON GROUPS
+///////////////////////////////////////////////////////////////////
 export type ToggleButtonGroupProps = {
     items: string[] | ItemSelect[]
     value?: string | number
@@ -195,12 +205,6 @@ export type ToggleButtonGroupProps = {
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
-}
-
-
-type ItemSelectFilter = {
-    id: string | number
-    label: string
 }
 export type FilterToggleButtonGroupProps = {
     options: string[] | ItemSelectFilter[]

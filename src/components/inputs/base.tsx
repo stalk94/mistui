@@ -2,6 +2,7 @@ import React from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
 import { useClientValidity, useCache } from './hooks';
 import { useTheme } from '../theme';
+import { useUids } from '../hooks/uuid';
 import type { BaseProps } from './type';
 
 
@@ -22,6 +23,7 @@ export default function BaseInput({
     className,
     ...props 
 }: BaseProps) {
+    const uid = useUids(type);
     const { styles } = useTheme();
     const [val, setVal] = useCache(value);
     const inputRef = React.useRef<HTMLInputElement>(null);
@@ -37,13 +39,14 @@ export default function BaseInput({
         <>
             <style>
                 {`
-                    input::placeholder {
+                    input[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
                 `}
             </style>
             
             <FormWrapper 
+                data-id={uid}
                 labelLeft={labelLeft}
                 labelRight={labelRight}
                 labelTop={labelTop}

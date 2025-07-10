@@ -5,6 +5,7 @@ import DropMenu from '../list/drop-menu';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useCache, useClickOutside } from './hooks';
 import { useTheme } from '../theme';
+import { useUids } from '../hooks/uuid';
 
 
 export default function Autocomplete({ 
@@ -19,8 +20,9 @@ export default function Autocomplete({
 }: AutoInputProps) {
     const { styles } = useTheme();
     const [input, setInput] = useCache(value ?? '');
+    const uid = useUids('autocomplete');
     const [open, setOpen] = useCache(false);
-
+    
 
     useClickOutside(['[data-autocomplete-root]', '[data-autocomplete-dropdown]'], 
         ()=> setOpen(false)
@@ -33,11 +35,12 @@ export default function Autocomplete({
         setOpen(false);
         onChange?.(value);
     }
-
-
+    
+   
     return (
         <FormWrapper
             size={size}
+            data-id={uid}
             data-autocomplete-root
             style={{ position: 'relative', ...style }}
             labelRight={ 
@@ -57,13 +60,14 @@ export default function Autocomplete({
         >
             <style>
                 {`
-                    input::placeholder {
-                        color: ${styles?.input?.placeholderColor}
+                    input[data-id="${uid}"]::placeholder {
+                        color: ${styles?.input?.placeholderColor};
                     }
                 `}
             </style>
 
             <input
+                data-id={uid}
                 type="text"
                 placeholder={placeholder}
                 value={input}

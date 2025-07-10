@@ -2,6 +2,7 @@ import { useCache } from './hooks';
 import type { NumberInputProps } from './type';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 import { FormWrapper } from './atomize'
+import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 
 
@@ -21,7 +22,9 @@ const Icon = ({ useClick, tag, 'data-id': dataId }) => {
                 shadow-none
             `}
         >
-            <IconTag className="label w-[1.1em] h-[1.1em] fill-current" />
+            <IconTag 
+                className="label w-[1.1em] h-[1.1em] fill-current" 
+            />
         </button>
     );
 }
@@ -35,6 +38,7 @@ export default function NumberInput({
     required,
     ...props 
 }: NumberInputProps) {
+    const uid = useUids('number');
     const { styles } = useTheme();
     const [val, setVal] = useCache(
         typeof value === 'number' 
@@ -60,6 +64,7 @@ export default function NumberInput({
     
     return (
         <FormWrapper
+            data-id={uid}
             labelLeft={
                 iconEnable &&
                     <Icon
@@ -80,7 +85,7 @@ export default function NumberInput({
         >
             <style>
                 {`
-                    input::placeholder {
+                    input[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
                 `}
@@ -88,7 +93,6 @@ export default function NumberInput({
 
             <input
                 type='number'
-                className=' placeholder:text-neutral-500'
                 placeholder={placeholder}
                 required={required}
                 style={{ 

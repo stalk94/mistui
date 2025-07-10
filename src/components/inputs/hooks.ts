@@ -1,4 +1,4 @@
-import { useState, useEffect, SetStateAction, Dispatch } from 'react';
+import { useState, useEffect, SetStateAction, Dispatch, useRef, useCallback } from 'react';
 
 export function useClientValidity<T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
     ref: React.RefObject<T>
@@ -73,4 +73,68 @@ export function useClickOutside(selectorsIgnore: string[], onClickOutside: ()=> 
         document.addEventListener('click', handleClickOutside);
         return () => document.removeEventListener('click', handleClickOutside);
     }, [selectorsIgnore, onClickOutside]);
+}
+
+export function useHover<T extends HTMLElement>() {
+    const [hovered, setHovered] = useState(false);
+    const ref = useRef<T | null>(null);
+
+    const handleMouseEnter = useCallback(() => setHovered(true), []);
+    const handleMouseLeave = useCallback(() => setHovered(false), []);
+
+    const callbackRef = useCallback((node: T | null) => {
+        if (ref.current) {
+            ref.current.removeEventListener('mouseenter', handleMouseEnter);
+            ref.current.removeEventListener('mouseleave', handleMouseLeave);
+        }
+
+        if (node) {
+            node.addEventListener('mouseenter', handleMouseEnter);
+            node.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        ref.current = node;
+    }, [handleMouseEnter, handleMouseLeave]);
+
+    return [callbackRef, hovered] as const;
+}
+
+export function useMultiHover<T extends HTMLElement>(count: number) {
+    const [hoverStates, setHoverStates] = useState<boolean[]>(() =>
+        Array(count).fill(false)
+    );
+
+    const refs = useRef<(T | null)[]>([]);
+
+    const setRef = useCallback((index: number) => (node: T | null) => {
+        if (refs.current[index]) {
+            refs.current[index]?.removeEventListener('mouseenter', onEnter);
+            refs.current[index]?.removeEventListener('mouseleave', onLeave);
+        }
+
+        if (node) {
+            node.addEventListener('mouseenter', onEnter);
+            node.addEventListener('mouseleave', onLeave);
+        }
+
+        refs.current[index] = node;
+
+        function onEnter() {
+            setHoverStates(prev => {
+                const copy = [...prev];
+                copy[index] = true;
+                return copy;
+            });
+        }
+
+        function onLeave() {
+            setHoverStates(prev => {
+                const copy = [...prev];
+                copy[index] = false;
+                return copy;
+            });
+        }
+    }, []);
+
+    return { refs: Array.from({ length: count }, (_, i) => setRef(i)), hoverStates };
 }

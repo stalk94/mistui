@@ -1,9 +1,7 @@
 import type { FilterToggleButtonGroupProps } from './type';
-import { useCallback } from 'react';
 import { FormWrapper } from './atomize';
 import { useCache } from './hooks';
 import { Fragment } from 'react';
-import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 
 
@@ -16,12 +14,9 @@ export default function ToggleButtonFiltreGroup({
     name,
     color,
     onlyId,
-    variant,
-    style,
     ...props
 }: FilterToggleButtonGroupProps) {
     const { styles } = useTheme();
-    const uid = useUids('button-group');
     const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
     const [select, setSelect] = useCache(value);
 
@@ -30,19 +25,6 @@ export default function ToggleButtonFiltreGroup({
         setSelect(current);
         onChange?.(onlyId ? cur : current);
     }
-    const getColorHover = useCallback((key: 'backgroundColor' | 'color') => {
-        const inlneBg = style?.background ?? style?.backgroundColor;
-        const inlneTxt = style?.color;
-
-        if (key === 'backgroundColor') return (inlneBg
-            ? styles?.button?.background(inlneBg, 'hover')
-            : styles?.button?.background(variant, 'hover')
-        );
-        else return (inlneTxt
-            ? styles?.button?.color(inlneTxt, 'hover')
-            : styles?.button?.color(variant, 'hover')
-        );
-    }, [style, variant]);
 
 
     return(
@@ -52,32 +34,22 @@ export default function ToggleButtonFiltreGroup({
             { ...props }
         >
             <form className="filter w-full flex-wrap gap-[0.25rem] over">
-                { select &&
-                    <input
-                        className={`
-                            btn 
-                            ${getSize}
-                            btn-square
-                            hover:border-neutral-500
-                            hover:bg-[var(--btn-color)]
-                            bg-[#0a0a0a3a]
-                        `}
-                        style={{
-                            transition: 'background-color 0.3s ease, border-color 0.3s ease',
-                        }}
-                        type="reset"
-                        value="×"
-                        onClick={()=> handleChange(valueReset)}
-                    />
-                }
-                <style>
-                    {`
-                        button[data-id="${uid}"]:hover {
-                            color: ${getColorHover('color')};
-                            backgroundColor: ${getColorHover('backgroundColor')};
-                        }
+                <input
+                    className={`
+                        btn 
+                        ${getSize}
+                        btn-square
+                        hover:border-neutral-500
+                        hover:bg-[var(--btn-color)]
+                        bg-[#0a0a0a3a]
                     `}
-                </style>
+                    style={{
+                        transition: 'background-color 0.3s ease, border-color 0.3s ease',
+                    }}
+                    type="reset"
+                    value="×"
+                    onClick={()=> handleChange(valueReset)}
+                />
 
                 {options.map((opt, index) =>
                     <Fragment key={opt?.id ?? index}>
@@ -93,9 +65,8 @@ export default function ToggleButtonFiltreGroup({
                                     : opt
                             }
                         />
-                        {(select === undefined) && 
+                        { (select === undefined) && 
                             <button 
-                                data-id={uid}
                                 onClick={() => handleChange(opt)}
                                 className={`
                                     btn
@@ -110,9 +81,8 @@ export default function ToggleButtonFiltreGroup({
                                 }
                             </button> 
                         }
-                        {(opt === select) && 
-                            <button 
-                                style={{pointerEvents:'none'}}
+                        { opt === select && 
+                            <button style={{pointerEvents:'none'}}
                                 className={`
                                     btn
                                     ${getSize}

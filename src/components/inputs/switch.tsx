@@ -2,11 +2,23 @@ import type { SwitchBoxInputProps } from './type';
 import * as Switch  from "@radix-ui/react-switch";
 import { FaCheck } from "react-icons/fa";
 import { FormWrapper } from './atomize';
+import { useTheme } from '../theme';
 import { useCache } from './hooks';
 
 
-export default function SwitchBox({ size, onChange, value, ...props }: SwitchBoxInputProps) {
+export default function SwitchBox({ 
+    size, 
+    onChange, 
+    value, 
+    style,
+    styleThumb,
+    ...props 
+}: SwitchBoxInputProps) {
+    const { styles } = useTheme();
     const [chek, setChek] = useCache(value);
+    const { backgroundColor, borderColor, ...styleRest } = style;
+    
+    
     const sizeClass = {
         xs: 'w-7 h-4',
         sm: 'w-9.5 h-5.5',
@@ -43,12 +55,13 @@ export default function SwitchBox({ size, onChange, value, ...props }: SwitchBox
         lg:w-5 lg:h-5
         xl:w-6 xl:h-6
     `;
-
+    
 
     return(
         <FormWrapper
             size={size}
             disabledVisibility={true}
+            style={styleRest}
             { ...props }
         >
             <Switch.Root
@@ -58,22 +71,21 @@ export default function SwitchBox({ size, onChange, value, ...props }: SwitchBox
                     setChek(v);
                 }}
                 style={{
-                        
+                    borderColor: (borderColor ?? styles?.input?.switchBorderColor),
+                    backgroundColor: (backgroundColor ?? styles?.input?.checkBoxBackground),
                 }}
                 className={`
                     relative inline-flex flex-shrink-0 cursor-pointer items-center 
                     rounded-full 
                     transition-colors 
                     border-1
-                    border-neutral-500
-                    data-[state=checked]:bg-base-300
                     ${sizeClass[size] ?? autoSwitchSize}
+                    transition-all
+                    duration-200
+                    ${chek && 'brightness-300'}
                 `}
             >
                 <Switch.Thumb
-                    style={{
-
-                    }}
                     className={`
                         transition-transform duration-300 ease-in-out
                         ${translate[size] ?? translate.auto}
@@ -81,28 +93,31 @@ export default function SwitchBox({ size, onChange, value, ...props }: SwitchBox
                     `}
                 >
                     <div 
+                        style={{
+                            borderColor: (styleThumb?.borderColor ?? styles?.input?.switchThumbBorderColor),
+                            background: (styleThumb?.backgroundColor ?? styles?.input?.switchThumbBackgroundColor),
+                            borderWidth: 1
+                        }}
                         className={`
                             flex
                             ring-0
                             rounded-full 
-                            border-neutral-300
-                            bg-gray-300
                             ${!chek && 'opacity-80'}
                             shadow-lg
                             ${thumbSizeClass[size] ?? autoThumbSize}
                         `}
                     >
-                    <FaCheck
-                        fontSize="inherit"
-                        className={`
-                            pointer-events-none inline-block 
-                            border-0
-                            m-auto
-                            ring-0
-                            ${chek && 'text-black'}
-                            ${!chek && 'text-transparent'}
-                        `}
-                    />
+                        <FaCheck
+                            fontSize="inherit"
+                            color={styleThumb?.iconColor ?? styles?.input?.switchThumbIconColor}
+                            className={`
+                                pointer-events-none inline-block 
+                                border-0
+                                m-auto
+                                ring-0
+                                ${!chek && 'opacity-0'}
+                            `}
+                        />
                     </div>
                 </Switch.Thumb>
             </Switch.Root>

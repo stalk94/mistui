@@ -51,13 +51,19 @@ const testSchema: Schema[] = [{
     placeholder: 'xro',
     label: 'text area',
     size: 'sm'
-},
-{
+},{
     type: 'color',
     value: 'red',
     id: 'color',
     label: 'color picker',
     size: 'sm',
+},{
+    type: 'number',
+    value: 3,
+    id: 'number',
+    label: 'number',
+    size: 'sm',
+    iconEnable: true
 },{
     type: 'groupButton',
     value: 'test2',
@@ -65,6 +71,13 @@ const testSchema: Schema[] = [{
     label: 'group-button',
     size: 'sm',
     items: ['test', 'test2']
+},{
+    type: 'groupButtonFiltre',
+    value: 'test2',
+    id: 'groupButtonFiltre',
+    label: 'group-button-colapsed',
+    size: 'sm',
+    options: ['test', 'test2']
 },{
     type: 'autocomplete',
     placeholder: 'text',
@@ -92,22 +105,13 @@ const testSchema: Schema[] = [{
     id: 'date',
     label: 'date',
     size: 'sm'
-},
-{
-    type: 'number',
-    value: 3,
-    id: 'number',
-    label: 'number',
-    size: 'sm',
-    iconEnable: true
 },{
     type: 'file',
     value: 3,
     id: 'file',
     label: 'file loader',
     size: 'sm'
-},
-{
+},{
     type: 'slider',
     value: 40,
     labelLeft: 'test',
@@ -126,7 +130,7 @@ const testSchema: Schema[] = [{
     value: false,
     id: 'checkbox',
     labelRight: 'checkbox',
-    style: { marginTop: 5 },
+    style: { marginTop: 5, backgroundColor: 'inherit' },
     size: 'sm'
 },{
     type: 'radio',

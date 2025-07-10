@@ -6,12 +6,12 @@ import { rgbaToString, stringToRgba } from '../hooks/helpers';
 import { useCache, useClickOutside } from './hooks';
 import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
-import styles from './styles/global.module.css';
+import stylesPicker from './styles/global.module.css';
 
 
 const Inputs = ({ updateComponent, input, styleInput }) => {
     const rgba = stringToRgba(input);
-    console.log(styleInput)
+    
 
     return(
         <div className="flex gap-1 items-center w-full h-full">
@@ -146,7 +146,7 @@ export default function SelectColor({
                     `}
                     data-color-dropdown
                 >
-                    <div className={styles.wrapper} style={{ padding: 9 }}>
+                    <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
                         <RgbaColorPicker
                             style={{width:'100%'}}
                             className="colorPicker"
