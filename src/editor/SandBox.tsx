@@ -37,6 +37,7 @@ const daisyThemes = [
 ];
 const testSchema: Schema[] = [{
     type: 'text',
+    placeholder: 'text',
     value: 'xro',
     id: 'text',
     label: 'text',
@@ -47,6 +48,7 @@ const testSchema: Schema[] = [{
     type: 'textArea',
     value: 'text',
     id: 'textArea',
+    placeholder: 'xro',
     label: 'text area',
     size: 'sm'
 },
@@ -65,6 +67,7 @@ const testSchema: Schema[] = [{
     items: ['test', 'test2']
 },{
     type: 'autocomplete',
+    placeholder: 'text',
     value: 'test2',
     id: 'autocomplete',
     label: 'autocomplete',
@@ -72,7 +75,7 @@ const testSchema: Schema[] = [{
     options: ['test', 'test2']
 },{
     type: 'select',
-    value: 'test2',
+    placeholder: 'test',
     id: 'select',
     label: 'select',
     size: 'sm',
@@ -97,6 +100,12 @@ const testSchema: Schema[] = [{
     label: 'number',
     size: 'sm',
     iconEnable: true
+},{
+    type: 'file',
+    value: 3,
+    id: 'file',
+    label: 'file loader',
+    size: 'sm'
 },
 {
     type: 'slider',
@@ -118,7 +127,7 @@ const testSchema: Schema[] = [{
     id: 'checkbox',
     labelRight: 'checkbox',
     style: { marginTop: 5 },
-    size: 'sm',
+    size: 'sm'
 },{
     type: 'radio',
     value: true,
@@ -175,7 +184,7 @@ const patterns = {
 
 export default function SandBox({ setMode }) {
     const [props, setProps] = React.useState({});
-    console.log(bruteForceGetCssVariables())
+    
 
     return (
         <main className="flex flex-col h-full w-full">

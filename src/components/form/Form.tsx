@@ -20,7 +20,8 @@ function shallowEqualField(a: Schema, b: Schema): boolean {
         a.type === b.type &&
         a.value === b.value &&
         a.label === b.label &&
-        a.position === b.position
+        a.position === b.position &&
+        a?.size === b?.size
         // можешь добавить проверку на options, render и т.д., если они динамичные
     );
 }

@@ -36,6 +36,7 @@ export default function CheckBoxInput({
         <FormWrapper 
             size={size} 
             disabledVisibility
+            style={style}
             { ...props }
         >
             <label className={`relative inline-flex ${top[size]??top.auto} items-center cursor-pointer`}>
@@ -43,20 +44,19 @@ export default function CheckBoxInput({
                 
                 {/* обводка */}
                 <div 
-                    style={style}
-                    className={`
+                    className={clsx(`
                         ${sizes[size] ?? sizes.auto}
                         border-1
                         border-[${style?.borderColor ?? 'var(--input-color)'}]
+                        ${color && `border-${color}`}
                         opacity-20
                         rounded
                         transition-all
                         duration-200
-                        peer-checked:opacity-100
+                        peer-checked:opacity-80
                         flex items-center justify-center
-                    `}
-                >
-                </div>
+                    `, className)}
+                />
 
                 {/* галочка */}
                 <svg
@@ -64,8 +64,8 @@ export default function CheckBoxInput({
                         absolute 
                         left-0 top-0 
                         ${sizes[size] ?? sizes.auto} 
+                        ${color && `stroke-${color}`}
                         p-[2px]
-                        text-[var(--input-color)]
                         pointer-events-none
                         opacity-0
                         scale-75

@@ -34,8 +34,9 @@ export type LabelProps = {
     colorBorder?: string
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     validator?: string | React.ReactElement | boolean
-    /** весь контейнер */
-    style?: React.CSSProperties & { anchorName?: string }
+    /** style прокидывается на саму обертку (section) */
+    style?: React.CSSProperties
+    /** это прокидывается на сам инпут input class */
     styleInput?: React.CSSProperties
     className?: ClassValue
 }
@@ -87,8 +88,9 @@ export type BaseProps = {
     /** tooltip текст подсказка при наведении */
     title?: string
     value?: string | number
-    /** style прокидывается на саму обертку (div input class) */
+    /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
+    /** это прокидывается на сам инпут input class */
     styleInput?: React.CSSProperties
     onChange?: React.Dispatch<React.SetStateAction<number|string>> | ((val: string)=> void)
     className?: ClassValue
@@ -116,7 +118,10 @@ export type FileInputProps = {
     labelLeft?: string | React.ReactElement
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
+    /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
+    /** это прокидывается на сам инпут input class */
+    styleInput?: React.CSSProperties
     className?: ClassValue
 }
 
@@ -173,7 +178,10 @@ export type SliderInputProps = {
     min?: number
     max?: number
     step?: number
+    /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
+    /** это прокидывается на сам инпут input class */
+    styleInput?: React.CSSProperties
     className?: ClassValue
 }
 
@@ -184,6 +192,7 @@ export type ToggleButtonGroupProps = {
     size?: 'xs' | 'sm' | 'md' | 'lg'
     color?: string
     onlyId?: boolean
+    /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
 }

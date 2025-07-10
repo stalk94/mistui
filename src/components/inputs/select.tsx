@@ -3,6 +3,7 @@ import { FormWrapper } from './atomize';
 import DropMenu from '../list/drop-menu';
 import { useCache, useClickOutside } from './hooks';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { useTheme } from '../theme';
 
 
 export default function Select({ 
@@ -15,6 +16,7 @@ export default function Select({
     style,
     ...props 
 }: SelectInputProps) {
+    const { styles } = useTheme();
     const [input, setInput] = useCache(value);
     const [open, setOpen] = useCache(false);
 
@@ -39,9 +41,9 @@ export default function Select({
                     onClick={()=> setOpen(v => !v)}
                 >
                     <ChevronDownIcon
+                        fill={(style?.color ?? styles?.input?.fontColor)}
                         className={`
                             label w-[1em] h-[1em]
-                            fill-current
                             ${open && 'rotate-180'}
                         `}
                     />
@@ -55,7 +57,9 @@ export default function Select({
             >
                 { input 
                     ? input 
-                    : <span className='text-neutral-500'>{placeholder}</span>
+                    : <span style={{color: styles?.input?.placeholderColor}}>
+                        { placeholder }
+                     </span>
                 }
             </span>
 

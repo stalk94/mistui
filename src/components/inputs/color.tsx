@@ -5,18 +5,22 @@ import { RgbaColorPicker, RgbaColor } from 'react-colorful';
 import { rgbaToString, stringToRgba } from '../hooks/helpers';
 import { useCache, useClickOutside } from './hooks';
 import { useDebounced } from '../hooks/debounce';
+import { useTheme } from '../theme';
 import styles from './styles/global.module.css';
 
 
-const Inputs = ({ updateComponent, input }) => {
+const Inputs = ({ updateComponent, input, styleInput }) => {
     const rgba = stringToRgba(input);
+    console.log(styleInput)
 
     return(
         <div className="flex gap-1 items-center w-full h-full">
             {(['r', 'g', 'b'] as const).map((ch) => (
                 <Fragment key={ch}>
-                    <span className='text-neutral-500'>
-                        {ch + ':'}
+                    <span className='text-neutral-500' 
+                        style={{ color: styleInput?.placeholderColor }}
+                    >
+                        { ch + ':' }
                     </span>
                     <input
                         type="number"
@@ -26,11 +30,15 @@ const Inputs = ({ updateComponent, input }) => {
                         onChange={(e) => updateComponent(ch, Math.max(0, Math.min(255, +e.target.value)), rgba)}
                         placeholder={ch.toUpperCase()}
                         className="max-w-8"
+                        style={styleInput}
                     />
                 </Fragment>
             ))}
 
-            <span className='text-neutral-500'>
+            <span 
+                className='text-neutral-500'
+                style={{ color: styleInput?.placeholderColor }}
+            >
                 a:
             </span>
             <input
@@ -42,6 +50,7 @@ const Inputs = ({ updateComponent, input }) => {
                 onChange={(e) => updateComponent('a', Math.max(0, Math.min(1, +e.target.value)), rgba)}
                 placeholder="A"
                 className="max-w-8"
+                style={styleInput}
             />
         </div>
     );
@@ -55,8 +64,11 @@ export default function SelectColor({
     size, 
     value,
     required,
+    color,
+    styleInput,
     ...props 
 }: SelectInputProps) {
+    const { styles } = useTheme();
     const [input, setInput] = useCache(value);
     const [open, setOpen] = useCache(false);
 
@@ -83,8 +95,10 @@ export default function SelectColor({
     return (
         <FormWrapper
             size={size}
+            colorBorder={color}
             data-color-root
-            style={{ position: 'relative', anchorName: "--anchor-color" }}
+            style={{ position: 'relative' }}
+            styleInput={styleInput}
             labelRight={ 
                 <button className='cursor-pointer'
                     onClick={()=> setOpen(true)}
@@ -102,6 +116,11 @@ export default function SelectColor({
             { ...props }
         >
             <Inputs
+                styleInput={{
+                    color: styles?.input?.fontColor,
+                    placeholderColor: styles?.input?.placeholderColor,
+                    ...styleInput,
+                }}
                 input={input}
                 updateComponent={handleChangeInputs}
             />

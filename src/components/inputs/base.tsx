@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
 import { useClientValidity, useCache } from './hooks';
+import { useTheme } from '../theme';
 import type { BaseProps } from './type';
 
 
@@ -21,6 +22,7 @@ export default function BaseInput({
     className,
     ...props 
 }: BaseProps) {
+    const { styles } = useTheme();
     const [val, setVal] = useCache(value);
     const inputRef = React.useRef<HTMLInputElement>(null);
     const isInvalid = useClientValidity(inputRef);
@@ -30,8 +32,17 @@ export default function BaseInput({
         onChange?.(newValue);
     }
     
+
     return(
         <>
+            <style>
+                {`
+                    input::placeholder {
+                        color: ${styles?.input?.placeholderColor}
+                    }
+                `}
+            </style>
+            
             <FormWrapper 
                 labelLeft={labelLeft}
                 labelRight={labelRight}
@@ -40,17 +51,20 @@ export default function BaseInput({
                 colorBorder={colorBorder}
                 validator={validator}
                 required={required}
-                data-id={props['data-id']}
                 style={style}
                 styleInput={styleInput}
                 className={className}
             >
                 <input
-                    ref={inputRef}
+                    ref={required && inputRef}
                     type={type}
                     placeholder={placeholder}
                     required={required}
-                    style={{display: 'block', width:'100%'}}
+                    style={{
+                        display: 'block', 
+                        width: '100%', 
+                        color: (style?.color ?? styles?.input?.fontColor)
+                    }}
                     value={val}
                     onChange={(e)=> handle(e.target.value)}
                     { ...props }

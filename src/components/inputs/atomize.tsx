@@ -55,7 +55,13 @@ export function FormWrapper({
                     { labelTop }
                 </LabelTop>
             }
-            <div style={{ ...styles?.input, ...styleInput }}
+            <div 
+                style={{ 
+                    color: styles?.input?.fontColor, 
+                    borderColor: styles?.input?.borderColor,
+                    backgroundColor: !disabledVisibility && styles?.input?.backgroundColor,
+                    ...styleInput, 
+                }}
                 className={disabledVisibility ? `${getSize}` : `
                     input
                     w-full
@@ -71,7 +77,7 @@ export function FormWrapper({
                     <span 
                         style={{ 
                             height: '100%', 
-                            marginInlineEnd: (!disabledVisibility && (size==='xs'||size==='sm')) && 0 
+                            marginInlineEnd: (!disabledVisibility && (size==='xs'||size==='sm')) && 8
                         }}
                         className={`
                             label 
@@ -88,7 +94,7 @@ export function FormWrapper({
                     <span 
                         style={{ 
                             height: '100%', 
-                            marginInlineStart: (!disabledVisibility && (size==='xs'||size==='sm')) && 0 
+                            marginInlineStart: (!disabledVisibility && (size==='xs'||size==='sm')) && 4 
                         }}
                         className={`
                             label

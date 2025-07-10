@@ -1,6 +1,8 @@
-import BaseInput from './base';
+import { useCache } from './hooks';
 import type { NumberInputProps } from './type';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
+import { FormWrapper } from './atomize'
+import { useTheme } from '../theme';
 
 
 const Icon = ({ useClick, tag, 'data-id': dataId }) => {
@@ -24,26 +26,40 @@ const Icon = ({ useClick, tag, 'data-id': dataId }) => {
     );
 }
 
-export default function NumberInput({ iconEnable, onChange, value, step, ...props }: NumberInputProps) {
-    const safeValue = typeof value === 'number' ? value : parseFloat(value as any) || 0;
+export default function NumberInput({ 
+    iconEnable, 
+    onChange, 
+    value, 
+    step, 
+    placeholder,
+    required,
+    ...props 
+}: NumberInputProps) {
+    const { styles } = useTheme();
+    const [val, setVal] = useCache(
+        typeof value === 'number' 
+            ? value 
+            : parseFloat(value as any) || undefined
+    );
 
     const increment = () => {
-        onChange?.(safeValue + (step ?? 1));
+        setVal((safeValue)=> {
+            const result = safeValue + (step ?? 1);
+            onChange?.(result);
+            return result;
+        });
     }
     const decrement = () => {
-        onChange?.(safeValue - (step ?? 1));
+        setVal((safeValue)=> {
+            const result = safeValue - (step ?? 1);
+            onChange?.(result);
+            return result;
+        });
     }
-
+    
     
     return (
-        <BaseInput
-            type='number'
-            value={value}
-            onChange={(v) => {
-                if (v !== undefined && v !== null && !isNaN(+v)) {
-                    onChange?.(+v);
-                }
-            }}
+        <FormWrapper
             labelLeft={
                 iconEnable &&
                     <Icon
@@ -61,6 +77,39 @@ export default function NumberInput({ iconEnable, onChange, value, step, ...prop
                     />
             }
             { ...props }
-        />
+        >
+            <style>
+                {`
+                    input::placeholder {
+                        color: ${styles?.input?.placeholderColor}
+                    }
+                `}
+            </style>
+
+            <input
+                type='number'
+                className=' placeholder:text-neutral-500'
+                placeholder={placeholder}
+                required={required}
+                style={{ 
+                    display: 'block', 
+                    width: '100%',
+                    color: (props?.style?.color ?? styles?.input?.fontColor)
+                }}
+                value={val ?? ''}
+                onChange={(e) => {
+                    const v = e.target.value;
+
+                    if (v === '') {
+                        setVal(undefined);
+                        onChange?.(undefined);
+                    }
+                    else if (v !== undefined && v !== null && !isNaN(+v)) {
+                        setVal(+v);
+                        onChange?.(+v);
+                    }
+                }}
+            />
+        </FormWrapper>
     );
 }

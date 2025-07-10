@@ -15,6 +15,7 @@ export function useTheme(options?: UseThemeOptions) {
 	return context;
 }
 export function createTheme(data: object): Theme {
+	// ! merge theme
 	return data;
 }
 

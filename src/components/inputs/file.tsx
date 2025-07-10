@@ -3,7 +3,7 @@ import type { FileInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
 import { useCache } from './hooks';
-
+import { useTheme } from '../theme';
 
 /** Один файл */
 export default function FileInput({ 
@@ -17,6 +17,7 @@ export default function FileInput({
     onError, 
     ...props 
 }: FileInputProps) {
+    const { styles } = useTheme();
     const fileRef = useRef<HTMLInputElement | null>(null);
     const [files, setFiles] = useCache<File>(null);
     const [progress, setProgress] = useCache<number>(0);
@@ -98,10 +99,22 @@ export default function FileInput({
                 className="w-full flex items-center cursor-pointer"
                 onClick={() => fileRef.current?.click()}
             >
+                {/* placeholder, file name*/}
                 { !progress
                     ? (files?.name
-                        ? files?.name 
-                        : <span className='text-neutral-500'>{placeholder ?? 'Загрузить файл'}</span>
+                        ? <span 
+                            style={{
+                                color: styles?.input?.fontColor
+                            }}
+                         >
+                            { files?.name }
+                         </span>
+                        : <span 
+                            style={{color: styles?.input?.placeholderColor}} 
+                            className='text-neutral-500'
+                         >
+                            { placeholder ?? 'Загрузить файл' }
+                         </span>
                      )
                     : <>
                         <progress 

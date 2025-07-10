@@ -4,6 +4,7 @@ import { FormWrapper } from './atomize';
 import DropMenu from '../list/drop-menu';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useCache, useClickOutside } from './hooks';
+import { useTheme } from '../theme';
 
 
 export default function Autocomplete({ 
@@ -14,9 +15,9 @@ export default function Autocomplete({
     value,
     style,
     required,
-    styleForm,
     ...props 
 }: AutoInputProps) {
+    const { styles } = useTheme();
     const [input, setInput] = useCache(value ?? '');
     const [open, setOpen] = useCache(false);
 
@@ -44,9 +45,9 @@ export default function Autocomplete({
                     onClick={()=> setOpen(v => !v)}
                 >
                     <ChevronDownIcon
+                        fill={(style?.color ?? styles?.input?.fontColor)}
                         className={`
                             label w-[1em] h-[1em]
-                            fill-current
                             ${open && 'rotate-180'}
                         `}
                     />
@@ -54,6 +55,14 @@ export default function Autocomplete({
             }
             { ...props }
         >
+            <style>
+                {`
+                    input::placeholder {
+                        color: ${styles?.input?.placeholderColor}
+                    }
+                `}
+            </style>
+
             <input
                 type="text"
                 placeholder={placeholder}
