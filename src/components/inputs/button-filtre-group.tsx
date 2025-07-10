@@ -20,7 +20,7 @@ export default function ToggleButtonFiltreGroup({
     style,
     ...props
 }: FilterToggleButtonGroupProps) {
-    const { styles } = useTheme();
+    const { styles, mixers } = useTheme();
     const uid = useUids('button-group');
     const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
     const [select, setSelect] = useCache(value);
@@ -33,14 +33,15 @@ export default function ToggleButtonFiltreGroup({
     const getColorHover = useCallback((key: 'backgroundColor' | 'color') => {
         const inlneBg = style?.background ?? style?.backgroundColor;
         const inlneTxt = style?.color;
+        const curVariant = styles.button[variant];
 
         if (key === 'backgroundColor') return (inlneBg
-            ? styles?.button?.background(inlneBg, 'hover')
-            : styles?.button?.background(variant, 'hover')
+            ? mixers.button.background(inlneBg, 'hover')
+            : mixers.button.background(curVariant, 'hover')
         );
         else return (inlneTxt
-            ? styles?.button?.color(inlneTxt, 'hover')
-            : styles?.button?.color(variant, 'hover')
+            ? mixers.button.color(inlneTxt, 'hover')
+            : mixers.button.color(curVariant, 'hover')
         );
     }, [style, variant]);
 

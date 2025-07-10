@@ -2,15 +2,14 @@ import { CSSProperties } from 'react';
 import  type { Theme } from './types';
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
-extend([a11yPlugin]);
+import mixPlugin from "colord/plugins/mix";
+extend([a11yPlugin, mixPlugin]);
+import { mixerButtonColor, fabrikSizeBreacpoints, mixerButtonBorderColor } from './helpers';
 
-export type Varinats = keyof typeof variantsColor;
 
-
-const colorPlugins = {
-    /* inversion color */
-    invert: (color: string)=> colord(color).invert().toRgbString()
-}
+//////////////////////////////////////////////////////////////////////////
+//      default settings          
+//////////////////////////////////////////////////////////////////////////
 const variantsColor = {
     neutral: 'rgba(255, 255, 255, 0.05)',
     primary: 'rgb(79, 217, 233)',
@@ -26,24 +25,36 @@ const mixins = {
     inputBorderColor: colord('rgb(128,128,128)').alpha(0.55).toRgbString(),
     thumbs: colord('rgb(128,128,128)').alpha(0.8).toRgbString()
 }
-
-
-const mixerButtonColor = (variant?: Varinats, type?: 'hover' | 'selected') => {
-    const color = variantsColor[variant] ?? (variant ?? variantsColor.neutral);
-
-    if (!type) return color;
-    else {
-       if (type === 'hover') return colord(color).alpha(0.1).lighten(0.1).toRgbString();
-       else return colord(color).alpha(0.2).lighten(0.1).toRgbString();
+const sizes = {
+    input: {
+        default: 'sm',
+        sm:' md',
+        md: 'md',
+        lg: 'lg', 
+        xl: 'lg'
+    },
+    btn: {
+        default: 'sm',
+        sm:' md',
+        md: 'md',
+        lg: 'lg', 
+        xl: 'lg'
+    },
+    textarea: {
+        default: 'sm',
+        sm:' md',
+        md: 'md',
+        lg: 'lg', 
+        xl: 'lg'
     }
 }
 
-
-export default {
+//////////////////////////////////////////////////////////////////////////
+//            default theme object            
+//////////////////////////////////////////////////////////////////////////
+const defaultTheme = {
     enableEditorMod: true,
-    sizes: {
-
-    },
+    sizes: sizes,
     styles: {
         input: <CSSProperties> {
             focusOutlineColor: colord(mixins.inputBorderColor).lighten(1).toRgbString(),
@@ -69,13 +80,7 @@ export default {
             sliderTrackFillColor: 'lightgray',
             sliderTrackFillHeight: 0.2,
         },
-        button: {
-            color:(variant?: Varinats, type?: 'hover' | 'selected')=> 
-                colord(mixerButtonColor(variant, type))
-                    .grayscale()
-                    .toRgbString(),
-            background:(variant?: Varinats, type?: 'hover' | 'selected')=> mixerButtonColor(variant, type)
-        },
+        button: variantsColor,
         inputLabelTop: <CSSProperties> {
             color: undefined,
             fontFamily: undefined,
@@ -86,5 +91,24 @@ export default {
             justifyContent: 'start'
         }
     },
-    colorPlugins
+
+    mixers: {
+        button: {
+            color: (variant?: Varinats, type?: 'hover' | 'selected') =>
+                colord(mixerButtonColor(variant, type))
+                    .grayscale()
+                    .toRgbString(),
+            background: (variant?: Varinats, type?: 'hover' | 'selected') => mixerButtonColor(variant, type),
+            border: (variant?: Varinats, type?: 'hover' | 'selected') => mixerButtonBorderColor(variant, type),
+        }
+    },
+    colorPlugins: {
+        /* inversion color */
+        invert: (color: string)=> colord(color).invert().toRgbString()
+    }
 }
+
+
+
+export type Varinats = keyof typeof variantsColor;
+export default defaultTheme;

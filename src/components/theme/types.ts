@@ -23,8 +23,14 @@ export interface Theme {
             sliderThumbWidth?: number
         }
         button: {
-            color:(variant?: Varinats, type?: 'hover' | 'selected')=> React.CSSProperties['color']
-            background:(variant?: Varinats, type?: 'hover' | 'selected')=> React.CSSProperties['backgroundColor']
+            color: React.CSSProperties['color']
+            background: React.CSSProperties['backgroundColor']
+        }
+    }
+    mixers: {
+        button: {
+            color: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['color']
+            background: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['backgroundColor']
         }
     }
 }

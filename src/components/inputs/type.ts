@@ -1,5 +1,5 @@
 import { ClassValue } from 'clsx';
-
+import type { Varinats } from '../theme/default';
 
 //////////////////////////////////////////////////////////////////
 //      Fragments
@@ -205,6 +205,7 @@ export type ToggleButtonGroupProps = {
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
+    variant?: Varinats
 }
 export type FilterToggleButtonGroupProps = {
     options: string[] | ItemSelectFilter[]
@@ -217,4 +218,5 @@ export type FilterToggleButtonGroupProps = {
     value?: string | number
     style?: React.CSSProperties
     className?: ClassValue
+    variant?: Varinats
 }
