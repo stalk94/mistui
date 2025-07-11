@@ -1,7 +1,7 @@
 import type { SelectInputProps } from './type';
 import { FormWrapper } from './atomize';
 import DropMenu from '../list/drop-menu';
-import { useCache, useClickOutside } from './hooks';
+import { useCache, useClickOutside } from '../hooks';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from '../theme';
 

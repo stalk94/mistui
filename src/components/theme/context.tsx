@@ -41,6 +41,18 @@ export function ThemeProvider({ theme = defaultTheme, children }: ThemeProviderP
                         outline-color: ${styles?.input?.focusOutlineColor};
                         border-color: #ffffffb1;
                     }
+                    
+                    .scrolable::-webkit-scrollbar: {
+                        width: "3px",
+                        height: "5px",
+                    },
+                    .scrolable::-webkit-scrollbar-thumb: {
+                        backgroundColor: "#7e7e7e",
+                        borderRadius: '7px',
+                    },
+                    .scrolable::-webkit-scrollbar-track: {
+                        background: "#2e2e2e",
+                    }
                 `}
             </style>
 

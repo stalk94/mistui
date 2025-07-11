@@ -1,5 +1,16 @@
 export interface Theme {
     enableEditorMod?: boolean
+    autosizes: {
+        text: string
+        input: string
+        btn: string
+        textarea: string
+    }
+    colors: {
+        base: string
+        input: string
+        button: string
+    } 
     styles: {
         input?: React.CSSProperties & {
             focusOutlineColor?: React.CSSProperties['color']

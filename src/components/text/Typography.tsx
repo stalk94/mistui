@@ -12,6 +12,7 @@ const Typography = forwardRef(
             children,
             fontStyle = 'normal',
             fontFamily,
+            style,
             ...rest
         }: PolymorphicComponentProps<T, BaseTypographyProps>,
         ref?: PolymorphicRef<T>
@@ -24,9 +25,12 @@ const Typography = forwardRef(
                 className={clsx(
                     typographyVariants[variant],
                     fontStyle === 'italic' ? 'italic' : 'not-italic',
-                    fontFamily && `font-[${fontFamily}]`,
                     classNames
                 )}
+                style={{ 
+                    fontFamily: fontFamily && `${fontFamily}, sans-serif`,
+                    ...style
+                }}
                 ref={ref}
                 { ...rest }
             >

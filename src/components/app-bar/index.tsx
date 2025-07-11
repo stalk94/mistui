@@ -1,15 +1,8 @@
-import React from "react";
-import { AppBar, Toolbar, Box, useTheme, AppBarProps } from "@mui/material";
+import React, { forwardRef } from "react";
 import LinearNavigationDesktop from './linear-desktop';
 import MobailBurgerNavigation from './mobail-burger';
-
-
-type AppBarCustomProps = AppBarProps & {
-    start: React.ReactNode
-    center: React.ReactNode
-    end: React.ReactNode
-    height: number
-}
+import type { AppBarCustomProps } from './types';
+import { useTheme } from '../theme/index';
 
 
 /**
@@ -20,15 +13,15 @@ type AppBarCustomProps = AppBarProps & {
  */
 export const Start =({ children })=> {
     return(
-        <Box
-            sx={{
+        <div
+            style={{
                 display: "flex",
                 justifyContent: "flex-start",
                 alignItems: "center"
             }}
         >
             { children }
-        </Box>
+        </div>
     );
 }
 /** 
@@ -45,53 +38,51 @@ export const MobailBurger = MobailBurgerNavigation;
 
 
 /**
- * строительный шаблон для app bar, наследуется от MUI appbar
+ * строительный шаблон для app bar
  * - `start` - левый слот 
  * - `center` - центральный слот (к примеру линейная навигация)
  * - `end` - правый слот (к примеру user, main)
  */
-export default function ({ start, center, end, height, ...props }: AppBarCustomProps) {
-    const theme = useTheme();
+const AppBar = forwardRef<HTMLHeadingElement, AppBarCustomProps>(function AppBar(
+    {
+        start,
+        center,
+        end,
+        height,
+        style,
+        ...props
+    },
+    ref
+ ) {
+    const { styles } = useTheme();
     
-    // alpha(theme.palette.background.input, 0.35)
     return(
-        <AppBar 
-            position="static" 
-            { ...props }
-            sx={{ 
-                p: 0, 
-                m: 0, 
-                backgroundColor: theme.palette.appBar.main,
+        <header 
+            ref={ref}
+            className={`
+                navbar
+            `}
+            style={{ 
+                position: 'sticky',
                 border: `1px solid`,
-                borderColor: theme.palette.appBar.border,
                 backdropFilter: "blur(14px)",
                 minHeight: height ?? 30,
-                display: 'flex',
-                ...props.sx
+                ...style
             }}
+            { ...props }
         >
-            <Toolbar 
-                disableGutters 
-                sx={{ px: 1 }}
-                style={{
-                    minHeight: height ?? 30,
-                    display: 'flex',
-                    justifyContent: 'flex-start'
-                }}
-            >
-               { start }
-               { center }
+            <div className="navbar-start">
 
-               <Box
-                    sx={{
-                        ml: 'auto',
-                        display: 'flex',
-                        justifyContent: 'flex-start'
-                    }}
-                >
-                    { end }
-                </Box>
-            </Toolbar>
-        </AppBar>
+            </div>
+            <div className="navbar-center hidden lg:flex">
+
+            </div>
+            <div className="navbar-end">
+
+            </div>
+        </header>
     );
-}
+});
+
+
+export default AppBar;

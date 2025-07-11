@@ -22,33 +22,12 @@
     --font-family-raleway: 'Raleway', sans-serif;
 
     /* base */
-    --color-bg: #222222;
+    --color-bg: rgb(34, 34, 34);
 
-    --color-base-100: rgba(255, 255, 255, 0.05);
-    --color-base-200: rgb(45, 45, 45, 0.15);
+    --color-base-100: rgb(45, 45, 45);
+    --color-base-200: rgb(45, 45, 45);
     --color-base-300: rgb(58, 58, 58);
     --color-base-400: rgb(50, 52, 54);
-
-    --color-primary: rgba(3, 242, 246, 1);
-    --color-secondary: teal;
-
-    /* button hover */
-    --text-select-content: rgba(255, 255, 255);
-    --text-primary-content: rgba(255, 255, 255, 0.6);
-    --text-secondary-content: rgba(255, 255, 255, 0.6);
-
-    --btn-color: var(--color-base-100);                  /* фон кнопки  */
-   
-    --btn-hover-bg: var(--color-base-300);            /* фон при hover */
-    --btn-hover-color: var(--text-primary-content);   /* цвет текста при hover */
-    --btn-hover-border-color: var(--color-base-400);  /* граница при hover */
-    --btn-focus-scale: 0.95;                          /* scale при фокусе */
-    --btn-active-bg: var(--color-base-400);           /* фон при active */
-    --btn-active-border-color: var(--color-base-400); /* граница при active */
-    --btn-disabled-bg: var(--color-base-100);
-    --btn-disabled-color: var(--text-primary-content);
-    --btn-disabled-border-color: var(--color-base-300);
-    
 }
 
 

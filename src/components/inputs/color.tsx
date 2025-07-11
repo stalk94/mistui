@@ -3,7 +3,7 @@ import type { SelectInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { RgbaColorPicker, RgbaColor } from 'react-colorful';
 import { rgbaToString, stringToRgba } from '../hooks/helpers';
-import { useCache, useClickOutside } from './hooks';
+import { useCache, useClickOutside } from '../hooks';
 import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
 import stylesPicker from './styles/global.module.css';

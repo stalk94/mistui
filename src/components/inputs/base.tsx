@@ -1,33 +1,39 @@
-import React from 'react';
+import React, { forwardRef, useRef } from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
-import { useClientValidity, useCache } from './hooks';
+import { useClientValidity, useCache } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import type { BaseProps } from './type';
 
 
-export default function BaseInput({ 
-    style, 
-    type, 
-    placeholder, 
-    size, 
-    colorBorder, 
-    labelLeft, 
-    labelTop, 
-    labelRight, 
-    validator, 
-    onChange, 
-    value,
-    required,
-    styleInput,
-    className,
-    ...props 
-}: BaseProps) {
+const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
+    {
+        style,
+        type,
+        placeholder,
+        size,
+        colorBorder,
+        labelLeft,
+        labelTop,
+        labelRight,
+        validator,
+        onChange,
+        value,
+        required,
+        styleInput,
+        className,
+        ...props
+    },
+    ref
+) {
     const uid = useUids(type);
     const { styles } = useTheme();
     const [val, setVal] = useCache(value);
-    const inputRef = React.useRef<HTMLInputElement>(null);
+
+    const internalRef = useRef<HTMLInputElement>(null);
+    const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
     const isInvalid = useClientValidity(inputRef);
+
 
     const handle = (newValue: string) => {
         setVal(newValue);
@@ -59,7 +65,7 @@ export default function BaseInput({
                 className={className}
             >
                 <input
-                    ref={required && inputRef}
+                    ref={inputRef}
                     type={type}
                     placeholder={placeholder}
                     required={required}
@@ -86,4 +92,6 @@ export default function BaseInput({
             }
         </>
     );
-}
+});
+
+export default BaseInput;

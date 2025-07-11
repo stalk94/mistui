@@ -1,6 +1,6 @@
 import { ClassValue } from 'clsx';
+import { fontFamilyVariants } from '../theme/default'
 import type { ElementType, ComponentPropsWithoutRef, ComponentPropsWithRef } from 'react';
-
 
 type VarFonts = '--font-family-roboto' 
     | '--font-family-inter' 
@@ -12,6 +12,7 @@ type VarFonts = '--font-family-roboto'
     | '--font-family-merriweather' 
     | '--font-family-raleway'
 
+    
 export const typographyVariants = {
     h1: 'text-4xl sm:text-5xl md:text-6xl font-bold',
     h2: 'text-3xl sm:text-4xl md:text-5xl font-semibold',
@@ -40,7 +41,7 @@ export type BaseTypographyProps = {
 	classNames?: ClassValue
 	style?: React.CSSProperties
     fontStyle?: 'normal' | 'italic'
-    fontFamily?: VarFonts | string
+    fontFamily?: keyof typeof fontFamilyVariants
 }
 
 type AsProp<T extends ElementType> = {

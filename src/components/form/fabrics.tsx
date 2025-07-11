@@ -2,8 +2,9 @@ import React from 'react';
 import { Schema, TypeSchema } from './types';
 import { 
     BaseInput, NumberInput, ColorPicker, SliderInput, SwitchBox, TextArea,
-    GroupButton, Select, CheckBox, FileInput, AutoComplete, RadioBox, GroupButtonFiltre
+    Select, CheckBox, FileInput, AutoComplete, RadioBox
 } from '../inputs';
+import { GroupButton, GroupButtonFiltre } from '../buttons';
 import Divider from '../divider';
 
 

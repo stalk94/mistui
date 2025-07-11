@@ -3,7 +3,7 @@ import * as Switch  from "@radix-ui/react-switch";
 import { FaCheck } from "react-icons/fa";
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
-import { useCache } from './hooks';
+import { useCache } from '../hooks';
 
 
 export default function SwitchBox({ 

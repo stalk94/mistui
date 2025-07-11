@@ -3,7 +3,7 @@ import type { AutoInputProps } from './type';
 import { FormWrapper } from './atomize';
 import DropMenu from '../list/drop-menu';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import { useCache, useClickOutside } from './hooks';
+import { useCache, useClickOutside } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 

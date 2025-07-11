@@ -1,8 +1,8 @@
+import { forwardRef } from 'react';
 import type { LabelProps, LabelTopProps } from './type';
 import { useTheme } from '../theme';
 import React from 'react';
 import clsx from 'clsx';
-
 
 
 export const LabelTop = ({ children, style, size, required,  }: LabelTopProps) => {
@@ -28,53 +28,77 @@ export const LabelTop = ({ children, style, size, required,  }: LabelTopProps) =
         </label>
     );
 }
-
-export function FormWrapper({ 
-    children, 
-    labelLeft, 
-    labelRight, 
-    labelTop, 
-    colorBorder, 
-    size,
-    validator, 
-    required,
-    disabledVisibility,
-    style,
-    styleInput,
-    className,
-    ...props
-}: LabelProps) {
-    const { styles } = useTheme();
-    const getSize = size ? `input-${size}` : 'input-sm sm:input-md md:input-md lg:input-lg xl:input-lg';
-    
-
+export const ValidatorBottomLabel =({ children, 'data-id': dataId })=> {
     return(
+        <span
+            style={{
+                marginTop: 0
+            }} 
+            className="validator-hint"
+        >
+            { children }
+        </span>
+    )
+}
+
+
+export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormWrapper(
+    {
+        children,
+        labelLeft,
+        labelRight,
+        labelTop,
+        colorBorder,
+        size,
+        validator,
+        required,
+        disabledVisibility,
+        style,
+        styleInput,
+        className,
+        ...props
+    },
+    ref
+) {
+    const { styles, autosizes } = useTheme();
+    const getSize = size ? `input-${size}` : autosizes.input;
+
+
+    return (
         <section className={clsx('formwrap', className)} style={style}>
-            { labelTop &&
+            {/* верхний label */}
+            {labelTop && (
                 <LabelTop size={size} required={required}>
                     { labelTop }
                 </LabelTop>
-            }
-            <div 
-                style={{ 
-                    color: styles?.input?.fontColor, 
+            )}
+
+            <div
+                ref={ref}
+                style={{
+                    color: styles?.input?.fontColor,
                     borderColor: styles?.input?.borderColor,
                     borderStyle: styles?.input?.borderStyle,
                     borderWidth: !disabledVisibility && styles?.input?.borderWidth,
                     backgroundColor: !disabledVisibility && styles?.input?.backgroundColor,
-                    ...styleInput, 
+                    ...styleInput,
                 }}
-                className={disabledVisibility ? `${getSize}` : `
-                    input
-                    w-full
-                    flex
-                    input-focus
-                    input-${colorBorder}
-                    ${getSize}
-                    ${validator && 'validator'}
-                `}
+                className={clsx(
+                    disabledVisibility
+                        ? getSize
+                        : [
+                              'input',
+                              'w-full',
+                              'flex',
+                              'input-focus',
+                              `input-${colorBorder}`,
+                              getSize,
+                              validator && 'validator',
+                          ]
+                )}
                 { ...props }
             >
+                 {/* [label][---] левый label */}
                 { labelLeft &&
                     <span 
                         style={{ 
@@ -92,6 +116,7 @@ export function FormWrapper({
 
                 { children }
 
+                {/* [---][label] правый label */}
                 { labelRight &&
                     <span 
                         style={{ 
@@ -114,18 +139,7 @@ export function FormWrapper({
             </div>
         </section>
     );
-}
+});
 
 
-export const ValidatorBottomLabel =({ children, 'data-id': dataId })=> {
-    return(
-        <span
-            style={{
-                marginTop: 0
-            }} 
-            className="validator-hint"
-        >
-            { children }
-        </span>
-    )
-}
+export default FormWrapper;

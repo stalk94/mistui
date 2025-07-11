@@ -1,8 +1,10 @@
+import Button from './button';
 import type { ToggleButtonGroupProps } from './type';
-import { FormWrapper } from './atomize';
-import { useCache } from './hooks';
+import { FormWrapper } from '../inputs/atomize';
+import { useCache } from '../hooks';
 import { useTheme } from '../theme';
-
+import { useUids } from '../hooks/uuid';
+import { useCallback } from 'react';
 
 
 export default function ToggleButtonGroup({
@@ -12,12 +14,11 @@ export default function ToggleButtonGroup({
     size,
     color,
     onlyId,
-    style,
     variant,
     ...props
 }: ToggleButtonGroupProps) {
-    const { styles } = useTheme();
-    const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
+    const { styles, mixers } = useTheme();
+    const uid = useUids('button-group');
     const [select, setSelect] = useCache(value);
 
     const handleChange = (current: string | number | any) => {
@@ -25,36 +26,49 @@ export default function ToggleButtonGroup({
         const cur = current?.id !== undefined ? current?.id : current;
         onChange?.(onlyId ? cur : current);
     }
+    const getColorHover = useCallback((key: 'backgroundColor' | 'color') => {
+        const inlneBg = props?.style?.background ?? props?.style?.backgroundColor;
+        const inlneTxt = props?.style?.color;
+        const curVariant = styles.button[color];
+
+        if (key === 'backgroundColor') return (inlneBg
+            ? mixers.button.background(inlneBg, 'hover')
+            : mixers.button.background(curVariant, 'hover')
+        );
+        else return (inlneTxt
+            ? mixers.button.color(inlneTxt, 'hover')
+            : mixers.button.color(curVariant, 'hover')
+        );
+    }, [props?.style, color]);
     
+
     return (
         <FormWrapper
             size={size}
             disabledVisibility
             { ...props }
         >
+            <style>
+                {`
+                    button[data-id="${uid}"]:hover {
+                        color: ${getColorHover('color')};
+                        backgroundColor: ${getColorHover('backgroundColor')};
+                    }
+                `}
+            </style>
+
             <div className="join flex-wrap w-full gap-y-[1px]">
                 {items.map((opt, index) => (
-                    <button
+                    <Button
+                        data-id={uid}
                         key={opt?.id ?? index}
+                        size={size}
                         className={`
                             join-item 
-                            btn 
                             flex-auto
-                            text-[var(--text-primary-content)]
-                            ${getSize}
                             ${select === opt && 'btn-select'}
                         `}
-                        style={{
-                            backgroundColor: (select !== opt 
-                                ? styles?.button?.backgroundColor 
-                                : styles?.button?.backgroundActiveColor
-                            ),
-                            color: (select !== opt
-                                ? styles?.button?.color
-                                : styles?.button?.color
-                            ),
-                            ...style,
-                        }}
+                        variant={variant}
                         onClick={() => handleChange(opt)}
                         children={
                             (opt?.id !== undefined) 

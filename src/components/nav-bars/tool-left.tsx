@@ -1,34 +1,7 @@
 import React from "react";
-import { Box, useTheme, darken, SxProps } from "@mui/material";
-import { NavLinkItem } from '../menu/type';
+import { useTheme } from '../theme/index';
 import BaseLeftSideBar from "./left-nav";
-
-
-export type SideBarAndToolPanelProps = {
-    /** слоты навигационной панели */
-    schemaNavBar: {
-        start?: NavLinkItem[]
-        items: NavLinkItem[]
-        /** нижняя субпанелька, всегда поверх базовой */
-        end?: NavLinkItem[]
-    }
-    /** ⬇️ Нижняя панелька для дополнительных элементов(tool) */
-    end?: React.ReactNode
-    /** центральные элементы */
-    center?: React.ReactNode
-    /** ⬆️ Верхняя панелька для дополнительных элементов(tool) */
-    start?: React.ReactNode
-    /** 💻 Контент рабочей области(правая панель) */
-    children: React.ReactNode
-    /** 🔥 нажат элемент боковой навигации */
-    onChangeNavigation?: (item: NavLinkItem)=> void
-    /** 📏 Ширина рабочей области (без учета навигации) */
-    width?: string | number
-    /** настройки стиля обшего контейнера */
-    sx: SxProps
-    style?: React.CSSProperties
-    selected?: any
-}
+import type { SideBarAndToolPanelProps } from './types';
 
 
 
@@ -41,7 +14,15 @@ export type SideBarAndToolPanelProps = {
  * - слушаем `onChangeNavigation`
  * - меняем `children`
  */
-export default function SideBarAndToolPanel({ schemaNavBar, center, start, end, children, onChangeNavigation, ...props }: SideBarAndToolPanelProps) {
+export default function SideBarAndToolPanel({ 
+    schemaNavBar, 
+    center, 
+    start, 
+    end, 
+    children, 
+    onChangeNavigation, 
+    ...props 
+}: SideBarAndToolPanelProps) {
     const theme = useTheme();
 
     const useBackgroundColor =()=> {
@@ -59,14 +40,13 @@ export default function SideBarAndToolPanel({ schemaNavBar, center, start, end, 
 
 
     return(
-        <Box component='div'
-            sx={{
+        <section className="scrolable"
+            style={{
                 display: 'flex',
                 flexDirection: 'row',
                 maxHeight: '100%',
                 minWidth: 50,
-                overflow: 'hidden',
-                ...props.sx
+                overflow: 'hidden'
             }}
         >
             {/* ANCHOR - левое навигационное меню */}
@@ -83,25 +63,24 @@ export default function SideBarAndToolPanel({ schemaNavBar, center, start, end, 
 
             {/* ANCHOR - рабочая область */}
             { children &&
-                <Box
-                    sx={{
+                <div
+                    style={{
                         width: props.width ?? '100%',
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: useBackgroundColor(),
-                        border: `1px solid ${darken(theme.palette.divider, 0.3)}`,
+                        //border: `1px solid ${darken(theme.palette.divider, 0.3)}`,
                         borderLeft: 'none',
                         boxShadow: "inset 3px 0 5px rgba(0, 0, 0, 0.15)",
                         overflowY: "auto",
                         overflowX: 'hidden',
                         ...props?.style,
-                        ...theme.mixins?.scrollbar
                     }}
                 >
                     {/* верхняя панель инструментов рабочей области */}
-                    <Box 
-                        sx={{
+                    <div 
+                        style={{
                             position: "sticky",
                             top: 0,
                             zIndex: 10,
@@ -110,13 +89,13 @@ export default function SideBarAndToolPanel({ schemaNavBar, center, start, end, 
                         }}
                     >
                         { center }
-                    </Box>
+                    </div>
 
                     { children }
 
                     {/* нижняя панель инструментов рабочей области */}
-                    <Box 
-                        sx={{
+                    <div 
+                        style={{
                             position: "sticky",
                             bottom: 0,
                             zIndex: 10,
@@ -126,9 +105,9 @@ export default function SideBarAndToolPanel({ schemaNavBar, center, start, end, 
                         }}
                     >
                         { end }
-                    </Box>
-                </Box>
+                    </div>
+                </div>
             }           
-        </Box>
+        </section>
     );
 }

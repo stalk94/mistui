@@ -1,7 +1,8 @@
 import type { 
     BaseProps, NumberInputProps, SelectInputProps, SliderInputProps, 
-    SwitchBoxInputProps, ToggleButtonGroupProps, FileInputProps, AutoInputProps, CheckBoxInputProps
+    SwitchBoxInputProps, FileInputProps, AutoInputProps, CheckBoxInputProps
 } from '../inputs';
+import type { ToggleButtonGroupProps, FilterToggleButtonGroupProps } from '../buttons';
 import type { DividerProps } from '../divider';
 
 
@@ -36,7 +37,7 @@ interface TypeToSchemaMap {
     select: SelectInputProps
     autocomplete: AutoInputProps
     groupButton: ToggleButtonGroupProps
-    groupButtonFiltre: ToggleButtonGroupProps
+    groupButtonFiltre: FilterToggleButtonGroupProps
     divider: DividerProps
     custom: {
         render: (props: any) => React.ReactElement

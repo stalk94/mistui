@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import type { FileInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
-import { useCache } from './hooks';
+import { useCache } from '../hooks';
 import { useTheme } from '../theme';
 
 /** Один файл */

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { BaseProps } from './type';
 import { LabelTop } from './atomize';
-import { useCache } from './hooks';
+import { useCache } from '../hooks';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 
@@ -19,10 +19,10 @@ export default function TextAreaInput({
     style,
     ...props 
 }: TextAreaProps) {
-    const { styles } = useTheme();
+    const { styles, autosizes } = useTheme();
     const uid = useUids('text-area');
     const [val, setVal] = useCache(value);
-    const sizes = size ? `textarea-${size}` : `textarea-sm sm:textarea-md md:textarea-md lg:textarea-lg xl:textarea-lg`;
+    const sizes = size ? `textarea-${size}` : autosizes.textarea;
 
     const handle = (newValue: string) => {
         setVal(newValue);

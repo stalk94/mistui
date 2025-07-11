@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select } from 'src/components/inputs';
 import SandBox from './SandBox';
+import PropsVariator from './config-props';
 
 
 const daisyThemes = [
@@ -15,6 +16,7 @@ const daisyThemes = [
 
 
 export default function Sand ({  }) {
+    const [preview, setPrevew] =  React.useState('Typography');
     const [theme, setTheme] = React.useState('dark');
 
 
@@ -27,7 +29,12 @@ export default function Sand ({  }) {
             <aside 
                 className="w-[20%] text-white flex flex-col p-4"
                 style={{background: 'rgb(58, 58, 58)',boxShadow: "4px 0 5px rgba(0, 0, 0, 0.1)"}}
-            />
+            >
+                <PropsVariator
+                    preview={preview}
+
+                />
+            </aside>
 
             <section className='flex flex-col w-[80%]'>
                 <nav 

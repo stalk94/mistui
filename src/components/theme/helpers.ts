@@ -50,3 +50,13 @@ export const fabrikSizeBreacpoints = (classKye: ClasVariants, config: Combo) => 
         else return `${key}:${classKye}-${value}`;
     }).join(' ');
 }
+
+export const generateSizes = (sizes) => {
+    const generate = {}
+    Object.entries(sizes).map(([key, value])=> {
+        const result = fabrikSizeBreacpoints(key, value);
+        generate[key] = result;
+    });
+
+    return generate;
+}

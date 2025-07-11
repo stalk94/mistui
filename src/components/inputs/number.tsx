@@ -1,4 +1,4 @@
-import { useCache } from './hooks';
+import { useCache } from '../hooks';
 import type { NumberInputProps } from './type';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 import { FormWrapper } from './atomize'

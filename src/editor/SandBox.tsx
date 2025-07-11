@@ -28,13 +28,6 @@ function bruteForceGetCssVariables(): Record<string, string> {
     return result;
 }
 const variants = Object.keys(typographyVariants) as Array<keyof typeof typographyVariants>;
-const daisyThemes = [
-  "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave",
-  "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua",
-  "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk",
-  "autumn", "business", "acid", "lemonade", "night", "coffee", "winter", "dim",
-  "nord", "sunset"
-];
 const testSchema: Schema[] = [{
     type: 'text',
     placeholder: 'text',
@@ -77,7 +70,7 @@ const testSchema: Schema[] = [{
     id: 'groupButtonFiltre',
     label: 'group-button-colapsed',
     size: 'sm',
-    options: ['test', 'test2']
+    items: ['test', 'test2']
 },{
     type: 'autocomplete',
     placeholder: 'text',
@@ -142,7 +135,7 @@ const testSchema: Schema[] = [{
 }
 ];
 const patterns = {
-    form: ()=> (
+    form: (props)=> (
         <>
             <BreadCrumbs
                 pathname='test/xro'
@@ -159,18 +152,23 @@ const patterns = {
             />
         </>
     ),
-    typography: () => (
+    typography: (props) => (
         <div className="space-y-1">
             {variants.map((variant) => (
                 <div key={variant}>
-                    <Typography variant={variant}>
+                    <Typography 
+                        as='p' 
+                        variant={variant} 
+                        fontFamily='roboto'
+                        { ...props }
+                    >
                         { variant }
                     </Typography>
                 </div>
             ))}
         </div>
     ),
-    acordeon: ()=> (
+    acordeon: (props)=> (
         <Acordeon
             items={[{
                 content: <div>content</div>,
@@ -185,15 +183,24 @@ const patterns = {
 }
 
 
-
-export default function SandBox({ setMode }) {
-    const [props, setProps] = React.useState({});
+export default function SandBox({ setMode}) {
     
 
     return (
         <main className="flex flex-col h-full w-full">
             <div className="flex flex-col m-auto w-90">
                 { patterns.form() }
+                <Acordeon
+                    size='sm'
+                    items={[{
+                        content: <div>content</div>,
+                        title: 'title-1'
+                    }, {
+                        content: 'content',
+                        title: 'title-2'
+                    }
+                    ]}
+                />
             </div>
         </main>
     );

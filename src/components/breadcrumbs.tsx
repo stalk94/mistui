@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { HomeIcon } from '@heroicons/react/24/solid';
 
 ////////////////////////////////////////////////////////////////////////////////
+type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className'>;
 export type Breadcrumb = {
     label: string;
     href: string;
@@ -26,6 +27,7 @@ export type BreadcrumbsNavProps = {
     separator?: string | React.ReactNode
     linkStyle?: React.CSSProperties
     Link: React.ComponentType<{ href: string; children: React.ReactNode }>
+    style?: React.CSSProperties 
 }
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -54,7 +56,15 @@ export function useBreadcrumbs(pathname: string, options?: Options) {
 }
 
 
-export default function BreadcrumbsNav({ pathname, size, push, Link, separator, nameMap, linkStyle }: BreadcrumbsNavProps) {
+export default function BreadcrumbsNav({ 
+    pathname, 
+    size, 
+    push, 
+    Link, 
+    separator, 
+    nameMap,
+    style
+}: BreadcrumbsNavProps) {
     const sizes = size ? `text-${size}`: 'text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl';
     const sizesIcon = size ? {xs:'h-4', sm:'h-4', md:'h-5', lg:'h-6', xl:'h-6'}: 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6';
 
@@ -77,6 +87,7 @@ export default function BreadcrumbsNav({ pathname, size, push, Link, separator, 
 
     return (
         <div 
+            style={style}
             className={`
                 breadcrumbs 
                 no-separator
@@ -88,7 +99,8 @@ export default function BreadcrumbsNav({ pathname, size, push, Link, separator, 
                 {crumbs.map((segment, index) =>
                     segment.isLast
                     ?(
-                        <li className='text-neutral-500'
+                        <li 
+                            className='text-neutral-500'
                             key={segment.href}
                             style={{ pointerEvents: 'none' }}
                         >
@@ -103,8 +115,11 @@ export default function BreadcrumbsNav({ pathname, size, push, Link, separator, 
                             <Link
                                 href={segment.href}
                             >
-                                <span className='underline decoration-1 underline-offset-2'>{ segment.label }</span>
+                                <span className='underline decoration-1 underline-offset-2'>
+                                    { segment.label }
+                                </span>
                             </Link>
+                            {/* separator */}
                             <span
                                 className={`
                                 mx-2

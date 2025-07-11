@@ -4,14 +4,32 @@ import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
 import mixPlugin from "colord/plugins/mix";
 extend([a11yPlugin, mixPlugin]);
-import { mixerButtonColor, fabrikSizeBreacpoints, mixerButtonBorderColor } from './helpers';
+import { mixerButtonColor, generateSizes, mixerButtonBorderColor } from './helpers';
 
 
 //////////////////////////////////////////////////////////////////////////
 //      default settings          
 //////////////////////////////////////////////////////////////////////////
+export const fontFamilyVariants = {
+    roboto: '--font-family-roboto',
+    inter: '--font-family-inter',
+    poppins: '--font-family-poppins',
+    lato: '--font-family-lato',
+    montserrat: '--font-family-montserrat',
+    source: '--font-family-source',
+    merriweather: '--font-family-merriweather',
+    raleway: '--font-family-raleway'
+}
+
+const COLORS = {
+    black: 'rgb(1, 1, 1)',
+    white: 'rgb(255, 255, 255)',
+    base: 'rgb(45, 45, 45)',                // основа, фон
+    input: 'rgb(65, 65, 65)',               // !
+    button: 'rgb(43, 43, 43)',                             
+}
 const variantsColor = {
-    neutral: 'rgba(255, 255, 255, 0.05)',
+    neutral: 'rgba(43, 43, 43)',
     primary: 'rgb(79, 217, 233)',
     secondary: '',
     error: '',
@@ -19,13 +37,14 @@ const variantsColor = {
     warning: '',
     info: ''
 }
-const mixins = {
-    baseConetentColor: 'rgba(255, 255, 255, 0.05)',
-    buttonColor: 'rgb(255, 255, 255)',
-    inputBorderColor: colord('rgb(128,128,128)').alpha(0.55).toRgbString(),
-    thumbs: colord('rgb(128,128,128)').alpha(0.8).toRgbString()
-}
 const sizes = {
+    text: {
+        default: 'sm',
+        sm: 'base',
+        md: 'base',
+        lg: 'lg',
+        xl: 'lg'
+    },
     input: {
         default: 'sm',
         sm:' md',
@@ -49,38 +68,24 @@ const sizes = {
     }
 }
 
+
+
 //////////////////////////////////////////////////////////////////////////
 //            default theme object            
 //////////////////////////////////////////////////////////////////////////
 const defaultTheme = {
     enableEditorMod: true,
-    sizes: sizes,
+    autosizes: generateSizes(sizes),
+    colors: COLORS,
+    shadows: {
+        xs: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.15)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.2)',
+        'xxl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+    },
     styles: {
-        input: <CSSProperties> {
-            focusOutlineColor: colord(mixins.inputBorderColor).lighten(1).toRgbString(),
-
-            backgroundColor: mixins.baseConetentColor,
-            placeholderColor: 'gray',
-            fontColor: 'white',
-            borderColor: mixins.inputBorderColor,
-            borderStyle: 'solid',
-            borderWidth: 1,
-
-            checkBoxBackground: 'inherit',
-
-            radioThumbColor: 'rgb(255, 255, 255)',
-
-            switchBorderColor: mixins.inputBorderColor,
-            switchThumbBorderColor: mixins.inputBorderColor,
-            switchThumbBackgroundColor: mixins.thumbs,
-            switchThumbIconColor: 'rgba(27, 18, 18, 1)',
-
-            sliderTrackColor: 'darkgrey',
-            sliderTrackHeight: 0.1,
-            sliderTrackFillColor: 'lightgray',
-            sliderTrackFillHeight: 0.2,
-        },
-        button: variantsColor,
         inputLabelTop: <CSSProperties> {
             color: undefined,
             fontFamily: undefined,
@@ -89,6 +94,44 @@ const defaultTheme = {
             marginRight: undefined,
             marginBottom: undefined,
             justifyContent: 'start'
+        },
+        input: <CSSProperties> {
+            backgroundColor: colord(COLORS.base).lighten(0.08).toRgbString(),
+            focusOutlineColor: colord(COLORS.base).lighten(0.6).toRgbString(),
+
+            placeholderColor: colord(COLORS.base).lighten(0.4).toRgbString(),
+            fontColor: colord(COLORS.base).lighten(0.8).toRgbString(),
+            borderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
+            borderStyle: 'solid',
+            borderWidth: 1,
+
+            checkBoxBackground: 'inherit',
+            radioThumbColor: 'rgb(255, 255, 255)',
+
+            switchBorderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
+            switchThumbBorderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
+            switchThumbBackgroundColor: colord(COLORS.base).lighten(0.25).toRgbString(),
+            switchThumbIconColor: colord(COLORS.base).darken(0.05).toRgbString(),
+
+            sliderTrackColor: 'rgb(169, 169, 169)',
+            sliderTrackFillColor: 'rgb(211, 211, 211)',
+            sliderTrackHeight: 0.1,
+            sliderTrackFillHeight: 0.2,
+        },
+        accordeon: {
+            backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
+        },
+        leftBar: {
+            backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
+        },
+        button: {
+            neutral: 'rgb(43, 43, 43)',
+            primary: 'rgb(79, 217, 233)',
+            secondary: '',
+            error: '',
+            success: '',
+            warning: '',
+            info: ''
         }
     },
 

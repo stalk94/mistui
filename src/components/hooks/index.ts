@@ -1,5 +1,6 @@
 import { useState, useEffect, SetStateAction, Dispatch, useRef, useCallback } from 'react';
 
+
 export function useClientValidity<T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
     ref: React.RefObject<T>
 ) {
@@ -97,44 +98,4 @@ export function useHover<T extends HTMLElement>() {
     }, [handleMouseEnter, handleMouseLeave]);
 
     return [callbackRef, hovered] as const;
-}
-
-export function useMultiHover<T extends HTMLElement>(count: number) {
-    const [hoverStates, setHoverStates] = useState<boolean[]>(() =>
-        Array(count).fill(false)
-    );
-
-    const refs = useRef<(T | null)[]>([]);
-
-    const setRef = useCallback((index: number) => (node: T | null) => {
-        if (refs.current[index]) {
-            refs.current[index]?.removeEventListener('mouseenter', onEnter);
-            refs.current[index]?.removeEventListener('mouseleave', onLeave);
-        }
-
-        if (node) {
-            node.addEventListener('mouseenter', onEnter);
-            node.addEventListener('mouseleave', onLeave);
-        }
-
-        refs.current[index] = node;
-
-        function onEnter() {
-            setHoverStates(prev => {
-                const copy = [...prev];
-                copy[index] = true;
-                return copy;
-            });
-        }
-
-        function onLeave() {
-            setHoverStates(prev => {
-                const copy = [...prev];
-                copy[index] = false;
-                return copy;
-            });
-        }
-    }, []);
-
-    return { refs: Array.from({ length: count }, (_, i) => setRef(i)), hoverStates };
 }

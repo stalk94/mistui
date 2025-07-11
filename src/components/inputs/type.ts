@@ -1,5 +1,5 @@
 import { ClassValue } from 'clsx';
-import type { Varinats } from '../theme/default';
+
 
 //////////////////////////////////////////////////////////////////
 //      Fragments
@@ -14,14 +14,6 @@ type InputStyle = {
      *    backgroundColor:  input фон
     */
     styleInput?: React.CSSProperties
-}
-type ItemSelect = {
-    id: string | number
-    label: string | React.ReactElement
-}
-type ItemSelectFilter = {
-    id: string | number
-    label: string
 }
 
 export type LabelProps = InputStyle & {
@@ -189,34 +181,4 @@ export type SliderInputProps = InputStyle & {
     styleRange?: React.CSSProperties
     styleThumb?: React.CSSProperties
     className?: ClassValue
-}
-
-
-//////////////////////////////////////////////////////////////////
-//      BUTTON GROUPS
-///////////////////////////////////////////////////////////////////
-export type ToggleButtonGroupProps = {
-    items: string[] | ItemSelect[]
-    value?: string | number
-    onChange?: React.Dispatch<React.SetStateAction<string | number | ItemSelect>>  | ((val: string | number | ItemSelect) => void)
-    size?: 'xs' | 'sm' | 'md' | 'lg'
-    color?: string
-    onlyId?: boolean
-    /** style прокидывается на саму обертку (section) */
-    style?: React.CSSProperties
-    className?: ClassValue
-    variant?: Varinats
-}
-export type FilterToggleButtonGroupProps = {
-    options: string[] | ItemSelectFilter[]
-    onChange?: React.Dispatch<React.SetStateAction<string | number | ItemSelectFilter>>  | ((val: string | number | ItemSelectFilter) => void)
-    name?: string
-    valueReset?: string | number
-    size?: 'xs' | 'sm' | 'md' | 'lg'
-    color?: string
-    onlyId?: boolean
-    value?: string | number
-    style?: React.CSSProperties
-    className?: ClassValue
-    variant?: Varinats
 }
