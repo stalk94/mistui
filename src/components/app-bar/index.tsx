@@ -1,6 +1,4 @@
 import React, { forwardRef } from "react";
-import LinearNavigationDesktop from './linear-desktop';
-import MobailBurgerNavigation from './mobail-burger';
 import type { AppBarCustomProps } from './types';
 import { useTheme } from '../theme/index';
 
@@ -24,16 +22,7 @@ export const Start =({ children })=> {
         </div>
     );
 }
-/** 
- * шаблон центрального слота, (! это линейная навигация она видна только на desktop)    
- * * ❗ внимание отключается видимость на экранах МЕНЬШЕ 600px ширины
- */
-export const LinearNavigation = LinearNavigationDesktop;
-/** 
- * компонент мобильного меню заменяет LinearNavigation на маленьких экранах     
- * * ❗ внимание отключается видимость на экранах БОЛЬШЕ 600px ширины
- */
-export const MobailBurger = MobailBurgerNavigation;
+
 
 
 
@@ -66,6 +55,7 @@ const AppBar = forwardRef<HTMLHeadingElement, AppBarCustomProps>(function AppBar
                 position: 'sticky',
                 border: `1px solid`,
                 backdropFilter: "blur(14px)",
+                borderColor: 'gray',
                 minHeight: height ?? 30,
                 ...style
             }}

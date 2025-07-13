@@ -5,7 +5,7 @@ import {
     Select, CheckBox, FileInput, AutoComplete, RadioBox
 } from '../inputs';
 import { GroupButton, GroupButtonFiltre } from '../buttons';
-import Divider from '../divider';
+import Divider from '../utils/divider';
 
 
 

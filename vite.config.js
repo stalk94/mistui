@@ -11,7 +11,8 @@ import path from 'path';
 export default defineConfig({
     root: 'src',
     publicDir: '../public',
-    plugins: [react(), 
+    plugins: [
+        react(), 
         tailwindcss(), 
         viteSafeTw(), 
         viteSource(), 

@@ -75,7 +75,7 @@ export default function BreadcrumbsNav({
                 <HomeIcon
                     className={`
                         fill-current ${sizesIcon}  
-                        text-neutral-500
+                        text-neutral-300
                         hover:text-red-400
                     `}
                 />
@@ -100,7 +100,7 @@ export default function BreadcrumbsNav({
                     segment.isLast
                     ?(
                         <li 
-                            className='text-neutral-500'
+                            className='text-neutral-200'
                             key={segment.href}
                             style={{ pointerEvents: 'none' }}
                         >
@@ -109,7 +109,7 @@ export default function BreadcrumbsNav({
                     )
                     :(
                         <li 
-                            className='text-neutral-500'
+                            className='text-neutral-200'
                             key={segment.href}
                         >
                             <Link

@@ -10,7 +10,7 @@ export default function SwitchBox({
     size, 
     onChange, 
     value, 
-    style,
+    style = {},
     styleThumb,
     ...props 
 }: SwitchBoxInputProps) {

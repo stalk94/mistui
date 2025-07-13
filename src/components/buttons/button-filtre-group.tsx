@@ -6,6 +6,7 @@ import { useCache } from '../hooks';
 import { Fragment } from 'react';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
+import { colord } from 'colord';
 
 
 export default function ToggleButtonFiltreGroup({
@@ -21,7 +22,7 @@ export default function ToggleButtonFiltreGroup({
     style,
     ...props
 }: FilterToggleButtonGroupProps) {
-    const { styles, mixers } = useTheme();
+    const { plugins, variants, mixers } = useTheme();
     const uid = useUids('button-group');
     const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
     const [select, setSelect] = useCache(value);
@@ -32,20 +33,25 @@ export default function ToggleButtonFiltreGroup({
         setSelect(current);
         onChange?.(onlyId ? cur : current);
     }
-    const getColorHover = useCallback((key: 'backgroundColor' | 'color') => {
-        const inlneBg = style?.background ?? style?.backgroundColor;
+    const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
         const inlneTxt = style?.color;
-        const curVariant = styles.button[color];
+        const curVariant = variants[color];
 
         if (key === 'backgroundColor') return (inlneBg
             ? mixers.button.background(inlneBg, 'hover')
             : mixers.button.background(curVariant, 'hover')
         );
-        else return (inlneTxt
-            ? mixers.button.color(inlneTxt, 'hover')
-            : mixers.button.color(curVariant, 'hover')
+        else if (key === 'border') return (inlneBg
+            ? mixers.button.border(inlneBorder, 'hover')
+            : mixers.button.border(curVariant, 'hover')
         );
-    }, [style, color]);
+        else return (inlneTxt
+            ? colord(inlneTxt).alpha(0.6).toRgbString()
+            : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
+        );
+    }, [style, color, variant, props.isSoft]);
 
 
     return(

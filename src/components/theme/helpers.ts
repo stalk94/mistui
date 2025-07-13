@@ -2,7 +2,7 @@ import { colord, extend } from 'colord';
 extend([a11yPlugin, mixPlugin]);
 import a11yPlugin from 'colord/plugins/a11y';
 import mixPlugin from "colord/plugins/mix";
-console.log(colord('rgb(79, 217, 233)'))
+
 /**
     color.lighten(0.2);        // Осветлить на 20%
     color.darken(0.2);         // Затемнить на 20%
@@ -15,7 +15,7 @@ console.log(colord('rgb(79, 217, 233)'))
     color.mix(color2)
 */
 
-type ClasVariants = 'input' | 'btn' | 'text';
+type ClasVariants = 'input' | 'btn' | 'text' | 'avatar';
 type BreacpointsVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xs';
 type Combo = {
     default: BreacpointsVariants,
@@ -45,6 +45,11 @@ export const mixerButtonBorderColor = (color: string, type?: 'hover' | 'selected
 
 
 export const fabrikSizeBreacpoints = (classKye: ClasVariants, config: Combo) => {
+    if(classKye === 'avatar') return Object.entries(config).map(([key, value])=> {
+        if (key === 'default') return `${value}`;
+        else return `${key}:${value}`;
+    }).join(' ');
+
     return Object.entries(config).map(([key, value])=> {
         if (key === 'default') return `${classKye}-${value}`;
         else return `${key}:${classKye}-${value}`;
@@ -59,4 +64,30 @@ export const generateSizes = (sizes) => {
     });
 
     return generate;
+}
+
+export function getContrastingColor(bgColor: string, dark: string, light: string) {
+    const contrastWithBlack = colord(bgColor).contrast(dark);
+    const contrastWithWhite = colord(bgColor).contrast(light);
+
+    return contrastWithBlack > contrastWithWhite ? dark : light;
+}
+
+
+export function deepMerge(target: any, source: any): any {
+    if (typeof target !== 'object' || typeof source !== 'object') {
+        return source;
+    }
+
+    const result = { ...target };
+
+    for (const key in source) {
+        if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+            result[key] = deepMerge(target[key], source[key]);
+        } else {
+            result[key] = source[key];
+        }
+    }
+
+    return result;
 }

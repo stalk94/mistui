@@ -43,12 +43,8 @@ export default function SliderInput({
 
     return (
         <FormWrapper
-            style={disableForm && { 
-                background: 'inherit', 
-                border: 'none', 
-                boxShadow: 'none' 
-            }}
             size={size}
+            disabledVisibility={disableForm}
             { ...props }
         >
             <style >

@@ -55,6 +55,9 @@ export function useCache<T>(value: T): [T, Dispatch<SetStateAction<T>>] {
     return [cache, setCache];
 }
 
+export function useConditionalRef<T extends HTMLElement>(uid?: string) {
+    return uid ? useRef<T>(null) : null;
+}
 
 export function useClickOutside(selectorsIgnore: string[], onClickOutside: ()=> void) {
     useEffect(() => {

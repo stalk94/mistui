@@ -74,7 +74,7 @@ export async function safeTw(classes: string[]) {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
 			classGroups: classes,
-			outputFile: 'src/generated/TailwindSafeClasses.tsx',
+			outputFile: 'src/TailwindSafeClasses.tsx',
 			componentName: 'TailwindSafeClasses'
 		})
 	});

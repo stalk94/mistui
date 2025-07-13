@@ -1,19 +1,23 @@
-import { forwardRef, useCallback, useMemo } from 'react';
-import type { ButtonProps } from './type';
+import { forwardRef, useCallback, useMemo, cloneElement } from 'react';
+import type { IconButtonProps } from './type';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
-import { createGradientStyle } from './helpers';
+import { createGradientStyle } from './helpers'
+import clsx from 'clsx';
 
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+
+const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Button(
     {
-        style = {},
+        icon,
         children,
+        style = {},
         size,
         variant,
         color,
         className,
         isSoft,
+        isRounded,
         isGradient,
         selected,
         shadow,
@@ -22,10 +26,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     ref
 ) {
     const { variants, autosizes, mixers, plugins, shadows } = useTheme();
-    const uid = useUids('button');
-    const getSize = size ? `btn-${size}` : autosizes.btn;
+    const uid = useUids('icon-button');
+    const getSize = (size && size !== 'auto') ? `btn-${size}` : autosizes.btn;
 
 
+    const mergedIcon = cloneElement((icon ?? children), {
+        className: clsx(
+            clsx((icon ?? children).props.className, 'h-[70%]')
+        ),
+    });
     const getGradient = useMemo(() => {
         if (!isGradient) return {};
         const inlneBg = style?.backgroundColor;
@@ -79,6 +88,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                             background: ${getColorHover('backgroundColor')};
                             borderColor: ${getColorHover('border')};
                             color: ${getColorHover('color')};
+                            opacity: 0.6;
                         }
                     `}
                 </style>
@@ -97,6 +107,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     btn 
                     whitespace-nowrap
                     ${variant === 'ghost' && 'btn-ghost'}
+                    ${isRounded ? 'btn-circle' : 'btn-square'}
                     ${variant ? `btn-${variant}` : ''} 
                     ${color ? `btn-${color}` : ''} 
                     ${getSize}
@@ -105,13 +116,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     uppercase
                     transition-transform 
                     duration-200 
-                    hover:scale-97
                     ${selected && 'bg-[var(--selected)] border-[var(--selected)] text-white'}
                     ${className ?? ''}
                 `}
                 { ...props }
             >
-                { children }
+                { mergedIcon }
             </button>
 
         </>
@@ -119,4 +129,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 });
 
 
-export default Button;
+export default IconButton;

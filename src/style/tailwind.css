@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Lato:wght@400;700&family=Montserrat:wght@400;600&family=Source+Sans+3:wght@400;700&family=Merriweather:wght@400;700&family=Raleway:wght@400;600&display=swap');
 @import "tailwindcss";
-@plugin "daisyui";
 
 @tailwind utilities;
+@plugin "daisyui";
+
 
  
 @plugin "daisyui/theme" {
@@ -28,6 +29,7 @@
     --color-base-200: rgb(45, 45, 45);
     --color-base-300: rgb(58, 58, 58);
     --color-base-400: rgb(50, 52, 54);
+    --color-neutral-500: rgb(43, 43, 43);
 }
 
 
@@ -92,6 +94,8 @@
 	width: 100%;
 	padding-inline: calc(0.25rem /* 4px */ * 3);
 }
+
+
 
 
 /* fonts */

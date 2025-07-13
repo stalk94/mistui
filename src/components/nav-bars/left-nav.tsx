@@ -99,8 +99,8 @@ export function SidebarMenu({
 
             {/* Меню */}
             <ul
-                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                transformOrigin={{ vertical: "center", horizontal: "left" }}
+                //anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                //transformOrigin={{ vertical: "center", horizontal: "left" }}
             >
                 { currentChildren.map((child, index)=> (
                     <li
@@ -169,7 +169,7 @@ export default function BaseLeftSideBar({
                 overflowY: 'auto',
                 justifyContent: 'space-between',
                 border: `1px solid ${colord('#000').alpha(0.25).toRgbString()}`,
-                backgroundColor: theme.palette?.toolNavBar?.main
+                backgroundColor: 'rgb(50, 50, 50)'
             }}
         >
             <SidebarMenu
@@ -186,9 +186,9 @@ export default function BaseLeftSideBar({
                 <SidebarMenu
                     collapsed={collapsed}
                     style={{
-                        borderTop: `1px dotted ${theme.palette.divider}`,
+                        //borderTop: `1px dotted ${theme.palette.divider}`,
                         backdropFilter: "blur(14px)",
-                        backgroundColor: darken(theme.palette.toolNavBar.main, 0.1),
+                        //backgroundColor: darken(theme.palette.toolNavBar.main, 0.1),
                     }}
                     items={end}
                     onChange={onChange}

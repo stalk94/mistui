@@ -1,6 +1,4 @@
 import React from 'react';
-import Alert from '@mui/material/Alert';
-import { Stack } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 
 
@@ -18,10 +16,33 @@ export type AlertManagerProps = {
     /** задержка перед удалением алерта в ms по умолчанию `6000 ms` */
     delDelay?: number
     /** по умолчанию `top-right` */
-    variant?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+    position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+    variant?: 'dash' | 'outline'
+    isSoft?: boolean
 }
 
-
+const icons = {
+    error: ()=> (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+    ),
+    success: ()=> (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+    ),
+    warning: ()=> (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+    ),
+    info: ()=> (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="h-6 w-6 shrink-0 stroke-current">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+    )
+}
 const AlertContext = React.createContext<AlertContextType | undefined>(undefined);
 export const useAlert =()=> {
     const context = React.useContext(AlertContext);
@@ -34,9 +55,9 @@ export const useAlert =()=> {
 /**
  *  провайдер для подключения всплывающих ошибок
  */
-export function AlertProvider({ children, delDelay, variant }: AlertManagerProps) {
+export function AlertProvider({ children, delDelay, position, variant, isSoft }: AlertManagerProps) {
     const [stack, setStack] = React.useState<AlertItem[]>([]);
-    const isMounted = React.useRef(false);
+    const curVariant = variant ? `alert-${variant}` : '';
     const bgColors = {
         error: "rgba(211, 47, 47, 0.03)",
         warning: "rgba(245, 124, 0, 0.02)",
@@ -45,16 +66,16 @@ export function AlertProvider({ children, delDelay, variant }: AlertManagerProps
     }
 
 
-    const usePosition =()=> {
-        if(variant === 'bottom-left') return {
+    const getPosition = React.useMemo(()=> {
+        if(position === 'bottom-left') return {
             bottom: 0,
             left: 0
         }
-        else if(variant === 'bottom-right') return {
+        else if(position === 'bottom-right') return {
             bottom: 0,
             right: 0
         }
-        else if(variant === 'top-left') return {
+        else if(position === 'top-left') return {
             top: 0,
             left: 0
         }
@@ -62,18 +83,7 @@ export function AlertProvider({ children, delDelay, variant }: AlertManagerProps
             top: 0,
             right: 0
         }
-    }
-    const getStyle =(type:'error'|'info'|'success'|'warning')=> ({
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: bgColors[type],
-        "& .MuiAlert-icon": type === "error" ? {
-            alignSelf: "center",
-            animation: "blink 1s infinite"
-        } : {
-            alignSelf: "center"
-        }
-    });
+    }, [position]);
     const addAlert =(type:'error'|'info'|'success'|'warning', message:string|React.ReactNode)=> {
         const id = Date.now();
         setStack((prevStack) => [...prevStack, { id, type, message }]);
@@ -84,29 +94,27 @@ export function AlertProvider({ children, delDelay, variant }: AlertManagerProps
         }, (delDelay ?? 6000));
     }
     React.useEffect(()=> {
-        if(isMounted.current && stack.length > 4) {
+        if (stack.length > 4) {
             setStack((old)=> {
                 old.splice(0, 1);
                 return [...old];
             });
-        }
-        else if(!isMounted.current) {
-            isMounted.current = true;
         }
     }, [stack]);
     
 
     return (
         <AlertContext.Provider value={{ addAlert }}>
-            <div style={{
+            <div 
+                style={{
                     position: 'fixed',
-                    zIndex: 999,
+                    zIndex: 99999,
                     maxWidth: '25%',
                     margin: '1%',
-                    ...usePosition()
+                    ...getPosition
                 }}
             >
-                <Stack spacing={1}>
+                <div className="join join-vertical">
                     <AnimatePresence>
                         { stack.map(({ id, type, message })=> (
                             <motion.div
@@ -116,14 +124,29 @@ export function AlertProvider({ children, delDelay, variant }: AlertManagerProps
                                 exit={{ opacity: 0, x: 50, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <Alert variant="outlined" severity={type} sx={getStyle(type)}>
+                                <div 
+                                    role="alert" 
+                                    className={`
+                                        alert 
+                                        alert-${type}
+                                        ${curVariant}
+                                        ${isSoft && 'alert-soft'}
+                                    `}
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        backgroundColor: bgColors[type]
+                                    }}
+                                >
+                                    { icons[type]() }
                                     { message }
-                                </Alert>
+                                </div>
                             </motion.div>
                         ))}
                     </AnimatePresence>
-                 </Stack>
+                 </div>
             </div>
+            
             { children }
         </AlertContext.Provider>
     );

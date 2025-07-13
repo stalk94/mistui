@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Box, ButtonGroup, Typography, IconButton, SxProps } from '@mui/material';
-import { MediaImage } from '../carts/atomize';
-import Card from '../carts/base';
+import { MediaImage } from '../cards/atomize';
+import Card from '../cards/base';
 import { FiberManualRecord, AdjustOutlined } from '@mui/icons-material';
 import { Faker, ru, en } from '@faker-js/faker';
 import { MarqueeText, MarqueeAdaptive } from '../text/@deprecate/marque';

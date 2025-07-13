@@ -16,8 +16,7 @@ import type { SideBarAndToolPanelProps } from './types';
  */
 export default function SideBarAndToolPanel({ 
     schemaNavBar, 
-    center, 
-    start, 
+    top, 
     end, 
     children, 
     onChangeNavigation, 
@@ -40,7 +39,8 @@ export default function SideBarAndToolPanel({
 
 
     return(
-        <section className="scrolable"
+        <aside 
+            className="scrolable"
             style={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -69,7 +69,7 @@ export default function SideBarAndToolPanel({
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
-                        backgroundColor: useBackgroundColor(),
+                        //backgroundColor: useBackgroundColor(),
                         //border: `1px solid ${darken(theme.palette.divider, 0.3)}`,
                         borderLeft: 'none',
                         boxShadow: "inset 3px 0 5px rgba(0, 0, 0, 0.15)",
@@ -85,10 +85,10 @@ export default function SideBarAndToolPanel({
                             top: 0,
                             zIndex: 10,
                             textAlign: 'center',
-                            background: useTopOrEndColor('start'),
+                            //background: useTopOrEndColor('start'),
                         }}
                     >
-                        { center }
+                        { top }
                     </div>
 
                     { children }
@@ -101,13 +101,13 @@ export default function SideBarAndToolPanel({
                             zIndex: 10,
                             marginTop: 'auto',
                             textAlign: 'center',
-                            background: useTopOrEndColor('end'),
+                            //background: useTopOrEndColor('end'),
                         }}
                     >
                         { end }
                     </div>
                 </div>
             }           
-        </section>
+        </aside>
     );
 }

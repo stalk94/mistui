@@ -5,41 +5,52 @@ import { useCache } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import { useCallback } from 'react';
+import { colord } from 'colord';
 
 
+
+// ! реализовать отдельную кнопку
 export default function ToggleButtonGroup({
     items,
     value,
     onChange,
     size,
-    color,
     onlyId,
+    color,
     variant,
+    isVertiacal,
+    isSoft,
     ...props
 }: ToggleButtonGroupProps) {
-    const { styles, mixers } = useTheme();
+    const { plugins, variants, mixers } = useTheme();
     const uid = useUids('button-group');
     const [select, setSelect] = useCache(value);
+
 
     const handleChange = (current: string | number | any) => {
         setSelect(current);
         const cur = current?.id !== undefined ? current?.id : current;
         onChange?.(onlyId ? cur : current);
     }
-    const getColorHover = useCallback((key: 'backgroundColor' | 'color') => {
-        const inlneBg = props?.style?.background ?? props?.style?.backgroundColor;
+    const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
+        const inlneBg = props?.style?.backgroundColor;
+        const inlneBorder = props?.style?.borderColor;
         const inlneTxt = props?.style?.color;
-        const curVariant = styles.button[color];
+        const curVariant = variants[color];
 
         if (key === 'backgroundColor') return (inlneBg
             ? mixers.button.background(inlneBg, 'hover')
             : mixers.button.background(curVariant, 'hover')
         );
-        else return (inlneTxt
-            ? mixers.button.color(inlneTxt, 'hover')
-            : mixers.button.color(curVariant, 'hover')
+        else if (key === 'border') return (inlneBg
+            ? mixers.button.border(inlneBorder, 'hover')
+            : mixers.button.border(curVariant, 'hover')
         );
-    }, [props?.style, color]);
+        else return (inlneTxt
+            ? colord(inlneTxt).alpha(0.6).toRgbString()
+            : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
+        );
+    }, [props.style, color, variant, isSoft]);
     
 
     return (
@@ -57,17 +68,27 @@ export default function ToggleButtonGroup({
                 `}
             </style>
 
-            <div className="join flex-wrap w-full gap-y-[1px]">
+            <div 
+                className={`
+                    join 
+                    flex-wrap
+                    w-full 
+                    gap-[2px]
+                    ${isVertiacal && 'join-vertical'}
+                `}
+            >
                 {items.map((opt, index) => (
                     <Button
                         data-id={uid}
                         key={opt?.id ?? index}
                         size={size}
+                        color={color}
+                        isSoft={isSoft}
                         className={`
                             join-item 
                             flex-auto
-                            ${select === opt && 'btn-select'}
                         `}
+                        selected={select === opt}
                         variant={variant}
                         onClick={() => handleChange(opt)}
                         children={

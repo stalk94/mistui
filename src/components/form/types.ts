@@ -3,7 +3,7 @@ import type {
     SwitchBoxInputProps, FileInputProps, AutoInputProps, CheckBoxInputProps
 } from '../inputs';
 import type { ToggleButtonGroupProps, FilterToggleButtonGroupProps } from '../buttons';
-import type { DividerProps } from '../divider';
+import type { DividerProps } from '../utils/divider';
 
 
 export type TypeSchema = 'text' | 'textArea' | 'number' | 'date' | 'color' | 'time' | 'slider' | 'file' | 'radio'

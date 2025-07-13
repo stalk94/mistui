@@ -3,8 +3,9 @@ import  type { Theme } from './types';
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
 import mixPlugin from "colord/plugins/mix";
-extend([a11yPlugin, mixPlugin]);
-import { mixerButtonColor, generateSizes, mixerButtonBorderColor } from './helpers';
+import namesPlugin from "colord/plugins/names";
+extend([namesPlugin, a11yPlugin, mixPlugin]);
+import { mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrastingColor } from './helpers';
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -30,12 +31,13 @@ const COLORS = {
 }
 const variantsColor = {
     neutral: 'rgba(43, 43, 43)',
-    primary: 'rgb(79, 217, 233)',
-    secondary: '',
-    error: '',
-    success: '',
-    warning: '',
-    info: ''
+    primary: 'rgb(25, 25, 26)',
+    secondary: 'rgb(244, 48, 152)',
+    accent: 'rgb(0, 211, 187)',
+    error: 'rgb(255, 98, 125)',
+    success: 'rgb(0, 211, 144)',
+    warning: 'rgb(252, 183, 0)',
+    info: 'rgb(0, 186, 254)'
 }
 const sizes = {
     text: {
@@ -65,6 +67,14 @@ const sizes = {
         md: 'md',
         lg: 'lg', 
         xl: 'lg'
+    },
+    avatar: {
+        default: 'w-12',
+        xs: 'w-10',
+        sm: 'w-16',
+        md: 'w-20',
+        lg: 'w-20',
+        xl: 'w-32'
     }
 }
 
@@ -77,13 +87,14 @@ const defaultTheme = {
     enableEditorMod: true,
     autosizes: generateSizes(sizes),
     colors: COLORS,
+    variants: variantsColor ,
     shadows: {
-        xs: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.15)',
-        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.2)',
-        'xxl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+        xs: '0 1px 2px 1px rgba(1, 1, 1, 0.1)',
+        sm: '0 2px 3px 1px rgba(1, 1, 1, 0.1)',
+        md: '0 2px 3px 1px rgba(1, 1, 1, 0.2)',
+        lg: '0 3px 4px 1px rgba(1, 1, 1, 0.15)',
+        xl: '0 10px 15px -5px rgba(1, 1, 1, 0.2)',
+        xxl: '0 10px 15px -5px rgba(1, 1, 1, 0.25)'
     },
     styles: {
         inputLabelTop: <CSSProperties> {
@@ -125,13 +136,7 @@ const defaultTheme = {
             backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
         },
         button: {
-            neutral: 'rgb(43, 43, 43)',
-            primary: 'rgb(79, 217, 233)',
-            secondary: '',
-            error: '',
-            success: '',
-            warning: '',
-            info: ''
+
         }
     },
 
@@ -139,15 +144,16 @@ const defaultTheme = {
         button: {
             color: (variant?: Varinats, type?: 'hover' | 'selected') =>
                 colord(mixerButtonColor(variant, type))
-                    .grayscale()
+                    .alpha(0.6)
                     .toRgbString(),
             background: (variant?: Varinats, type?: 'hover' | 'selected') => mixerButtonColor(variant, type),
             border: (variant?: Varinats, type?: 'hover' | 'selected') => mixerButtonBorderColor(variant, type),
         }
     },
-    colorPlugins: {
+    plugins: {
         /* inversion color */
-        invert: (color: string)=> colord(color).invert().toRgbString()
+        invert: (color: string)=> colord(color).invert().toRgbString(),
+        contrast: (color: string)=> getContrastingColor(color, COLORS.black, COLORS.white)
     }
 }
 

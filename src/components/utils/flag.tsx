@@ -1,13 +1,5 @@
 import React from 'react';
-
-type FlagProps = {
-    code: string
-    size?: {
-        width: number
-        height: number
-    }
-    margin?: string
-}
+import type { FlagProps } from './types';
 
 const imgNot = 'https://static.thenounproject.com/png/3405765-200.png';
 const countryCodes = {

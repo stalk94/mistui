@@ -11,7 +11,7 @@ export default function CheckBoxInput({
     color, 
     value, 
     type, 
-    style,
+    style = {},
     className,
     ...props 
 }: CheckBoxInputProps) {
@@ -35,7 +35,6 @@ export default function CheckBoxInput({
         auto: 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2'
     }
      
-
 
     return (
         <FormWrapper 

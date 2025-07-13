@@ -9,6 +9,7 @@ export default function CustomBar({
     start,
     end,
     style,
+    className,
     ...props
 }: BarProps) {
     const isVertical = (orientation === 'vertical' || orientation === undefined) ? true : false;
@@ -19,14 +20,14 @@ export default function CustomBar({
 
     return (
         <section 
-            className='scrolable'
+            className={`scrolable` + (className ? className : '')}
             {...props}
             style={{
                 display: 'flex',
                 flexDirection: isVertical ? 'column' : 'row',
                 width: '100%',
                 height: '100%',
-                border: `1px solid ${styles.input.borderColor}`,
+                //border: `1px solid ${styles.input.borderColor}`,
                 overflowY: isVertical ? 'auto' : 'hidden',
                 overflowX: isVertical ? 'hidden' : 'auto',
                 textAlign: 'center',
@@ -44,7 +45,7 @@ export default function CustomBar({
                 { start }
             </div>
 
-            {children}
+            { children }
 
             {/* нижняя панель инструментов рабочей области */}
             <div

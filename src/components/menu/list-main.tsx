@@ -1,5 +1,5 @@
 import React from 'react';
-import Divider from '../divider';
+import Divider from '../utils/divider';
 
 
 export default function MainList({

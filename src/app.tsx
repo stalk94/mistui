@@ -3,11 +3,12 @@ import 'primeicons/primeicons.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 //import { SnackbarProvider } from 'notistack';
-//import { AlertProvider } from './index';
+import { AlertProvider } from './components/alert';
 import SandBox from './editor';
 import SafeTailwindClasses from './TailwindSafeClasses';
 import { ThemeProvider } from './components/theme';
 import './style/index.css';
+import './style/animate.css';
 import "./style/tailwind.css";
 
 
@@ -15,8 +16,10 @@ import "./style/tailwind.css";
 const App = () => {
     return (
         <ThemeProvider>
-            <SandBox />
-            <SafeTailwindClasses />
+            <AlertProvider variant='outline'>
+                <SandBox />
+                <SafeTailwindClasses />
+            </AlertProvider>
         </ThemeProvider>
     );
 }

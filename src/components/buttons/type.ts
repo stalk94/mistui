@@ -11,10 +11,16 @@ type ItemSelectFilter = {
 
 export type ButtonProps = Props & {
     children: string | React.ReactElement
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    title?: string
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     variant?: 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
     isSoft?: boolean
+    isGradient?: any
+    selected?: boolean
+    disabled?: boolean
+    'aria-label'?: string
 }
 
 export type ToggleButtonGroupProps = ButtonProps & {
@@ -24,6 +30,7 @@ export type ToggleButtonGroupProps = ButtonProps & {
     onlyId?: boolean
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
+    isVertiacal?: boolean
 }
 
 export type FilterToggleButtonGroupProps = ButtonProps & {
@@ -35,4 +42,20 @@ export type FilterToggleButtonGroupProps = ButtonProps & {
     value?: string | number
      /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
+}
+
+export type IconButtonProps =  Props & {
+    icon: React.ReactNode
+    children?: React.ReactNode
+    title?: string
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    variant?: 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    isSoft?: boolean
+    isRounded?: boolean
+    isGradient?: any
+    disabled?: boolean
+    selected?: boolean
+    'aria-label'?: string
 }

@@ -27,9 +27,9 @@ export type { BreadcrumbsNavProps as BreadcrumbsProps } from './components/bread
 // Акордеон нормальный
 export { default as Accordion } from './components/acordeon';
 
-// иконки флажки
-export { default as Flag } from './components/tools/flag';
-
+// иконки флажки разделители и прочее
+export { default as Flag } from './components/utils/flag';
+export { default as Divider } from './components/utils/divider';
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -61,5 +61,5 @@ export { default as HoverPopover } from './components/popup/HoverPopover';
 export type { HoverPopoverProps } from './components/popup/HoverPopover';
 
 // список
-export { default as List } from './components/list/base';
-export type { ListCustomProps } from './components/list/base';
+export { default as List } from './components/menu/base';
+export type { ListCustomProps } from './components/menu/base';

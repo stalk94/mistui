@@ -12,6 +12,7 @@ export type BarProps = {
     children?: React.ReactNode | string
     start?: React.ReactNode | string
     end?: React.ReactNode | string
+    className?: HTMLDivElement['className']
 }
 
 
@@ -44,7 +45,7 @@ export type SideBarAndToolPanelProps = {
     /** ⬇️ Нижняя панелька для дополнительных элементов(tool) */
     end?: React.ReactNode
     /** центральные элементы */
-    center?: React.ReactNode
+    top?: React.ReactNode
     /** ⬆️ Верхняя панелька для дополнительных элементов(tool) */
     start?: React.ReactNode
     /** 💻 Контент рабочей области(правая панель) */
