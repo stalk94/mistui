@@ -34,6 +34,24 @@
 
 
 
+.tabs-lift > .tab {
+    background-image: none;
+}
+.tabs-lift > .tab::before {
+    background-image: none;
+}
+
+.tabs-lift > input:checked {
+    background-color: rgba(1, 1, 1, 0.1);
+}
+.tabs-lift > input.tab::before {
+    
+}
+.tabs-box {
+    box-shadow: none;
+}
+
+
 .btn-select {
     background-color: var(--color-neutral-500);
     color: var(--text-select-content)

@@ -8,8 +8,7 @@ import { useTheme } from '../theme';
 /** Один файл */
 export default function FileInput({ 
     onChange, 
-    size, 
-    color, 
+    size,  
     labelLeft, 
     placeholder, 
     accept, 
@@ -17,6 +16,7 @@ export default function FileInput({
     onError, 
     styleInput,
     style,
+    color = 'primary',
     ...props 
 }: FileInputProps) {
     const { styles } = useTheme();
@@ -66,6 +66,7 @@ export default function FileInput({
             size={size}
             styleInput={styleInput}
             style={style}
+            color={color}
             labelLeft={
                 <button
                     type='button'

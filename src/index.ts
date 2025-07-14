@@ -31,6 +31,9 @@ export { default as Accordion } from './components/acordeon';
 export { default as Flag } from './components/utils/flag';
 export { default as Divider } from './components/utils/divider';
 
+// всплываюшие информационные окна
+export { AlertProvider, useAlert } from './components/alert';
+export type { AlertManagerProps } from './components/alert';
 
 ///////////////////////////////////////////////////////////////////////////
 //    на переработку
@@ -48,9 +51,6 @@ export { default as AppBar } from './components/app-bar';
 // слоты appBar
 export { Start, LinearNavigation, MobailBurger } from './components/app-bar';
 
-// всплываюшие информационные окна
-export { AlertProvider, useAlert } from './components/alert';
-export type { AlertManagerProps } from './components/alert';
 
 // панель для инструментов
 export { default as Bar } from './components/nav-bars/bar';
@@ -61,5 +61,3 @@ export { default as HoverPopover } from './components/popup/HoverPopover';
 export type { HoverPopoverProps } from './components/popup/HoverPopover';
 
 // список
-export { default as List } from './components/menu/base';
-export type { ListCustomProps } from './components/menu/base';

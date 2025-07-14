@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 
-
 type AlertItem = {
     id: number;
     type: 'error' | 'info' | 'success' | 'warning';
@@ -20,6 +19,7 @@ export type AlertManagerProps = {
     variant?: 'dash' | 'outline'
     isSoft?: boolean
 }
+
 
 const icons = {
     error: ()=> (

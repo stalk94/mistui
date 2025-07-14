@@ -2,6 +2,7 @@ import type { SliderInputProps } from './type';
 import * as Slider from '@radix-ui/react-slider';
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
+import { colord } from 'colord';
 
 
 export default function SliderInput({
@@ -9,7 +10,7 @@ export default function SliderInput({
     onChangeEnd,
     disableForm,
     size,
-    color,
+    color = 'primary',
     value,
     min,
     max,
@@ -19,11 +20,12 @@ export default function SliderInput({
     styleThumb,
     ...props
 }: SliderInputProps) {
-    const { styles } = useTheme();
+    const { styles, variants } = useTheme();
     const isValid = value !== undefined && (typeof value === 'number' && !isNaN(value));
     const numericValue = Array.isArray(value) ? value.join(',') : value;
     const sliderKey = `${numericValue}`; 
-    //const thSizes = { w: 1, h: 1 };
+ 
+
     const sizeThumb = {
         xs: 'w-4 h-2',
         sm: 'w-4 h-3',
@@ -32,7 +34,6 @@ export default function SliderInput({
         xl: 'w-6 h-4',
         auto: 'w-4 h-3 sm:w-4 sm:h-3 md:w-4 md:h-3 lg:w-6 lg:h-4 xl:w-6 xl:h-4'
     }
-
     const useChange = (newValue: number[], clb?: (v: number | number[]) => void) => {
         if (!clb) return;
 
@@ -45,6 +46,7 @@ export default function SliderInput({
         <FormWrapper
             size={size}
             disabledVisibility={disableForm}
+            color={color}
             { ...props }
         >
             <style >
@@ -102,8 +104,10 @@ export default function SliderInput({
                 <Slider.Thumb 
                     data-tip={ Array.isArray(value) ? value[0] : (value ?? 0) }
                     style={{
-                        background: (styleThumb?.background ?? styles?.input?.sliderThumbBackgroundColor),
-                        borderColor: (styleThumb?.borderColor ?? styles?.input?.sliderThumbBorderColor)
+                        border: 0,
+                        background: (variants[color] ?? color) 
+                            ?? (styleThumb?.background 
+                            ?? styles?.input?.sliderThumbBackgroundColor),
                     }}
                     className={`
                         block 

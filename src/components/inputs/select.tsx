@@ -13,7 +13,8 @@ export default function Select({
     size, 
     value,
     required,
-    style,
+    style = {},
+    color = 'primary',
     ...props 
 }: SelectInputProps) {
     const { styles } = useTheme();
@@ -35,6 +36,7 @@ export default function Select({
         <FormWrapper
             size={size}
             data-select-root
+            color={color}
             style={{ position: 'relative', ...style }}
             labelRight={ 
                 <button className='cursor-pointer'

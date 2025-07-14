@@ -1,9 +1,11 @@
-import React, { forwardRef, useRef } from 'react';
+import React, { forwardRef, useMemo, useRef } from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
 import { useClientValidity, useCache } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import type { BaseProps } from './type';
+
+
 
 
 const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
@@ -12,7 +14,8 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
         type,
         placeholder,
         size,
-        colorBorder,
+        color = 'primary',
+        variant,
         labelLeft,
         labelTop,
         labelRight,
@@ -20,21 +23,26 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
         onChange,
         value,
         required,
-        styleInput,
         className,
         ...props
     },
     ref
 ) {
     const uid = useUids(type);
-    const { styles } = useTheme();
+    const { styles, variants } = useTheme();
     const [val, setVal] = useCache(value);
 
     const internalRef = useRef<HTMLInputElement>(null);
     const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
     const isInvalid = useClientValidity(inputRef);
 
+    const focusWithinColor = useMemo(() => {
+        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
 
+        return colorVarint;
+    }, [color, style]);
+
+    
     const handle = (newValue: string) => {
         setVal(newValue);
         onChange?.(newValue);
@@ -48,6 +56,9 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                     input[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
+                    .input-focus:focus-within {
+                        outline-color: ${focusWithinColor};
+                    }
                 `}
             </style>
             
@@ -57,12 +68,12 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                 labelRight={labelRight}
                 labelTop={labelTop}
                 size={size}
-                colorBorder={colorBorder}
+                color={color}
                 validator={validator}
                 required={required}
                 style={style}
-                styleInput={styleInput}
                 className={className}
+                variant={variant}
             >
                 <input
                     ref={inputRef}

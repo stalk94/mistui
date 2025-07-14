@@ -13,7 +13,7 @@ export default function RadioInput({
     styleThumb,
     ...props 
 }: RadioInputProps) {
-    const { styles } = useTheme();
+    const { styles, variants } = useTheme();
     const radioSize = {
         xs: 'w-4 h-4',
         sm: 'w-5 h-5',
@@ -33,7 +33,11 @@ export default function RadioInput({
             <style>
                 {`
                     .radio::before {
-                        background: ${styleThumb?.thumbColor ?? styles.input.radioThumbColor};    
+                        background: ${
+                            (variants[color] ?? color) 
+                                ?? styleThumb?.thumbColor 
+                                ?? styles.input.radioThumbColor
+                        };    
                         opacity: ${!value ? 0 : 100 };
                     }
                 `}
@@ -44,15 +48,13 @@ export default function RadioInput({
                 onChange={(e)=> onChange?.(e.target.checked)}
                 checked={value !== undefined && value} 
                 style={{
-                    color: styles?.input?.fontColor, 
                     borderStyle: (props?.style?.borderStyle ?? styles?.input?.borderStyle),
                     borderWidth: (props?.style?.borderWidth ?? styles?.input?.borderWidth),
-                    borderColor: (props?.style?.borderColor ?? styles?.input?.borderColor),
+                    borderColor: (variants[color] ?? color) ?? (props?.style?.borderColor ?? styles?.input?.borderColor),
                     backgroundColor: (props?.style?.backgroundColor ?? styles?.input?.checkBoxBackground),
                 }}
                 className={`
                     radio
-                    radio-${color}
                     ${radioSize[size] ?? radioSize.auto}
                 `}
             />

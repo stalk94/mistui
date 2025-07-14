@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { HomeIcon } from '@heroicons/react/24/solid';
+import { useTheme } from './theme';
+
 
 ////////////////////////////////////////////////////////////////////////////////
-type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className'>;
 export type Breadcrumb = {
     label: string;
     href: string;
@@ -65,8 +66,11 @@ export default function BreadcrumbsNav({
     nameMap,
     style
 }: BreadcrumbsNavProps) {
+    const { autosizes } = useTheme();
     const sizes = size ? `text-${size}`: 'text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl';
-    const sizesIcon = size ? {xs:'h-4', sm:'h-4', md:'h-5', lg:'h-6', xl:'h-6'}: 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6';
+    const sizesIcon = size 
+        ? { xs:'h-4', sm:'h-4', md:'h-5', lg:'h-6', xl:'h-6' }
+        : 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6';
 
     const crumbs = useBreadcrumbs(pathname, {
         nameMap,

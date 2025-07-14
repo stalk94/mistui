@@ -20,6 +20,7 @@ export default function ToggleButtonGroup({
     variant,
     isVertiacal,
     isSoft,
+    styleButton,
     ...props
 }: ToggleButtonGroupProps) {
     const { plugins, variants, mixers } = useTheme();

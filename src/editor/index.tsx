@@ -47,7 +47,6 @@ export default function Sand({ }) {
                     {variants &&
                         <GroupButton
                             size='sm'
-                            color='primary'
                             isVertiacal
                             items={variants}
                             onChange={(v)=> store.preview.set(v)}

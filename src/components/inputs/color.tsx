@@ -64,8 +64,8 @@ export default function SelectColor({
     size, 
     value,
     required,
-    color,
-    styleInput,
+    style,
+    color = 'primary',
     ...props 
 }: SelectInputProps) {
     const { styles } = useTheme();
@@ -95,10 +95,9 @@ export default function SelectColor({
     return (
         <FormWrapper
             size={size}
-            colorBorder={color}
             data-color-root
             style={{ position: 'relative' }}
-            styleInput={styleInput}
+            color={color}
             labelRight={ 
                 <button className='cursor-pointer'
                     onClick={()=> setOpen(true)}
@@ -118,8 +117,7 @@ export default function SelectColor({
             <Inputs
                 styleInput={{
                     color: styles?.input?.fontColor,
-                    placeholderColor: styles?.input?.placeholderColor,
-                    ...styleInput,
+                    placeholderColor: styles?.input?.placeholderColor
                 }}
                 input={input}
                 updateComponent={handleChangeInputs}

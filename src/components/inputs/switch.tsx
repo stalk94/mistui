@@ -4,6 +4,7 @@ import { FaCheck } from "react-icons/fa";
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
 import { useCache } from '../hooks';
+import { colord } from 'colord';
 
 
 export default function SwitchBox({ 
@@ -12,9 +13,10 @@ export default function SwitchBox({
     value, 
     style = {},
     styleThumb,
+    color,
     ...props 
 }: SwitchBoxInputProps) {
-    const { styles } = useTheme();
+    const { styles, variants } = useTheme();
     const [chek, setChek] = useCache(value);
     const { backgroundColor, borderColor, ...styleRest } = style;
     
@@ -71,7 +73,9 @@ export default function SwitchBox({
                     setChek(v);
                 }}
                 style={{
-                    borderColor: (borderColor ?? styles?.input?.switchBorderColor),
+                    borderColor: (variants[color] ?? color) 
+                        ?? borderColor 
+                        ?? styles?.input?.switchBorderColor,
                     backgroundColor: (backgroundColor ?? styles?.input?.checkBoxBackground),
                 }}
                 className={`
@@ -82,7 +86,7 @@ export default function SwitchBox({
                     ${sizeClass[size] ?? autoSwitchSize}
                     transition-all
                     duration-200
-                    ${chek && 'brightness-300'}
+                    ${!chek && 'opacity-70'}
                 `}
             >
                 <Switch.Thumb
@@ -94,8 +98,11 @@ export default function SwitchBox({
                 >
                     <div 
                         style={{
-                            borderColor: (styleThumb?.borderColor ?? styles?.input?.switchThumbBorderColor),
-                            background: (styleThumb?.backgroundColor ?? styles?.input?.switchThumbBackgroundColor),
+                            border: 0,
+                            backgroundColor: (variants[color] ?? color) 
+                                ?? (styleThumb?.backgroundColor 
+                                ?? styles?.input?.switchThumbBackgroundColor
+                            ),
                             borderWidth: 1
                         }}
                         className={`

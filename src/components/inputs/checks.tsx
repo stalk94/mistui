@@ -8,14 +8,14 @@ import clsx from 'clsx';
 export default function CheckBoxInput({ 
     onChange, 
     size, 
-    color, 
+    color = 'primary', 
     value, 
     type, 
     style = {},
     className,
     ...props 
 }: CheckBoxInputProps) {
-    const { styles } = useTheme();
+    const { styles, variants } = useTheme();
     const { backgroundColor, ...styleRest } = style;
 
     const sizes = {
@@ -34,7 +34,7 @@ export default function CheckBoxInput({
         xl: 'top-2',
         auto: 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2'
     }
-     
+    
 
     return (
         <FormWrapper 
@@ -52,7 +52,7 @@ export default function CheckBoxInput({
                         color: styles?.input?.fontColor, 
                         borderStyle: (style?.borderStyle ?? styles?.input?.borderStyle),
                         borderWidth: styles?.input?.borderWidth,
-                        borderColor: (style?.borderColor ?? styles?.input?.borderColor),
+                        borderColor: (variants[color] ?? color) ?? (style?.borderColor ?? styles?.input?.borderColor),
                         backgroundColor: (style?.backgroundColor ?? styles?.input?.checkBoxBackground),
                     }}
                     className={clsx(`
@@ -83,7 +83,11 @@ export default function CheckBoxInput({
                         transition-all duration-200
                     `}
                     fill="none"
-                    stroke="currentColor"
+                    stroke={(variants[color] ?? color) 
+                        ?? (style?.backgroundColor 
+                            ?? styles?.input?.checkBoxBackground) 
+                                ?? 'white'
+                    }
                     strokeWidth="3"
                     viewBox="0 0 24 24"
                 >

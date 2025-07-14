@@ -27,6 +27,7 @@ export type LabelProps = InputStyle & {
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
     colorBorder?: string
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     validator?: string | React.ReactElement | boolean
     /** style прокидывается на саму обертку (section) */
@@ -78,7 +79,7 @@ export type BaseProps = InputStyle & {
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
     validator?: string | React.ReactElement | boolean
-    colorBorder?: string
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     /** tooltip текст подсказка при наведении */
     title?: string
     value?: string | number

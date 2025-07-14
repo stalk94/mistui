@@ -1,27 +1,34 @@
 import { useTheme } from './theme';
 
-type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className'>;
 export type AvatarProps = {
     children?: string | React.ReactElement
     size?: 'xs' | 'sm' | 'md' | 'lg'
     style?: React.CSSProperties
-    className?: Props['className']
+    className?: React.HTMLAttributes<HTMLDivElement>['className']
     src?: string
     alt?: string
 }
-type ItemAvatarGroup = Omit<AvatarProps, 'size' | 'className' | 'style'>;
 export type AvatarsGroupProps = {
     size?: 'xs' | 'sm' | 'md' | 'lg'
     style?: React.CSSProperties
-    className?: Props['className']
-    items: ItemAvatarGroup[]
+    className?: React.HTMLAttributes<HTMLDivElement>['className']
+    items: Omit<AvatarProps, 'size' | 'className' | 'style'>[]
 }
+
 
 const sizeTable = {
     xs: 'w-8',
     sm: 'w-16',
     md: 'w-20',
+    lg: 'w-24',
     xl: 'w-32'
+}
+const sizeTableText = {
+    xs: 'text-lg',
+    sm: 'text-xl',
+    md: 'text-4xl',
+    lg: 'text-4xl',
+    xl: 'text-4xl'
 }
 
 
@@ -35,7 +42,8 @@ export default function Avatar({
 }: AvatarProps) {
     const { styles, autosizes } = useTheme();
     const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.avatar;
-
+    const sizeText =  sizeTableText[size] ?? 'text-lg sm:text-xl md:text-4xl lg:text-4xl xl:text-4xl';
+    
 
     return (
         <div
@@ -56,7 +64,11 @@ export default function Avatar({
                         ${className}
                     `}
                 >
-                    <span className='text-xl sm:text-xl md:text-4xl lg:text-4xl xl:text-4xl'>
+                    <span 
+                        className={`
+                            ${sizeText}
+                        `}
+                    >
                         { children }
                     </span>
                 </div>
@@ -80,6 +92,7 @@ export default function Avatar({
         </div>
     );
 }
+
 
 export function AvatarGroup({
     size,

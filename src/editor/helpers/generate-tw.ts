@@ -19,7 +19,7 @@ const allSizesClassDaisy =(namesClassDaisy)=> {
 }
 export const __generate =()=> {
     const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const namesClassDaisy = ['radio', 'input', 'textarea', 'select', 'btn', 'badge', 'divider'];
+    const namesClassDaisy = ['radio', 'input', 'textarea', 'select', 'btn', 'badge', 'divider', 'tabs'];
     const colors = ['primary', 'secondary', 'error', 'accent', 'success', 'warning', 'info'];
     const nameBreacpoints = ['xs', 'sm', 'md', 'lg', 'xl'];
     const breakpoints = ['', 'sm:', 'md:', 'lg:', 'xl:'];
@@ -43,7 +43,8 @@ export const __generate =()=> {
         'rotate-180', 'dropdown-hover', 
         'btn-soft', 'btn-info', 'btn-gnost', 'btn-outline btn-dash btn-link btn-circle btn-square',
         'badge-soft', 'badge-gnost badge-outline badge-dash badge-link',
-        'divider-start divider-end divider-horizontal divider-vertical'
+        'divider-start divider-end divider-horizontal divider-vertical',
+        'tabs-lift tabs-box tabs-border tab-active'
 
     );
     const allDaisySizeClass = allSizesClassDaisy(namesClassDaisy);

@@ -14,7 +14,8 @@ export default function Autocomplete({
     options, 
     size, 
     value,
-    style,
+    style = {},
+    color = 'primary',
     required,
     ...props 
 }: AutoInputProps) {
@@ -41,6 +42,7 @@ export default function Autocomplete({
         <FormWrapper
             size={size}
             data-id={uid}
+            color={color}
             data-autocomplete-root
             style={{ position: 'relative', ...style }}
             labelRight={ 

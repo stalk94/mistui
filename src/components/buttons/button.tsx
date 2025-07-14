@@ -5,6 +5,7 @@ import { useTheme } from '../theme';
 import { createGradientStyle } from './helpers';
 
 
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     {
         style = {},
@@ -37,17 +38,28 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         if (variant === 'ghost') return style;
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
+
+        let st = { 
+            ...style,
+            backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color),
+            color: (variant === 'dash' || variant === 'outline') ? (variants[color] ?? color) : ''
+        }
         
-        if ((inlneBg || inlneBorder) && (variant === 'dash' || variant === 'outline')) {
+
+        if ((variant === 'dash' || variant === 'outline')) {
             const { backgroundColor, ...rest } = style;
 
-            return({
+            st = {
                 ...rest,
+                ...st,
+                backgroundColor: inlneBg ?? '',
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
-                borderColor: inlneBorder ?? inlneBg,
-            });
+            };
         }
-        else return style;
+
+
+        return st;
     }, [style, color, variant, isSoft]);
     const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
         const inlneBg = style?.backgroundColor;
@@ -69,7 +81,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         );
     }, [style, color, variant, isSoft]);
     
-    
+  
     return (
         <>
             {!props['data-id'] && !selected &&
@@ -90,23 +102,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                 data-id={props['data-id'] ?? uid}
                 style={{ 
                     boxShadow: shadows[shadow], 
+                    ...getStyle,
                     ...getGradient,
-                    ...getStyle 
                 }}
                 className={`
                     btn 
                     whitespace-nowrap
                     ${variant === 'ghost' && 'btn-ghost'}
                     ${variant ? `btn-${variant}` : ''} 
-                    ${color ? `btn-${color}` : ''} 
                     ${getSize}
                     ${isSoft ? 'btn-soft' : ''}
+                    ${variant === 'soft' && `btn-soft btn-${color}`}
+                    ${variant === 'link' && 'btn-link'}
                     font-bold 
                     uppercase
                     transition-transform 
                     duration-200 
                     hover:scale-97
-                    ${selected && 'bg-[var(--selected)] border-[var(--selected)] text-white'}
+                    ${selected && `bg-[var(--selected)] border-[var(--selected)]`}
                     ${className ?? ''}
                 `}
                 { ...props }

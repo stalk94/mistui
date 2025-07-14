@@ -25,16 +25,17 @@ export const fontFamilyVariants = {
 const COLORS = {
     black: 'rgb(1, 1, 1)',
     white: 'rgb(255, 255, 255)',
-    base: 'rgb(45, 45, 45)',                // основа, фон
+    base: 'rgb(18, 18, 18)',                // основа, фон
     input: 'rgb(65, 65, 65)',               // !
-    button: 'rgb(43, 43, 43)',                             
+    button: 'rgb(43, 43, 43)',
+    selected: 'rgba(255, 255, 255, 0.7)'                        
 }
 const variantsColor = {
     neutral: 'rgba(43, 43, 43)',
-    primary: 'rgb(25, 25, 26)',
+    primary: 'rgba(108, 108, 108, 0.497)',
     secondary: 'rgb(244, 48, 152)',
     accent: 'rgb(0, 211, 187)',
-    error: 'rgb(255, 98, 125)',
+    error: 'rgb(255, 98, 103)',
     success: 'rgb(0, 211, 144)',
     warning: 'rgb(252, 183, 0)',
     info: 'rgb(0, 186, 254)'
@@ -42,8 +43,8 @@ const variantsColor = {
 const sizes = {
     text: {
         default: 'sm',
-        sm: 'base',
-        md: 'base',
+        sm: 'md',
+        md: 'md',
         lg: 'lg',
         xl: 'lg'
     },
@@ -73,7 +74,7 @@ const sizes = {
         xs: 'w-10',
         sm: 'w-16',
         md: 'w-20',
-        lg: 'w-20',
+        lg: 'w-24',
         xl: 'w-32'
     }
 }
@@ -116,7 +117,6 @@ const defaultTheme = {
             borderStyle: 'solid',
             borderWidth: 1,
 
-            checkBoxBackground: 'inherit',
             radioThumbColor: 'rgb(255, 255, 255)',
 
             switchBorderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
@@ -132,10 +132,27 @@ const defaultTheme = {
         accordeon: {
             backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
         },
+        tabs: {
+            borderColor: colord(COLORS.base).lighten(0.1).toRgbString()
+        },
+        table: {
+            body: '',
+            header: '',
+            thead: '',
+        },
+        appBar: {
+
+        },
         leftBar: {
             backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
         },
         button: {
+            selectedBackground: ''
+        },
+        popUp: {
+
+        },
+        modal: {
 
         }
     },

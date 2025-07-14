@@ -81,6 +81,24 @@ const styleText = {
     }
 }
 
+const base = {
+    size: {
+        type: 'groupButton',
+        items: ['auto', 'xs', 'sm', 'md', 'lg', 'xl']
+    },
+    variant: {
+        type: 'groupButton',
+        items: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link']
+    },
+    color: {
+        type: 'groupButton',
+        items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
+    },
+    shadow: {
+        type: 'groupButton',
+        items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+    }
+}
 const CONFIG = {
     typography: {
         variant: {
@@ -127,6 +145,14 @@ const CONFIG = {
         shadow: {
             type: 'groupButton',
             items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+        }
+    },
+    tabs: {
+        ...base,
+        variant: {
+            type: 'groupButton',
+            value: "lift",
+            items: ["border", "lift", "box"]
         }
     }
 }

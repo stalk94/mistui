@@ -151,6 +151,7 @@ const patterns = {
                 title: 'title-2'
             }
             ]}
+            {...props}
         />
     ),
     button: (props) => (
@@ -221,8 +222,11 @@ const patterns = {
         />
     ),
     groupbuttons: (props)=> (
-        <>
-        </>
+        <GroupButton
+            items={['test', 'test2']}
+
+            {...props}
+        />
     ),
     text: (props)=> (
         <BaseInput
@@ -235,6 +239,7 @@ const patterns = {
     radio: (props)=> (
         <RadioBox
             labelTop='radio'
+            value={true}
             {...props}
         />
     ),
@@ -252,6 +257,7 @@ const patterns = {
     ),
     textarea: (props)=> (
         <TextArea
+            placeholder='text-area'
             labelTop='textarea'
             {...props}
         />
@@ -294,7 +300,12 @@ const patterns = {
     ),
     tabs: (props)=> (
         <Tabs
-            items={[{label: 'test', content:'content-1'}]}
+            items={[
+                {label: 'test', content:'content-1'}, 
+                {label: 'test-2', content:'content-2'},
+                {label: 'test-3', content:'content-3'}
+            ]}
+            {...props}
         />
     )
 }
@@ -309,6 +320,7 @@ export default function SandBox() {
     
     
     React.useEffect(()=> {
+        //__generate()
         store.variants.set(Object.keys(patterns));
     
         if (emmiter) {

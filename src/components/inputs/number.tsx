@@ -29,12 +29,14 @@ const Icon = ({ useClick, tag, 'data-id': dataId }) => {
     );
 }
 
+
 export default function NumberInput({ 
     iconEnable, 
     onChange, 
     value, 
     step, 
     placeholder,
+    color = 'primary',
     required,
     ...props 
 }: NumberInputProps) {
@@ -46,6 +48,7 @@ export default function NumberInput({
             : parseFloat(value as any) || undefined
     );
 
+    
     const increment = () => {
         setVal((safeValue)=> {
             const result = safeValue + (step ?? 1);
@@ -65,6 +68,7 @@ export default function NumberInput({
     return (
         <FormWrapper
             data-id={uid}
+            color={color}
             labelLeft={
                 iconEnable &&
                     <Icon

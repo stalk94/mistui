@@ -1,8 +1,9 @@
-import { forwardRef } from 'react';
+import { forwardRef, useMemo } from 'react';
 import type { LabelProps, LabelTopProps } from './type';
 import { useTheme } from '../theme';
 import React from 'react';
 import clsx from 'clsx';
+import { colord } from 'colord';
 
 
 export const LabelTop = ({ children, style, size, required,  }: LabelTopProps) => {
@@ -45,27 +46,57 @@ export const ValidatorBottomLabel =({ children, 'data-id': dataId })=> {
 export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormWrapper(
     {
         children,
+        color,
         labelLeft,
         labelRight,
         labelTop,
-        colorBorder,
         size,
         validator,
         required,
         disabledVisibility,
-        style,
-        styleInput,
+        style = {},
         className,
+        variant,
         ...props
     },
     ref
 ) {
-    const { styles, autosizes } = useTheme();
+    const { styles, autosizes, variants } = useTheme();
     const getSize = size ? `input-${size}` : autosizes.input;
+    const { borderColor, ...filteredStyle } = style;
+
+
+    const borderVariant = useMemo(()=> {
+        if (variant === 'dash') return { 
+            borderStyle: 'dashed'
+        }
+        else if (variant === 'outline') return {
+            borderStyle: 'solid'
+        }
+        else return {};
+    }, [variant, style, styles]);
+    const colorBorder = useMemo(() => {
+        let propsColor = (variants[color] ?? color) ?? style.borderColor;
+
+        propsColor = propsColor 
+            ? colord(propsColor).alpha(0.5).toRgbString() 
+            : styles?.input?.borderColor;
+        
+        return propsColor;
+    }, [color, style, styles]);
+    const colorBg = useMemo(() => {
+        let propsColor = (variants[color] ?? color) ?? style.backgroundColor;
+
+        propsColor = propsColor 
+            ? colord(propsColor).alpha(0.1).toRgbString() 
+            : styles?.input?.backgroundColor;
+        
+        return propsColor;
+    }, [color, style, styles]);
 
 
     return (
-        <section className={clsx('formwrap', className)} style={style}>
+        <section className={clsx('formwrap', className)} style={filteredStyle}>
             {/* верхний label */}
             {labelTop && (
                 <LabelTop size={size} required={required}>
@@ -77,11 +108,9 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                 ref={ref}
                 style={{
                     color: styles?.input?.fontColor,
-                    borderColor: styles?.input?.borderColor,
-                    borderStyle: styles?.input?.borderStyle,
-                    borderWidth: !disabledVisibility && styles?.input?.borderWidth,
-                    backgroundColor: !disabledVisibility && styles?.input?.backgroundColor,
-                    ...styleInput,
+                    borderColor: colorBorder ?? styles?.input?.borderColor,
+                    backgroundColor: !disabledVisibility && colorBg,
+                    ...borderVariant,
                 }}
                 className={clsx(
                     disabledVisibility
@@ -91,7 +120,6 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                               'w-full',
                               'flex',
                               'input-focus',
-                              `input-${colorBorder}`,
                               getSize,
                               validator && 'validator',
                           ]

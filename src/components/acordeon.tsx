@@ -3,8 +3,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from './theme';
 
 
-type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick'>;
-export type AccordionProps = Props & {
+export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick'> & {
     items: {
         /** label аккордеона */
         title: React.ReactElement | string
@@ -16,7 +15,7 @@ export type AccordionProps = Props & {
     activeIndexs?: number[]
     style?: React.CSSProperties
     styleTitle?: React.CSSProperties
-    classNameTitle?: Props['className']
+    classNameTitle?: React.HTMLAttributes<HTMLDivElement>['className']
 }
 
 
@@ -38,7 +37,7 @@ export default function Acordeon({
         <div 
             style={{ 
                 borderRadius: 6,
-                background: styles?.accordeon?.backgroundColor,
+                backgroundColor: styles?.accordeon?.backgroundColor,
                 ...style
             }}
             className={`
@@ -59,7 +58,7 @@ export default function Acordeon({
                         ${active === index && 'collapse-open'}
                     `}
                     style={{
-                        borderColor: styles.input.borderColor,
+                        borderColor: styles?.input?.borderColor,
                     }}
                 >
                     {/* title */}
