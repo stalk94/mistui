@@ -39,7 +39,7 @@ export type StatProps = Props & {
     figure?: React.ReactNode
     title?: React.ReactNode
     value?: React.ReactNode
-    desc?: React.ReactNode
+    desccription?: React.ReactNode
     actions?: React.ReactNode
 }
 export type StatsProps = Props & {

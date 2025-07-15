@@ -40,7 +40,7 @@ export default function Avatar({
     style,
     className
 }: AvatarProps) {
-    const { styles, autosizes } = useTheme();
+    const { autosizes } = useTheme();
     const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.avatar;
     const sizeText =  sizeTableText[size] ?? 'text-lg sm:text-xl md:text-4xl lg:text-4xl xl:text-4xl';
     

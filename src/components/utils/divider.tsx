@@ -18,11 +18,6 @@ export default function Divider({
     const { variants, autosizes } = useTheme();
     const getSize = size ? `text-${size}` : autosizes.text;
 
-    const getColor = useMemo(()=> {
-        if (variants[color]) return variants[color];
-        else return ( color ??  'currentColor');
-    }, [color]);
-
 
     return (
         <Fragment>
@@ -30,7 +25,7 @@ export default function Divider({
                 {/*css*/`
                     .divider[data-id="${uid}"]::before,
                     .divider[data-id="${uid}"]::after {
-                        border-top: 1px ${variant ?? 'solid'} ${getColor};
+                        border-top: 1px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'};
                     }
                 `}
             </style>

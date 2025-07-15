@@ -1,10 +1,14 @@
 export interface Theme {
     enableEditorMod?: boolean
+    shadows: {
+        
+    }
     autosizes: {
         text: string
         input: string
         btn: string
         textarea: string
+        avatar: string
     }
     variants: {
         neutral: string
@@ -45,6 +49,14 @@ export interface Theme {
         button: {
             color: React.CSSProperties['color']
             background: React.CSSProperties['backgroundColor']
+        }
+        table: {
+            body: string
+            header: string
+            thead: string
+        }
+        accordeon: {
+            backgroundColor: React.CSSProperties['backgroundColor']
         }
     }
     mixers: {

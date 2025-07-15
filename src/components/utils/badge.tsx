@@ -20,8 +20,8 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     },
     ref
 ) {
-    const { shadows } = useTheme();
-    const getSize = size ? `badge-${size}` : 'badge-sm sm:badge-md md:badge-md lg:badge-lg xl:badge-lg';
+    const { shadows, autosizes } = useTheme();
+    const getSize = (size && size !== 'auto') ? `badge-${size}` : autosizes.badge;
 
     const memoIcon = useMemo(()=> {
         const result = {iconLeft:undefined, iconRight:undefined};

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo, createContext, useEffect, useState, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 
@@ -43,9 +43,9 @@ const icons = {
         </svg>
     )
 }
-const AlertContext = React.createContext<AlertContextType | undefined>(undefined);
+const AlertContext = createContext<AlertContextType | undefined>(undefined);
 export const useAlert =()=> {
-    const context = React.useContext(AlertContext);
+    const context = useContext(AlertContext);
     if(!context) throw new Error('useAlert must be used within an AlertProvider');
     
     return context;
@@ -56,7 +56,7 @@ export const useAlert =()=> {
  *  провайдер для подключения всплывающих ошибок
  */
 export function AlertProvider({ children, delDelay, position, variant, isSoft }: AlertManagerProps) {
-    const [stack, setStack] = React.useState<AlertItem[]>([]);
+    const [stack, setStack] = useState<AlertItem[]>([]);
     const curVariant = variant ? `alert-${variant}` : '';
     const bgColors = {
         error: "rgba(211, 47, 47, 0.03)",
@@ -66,7 +66,7 @@ export function AlertProvider({ children, delDelay, position, variant, isSoft }:
     }
 
 
-    const getPosition = React.useMemo(()=> {
+    const getPosition = useMemo(()=> {
         if(position === 'bottom-left') return {
             bottom: 0,
             left: 0
@@ -93,7 +93,7 @@ export function AlertProvider({ children, delDelay, position, variant, isSoft }:
             setStack((prevStack)=> prevStack.filter(alert => alert.id !== id));
         }, (delDelay ?? 6000));
     }
-    React.useEffect(()=> {
+    useEffect(()=> {
         if (stack.length > 4) {
             setStack((old)=> {
                 old.splice(0, 1);

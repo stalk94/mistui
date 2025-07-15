@@ -31,7 +31,6 @@ const StyleTableWrapper = memo(({ style, fontSizeHead = '14px' }) => {
 
     return(
         `
-            height: 100%;
             // прокрутка
             ::-webkit-scrollbar-track {
                 background-color:#2a2a2b85;
@@ -334,12 +333,17 @@ export default function DataTableCustom({
                         value={value}
                         scrollable={true}
                         scrollHeight={scrollHeight}
-                        style={{ height: '100%', width: '100%', flexGrow: 1, ...style }}
+                        style={{ 
+                            height: '100%', 
+                            width: '100%', 
+                            flexGrow: 1, 
+                            ...style 
+                        }}
                         header={header}
                         footer={footer}
                         {...props}
                     >
-                        {children}
+                        { children }
                     </DataTable>
                 </Fragment>
             }

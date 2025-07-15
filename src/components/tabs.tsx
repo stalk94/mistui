@@ -7,6 +7,7 @@ type TabsProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onCli
     variant?: 'box' | 'border' | 'lift'
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     items: {
         label: string | React.ReactNode
         content: string | React.ReactNode
@@ -36,7 +37,9 @@ export default function Tabs({
 
     const borderStyle = useMemo(()=> {
         if (variant === 'lift') {
-            const borderColor = (styleContent?.borderColor ?? styleTab?.borderColor) ?? styles?.tabs?.borderColor;
+            const borderColor = (styleContent?.borderColor 
+                ?? styleTab?.borderColor) 
+                    ?? styles?.tabs?.borderColor;
 
             return({
                 borderColor: (variants[color] ?? color) ?? borderColor
@@ -67,9 +70,7 @@ export default function Tabs({
                     <input
                         type="radio"
                         onClick={()=> setCurActive(index)}
-                        className={`
-                            tab 
-                        `}
+                        className={`tab`}
                         readOnly
                         checked={curActive === index}
                         style={{

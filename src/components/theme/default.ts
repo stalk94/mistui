@@ -76,6 +76,14 @@ const sizes = {
         md: 'w-20',
         lg: 'w-24',
         xl: 'w-32'
+    },
+    badge: {
+        default: 'sm',
+        xs: 'sm',
+        sm: 'md',
+        md: 'md',
+        lg: 'lg',
+        xl: 'lg'
     }
 }
 

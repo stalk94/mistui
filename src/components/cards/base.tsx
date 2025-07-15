@@ -11,7 +11,8 @@ export default function Card({
     className,
     ...props 
 }: CardProps) {
-
+    const {} = useTheme();
+    
     return(
         <div 
             className={`

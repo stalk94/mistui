@@ -84,11 +84,10 @@ export default function Acordeon({
                             `}
                         />
                     </div>
+                    
                     {/* content */}
                     <div 
-                        style={{ 
-                            padding: active !== index ? 0 : 4
-                        }}
+                        style={{ padding: active !== index ? 0 : 4 }}
                         className={`
                             collapse-content
                             border-[#0000001a]
