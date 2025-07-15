@@ -46,6 +46,15 @@ export { default as Bar } from './components/nav-bars/bar';
 // аватар и аватары
 export { default as Avatar, AvatarGroup } from './components/avatar';
 
+// Indicator
+export { default as Indicator } from './components/utils/indicator';
+
+// Bottom navigation
+export { default as  BottomNavigation } from './components/bottom-nav';
+
+// Hero
+export { default as Hero } from './components/hero';
+
 // tabs
 export { default as Tabs } from './components/tabs';
 

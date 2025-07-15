@@ -19,7 +19,7 @@ export type DividerProps = {
     size?: 'xs' | 'sm' | 'md' | 'lg'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     position?: 'start' | 'end'
-    isHorizontal?: boolean
+    orientation?: 'horizontal' | 'vertical'
     variant?: 'dashed' | 'dotted' 
     style?: React.CSSProperties
     className?: Props['className'] 
@@ -27,7 +27,7 @@ export type DividerProps = {
 
 export type SplitterProps = SpliterStProps & {
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
-    position?: 'horizontal' | 'vertical'
+    orientation?: 'horizontal' | 'vertical'
     className?: Props['className']
 }
 export type SplitterPanelProps = SpliterPanelStProps & {
@@ -49,11 +49,30 @@ export type BadgeProps = {
 }
 
 export type CollapseProps = {
+    /** content collapse, children or content props */
     children?: string | React.ReactElement
-    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg'
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties
-    className?: Props['className'] 
+    styleTitle?: React.CSSProperties
+    className?: Props['className']  
+    classNameTitle?: Props['className'] 
+    /** title collapse */
+    title: React.ReactNode
+    /** content collapse, children or content props  */
+    content: React.ReactNode
+    icon?: 'plus' | 'arrow'
+}
+
+export type IndicatorProps = {
+    /** content collapse, children or content props */
+    children?: string | React.ReactElement
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    style?: React.CSSProperties
+    className?: Props['className']
+    position?: 'top' | 'middle' | 'bottom'
+    align?: 'start' | 'center' | 'end'
 }
 
 export type StatProps = Props & {
@@ -71,5 +90,5 @@ export type StatsProps = Props & {
         desc?: React.ReactNode
         actions?: React.ReactNode
     }[]
-    variant?: 'vertical' | 'horizontal'
+    orientation?: 'vertical' | 'horizontal'
 }

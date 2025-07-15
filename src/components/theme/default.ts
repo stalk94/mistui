@@ -48,6 +48,13 @@ const sizes = {
         lg: 'lg',
         xl: 'lg'
     },
+    dock: {
+        default: 'sm',
+        sm:' md',
+        md: 'md',
+        lg: 'lg', 
+        xl: 'lg'
+    },
     input: {
         default: 'sm',
         sm:' md',

@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 
 export function SplitterCustom({ 
     color, 
-    position,
+    orientation,
     ...props
 }: SplitterProps) {
     const uid = useUids('splitter');
@@ -62,7 +62,7 @@ export function SplitterCustom({
             </style>
 
             <Splitter
-                layout={position ?? 'horizontal'}
+                layout={orientation ?? 'horizontal'}
                 { ...props }
             />
         </Fragment>

@@ -6,35 +6,44 @@ import { useTheme } from '../theme';
 const Collapse = forwardRef<HTMLDivElement, CollapseProps>(function Collapse(
     {
         style = {},
+        styleTitle = {},
         children,
         size,
         color,
         className,
+        classNameTitle,
+        title,
+        content,
+        icon,
         ...props
     },
     ref
 ) {
     const { shadows, autosizes } = useTheme();
-    const getSize = (size && size !== 'auto') ? `text-${size}` : autosizes.text;
+    const curIcon = icon ? `collapse-${icon}` : '';
+    const sizeText = (size && size !== 'auto') ? `text-${size}` : autosizes.text;
 
 
     return (
         <div 
             ref={ref} 
-            className={`collapse ${className && className}`}
+            className={`collapse ${curIcon} ${sizeText} ${className && className}`}
             style={style}
             { ...props }
         >
             <input type="checkbox" className="peer" />
 
-            <div className={`collapse-title`}>
-
+            <div 
+                className={`collapse-title ${classNameTitle && classNameTitle}`} 
+                style={styleTitle}
+            >
+                { title }
             </div>
             <div className={`collapse-content`}>
-               
+                { children ?? content }
             </div>
         </div>
-    )
+    );
 });
 
 

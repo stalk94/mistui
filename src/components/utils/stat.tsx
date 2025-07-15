@@ -49,7 +49,7 @@ export default function Stat({
 export function Stats({
     items,
     className,
-    variant = 'horizontal',
+    orientation = 'horizontal',
     ...props
 }: StatsProps) {
 
@@ -57,7 +57,7 @@ export function Stats({
         <div 
             className={`
                 stats 
-                stats-${variant}
+                stats-${orientation}
                 shadow
                 ${className && className}
             `}

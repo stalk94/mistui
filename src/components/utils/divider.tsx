@@ -9,7 +9,7 @@ export default function Divider({
     size, 
     color, 
     position, 
-    isHorizontal, 
+    orientation = 'horizontal', 
     style,
     variant,
     className
@@ -35,7 +35,7 @@ export default function Divider({
                 className={`
                     divider 
                     divider-${position}
-                    ${isHorizontal && 'divider-horizontal'}
+                    divider-${orientation}
                     ${getSize} 
                     text-neutral-500
                     ${className && className}
