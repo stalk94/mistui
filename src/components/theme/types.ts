@@ -54,6 +54,9 @@ export interface Theme {
             body: string
             header: string
             thead: string
+            border: string
+            fontColor: string
+            theadFontColor: string
         }
         accordeon: {
             backgroundColor: React.CSSProperties['backgroundColor']

@@ -1,5 +1,9 @@
-type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
+import { ComponentProps } from 'react';
+import { Splitter, SplitterPanel } from 'primereact/splitter';
 
+type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
+type SpliterStProps = ComponentProps<typeof Splitter>;
+type SpliterPanelStProps = ComponentProps<typeof SplitterPanel>;
 
 export type FlagProps = {
     code: string
@@ -21,18 +25,35 @@ export type DividerProps = {
     className?: Props['className'] 
 }
 
+export type SplitterProps = SpliterStProps & {
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    position?: 'horizontal' | 'vertical'
+    className?: Props['className']
+}
+export type SplitterPanelProps = SpliterPanelStProps & {
+    children?: React.ReactNode
+}
+
 export type BadgeProps = {
     children?: string | React.ReactElement
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg'
     isHorizontal?: boolean
     variant?: 'outline' | 'dash' | 'soft' | 'ghost' | 'link' 
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties
     className?: Props['className'] 
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     isGradient?: boolean
     iconLeft?: React.ReactNode
     iconRight?: React.ReactNode
+}
+
+export type CollapseProps = {
+    children?: string | React.ReactElement
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    style?: React.CSSProperties
+    className?: Props['className'] 
 }
 
 export type StatProps = Props & {

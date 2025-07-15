@@ -7,6 +7,8 @@ export default function List({
     style = {}, 
     listStyle = {},
     items, 
+    className,
+    classNameList,
     ...props 
 }: ListProps) {
     const {} = useTheme();
@@ -14,17 +16,17 @@ export default function List({
 
     return(
         <ul
-            className={`list`}
+            className={`list ${className && className}`}
             style={style}
             { ...props }
         >
-            {items.map((item, index) => (
+            {items.map((child, index) => (
                 <li 
                     key={index}
-                    className={`list-row`} 
+                    className={`list-row ${classNameList && classNameList}`} 
                     style={listStyle}
                 >
-                    
+                    { child }
                 </li>
             ))}
         </ul>

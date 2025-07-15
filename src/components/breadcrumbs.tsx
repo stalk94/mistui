@@ -21,13 +21,20 @@ export type Options = {
     }
 }
 export type BreadcrumbsNavProps = {
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto'
+    /** @example 'home/catalog/item' */
     pathname: string
-    push: (href: string) => void
     nameMap?: Record<string, string>
     separator?: string | React.ReactNode
-    linkStyle?: React.CSSProperties
+    /** container classes */
+    className?: HTMLDivElement['className']
+    /** first icon classes */
+    classNameHomeicon?: HTMLDivElement['className']
+    /**
+     * render component element navigation
+     */
     Link: React.ComponentType<{ href: string; children: React.ReactNode }>
+    /** container styles */
     style?: React.CSSProperties 
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -56,18 +63,19 @@ export function useBreadcrumbs(pathname: string, options?: Options) {
     }, [pathname, nameMap, exclude, base]);
 }
 
-
+// ! чучуть доработать (typography возможно стоит внедрить)
 export default function BreadcrumbsNav({ 
     pathname, 
     size, 
-    push, 
     Link, 
     separator, 
     nameMap,
+    className,
+    classNameHomeicon,
     style
 }: BreadcrumbsNavProps) {
     const { autosizes } = useTheme();
-    const sizes = size ? `text-${size}`: 'text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl';
+    const sizesText = (size && size !== 'auto') ? `text-${size}`: autosizes.text;
     const sizesIcon = size 
         ? { xs:'h-4', sm:'h-4', md:'h-5', lg:'h-6', xl:'h-6' }
         : 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6';
@@ -81,6 +89,7 @@ export default function BreadcrumbsNav({
                         fill-current ${sizesIcon}  
                         text-neutral-300
                         hover:text-red-400
+                        ${classNameHomeicon && classNameHomeicon}
                     `}
                 />
             ),
@@ -95,8 +104,9 @@ export default function BreadcrumbsNav({
             className={`
                 breadcrumbs 
                 no-separator
-                ${sizes}
+                ${sizesText}
                 border-0
+                ${className && className}
             `}
         >
             <ul>

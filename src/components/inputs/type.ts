@@ -33,6 +33,7 @@ export type LabelProps = InputStyle & {
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
+    variant?: 'dash' | 'outline'
 }
 export type LabelTopProps = {
     'data-id'?: string | number
@@ -87,6 +88,7 @@ export type BaseProps = InputStyle & {
     style?: React.CSSProperties
     onChange?: React.Dispatch<React.SetStateAction<number|string>> | ((val: string)=> void)
     className?: ClassValue
+    variant?: 'dash' | 'outline'
 }
 
 export type NumberInputProps = Omit<BaseProps, 'type'> & {

@@ -40,7 +40,6 @@
 .tabs-lift > .tab::before {
     background-image: none;
 }
-
 .tabs-lift > input:checked {
     background-color: rgba(1, 1, 1, 0.1);
 }
@@ -113,7 +112,25 @@
 	padding-inline: calc(0.25rem /* 4px */ * 3);
 }
 
-
+/* карточка когда image фон */
+.card-image-full-no-overlay {
+    position: relative;
+    overflow: hidden;
+}
+.card-image-full-no-overlay figure {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.card-image-full-no-overlay figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-image-full-no-overlay .card-body {
+    position: relative;
+    z-index: 10;
+}
 
 
 /* fonts */

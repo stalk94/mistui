@@ -45,7 +45,7 @@ export type FilterToggleButtonGroupProps = ButtonProps & {
 }
 
 export type IconButtonProps =  Props & {
-    icon: React.ReactNode
+    icon?: React.ReactNode
     children?: React.ReactNode
     title?: string
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'

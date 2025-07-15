@@ -1,37 +1,26 @@
 import 'primereact/resources/primereact.min.css'; 
-import { useRef, useState, useEffect, ComponentProps, useMemo, memo, Fragment } from 'react';
+import { useRef, useState, useEffect, useMemo, memo, Fragment } from 'react';
 import { DataTable, DataTableValueArray } from "primereact/datatable";
-import { debounce } from './hooks/debounce';
-import { useTheme } from './theme';
+import type { DataTablePropsWrapper, TableStyles, StyleTableWrapperProps } from './types';
+import { debounce } from '../hooks/debounce';
+import { useTheme } from '../theme';
 import { colord } from 'colord';
 
 
-export type TableStyles = {
-    body: {
-        background: string
-        borderColor: string
-        textColor: string
-    }
-    header: {
-        background: string
-    }
-    thead: {
-        background: string
-        textColor: string
-    }
-}
-export type DataTablePropsWrapper = ComponentProps<typeof DataTable> & {
-    fontSizeHead: string
-    styles: TableStyles
-}
-
-
-const StyleTableWrapper = memo(({ style, fontSizeHead = '14px' }) => {
+const StyleTableWrapper = memo(({ 
+    style, 
+    fontSizeHead = '14px' 
+}: StyleTableWrapperProps) => {
     const {  } = useTheme();
 
+    const alpha = (color: string, val: number) => {
+        return colord(color).alpha(val).toRgbString();
+    }
+
+    
     return(
-        `
-            // прокрутка
+        <style>
+        {/* css */`
             ::-webkit-scrollbar-track {
                 background-color:#2a2a2b85;
             }
@@ -51,35 +40,35 @@ const StyleTableWrapper = memo(({ style, fontSizeHead = '14px' }) => {
             }
 
             .p-datatable {
-                background: ${style.body.background };
+                background: ${ style.body.backgroundColor };
                 border-radius: 5px;
                 overflow: hidden;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
                 border: 1px solid;
-                border-color: ${style.body.borderColor };
+                border-color: ${ style.body.borderColor };
                 width: 100%;
                 font-family: 'Roboto';
             }
             .p-datatable-header {
-                background: ${alpha(theme.header.background, 0.1)};
+                background: ${ style.thead.backgroundColor };
                 border-bottom: 1px solid #5f5f5f35;
-                color: ${theme.body.textColor };
+                color: ${ style.thead.color };
                 font-size: 18px;
                 font-weight: bold;
             }
             .p-datatable-footer {
                 border-top: 1px solid;
-                border-color: ${alpha(theme.body.borderColor, 0.1)};
-                background: ${alpha(theme.header.background, 0.1)};
-                color: ${style.body.textColor };
+                border-color: ${ style.body.borderColor };
+                background: ${ style.body.backgroundColor };
+                color: ${ style.body.color };
                 display: flex;
                 font-size: 16px;
                 padding: 6px 8px;
             }
-            // панель фильтры и сортировка
+            /* панель фильтры и сортировка */
             .p-datatable-thead > tr > th {
-                background: ${ style.thead.background };
-                color: ${style.thead.textColor };
+                background: ${ style.thead.backgroundColor };
+                color: ${ style.thead.color };
                 font-weight: bold;
                 padding: 1.5%;
                 text-align: left;
@@ -89,26 +78,26 @@ const StyleTableWrapper = memo(({ style, fontSizeHead = '14px' }) => {
                 white-space: nowrap;
                 min-width: 60px;
             }
-            // нечетные row 
+            /* нечетные row */
             .p-datatable-tbody > tr:nth-child(even) {
-                background: ${ style.body.background };
+                background: ${ style.body.backgroundColor };
             }
-            // стили row текста 
+            /* стили row текста */
             .p-datatable-tbody > tr {
-                color: ${ style.body.textColor };
+                color: ${ style.body.color };
                 font-size: 16px;
                 transition: background 0.2s ease-in-out;
             }
-            // подсвет всей строки при наведении
+            /* подсвет всей строки при наведении */
             .p-datatable-tbody > tr:hover {
                 //background: #3a3c52;
             }
-            // при наведении на row
+            /* при наведении на row */
             .p-datatable-tbody > tr > td:hover {
                 background: #3a3c52;
                 cursor: pointer;
             }
-            // границы row
+            /* границы row */
             .p-datatable-tbody > tr > td {
                 padding: 12px;
                 border-bottom: 1px dashed ${ style.body.borderColor };
@@ -116,42 +105,42 @@ const StyleTableWrapper = memo(({ style, fontSizeHead = '14px' }) => {
             .p-datatable-tbody > tr.p-highlight {
                 background: #574b90 !important;
             }
-            // блок пагинации
+            /* блок пагинации */ 
             .p-paginator {
                 box-shadow: 0 -6px 10px -4px rgba(0, 0, 0, 0.25);
                 border-top: 1px solid ${ style.body.borderColor};
                 padding: 0.1rem;
             }
             .p-paginator .p-paginator-page {
-                background: ${ style.paginator.background };
-                color: ${ style.body.textColor };
+                background: ${ style.paginator.backgroundColor };
+                color: ${ style.body.color };
                 padding: 0.5rem;
                 font-size: 14px;
-                color: ${ style.thead.textColor };
+                color: ${ style.thead.color };
             }
             .p-paginator .p-paginator-page.p-highlight {
-                background: ${darken(theme.paginator.background, 0.3)};
+                background: ${ style.body.backgroundColor };
                 opacity: 0.8;
-                border-color: ${alpha(theme.body.borderColor, 0.4)};
+                border-color: ${ style.body.borderColor };
                 font-weight: bold;
             }
             .p-paginator .p-paginator-page.p-disabled {
                 opacity: 0.5;
                 cursor: not-allowed;
             }
-            // кнопки вперед, назад, начало, конец
+            /*  кнопки вперед, назад, начало, конец */ 
             .p-paginator .p-paginator-prev,
             .p-paginator .p-paginator-next {
                 background: transparent;
-                color: ${theme.body.textColor};
-                border: 1px solid ${alpha(theme.body.borderColor, 0.15)};
+                color: ${ style.body.color };
+                border: 1px solid ${ style.body.borderColor };
                 border-radius: 6px;
                 padding: 4px 10px;
                 margin: 0 2px;
                 transition: background 0.2s, color 0.2s, border-color 0.2s;
                 cursor: pointer;
                 &:hover {
-                    background: ${alpha(theme.body.borderColor, 0.1)};
+                    background: ${ style.body.borderColor };
                 }
             }
             .p-paginator .p-paginator-prev.p-disabled,
@@ -162,21 +151,22 @@ const StyleTableWrapper = memo(({ style, fontSizeHead = '14px' }) => {
             .p-paginator-last, .p-paginator-first {
                 visibility: hidden;
             }
-            // выбор кол-ва элементов на страницу
+            /* выбор кол-ва элементов на страницу */ 
             .p-paginator .p-dropdown {
-                //background: ${ style.thead.background};
-                border: 1px solid ${ alpha(theme.body.borderColor, 0.2)};
+                /* background: ${ style.thead.backgroundColor };  */
+                border: 1px solid ${ alpha(style.body.borderColor, 0.2) };
                 border-radius: 6px;
                 padding: 2px 8px;
-                color: ${ style.body.textColor};
+                color: ${ style.body.color};
                 font-size: 14px;
                 display: flex;
                 align-items: center;
                 &:hover {
-                    border-color: ${alpha(theme.body.borderColor, 0.5)};
+                    border-color: ${ alpha(style.body.borderColor, 0.5) };
                 }
             }
-        `
+        `}
+        </style>
     );
 });
 
@@ -208,37 +198,38 @@ export default function DataTableCustom({
     
     
     const mergeStyle = useMemo(() => {
+        // из темы
         const bodyBcg = theme.styles?.table?.body;
         const headerBcg = theme.styles?.table?.header;
         const theadBcg = theme.styles?.table?.thead;
-
-        const borderColor = theme.styles?.card?.border;
-        const textColor = theme.styles?.text?.primary;
-        const theadColor = theme.styles.grey[500]
+        const borderColor = theme.styles?.table?.border;
+        const textColor = theme.styles?.table?.fontColor;
+        const theadColor = theme.styles?.table?.theadFontColor;
 
         const style: TableStyles = {
             body: {
-                background: bodyBcg,
+                backgroundColor: bodyBcg,
                 borderColor: borderColor,
-                textColor: textColor,
+                color: textColor,
                 ...styles?.body
             },
             header: {
-                background: headerBcg,
+                backgroundColor: headerBcg,
                 ...styles?.header
             },
             thead: {
-                background: theadBcg,
-                textColor: theadColor,
+                backgroundColor: theadBcg,
+                color: theadColor,
                 ...styles?.thead
             },
             paginator: {
-                background: theme.styles?.input?.backgroundColor
+                backgroundColor: theme.styles?.input?.backgroundColor,
+                ...styles?.paginator
             }
         }
 
         return style;
-    }, []);
+    }, [styles]);
     const getPadding =(element: Element)=> {
         const style = getComputedStyle(element);
         const padding = parseFloat(style.paddingBottom);
@@ -265,8 +256,8 @@ export default function DataTableCustom({
     }
     useEffect(()=> {
         if (typeof window === 'undefined') return;
-
         if (value?.length > 20) setPagination(true);
+
         const updateHeight = () => {
             if (tableRef.current) {
                 const container = tableRef.current.getElement();
@@ -319,6 +310,7 @@ export default function DataTableCustom({
                     <div className="skeleton h-4 w-full"></div>
                 </div>
             }
+
             {!(typeof window === 'undefined') &&
                 <Fragment>
                     <StyleTableWrapper

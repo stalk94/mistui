@@ -1,6 +1,12 @@
 // все инпуты
 export * from './components/inputs';
 
+// панели (modal, drawer, popover)
+export * from './components/helpers';
+
+// таблица данных primereact модернизированная
+export * from './components/tables';
+
 // все формы
 export * from './components/form';
 export type { Schema } from './components/form/types';
@@ -37,24 +43,30 @@ export type { AlertManagerProps } from './components/alert';
 // панель для инструментов
 export { default as Bar } from './components/nav-bars/bar';
 
-// таблица данных primereact модернизированная
-export { default as DataTable } from './components/data-table';
-export type{ DataTablePropsWrapper as DataTableProps } from './components/data-table';
-
 // аватар и аватары
 export { default as Avatar, AvatarGroup } from './components/avatar';
 
 // tabs
 export { default as Tabs } from './components/tabs';
 
+// collapse
+export { default as Collapse } from './components/utils/collapse';
+
+// list
+export { default as List } from './components/list/base';
+
 // Divdder
 export { default as Divdder } from './components/utils/divider';
+
+// Splitter
+export { SplitterCustom as Splitter, SplitterPanelCustom as SplitterPanel } from './components/utils/splitter';
 
 // Badge 
 export { default as Badge } from './components/utils/badge';
 
 // Stat/Stats 
 export { default as Stat, Stats } from './components/utils/stat';
+
 
 ///////////////////////////////////////////////////////////////////////////
 //    на переработку
@@ -63,12 +75,7 @@ export { default as Stat, Stats } from './components/utils/stat';
 export { default as LeftSideBar } from './components/nav-bars/left-nav';
 export { default as LeftSideBarAndTool } from './components/nav-bars/tool-left';
 
-
 // appBar
 export { default as AppBar } from './components/app-bar';
 // слоты appBar
 export { Start, LinearNavigation, MobailBurger } from './components/app-bar';
-
-// выпадаюшее меню при наведении на элемент с кастомным содержимым
-export { default as HoverPopover } from './components/popup/HoverPopover';
-export type { HoverPopoverProps } from './components/popup/HoverPopover';

@@ -10,6 +10,8 @@ import List from 'src/components/list/base';
 import Badge from '../components/utils/badge';
 import Stat from '../components/utils/stat';
 import Avatar from '../components/avatar';
+import Promo from '../components/carousel/promo';
+import Table from '../components/tables/data-table';
 import { Schema } from '../components/form/types';
 import { useAlert } from '../components/alert';
 import { store } from './config-props';
@@ -288,13 +290,13 @@ const patterns = {
     ),
     list: (props)=> (
         <List
-            items={[1,2]}
-            {...props}
-        />
-    ),
-    card: (props)=> (
-        <Card
-            imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
+            items={[
+                <>
+                    <div>left</div>
+                    <div>center</div>
+                    <div>right</div>
+                </>
+            ]}
             {...props}
         />
     ),
@@ -306,6 +308,22 @@ const patterns = {
                 {label: 'test-3', content:'content-3'}
             ]}
             {...props}
+        />
+    ),
+    card: (props)=> (
+        <Card
+            imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
+            {...props}
+        />
+    ),
+    propmo: (props)=> (
+        <Promo
+            { ...props }
+        />
+    ),
+    table: (props)=> (
+        <Table
+            { ...props }
         />
     )
 }

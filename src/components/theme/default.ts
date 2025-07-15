@@ -144,9 +144,12 @@ const defaultTheme = {
             borderColor: colord(COLORS.base).lighten(0.1).toRgbString()
         },
         table: {
-            body: '',
-            header: '',
-            thead: '',
+            body: colord(COLORS.base).lighten(0.1).toRgbString(),
+            header: colord(COLORS.base).lighten(0.2).toRgbString(),
+            thead: colord(COLORS.base).lighten(0.3).toRgbString(),
+            border: colord(COLORS.base).lighten(0.25).toRgbString(),
+            fontColor: colord(COLORS.base).lighten(0.8).toRgbString(),
+            theadFontColor: 'grey'
         },
         appBar: {
 
