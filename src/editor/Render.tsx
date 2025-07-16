@@ -3,11 +3,11 @@ import Acordeon from '../components/acordeon';
 import Typography from '../components/text/Typography';
 import BreadCrumbs from '../components/breadcrumbs';
 import Form from '../components/form/Form';
-import { TrashIcon } from '@heroicons/react/24/outline';
+import { TrashIcon, HomeIcon, Cog8ToothIcon } from '@heroicons/react/24/outline';
 import { BaseInput, ColorPicker, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { Button, GroupButton, GroupButtonFiltre, IconButton } from '../components/buttons';
+import { MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip } from '../index';
 import List from 'src/components/list/base';
-import Badge from '../components/utils/badge';
 import Stat from '../components/utils/stat';
 import Avatar from '../components/avatar';
 import Promo from '../components/carousel/promo';
@@ -114,25 +114,8 @@ const testSchema: Schema[] = [{
 }
 ];
 const patterns = {
-    breadcrumbs: (props)=> (
-        <BreadCrumbs
-            pathname='test/xro'
-            Link={({ href, children }) =>
-                <div
-                    onClick={() => console.log(href)}
-                >
-                    {children}
-                </div>
-            }
-            {...props}
-        />
-    ),
-    form: (props)=> (
-        <Form
-            scheme={testSchema}
-        />
-    ),
-    typography: (props) => (
+    // Texts
+    Typography: (props) => (
         <div className="space-y-1">
             <Typography
                 as='p'
@@ -143,20 +126,19 @@ const patterns = {
             </Typography>
         </div>
     ),
-    acordeon: (props)=> (
-        <Acordeon
-            items={[{
-                content: <div>content</div>,
-                title: 'title-1'
-            }, {
-                content: 'content',
-                title: 'title-2'
-            }
-            ]}
+    MarqueText: (props) => (
+        <MarqueText
             {...props}
         />
     ),
-    button: (props) => (
+    Link: (props) => (
+        <Link
+            {...props}
+        />
+    ),
+
+    // Buttons
+    Button: (props) => (
         <>
             <Button
                
@@ -177,7 +159,7 @@ const patterns = {
             </Button>
         </>
     ),
-    iconbutton: (props) => (
+    IconButton: (props) => (
         <>
             <IconButton
                 style={{ margin: 3 }}
@@ -187,7 +169,131 @@ const patterns = {
             </IconButton>
         </>
     ),
-    badge: (props) => (
+    GroupButtons: (props)=> (
+        <GroupButton
+            items={['test', 'test2']}
+            {...props}
+        />
+    ),
+    GroupButtonFiltre: (props)=> (
+        <GroupButtonFiltre
+            items={['test', 'test2']}
+            {...props}
+        />
+    ),
+
+    // Inputs
+    TextInput: (props)=> (
+        <BaseInput
+            labelTop='text'
+            placeholder='test'
+            type='text'
+            {...props}
+        />
+    ),
+    Radio: (props)=> (
+        <RadioBox
+            labelTop='radio'
+            value={true}
+            {...props}
+        />
+    ),
+    Switch: (props)=> (
+        <SwitchBox
+            labelTop='switch'
+            {...props}
+        />
+    ),
+    CheckBox: (props)=> (
+        <CheckBox
+            labelTop='checkbox'
+            {...props}
+        />
+    ),
+    TextArea: (props)=> (
+        <TextArea
+            placeholder='text-area'
+            labelTop='textarea'
+            {...props}
+        />
+    ),
+    Slider: (props)=> (
+        <SliderInput 
+            labelTop='slider'
+            disableForm
+            {...props}
+        />
+    ),
+    File: (props)=> (
+        <FileInput
+            {...props}
+        />
+    ),
+    Color: (props)=> (
+        <ColorPicker
+            {...props}
+        />
+    ),
+    Date: (props)=> (
+        <BaseInput
+            labelTop='date'
+            placeholder='date'
+            type='date'
+            {...props}
+        />
+    ),
+    Time: (props)=> (
+        <BaseInput
+            labelTop='time'
+            placeholder='time'
+            type='time'
+            {...props}
+        />
+    ),
+
+    // Navigation
+    Tabs: (props)=> (
+        <Tabs
+            items={[
+                {label: 'test', content:'content-1'}, 
+                {label: 'test-2', content:'content-2'},
+                {label: 'test-3', content:'content-3'}
+            ]}
+            {...props}
+        />
+    ),
+    Breadcrumbs: (props) => (
+        <BreadCrumbs
+            pathname='test/xro'
+            Link={({ href, children }) =>
+                <div
+                    onClick={() => console.log(href)}
+                >
+                    {children}
+                </div>
+            }
+            {...props}
+        />
+    ),
+    BottomNavigation: (props) => (
+        <BottomNavigation
+            items={[
+                { icon: <HomeIcon />, label: 'home' },
+                { icon: <Cog8ToothIcon />, label: 'settings' }
+            ]}
+            {...props}
+        />
+    ),
+
+    // data-display
+    Avatar: (props)=> (
+        <Avatar
+            {...props}
+            
+            children={'xro'}
+        />
+    ),
+    Badge: (props)=> (
         <>
             <Badge
                 iconLeft={<TrashIcon />}
@@ -197,10 +303,38 @@ const patterns = {
             </Badge>
         </>
     ),
-    stat: (props) => (
+    Indicator: (props) => (
+        <Indicator
+            { ...props }
+        />
+    ),
+    List: (props)=> (
+        <List
+            items={[
+                <>
+                    <div>left</div>
+                    <div>center</div>
+                    <div>right</div>
+                </>
+            ]}
+            {...props}
+        />
+    ),
+
+    // layout
+    Divider: (props)=> (
+        <Divider 
+            color='primary' 
+            style={{ borderStyle: 'dashed', color: 'silver' }}
+            {...props}
+        >
+            divider
+        </Divider>
+    ), 
+    Stat: (props) => (
         <Stat
             value='value'
-            desc='description'
+            desccription='description'
             title='title'
             figure={
                 <div 
@@ -223,91 +357,72 @@ const patterns = {
             }
         />
     ),
-    groupbuttons: (props)=> (
-        <GroupButton
-            items={['test', 'test2']}
+    Splitter: (props) => (
+        <Splitter
+            { ...props }
+        />
+    ),
+    Chat: (props)=> (
+        <>
+            <Chat
+                avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
+                header={
+                    <>
+                        Obi-Wan Kenobi
+                        <time className="text-xs opacity-50">12:45</time>
+                    </>
+                }
+                footer='footer'
+                children='Splitters can be configured as stateful so that when the user visits the page again, the adjusts sizes can be restored. Define a stateKey'
+                { ...props }
+                direction='start'
+            />
+            <Chat
+                avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
+                header={
+                    <>
+                        Obi-Wan Kenobi
+                        <time className="text-xs opacity-50">12:45</time>
+                    </>
+                }
+                footer='footer'
+                children='Splitters can be configured as stateful so that when the user visits the page again, the adjusts sizes can be restored. Define a stateKey'
+                { ...props }
+                direction='end'
+            />
+        </>
+    ),
+    Tooltip: (props)=> (
+        <Tooltip
+            children={
+                <button className="btn">Hover me</button>
+            }
+            content='tooltip content'
+            { ...props }
+        />
+    ),
+    Accordion: (props) => (
+        <Acordeon
+            items={[{
+                content: <div>content</div>,
+                title: 'title-1'
+            }, {
+                content: 'content',
+                title: 'title-2'
+            }
+            ]}
+            {...props}
+        />
+    ),
 
-            {...props}
+    Table: (props)=> (
+        <Table
+            { ...props }
         />
     ),
-    text: (props)=> (
-        <BaseInput
-            labelTop='text'
-            placeholder='test'
-            type='text'
-            {...props}
-        />
-    ),
-    radio: (props)=> (
-        <RadioBox
-            labelTop='radio'
-            value={true}
-            {...props}
-        />
-    ),
-    switch: (props)=> (
-        <SwitchBox
-            labelTop='switch'
-            {...props}
-        />
-    ),
-    checkbox: (props)=> (
-        <CheckBox
-            labelTop='checkbox'
-            {...props}
-        />
-    ),
-    textarea: (props)=> (
-        <TextArea
-            placeholder='text-area'
-            labelTop='textarea'
-            {...props}
-        />
-    ),
-    slider: (props)=> (
-        <SliderInput 
-            labelTop='slider'
-            disableForm
-            {...props}
-        />
-    ),
-    file: (props)=> (
-        <FileInput
-            {...props}
-        />
-    ),
-    color: (props)=> (
-        <ColorPicker
-            {...props}
-        />
-    ),
-    avatar: (props)=> (
-        <Avatar
-            {...props}
-            
-            children={'xro'}
-        />
-    ),
-    list: (props)=> (
-        <List
-            items={[
-                <>
-                    <div>left</div>
-                    <div>center</div>
-                    <div>right</div>
-                </>
-            ]}
-            {...props}
-        />
-    ),
-    tabs: (props)=> (
-        <Tabs
-            items={[
-                {label: 'test', content:'content-1'}, 
-                {label: 'test-2', content:'content-2'},
-                {label: 'test-3', content:'content-3'}
-            ]}
-            {...props}
+    form: (props) => (
+        <Form
+            scheme={testSchema}
         />
     ),
     card: (props)=> (
@@ -316,16 +431,11 @@ const patterns = {
             {...props}
         />
     ),
-    propmo: (props)=> (
+    promo: (props)=> (
         <Promo
             { ...props }
         />
     ),
-    table: (props)=> (
-        <Table
-            { ...props }
-        />
-    )
 }
 
 

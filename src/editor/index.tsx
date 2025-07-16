@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from 'src/components/inputs';
 import CustomBar from '../components/nav-bars/bar'
-import LeftNavigation from '../components/nav-bars/left-nav';
+import { Collapse } from '../index';
 import SandBox from './Render';
 import PropsVariator, { store } from './config-props';
 import { Button, GroupButton, GroupButtonFiltre } from '../index';
@@ -14,7 +14,18 @@ const daisyThemes = [
   "autumn", "business", "acid", "lemonade", "night", "coffee", "winter", "dim",
   "nord", "sunset"
 ];
-
+const category = {
+    text: ['Typography', 'Link', 'MarqueText'],
+    buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
+    inputs: ['TextInput', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File'],
+    navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation'],
+    'data-display': ['Avatar', 'AvatarGroup', 'Indicator', 'Badge', 'List', 'Table'],
+    layout: ['Divider', 'Chat', 'Stat', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
+    page: ['Footer', 'Hero', 'AppBar'],
+    feedback: ['Alert', 'Tooltip', 'Modal', 'Popover', 'Drawer'],
+    media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
+    form: [],
+};
 
 
 

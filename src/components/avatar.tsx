@@ -1,15 +1,18 @@
+import { useMemo } from 'react';
 import { useTheme } from './theme';
+import { createGradientStyle } from './hooks';
 
 export type AvatarProps = {
     children?: string | React.ReactElement
-    size?: 'xs' | 'sm' | 'md' | 'lg'
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties
     className?: React.HTMLAttributes<HTMLDivElement>['className']
     src?: string
     alt?: string
 }
 export type AvatarsGroupProps = {
-    size?: 'xs' | 'sm' | 'md' | 'lg'
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     style?: React.CSSProperties
     className?: React.HTMLAttributes<HTMLDivElement>['className']
     items: Omit<AvatarProps, 'size' | 'className' | 'style'>[]
@@ -38,12 +41,32 @@ export default function Avatar({
     size,
     alt,
     style,
+    color,
     className
 }: AvatarProps) {
-    const { autosizes } = useTheme();
+    const { autosizes, variants, plugins } = useTheme();
     const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.avatar;
     const sizeText =  sizeTableText[size] ?? 'text-lg sm:text-xl md:text-4xl lg:text-4xl xl:text-4xl';
     
+    
+    const colorContrast = useMemo(() => {
+        return plugins.contrast((variants[color] ?? color));
+    }, [style, color]);
+    const getStyle = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+
+        let st = {
+            ...style,
+            backgroundColor: src && (inlneBg ?? (variants[color] ?? color)),
+            color: (src)
+                ? (variants[color] ?? color)
+                : colorContrast
+        }
+
+        return st;
+    }, [style, color, src]);
+
 
     return (
         <div
@@ -55,7 +78,7 @@ export default function Avatar({
         >
             {!src &&
                 <div
-                    style={style}
+                    style={getStyle}
                     className={`
                         bg-gray-600 
                         text-neutral-content 
@@ -65,9 +88,7 @@ export default function Avatar({
                     `}
                 >
                     <span 
-                        className={`
-                            ${sizeText}
-                        `}
+                        className={`${sizeText}`}
                     >
                         { children }
                     </span>
@@ -75,7 +96,7 @@ export default function Avatar({
             }
             {src &&
                 <div
-                    style={style}
+                    style={getStyle}
                     className={`
                         rounded
                         ${getSize}

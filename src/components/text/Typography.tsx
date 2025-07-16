@@ -8,6 +8,7 @@ const Typography = forwardRef(
         {
             as,
             variant = 'body1',
+            color,
             className,
             children,
             fontStyle = 'normal',

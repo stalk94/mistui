@@ -101,64 +101,174 @@ const base = {
         type: 'groupButton',
         items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
     },
-
 }
+const typography = {
+    variant: {
+        type: 'select',
+        items: Object.keys(typographyVariants) as Array<keyof typeof typographyVariants>
+    },
+    fontStyle: {
+        type: 'groupButton',
+        items: ["normal", "italic"]
+    },
+    color: {
+        type: 'groupButton',
+        items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
+    },
+    style: styleText
+}
+
+
 const CONFIG = {
-    typography: {
-        variant: {
-            type: 'select',
-            items: Object.keys(typographyVariants) as Array<keyof typeof typographyVariants>
-        },
-        fontStyle: {
-            type: 'groupButton',
-            items: ["normal", "italic"]
-        },
-        style: styleText
+    // text
+    Typography: {
+        ...typography
     },
-    button: {
-        size: {
+    Link: {
+        ...typography
+    },
+    MarqueText: {
+        ...typography,
+        direction: {
             type: 'groupButton',
-            items: ['auto', 'xs', 'sm', 'md', 'lg', 'xl']
+            value: "left",
+            items: ["left", "right"]
         },
-        variant: {
-            type: 'groupButton',
-            items: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link']
-        },
-        color: {
-            type: 'groupButton',
-            items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
-        },
-        shadow: {
-            type: 'groupButton',
-            items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+        speed: {
+            type: 'number',
+            value: 6,
         }
     },
-    iconbutton: {
-        size: {
-            type: 'groupButton',
-            items: ['auto', 'xs', 'sm', 'md', 'lg', 'xl']
-        },
-        variant: {
-            type: 'groupButton',
-            items: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link']
-        },
-        color: {
-            type: 'groupButton',
-            items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
-        },
-        shadow: {
-            type: 'groupButton',
-            items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
-        }
+
+    // buttons
+    Button: {
+        ...base
     },
-    tabs: {
+    IconButton: {
+        ...base
+    },
+    GroupButtons: {
+        ...base
+    },
+    GroupButtonFiltre: {
+        ...base
+    },
+
+    // inputs
+    TextInput: {
+
+    },
+    Color: {
+
+    },
+    Date: {
+
+    },
+    Time: {
+
+    },
+    TextArea: {
+
+    },
+    File: {
+
+    },
+    Radio: {
+
+    },
+    Switch: {
+
+    },
+    CheckBox: {
+
+    },
+    Slider: {
+
+    },
+
+    // navigations
+    Tabs: {
         ...base,
         variant: {
             type: 'groupButton',
             value: "lift",
             items: ["border", "lift", "box"]
         }
-    }
+    },
+    BottomNavigation: {
+
+    },
+    Breadcrumbs : {
+
+    },
+
+    // data-display
+    Badge: {
+        ...base,
+        isGradient: {
+            type: 'checkbox'
+        }
+    },
+    Avatar: {
+        ...base,
+    },
+    Indicatior: {
+        ...base,
+        position: {
+            type: 'groupButton',
+            items: ["top", "bottom", "middle"]
+        },
+        align: {
+            type: 'groupButton',
+            items: ["center", "start", "end"]
+        },
+    },
+    List: {
+
+    },
+
+    // layout
+    Divider: {
+        ...base,
+        variant: {
+            type: 'groupButton',
+            items: ["dotted", "dashed"]
+        },
+        position: {
+            type: 'groupButton',
+            items: ['start', 'end']
+        },
+        orientation: {
+            type: 'groupButton',
+            items: ["horizontal", "vertical"]
+        }
+    },
+    Splitter: {
+        ...base,
+        orientation: {
+            type: 'groupButton',
+            items: ["horizontal", "vertical"]
+        },
+    },
+    Chat: {
+        ...base,
+        direction: {
+            type: 'groupButton',
+            items: ["start", "end"]
+        }
+    },
+    Tooltip: {
+        ...base,
+    },
+    Accordion: {
+        ...base,
+    },
+    Collapse: {
+        ...base,
+    },
+    Stat: {
+
+    },
 }
 
 export const store = createStore({

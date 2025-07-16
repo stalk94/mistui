@@ -7,11 +7,13 @@ export default function List({
     style = {}, 
     listStyle = {},
     items, 
+    shadow,
+    color,
     className,
     classNameList,
     ...props 
 }: ListProps) {
-    const {} = useTheme();
+    const { variants, shadows } = useTheme();
 
 
     return(
