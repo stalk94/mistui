@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, forwardRef } from 'react';
 import type { MarqueeTextProps } from './types';
 import Typography from './Typography';
-
+import { useTheme } from '../theme';
 
 
 /**
@@ -12,12 +12,14 @@ const MarqueeText = forwardRef<HTMLParagraphElement, MarqueeTextProps>(function 
         children, 
         variant, 
         style = {},
-        speed = 4,
-        direction = 'left',
+        speed = 8,
+        direction = 'right',
+        color,
         ...props 
     },
     ref
 ) {
+    const { variants } = useTheme();
     const animationName = direction === 'left' ? 'marquee-left' : 'marquee-right';
 
     return (
@@ -31,10 +33,12 @@ const MarqueeText = forwardRef<HTMLParagraphElement, MarqueeTextProps>(function 
         >
             <Typography
                 ref={ref}
+                as='p'
                 variant={variant ?? "body1"}
                 style={{
                     display: 'inline-block',
                     animation: `${animationName} ${speed}s linear infinite`,
+                    color: variants[color] ?? color,
                     ...style
                 }}
                 { ...props }

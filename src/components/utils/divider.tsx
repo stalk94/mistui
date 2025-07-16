@@ -33,9 +33,9 @@ export default function Divider({
             <div 
                 data-id={uid}
                 className={`
-                    divider 
+                    divider
                     divider-${position}
-                    divider-${orientation}
+                    ${orientation === 'vertical' ? 'divider-horizontal' : 'divider-vertical'}
                     ${getSize} 
                     text-neutral-500
                     ${className && className}

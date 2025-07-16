@@ -45,7 +45,11 @@ export const __generate =()=> {
         'badge-soft', 'badge-gnost badge-outline badge-dash badge-link',
         'divider-start divider-end divider-horizontal divider-vertical',
         'tabs-lift tabs-box tabs-border tab-active', 'chat-start chat-end',
-        'tooltip-top tooltip-bottom tooltip-left tooltip-right tooltip-open'
+        'tooltip-top tooltip-bottom tooltip-left tooltip-right tooltip-open',
+        'modal-open',
+        'indicator-center indicator-start indicator-end indicator-top indicator-middle indicator-bottom',
+        'footer-horizontal footer-vertical footer-center footer-title',
+        'menu-xs menu-sm menu-md menu-lg menu-xl'
 
     );
     const allDaisySizeClass = allSizesClassDaisy(namesClassDaisy);

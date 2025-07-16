@@ -7,22 +7,26 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 ::-webkit-scrollbar-track {
-    background-color:#11111173
+    background-color: #11111173;
 }
+  
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    background-color:#dedfdf;
+    background-color: #dedfdf;
     border: #333 1px solid;
 }
+  
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background-color:#adadad;
+    background-color: #adadad;
 }
+  
 ::-webkit-scrollbar {
-    width: 7px;
+  width: 7px;
 }
 
 body {

@@ -27,19 +27,19 @@ const Collapse = forwardRef<HTMLDivElement, CollapseProps>(function Collapse(
     return (
         <div 
             ref={ref} 
-            className={`collapse ${curIcon} ${sizeText} ${className && className}`}
+            className={`collapse ${curIcon} ${sizeText} ${className ?? ''}`}
             style={style}
             { ...props }
         >
             <input type="checkbox" className="peer" />
 
             <div 
-                className={`collapse-title ${classNameTitle && classNameTitle}`} 
+                className={`collapse-title text-left ${classNameTitle ?? ''}`} 
                 style={styleTitle}
             >
                 { title }
             </div>
-            <div className={`collapse-content`}>
+            <div className={`collapse-content`} style={{padding: 0}}>
                 { children ?? content }
             </div>
         </div>

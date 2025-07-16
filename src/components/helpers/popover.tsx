@@ -20,7 +20,8 @@ const Popover = forwardRef<HTMLDivElement, PopoverProps>(function Popover(
     return(
         <div 
             ref={ref} 
-            className={`dropdown ${isHover && 'dropdown-hover'} ${className && className}`}
+            className={`dropdown ${isHover && 'dropdown-hover'} ${className ?? ''}`}
+            { ...props }
         >
             <span tabIndex={0}>
                 { children }

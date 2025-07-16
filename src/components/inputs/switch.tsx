@@ -110,7 +110,7 @@ export default function SwitchBox({
                             ring-0
                             rounded-full 
                             ${!chek && 'opacity-80'}
-                            shadow-lg
+                            shadow-lg 
                             ${thumbSizeClass[size] ?? autoThumbSize}
                         `}
                     >

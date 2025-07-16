@@ -1,11 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
-import { ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import type { CarouselProps, SourceIremType } from './types';
 
 
 export default function CarouselVertical({ 
     editor, 
+    items = [],
+    autoplay = false,
+    autoplayDelay = 3000,
+    loop = false,
+    slidesToShow = 3,
+    slidesToScroll = 1,
     ...props 
 }: CarouselProps) {
     const pointer = useRef({ startY: 0, dragging: false });
@@ -13,14 +19,6 @@ export default function CarouselVertical({
     const [slideHeight, setSlideHeight] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const y = useMotionValue(0);
-    const {
-        items = [],
-        autoplay = false,
-        autoplayDelay = 3000,
-        loop = false,
-        slidesToShow = 3,
-        slidesToScroll = 1,
-    } = props;
     
     
     const goTo = (index: number) => {
@@ -174,7 +172,7 @@ export default function CarouselVertical({
 
 
     return (
-        <>
+        <div className='w-full h-full relative'>
             {items.length > slidesToShow && (
                 <>
                     <button className="vcarousel-button top" onClick={() => goTo(currentIndex - slidesToScroll)}>
@@ -206,6 +204,7 @@ export default function CarouselVertical({
                 >
                     { items.map((item, i) => (
                         <div
+                            onDragStart={(e) => e.preventDefault()}
                             key={i}
                             style={{
                                 flex: `0 0 ${100 / slidesToShow}%`,
@@ -252,6 +251,6 @@ export default function CarouselVertical({
                     }
                 `}
             </style>
-        </>
+        </div>
     );
 }

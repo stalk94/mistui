@@ -1,6 +1,7 @@
 import type { TooltipProps } from './types';
 import { useTheme } from '../theme';
 import { useMemo } from 'react';
+import { useUids } from '../hooks/uuid';
 
 
 
@@ -9,13 +10,14 @@ export default function Tooltip({
     children,
     size,
     color,
-    variant,
+    variant = 'contained',
     content,
     className,
     position = 'top',
     ...props
 }: TooltipProps) {
     const { shadows, plugins, autosizes, variants } = useTheme();
+    const uid = useUids('tooltip');
     const sizeText = (size && size !== 'auto') ? `text-${size}` : autosizes.text;
 
     
@@ -44,8 +46,35 @@ export default function Tooltip({
             st = {
                 ...rest,
                 ...st,
-                backgroundColor: inlneBg ?? '',
+                backgroundColor: inlneBg ?? 'transparent',
                 borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderWidth: 1,
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+
+        return st;
+    }, [style, color, variant]);
+    const getStyleAfter = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+
+        let st = {
+            ...style,
+            borderWidth: 1,
+            backgroundColor: (variant !== 'ghost' && variant !== 'link') && (variants[color] ?? color),
+        }
+
+
+        if (variant === 'dash' || variant === 'outline') {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: (variants[color] ?? color) ?? inlneBg ?? 'transparent',
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderWidth: 1,
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };
         }
@@ -56,17 +85,27 @@ export default function Tooltip({
 
     return (
         <div
-            className={`tooltip tooltip-${position}`}
-            style={getStyle}
+            className={`tooltip w-full tooltip-${position}`}
+            data-id={uid}
             { ...props }
         >
+            <style>
+               {`
+                    .tooltip[data-id="${uid}"]::after {
+                        background-color: ${getStyleAfter.backgroundColor} !important;
+                        border-color: ${getStyleAfter.borderColor} !important;
+                    }
+                `}
+            </style>
+
             <span 
                 className={`tooltip-content rounded shadow ${className ?? ''} ${sizeText}`}
+                style={getStyle}
             >
                 { content }
             </span>
 
             { children }
         </div>
-    )
+    );
 }

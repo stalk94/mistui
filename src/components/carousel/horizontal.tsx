@@ -4,10 +4,16 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import type { CarouselProps, SourceIremType } from './types';
 
 
-export default function CarouselHorizontal({ 
-    height, 
-    editor, 
-    ...props 
+export default function CarouselHorizontal({
+    height,
+    editor,
+    items = [],
+    autoplay = false,
+    autoplayDelay = 3000,
+    loop = false,
+    slidesToShow = 3,
+    slidesToScroll = 1,
+    ...props
 }: CarouselProps) {
     const pointer = useRef({ startX: 0, dragging: false });
     const containerRef = useRef<HTMLDivElement>(null);
@@ -15,14 +21,6 @@ export default function CarouselHorizontal({
     const [currentIndex, setCurrentIndex] = useState(0);
     const [slideWidth, setSlideWidth] = useState(0);
     const x = useMotionValue(0);
-    const {
-        items = [],
-        autoplay = false,
-        autoplayDelay = 3000,
-        loop = false,
-        slidesToShow = 3,
-        slidesToScroll = 1,
-    } = props;
     
     
     const goTo = (index: number) => {
@@ -152,7 +150,7 @@ export default function CarouselHorizontal({
     
 
     return (
-        <>
+        <div className='w-full h-full relative'>
             { items.length > slidesToShow && (
                 <>
                     <button className="carousel-button left" onClick={() => goTo(currentIndex - slidesToScroll)}>
@@ -182,7 +180,8 @@ export default function CarouselHorizontal({
                     }}
                 >
                     {items.map((item, i) => (
-                        <div
+                        <div 
+                            onDragStart={(e) => e.preventDefault()}
                             key={i}
                             style={{
                                 flex: `0 0 ${100 / slidesToShow}%`,
@@ -234,6 +233,6 @@ export default function CarouselHorizontal({
                     }
                 `}
             </style>
-        </>
+        </div>
     );
 }

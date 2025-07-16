@@ -84,10 +84,12 @@ const styleText = {
 const base = {
     size: {
         type: 'groupButton',
+        value: 'auto',
         items: ['auto', 'xs', 'sm', 'md', 'lg', 'xl']
     },
     variant: {
         type: 'groupButton',
+        value: 'contained',
         items: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link']
     },
     color: {
@@ -99,7 +101,7 @@ const base = {
     },
     shadow: {
         type: 'groupButton',
-        items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+        items: ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
     },
 }
 const typography = {
@@ -136,16 +138,35 @@ const CONFIG = {
         },
         speed: {
             type: 'number',
+            iconEnable: true,
             value: 6,
         }
     },
 
     // buttons
     Button: {
-        ...base
+        ...base,
+        isGradient: {
+            type: 'switch',
+            size: 'sm',
+            color: 'white',
+            style:{marginTop: 5}
+        }
     },
     IconButton: {
-        ...base
+        ...base,
+        isGradient: {
+            type: 'switch',
+            size: 'sm',
+            color: 'white',
+            style:{marginTop: 5}
+        },
+        isRounded: {
+            type: 'switch',
+            size: 'sm',
+            color: 'white',
+            style:{marginTop: 5}
+        }
     },
     GroupButtons: {
         ...base
@@ -156,6 +177,9 @@ const CONFIG = {
 
     // inputs
     TextInput: {
+
+    },
+    NumberInput: {
 
     },
     Color: {
@@ -206,24 +230,48 @@ const CONFIG = {
     Badge: {
         ...base,
         isGradient: {
-            type: 'checkbox'
+            type: 'switch',
+            size: 'sm',
+            color: 'white',
+            style:{marginTop: 5}
         }
     },
     Avatar: {
         ...base,
     },
-    Indicatior: {
-        ...base,
+    Indicator: {
         position: {
             type: 'groupButton',
-            items: ["top", "bottom", "middle"]
+            value: 'top',
+            items: ["top", "middle", "bottom"]
         },
         align: {
             type: 'groupButton',
-            items: ["center", "start", "end"]
+            value: 'end',
+            items: ["start", "center", "end"]
         },
     },
     List: {
+
+    },
+    Table: {
+        ...base,
+    },
+
+    // feedback
+    Tooltip: {
+        ...base,
+    },
+    Alert: {
+
+    },
+    Modal: {
+
+    },
+    Popover: {
+        
+    },
+    Drawer: {
 
     },
 
@@ -240,6 +288,7 @@ const CONFIG = {
         },
         orientation: {
             type: 'groupButton',
+            value: 'horizontal',
             items: ["horizontal", "vertical"]
         }
     },
@@ -257,9 +306,6 @@ const CONFIG = {
             items: ["start", "end"]
         }
     },
-    Tooltip: {
-        ...base,
-    },
     Accordion: {
         ...base,
     },
@@ -269,6 +315,22 @@ const CONFIG = {
     Stat: {
 
     },
+
+    // media 
+    Card: {
+        imageIsSide: {
+            type: 'switch',
+            color: 'white',
+            style:{marginBottom: 5}
+        }, 
+        imageIsFull: {
+            type: 'switch',
+            color: 'white'
+        }
+    },
+    Promo: {
+
+    }
 }
 
 export const store = createStore({
@@ -292,11 +354,11 @@ export default function() {
         return Object.entries(config).map(([key, value])=> {
             if (key !== 'style') {
                 return({
+                    size: 'xs',
                     ...value,
                     id: key,
                     label: key,
                     position: 'top',
-                    size: 'xs'
                 });
             }
         }).filter((e)=> e!==undefined);

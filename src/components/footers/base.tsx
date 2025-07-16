@@ -9,7 +9,7 @@ const Footer = forwardRef<HTMLElement, BaseFooter>(function Footer(
         className,
         children,
         isCenter,
-        orientation = 'vertical',
+        orientation = 'horizontal',
         orientationBreacpoints,
         ...props
     },
@@ -22,7 +22,7 @@ const Footer = forwardRef<HTMLElement, BaseFooter>(function Footer(
         <footer 
             ref={ref} 
             className={`
-                footer 
+                footer
                 ${isCenter && 'footer-center'} 
                 footer-${orientation}
                 ${className}

@@ -1,4 +1,3 @@
-import 'primereact/resources/primereact.min.css'; 
 import { useRef, useState, useEffect, useMemo, memo, Fragment } from 'react';
 import { DataTable, DataTableValueArray } from "primereact/datatable";
 import type { DataTablePropsWrapper, TableStyles, StyleTableWrapperProps } from './types';
@@ -16,29 +15,16 @@ const StyleTableWrapper = memo(({
     const alpha = (color: string, val: number) => {
         return colord(color).alpha(val).toRgbString();
     }
-
+    const lighten = (color: string, val: number) => {
+        return colord(color).lighten(val).toRgbString();
+    }
+    const darken = (color: string, val: number) => {
+        return colord(color).darken(val).toRgbString();
+    }
     
     return(
         <style>
         {/* css */`
-            ::-webkit-scrollbar-track {
-                background-color:#2a2a2b85;
-            }
-            ::-webkit-scrollbar-thumb {
-                -webkit-border-radius: 3px;
-                border-radius: 3px;
-                background-color:#dedfdf;
-                border: #333 1px solid;
-            }
-            ::-webkit-scrollbar-thumb {
-                -webkit-border-radius: 10px;
-                border-radius: 10px;
-                background-color:#adadad;
-            }
-            ::-webkit-scrollbar {
-                width: 7px;
-            }
-
             .p-datatable {
                 background: ${ style.body.backgroundColor };
                 border-radius: 5px;
@@ -50,16 +36,15 @@ const StyleTableWrapper = memo(({
                 font-family: 'Roboto';
             }
             .p-datatable-header {
-                background: ${ style.thead.backgroundColor };
+                background: ${ lighten(style.body.backgroundColor, 0.02) };
                 border-bottom: 1px solid #5f5f5f35;
                 color: ${ style.thead.color };
                 font-size: 18px;
-                font-weight: bold;
             }
             .p-datatable-footer {
                 border-top: 1px solid;
                 border-color: ${ style.body.borderColor };
-                background: ${ style.body.backgroundColor };
+                background: ${ lighten(style.body.backgroundColor, 0.02) };
                 color: ${ style.body.color };
                 display: flex;
                 font-size: 16px;
@@ -67,7 +52,7 @@ const StyleTableWrapper = memo(({
             }
             /* панель фильтры и сортировка */
             .p-datatable-thead > tr > th {
-                background: ${ style.thead.backgroundColor };
+                background: ${ lighten(style.body.backgroundColor, 0.05) };
                 color: ${ style.thead.color };
                 font-weight: bold;
                 padding: 1.5%;
@@ -109,17 +94,17 @@ const StyleTableWrapper = memo(({
             .p-paginator {
                 box-shadow: 0 -6px 10px -4px rgba(0, 0, 0, 0.25);
                 border-top: 1px solid ${ style.body.borderColor};
+                background: ${ lighten(style.body.backgroundColor, 0.012) };
                 padding: 0.1rem;
             }
             .p-paginator .p-paginator-page {
-                background: ${ style.paginator.backgroundColor };
                 color: ${ style.body.color };
                 padding: 0.5rem;
                 font-size: 14px;
                 color: ${ style.thead.color };
             }
             .p-paginator .p-paginator-page.p-highlight {
-                background: ${ style.body.backgroundColor };
+                background: ${ style.body.borderColor };
                 opacity: 0.8;
                 border-color: ${ style.body.borderColor };
                 font-weight: bold;
@@ -139,10 +124,12 @@ const StyleTableWrapper = memo(({
                 margin: 0 2px;
                 transition: background 0.2s, color 0.2s, border-color 0.2s;
                 cursor: pointer;
-                &:hover {
-                    background: ${ style.body.borderColor };
-                }
             }
+            .p-paginator .p-paginator-prev:hover,
+            .p-paginator .p-paginator-next:hover {
+                background: ${ style.body.borderColor };
+            }
+            
             .p-paginator .p-paginator-prev.p-disabled,
             .p-paginator .p-paginator-next.p-disabled {
                 opacity: 0.5;
@@ -161,9 +148,9 @@ const StyleTableWrapper = memo(({
                 font-size: 14px;
                 display: flex;
                 align-items: center;
-                &:hover {
-                    border-color: ${ alpha(style.body.borderColor, 0.5) };
-                }
+            }
+            .p-paginator .p-dropdown:hover {
+                border-color: ${ alpha(style.body.borderColor, 0.3) };
             }
         `}
         </style>
@@ -184,9 +171,15 @@ export default function DataTableCustom({
     children, 
     header, 
     footer, 
+    size,
     fontSizeHead, 
-    styles, 
-    style, 
+    styles = {
+        body: {},
+        header: {},
+        thead: {},
+        paginator: {}
+    }, 
+    style = {}, 
     ...props 
 }: DataTablePropsWrapper) {
     const theme = useTheme();
@@ -283,7 +276,7 @@ export default function DataTableCustom({
             }
         };
 
-        const debouncedUpdateHeight = debounce(updateHeight, 1000);
+        const debouncedUpdateHeight = debounce(updateHeight, 300);
         const observer = new ResizeObserver(debouncedUpdateHeight);
         observerRef.current = observer;
 
@@ -295,6 +288,7 @@ export default function DataTableCustom({
         return () => {
             observerRef.current?.disconnect();
             observerRef.current = null;
+            debouncedUpdateHeight();
         }
 
     }, [header, footer, value]);
@@ -302,6 +296,10 @@ export default function DataTableCustom({
     
     return (
         <Fragment>  
+            <StyleTableWrapper
+                style={mergeStyle}
+                fontSizeHead={fontSizeHead}
+            />
             {(typeof window === 'undefined') &&
                 <div className="flex w-52 flex-col gap-4">
                     <div className="skeleton h-4 w-full"></div>
@@ -312,32 +310,26 @@ export default function DataTableCustom({
             }
 
             {!(typeof window === 'undefined') &&
-                <Fragment>
-                    <StyleTableWrapper
-                        style={mergeStyle}
-                        fontSizeHead={fontSizeHead}
-                    />
-                    <DataTable
-                        paginator={autoPagination}
-                        rows={props.rows ?? 10}
-                        rowsPerPageOptions={[10, 25, 50, 100]}
-                        ref={tableRef}
-                        value={value}
-                        scrollable={true}
-                        scrollHeight={scrollHeight}
-                        style={{ 
-                            height: '100%', 
-                            width: '100%', 
-                            flexGrow: 1, 
-                            ...style 
-                        }}
-                        header={header}
-                        footer={footer}
-                        {...props}
-                    >
-                        { children }
-                    </DataTable>
-                </Fragment>
+                <DataTable
+                    paginator={autoPagination}
+                    rows={props.rows ?? 10}
+                    rowsPerPageOptions={[10, 25, 50, 100]}
+                    ref={tableRef}
+                    value={value}
+                    scrollable={true}
+                    scrollHeight={scrollHeight}
+                    style={{
+                        height: '100%',
+                        width: '100%',
+                        flexGrow: 1,
+                        ...style
+                    }}
+                    header={header}
+                    footer={footer}
+                    {...props}
+                >
+                    { children }
+                </DataTable>
             }
         </Fragment>
     );

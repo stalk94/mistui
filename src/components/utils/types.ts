@@ -56,17 +56,18 @@ export type CollapseProps = {
     style?: React.CSSProperties
     styleTitle?: React.CSSProperties
     className?: Props['className']  
-    classNameTitle?: Props['className'] 
+    classNameTitle?: React.HTMLAttributes<'div'>['className'] 
     /** title collapse */
     title: React.ReactNode
     /** content collapse, children or content props  */
-    content: React.ReactNode
+    content?: React.ReactNode
     icon?: 'plus' | 'arrow'
 }
 
 export type IndicatorProps = {
     /** content collapse, children or content props */
     children?: string | React.ReactElement
+    content?: string | React.ReactElement
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties

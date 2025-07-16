@@ -11,52 +11,37 @@ export function SplitterCustom({
     ...props
 }: SplitterProps) {
     const uid = useUids('splitter');
-    const { variants, autosizes } = useTheme();
+    const { variants, autosizes, plugins } = useTheme();
     const curColor = (variants[color] ?? color) ?? '#bdbbbe'; 
+    
 
     return (
         <Fragment>
              <style>
-                {/*css*/`
-                    .p-splitter-gutter {
-                        background-color: transparent;
-                        position: relative;
-                    }
-                    .p-splitter-gutter::before {
-                        content: '';
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        opacity: 0.5;
-                        transition: opacity 0.2s;
-                    }
-                    /* Горизонтальный (разделение слева-направо) */
-                    .p-splitter-horizontal .p-splitter-gutter::before {
-                        top: 0;
-                        bottom: 0;
-                        background-image: repeating-linear-gradient(to bottom,
-                            ${curColor},
-                            ${curColor} 1px,
-                            transparent 1px,
-                            transparent 4px);
-                        width: 1px;
-                        cursor: col-resize;
-                    }
-                    /* Вертикальный (разделение сверху-вниз) */
-                    .p-splitter-vertical .p-splitter-gutter::before {
-                        left: 0;
-                        right: 0;
-                        background-image: repeating-linear-gradient(to right,
-                            ${curColor},
-                            ${curColor} 1px,
-                            transparent 1px,
-                            transparent 4px);
-                        height: 1px;
-                        cursor: row-resize;
-                    }
+                {`
                     /* Hover эффект */
                     .p-splitter-gutter:hover::before {
                         opacity: 1;
+                    }
+                    .p-splitter {
+                        border: 1px solid ${plugins.alpha(curColor, 0.1)};
+                        border-radius: 2px;
+                        color: rgba(255, 255, 255, 0.87);
+                    }
+                    .p-splitter .p-splitter-gutter {
+                        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+                        background: rgba(255, 255, 255, 0.03);
+                    }
+                    .p-splitter .p-splitter-gutter .p-splitter-gutter-handle {
+                        background: ${curColor};
+                    }
+                    .p-splitter .p-splitter-gutter .p-splitter-gutter-handle:focus-visible {
+                        outline: 0 none;
+                        outline-offset: 0;
+                        box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.2);
+                    }
+                    .p-splitter .p-splitter-gutter-resizing {
+                        background: ${plugins.alpha(curColor, 0.2)};
                     }
                 `}
             </style>

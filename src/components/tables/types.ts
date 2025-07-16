@@ -32,5 +32,6 @@ export type StyleTableWrapperProps = {
 
 export type DataTablePropsWrapper = ComponentProps<typeof DataTable> & {
     fontSizeHead: string
-    styles: TableStyles
+    styles?: TableStyles
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }

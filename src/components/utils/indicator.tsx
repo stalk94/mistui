@@ -7,6 +7,7 @@ import { useTheme } from '../theme';
 const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
     {
         style = {},
+        content,
         children,
         size,
         color,
@@ -23,18 +24,21 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
     return (
         <div 
             ref={ref} 
-            className={`indicator ${className && className}`}
-            style={style}
+            className={`indicator`}
             { ...props }
         >
             <span
+                style={style}
                 className={`
-                    indicator-item 
+                    indicator-item
                     indicator-${position} 
                     indicator-${align}
+                    ${className ?? ''}
                 `}
+                children={content}
             />
-            { children }
+
+            { children }  
         </div>
     )
 });

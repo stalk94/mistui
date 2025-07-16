@@ -18,7 +18,7 @@ export default function Card({
     ...props 
 }: CardProps) {
     const { shadows } = useTheme();
-
+   
 
     return(
         <div 
@@ -27,7 +27,7 @@ export default function Card({
                 bg-base-300
                 ${imageIsSide && 'card-side'}
                 ${imageIsFull && 'card-image-full-no-overlay'}
-                ${className && className}
+                ${className ?? ''}
             `}
             style={{
                 boxShadow: (shadow && shadows[shadow]) && shadows[shadow],

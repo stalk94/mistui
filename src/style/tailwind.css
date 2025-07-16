@@ -2,14 +2,16 @@
 @import "tailwindcss";
 
 @tailwind utilities;
-@plugin "daisyui";
+@plugin "daisyui" {
+    exclude: rootscrollgutter, scrollbar;
+}
 
 
  
 @plugin "daisyui/theme" {
     name: "dark";
     default: true;
-    
+
     /* fonts */
     --font-family-base: 'Roboto', sans-serif;
     --font-family-roboto: 'Roboto', sans-serif;

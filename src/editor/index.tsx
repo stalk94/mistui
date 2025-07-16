@@ -17,14 +17,14 @@ const daisyThemes = [
 const category = {
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
-    inputs: ['TextInput', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File'],
+    inputs: ['TextInput', 'NumberInput', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation'],
     'data-display': ['Avatar', 'AvatarGroup', 'Indicator', 'Badge', 'List', 'Table'],
     layout: ['Divider', 'Chat', 'Stat', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Footer', 'Hero', 'AppBar'],
     feedback: ['Alert', 'Tooltip', 'Modal', 'Popover', 'Drawer'],
     media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
-    form: [],
+    form: [''],
 };
 
 
@@ -43,20 +43,34 @@ export default function Sand({ }) {
             {/*<AppBar/>*/}
             <section className='flex h-full'>
                 <CustomBar
+                    orientation='vertical'
                     style={{
-                        width:'20%', 
+                        width: '20%', 
                         background: 'rgb(54, 54, 54)',
                         boxShadow: "3px 0 4px rgba(0, 0, 0, 0.08)", 
                         padding: 5,
                     }}
                 >
                     {variants &&
-                        <GroupButton
-                            size='sm'
-                            isVertiacal
-                            items={variants}
-                            onChange={(v)=> store.preview.set(v)}
-                        />
+                        Object.entries(category).map(([cat, elems])=>
+                            <Collapse
+                                key={cat}
+                                title={cat}
+                                className='collapse-plus border border-[#ffffff4c]'
+                                classNameTitle='p-3  border-b border-[#ffffff4c] bg-[#06060622]'
+                            >
+                                <div className='overflow-y-auto'>
+                                    <GroupButton
+                                        size='sm'
+                                        className='p-2'
+                                        variant='ghost'
+                                        isVertiacal
+                                        items={elems}
+                                        onChange={(v) => store.preview.set(v)}
+                                    />
+                                </div>
+                            </Collapse>
+                        )
                     }
                 </CustomBar>
 

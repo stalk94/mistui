@@ -30,7 +30,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(function Hero(
     return(
         <div
             ref={ref}
-            className={`hero ${className && className}`}
+            className={`hero ${className ?? ''}`}
             style={{
                 backgroundImage: fontImageOverlaySrc && `url(${fontImageOverlaySrc})`,
                 ...style
@@ -40,7 +40,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(function Hero(
             { fontImageOverlaySrc && <div className="hero-overlay"/> }
 
             <div 
-                className={`hero-content ${classNameContent && classNameContent}`}
+                className={`hero-content ${classNameContent ?? ''}`}
                 style={styleContent}
             >
                 { children }

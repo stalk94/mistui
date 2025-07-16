@@ -132,10 +132,10 @@ export function AvatarGroup({
         >
             { items && items.map((item, index)=> 
                 <Avatar 
+                    { ...item }
                     size={size}
                     className={className}
                     key={index}
-                    { ...item }
                 />
             )}
         </div>

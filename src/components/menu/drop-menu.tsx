@@ -2,7 +2,13 @@ import type { DropMenuProps } from './type';
 
 
 
-export default function Menu({ style, onSelect, items, onlyId, ...props }: DropMenuProps) {
+export default function Menu({ 
+    style, 
+    onSelect, 
+    items, 
+    onlyId, 
+    ...props 
+}: DropMenuProps) {
     return(
         <ul
             className={`

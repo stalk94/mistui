@@ -23,7 +23,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
         <Typography
             as='a'
             ref={ref}
-            className={`link ${className && className}`}
+            className={`link ${className ?? ''}`}
             style={{
                 color: variants[color] ?? color,
                 ...style

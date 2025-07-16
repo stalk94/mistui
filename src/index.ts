@@ -17,6 +17,9 @@ export * from './components/form';
 // кнопки
 export * from './components/buttons';
 
+// card 
+export * from './components/cards';
+
 // карусели
 export * from './components/carousel';
 export type { CarouselProps } from './components/carousel/types';
@@ -63,6 +66,9 @@ export { default as Overflow } from './components/utils/overflow';
 
 // Hero
 export { default as Hero } from './components/hero';
+
+// Footer
+export { default as Footer } from './components/footers/base';
 
 // tabs
 export { default as Tabs } from './components/tabs';
