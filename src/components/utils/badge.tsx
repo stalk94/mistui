@@ -1,6 +1,7 @@
 import type { BadgeProps } from './types';
-import { forwardRef, cloneElement, useMemo  } from 'react';
+import { forwardRef, cloneElement, useMemo, useCallback  } from 'react';
 import { useTheme } from '../theme';
+import { createGradientStyle } from '../hooks';
 import clsx from 'clsx';
 
 
@@ -9,7 +10,7 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
         style = {},
         children,
         size,
-        variant,
+        variant = 'contained',
         color,
         className,
         isGradient,
@@ -20,11 +21,52 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     },
     ref
 ) {
-    const { shadows, autosizes } = useTheme();
+    const { variants, shadows, autosizes, plugins } = useTheme();
     const getSize = (size && size !== 'auto') ? `badge-${size}` : autosizes.badge;
 
-    const memoIcon = useMemo(()=> {
-        const result = {iconLeft:undefined, iconRight:undefined};
+    
+    const colorContrast = useMemo(() => {
+        if (variant === 'soft' || variant === 'contained') {
+            return plugins.contrast((variants[color] ?? color));
+        }
+        else return (variants[color] ?? color);
+    }, [style, color, variant]);
+    const getGradient = useMemo(() => {
+        if (!isGradient) return {};
+        const inlneBg = style?.backgroundColor;
+        const curVariant = variants[color];
+
+        return createGradientStyle(inlneBg ?? curVariant);
+    }, [style, color, variant, isGradient]);
+    const getStyle = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+
+        let st = {
+            ...style,
+            backgroundColor: (variant !== 'ghost' && variant !== 'link') && (variants[color] ?? color),
+            color: (variant !== 'soft' && variant !== 'contained') 
+                ? (variants[color] ?? color) 
+                : colorContrast
+        }
+
+
+        if (variant === 'dash' || variant === 'outline') {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: inlneBg ?? '',
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+
+        return st;
+    }, [style, color, variant]);
+    const memoIcon = useMemo(() => {
+        const result = { iconLeft: undefined, iconRight: undefined };
 
         if (iconLeft) result.iconLeft = cloneElement(iconLeft, {
             className: clsx(
@@ -39,22 +81,24 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
 
         return result;
     }, [iconLeft, iconRight]);
-    
+
 
     return (
         <div 
             ref={ref}
             className={`
-                badge 
+                badge
                 badge-${variant}
-                badge-${color}
+                ${variant === 'soft' && 'badge-soft'}
                 ${getSize}
                 ${className && className}
                 animate-slide-up
             `}
             style={{
                 boxShadow: shadows[shadow], 
-                ...style
+                ...getStyle,
+                ...style,
+                ...getGradient
             }}
             { ...props} 
         >

@@ -9,6 +9,7 @@ export interface Theme {
         btn: string
         textarea: string
         avatar: string
+        badge: string
     }
     variants: {
         neutral: string
@@ -67,6 +68,11 @@ export interface Theme {
             color: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['color']
             background: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['backgroundColor']
         }
+    }
+    plugins: {
+        invert: (color: string)=> string 
+        contrast: (color: string)=> string 
+        alpha: (color: string, alpha: number)=> string 
     }
 }
 

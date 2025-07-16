@@ -2,17 +2,7 @@ import { ClassValue } from 'clsx';
 import { fontFamilyVariants } from '../theme/default'
 import type { ElementType, ComponentPropsWithoutRef, ComponentPropsWithRef } from 'react';
 
-type VarFonts = '--font-family-roboto' 
-    | '--font-family-inter' 
-    | '--font-family-open' 
-    | '--font-family-poppins' 
-    | '--font-family-lato'
-    | '--font-family-montserrat' 
-    | '--font-family-source' 
-    | '--font-family-merriweather' 
-    | '--font-family-raleway'
 
-    
 export const typographyVariants = {
     h1: 'text-4xl sm:text-5xl md:text-6xl font-bold',
     h2: 'text-3xl sm:text-4xl md:text-5xl font-semibold',
@@ -38,10 +28,11 @@ export const typographyVariants = {
 export type BaseTypographyProps = {
 	children: React.ReactNode
 	variant?: keyof typeof typographyVariants
-	classNames?: ClassValue
+	className?: React.HTMLAttributes<HTMLElement>['className'] | ClassValue
 	style?: React.CSSProperties
     fontStyle?: 'normal' | 'italic'
     fontFamily?: keyof typeof fontFamilyVariants
+    fontSize?: string | number
 }
 
 type AsProp<T extends ElementType> = {
@@ -63,3 +54,17 @@ export type TypographyComponent = <T extends React.ElementType = 'p'>(
 		ref?: PolymorphicRef<T>
 	}
 ) => React.ReactNode;
+
+
+export type LinkProps = BaseTypographyProps & {
+    children?: string
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+}
+
+export type MarqueeTextProps = BaseTypographyProps & {
+    /** seconds */
+    speed?: number;
+    direction?: 'left' | 'right';
+    children: React.ReactNode
+}

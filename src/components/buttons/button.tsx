@@ -2,7 +2,7 @@ import { forwardRef, useCallback, useMemo } from 'react';
 import type { ButtonProps } from './type';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
-import { createGradientStyle } from './helpers';
+import { createGradientStyle } from '../hooks';
 
 
 
@@ -11,7 +11,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         style = {},
         children,
         size,
-        variant,
+        variant = 'contained',
         color,
         className,
         isSoft,
@@ -27,6 +27,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     const getSize = size ? `btn-${size}` : autosizes.btn;
 
 
+    const colorContrast = useMemo(() => {
+        if (variant === 'contained') {
+            return plugins.contrast((variants[color] ?? color));
+        }
+        else return (variants[color] ?? color);
+    }, [style, color, variant]);
     const getGradient = useMemo(() => {
         if (!isGradient) return {};
         const inlneBg = style?.backgroundColor;
@@ -42,7 +48,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         let st = { 
             ...style,
             backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color),
-            color: (variant === 'dash' || variant === 'outline') ? (variants[color] ?? color) : ''
+            color: (variant === 'dash' || variant === 'outline') 
+                ? (variants[color] ?? color) 
+                : colorContrast
         }
         
 
@@ -52,7 +60,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
             st = {
                 ...rest,
                 ...st,
-                backgroundColor: inlneBg ?? '',
+                backgroundColor: inlneBg ?? 'inherit',
                 borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };

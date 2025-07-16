@@ -21,7 +21,7 @@ export * from './components/buttons';
 export * from './components/carousel';
 export type { CarouselProps } from './components/carousel/types';
 
-// для текста
+// для текста (typography, link, marque)
 export * from './components/text';
 
 // навигация
@@ -31,6 +31,12 @@ export type { BreadcrumbsNavProps as BreadcrumbsProps } from './components/bread
 
 // Акордеон нормальный
 export { default as Accordion } from './components/acordeon';
+
+// Chat
+export { default as Chat } from './components/chat';
+
+// Tooltip
+export { default as Tooltip } from './components/utils/tooltip';
 
 // иконки флажки разделители и прочее
 export { default as Flag } from './components/utils/flag';
@@ -51,6 +57,9 @@ export { default as Indicator } from './components/utils/indicator';
 
 // Bottom navigation
 export { default as  BottomNavigation } from './components/bottom-nav';
+
+// Overflow
+export { default as Overflow } from './components/utils/overflow';
 
 // Hero
 export { default as Hero } from './components/hero';
@@ -87,4 +96,4 @@ export { default as LeftSideBarAndTool } from './components/nav-bars/tool-left';
 // appBar
 export { default as AppBar } from './components/app-bar';
 // слоты appBar
-export { Start, LinearNavigation, MobailBurger } from './components/app-bar';
+//export { Start, LinearNavigation, MobailBurger } from './components/app-bar';

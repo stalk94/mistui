@@ -44,7 +44,8 @@ export const __generate =()=> {
         'btn-soft', 'btn-info', 'btn-gnost', 'btn-outline btn-dash btn-link btn-circle btn-square',
         'badge-soft', 'badge-gnost badge-outline badge-dash badge-link',
         'divider-start divider-end divider-horizontal divider-vertical',
-        'tabs-lift tabs-box tabs-border tab-active'
+        'tabs-lift tabs-box tabs-border tab-active', 'chat-start chat-end',
+        'tooltip-top tooltip-bottom tooltip-left tooltip-right tooltip-open'
 
     );
     const allDaisySizeClass = allSizesClassDaisy(namesClassDaisy);

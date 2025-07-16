@@ -1,7 +1,7 @@
 import React from 'react';
 import { Schema } from './types';
 import { fabricsInput } from './fabrics';
-import Accordion from '../accordion';
+import Accordion from '../acordeon';
 
 
 export type AccordionScnema = {

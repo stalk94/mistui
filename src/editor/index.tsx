@@ -1,12 +1,10 @@
 import React from 'react';
 import { Select } from 'src/components/inputs';
-import AppBar from '../components/app-bar';
-import SideBarAndToolPanel from '../components/nav-bars/tool-left';
 import CustomBar from '../components/nav-bars/bar'
 import LeftNavigation from '../components/nav-bars/left-nav';
-import SandBox from './SandBox';
+import SandBox from './Render';
 import PropsVariator, { store } from './config-props';
-import { Button, GroupButton, GroupButtonFiltre } from '../components/buttons';
+import { Button, GroupButton, GroupButtonFiltre } from '../index';
 
 
 const daisyThemes = [
@@ -33,9 +31,6 @@ export default function Sand({ }) {
         >
             {/*<AppBar/>*/}
             <section className='flex h-full'>
-                <LeftNavigation
-                    collapsed
-                />
                 <CustomBar
                     style={{
                         width:'20%', 

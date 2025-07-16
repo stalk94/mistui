@@ -343,9 +343,10 @@ export default function SandBox() {
     
         if (emmiter) {
             //console.log(emmiter);
-            store.cache.set((old)=> (
-                {...old, ...emmiter}
-            ));
+            store.cache.set((old)=> {
+                if (!emmiter.colorCustom) return ({...old, ...emmiter});
+                else return ({...old, color: emmiter.colorCustom});
+            });
         }
     }, [emmiter]);
     

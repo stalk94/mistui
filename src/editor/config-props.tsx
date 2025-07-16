@@ -94,10 +94,14 @@ const base = {
         type: 'groupButton',
         items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
     },
+    colorCustom: {
+        type: 'color'
+    },
     shadow: {
         type: 'groupButton',
         items: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
-    }
+    },
+
 }
 const CONFIG = {
     typography: {

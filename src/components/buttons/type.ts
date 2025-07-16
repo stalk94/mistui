@@ -14,7 +14,7 @@ export type ButtonProps = Props & {
     title?: string
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    variant?: 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
     isSoft?: boolean
     isGradient?: any
@@ -49,8 +49,8 @@ export type IconButtonProps =  Props & {
     children?: React.ReactNode
     title?: string
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    variant?: 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     isSoft?: boolean
     isRounded?: boolean

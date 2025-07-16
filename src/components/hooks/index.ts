@@ -1,3 +1,4 @@
+import { colord } from 'colord';
 import { useState, useEffect, SetStateAction, Dispatch, useRef, useCallback } from 'react';
 
 
@@ -83,22 +84,37 @@ export function useHover<T extends HTMLElement>() {
     const [hovered, setHovered] = useState(false);
     const ref = useRef<T | null>(null);
 
-    const handleMouseEnter = useCallback(() => setHovered(true), []);
-    const handleMouseLeave = useCallback(() => setHovered(false), []);
-
     const callbackRef = useCallback((node: T | null) => {
         if (ref.current) {
-            ref.current.removeEventListener('mouseenter', handleMouseEnter);
-            ref.current.removeEventListener('mouseleave', handleMouseLeave);
+            ref.current.removeEventListener('mouseenter', onMouseEnter);
+            ref.current.removeEventListener('mouseleave', onMouseLeave);
         }
 
         if (node) {
-            node.addEventListener('mouseenter', handleMouseEnter);
-            node.addEventListener('mouseleave', handleMouseLeave);
+            node.addEventListener('mouseenter', onMouseEnter);
+            node.addEventListener('mouseleave', onMouseLeave);
         }
 
         ref.current = node;
-    }, [handleMouseEnter, handleMouseLeave]);
+    }, []);
 
-    return [callbackRef, hovered] as const;
+    const onMouseEnter = useCallback(() => setHovered(true), []);
+    const onMouseLeave = useCallback(() => setHovered(false), []);
+
+    return [callbackRef, hovered, setHovered] as const;
+}
+
+
+export function createGradientStyle(
+    baseColor: string,
+    direction: 'to right' | 'to left' | 'to top' | 'to bottom' | string = 'to right'
+): React.CSSProperties {
+    const base = colord(baseColor);
+
+    const lighter = base.lighten(0.65).alpha(0.4).toHex();
+    const darker = base.lighten(0.5).alpha(0.4).toHex();
+
+    return {
+        backgroundImage: `linear-gradient(${direction}, ${lighter}, ${baseColor}, ${darker})`,
+    };
 }

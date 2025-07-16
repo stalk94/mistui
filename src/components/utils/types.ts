@@ -38,7 +38,7 @@ export type BadgeProps = {
     children?: string | React.ReactElement
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg'
     isHorizontal?: boolean
-    variant?: 'outline' | 'dash' | 'soft' | 'ghost' | 'link' 
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link' 
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties
     className?: Props['className'] 
@@ -75,6 +75,19 @@ export type IndicatorProps = {
     align?: 'start' | 'center' | 'end'
 }
 
+export type TooltipProps = {
+    /** wraparound component */
+    children?: string | React.ReactElement
+    /** hint content */
+    content?: string
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    style?: React.CSSProperties
+    className?: Props['className']
+    position?: 'top' | 'left' | 'right' | 'bottom'
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link' 
+}
+
 export type StatProps = Props & {
     figure?: React.ReactNode
     title?: React.ReactNode
@@ -91,4 +104,9 @@ export type StatsProps = Props & {
         actions?: React.ReactNode
     }[]
     orientation?: 'vertical' | 'horizontal'
+}
+
+export type OverflowProps = Props & {
+    children: React.ReactNode[]
+    direction?: 'row' | 'column'
 }

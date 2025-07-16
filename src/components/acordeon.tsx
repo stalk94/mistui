@@ -1,6 +1,7 @@
-import { useCache } from './hooks';
+import { useCache, useHover } from './hooks';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from './theme';
+import { useMemo } from 'react';
 
 
 export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick'> & {
@@ -11,6 +12,8 @@ export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'classNa
         content: React.ReactElement
     }[] 
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     /** массив индексов развернутых вкладок [0, 1, 2 ...] */
     activeIndexs?: number[]
     style?: React.CSSProperties
@@ -23,22 +26,92 @@ export default function Acordeon({
     items,
     size,
     activeIndexs,
-    style,
+    style = {},
+    variant = 'contained',
+    color,
     styleTitle,
     className,
     classNameTitle
 }: AccordionProps) {
-    const { styles, autosizes } = useTheme();
+    const [refHover, hovered] = useHover();
+    const { styles, autosizes, variants, plugins } = useTheme();
     const sizeText = size ? `text-${size}` : autosizes.text;
     const [active, setActive] = useCache(activeIndexs ?? 0);
     
-    
+
+    const colorContrast = useMemo(() => {
+        if (variant === 'contained') {
+            return plugins.contrast((variants[color] ?? color));
+        }
+        else return (variants[color] ?? color);
+    }, [style, color, variant]);
+    const getStyle = useMemo(() => {
+        if (variant === 'ghost') return {
+            borderColor: 'transparent',
+            backgroundColor: 'transparent',
+            ...style
+        };
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+
+        let st = {
+            ...style,
+            backgroundColor: (variants[color] ?? color),
+            borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.4),
+            color: (variant === 'dash' || variant === 'outline')
+                ? (variants[color] ?? color)
+                : colorContrast
+        }
+
+        if (variant === 'soft') {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor:  plugins.alpha(st.backgroundColor ?? inlneBg, 0.05) ?? 'inherit',
+                borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.2),
+                borderStyle: 'solid',
+            };
+        }
+        if ((variant === 'dash' || variant === 'outline')) {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: inlneBg ?? 'inherit',
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+
+
+        return st;
+    }, [style, color, variant]);
+    const getStyleHovered = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+        let st = {};
+
+        if (hovered && variant === 'ghost') return {
+            borderColor: 'transparent',
+            backgroundColor: plugins.alpha(variants[color] ?? color, 0.7),
+            ...style
+        }
+
+        return st;
+    }, [style, color, variant, hovered]);
+
+
     return(
         <div 
+            ref={refHover}
             style={{ 
                 borderRadius: 6,
                 backgroundColor: styles?.accordeon?.backgroundColor,
-                ...style
+                ...getStyle,
+                ...getStyleHovered
             }}
             className={`
                 join 
@@ -57,9 +130,7 @@ export default function Acordeon({
                         border
                         ${active === index && 'collapse-open'}
                     `}
-                    style={{
-                        borderColor: styles?.input?.borderColor,
-                    }}
+                    style={getStyle}
                 >
                     {/* title */}
                     <div
@@ -87,7 +158,9 @@ export default function Acordeon({
                     
                     {/* content */}
                     <div 
-                        style={{ padding: active !== index ? 0 : 4 }}
+                        style={{ 
+                            padding: active !== index ? 0 : 4,
+                        }}
                         className={`
                             collapse-content
                             border-[#0000001a]

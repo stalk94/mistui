@@ -146,6 +146,15 @@
 
 
 @layer base {
+    @keyframes marquee-left {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    @keyframes marquee-right {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    
     .main {
         font-family: var(--font-family-base);
     }

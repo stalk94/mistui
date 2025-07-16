@@ -2,7 +2,7 @@ import { forwardRef, useCallback, useMemo, cloneElement } from 'react';
 import type { IconButtonProps } from './type';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
-import { createGradientStyle } from './helpers'
+import { createGradientStyle } from '../hooks';
 import clsx from 'clsx';
 
 
@@ -13,7 +13,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
         children,
         style = {},
         size,
-        variant,
+        variant = 'contained',
         color,
         className,
         isSoft,
@@ -35,6 +35,12 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
             clsx((icon ?? children).props.className, 'h-[70%]')
         ),
     });
+    const colorContrast = useMemo(() => {
+        if (variant === 'contained') {
+            return plugins.contrast((variants[color] ?? color));
+        }
+        else return (variants[color] ?? color);
+    }, [style, color, variant]);
     const getGradient = useMemo(() => {
         if (!isGradient) return {};
         const inlneBg = style?.backgroundColor;
@@ -47,6 +53,25 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
         
+        let st = { 
+            ...style,
+            backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color),
+            color: (variant === 'dash' || variant === 'outline') 
+                ? (variants[color] ?? color) 
+                : colorContrast
+        }
+
+        if ((variant === 'dash' || variant === 'outline')) {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: inlneBg ?? 'inherit',
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
         if ((inlneBg || inlneBorder) && (variant === 'dash' || variant === 'outline')) {
             const { backgroundColor, ...rest } = style;
 
@@ -56,7 +81,8 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
                 borderColor: inlneBorder ?? inlneBg,
             });
         }
-        else return style;
+        
+        return st;
     }, [style, color, variant, isSoft]);
     const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
         const inlneBg = style?.backgroundColor;

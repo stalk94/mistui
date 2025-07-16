@@ -40,4 +40,4 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
 });
 
 
-export default Indicator ;
+export default Indicator;
