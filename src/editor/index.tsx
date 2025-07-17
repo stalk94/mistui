@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from 'src/components/inputs';
+import { Select } from '../components/inputs';
 import CustomBar from '../components/nav-bars/bar'
 import { Collapse, Typography } from '../index';
 import SandBox from './Render';
@@ -125,9 +125,7 @@ export default function Sand({ }) {
                     </nav>
 
                     <main className="flex flex-col h-full w-full">
-                        <div className="flex flex-col ml-[15%]">
-                            <SandBox />
-                        </div>
+                        <SandBox />
                     </main>
                 </section>
             </section>

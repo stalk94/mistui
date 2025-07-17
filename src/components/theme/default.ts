@@ -180,7 +180,7 @@ const defaultTheme = {
             theadFontColor: 'grey',
         },
         appBar: {
-
+            backgroundColor: colord(COLORS.base).lighten(0.15).toRgbString()
         },
         leftBar: {
             backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()

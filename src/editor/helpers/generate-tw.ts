@@ -1,5 +1,21 @@
 import { safeTw } from './plugins';
 
+const justifyMap = [
+    'items-start',
+    'items-center',
+    'items-end',
+    'items-stretch',
+    'items-baseline'
+];
+const alignMap = [
+    'justify-start',
+    'justify-center',
+    'justify-end',
+    'justify-between',
+    'justify-around',
+    'justify-evenly'
+];
+
 
 const allSizesClassDaisy =(namesClassDaisy)=> {
     const breakpoints = ['', 'sm', 'md', 'lg', 'xl']; // '' = без breakpoint
@@ -39,6 +55,7 @@ export const __generate =()=> {
 
     // any token
     classes.push(
+        ...justifyMap, ...alignMap,
         'top-1', 'top-2', 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2', 
         'rotate-180', 'dropdown-hover', 
         'btn-soft', 'btn-info', 'btn-gnost', 'btn-outline btn-dash btn-link btn-circle btn-square',

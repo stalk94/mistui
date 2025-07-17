@@ -51,7 +51,13 @@
 .tabs-box {
     box-shadow: none;
 }
-
+.navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 2;
+    min-height: 2rem;
+}
 
 .btn-select {
     background-color: var(--color-neutral-500);

@@ -32,7 +32,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
 
     const mergedIcon = cloneElement((icon ?? children), {
         className: clsx(
-            clsx((icon ?? children).props.className, 'h-[70%]')
+            clsx((icon ?? children)?.props?.className, 'h-[70%]')
         ),
     });
     const colorContrast = useMemo(() => {

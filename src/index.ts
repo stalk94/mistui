@@ -103,6 +103,6 @@ export { default as LeftSideBar } from './components/nav-bars/left-nav';
 export { default as LeftSideBarAndTool } from './components/nav-bars/tool-left';
 
 // appBar
-export { default as AppBar } from './components/app-bar';
+export { default as AppBar } from './components/app-bar/AppBar';
 // слоты appBar
 //export { Start, LinearNavigation, MobailBurger } from './components/app-bar';

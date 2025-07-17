@@ -1,11 +1,14 @@
 {
   "name": "shadow",
   "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "start": "next start",
     "dev": "vite",
+    "build:types": "tsc --emitDeclarationOnly",
     "nextdev": "npx open-cli http://localhost:3000 & next dev --turbo",
     "nextbuild": "next build",
     "build": "vite build"

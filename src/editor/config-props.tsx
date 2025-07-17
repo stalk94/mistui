@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from '../components/form/Form';
 import { createStore } from 'statekit-lite';
 import { typographyVariants } from '../components/text/types';
+import { Button, IconButton } from '../components/buttons';
 
 
 const styleText = {
@@ -349,6 +350,7 @@ export const store = createStore({
 
 
 export default function() {
+    const [colapse, setColapse] = useState(false);
     const preview = store.preview.use();
     const propses = store.propses.use();
     const scheme = store.scheme.use();
@@ -381,20 +383,34 @@ export default function() {
     
     return(
         <div 
-            className='w-70 p-2 absolute right-0 top-10'
+            className='flex flex-col w-70 absolute right-0 top-10'
             style={{ 
                 zIndex: 999,
                 background: 'rgb(58, 58, 58)', 
                 boxShadow: "3px 0px 3px rgba(1, 1, 1, 0.1)",
-                visibility: preview ? 'visible' : 'hidden'
+                visibility: preview ? 'visible' : 'hidden',
+                width: colapse ? 40 : undefined,
+                height: colapse ? 20 : undefined,
             }}
         >
-            {scheme &&
-                <Form
-                    scheme={scheme}
-                    onChange={handleChangeForm}
-                />
-            }
+            <div className='flex bg-[#2f2f2f]'>
+                <Button
+                    size='xs'
+                    variant='ghost'
+                    className='ml-auto'
+                    onClick={()=> setColapse(v => !v)}
+                >
+                    x
+                </Button>
+            </div>
+            <span className='p-2' style={{visibility: colapse?'hidden':'visible'}}>
+                {scheme &&
+                    <Form
+                        scheme={scheme}
+                        onChange={handleChangeForm}
+                    />
+                }
+            </span>
         </div>
     );
 }

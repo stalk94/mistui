@@ -17,7 +17,7 @@ export type DividerProps = {
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     position?: 'start' | 'end'
     orientation?: 'horizontal' | 'vertical'
-    variant?: 'dashed' | 'dotted' 
+    variant?: 'solid' | 'dashed' | 'dotted' 
     style?: React.CSSProperties
     className?: Props['className'] 
 }
@@ -105,6 +105,47 @@ export type StatsProps = Props & {
 }
 
 export type OverflowProps = Props & {
+    /** 
+     * The child elements to be displayed inside the container with overflow handling.
+     */
     children: React.ReactNode[]
+
+    /**
+     * If true, the visible items will expand to fill the available space.
+     * Defaults to false.
+     */
+    isExpand?: boolean
+
+    /**
+     * The layout direction of the items: horizontal (`row`) or vertical (`column`).
+     * Default is `'row'`.
+     */
     direction?: 'row' | 'column'
+
+    /**
+     * Horizontal alignment of content inside each item.
+     * Corresponds to Tailwind's `items-*` classes.
+     * 
+     * - `'start'` / `'left'` — align to the start
+     * - `'center'` — center alignment
+     * - `'end'` — align to the end
+     */
+    justifyHorizontal?: 'start' | 'left' | 'center' | 'end'
+
+    /**
+     * Vertical alignment of content inside each item.
+     * Corresponds to Tailwind's `justify-*` classes.
+     * 
+     * - `'start'` — align to the start
+     * - `'center'` — center alignment
+     * - `'end'` — align to the end
+     */
+    justifyVertical?: 'start' | 'end' | 'center'
+
+    /**
+     * Callback invoked when some children overflow the container.
+     * Receives an array of React elements that did not fit.
+     */
+    onOverflow?: (hidden: React.ReactNode[] | any[]) => void
+    overflowMap?: any[]
 }

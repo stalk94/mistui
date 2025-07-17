@@ -6,12 +6,12 @@ import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, Env
 import { BaseInput, NumberInput, ColorPicker, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
     MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
-    Button, GroupButton, GroupButtonFiltre, IconButton, Divider,
+    GroupButton, GroupButtonFiltre, IconButton, Divider,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
-    Hero, Footer, AppBar, Menu
+    Hero, Footer, AppBar, Menu, Overflow, Button
 } from '../index';
-import List from 'src/components/list/base';
+import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
 import { Schema } from '../components/form/types';
 import { useAlert } from '../components/alert';
@@ -19,6 +19,7 @@ import { store } from './config-props';
 import { __generate } from './helpers/generate-tw';
 import Tabs from '../components/tabs';
 import Preview from '../components/app-bar/Preview';
+
 
 
 const AlertRender = (props) => {
@@ -774,6 +775,34 @@ const patterns = {
             {...props}
         />
     ),
+    Overflow: (props) => (
+        <div style={{width:300, border:'1px solid red'}}>
+            <Overflow
+                onOverflow={(items)=> console.log('overflow: ', items)}
+            >
+                <Button
+                    shadow='sm'
+                    size='sm'
+                    style={{ margin: 3 }}
+                >
+                    button-1
+                </Button>
+                <Button
+                    shadow='sm'
+                    style={{ margin: 3 }}
+                >
+                    button-2
+                </Button>
+                <Button
+                    shadow='sm'
+                    size='md'
+                    style={{ margin: 3 }}
+                >
+                    button-3
+                </Button>
+            </Overflow>
+        </div>
+    ),
 
     // media
     Card: (props)=> (
@@ -924,10 +953,9 @@ const patterns = {
         </Footer>
     ),
     AppBar: (props)=> (
-        <Preview
-        >
-            
-        </Preview>
+        <div className='mt-[25%]'>
+            <Preview/>
+        </div>
     ),
 
     // any
@@ -962,10 +990,10 @@ export default function SandBox() {
     
 
     return (
-       <>
+       <div className="flex flex-col">
             {preview && patterns[preview] &&
                 patterns[preview](cache)
             }
-        </>
+        </div>
     );
 }

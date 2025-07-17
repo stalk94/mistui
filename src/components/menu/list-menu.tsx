@@ -90,7 +90,7 @@ export default function MenuList({
                             { item?.title &&
                                 <Typography 
                                     variant='caption' 
-                                    className="menu-title"
+                                    className="menu-title whitespace-nowrap"
                                     style={item?.style}
                                 >
                                     { item?.title }
@@ -104,7 +104,7 @@ export default function MenuList({
                                         className: sizeIcon
                                     })
                                 }
-                                <span className="ml-1 items-center">
+                                <span className="ml-1 items-center whitespace-nowrap">
                                     { item.label }
                                 </span>
                             </summary>
@@ -128,7 +128,7 @@ export default function MenuList({
                         <>
                             <div 
                                 className='flex p-0 items-center' 
-                                onClick={()=> handle(item)}
+                                onClick={(e)=>  handle(item)}
                                 style={item?.style}
                             >
                                 <div className='flex items-center justify-center'>
@@ -137,7 +137,7 @@ export default function MenuList({
                                             className: sizeIcon
                                         }) 
                                     }
-                                    <span className='ml-3 text-center'>
+                                    <span className='ml-3 text-center whitespace-nowrap'>
                                         { item?.label }
                                     </span>
                                 </div>

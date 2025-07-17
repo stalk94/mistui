@@ -11,21 +11,28 @@ export default function Divider({
     position, 
     orientation = 'horizontal', 
     style,
-    variant,
+    variant = 'solid',
     className
 }: DividerProps) {
     const uid = useUids('divider');
     const { variants, autosizes } = useTheme();
     const getSize = size ? `text-${size}` : autosizes.text;
 
+    const getBorderStyle = useMemo(()=> {
+        const hs = `border-top: 1px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
+        const ws = `border-right: 1px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
+        
+        return orientation === 'horizontal' ? hs : ws;
+    }, [color, orientation, variant])
 
+    
     return (
         <Fragment>
             <style>
                 {/*css*/`
                     .divider[data-id="${uid}"]::before,
                     .divider[data-id="${uid}"]::after {
-                        border-top: 1px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'};
+                        ${ getBorderStyle }
                     }
                 `}
             </style>
@@ -41,8 +48,9 @@ export default function Divider({
                     ${className && className}
                 `}
                 style={{
-                    borderColor: color && color,        // !из темы
+                    borderColor: variant === 'solid' && color && color,        // !из темы
                     borderStyle: variant,
+                    margin: 0,
                     ...style
                 }}
             >
@@ -51,7 +59,7 @@ export default function Divider({
                         { children }
                     </span>
                 }
-                {(typeof children !== 'string') &&
+                {(children && typeof children !== 'string') &&
                     children 
                 }
             </div>

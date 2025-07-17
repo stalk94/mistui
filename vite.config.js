@@ -24,13 +24,26 @@ export default defineConfig({
     },
     build: {
         outDir: 'dist',
+        lib: {
+            entry: 'index.ts',
+            name: 'MyLib',
+            fileName: (format) => `index.${format}.js`,
+            formats: ['es', 'umd']
+        },
         rollupOptions: {
-            input: 'src/index.html'
+            external: ['react', 'react-dom'],
+            output: {
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDOM'
+                }
+            }
         }
     },
     resolve: {
         alias: {
-            src: path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, 'src')
+            //src: path.resolve(__dirname, 'src'),
         }
     },
     define: {

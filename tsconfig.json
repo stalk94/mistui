@@ -1,41 +1,23 @@
 {
   "compilerOptions": {
+    "emitDeclarationOnly": true,
     "target": "ESNext",
-    "module": "ESNext", // ✅ нужно для Next (а не CommonJS)
-    "jsx": "preserve", // ✅ preserve JSX, Next сам обработает
-    "strict": false,
-    "allowJs": true,
-    "skipLibCheck": true,
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    //"strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true, // ✅ важно для Next — он сам билдит
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "skipLibCheck": true,
+    "outDir": "dist",
     "paths": {
+      "@/*": ["./src/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "incremental": true,
-    "plugins": [{
-        "name": "next"
-    }]
+    "noEmit": false              // важно, чтобы tsc выдавал JS если надо, иначе ставь true и запускай отдельно
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "app",
-    "components",
-    "lib",
-    "next-env.d.ts",
-    "src",
-    ".next/types/**/*.ts"
-, "tailwind.config.ts"  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

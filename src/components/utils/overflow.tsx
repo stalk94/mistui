@@ -1,31 +1,18 @@
 import type { OverflowProps } from './types';
-import { useRef, useState, useLayoutEffect } from 'react';
+import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 
-
-
-function MoreDropdown({ items }: { items: React.ReactNode[] }) {
-    return (
-        <details className="dropdown">
-            <summary className="btn btn-sm">
-                +{ items.length } ещё
-            </summary>
-            <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 z-50">
-                {items.map((el, i) => (
-                    <li key={i}>
-                        { el }
-                    </li>
-                ))}
-            </ul>
-        </details>
-    );
-}
 
 
 export default function Overflow({ 
     children, 
     className, 
+    isExpand,
     direction = 'row',
-    style 
+    justifyHorizontal = 'start',
+    justifyVertical = 'end',
+    style,
+    onOverflow,
+    overflowMap
 }: OverflowProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [visibleCount, setVisibleCount] = useState(children.length);
@@ -61,14 +48,25 @@ export default function Overflow({
 
         resizeObserver.observe(container);
         return () => resizeObserver.disconnect();
-    }, [children.length, direction]);
+    }, [children, direction]);
+    useEffect(()=> {
+        if (visibleCount < children.length) {
+            if (overflowMap) onOverflow?.(overflowMap.slice(visibleCount, children.length));
+            else onOverflow?.(children.slice(visibleCount, children.length));
+        }
+    }, [visibleCount, overflowMap]);
+
+
+    if (itemRefs.current?.length !== children.length) {
+        itemRefs.current = Array(children.length).fill(null);
+    }
 
 
     return (
         <div
             ref={containerRef}
             className={`
-                flex 
+                flex
                 ${isRow ? 'flex-row' : 'flex-col'} 
                 ${className ?? ''} 
                 overflow-hidden
@@ -78,20 +76,17 @@ export default function Overflow({
             {children.slice(0, visibleCount).map((child, index) => (
                 <div
                     key={index}
-                    ref={(el) => (itemRefs.current[index] = el!)}
-                    className="shrink-0"
+                    ref={el => (itemRefs.current[index] = el!, undefined)}
+                    className={`
+                        flex 
+                        ${isExpand ? 'grow shrink-0 basis-0' : ''}  
+                        items-${justifyVertical}
+                        justify-${justifyHorizontal}
+                    `}
                 >
                     { child }
                 </div>
             ))}
-
-            {visibleCount < children.length && (
-                <div className="shrink-0">
-                    <MoreDropdown 
-                        items={children.slice(visibleCount)} 
-                    />
-                </div>
-            )}
         </div>
     );
 }
