@@ -24,6 +24,7 @@ const tableSize = {
                     { id: '2', label: 'test', icon: <HomeIcon className='h-4' /> },
                     {
                         id: '3', label: 'test', icon: <TrashIcon className='h-4' />, title: 'nested main',
+                        open: true, style: {fontSize: 12},
                         children: [
                             { id: '3', label: 'test', icon: <TrashIcon className='h-4' /> },
                             {
@@ -38,7 +39,7 @@ const tableSize = {
                 ]}
             />
  */
-export default function MainList({
+export default function MenuList({
     style = {},
     className,
     size = 'auto',
@@ -50,11 +51,11 @@ export default function MainList({
     const textSize = (size && size !== 'auto') ? `text-${size}` :  autosizes.text;
     const sizeIcon = tableSize[size];
 
-
-    const handle = (item: NavItem) => {
+    
+    const handle = useCallback((item: NavItem) => {
         onSelect?.(item);
         item?.comand?.(item);
-    }
+    }, [onSelect, items]);
     const render = useCallback((child: React.ReactNode) => (
         isNested 
             ? <>{ child }</>
@@ -64,6 +65,7 @@ export default function MainList({
                     menu 
                     w-full
                     menu-${size}
+                    p-[2px]
                     ${textSize}
                     ${className ?? ''}
                 `}
@@ -83,15 +85,20 @@ export default function MainList({
                 >
                     {/* nested */}
                     { item?.children && (
-                        <details>
+                        <details open={item?.open}>
                             {/* nested title */}
                             { item?.title &&
-                                <Typography variant='caption' className="menu-title">
+                                <Typography 
+                                    variant='caption' 
+                                    className="menu-title"
+                                    style={item?.style}
+                                >
                                     { item?.title }
                                 </Typography>
                             }
+
                             {/* parent */}
-                            <summary className='p-0 items-center'>
+                            <summary className='p-0 items-center'style={item?.style}>
                                {item.icon && isValidElement(item.icon) &&
                                     cloneElement(item.icon as ReactElement<any>, {
                                         className: sizeIcon
@@ -101,24 +108,28 @@ export default function MainList({
                                     { item.label }
                                 </span>
                             </summary>
+
                             {/* submenu */}
                             <ul className='pt-1'>
-                                <MainList 
+                                <MenuList 
                                     className={className}
                                     style={style}
                                     size={size}
                                     items={item.children} 
                                     isNested={true}
+                                    onSelect={onSelect}
                                 />
                             </ul>
                         </details>
                     )}
+
                     {/* not nested */}
                     { !item?.children && (
                         <>
                             <div 
                                 className='flex p-0 items-center' 
                                 onClick={()=> handle(item)}
+                                style={item?.style}
                             >
                                 <div className='flex items-center justify-center'>
                                     { item?.icon && isValidElement(item.icon) && 
@@ -134,6 +145,7 @@ export default function MainList({
                                     { item?.action }
                                 </div>
                             </div>
+                            {/* divider border bottom */}
                             <div 
                                 className="p-0 my-[1px]"
                                 style={{

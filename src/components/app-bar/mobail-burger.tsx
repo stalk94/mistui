@@ -1,16 +1,9 @@
 import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import { NavLinkItem } from '../menu/type';
-import { IconButton } from "@mui/material";
-import Menu from '../menu';
-import ItemMenuList from '../menu/list';
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import type { MobailBurgerProps } from './types';
+import { IconButton } from "../buttons";
+import Menu from '../menu/list-menu';
 
-
-type MobailBurgerProps = {
-    items: NavLinkItem[]
-    /** кастомная иконка */
-    children?: React.ReactNode 
-}
 
 
 
@@ -19,19 +12,6 @@ type MobailBurgerProps = {
  * ! отключается видимость на экранах более 600px ширины
 */
 export default function ({ items, children }: MobailBurgerProps) {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    
-    const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-        setMenuOpen(true);
-    }
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        setMenuOpen(false);
-    }
-    
 
 
     return(
@@ -39,37 +19,16 @@ export default function ({ items, children }: MobailBurgerProps) {
             <IconButton
                 color="navigation"
                 aria-label="navigation-menu"
-                sx={{
-                    mr: 1,
-                    display: { 
-                        sm: "none" 
-                    }
-                }}
                 onClick={handleMenuOpen}
             >
-                { children ?? <MenuIcon /> }
+                { children ?? <Bars3Icon /> }
             </IconButton>
 
 
             {/* Выпадающее меню mobile */}
             <Menu
-                anchorEl={anchorEl}
-                open={menuOpen}
-                onClose={handleMenuClose}
-                sx={{
-                    mt: 2
-                }}
-            >
-                { items && items.map((item, index) => {
-                    return(
-                        <ItemMenuList
-                            key={index}
-                            item={item}
-                            onItemClick={() => handleMenuClose()}
-                        />
-                    );
-                })}
-            </Menu>
+                
+            />
         </React.Fragment>
     );
 }

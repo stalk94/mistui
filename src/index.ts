@@ -49,6 +49,9 @@ export { default as Divider } from './components/utils/divider';
 export { AlertProvider, useAlert } from './components/alert';
 export type { AlertManagerProps } from './components/alert';
 
+// base nested menu
+export { default as Menu } from './components/menu/list-menu';
+
 // панель для инструментов
 export { default as Bar } from './components/nav-bars/bar';
 

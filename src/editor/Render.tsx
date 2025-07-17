@@ -2,23 +2,23 @@ import React from 'react';
 import Acordeon from '../components/acordeon';
 import BreadCrumbs from '../components/breadcrumbs';
 import Form from '../components/form/Form';
-import { TrashIcon, HomeIcon, Cog8ToothIcon } from '@heroicons/react/24/outline';
+import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, EnvelopeIcon, FolderIcon } from '@heroicons/react/24/outline';
 import { BaseInput, NumberInput, ColorPicker, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
     MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
     Button, GroupButton, GroupButtonFiltre, IconButton, Divider,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
-    Hero, Footer, AppBar
+    Hero, Footer, AppBar, Menu
 } from '../index';
 import List from 'src/components/list/base';
-import ListMenu from 'src/components/menu/list-menu';
 import Stat from '../components/utils/stat';
 import { Schema } from '../components/form/types';
 import { useAlert } from '../components/alert';
 import { store } from './config-props';
 import { __generate } from './helpers/generate-tw';
 import Tabs from '../components/tabs';
+import Preview from '../components/app-bar/Preview';
 
 
 const AlertRender = (props) => {
@@ -407,7 +407,7 @@ const patterns = {
             {...props}
         />
     ),
-    Breadcrumbs: (props) => (
+    Breadcrumbs: (props)=> (
         <BreadCrumbs
             pathname='test/xro'
             Link={({ href, children }) =>
@@ -420,13 +420,42 @@ const patterns = {
             {...props}
         />
     ),
-    BottomNavigation: (props) => (
+    BottomNavigation: (props)=> (
         <BottomNavigation
             items={[
                 { icon: <HomeIcon />, label: 'home' },
                 { icon: <Cog8ToothIcon />, label: 'settings' }
             ]}
             {...props}
+        />
+    ),
+    Menu: (props)=> (
+        <Menu
+            onSelect={console.log}
+            size='xs'
+            items={[
+                { id: '1', label: 'test', icon: <HomeIcon className='h-4' /> },
+                { id: '2', label: 'test', icon: <Cog8ToothIcon className='h-4' /> },
+                {
+                    id: '3',
+                    label: 'test', 
+                    icon: <FolderIcon className='h-4' />, 
+                    title: 'nested main',
+                    open: true,
+                    style: {fontSize: 12},
+                    children: [
+                        { id: '3', label: 'test', icon: <Battery50Icon className='h-4' />},
+                        {
+                            id: '4', label: 'test', icon: <EnvelopeIcon className='h-4' />, open: true,
+                            children: [
+                                { id: '3', label: 'test', icon: <CircleStackIcon className='h-4' /> },
+                                { id: '4', label: 'test', icon: <TrashIcon className='h-4' /> }
+                            ]
+                        }
+                    ]
+                }
+            ]}
+            { ...props }
         />
     ),
 
@@ -788,7 +817,6 @@ const patterns = {
     Hero: (props)=> (
         <Hero
             className='min-h-150 min-w-170'
-            style={{marginLeft: '-80%'}}
             fontImageOverlaySrc='https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp'
             {...props}
         >
@@ -883,10 +911,10 @@ const patterns = {
         </Footer>
     ),
     AppBar: (props)=> (
-        <AppBar
+        <Preview
         >
             
-        </AppBar>
+        </Preview>
     ),
 
     // any

@@ -225,6 +225,9 @@ const CONFIG = {
     Breadcrumbs : {
 
     },
+    Menu: {
+
+    },
 
     // data-display
     Badge: {

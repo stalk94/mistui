@@ -30,9 +30,11 @@ export type AccordionItem = {
 
 export type NavItem = {
     id?: string
-    label?: string
+    label?: string | React.ReactNode 
     title?: string | React.ReactNode 
     icon?: React.ReactElement
+    /** expanded submenu */
+    open?: boolean
     action?: React.ReactNode
     /** if true then display separator under element */
     divider?: boolean | React.CSSProperties
@@ -40,6 +42,8 @@ export type NavItem = {
     children?: NavItem[]
     /** custom comand handle click element */
     comand?: (item: NavItem) => void
+    /** dot stylization inline item */
+    style?: React.CSSProperties
 }
 export type MainListProps = {
     onSelect?: (item: NavItem) => void

@@ -3,28 +3,6 @@ import type { AppBarCustomProps } from './types';
 import { useTheme } from '../theme/index';
 
 
-/**
- * 📦 Шаблон для левого слота (например, логотип)
- * 
- * @param {Object} props
- * @param {React.ReactNode} props.children - Элемент, который будет отображён в левом слоте (например, логотип)
- */
-export const Start =({ children })=> {
-    return(
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "flex-start",
-                alignItems: "center"
-            }}
-        >
-            { children }
-        </div>
-    );
-}
-
-
-
 
 /**
  * строительный шаблон для app bar
@@ -55,20 +33,20 @@ const AppBar = forwardRef<HTMLHeadingElement, AppBarCustomProps>(function AppBar
                 position: 'sticky',
                 border: `1px solid`,
                 backdropFilter: "blur(14px)",
-                borderColor: 'gray',
+                borderColor: '#8080809a',
                 minHeight: height ?? 30,
                 ...style
             }}
             { ...props }
         >
             <div className="navbar-start">
-
+                { start }
             </div>
             <div className="navbar-center hidden lg:flex">
 
             </div>
             <div className="navbar-end">
-
+                { end }
             </div>
         </header>
     );

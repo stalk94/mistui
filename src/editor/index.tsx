@@ -1,10 +1,14 @@
 import React from 'react';
 import { Select } from 'src/components/inputs';
 import CustomBar from '../components/nav-bars/bar'
-import { Collapse } from '../index';
+import { Collapse, Typography } from '../index';
 import SandBox from './Render';
 import PropsVariator, { store } from './config-props';
-import { Button, GroupButton, GroupButtonFiltre } from '../index';
+import ListMenu from '../components/menu/list-menu';
+import type { NavItem } from '../components/menu/type';
+import { DocumentTextIcon, CursorArrowRaysIcon, PencilSquareIcon, ListBulletIcon, 
+    CodeBracketSquareIcon, DocumentIcon, ChatBubbleBottomCenterTextIcon, PhotoIcon, FolderIcon
+} from '@heroicons/react/24/solid';
 
 
 const daisyThemes = [
@@ -14,24 +18,69 @@ const daisyThemes = [
   "autumn", "business", "acid", "lemonade", "night", "coffee", "winter", "dim",
   "nord", "sunset"
 ];
+const icons = {
+    text: <DocumentTextIcon />,
+    buttons: <CursorArrowRaysIcon/>,
+    inputs: <PencilSquareIcon />,
+    navigation: <ListBulletIcon />,
+    'data-display': <CodeBracketSquareIcon />,
+    layout: <DocumentIcon />,
+    page: <DocumentIcon />,
+    feedback: <ChatBubbleBottomCenterTextIcon />,
+    media: <PhotoIcon />,
+    form: <FolderIcon />
+}
 const category = {
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
     inputs: ['TextInput', 'NumberInput', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File'],
-    navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation'],
+    navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu'],
     'data-display': ['Avatar', 'AvatarGroup', 'Indicator', 'Badge', 'List', 'Table'],
     layout: ['Divider', 'Chat', 'Stat', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Footer', 'Hero', 'AppBar'],
     feedback: ['Alert', 'Tooltip', 'Modal', 'Popover', 'Drawer'],
     media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
     form: [''],
-};
+}
 
 
 
 export default function Sand({ }) {
     const variants = store.variants.use();
     const [theme, setTheme] = React.useState('dark');
+
+    const create = () => {
+        const result: NavItem[] = [];
+
+        Object.entries(category).map(([cat, elems])=> {
+            result.push({
+                id: cat,
+                label: cat.toUpperCase(),
+                icon: icons[cat],
+                open: true,
+                style: {
+                    color: '#ffffff66'
+                },
+                children: elems.map((nameComponent)=> ({
+                    id: nameComponent,
+                    label: (
+                        <Typography 
+                            fontFamily='lato' 
+                            style={{color:'#ffffff', fontSize:14}} 
+                            variant='body1'
+                        >
+                            {'﹒' + nameComponent}
+                        </Typography>
+                    ),
+                    style: {
+                        color: '#909090'
+                    },
+                }))
+            });
+        });
+
+        return result;
+    }
 
 
     return (
@@ -46,31 +95,17 @@ export default function Sand({ }) {
                     orientation='vertical'
                     style={{
                         width: '20%', 
-                        background: 'rgb(54, 54, 54)',
+                        background: '#282828',
                         boxShadow: "3px 0 4px rgba(0, 0, 0, 0.08)", 
                         padding: 5,
                     }}
                 >
                     {variants &&
-                        Object.entries(category).map(([cat, elems])=>
-                            <Collapse
-                                key={cat}
-                                title={cat}
-                                className='collapse-plus border border-[#ffffff4c]'
-                                classNameTitle='p-3  border-b border-[#ffffff4c] bg-[#06060622]'
-                            >
-                                <div className='overflow-y-auto'>
-                                    <GroupButton
-                                        size='sm'
-                                        className='p-2'
-                                        variant='ghost'
-                                        isVertiacal
-                                        items={elems}
-                                        onChange={(v) => store.preview.set(v)}
-                                    />
-                                </div>
-                            </Collapse>
-                        )
+                        <ListMenu
+                            size='lg'
+                            items={create()}
+                            onSelect={(item)=> store.preview.set(item.id)}
+                        />
                     }
                 </CustomBar>
 

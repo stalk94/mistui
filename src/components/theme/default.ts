@@ -25,7 +25,7 @@ export const fontFamilyVariants = {
 const COLORS = {
     black: 'rgb(1, 1, 1)',
     white: 'rgb(255, 255, 255)',
-    base: 'rgb(18, 18, 18)',                // основа, фон
+    base: 'rgb(18, 18, 18)',                // основа, фон #1F1F1F
     input: 'rgb(65, 65, 65)',               // !
     button: 'rgb(43, 43, 43)',
     selected: 'rgba(255, 255, 255, 0.7)'                        

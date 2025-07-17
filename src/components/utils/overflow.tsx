@@ -1,15 +1,19 @@
 import type { OverflowProps } from './types';
-import { useEffect, useRef, useState, useLayoutEffect } from 'react';
-import { useTheme } from '../theme';
+import { useRef, useState, useLayoutEffect } from 'react';
+
 
 
 function MoreDropdown({ items }: { items: React.ReactNode[] }) {
     return (
         <details className="dropdown">
-            <summary className="btn btn-sm">+{items.length} ещё</summary>
+            <summary className="btn btn-sm">
+                +{ items.length } ещё
+            </summary>
             <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 z-50">
                 {items.map((el, i) => (
-                    <li key={i}>{el}</li>
+                    <li key={i}>
+                        { el }
+                    </li>
                 ))}
             </ul>
         </details>

@@ -1,3 +1,10 @@
+import { NavItem } from '../menu/type';
+
+
+export type PreviewProps = {
+    linkItems?: NavItem[]
+    onClick?: (path: string)=> void
+}
 
 export type AppBarCustomProps = {
     start: React.ReactNode
@@ -6,3 +13,10 @@ export type AppBarCustomProps = {
     height: number
     style?: React.CSSProperties
 }
+
+export type MobailBurgerProps = {
+    items: NavItem[]
+    /** кастомная иконка */
+    children?: React.ReactNode 
+}
+
