@@ -7,16 +7,13 @@ type SpliterPanelStProps = ComponentProps<typeof SplitterPanel>;
 
 export type FlagProps = {
     code: string
-    size?: {
-        width: number
-        height: number
-    }
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     margin?: string
 }
 
 export type DividerProps = {
     children?: string | React.ReactElement
-    size?: 'xs' | 'sm' | 'md' | 'lg'
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     position?: 'start' | 'end'
     orientation?: 'horizontal' | 'vertical'

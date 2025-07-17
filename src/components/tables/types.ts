@@ -2,9 +2,8 @@ import { ComponentProps } from 'react';
 import { DataTable } from "primereact/datatable";
 import { Column } from 'primereact/column';
 
-export type ColumnDataTableProps = ComponentProps<typeof Column> & {
-    
-}
+
+export type ColumnDataTableProps = ComponentProps<typeof Column> & { }
 
 /** инлайн стилизация таблицы */ 
 export type TableStyles = {
@@ -26,12 +25,18 @@ export type TableStyles = {
 }
 
 export type StyleTableWrapperProps = {
+    uid: string
     style: TableStyles
-    fontSizeHead?: React.HTMLAttributes<HTMLDivElement>['style']['fontSize']
+    hoverVariant: 'disabled' | 'row' | 'cell'
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
-export type DataTablePropsWrapper = ComponentProps<typeof DataTable> & {
+export type DataTablePropsWrapper = Omit<ComponentProps<typeof DataTable>, 'size'> & {
     fontSizeHead: string
     styles?: TableStyles
+    isAutoPagination?: boolean
+    hoverVariant?: 'disabled' | 'row' | 'cell'
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }

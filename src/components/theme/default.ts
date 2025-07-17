@@ -12,14 +12,16 @@ import { mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrasting
 //      default settings          
 //////////////////////////////////////////////////////////////////////////
 export const fontFamilyVariants = {
-    roboto: '--font-family-roboto',
-    inter: '--font-family-inter',
-    poppins: '--font-family-poppins',
-    lato: '--font-family-lato',
-    montserrat: '--font-family-montserrat',
-    source: '--font-family-source',
-    merriweather: '--font-family-merriweather',
-    raleway: '--font-family-raleway'
+    'JetBrains Mono': '',
+    Ubuntu: '',
+    Roboto: '--font-family-roboto',
+    Inter: '--font-family-inter',
+    Poppins: '--font-family-poppins',
+    Lato: '--font-family-lato',
+    Montserrat: '--font-family-montserrat',
+    Source: '--font-family-source',
+    Merriweather: '--font-family-merriweather',
+    Raleway: '--font-family-raleway'
 }
 
 const COLORS = {
@@ -175,7 +177,7 @@ const defaultTheme = {
             thead: colord(COLORS.base).lighten(0.3).toRgbString(),
             border: colord(COLORS.base).lighten(0.25).toRgbString(),
             fontColor: colord(COLORS.base).lighten(0.8).toRgbString(),
-            theadFontColor: 'grey'
+            theadFontColor: 'grey',
         },
         appBar: {
 

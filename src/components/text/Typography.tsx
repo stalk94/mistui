@@ -30,7 +30,7 @@ const Typography = forwardRef(
                     className
                 )}
                 style={{ 
-                    fontFamily: fontFamily && `${fontFamily}, sans-serif`,
+                    fontFamily: fontFamily ? `"${fontFamily}", sans-serif` : undefined,
                     fontSize: fontSize,
                     ...style
                 }}

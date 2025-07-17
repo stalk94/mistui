@@ -87,7 +87,14 @@ const AlertRender = (props) => {
         </>
     );
 }
-const TableRender = (props) => {
+const TableRender = ({ size, ...props }) => {
+    const tab = {
+        xs: 'xss',
+        sm: 'xs',
+        md: 'sm',
+        lg: 'md',
+        xl: 'lg'
+    }
     const testData = [
         { name: "Amy Elsner", country: 'RU', rating: 4, data: '03-11-2025', image: 'https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg' },
         { name: "John Doe", country: 'US', rating: 5, data: '12-05-2024', image: 'https://randomuser.me/api/portraits/men/1.jpg' },
@@ -110,49 +117,55 @@ const TableRender = (props) => {
         { name: "Nathan Brown", country: 'AU', rating: 4, data: '06-20-2021', image: 'https://randomuser.me/api/portraits/men/18.jpg' },
         { name: "Mia Nilsson", country: 'NO', rating: 2, data: '03-25-2020', image: 'https://randomuser.me/api/portraits/women/19.jpg' }
     ];
+   
 
     return (
-        <>
-            <DataTable
-                value={testData}
-                header={
-                    <div>
-                        header
+        <DataTable
+            key={`image-col-${size}`}
+            size={size}
+            {...props}
+            value={testData}
+            header={
+                <div>
+                    header
+                </div>
+            }
+            footer={
+                <div>
+                    footer
+                </div>
+            }
+        >
+            <ColumnDataTable
+                header="Image"
+                field="image"
+                body={(data) => <Avatar size={tab[size]} src={data?.image} />}
+            />
+            <ColumnDataTable header="Name" filter filterPlaceholder="По именам" sortable field="name" />
+            <ColumnDataTable
+                header="Rating"
+                sortable
+                field="rating"
+                body={(data) => (
+                    <div className={`rating rating-${size}`}>
+                        {[1, 2, 3, 4, 5].slice(0, data.rating).map((_, i) => (
+                            <div
+                                key={i}
+                                className="mask mask-star bg-amber-300"
+                                aria-label="1 star"
+                            />
+                        ))}
                     </div>
-                }
-                footer={
-                    <div>
-                        footer
-                    </div>
-                }
-            >
-                <ColumnDataTable header="Image" field='image' 
-                    body={(data)=> 
-                        <Avatar src={data?.image}/>
-                    }
-                />
-                <ColumnDataTable header="Name" filter filterPlaceholder="По именам" sortable field='name' />
-                <ColumnDataTable header="Rating" sortable field='rating' 
-                    body={(data)=> 
-                        <div className="rating rating-sm">
-                            {[1,2,3,4,5].slice(0, data.rating-1).map((elem, i)=>
-                                <div 
-                                    className="mask mask-star bg-amber-300" 
-                                    aria-label="1 star"
-                                    aria-current={true}
-                                />
-                            )}
-                        </div>
-                    }
-                />
-                <ColumnDataTable header="Data" sortable field='data' />
-                <ColumnDataTable header="Country" sortable field='country' 
-                    body={(data)=> 
-                        <Flag code={data?.country} />
-                    }
-                />
-            </DataTable>
-        </>
+                )}
+            />
+            <ColumnDataTable header="Data" sortable field="data" />
+            <ColumnDataTable
+                header="Country"
+                sortable
+                field="country"
+                body={(data) => <Flag size={size} code={data?.country} />}
+            />
+        </DataTable>
     );
 }
 const testSchema: Schema[] = [{
@@ -553,7 +566,7 @@ const patterns = {
         />
     ),
     Table: (props)=> (
-        <div className='w-200' style={{marginLeft: '-80%'}}>
+        <div className='w-200'>
             <TableRender
                 { ...props }
             />

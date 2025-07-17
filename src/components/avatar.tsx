@@ -4,7 +4,7 @@ import { createGradientStyle } from './hooks';
 
 export type AvatarProps = {
     children?: string | React.ReactElement
-    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    size?: 'auto' | 'xss' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties
     className?: React.HTMLAttributes<HTMLDivElement>['className']
@@ -20,6 +20,7 @@ export type AvatarsGroupProps = {
 
 
 const sizeTable = {
+    xss: 'w-6',
     xs: 'w-8',
     sm: 'w-16',
     md: 'w-20',
@@ -66,7 +67,7 @@ export default function Avatar({
 
         return st;
     }, [style, color, src]);
-
+    
 
     return (
         <div

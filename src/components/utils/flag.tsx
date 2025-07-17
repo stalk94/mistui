@@ -64,10 +64,17 @@ const countryCodes = {
     "Slovenia": "SI",
     "Vatican City": "VA"
 }
+const sizes = {
+    xs: 12,
+    sm: 16,
+    md: 20,
+    lg: 26,
+    xl: 32,
+    xxl: 48
+}
 
 
-
-export default ({ code, size, margin }: FlagProps)=> {
+export default ({ code, size = 'sm', margin }: FlagProps)=> {
     const chek =(code: string)=> {
         if(code) code = code.toUpperCase();
         if(code==='EN') code = 'GB';
@@ -80,8 +87,8 @@ export default ({ code, size, margin }: FlagProps)=> {
         <img 
             alt={`flag-${code}`} 
             style={{
-                width: size?.width ?? "25px",
-                height: size?.height ?? "25px",
+                width: sizes[size] ?? 20,
+                height: sizes[size] ?? 20,
                 marginTop: margin ?? '4px'
             }}
             onError={(e)=> e.target.src = imgNot}

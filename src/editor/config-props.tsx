@@ -383,6 +383,7 @@ export default function() {
         <div 
             className='w-70 p-2 absolute right-0 top-10'
             style={{ 
+                zIndex: 999,
                 background: 'rgb(58, 58, 58)', 
                 boxShadow: "3px 0px 3px rgba(1, 1, 1, 0.1)",
                 visibility: preview ? 'visible' : 'hidden'

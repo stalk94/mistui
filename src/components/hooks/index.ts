@@ -1,5 +1,6 @@
 import { colord } from 'colord';
 import { useState, useEffect, SetStateAction, Dispatch, useRef, useCallback } from 'react';
+export { default as useBreakpoints } from './useBreackpoints';
 
 
 export function useClientValidity<T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(

@@ -125,7 +125,7 @@ export default function Sand({ }) {
                     </nav>
 
                     <main className="flex flex-col h-full w-full">
-                        <div className="flex flex-col m-auto w-90">
+                        <div className="flex flex-col ml-[15%]">
                             <SandBox />
                         </div>
                     </main>
