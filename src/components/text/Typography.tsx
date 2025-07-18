@@ -3,6 +3,15 @@ import { TypographyComponent, typographyVariants, BaseTypographyProps, Polymorph
 import clsx from 'clsx';
 
 
+const shadows = {
+    xs: '2xs',
+    sm: 'xs',
+    md: 'sm',
+    lg: 'md',
+    xl: 'lg'
+}
+
+
 const Typography = forwardRef(
     <T extends React.ElementType = 'p'>(
         {
@@ -14,12 +23,16 @@ const Typography = forwardRef(
             fontStyle = 'normal',
             fontFamily,
             fontSize,
+            shadow,
+            colorShadow,
             style = {},
             ...rest
         }: PolymorphicComponentProps<T, BaseTypographyProps>,
         ref?: PolymorphicRef<T>
     ) => {
         const Component = as || 'p';
+        const curShadow = shadows[shadow] ? `text-shadow-${shadows[shadow]}` : '';
+        const curColorShadow = colorShadow ? `text-shadow-[${colorShadow}]` : 'text-shadow-[#161616]';
         
 
         return (
@@ -27,6 +40,8 @@ const Typography = forwardRef(
                 className={clsx(
                     typographyVariants[variant],
                     fontStyle === 'italic' ? 'italic' : 'not-italic',
+                    curShadow,
+                    curColorShadow,
                     className
                 )}
                 style={{ 

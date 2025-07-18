@@ -7,7 +7,6 @@ import type { BaseProps } from './type';
 
 
 
-
 const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
     {
         style,
@@ -24,6 +23,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
         value,
         required,
         className,
+        shadow,
         ...props
     },
     ref
@@ -56,7 +56,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                     input[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
-                    .input-focus:focus-within {
+                    .input-focus[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
                 `}
@@ -74,6 +74,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                 style={style}
                 className={className}
                 variant={variant}
+                shadow={shadow}
             >
                 <input
                     ref={inputRef}

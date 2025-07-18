@@ -66,8 +66,8 @@ export const __generate =()=> {
         'modal-open',
         'indicator-center indicator-start indicator-end indicator-top indicator-middle indicator-bottom',
         'footer-horizontal footer-vertical footer-center footer-title',
-        'menu-xs menu-sm menu-md menu-lg menu-xl'
-
+        'menu-xs menu-sm menu-md menu-lg menu-xl', 
+        'text-shadow-xs text-shadow-md text-shadow-sm text-shadow-lg text-shadow-2xs',
     );
     const allDaisySizeClass = allSizesClassDaisy(namesClassDaisy);
 

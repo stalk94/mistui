@@ -104,6 +104,12 @@ const base = {
         type: 'groupButton',
         items: ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
     },
+    disabled: {
+        type: 'switch',
+        size: 'sm',
+        color: 'white',
+        style: { marginTop: 5 }
+    },
 }
 const typography = {
     variant: {
@@ -178,37 +184,46 @@ const CONFIG = {
 
     // inputs
     TextInput: {
-
+        ...base
     },
     NumberInput: {
-
+        ...base
     },
     Color: {
-
+        ...base
     },
     Date: {
-
+        ...base
+    },
+    ColorPicker: {
+        ...base
     },
     Time: {
-
+        ...base
     },
     TextArea: {
-
+        ...base
     },
     File: {
-
+        ...base
     },
     Radio: {
-
+        ...base
     },
     Switch: {
-
+        ...base
     },
     CheckBox: {
-
+        ...base
     },
     Slider: {
-
+        ...base
+    },
+    Select: {
+        ...base
+    },
+    Autocomplete: {
+        ...base
     },
 
     // navigations

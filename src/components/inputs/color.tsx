@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useMemo } from 'react';
 import type { SelectInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { RgbaColorPicker, RgbaColor } from 'react-colorful';
@@ -7,6 +7,7 @@ import { useCache, useClickOutside } from '../hooks';
 import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
 import stylesPicker from './styles/global.module.css';
+import { useUids } from '../hooks/uuid';
 
 
 const Inputs = ({ updateComponent, input, styleInput }) => {
@@ -68,7 +69,8 @@ export default function SelectColor({
     color = 'primary',
     ...props 
 }: SelectInputProps) {
-    const { styles } = useTheme();
+    const { styles, variants } = useTheme();
+    const uid = useUids('color');
     const [input, setInput] = useCache(value);
     const [open, setOpen] = useCache(false);
 
@@ -90,70 +92,89 @@ export default function SelectColor({
         setInput(str);
         debouncedOnChange(str);
     }
-    
+    const focusWithinColor = useMemo(() => {
+        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
+
+        return colorVarint;
+    }, [color, style]);
+
 
     return (
-        <FormWrapper
-            size={size}
-            data-color-root
-            style={{ position: 'relative' }}
-            color={color}
-            labelRight={ 
-                <button className='cursor-pointer'
-                    onClick={()=> setOpen(true)}
-                >
-                    <span 
-                        className={`
-                            cursor-pointer
-                            bg-neutral-600
-                            rounded-[2px]
-                        `}
-                        style={{ background: input }}
-                    />
-                </button>
-            }
-            { ...props }
-        >
-            <Inputs
-                styleInput={{
-                    color: styles?.input?.fontColor,
-                    placeholderColor: styles?.input?.placeholderColor
-                }}
-                input={input}
-                updateComponent={handleChangeInputs}
-            />
+        <>
+            <style>
+                {`
+                    input[data-style-id="${uid}"]::placeholder {
+                        color: ${styles?.input?.placeholderColor}
+                    }
+                    .input-focus[data-style-id="${uid}"]:focus-within {
+                        outline-color: ${focusWithinColor};
+                    }
+                `}
+            </style>
 
-            { open && 
-                <div
-                    id="popover-color" 
-                    style={{ 
-                        position: 'absolute',
-                        top: 'calc(100% + 2px)',
-                        left: 0,
-                        width: '100%'
+            <FormWrapper
+                size={size}
+                data-color-root
+                data-style-id={uid}
+                style={{ position: 'relative' }}
+                color={color}
+                labelRight={ 
+                    <button className='cursor-pointer'
+                        onClick={()=> setOpen(true)}
+                    >
+                        <span 
+                            className={`
+                                cursor-pointer
+                                bg-neutral-600
+                                rounded-[2px]
+                            `}
+                            style={{ background: input }}
+                        />
+                    </button>
+                }
+                { ...props }
+            >
+                <Inputs
+                    styleInput={{
+                        color: styles?.input?.fontColor,
+                        placeholderColor: styles?.input?.placeholderColor
                     }}
-                    className={`
-                        dropdown 
-                        shadow-md
-                        backdrop-blur-[3px]
-                        max-h-80 
-                        overflow-y-auto 
-                        z-[9999]
-                        p-2
-                        rounded-box
-                    `}
-                    data-color-dropdown
-                >
-                    <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
-                        <RgbaColorPicker
-                            style={{width:'100%'}}
-                            className="colorPicker"
-                            color={stringToRgba(input)}
-                            onChange={handleChangePicker}
-                        /> 
+                    input={input}
+                    updateComponent={handleChangeInputs}
+                />
+
+                { open && 
+                    <div
+                        id="popover-color" 
+                        style={{ 
+                            position: 'absolute',
+                            top: 'calc(100% + 2px)',
+                            left: 0,
+                            width: '100%'
+                        }}
+                        className={`
+                            dropdown 
+                            shadow-md
+                            backdrop-blur-[3px]
+                            max-h-80 
+                            overflow-y-auto 
+                            z-[9999]
+                            p-2
+                            rounded-box
+                        `}
+                        data-color-dropdown
+                    >
+                        <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
+                            <RgbaColorPicker
+                                style={{width:'100%'}}
+                                className="colorPicker"
+                                color={stringToRgba(input)}
+                                onChange={handleChangePicker}
+                            /> 
+                        </div>
                     </div>
-                </div>
-            }
-        </FormWrapper>
+                }
+            </FormWrapper>
+        </>
     );
 }

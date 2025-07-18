@@ -1,8 +1,10 @@
 import { forwardRef, Fragment, useState, useRef, useEffect } from 'react';
 import type { PopoverProps } from './types';
 import { useTheme } from '../theme';
+import { motion, AnimatePresence } from "framer-motion";
 
 
+// ! позиционирование
 export default function Dropdown({ 
     trigger, 
     children, 
@@ -12,12 +14,15 @@ export default function Dropdown({
     style = {},
     isHover = false,
     onClose,
-    shadow
+    shadow,
+    usePortal = false
 }: PopoverProps) {
     const { styles, shadows } = useTheme();
     const [open, setOpen] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
+    const triggerRef = useRef<HTMLDivElement>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const [coords, setCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
 
 
     const handleMouseEnter = () => {
@@ -56,9 +61,38 @@ export default function Dropdown({
                 return "top-full left-0 mt-2";
         }
     }
+
+    useEffect(() => {
+        if (usePortal && open && triggerRef.current) {
+            const raf = requestAnimationFrame(() => {
+                const rect = triggerRef.current!.getBoundingClientRect();
+                const dropdownWidth = dropdownRef.current?.offsetWidth ?? 160;
+                const offset = -6;
+
+                let top = rect.bottom + offset;
+                let left = rect.left;
+
+                if (position === "top-start") {
+                    top = rect.top - offset;
+                }
+
+                if (position.includes("end")) {
+                    left = rect.right - dropdownWidth;
+                }
+
+                setCoords({ top, left });
+            });
+
+            return () => cancelAnimationFrame(raf);
+        }
+    }, [open, usePortal, position]);
     useEffect(() => {
         const handler = (e: MouseEvent) => {
-            if (!ref.current?.contains(e.target as Node)) {
+            const target = e.target as Node;
+            if (
+                !triggerRef.current?.contains(target) &&
+                !dropdownRef.current?.contains(target)
+            ) {
                 setOpen(false);
                 onClose?.();
             }
@@ -66,11 +100,11 @@ export default function Dropdown({
         document.addEventListener("mousedown", handler);
         return () => document.removeEventListener("mousedown", handler);
     }, []);
-
+    
 
     return (
         <div 
-            ref={ref} 
+            ref={triggerRef}
             className={`relative inline-block ${classNameContainer}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -82,32 +116,41 @@ export default function Dropdown({
                 { trigger }
             </div>
 
-            {open && (
-                <div
-                    className={`
-                        absolute 
-                        mt-1 
-                        p-1
-                        pt-2
-                        z-9999 
-                        min-w-[10rem]
-                        bg-[#2c2c2c]
-                        border 
-                        border-gray-500
-                        rounded 
-                        shadow
-                        ${getPositionClasses()}
-                        ${className}
-                    `}
-                    style={{
-                        boxShadow: shadows[shadow],
-                        ...style
-                    }}
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    { children }
-                </div>
-            )}
+            <AnimatePresence>
+                {open &&
+                    <motion.div
+                        ref={dropdownRef}
+                        initial={{ opacity: 0, scale: 0.95, y: -12 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95, y: -4 }}
+                        transition={{ duration: 0.15 }}
+                        className={`
+                            absolute 
+                            p-1
+                            pt-2
+                            z-[999] 
+                            min-w-[10rem]
+                            bg-[#2c2c2c]
+                            border 
+                            border-gray-500
+                            rounded 
+                            shadow
+                            ${getPositionClasses()}
+                            ${className}
+                        `}
+                        style={{
+                            boxShadow: shadows[shadow],
+                            position: usePortal ? "fixed" : "absolute",
+                            top: usePortal ? coords.top : undefined,
+                            left: usePortal ? coords.left : undefined,
+                            ...style
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        { children }
+                    </motion.div>
+                }
+            </AnimatePresence>
         </div>
     );
 }

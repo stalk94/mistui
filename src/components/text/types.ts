@@ -33,6 +33,8 @@ export type BaseTypographyProps = {
     fontStyle?: 'normal' | 'italic'
     fontFamily?: keyof typeof fontFamilyVariants
     fontSize?: string | number
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    colorShadow?: string
 }
 
 type AsProp<T extends ElementType> = {

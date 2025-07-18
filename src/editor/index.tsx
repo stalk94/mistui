@@ -33,7 +33,7 @@ const icons = {
 const category = {
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
-    inputs: ['TextInput', 'NumberInput', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File'],
+    inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu'],
     'data-display': ['Avatar', 'AvatarGroup', 'Indicator', 'Badge', 'List', 'Table'],
     layout: ['Divider', 'Chat', 'Stat', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],

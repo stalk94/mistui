@@ -118,18 +118,23 @@ export default function CarouselHorizontal({
     }, [currentIndex, slidesToShow, props]);
     useEffect(()=> {
         if (typeof window === 'undefined') return;
-        
-        if (!height && props['data-parent']) {
-            const parentCell = document.querySelector(`[data-id="${props['data-parent']}"]`);
-            if (parentCell) {
-                setCellHeight(parentCell.getBoundingClientRect().height - 4);
-            }
-            // самостоятельно вычислить размеры
-            else if(!parentCell) {
-                const boundParent = containerRef.current.parentElement.getBoundingClientRect();
-                setCellHeight(boundParent.height - 4);
-            }
-        }
+
+        const updateHeight = () => {
+            const parentCell = props['data-parent']
+                ? document.querySelector(`[data-id="${props['data-parent']}"]`)
+                : null;
+
+            const target = parentCell || containerRef.current?.parentElement;
+            if (!target) return;
+
+            const height = target.getBoundingClientRect().height;
+            setCellHeight(height);
+        };
+
+        updateHeight(); // первичный вызов
+        const interval = setInterval(updateHeight, 300); // каждые 300 мс
+
+        return () => clearInterval(interval);
     }, [props]);
     useEffect(() => {
         if (typeof window === 'undefined') return;
@@ -148,9 +153,11 @@ export default function CarouselHorizontal({
         return ()=> clearInterval(interval);
     }, [currentIndex, autoplay, autoplayDelay, items.length, slidesToShow, slidesToScroll, loop]);
     
-
+    
     return (
-        <div className='w-full h-full relative'>
+        <div 
+            className='w-full h-full relative'
+        >
             { items.length > slidesToShow && (
                 <>
                     <button className="carousel-button left" onClick={() => goTo(currentIndex - slidesToScroll)}>
@@ -204,7 +211,7 @@ export default function CarouselHorizontal({
                 {`
                     .carousel-button {
                         position: absolute;
-                        top: 50%;
+                        top: ${'50%'};
                         transform: translateY(-50%);
                         z-index: 10;
                         background: rgba(0, 0, 0, 0.3);

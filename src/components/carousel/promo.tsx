@@ -109,13 +109,21 @@ export default function PromoSlider({
             <Card
                 imageIsFull
                 classNameBody='pb-1'
+                className='h-full'
                 imageSrc={(items ?? testData)[active]?.images[0]}
                 title={(items ?? testData)[active]?.title}
-                description={(items ?? testData)[active]?.description}
+                description={
+                    <Typography
+                        variant='overline'
+                        shadow='sm'
+                    >
+                        { (items ?? testData)[active]?.description }
+                    </Typography>
+                }
                 actions={
                     <div className='flex flex-col w-full'>
                         <Button
-                            size='sm'
+                            size='md'
                             className='ml-auto'
                             color='secondary'
                             children={'go to'}
@@ -125,9 +133,7 @@ export default function PromoSlider({
                             active={active}
                             setActive={setActive}
                             count={3}
-                            style={{
-                                
-                            }}
+                            style={{}}
                         />
                     </div>
                 }

@@ -139,19 +139,21 @@ export default function CarouselVertical({
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
+        if (!containerRef.current) return;
 
         const update = () => {
-            if (containerRef.current) {
-                const fullHeight = containerRef.current.offsetHeight;
-                const perSlide = fullHeight / slidesToShow;
-                setSlideHeight(perSlide);
-                animate(y, -currentIndex * perSlide, { type: 'spring', stiffness: 250 });
-            }
-        }
+            const fullHeight = containerRef.current.offsetHeight;
+            const perSlide = fullHeight / slidesToShow;
+            setSlideHeight(perSlide);
+            animate(y, -currentIndex * perSlide, { type: 'spring', stiffness: 250 });
+        };
 
-        update();
-        window.addEventListener('resize', update);
-        return () => window.removeEventListener('resize', update);
+        update(); // начальное вычисление
+
+        const observer = new ResizeObserver(update);
+        observer.observe(containerRef.current);
+
+        return () => observer.disconnect();
     }, [currentIndex, slidesToShow, props]);
     useEffect(() => {
         if (typeof window === 'undefined') return;

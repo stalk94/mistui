@@ -2,7 +2,27 @@ import type { CheckBoxInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
 import clsx from 'clsx';
+import { useMemo, useCallback } from 'react';
 
+
+//////////////////////////////////////////////////////////////////////////////
+const sizes = {
+    xs: 'w-4 h-4',
+    sm: 'w-5 h-5',
+    md: 'w-6 h-6',
+    lg: 'w-6 h-6',
+    xl: 'w-7 h-7',
+    auto: 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 xl:w-7 xl:h-7'
+}
+const top = {
+    xs: 'top-1',
+    sm: 'top-1',
+    md: 'top-2',
+    lg: 'top-2',
+    xl: 'top-2',
+    auto: 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2'
+}
+//////////////////////////////////////////////////////////////////////////////
 
 
 export default function CheckBoxInput({ 
@@ -12,29 +32,28 @@ export default function CheckBoxInput({
     value, 
     type, 
     style = {},
+    shadow,
+    variant,
     className,
     ...props 
 }: CheckBoxInputProps) {
-    const { styles, variants } = useTheme();
+    const { styles, variants, plugins } = useTheme();
     const { backgroundColor, ...styleRest } = style;
 
-    const sizes = {
-        xs: 'w-4 h-4',
-        sm: 'w-5 h-5',
-        md: 'w-6 h-6',
-        lg: 'w-6 h-6',
-        xl: 'w-7 h-7',
-        auto: 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 xl:w-7 xl:h-7'
-    }
-    const top = {
-        xs: 'top-1',
-        sm: 'top-1',
-        md: 'top-2',
-        lg: 'top-2',
-        xl: 'top-2',
-        auto: 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2'
-    }
-    
+
+    const borderVariant = useMemo(() => {
+        if (style?.borderStyle) return {
+            borderStyle: style?.borderStyle
+        }
+        else if (variant === 'dash') return {
+            borderStyle: 'dashed'
+        }
+        else if (variant === 'outline') return {
+            borderStyle: 'solid'
+        }
+        else return {};
+    }, [variant, style, styles]);
+
 
     return (
         <FormWrapper 
@@ -50,10 +69,10 @@ export default function CheckBoxInput({
                 <div 
                     style={{
                         color: styles?.input?.fontColor, 
-                        borderStyle: (style?.borderStyle ?? styles?.input?.borderStyle),
-                        borderWidth: styles?.input?.borderWidth,
-                        borderColor: (variants[color] ?? color) ?? (style?.borderColor ?? styles?.input?.borderColor),
-                        backgroundColor: (style?.backgroundColor ?? styles?.input?.checkBoxBackground),
+                        borderColor: (variants[color] ?? color) 
+                            ?? style?.borderColor 
+                            ?? styles?.input?.borderColor,
+                        ...borderVariant
                     }}
                     className={clsx(`
                         ${sizes[size] ?? sizes.auto}
@@ -73,7 +92,6 @@ export default function CheckBoxInput({
                         absolute 
                         left-0 top-0 
                         ${sizes[size] ?? sizes.auto} 
-                        ${color && `stroke-${color}`}
                         p-[2px]
                         pointer-events-none
                         opacity-0

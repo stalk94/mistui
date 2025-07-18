@@ -2,38 +2,39 @@ import type { SliderInputProps } from './type';
 import * as Slider from '@radix-ui/react-slider';
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
-import { colord } from 'colord';
+import { useMemo } from 'react';
 
 
+const sizeThumb = {
+    xs: 'w-4 h-2',
+    sm: 'w-4 h-3',
+    md: 'w-4 h-3',
+    lg: 'w-6 h-4',
+    xl: 'w-6 h-4',
+    auto: 'w-4 h-3 sm:w-4 sm:h-3 md:w-4 md:h-3 lg:w-6 lg:h-4 xl:w-6 xl:h-4'
+}
+
+
+// ! tooltip style
 export default function SliderInput({
     onChange,
     onChangeEnd,
     disableForm,
+    variant = 'contained',
     size,
     color = 'primary',
     value,
     min,
     max,
     step,
-    styleTrack,
-    styleRange,
-    styleThumb,
     ...props
 }: SliderInputProps) {
-    const { styles, variants } = useTheme();
+    const { styles, variants, plugins } = useTheme();
     const isValid = value !== undefined && (typeof value === 'number' && !isNaN(value));
     const numericValue = Array.isArray(value) ? value.join(',') : value;
     const sliderKey = `${numericValue}`; 
  
 
-    const sizeThumb = {
-        xs: 'w-4 h-2',
-        sm: 'w-4 h-3',
-        md: 'w-4 h-3',
-        lg: 'w-6 h-4',
-        xl: 'w-6 h-4',
-        auto: 'w-4 h-3 sm:w-4 sm:h-3 md:w-4 md:h-3 lg:w-6 lg:h-4 xl:w-6 xl:h-4'
-    }
     const useChange = (newValue: number[], clb?: (v: number | number[]) => void) => {
         if (!clb) return;
 
@@ -41,22 +42,66 @@ export default function SliderInput({
         else clb(newValue[0]);
     }
 
+    const borderVariant = useMemo(() => {
+        if (variant === 'dash') return {
+            borderStyle: 'dashed'
+        }
+        else if (variant === 'outline') return {
+            borderStyle: 'solid'
+        }
+        else return {};
+    }, [variant, styles]);
+    const styleTrack = useMemo(() => {
+        const systemBg = styles?.input?.sliderTrackColor;
+
+        const fontColorTheme = styles?.input?.fontColor;
+        const colorContrast = plugins.contrast((variants[color] ?? color) ?? fontColorTheme);
+        
+
+        let st = {
+            borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            backgroundColor: plugins.alpha((variants[color] ?? color) ?? systemBg, 0.4) ?? 'inherit',
+            borderColor: plugins.alpha((variants[color] ?? color) ?? systemBg, 0.6),
+            color: plugins.alpha(colorContrast, 0.6)
+        }
+
+        if (variant === 'dash' || variant === 'outline') {
+            st.backgroundColor = 'inherit';
+            st.borderWidth = 1;
+        }
+        if (variant === 'ghost') st.borderWidth = 0;
+
+        return st;
+    }, [color, variant, styles]);
+    const styleRange = useMemo(() => {
+        const systemBg = styles?.input?.sliderTrackColor;
+
+        return ({
+            borderColor: plugins.lighten((variants[color] ?? color) ?? systemBg, 0.3),
+            backgroundColor: (variants[color] ?? color) ?? systemBg, 
+        });
+    }, [color, variant, styles]);
+    const styleThumb = useMemo(() => {
+        const systemBg = styles?.input?.sliderTrackColor;
+
+        return ({
+            borderColor: plugins.lighten((variants[color] ?? color) ?? systemBg, 0.8),
+            backgroundColor: plugins.lighten(
+                plugins.alpha(
+                    (variants[color] ?? color) 
+                        ?? systemBg, 1), 
+                0.35)
+        });
+    }, [color, variant, styles]);
+
 
     return (
         <FormWrapper
             size={size}
             disabledVisibility={disableForm}
-            color={color}
+            
             { ...props }
         >
-            <style >
-                {`
-                    .slider-thumb:hover {
-                        background: white;
-                    }
-                `}
-            </style>
-
             <Slider.Root
                 key={sliderKey}
                 defaultValue={isValid ? (Array.isArray(value) ? value : [value]) : [0]}
@@ -73,12 +118,14 @@ export default function SliderInput({
                     touch-none 
                     w-full
                     cursor-pointer
+                    mt-1
                 `}
             >
                 <Slider.Track 
                     style={{
-                        background: (styleTrack?.background ?? styles?.input?.sliderTrackColor),
-                        height: (styleTrack?.height ?? `${styles?.input?.sliderTrackHeight}rem`)
+                        height: `${styles?.input?.sliderTrackHeight}rem`,       //!
+                        ...styleTrack,
+                        ...borderVariant,
                     }}
                     className={`
                         relative 
@@ -88,8 +135,8 @@ export default function SliderInput({
                 >
                     <Slider.Range
                         style={{
-                            background: (styleRange?.background ?? styles?.input?.sliderTrackFillColor),
-                            height: (styleRange?.height ?? `${styles?.input?.sliderTrackFillHeight}rem`)
+                            height: `${styles?.input?.sliderTrackFillHeight}rem`,
+                            ...styleRange
                         }}
                         className={`
                             absolute
@@ -105,9 +152,7 @@ export default function SliderInput({
                     data-tip={ Array.isArray(value) ? value[0] : (value ?? 0) }
                     style={{
                         border: 0,
-                        background: (variants[color] ?? color) 
-                            ?? (styleThumb?.background 
-                            ?? styles?.input?.sliderThumbBackgroundColor),
+                        ...styleThumb
                     }}
                     className={`
                         block 

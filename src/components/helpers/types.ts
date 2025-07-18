@@ -11,10 +11,10 @@ export type ModalProps = Props & {
 
 export type DrawerProps = Props & {
     children?: React.ReactNode
-    content?: React.ReactNode
+    trigger?: React.ReactNode
     open?: boolean
-    isCloseClickOutside?: boolean
     onClose?: ()=> void
+    position?: "left" | "right" | "top" | "bottom";
 }
 
 
@@ -27,6 +27,7 @@ type DropdownPosition =
   | "left-end"
   | "right-start"
   | "right-end";
+
 export type PopoverProps = Props & {
     classNameContainer?: Props['className']
     children?: React.ReactNode
@@ -35,4 +36,5 @@ export type PopoverProps = Props & {
     position?: DropdownPosition
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     onClose?: ()=> void
+    usePortal?: boolean
 }

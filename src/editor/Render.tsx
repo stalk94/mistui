@@ -3,13 +3,13 @@ import Acordeon from '../components/acordeon';
 import BreadCrumbs from '../components/breadcrumbs';
 import Form from '../components/form/Form';
 import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, EnvelopeIcon, FolderIcon } from '@heroicons/react/24/outline';
-import { BaseInput, NumberInput, ColorPicker, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
+import { BaseInput, NumberInput, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
     MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
     GroupButton, GroupButtonFiltre, IconButton, Divider,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
-    Hero, Footer, AppBar, Menu, Overflow, Button
+    Hero, Footer, AppBar, Menu, Overflow, Button, AutoComplete, Select, ColorPicker
 } from '../index';
 import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
@@ -19,6 +19,7 @@ import { store } from './config-props';
 import { __generate } from './helpers/generate-tw';
 import Tabs from '../components/tabs';
 import Preview from '../components/app-bar/Preview';
+import Layer from './Layer';
 
 
 
@@ -291,24 +292,13 @@ const patterns = {
 
     // Buttons
     Button: (props) => (
-        <>
-            <Button
-                shadow='lg'
-                style={{ margin: 3 }}
-                {...props}
-            >
-                button
-            </Button>
-            <Button
-                size='sm'
-                isGradient
-                shadow='lg'
-                style={{ backgroundColor: '#193fa7', margin: 3 }}
-                {...props}
-            >
-                custom color
-            </Button>
-        </>
+        <Button
+            shadow='lg'
+            style={{ margin: 3 }}
+            {...props}
+        >
+            button
+        </Button>
     ),
     IconButton: (props) => (
         <>
@@ -334,7 +324,7 @@ const patterns = {
     ),
 
     // Inputs
-    TextInput: (props)=> (
+    TextInput: (props) => (
         <BaseInput
             labelTop='text'
             placeholder='test'
@@ -347,6 +337,11 @@ const patterns = {
             labelTop='number'
             iconEnable
             placeholder='test'
+            {...props}
+        />
+    ),
+    ColorPicker: (props)=> (
+        <ColorPicker
             {...props}
         />
     ),
@@ -388,11 +383,6 @@ const patterns = {
             {...props}
         />
     ),
-    Color: (props)=> (
-        <ColorPicker
-            {...props}
-        />
-    ),
     Date: (props)=> (
         <BaseInput
             labelTop='date'
@@ -406,6 +396,20 @@ const patterns = {
             labelTop='time'
             placeholder='time'
             type='time'
+            {...props}
+        />
+    ),
+    Select: (props)=> (
+        <Select
+            placeholder='select'
+            items={['test', 'test2']}
+            {...props}
+        />
+    ),
+    Autocomplete: (props)=> (
+        <AutoComplete
+            placeholder='autocomplete'
+            options={['test', 'test2']}
             {...props}
         />
     ),
@@ -506,16 +510,18 @@ const patterns = {
         </>
     ),
     Indicator: (props) => (
-        <Indicator
-            className='badge badge-success'
-            { ...props }
-            content={'new'}
-        >
-            <Avatar
-                size='lg'
-                src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
-            />
-        </Indicator>
+        <div className='m-5'>
+            <Indicator
+                className='badge badge-success'
+                {...props}
+                content={'new'}
+            >
+                <Avatar
+                    size='lg'
+                    src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                />
+            </Indicator>
+        </div>
     ),
     List: (props)=> (
         <List
@@ -604,41 +610,40 @@ const patterns = {
     Popover: (props) => (
         <Popover
             {...props}
-            content={
-                <>
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                </>
+            trigger={
+                <Button
+                    shadow='sm'
+                    size='md'
+                    color='primary'
+                >
+                    {props?.isHover ? 'hover my' : 'click my'}
+                </Button>
             }
         >
-            <Button
-                shadow='sm'
-                size='md'
-                style={{ margin: 3 }}
-                color='primary'
-            >
-                {props?.isHover ? 'hover my' : 'click my'}
-            </Button>
+            <div>
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+            </div>
         </Popover>
     ),
     Drawer: (props) => (
         <Drawer
             {...props}
-            content={
-                <>
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                </>
+            trigger={
+                <Button
+                    shadow='sm'
+                    size='md'
+                    style={{ margin: 3 }}
+                    color='primary'
+                >
+                    {'click my'}
+                </Button>
             }
         >
-            <Button
-                shadow='sm'
-                size='md'
-                style={{ margin: 3 }}
-                color='primary'
-            >
-                {'click my'}
-            </Button>
+            <>
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+            </>
         </Drawer>
     ),
     Alert: (props)=> (
@@ -700,7 +705,7 @@ const patterns = {
     ),
     Splitter: (props) => (
         <Splitter
-            style={{height: 400, width: 500, marginLeft: '-50%'}}
+            style={{height: 400, width: 500}}
             { ...props }
         >
             <SplitterPanel className="flex justify-center items-center" size={20} minSize={10}>
@@ -827,32 +832,27 @@ const patterns = {
             { ...props }
         />
     ),
-    VerticalCarousel: (props)=> (
-        <div className='h-150'>
-            <VerticalCarousel
-                items={[
-                    {type: 'image', src: 'https://picsum.photos/600/600'},
-                    {type: 'image', src: 'https://picsum.photos/400/400'},
-                    {type: 'image', src: 'https://picsum.photos/300/300'},
-                    {type: 'image', src: 'https://picsum.photos/300/300'}
-                ]}
-                { ...props }
-            />
-        </div>
+    VerticalCarousel: (props) => (
+        <VerticalCarousel
+            items={[
+                { type: 'image', src: 'https://picsum.photos/600/600' },
+                { type: 'image', src: 'https://picsum.photos/400/400' },
+                { type: 'image', src: 'https://picsum.photos/300/300' },
+                { type: 'image', src: 'https://picsum.photos/300/300' }
+            ]}
+            {...props}
+        />
     ),
-    HorizontalCarousel: (props)=> (
-        <div style={{height: 200, width: 500}}>
-            <HorizontalCarousel
-                height={200}
-                items={[
-                    {type: 'image', src: 'https://picsum.photos/600/600'},
-                    {type: 'image', src: 'https://picsum.photos/400/400'},
-                    {type: 'image', src: 'https://picsum.photos/300/300'},
-                    {type: 'image', src: 'https://picsum.photos/300/300'}
-                ]}
-                { ...props }
-            />
-        </div>
+    HorizontalCarousel: (props) => (
+        <HorizontalCarousel
+            items={[
+                { type: 'image', src: 'https://picsum.photos/600/600' },
+                { type: 'image', src: 'https://picsum.photos/400/400' },
+                { type: 'image', src: 'https://picsum.photos/300/300' },
+                { type: 'image', src: 'https://picsum.photos/300/300' }
+            ]}
+            {...props}
+        />
     ),
 
     // page
@@ -889,7 +889,7 @@ const patterns = {
     Footer: (props)=> (
         <Footer
             className='bg-[#00000049] p-10'
-            style={{marginLeft: '-80%', width: 800}}
+            style={{ width: '100%' }}
             {...props}
         >
             <nav>
@@ -953,9 +953,9 @@ const patterns = {
         </Footer>
     ),
     AppBar: (props)=> (
-        <div className='mt-[25%]'>
-            <Preview/>
-        </div>
+        <Preview
+            {...props}
+        />
     ),
 
     // any
@@ -990,9 +990,15 @@ export default function SandBox() {
     
 
     return (
-       <div className="flex flex-col">
+       <div className="flex flex-col h-full">
             {preview && patterns[preview] &&
-                patterns[preview](cache)
+                <Layer
+                    name={preview}
+                >
+                    <div className='flex-1 p-2'>
+                        {  patterns[preview](cache) }
+                    </div>
+                </Layer>
             }
         </div>
     );

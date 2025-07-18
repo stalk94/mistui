@@ -1,8 +1,9 @@
-import { forwardRef, useMemo } from 'react';
+import { forwardRef, useMemo, useCallback } from 'react';
 import type { LabelProps, LabelTopProps } from './type';
 import { useTheme } from '../theme';
 import React from 'react';
 import clsx from 'clsx';
+import { createGradientStyle } from '../hooks';
 import { colord } from 'colord';
 
 
@@ -57,11 +58,12 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
         style = {},
         className,
         variant,
+        shadow,
         ...props
     },
     ref
 ) {
-    const { styles, autosizes, variants } = useTheme();
+    const { styles, autosizes, shadows, variants, plugins, mixers } = useTheme();
     const getSize = size ? `input-${size}` : autosizes.input;
     const { borderColor, ...filteredStyle } = style;
 
@@ -75,24 +77,62 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
         }
         else return {};
     }, [variant, style, styles]);
-    const colorBorder = useMemo(() => {
-        let propsColor = (variants[color] ?? color) ?? style.borderColor;
+    const getGradient = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const curVariant = variants[color];
 
-        propsColor = propsColor 
-            ? colord(propsColor).alpha(0.5).toRgbString() 
-            : styles?.input?.borderColor;
-        
-        return propsColor;
-    }, [color, style, styles]);
-    const colorBg = useMemo(() => {
-        let propsColor = (variants[color] ?? color) ?? style.backgroundColor;
+        return createGradientStyle(inlneBg ?? curVariant);
+    }, [style, color, variant]);
+    const getStyle = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
 
-        propsColor = propsColor 
-            ? colord(propsColor).alpha(0.1).toRgbString() 
-            : styles?.input?.backgroundColor;
-        
-        return propsColor;
-    }, [color, style, styles]);
+        const fontColorTheme = styles?.input?.fontColor;
+        const colorContrast = plugins.contrast((variants[color] ?? color));
+
+        let st = {
+            ...style,
+            backgroundColor: (variant !== 'ghost') && (variants[color] ?? color),
+            color: (variant === 'dash' || variant === 'outline')
+                ? (variants[color] ?? color) ?? fontColorTheme
+                : colorContrast,
+        }
+
+        if (variant === 'ghost') st.borderWidth = 0;
+        if ((variant === 'dash' || variant === 'outline')) {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: plugins.alpha((variants[color] ?? color) ?? inlneBg, 0.05) ?? 'inherit',
+                borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.6),
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+
+
+        return st;
+    }, [style, color, variant]);
+    const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+        const inlneTxt = style?.color;
+        const curVariant = variants[color];
+
+        if (key === 'backgroundColor') return (inlneBg
+            ? mixers.button.background(inlneBg, 'hover')
+            : mixers.button.background(curVariant, 'hover')
+        );
+        else if (key === 'border') return (inlneBg
+            ? mixers.button.border(inlneBorder, 'hover')
+            : mixers.button.border(curVariant, 'hover')
+        );
+        else return (inlneTxt
+            ? plugins.contrast(inlneTxt)
+            : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
+        );
+    }, [style, color, variant]);
 
 
     return (
@@ -107,9 +147,8 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
             <div
                 ref={ref}
                 style={{
-                    color: styles?.input?.fontColor,
-                    borderColor: colorBorder ?? styles?.input?.borderColor,
-                    backgroundColor: !disabledVisibility && colorBg,
+                    boxShadow: shadows[shadow],
+                    ...getStyle,
                     ...borderVariant,
                 }}
                 className={clsx(

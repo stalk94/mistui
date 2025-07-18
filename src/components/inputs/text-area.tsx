@@ -1,14 +1,10 @@
 import React, { useMemo } from 'react';
-import type { BaseProps } from './type';
+import type { TextAreaProps } from './type';
 import { LabelTop } from './atomize';
 import { useCache } from '../hooks';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
-import { colord } from 'colord';
 
-
-
-type TextAreaProps = Omit<BaseProps, 'type'>;
 
 
 export default function TextAreaInput({ 
@@ -16,41 +12,65 @@ export default function TextAreaInput({
     placeholder, 
     size, 
     color, 
+    variant,
     labelTop, 
     required, 
     value, 
+    shadow,
     style = {},
     ...props 
 }: TextAreaProps) {
-    const { styles, autosizes, variants } = useTheme();
+    const { styles, shadows, autosizes, variants, plugins } = useTheme();
     const uid = useUids('text-area');
     const [val, setVal] = useCache(value);
     const sizes = size ? `textarea-${size}` : autosizes.textarea;
 
     
-    const colorBorder = useMemo(() => {
-        let propsColor = (variants[color] ?? color) ?? style.borderColor;
-
-        propsColor = propsColor
-            ? colord(propsColor).lighten(0.1).alpha(0.8).toRgbString()
-            : styles?.input?.borderColor;
-
-        return propsColor;
-    }, [color, style, styles]);
+    const borderVariant = useMemo(() => {
+        if (variant === 'dash') return {
+            borderStyle: 'dashed'
+        }
+        else if (variant === 'outline') return {
+            borderStyle: 'solid'
+        }
+        else return {};
+    }, [variant, style, styles]);
     const focusWithinColor = useMemo(() => {
         const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
 
         return colorVarint;
     }, [color, style]);
-    const colorBg = useMemo(() => {
-        let propsColor = (variants[color] ?? color) ?? style.backgroundColor;
+    const getStyle = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
 
-        propsColor = propsColor
-            ? colord(propsColor).alpha(0.1).toRgbString()
-            : styles?.input?.backgroundColor;
+        const fontColorTheme = styles?.input?.fontColor;
+        const colorContrast = plugins.contrast((variants[color] ?? color));
 
-        return propsColor;
-    }, [color, style, styles]);
+        let st = {
+            ...style,
+            backgroundColor: (variant !== 'ghost') && (variants[color] ?? color),
+            color: (variant === 'dash' || variant === 'outline')
+                ? (variants[color] ?? color) ?? fontColorTheme
+                : colorContrast,
+        }
+
+        if (variant === 'ghost') st.borderWidth = 0;
+        if ((variant === 'dash' || variant === 'outline')) {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: plugins.alpha((variants[color] ?? color) ?? inlneBg, 0.05) ?? 'inherit',
+                borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.6),
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+
+
+        return st;
+    }, [style, color, variant]);
     const handle = (newValue: string) => {
         setVal(newValue);
         onChange?.(newValue);
@@ -64,7 +84,7 @@ export default function TextAreaInput({
                     textarea[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
-                    .input-focus:focus-within {
+                    .input-focus[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
                 `}
@@ -83,18 +103,14 @@ export default function TextAreaInput({
                 value={val}
                 style={{
                     minHeight: 'calc(0.25rem * 10)',
-                    color: styles?.input?.fontColor,
-                    borderColor: colorBorder ?? styles?.input?.borderColor,
-                    borderStyle: styles?.input?.borderStyle,
-                    borderWidth: styles?.input?.borderWidth,
-                    ...style,
-                    backgroundColor: colorBg,
+                    boxShadow: shadows[shadow],
+                    ...getStyle,
+                    ...borderVariant
                 }}
                 className={`
                     textarea
                     w-full
                     input-focus
-                    textarea-${color}
                     ${sizes}
                 `}
                 { ...props }

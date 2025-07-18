@@ -10,6 +10,7 @@ export type AvatarProps = {
     className?: React.HTMLAttributes<HTMLDivElement>['className']
     src?: string
     alt?: string
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 export type AvatarsGroupProps = {
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -39,34 +40,36 @@ const sizeTableText = {
 export default function Avatar({
     children,
     src,
-    size,
+    size = 'auto',
     alt,
     style,
     color,
-    className
+    className,
+    shadow,
+    ...props
 }: AvatarProps) {
-    const { autosizes, variants, plugins } = useTheme();
+    const { autosizes, variants, plugins, shadows } = useTheme();
     const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.avatar;
     const sizeText =  sizeTableText[size] ?? 'text-lg sm:text-xl md:text-4xl lg:text-4xl xl:text-4xl';
     
     
     const colorContrast = useMemo(() => {
-        return plugins.contrast((variants[color] ?? color));
+        return plugins.contrast(style?.backgroundColor ?? (variants[color] ?? color));
     }, [style, color]);
     const getStyle = useMemo(() => {
         const inlneBg = style?.backgroundColor;
-        const inlneBorder = style?.borderColor;
 
         let st = {
             ...style,
-            backgroundColor: src && (inlneBg ?? (variants[color] ?? color)),
+            boxShadow: shadows[shadow],
+            backgroundColor: !src && (inlneBg ?? (variants[color] ?? color)),
             color: (src)
                 ? (variants[color] ?? color)
                 : colorContrast
         }
 
         return st;
-    }, [style, color, src]);
+    }, [style, color, src, shadow]);
     
 
     return (
@@ -87,6 +90,7 @@ export default function Avatar({
                         rounded-full
                         ${className}
                     `}
+                    { ...props }
                 >
                     <span 
                         className={`${sizeText}`}
@@ -103,6 +107,7 @@ export default function Avatar({
                         ${getSize}
                         ${className}
                     `}
+                    { ...props }
                 >
                     <img
                         src={src}

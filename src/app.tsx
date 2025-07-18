@@ -6,9 +6,6 @@ import { createRoot } from 'react-dom/client';
 import { AlertProvider } from './components/alert';
 import SandBox from './editor';
 import { ThemeProvider } from './components/theme';
-import './style/index.css';
-import './style/animate.css';
-import "./style/tailwind.css";
 
 
 

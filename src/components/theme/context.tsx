@@ -1,3 +1,6 @@
+import '@/style/index.css';
+import '@/style/animate.css';
+import "@/style/tailwind.css";
 import { PropsWithChildren, useContext, useRef, useState, createContext, useEffect } from 'react';
 import { Theme } from './types';
 import { deepMerge } from './helpers';

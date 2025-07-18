@@ -33,7 +33,8 @@ export type LabelProps = InputStyle & {
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
-    variant?: 'dash' | 'outline'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    variant?: 'dash' | 'outline' | 'ghost'
 }
 export type LabelTopProps = {
     'data-id'?: string | number
@@ -75,6 +76,7 @@ export type BaseProps = InputStyle & {
     required?: boolean
     type: 'text' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'tel' | 'url' | 'time' | 'datetime-local' | 'search'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     placeholder?: string
     labelLeft?: string | React.ReactElement
     labelRight?: string | React.ReactElement
@@ -97,11 +99,13 @@ export type NumberInputProps = Omit<BaseProps, 'type'> & {
     value?: number
     step?: number
     onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: number)=> void)
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
 export type FileInputProps = {
     'data-id'?: string | number
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     color?: string
     value?: number
     onChange?: (val: File)=> void
@@ -125,6 +129,7 @@ export type SelectInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     color?: string
     onChange?: (val: string)=> void
     items?: string[] | ItemSelect[]
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
 export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
@@ -132,6 +137,7 @@ export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     color?: string
     onChange?: (val: string)=> void
     options?: string[]
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
 export type CheckBoxInputProps = {
@@ -140,12 +146,14 @@ export type CheckBoxInputProps = {
     value?: boolean 
     type?: 'checkbox' | 'toggle' | 'radio'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    color?: string
     labelLeft?: string | React.ReactElement
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
     style?: React.CSSProperties
     className?: ClassValue
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    variant?: 'contained' | 'outline' | 'dash' | 'ghost'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
 }
 
 export type RadioInputProps = CheckBoxInputProps & {
@@ -166,7 +174,9 @@ export type SwitchBoxInputProps = Omit<CheckBoxInputProps, 'type'> & {
 export type SliderInputProps = InputStyle & {
     'data-id'?: string | number
     disableForm?: boolean
+    variant?: 'contained' | 'outline' | 'dash' | 'ghost'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     color?: string
     labelLeft?: string | React.ReactElement
     labelRight?: string | React.ReactElement
@@ -184,4 +194,8 @@ export type SliderInputProps = InputStyle & {
     styleRange?: React.CSSProperties
     styleThumb?: React.CSSProperties
     className?: ClassValue
+}
+
+export type TextAreaProps = Omit<BaseProps, 'type'> & {
+    variant: 'ghost' | 'outline' | 'dash'
 }

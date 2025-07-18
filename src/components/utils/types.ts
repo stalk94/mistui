@@ -26,6 +26,8 @@ export type SplitterProps = SpliterStProps & {
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     orientation?: 'horizontal' | 'vertical'
     className?: Props['className']
+    /** disable resize */
+    disabled?: boolean
 }
 export type SplitterPanelProps = SpliterPanelStProps & {
     children?: React.ReactNode

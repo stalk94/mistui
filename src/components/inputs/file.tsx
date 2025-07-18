@@ -5,7 +5,8 @@ import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
 import { useCache } from '../hooks';
 import { useTheme } from '../theme';
 
-/** Один файл */
+
+// ! стилизовать элементы
 export default function FileInput({ 
     onChange, 
     size,  

@@ -146,19 +146,14 @@ const defaultTheme = {
         input: <CSSProperties> {
             backgroundColor: colord(COLORS.base).lighten(0.08).toRgbString(),
             focusOutlineColor: colord(COLORS.base).lighten(0.6).toRgbString(),
-
             placeholderColor: colord(COLORS.base).lighten(0.4).toRgbString(),
             fontColor: colord(COLORS.base).lighten(0.8).toRgbString(),
             borderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
             borderStyle: 'solid',
             borderWidth: 1,
 
-            radioThumbColor: 'rgb(255, 255, 255)',
-
             switchBorderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
-            switchThumbBorderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
             switchThumbBackgroundColor: colord(COLORS.base).lighten(0.25).toRgbString(),
-            switchThumbIconColor: colord(COLORS.base).darken(0.05).toRgbString(),
 
             sliderTrackColor: 'rgb(169, 169, 169)',
             sliderTrackFillColor: 'rgb(211, 211, 211)',
@@ -209,8 +204,11 @@ const defaultTheme = {
     plugins: {
         /* inversion color */
         invert: (color: string)=> colord(color).invert().toRgbString(),
-        contrast: (color: string)=> getContrastingColor(color, COLORS.black, COLORS.white),
+        contrast: (color: string, dark?: string, light?: string)=> {
+            return getContrastingColor(color, dark ?? COLORS.black, light ?? COLORS.white);
+        },
         alpha: (color: string, alpha: number)=> colord(color).isValid() && colord(color).alpha(alpha).toRgbString(),
+        lighten: (color: string, cof: number)=> colord(color).lighten(cof).toRgbString()
     }
 }
 

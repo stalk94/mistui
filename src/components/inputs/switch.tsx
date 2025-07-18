@@ -4,9 +4,49 @@ import { FaCheck } from "react-icons/fa";
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
 import { useCache } from '../hooks';
-import { colord } from 'colord';
+import { useCallback, useMemo } from 'react';
+
+///////////////////////////////////////////////////////////////////////////
+const sizeClass = {
+    xs: 'w-7 h-4',
+    sm: 'w-9.5 h-5.5',
+    md: 'w-9.5 h-5.5',
+    lg: 'w-11 md:h-6.5',
+    xl: 'w-12 xl:h-7',
+};
+const thumbSizeClass = {
+    xs: 'w-3 h-3 translate-x-0.5',
+    sm: 'w-4.5 h-4.5 translate-x-0.5',
+    md: 'w-4.5 h-4.5 translate-x-0.5',
+    lg: 'w-5 h-5 translate-x-0.5',
+    xl: 'w-5.5 h-5.5 translate-x-0.5',
+};
+const translate = {
+    xs: 'data-[state=checked]:translate-x-2.5',
+    sm: 'data-[state=checked]:translate-x-3.5',
+    md: 'data-[state=checked]:translate-x-3.5',
+    lg: 'data-[state=checked]:translate-x-4',
+    xl: 'data-[state=checked]:translate-x-4.5',
+    auto: 'data-[state=checked]:translate-x-2.5 sm:data-[state=checked]:translate-x-3.5 md:data-[state=checked]:translate-x-3.5 lg:data-[state=checked]:translate-x-4 xl:data-[state=checked]:translate-x-4.5'
+}
+const autoSwitchSize = `
+    w-7 h-4
+    sm:w-9.5 sm:h-5.5
+    md:w-9.5 md:h-5.5
+    lg:w-11 lg:h-6.5
+    xl:w-12 xl:h-7
+`;
+const autoThumbSize = `
+    w-3 h-3 translate-x-0.5
+    sm:w-4.5 sm:h-4.5
+    md:w-4.5 md:h-4.5
+    lg:w-5 lg:h-5
+    xl:w-6 xl:h-6
+`;
+///////////////////////////////////////////////////////////////////////////
 
 
+// ! донастроить оттенки
 export default function SwitchBox({ 
     size, 
     onChange, 
@@ -14,49 +54,75 @@ export default function SwitchBox({
     style = {},
     styleThumb,
     color,
+    variant,
+    shadow,
     ...props 
 }: SwitchBoxInputProps) {
-    const { styles, variants } = useTheme();
+    const { styles, variants, plugins, shadows } = useTheme();
     const [chek, setChek] = useCache(value);
     const { backgroundColor, borderColor, ...styleRest } = style;
     
-    
-    const sizeClass = {
-        xs: 'w-7 h-4',
-        sm: 'w-9.5 h-5.5',
-        md: 'w-9.5 h-5.5',
-        lg: 'w-11 md:h-6.5',
-        xl: 'w-12 xl:h-7',
-    };
-    const thumbSizeClass = {
-        xs: 'w-3 h-3 translate-x-0.5',
-        sm: 'w-4.5 h-4.5 translate-x-0.5',
-        md: 'w-4.5 h-4.5 translate-x-0.5',
-        lg: 'w-5 h-5 translate-x-0.5',
-        xl: 'w-5.5 h-5.5 translate-x-0.5',
-    };
-    const translate = {
-        xs: 'data-[state=checked]:translate-x-2.5',
-        sm: 'data-[state=checked]:translate-x-3.5',
-        md: 'data-[state=checked]:translate-x-3.5',
-        lg: 'data-[state=checked]:translate-x-4',
-        xl: 'data-[state=checked]:translate-x-4.5',
-        auto: 'data-[state=checked]:translate-x-2.5 sm:data-[state=checked]:translate-x-3.5 md:data-[state=checked]:translate-x-3.5 lg:data-[state=checked]:translate-x-4 xl:data-[state=checked]:translate-x-4.5'
-    }
-    const autoSwitchSize = `
-        w-7 h-4
-        sm:w-9.5 sm:h-5.5
-        md:w-9.5 md:h-5.5
-        lg:w-11 lg:h-6.5
-        xl:w-12 xl:h-7
-    `;
-    const autoThumbSize = `
-        w-3 h-3 translate-x-0.5
-        sm:w-4.5 sm:h-4.5
-        md:w-4.5 md:h-4.5
-        lg:w-5 lg:h-5
-        xl:w-6 xl:h-6
-    `;
+
+    const borderVariant = useMemo(() => {
+        if (variant === 'dash') return {
+            borderStyle: 'dashed'
+        }
+        else if (variant === 'outline') return {
+            borderStyle: 'solid'
+        }
+        else return {};
+    }, [variant, style, styles]);
+    const chekColor = useCallback((type: 'borderColor' | 'backgroundColor') => {
+        if (type === 'borderColor') return(
+            plugins.lighten(
+                (variants[color] ?? color) 
+                        ?? borderColor 
+                        ?? styles?.input?.switchBorderColor
+                , 0.1)
+        );
+        else return (
+            plugins.alpha(
+                (variants[color] ?? color) 
+                        ?? backgroundColor 
+                        ?? variants.primary
+                , 0.1)
+        );
+    }, [chek, color, style]);
+    const getStyle = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+
+        const fontColorTheme = styles?.input?.fontColor;
+        const colorContrast = plugins.contrast((variants[color] ?? color) ?? fontColorTheme);
+
+        
+        let st = {
+            ...style,
+            borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            backgroundColor: chek 
+                ? chekColor('backgroundColor')
+                : 'inherit'
+            ,
+            borderColor: chek 
+                ? chekColor('borderColor')
+                : (variants[color] ?? color) 
+                        ?? inlneBg 
+                        ?? styles?.input?.switchBorderColor,
+            color: plugins.alpha(colorContrast, 0.6)
+        }
+
+        if (variant === 'ghost') st.borderWidth = chek ? 0 : 1;
+
+        return st;
+    }, [style, color, variant, chek]);
+    const colorThumb = useMemo(()=> {
+        return ({
+            backgroundColor: plugins.lighten(
+                (variants[color] ?? color)
+                        ?? styleThumb?.backgroundColor 
+                        ?? styles?.input?.switchThumbBackgroundColor
+                , chek ? 0.3 : 0.1)
+        });
+    }, [chek, style, color, variant]);
     
 
     return(
@@ -73,10 +139,9 @@ export default function SwitchBox({
                     setChek(v);
                 }}
                 style={{
-                    borderColor: (variants[color] ?? color) 
-                        ?? borderColor 
-                        ?? styles?.input?.switchBorderColor,
-                    backgroundColor: (backgroundColor ?? styles?.input?.checkBoxBackground),
+                    boxShadow: shadows[shadow],
+                    ...getStyle,
+                    ...borderVariant
                 }}
                 className={`
                     relative inline-flex flex-shrink-0 cursor-pointer items-center 
@@ -86,7 +151,6 @@ export default function SwitchBox({
                     ${sizeClass[size] ?? autoSwitchSize}
                     transition-all
                     duration-200
-                    ${!chek && 'opacity-70'}
                 `}
             >
                 <Switch.Thumb
@@ -99,29 +163,26 @@ export default function SwitchBox({
                     <div 
                         style={{
                             border: 0,
-                            backgroundColor: (variants[color] ?? color) 
-                                ?? (styleThumb?.backgroundColor 
-                                ?? styles?.input?.switchThumbBackgroundColor
-                            ),
-                            borderWidth: 1
+                            borderWidth: 1,
+                            ...colorThumb
                         }}
                         className={`
                             flex
                             ring-0
                             rounded-full 
-                            ${!chek && 'opacity-80'}
                             shadow-lg 
                             ${thumbSizeClass[size] ?? autoThumbSize}
                         `}
                     >
                         <FaCheck
                             fontSize="inherit"
-                            color={styleThumb?.iconColor ?? styles?.input?.switchThumbIconColor}
+                            color={getStyle?.color}
                             className={`
                                 pointer-events-none inline-block 
                                 border-0
                                 m-auto
                                 ring-0
+                                h-[60%]
                                 ${!chek && 'opacity-0'}
                             `}
                         />
@@ -131,17 +192,3 @@ export default function SwitchBox({
         </FormWrapper>
     );
 }
-
-
-/**
- * `
-                        pointer-events-none inline-block rounded-full 
-                        bg-white
-                        shadow-lg 
-                        ring-0 
-                        transition-transform 
-                        duration-200 
-                        ease-in-out
-                        ${thumbSizeClass[size] ?? autoThumbSize}
-                    `
- */

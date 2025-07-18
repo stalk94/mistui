@@ -28,7 +28,7 @@ export default function Acordeon({
     activeIndexs,
     style = {},
     variant = 'contained',
-    color,
+    color = 'primary',
     styleTitle,
     className,
     classNameTitle
@@ -40,7 +40,7 @@ export default function Acordeon({
     
 
     const colorContrast = useMemo(() => {
-        if (variant === 'contained') {
+        if (variant !== 'dash' && variant !== 'outline' && variant !== 'soft') {
             return plugins.contrast((variants[color] ?? color));
         }
         else return (variants[color] ?? color);
@@ -53,14 +53,12 @@ export default function Acordeon({
         };
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
-
+        
         let st = {
             ...style,
             backgroundColor: (variants[color] ?? color),
-            borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.4),
-            color: (variant === 'dash' || variant === 'outline')
-                ? (variants[color] ?? color)
-                : colorContrast
+            borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.1),
+            color: plugins.alpha(colorContrast, 1)
         }
 
         if (variant === 'soft') {
@@ -116,6 +114,7 @@ export default function Acordeon({
             className={`
                 join 
                 join-vertical 
+                w-full
                 ${sizeText}
                 ${className && className}
             `}
