@@ -4,9 +4,10 @@ import { Link } from '@/components/text';
 
 
 
-export default function InfoMarque() {
+export default function InfoMarque(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="Link" description="кнопка"
                 code={`<Link>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Link>`}

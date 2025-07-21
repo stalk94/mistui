@@ -1,0 +1,158 @@
+import Footer from '@/components/footers/base';
+import { Section, Grid } from '../helpers';
+import { colors, colorsCustom, sizes } from '../helpers';
+
+
+const Body = () => (
+    <>
+        <nav>
+            <h6 className="footer-title">Services</h6>
+            <a className="link link-hover">Branding</a>
+            <a className="link link-hover">Design</a>
+            <a className="link link-hover">Marketing</a>
+            <a className="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+            <h6 className="footer-title">Company</h6>
+            <a className="link link-hover">About us</a>
+            <a className="link link-hover">Contact</a>
+            <a className="link link-hover">Jobs</a>
+            <a className="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+            <h6 className="footer-title">Info</h6>
+            <a className="link link-hover">Galery</a>
+            <a className="link link-hover">FAQ</a>
+        </nav>
+
+        <nav>
+            <h6 className="footer-title">Social</h6>
+            <div className="grid grid-flow-col gap-4">
+                <a>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        className="fill-current">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                    </svg>
+                </a>
+                <a>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        className="fill-current">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                    </svg>
+                </a>
+                <a>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        className="fill-current">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </>
+);
+
+
+export default function InfoFooter() {
+    return (
+        <div className="p-6 space-y-8 ">
+            {/* image */}
+            <Section 
+                title="Footer" 
+                description="кнопка" 
+                code={`<AvatarGroup variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></AvatarGroup>`}
+            >
+                <div className="flex justify-center">
+                    <Footer
+                        className='bg-[#00000049] p-10'
+                        style={{ width: '100%' }}
+                    >
+                        <Body />
+                    </Footer>
+                </div>
+            </Section>
+
+            {/* orientation */}
+            <Section
+                title="Footer orientation"
+                description="разные размеры"
+                code={sizes
+                    .map((size) => `<AvatarGroup size="${size}" shadow="sm">${size}</AvatarGroup>`)
+                    .join('\n')}
+            >
+               <div className="flex-col justify-center">
+                    <Footer
+                        className='bg-[#00000049] p-10'
+                        style={{ width: '100%' }}
+                        orientation='horizontal'
+                    >
+                        <Body />
+                    </Footer>
+                    <Footer
+                        className='bg-[#00000049] p-10'
+                        style={{ width: '100%' }}
+                        orientation='vertical'
+                    >
+                        <Body />
+                    </Footer>
+                </div>
+            </Section>
+        </div>
+    );
+}
+
+
+InfoFooter.meta = {
+    children: {
+        values: ['string', 'React.ReactNode'],
+        type: 'union',
+        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+    },
+    size: {
+        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
+        default: 'auto',
+        type: 'enum',
+        description: 'Размер компонента.'
+    },
+    shadow: {
+        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+        type: 'enum',
+        description: 'Размер тени компонента.'
+    },
+    orientation: {
+        values: ['horizontal', 'vertical'],
+        default: 'horizontal',
+        type: 'enum',
+        description: 'Визуальный стиль компонента.'
+    },
+    isCenter: {
+        values: ['true', 'false'],
+        default: 'false',
+        type: 'boolean',
+        description: 'Визуальный стиль компонента.'
+    },
+    disabled: {
+        values: ['boolean'],
+        type: 'boolean',
+        description: 'Отключает компонент.'
+    },
+    'aria-label': {
+        values: ['string'],
+        type: 'string',
+        description: 'Описание для screen reader (доступность).'
+    }
+}

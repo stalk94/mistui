@@ -7,13 +7,16 @@ import { Fragment } from 'react';
 
 export function SplitterCustom({ 
     color, 
-    orientation,
+    orientation = 'horizontal',
     disabled,
     ...props
 }: SplitterProps) {
     const uid = useUids('splitter');
     const { variants, autosizes, plugins } = useTheme();
     const curColor = (variants[color] ?? color) ?? '#bdbbbe'; 
+    const colorGutter = (variants[color] ?? color)
+        ? plugins.alpha((variants[color] ?? color), 0.3)
+        : 'rgba(255, 255, 255, 0.03)';
     
 
     return (
@@ -21,18 +24,17 @@ export function SplitterCustom({
              <style>
                 {`
                     .p-splitter[data-style-id="${uid}"] {
-                        border: 1px solid ${plugins.alpha(curColor, 0.1)};
+                        border: 1px solid ${plugins.alpha(curColor, 0.3)};
                         border-radius: 2px;
                         color: rgba(255, 255, 255, 0.87);
                     }
                     .p-splitter[data-style-id="${uid}"] .p-splitter-gutter {
                         transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                        background: rgba(255, 255, 255, 0.03);
+                        background: ${colorGutter};
                         ${disabled ? 'pointer-events: none' : ''};
                     }
                     .p-splitter[data-style-id="${uid}"] .p-splitter-gutter .p-splitter-gutter-handle {
-                        background: ${curColor};
-                        
+                        ${disabled ? '' : `background: ${curColor}`};
                     }
                     .p-splitter[data-style-id="${uid}"] .p-splitter-gutter .p-splitter-gutter-handle:focus-visible {
                         outline: 0 none;
@@ -48,7 +50,7 @@ export function SplitterCustom({
 
             <Splitter
                 data-style-id={uid}
-                layout={orientation ?? 'horizontal'}
+                layout={orientation}
                 { ...props }
             />
         </Fragment>

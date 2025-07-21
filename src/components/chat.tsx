@@ -79,10 +79,11 @@ const Chat = forwardRef<HTMLDivElement, ChatProps>(function Chat(
     return(
         <div
             ref={ref}
-            className={`chat chat-${direction} ${className && className}`}
+            className={`chat chat-${direction} ${className ?? ''}`}
             style={style}
             { ...props }
         >
+            {/* avatar */}
             { avatarSrc &&
                 <div className="chat-image avatar">
                     <div className="w-10 rounded-full">
@@ -94,12 +95,14 @@ const Chat = forwardRef<HTMLDivElement, ChatProps>(function Chat(
                 </div>
             }
 
+            {/* header */}
             {header &&
                 <div className="chat-header">
                     { header }
                 </div>
             }
 
+            {/* message */}
             <div 
                 className={`chat-bubble`}
                 style={getStyle}
@@ -107,6 +110,7 @@ const Chat = forwardRef<HTMLDivElement, ChatProps>(function Chat(
                 { children }
             </div>
 
+            {/* footer */}
             {footer &&
                 <div className="chat-footer opacity-50">
                     { footer }

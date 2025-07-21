@@ -9,11 +9,12 @@ export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'classNa
         /** label аккордеона */
         title: React.ReactElement | string
         /** тело аккордеона */
-        content: React.ReactElement
+        content: React.ReactElement | string
     }[] 
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     /** массив индексов развернутых вкладок [0, 1, 2 ...] */
     activeIndexs?: number[]
     style?: React.CSSProperties
@@ -29,12 +30,13 @@ export default function Acordeon({
     style = {},
     variant = 'contained',
     color = 'primary',
+    shadow,
     styleTitle,
     className,
     classNameTitle
 }: AccordionProps) {
     const [refHover, hovered] = useHover();
-    const { styles, autosizes, variants, plugins } = useTheme();
+    const { styles, autosizes, variants, shadows, plugins } = useTheme();
     const sizeText = size ? `text-${size}` : autosizes.text;
     const [active, setActive] = useCache(activeIndexs ?? 0);
     
@@ -108,6 +110,7 @@ export default function Acordeon({
             style={{ 
                 borderRadius: 6,
                 backgroundColor: styles?.accordeon?.backgroundColor,
+                boxShadow: shadows[shadow],
                 ...getStyle,
                 ...getStyleHovered
             }}

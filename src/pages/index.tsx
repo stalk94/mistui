@@ -19,47 +19,131 @@ import Radio from './inputs/radio';
 import Switch from './inputs/switch';
 import Chek from './inputs/check';
 import Slider from './inputs/slider';
+import Autocomplete from './inputs/autocomplete';
+import Select from './inputs/select';
+import TextArea from './inputs/textarea';
+import File from './inputs/file';
+import Date from './inputs/date';
+import Time from './inputs/time';
 import Tabs from './navigation/tabs';
 import Menu from './navigation/menu';
 import Breadcrumbs from './navigation/breadcrumbs';
 import BottomNav from './navigation/bottom-nav';
+import Divider from './layout/divider';
+import Spliter from './layout/splitter';
+import Collapse from './layout/collapse';
+import Accordion from './layout/accordion';
+import Overflow from './layout/overflow';
+import Footer from './page/footer';
+import Hero from './page/hero';
+import Chat from './page/chat';
+import AppBar from './page/app-bar';
+import Stat from './page/stat';
+import Card from './media/card';
+import Promo from './media/promo';
+import HorizontalCarousel from './media/horizontal-carousel';
+import VerticalCarousel from './media/vertical-carousel';
+import { useMemo } from 'react';
+import { TypeTable } from './helpers';
 
 
-const TypeTable = ({ preview }) => {
-
-    return(
-        <div className="overflow-y-auto">
-            <table className="table">
-                {/* head */}
-                <thead className='bg-gray-600'>
-                    <tr>
-                        <th>props name</th>
-                        <th>type</th>
-                        <th>default</th>
-                        <th>description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   {
-                        <tr key={index}>
-                            <th>{ }</th>
-                            <td>{ }</td>
-                            <td>{ }</td>
-                            <td>{ }</td>
-                        </tr>
-                   }
-                </tbody>
-            </table>
-        </div>
-    );
+const category = {
+    text: {
+        Typography: Typography,
+        Link: Link, 
+        MarqueText: MarqueText, 
+    },
+    buttons: {
+        Button: InfoButton, 
+        IconButton: InfoButtons, 
+        GroupButtons: InfoGroupButton, 
+        GroupButtonFiltre: InfoGroupButtonFiltre
+    },
+    inputs: {
+        TextInput: InputBase,
+        NumberInput: Number, 
+        ColorPicker: Color, 
+        Radio: Radio, 
+        Switch: Switch,  
+        CheckBox: Chek, 
+        Slider: Slider, 
+        TextArea: TextArea,  
+        Date: Date, 
+        Time: Time, 
+        File: File, 
+        Autocomplete: Autocomplete, 
+        Select: Select, 
+    },
+    navigation: {
+        Tabs: Tabs, 
+        Breadcrumbs: Breadcrumbs, 
+        BottomNavigation: BottomNav, 
+        Menu: Menu
+    },
+    'data-display': {
+        Avatar: Avatar,
+        AvatarGroup: AvatarGrop,
+        Indicator: Indicator,
+        Badge: Badges,
+        List: List,
+        DataTable: DataTable,
+        Table: Table
+    },
+    layout: {
+        Divider: Divider,
+        Splitter: Spliter,
+        Collapse: Collapse,
+        Accordion: Accordion,
+        Overflow: Overflow,
+    },
+    page: {
+        Footer: Footer,
+        Hero: Hero,
+        AppBar: AppBar,
+        Chat: Chat,
+        Stat: Stat,
+    },
+    media: {
+        Card: Card,
+        Promo: Promo,
+        VerticalCarousel: VerticalCarousel,
+        HorizontalCarousel: HorizontalCarousel,
+    },
+    feedback: {
+        Alert: undefined,
+        Tooltip: undefined,
+        Modal: undefined,
+        Popover: undefined,
+        Drawer: undefined,
+    },
+    form: {},
 }
 
+
 export default function Base({ preview }) {
+    const catalog = useMemo(()=> {
+        let res = {};
+
+        Object.entries(category)
+            .map(([key, value])=> value)
+            .map((cats)=> res = {...res, ...cats});
+        return res;
+    }, []);
+    const renderTable = (preview) => {
+        if (catalog?.[preview]?.meta) return (
+            <TypeTable
+                preview={preview}
+                meta={catalog[preview].meta}
+            />
+        );
+    }
     
 
     return (
         <main className="flex flex-col h-full w-full overflow-y-auto">
-            <BottomNav />
+            { catalog[preview] &&
+                catalog[preview](renderTable(preview))
+            }
         </main>
     );
 }

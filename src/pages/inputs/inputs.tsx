@@ -1,4 +1,4 @@
-import { Section, Grid as ButtonGrid, variantsText } from './helpers';
+import { Section, Grid as ButtonGrid, variantsText } from '../helpers';
 import { colors, sizes, variants, colorsCustom } from '../helpers';
 import { BaseInput } from '@/components/inputs';
 

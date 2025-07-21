@@ -679,32 +679,6 @@ const patterns = {
             divider
         </Divider>
     ), 
-    Stat: (props) => (
-        <Stat
-            value='value'
-            desccription='description'
-            title='title'
-            figure={
-                <div 
-                    className="radial-progress" 
-                    style={{ "--value": 70 }}
-                    aria-valuenow={70} 
-                    role="progressbar"
-                >
-                    70%
-                </div>
-            }
-            actions={
-                <>
-                    <Divider color='primary' style={{borderStyle:'dashed',color:'silver'}}>
-                        actions
-                    </Divider>
-                    <button className="btn btn-xs btn-info btn-outline">one button</button>
-                    <button className="btn btn-xs">two button</button>
-                </>
-            }
-        />
-    ),
     Splitter: (props) => (
         <Splitter
             style={{height: 400, width: 500}}
@@ -731,36 +705,6 @@ const patterns = {
                 </Splitter>
             </SplitterPanel>
         </Splitter>
-    ),
-    Chat: (props)=> (
-        <>
-            <Chat
-                avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
-                header={
-                    <>
-                        Obi-Wan Kenobi
-                        <time className="text-xs opacity-50">12:45</time>
-                    </>
-                }
-                footer='footer'
-                children='Splitters can be configured as stateful so that when the user visits the page again, the adjusts sizes can be restored. Define a stateKey'
-                { ...props }
-                direction='start'
-            />
-            <Chat
-                avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
-                header={
-                    <>
-                        Obi-Wan Kenobi
-                        <time className="text-xs opacity-50">12:45</time>
-                    </>
-                }
-                footer='footer'
-                children='Splitters can be configured as stateful so that when the user visits the page again, the adjusts sizes can be restored. Define a stateKey'
-                { ...props }
-                direction='end'
-            />
-        </>
     ),
     Accordion: (props) => (
         <Acordeon
@@ -959,6 +903,62 @@ const patterns = {
             {...props}
         />
     ),
+    Chat: (props)=> (
+        <>
+            <Chat
+                avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
+                header={
+                    <>
+                        Obi-Wan Kenobi
+                        <time className="text-xs opacity-50">12:45</time>
+                    </>
+                }
+                footer='footer'
+                children='Splitters can be configured as stateful so that when the user visits the page again, the adjusts sizes can be restored. Define a stateKey'
+                { ...props }
+                direction='start'
+            />
+            <Chat
+                avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
+                header={
+                    <>
+                        Obi-Wan Kenobi
+                        <time className="text-xs opacity-50">12:45</time>
+                    </>
+                }
+                footer='footer'
+                children='Splitters can be configured as stateful so that when the user visits the page again, the adjusts sizes can be restored. Define a stateKey'
+                { ...props }
+                direction='end'
+            />
+        </>
+    ),
+    Stat: (props) => (
+        <Stat
+            value='value'
+            desccription='description'
+            title='title'
+            figure={
+                <div 
+                    className="radial-progress" 
+                    style={{ "--value": 70 }}
+                    aria-valuenow={70} 
+                    role="progressbar"
+                >
+                    70%
+                </div>
+            }
+            actions={
+                <>
+                    <Divider color='primary' style={{borderStyle:'dashed',color:'silver'}}>
+                        actions
+                    </Divider>
+                    <button className="btn btn-xs btn-info btn-outline">one button</button>
+                    <button className="btn btn-xs">two button</button>
+                </>
+            }
+        />
+    ),
 
     // any
     form: (props) => (
@@ -971,7 +971,6 @@ const patterns = {
 
 
 export default function SandBox() {
-    const ctxAlert = useAlert();
     const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
     const cache = store.cache.use();
     const preview = store.preview.use();

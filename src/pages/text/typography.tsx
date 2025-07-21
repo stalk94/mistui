@@ -6,9 +6,10 @@ import { Typography } from '@/components/text';
 const trackingVariants = [ 'tighter','tight', 'normal', 'wide', 'wider', 'widest'];
 
 
-export default function InfoTypography() {
+export default function InfoTypography(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="Typography" description="кнопка"
                 code={`<Typography>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Typography>`}

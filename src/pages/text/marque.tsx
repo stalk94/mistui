@@ -3,9 +3,10 @@ import { colors, colorsCustom, variantsText as variants, textShadows } from '../
 import { MarqueText } from '@/components/text';
 
 
-export default function InfoMarque() {
+export default function InfoMarque(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="MarqueText" description="кнопка"
                 code={`<MarqueText>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</MarqueText>`}

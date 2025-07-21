@@ -9,39 +9,7 @@ import { PiTextB } from "react-icons/pi";
 import { MdDataArray } from "react-icons/md";
 import { MdDataObject } from "react-icons/md";
 import { CgMenuMotion } from "react-icons/cg";
-
-
-const TypeBadge =({ name, type })=> {
-    const colors = {
-        string: 'gray',
-        number: '#8484e9',
-        boolean: '#e570d8',
-        array: '#f16767',
-        object: 'orange',
-        tuple: '#48d148'
-    }
-    const Icon = {
-        string: AiOutlineFieldString,
-        number: GoNumber,
-        boolean: PiTextB,
-        array: MdDataArray,
-        object: MdDataObject,
-        tuple: CgMenuMotion
-    }[type];
-
-
-    return (
-        <Badge
-            iconLeft={<Icon />}
-            color={colors[type]}
-            variant='ghost'
-            size='md'
-        >
-            { name }
-        </Badge>
-    )
-}
-
+import { AiOutlineFunction } from "react-icons/ai";
 
 export const colors = ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'];
 export const variants = ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'];
@@ -66,7 +34,7 @@ export const colorsCustom = [
 ];
 
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 export function CodeBlock({ code }) {
     return (
         <ShikiHighlighter
@@ -139,5 +107,118 @@ export function Section({
                 <CodeBlock code={code} />
             )}
         </div>
+    );
+}
+
+
+type TypeVariants = 'string' | 'number' | 'boolean' | 'array' | 'object' | 'enum' | 'func';
+type MetaProp = {
+    default?: string, 
+    description: string 
+    type: TypeVariants 
+    values: TypeVariants[] | MetaProp[]
+}
+const TypeBadge =({ type }: {type: TypeVariants})=> {
+    const curColor = {
+        string: 'gray',
+        number: '#8484e9',
+        boolean: '#e570d8',
+        array: '#f16767',
+        object: 'orange',
+        enum: '#48d148',
+        func: '#3333e9'
+    }[type]
+    const Icon = {
+        string: AiOutlineFieldString,
+        number: GoNumber,
+        boolean: PiTextB,
+        array: MdDataArray,
+        object: MdDataObject,
+        enum: CgMenuMotion,
+        func: AiOutlineFunction
+    }[type];
+    
+
+    return (
+        <Badge
+            iconLeft={<Icon />}
+            color={curColor}
+            variant='ghost'
+            size='md'
+        >
+            { type }
+        </Badge>
+    )
+}
+export function TypeTable({ preview, meta }: { preview: string, meta: Record<string, MetaProp> }) {
+    const render = (metaProp: MetaProp): JSX.Element[] => {
+        if (metaProp.type === 'string'
+            || metaProp.type === 'number'
+            || metaProp.type === 'enum'
+            || metaProp.type === 'boolean'
+        ) return [
+            <td key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td key="variants">{metaProp.values.join(' | ')}</td>,
+            <td key="default">
+                {metaProp.default
+                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
+                    : <span className='text-[#f44c4c]'>-</span>}
+            </td>,
+            <td key="description">{metaProp.description}</td>
+        ];
+        else if (metaProp.type === 'func') return [
+            <td key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td key="variants">{metaProp.values.join(' | ')}</td>,
+            <td key="default">
+                {metaProp.default
+                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
+                    : <span className='text-[#f44c4c]'>-</span>}
+            </td>,
+            <td key="description">{metaProp.description}</td>
+        ];
+        else if (metaProp.type === 'array') return [
+            <td key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td key="variants">{metaProp.values.join(' | ')}</td>,
+            <td key="default">
+                {metaProp.default
+                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
+                    : <span className='text-[#f44c4c]'>-</span>}
+            </td>,
+            <td key="description">{metaProp.description}</td>
+        ];
+        else return [
+            <td key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td key="variants">{metaProp.values.join(' | ')}</td>,
+            <td key="default">
+                {metaProp.default
+                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
+                    : <span className='text-[#f44c4c]'>-</span>}
+            </td>,
+            <td key="description">{metaProp.description}</td>
+        ];
+    }
+
+
+    return (
+        <table className="table table-fixed w-full">
+            {/* head */}
+            <thead className='bg-gray-600'>
+                <tr>
+                    <th>props name</th>
+                    <th>type</th>
+                    <th>variants</th>
+                    <th>default</th>
+                    <th>description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {Object.entries(meta).map(([name, value]) =>
+                    <tr key={name}>
+                        <th>{name}</th>
+                        {render(value)}
+                    </tr>
+                )}
+            </tbody>
+        </table>
     );
 }

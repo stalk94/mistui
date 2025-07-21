@@ -6,7 +6,7 @@ import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 export default function Overflow({ 
     children, 
     className, 
-    isExpand,
+    isExpand = false,
     direction = 'row',
     justifyHorizontal = 'start',
     justifyVertical = 'end',

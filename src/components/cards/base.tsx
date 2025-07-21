@@ -30,7 +30,7 @@ export default function Card({
                 ${className ?? ''}
             `}
             style={{
-                boxShadow: (shadow && shadows[shadow]) && shadows[shadow],
+                boxShadow: shadows[shadow],
                 ...style
             }}
             { ...props }
@@ -46,7 +46,7 @@ export default function Card({
             }
             
             {/* основное тело */}
-            <div className={`card-body ${classNameBody && classNameBody}`}>
+            <div className={`card-body ${classNameBody ?? ''}`}>
                 { title &&
                     <div className="card-title">
                         { title }

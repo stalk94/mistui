@@ -1,0 +1,171 @@
+import { PromoBanner } from '@/index';
+import { Section, Grid } from '../helpers';
+import { colors, colorsCustom, sizes } from '../helpers';
+
+const items = [
+    {
+        "title": "ORIENTAL GOLD BALL",
+        "buttonText": "detail",
+        "description": "The sleek and sizzling Ball comes with gold LED lighting for smart functionalityNew Tuna model with 36 GB RAM, 390 GB storage, and cheap features",
+        "images": [
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto"
+        ]
+    },
+    {
+        "title": "INCREDIBLE METAL GLOVES",
+        "buttonText": "detail",
+        "description": "Discover the hateful new Towels with an exciting mix of Aluminum ingredientsStylish Fish designed to make you stand out with rewarding looks",
+        "images": [
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto"
+        ]
+    },
+    {
+        "title": "GORGEOUS RUBBER MOUSE",
+        "buttonText": "detail",
+        "description": "Innovative Chips featuring humble technology and Wooden constructionSavor the tangy essence in our Hat, designed for monumental culinary adventures",
+        "images": [
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto"
+        ]
+    },
+    {
+        "title": "BESPOKE ALUMINUM CHAIR",
+        "buttonText": "detail",
+        "description": "The Renee Car is the latest in a series of baggy products from Auer - TurcotteThe Clifton Salad is the latest in a series of mad products from Quigley - McDermott",
+        "images": [
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto"
+        ]
+    },
+    {
+        "title": "LUXURIOUS CONCRETE SHOES",
+        "buttonText": "detail",
+        "description": "Experience the gold brilliance of our Salad, perfect for quarrelsome environmentsThe cyan Towels combines Honduras aesthetics with Astatine-based durability",
+        "images": [
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto",
+            "https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto"
+        ]
+    }
+];
+
+
+export default function InfoPromoBanner(tab) {
+    
+
+    return (
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
+            {/* default */}
+            <Section title="PromoBanner" description="кнопка" code={`<PromoBanner></PromoBanner>`}>
+                <Grid className="justify-center">
+                    <PromoBanner
+                        items={items}
+                    />
+                </Grid>
+            </Section>
+
+            {/* isFull */}
+            <Section
+                title="PromoBanner vertical"
+                description="разные стили"
+                code={''}
+            >
+                <Grid className="justify-center">
+                    <PromoBanner
+                        items={items}
+                    />
+                </Grid>
+            </Section>
+
+            {/* isSide */}
+            <Section
+                title="PromoBanner vertical"
+                description="разные стили"
+                code={''}
+            >
+                <Grid className="justify-center">
+                    <PromoBanner
+                        items={items}
+                    />
+                </Grid>
+            </Section>
+
+            {/* color */}
+            <Section title="Custom color" description="кнопка" code={`<PromoBanner></PromoBanner>`}>
+                <Grid className="justify-center">
+                    
+                </Grid>
+            </Section>
+        </div>
+    );
+}
+
+
+InfoPromoBanner.meta = {
+    children: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+    },
+    items: {
+        type: 'array',
+        values: [{
+            title: {
+                values: ['string'],
+                type: 'string',
+                description: ''
+            },
+            buttonText: {
+                values: ['string'],
+                type: 'string',
+                description: ''
+            },
+            description: {
+                values: ['string'],
+                type: 'string',
+                description: ''
+            },
+            images: {
+                values: ['string'],
+                type: 'array',
+                description: 'url'
+            }
+        }],
+        description: ''
+    },
+    size: {
+        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
+        default: 'auto',
+        type: 'enum',
+        description: 'Размер компонента.'
+    },
+    color: {
+        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
+        default: 'neutral',
+        type: 'enum',
+        description: 'Цветовая тема компонента.'
+    },
+    'aria-label': {
+        values: ['string'],
+        type: 'string',
+        description: 'Описание для screen reader (доступность).'
+    }
+}

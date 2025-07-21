@@ -4,7 +4,7 @@ import { Button, IconButton } from '../buttons';
 import Typography from '../text/Typography';
 import type { PromoSliderProps } from './types';
 import { Faker, ru, en } from '@faker-js/faker';
-const faker = new Faker({ locale: [ru, en] });
+const faker = new Faker({ locale: [en] });
 
 
 const AdjustIcon = ({ className, fill, ...props }) => (
@@ -35,7 +35,7 @@ const FiberManualRecordIcon = ({ className, fill, ...props }) => (
 function generateTestData(count = 5) {
     return Array.from({ length: count }, () => ({
         title: faker.commerce.productName().toUpperCase(),
-        buttonText: "ПОДРОБНЕЕ",
+        buttonText: "detail",
         description: faker.commerce.productDescription() +  faker.commerce.productDescription(),
         images: Array.from({ length: faker.number.int({ min: 4, max: 8 }) }, () =>
             `https://placehold.co/600x400/353636/gray?text=Promo image&font=roboto` 

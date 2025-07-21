@@ -161,3 +161,14 @@ export type OverflowProps = Props & {
     onOverflow?: (hidden: React.ReactNode[] | any[]) => void
     overflowMap?: any[]
 }
+
+export type RadialProgressProps = {
+    /** content collapse, children or content props */
+    children?: string | React.ReactElement
+    value: number
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    style?: React.CSSProperties
+    className?: Props['className']
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+}

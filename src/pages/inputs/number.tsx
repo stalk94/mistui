@@ -1,5 +1,5 @@
 import {NumberInput } from '@/components/inputs';
-import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from './helpers';
+import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../helpers';
 
 
 
