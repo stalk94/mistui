@@ -51,6 +51,7 @@
     "buffer": "^6.0.3",
     "colord": "^2.9.3",
     "framer-motion": "^12.23.3",
-    "next": "^15.3.2"
+    "next": "^15.3.2",
+    "react-shiki": "^0.7.2"
   }
 }

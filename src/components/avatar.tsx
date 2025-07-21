@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useTheme } from './theme';
 import { createGradientStyle } from './hooks';
 
+
 export type AvatarProps = {
     children?: string | React.ReactElement
     size?: 'auto' | 'xss' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -11,6 +12,7 @@ export type AvatarProps = {
     src?: string
     alt?: string
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    variant?: 'base' | 'square' | 'round'
 }
 export type AvatarsGroupProps = {
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -45,6 +47,7 @@ export default function Avatar({
     style,
     color,
     className,
+    variant = 'base',
     shadow,
     ...props
 }: AvatarProps) {
@@ -87,8 +90,9 @@ export default function Avatar({
                         bg-gray-600 
                         text-neutral-content 
                         ${getSize}
-                        rounded-full
                         ${className}
+                        ${variant === 'square' ? 'rounded' : ''}
+                        ${variant === 'round' ? 'rounded-full' : ''}
                     `}
                     { ...props }
                 >
@@ -103,7 +107,8 @@ export default function Avatar({
                 <div
                     style={getStyle}
                     className={`
-                        rounded
+                        ${variant === 'square' ? 'rounded' : ''}
+                        ${variant === 'round' ? 'rounded-full' : ''}
                         ${getSize}
                         ${className}
                     `}
@@ -134,12 +139,13 @@ export function AvatarGroup({
             className={`
                 avatar-group 
                 -space-x-6
+                items-center
             `}
         >
             { items && items.map((item, index)=> 
                 <Avatar 
-                    { ...item }
                     size={size}
+                    { ...item }
                     className={className}
                     key={index}
                 />

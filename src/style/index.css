@@ -34,13 +34,12 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: var(--color-bg);
 }
 .root {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* cyrillic-ext */

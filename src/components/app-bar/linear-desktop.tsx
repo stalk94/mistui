@@ -1,4 +1,4 @@
-import { Fragment, cloneElement, useRef } from "react";
+import { Fragment, cloneElement, isValidElement, useRef } from "react";
 import { Button, IconButton } from "../buttons";
 import clsx from 'clsx';
 import type { NavigationItemsDesktopProps } from './types';
@@ -10,9 +10,11 @@ import Menu from "../menu/list-menu";
 /** линейная навигация для больших экранов */
 export default function LinearNavigationItemsDesktop({ 
     items,
+    style,
+    className,
     ...props
 }: NavigationItemsDesktopProps) {
-    const mergedIcon = (icon)=> cloneElement(icon, {
+    const mergedIcon = (icon)=> isValidElement(icon) && cloneElement(icon, {
         className: clsx(
             clsx(icon?.props?.className, 'h-[50%] mr-1')
         ),
@@ -21,10 +23,11 @@ export default function LinearNavigationItemsDesktop({
 
     return(
         <div 
-            className="h-full pl-3"
+            className={`h-full pl-3 ${className ?? ''}`}
             style={{
                 display:'flex', 
                 flexWrap: 'nowrap',
+                ...style
             }}
             { ...props }
         >
@@ -41,7 +44,7 @@ export default function LinearNavigationItemsDesktop({
                                         className="px-2"
                                     >
                                         <div className="flex h-full mt-5">
-                                            {item.label} 
+                                            { item.label } 
                                             <span className="opacity-70">
                                                 ▼
                                             </span>

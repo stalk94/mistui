@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropsVariator, { store } from './config-props';
 import Acordeon from '../components/acordeon';
 import BreadCrumbs from '../components/breadcrumbs';
 import Form from '../components/form/Form';
@@ -15,11 +16,11 @@ import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
 import { Schema } from '../components/form/types';
 import { useAlert } from '../components/alert';
-import { store } from './config-props';
 import { __generate } from './helpers/generate-tw';
 import Tabs from '../components/tabs';
 import Preview from '../components/app-bar/Preview';
 import Layer from './Layer';
+import Documentation from '../pages';
 
 
 
@@ -494,7 +495,7 @@ const patterns = {
                 { src: 'https://img.daisyui.com/images/profile/demo/superperson@192.webp'},
                 { src: 'https://img.daisyui.com/images/profile/demo/gordon@192.webp'},
                 { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp'},
-                { children: '+99'}
+                { children: '+99' }
             ]}
             {...props}
         />
@@ -629,6 +630,7 @@ const patterns = {
     Drawer: (props) => (
         <Drawer
             {...props}
+            position='top'
             trigger={
                 <Button
                     shadow='sm'
@@ -970,6 +972,7 @@ const patterns = {
 
 export default function SandBox() {
     const ctxAlert = useAlert();
+    const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
     const cache = store.cache.use();
     const preview = store.preview.use();
     const emmiter = store.emmiterProps.use();
@@ -990,16 +993,40 @@ export default function SandBox() {
     
 
     return (
-       <div className="flex flex-col h-full">
-            {preview && patterns[preview] &&
+        <main className="flex flex-col h-full w-full" style={{maxWidth: '80%'}}>
+            <div
+                className="flex gap-4 px-1 rounded-sm w-fit shadow-sm"
+                style={{
+                    
+                }}
+            >
+                <GroupButton
+                    variant='soft'
+                    color='info'
+                    size='xs'
+                    value={mod}
+                    onChange={setMod}
+                    style={{padding:2, margin: 'auto'}}
+                    items={['documentation', 'playground']}
+                />
+            </div>
+
+            {mod === 'playground' && <PropsVariator />}
+
+            {mod === 'playground' && (preview && patterns[preview]) &&
                 <Layer
                     name={preview}
                 >
                     <div className='flex-1 p-2'>
-                        {  patterns[preview](cache) }
+                        { patterns[preview](cache) }
                     </div>
                 </Layer>
             }
-        </div>
+            {mod === 'documentation' &&
+                <Documentation
+                    preview={preview}
+                />
+            }
+        </main>
     );
 }

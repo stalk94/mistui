@@ -99,7 +99,6 @@ export default function SliderInput({
         <FormWrapper
             size={size}
             disabledVisibility={disableForm}
-            
             { ...props }
         >
             <Slider.Root
@@ -119,6 +118,7 @@ export default function SliderInput({
                     w-full
                     cursor-pointer
                     mt-1
+                    min-w-60
                 `}
             >
                 <Slider.Track 

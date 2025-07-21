@@ -14,7 +14,7 @@ export type ListProps = {
      *      <div>right</div>        
      * </>
      */
-    items: ListItem[]
+    children: ListItem[]
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
 }

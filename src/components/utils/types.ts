@@ -63,16 +63,26 @@ export type CollapseProps = {
     icon?: 'plus' | 'arrow'
 }
 
+type ItemIndicator = {
+    content: string | React.ReactElement
+    className?: Props['className']
+    position?: 'top' | 'middle' | 'bottom'
+    align?: 'start' | 'center' | 'end'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    style?: React.CSSProperties
+}
 export type IndicatorProps = {
     /** content collapse, children or content props */
     children?: string | React.ReactElement
-    content?: string | React.ReactElement
+    /** one or optional count element */
+    content?: ItemIndicator[] | string | React.ReactElement
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     style?: React.CSSProperties
     className?: Props['className']
     position?: 'top' | 'middle' | 'bottom'
     align?: 'start' | 'center' | 'end'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
 export type TooltipProps = {

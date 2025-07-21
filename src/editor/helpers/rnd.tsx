@@ -132,7 +132,7 @@ export default function ResizableBox({
         <div className="w-full h-full relative" style={style}>
             <div
                 ref={containerRef}
-                className="flex w-full h-full absolute rounded overflow-hidden border-1 border-dashed border-[#d668da63]"
+                className="flex w-full h-full absolute rounded overflow-hidden border-1 border-dashed border-[#7e7d7e63]"
                 style={{
                     width: `${size.width}%`,
                     height: `${size.height}%`,
@@ -141,16 +141,21 @@ export default function ResizableBox({
             >
                 <div
                     onMouseDown={startDrag}
-                    className="absolute top-0 left-0 w-4 h-4 bg-green-500 cursor-move z-20 rounded-bl-sm"
-                    title="Переместить"
-                />
+                    className="absolute top-0 left-0 w-4 h-4 cursor-move z-20 rounded-bl-sm"
+                    style={{color: 'red', marginTop:'-8px'}}
+                >
+                    ⊹
+                </div>
                 
                 { children }
 
                 <div
                     onMouseDown={startResize}
-                    className="absolute w-4 h-4 right-0 bottom-0 bg-blue-600 cursor-se-resize"
-                />
+                    className="absolute w-4 h-4 right-0 bottom-0 cursor-se-resize"
+                    style={{color: '#2940f4', marginBottom:'2px', marginRight: '2px'}}
+                >
+                    ↔
+                </div>
             </div>
         </div>
     );

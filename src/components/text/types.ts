@@ -35,6 +35,7 @@ export type BaseTypographyProps = {
     fontSize?: string | number
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     colorShadow?: string
+    tracking?: | 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
 }
 
 type AsProp<T extends ElementType> = {
@@ -64,7 +65,7 @@ export type LinkProps = BaseTypographyProps & {
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
 }
 
-export type MarqueeTextProps = BaseTypographyProps & {
+export type MarqueeTextProps = LinkProps & {
     /** seconds */
     speed?: number;
     direction?: 'left' | 'right';

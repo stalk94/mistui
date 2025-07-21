@@ -4,7 +4,6 @@ import { useTheme } from '../theme';
 import Typography from './Typography';
 
 
-// ! size
 const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
     {
         style = {},
@@ -23,7 +22,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
         <Typography
             as='a'
             ref={ref}
-            className={`link ${className ?? ''}`}
+            className={`hover:opacity-70 link ${className ?? ''}`}
             style={{
                 color: variants[color] ?? color,
                 ...style

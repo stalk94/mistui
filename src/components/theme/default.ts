@@ -112,6 +112,14 @@ const sizes = {
         md: 'md',
         lg: 'lg',
         xl: 'lg'
+    },
+    table: {
+        default: 'sm',
+        xs: 'xs',
+        sm: 'sm',
+        md: 'md',
+        lg: 'lg',
+        xl: 'xl'
     }
 }
 

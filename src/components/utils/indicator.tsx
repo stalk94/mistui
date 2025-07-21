@@ -14,11 +14,12 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
         className,
         position = 'top',
         align = 'end',
+        shadow,
         ...props
     },
     ref
 ) {
-    const { shadows, autosizes } = useTheme();
+    const { shadows } = useTheme();
 
 
     return (
@@ -27,16 +28,43 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
             className={`indicator`}
             { ...props }
         >
-            <span
-                style={style}
-                className={`
-                    indicator-item
-                    indicator-${position} 
-                    indicator-${align}
-                    ${className ?? ''}
-                `}
-                children={content}
-            />
+            
+            {/* multi */}
+            { Array.isArray(content) && 
+                content.map((elem, i) => 
+                    <div
+                        key={i}
+                        style={{
+                            boxShadow: shadows[elem.shadow],
+                            ...elem.style
+                        }}
+                        className={`
+                            indicator-item
+                            indicator-${elem.position} 
+                            indicator-${elem.align}
+                            ${elem.className ?? ''}
+                        `}
+                        children={elem.content}
+                    />
+                )
+            }
+
+            {/* one */}
+            { !Array.isArray(content) && 
+                <span
+                    style={{
+                        boxShadow: shadows[shadow],
+                        ...style
+                    }}
+                    className={`
+                        indicator-item
+                        indicator-${position} 
+                        indicator-${align}
+                        ${className ?? ''}
+                    `}
+                    children={content}
+                />
+            }
 
             { children }  
         </div>

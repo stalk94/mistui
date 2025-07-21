@@ -12,9 +12,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         children,
         size,
         variant = 'contained',
-        color,
+        color = 'primary',
         className,
-        isSoft,
         isGradient,
         selected,
         shadow,
@@ -24,8 +23,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 ) {
     const { variants, autosizes, mixers, plugins, shadows } = useTheme();
     const uid = useUids('button');
-    const getSize = size ? `btn-${size}` : autosizes.btn;
-
+    const getSize = (size && size!=='auto') ? `btn-${size}` : autosizes.btn;
+    
 
     const colorContrast = useMemo(() => {
         if (variant === 'contained') {
@@ -47,13 +46,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 
         let st = { 
             ...style,
-            backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color),
+            backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color ?? inlneBg),
             color: (variant === 'dash' || variant === 'outline') 
                 ? (variants[color] ?? color) 
                 : colorContrast
         }
         
-
         if ((variant === 'dash' || variant === 'outline')) {
             const { backgroundColor, ...rest } = style;
 
@@ -61,14 +59,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                 ...rest,
                 ...st,
                 backgroundColor: inlneBg ?? 'inherit',
-                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderColor: (variants[color] ?? color) ?? inlneBorder,
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };
         }
-
+        if (selected) {
+            st.backgroundColor = plugins.lighten(st.backgroundColor, 0.25);
+            st.borderColor = plugins.lighten(st.borderColor, variant !== 'soft' ? 0.25 : 0.35);
+        }
 
         return st;
-    }, [style, color, variant, isSoft]);
+    }, [style, color, variant, selected]);
     const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
@@ -87,7 +88,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
             ? plugins.contrast(inlneTxt)
             : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
         );
-    }, [style, color, variant, isSoft]);
+    }, [style, color, variant]);
     
   
     return (
@@ -110,16 +111,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                 data-id={props['data-id'] ?? uid}
                 style={{ 
                     boxShadow: shadows[shadow], 
+                    opacity: props.disabled && 0.3,
                     ...getStyle,
                     ...getGradient,
+                    color: props?.disabled ? '#d1d0d0' : getStyle.color,
                 }}
                 className={`
                     btn 
+                    text-shadow-none
                     whitespace-nowrap
                     ${variant === 'ghost' && 'btn-ghost'}
                     ${variant ? `btn-${variant}` : ''} 
                     ${getSize}
-                    ${isSoft ? 'btn-soft' : ''}
                     ${variant === 'soft' && `btn-soft btn-${color}`}
                     ${variant === 'link' && 'btn-link'}
                     font-bold 
@@ -127,7 +130,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     transition-transform 
                     duration-200 
                     hover:scale-97
-                    ${selected && `bg-[var(--selected)] border-[var(--selected)]`}
                     ${className ?? ''}
                 `}
                 { ...props }

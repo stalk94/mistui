@@ -56,7 +56,7 @@
     width: 100%;
     align-items: center;
     padding: 2;
-    min-height: 2rem;
+    min-height: 3rem;
 }
 
 .btn-select {
@@ -154,15 +154,22 @@
 
 
 @layer base {
-    @keyframes marquee-left {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
-    @keyframes marquee-right {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-    }
-    
+ @keyframes marquee-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(var(--move-distance) * -1));
+          }
+        }
+        @keyframes marquee-right {
+          0% {
+            transform: translateX(calc(var(--move-distance) * -1));
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }  
     .main {
         font-family: var(--font-family-base);
     }

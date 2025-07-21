@@ -9,7 +9,6 @@ import { colord } from 'colord';
 
 
 
-// ! реализовать отдельную кнопку
 export default function ToggleButtonGroup({
     items,
     value,
@@ -19,8 +18,6 @@ export default function ToggleButtonGroup({
     color,
     variant,
     isVertiacal,
-    isSoft,
-    styleButton,
     ...props
 }: ToggleButtonGroupProps) {
     const { plugins, variants, mixers } = useTheme();
@@ -51,7 +48,7 @@ export default function ToggleButtonGroup({
             ? colord(inlneTxt).alpha(0.6).toRgbString()
             : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
         );
-    }, [props.style, color, variant, isSoft]);
+    }, [props.style, color, variant]);
     
 
     return (
@@ -84,7 +81,6 @@ export default function ToggleButtonGroup({
                         key={opt?.id ?? index}
                         size={size}
                         color={color}
-                        isSoft={isSoft}
                         className={`
                             join-item 
                             flex-auto

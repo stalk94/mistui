@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import { DataTable } from "primereact/datatable";
+import { DataTable, DataTableValueArray } from "primereact/datatable";
 import { Column } from 'primereact/column';
 
 
@@ -39,4 +39,20 @@ export type DataTablePropsWrapper = Omit<ComponentProps<typeof DataTable>, 'size
     hoverVariant?: 'disabled' | 'row' | 'cell'
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+}
+
+export type TableProps = {
+    children: {
+        header: React.ReactNode
+        field: string
+        body?: (data: any) => React.ReactNode
+    }[],
+    value: DataTableValueArray
+    className?: React.HTMLAttributes<HTMLDivElement>['className']
+    style?: React.CSSProperties
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    footer?: React.ReactNode
+    header?: React.ReactNode
 }

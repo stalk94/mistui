@@ -4,7 +4,7 @@ export * from './components/inputs';
 // панели (modal, drawer, popover)
 export * from './components/helpers';
 
-// таблица данных primereact модернизированная
+// таблицы
 export * from './components/tables';
 
 // все формы

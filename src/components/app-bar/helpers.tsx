@@ -20,6 +20,7 @@ export function BurgerMenu({
             position="bottom-end"
             trigger={
                 <IconButton
+                    size={size}
                     variant='ghost'
                     isRounded
                     aria-label="navigation-menu"

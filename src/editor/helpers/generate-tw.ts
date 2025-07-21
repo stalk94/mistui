@@ -35,7 +35,7 @@ const allSizesClassDaisy =(namesClassDaisy)=> {
 }
 export const __generate =()=> {
     const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const namesClassDaisy = ['radio', 'input', 'textarea', 'select', 'btn', 'badge', 'divider', 'tabs'];
+    const namesClassDaisy = ['radio', 'input', 'textarea', 'select', 'btn', 'badge', 'divider', 'tabs', 'table'];
     const colors = ['primary', 'secondary', 'error', 'accent', 'success', 'warning', 'info'];
     const nameBreacpoints = ['xs', 'sm', 'md', 'lg', 'xl'];
     const breakpoints = ['', 'sm:', 'md:', 'lg:', 'xl:'];

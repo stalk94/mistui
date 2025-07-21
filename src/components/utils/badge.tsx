@@ -5,6 +5,7 @@ import { createGradientStyle } from '../hooks';
 import clsx from 'clsx';
 
 
+
 const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     {
         style = {},
@@ -103,7 +104,12 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
             { ...props} 
         >
             { memoIcon?.iconLeft }
-            { children }
+            { variant !== 'link' && children }
+            { variant === 'link' &&
+                <a className='link'>
+                    { children }
+                </a>
+            }
             { memoIcon?.iconRight }
         </div>
     )

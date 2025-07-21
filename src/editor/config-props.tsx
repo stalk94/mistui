@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Form from '../components/form/Form';
 import { createStore } from 'statekit-lite';
 import { typographyVariants } from '../components/text/types';
 import { Button, IconButton } from '../components/buttons';
-
+import Drn from './helpers/drn';
 
 const styleText = {
     fontWeight: {
@@ -397,35 +397,37 @@ export default function() {
 
     
     return(
-        <div 
-            className='flex flex-col w-70 absolute right-0 top-10'
-            style={{ 
-                zIndex: 999,
-                background: 'rgb(58, 58, 58)', 
-                boxShadow: "3px 0px 3px rgba(1, 1, 1, 0.1)",
-                visibility: preview ? 'visible' : 'hidden',
-                width: colapse ? 40 : undefined,
-                height: colapse ? 20 : undefined,
-            }}
-        >
-            <div className='flex bg-[#2f2f2f]'>
-                <Button
-                    size='xs'
-                    variant='ghost'
-                    className='ml-auto'
-                    onClick={()=> setColapse(v => !v)}
-                >
-                    x
-                </Button>
+        <Drn>
+            <div
+                className='flex flex-col w-70 absolute right-0'
+                style={{ 
+                    zIndex: 999,
+                    background: 'rgb(58, 58, 58)', 
+                    boxShadow: "-3px 2px 2px rgba(1, 1, 1, 0.1), 3px 2px 2px rgba(1, 1, 1, 0.1)",
+                    visibility: preview ? 'visible' : 'hidden',
+                    width: colapse ? 40 : undefined,
+                    height: colapse ? 20 : undefined,
+                }}
+            >
+                <div className='flex bg-[#2f2f2f]'>
+                    <Button
+                        size='xs'
+                        variant='ghost'
+                        className='ml-auto'
+                        onClick={()=> setColapse(v => !v)}
+                    >
+                        x
+                    </Button>
+                </div>
+                <span className='p-2' style={{visibility: colapse?'hidden':'visible'}}>
+                    {scheme &&
+                        <Form
+                            scheme={scheme}
+                            onChange={handleChangeForm}
+                        />
+                    }
+                </span>
             </div>
-            <span className='p-2' style={{visibility: colapse?'hidden':'visible'}}>
-                {scheme &&
-                    <Form
-                        scheme={scheme}
-                        onChange={handleChangeForm}
-                    />
-                }
-            </span>
-        </div>
+        </Drn>
     );
 }
