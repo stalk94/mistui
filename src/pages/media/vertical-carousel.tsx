@@ -17,7 +17,7 @@ export default function InfoVerticalCarousel(tab) {
             { tab }
             {/* default */}
             <Section title="VerticalCarousel" description="кнопка" code={`<VerticalCarousel></VerticalCarousel>`}>
-                <Grid className="justify-center">
+                <Grid className="h-160 w-90 m-auto">
                     <VerticalCarousel
                         items={items}
                     />
@@ -30,8 +30,9 @@ export default function InfoVerticalCarousel(tab) {
                 description="разные стили"
                 code={''}
             >
-                <Grid className="justify-center">
+                <Grid className="h-160 w-90 m-auto">
                     <VerticalCarousel
+                        autoplay
                         items={items}
                     />
                 </Grid>
@@ -43,8 +44,9 @@ export default function InfoVerticalCarousel(tab) {
                 description="разные стили"
                 code={''}
             >
-                <Grid className="justify-center">
+                <Grid className="h-160 w-90 m-auto">
                     <VerticalCarousel
+                        autoplay
                         items={items}
                     />
                 </Grid>

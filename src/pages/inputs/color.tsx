@@ -1,5 +1,6 @@
 import { ColorPicker, BaseInput, FileInput, TextArea } from '@/components/inputs';
 import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../helpers';
+import { inputsMeta } from '../meta';
 
 
 export default function InfoColorPicker(tab) {
@@ -42,41 +43,6 @@ export default function InfoColorPicker(tab) {
 }
 
 
-ColorPicker.meta = {
-    value: {
-        values: ['string'],
-        type: 'string',
-        description: 'Текущее значение цвета в формате rgba().'
-    },
-    onChange: {
-        values: ['function'],
-        type: 'function',
-        description: 'Вызывается при изменении цвета.'
-    },
-    placeholder: {
-        values: ['string'],
-        type: 'string',
-        description: 'Текст внутри поля по умолчанию.'
-    },
-    required: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Обязательное поле.'
-    },
-    color: {
-        values: ['primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'primary',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    size: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl'],
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    'data-id': {
-        values: ['string'],
-        type: 'string',
-        description: 'Идентификатор для отладки и тестирования.'
-    }
+InfoColorPicker.meta = {
+    ...inputsMeta
 }

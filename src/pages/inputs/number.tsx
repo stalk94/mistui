@@ -1,6 +1,6 @@
 import {NumberInput } from '@/components/inputs';
 import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../helpers';
-
+import { inputsMeta } from '../meta';
 
 
 export default function InfoNumberInput(tab) {
@@ -75,50 +75,15 @@ export default function InfoNumberInput(tab) {
 
 
 InfoNumberInput.meta = {
-   value: {
-    values: ['number'],
-    type: 'number',
-    description: 'Текущее значение поля ввода.'
-  },
-  onChange: {
-    values: ['function'],
-    type: 'function',
-    description: 'Функция, вызываемая при изменении значения.'
-  },
-  placeholder: {
-    values: ['string'],
-    type: 'string',
-    description: 'Текст подсказки внутри поля.'
-  },
-  step: {
-    values: ['number'],
-    type: 'number',
-    description: 'Шаг при инкременте и декременте.'
-  },
-  color: {
-    values: ['primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-    default: 'primary',
-    type: 'enum',
-    description: 'Цветовая тема компонента.'
-  },
-  iconEnable: {
-    values: ['boolean'],
-    type: 'boolean',
-    description: 'Включает кнопки плюс/минус.'
-  },
-  required: {
-    values: ['boolean'],
-    type: 'boolean',
-    description: 'Является ли поле обязательным.'
-  },
-  size: {
-    values: ['xs', 'sm', 'md', 'lg', 'xl'],
-    type: 'enum',
-    description: 'Размер компонента.'
-  },
-  'data-id': {
-    values: ['string'],
-    type: 'string',
-    description: 'ID компонента (вспомогательное поле для отладки).'
-  }
+    ...inputsMeta,
+    step: {
+        values: ['number'],
+        type: 'number',
+        description: 'Шаг при инкременте и декременте.'
+    },
+    iconEnable: {
+        values: ['boolean'],
+        type: 'boolean',
+        description: 'Включает кнопки плюс/минус.'
+    },
 }

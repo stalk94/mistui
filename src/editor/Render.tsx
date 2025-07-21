@@ -11,12 +11,11 @@ import {
     GroupButton, GroupButtonFiltre, IconButton, Divider,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
-    Hero, Footer, AppBar, Menu, Overflow, Button, AutoComplete, Select, ColorPicker
+    Hero, Footer, AppBar, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert
 } from '../index';
 import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
 import { Schema } from '../components/form/types';
-import { useAlert } from '../components/alert';
 import { __generate } from './helpers/generate-tw';
 import Tabs from '../components/tabs';
 import Preview from '../components/app-bar/Preview';

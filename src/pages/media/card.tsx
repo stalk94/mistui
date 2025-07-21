@@ -11,7 +11,7 @@ export default function InfoCard(tab) {
             
             {/* default */}
             <Section title="Card" description="кнопка" code={`<Card></Card>`}>
-                <Grid className="justify-center">
+                <Grid className="h-80 w-120 m-auto">
                     <Card
                         imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
                         title='Card Title'
@@ -35,7 +35,7 @@ export default function InfoCard(tab) {
                 description="разные стили"
                 code={''}
             >
-                <Grid className="justify-center">
+                <Grid className="h-80 w-120 m-auto">
                     <Card
                         imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
                         title='Card Title'
@@ -60,7 +60,7 @@ export default function InfoCard(tab) {
                 description="разные стили"
                 code={''}
             >
-                <Grid className="justify-center">
+                <Grid className="h-80 w-120 m-auto">
                     <Card
                         imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
                         title='Card Title'

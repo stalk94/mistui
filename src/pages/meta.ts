@@ -46,6 +46,32 @@ export const baseMeta = {
     }
 }
 
+const { children, ...rest } = baseMeta;
+export const inputsMeta = {
+   ...rest,
+    value: {
+        values: ['number', 'string'],
+        type: 'enum',
+        description: 'Текущее значение поля ввода.'
+    },
+    onChange: {
+        values: ['function'],
+        type: 'func',
+        description: 'Функция, вызываемая при изменении значения.'
+    },
+    placeholder: {
+        values: ['string'],
+        type: 'string',
+        description: 'Текст подсказки внутри поля.'
+    },
+    required: {
+        values: ['boolean'],
+        type: 'boolean',
+        description: 'Является ли поле обязательным.'
+    }
+}
+
+
 export const variantMeta = {
     variant: {
         values: variants,

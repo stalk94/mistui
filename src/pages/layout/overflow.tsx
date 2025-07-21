@@ -61,14 +61,17 @@ InfoOverflow.meta = {
     }, 
     direction: {
         values: direction,
+        type: 'enum',
         default: 'row'
     }, 
     justifyHorizontal: {
         values: jshoriz,
+        type: 'enum',
         default: 'start'
     }, 
     justifyVertical: {
         values: jsvertical,
+        type: 'enum',
         default: 'end'
     }, 
     style: baseMeta.style, 

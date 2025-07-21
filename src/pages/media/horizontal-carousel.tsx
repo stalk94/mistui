@@ -33,6 +33,7 @@ export default function InfoHorizontalCarousel(tab) {
             >
                 <Grid className="justify-center">
                     <HorizontalCarousel
+                        autoplay
                         items={items}
                     />
                 </Grid>
@@ -46,6 +47,7 @@ export default function InfoHorizontalCarousel(tab) {
             >
                 <Grid className="justify-center">
                     <HorizontalCarousel
+                        autoplay
                         items={items}
                     />
                 </Grid>

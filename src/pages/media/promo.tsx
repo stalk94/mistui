@@ -77,7 +77,7 @@ export default function InfoPromoBanner(tab) {
             { tab }
             {/* default */}
             <Section title="PromoBanner" description="кнопка" code={`<PromoBanner></PromoBanner>`}>
-                <Grid className="justify-center">
+                <Grid className="h-60 w-100 m-auto">
                     <PromoBanner
                         items={items}
                     />
@@ -90,7 +90,7 @@ export default function InfoPromoBanner(tab) {
                 description="разные стили"
                 code={''}
             >
-                <Grid className="justify-center">
+                <Grid className="h-60 w-100 m-auto">
                     <PromoBanner
                         items={items}
                     />
@@ -103,7 +103,7 @@ export default function InfoPromoBanner(tab) {
                 description="разные стили"
                 code={''}
             >
-                <Grid className="justify-center">
+                <Grid className="h-60 w-100 m-auto">
                     <PromoBanner
                         items={items}
                     />
@@ -112,7 +112,7 @@ export default function InfoPromoBanner(tab) {
 
             {/* color */}
             <Section title="Custom color" description="кнопка" code={`<PromoBanner></PromoBanner>`}>
-                <Grid className="justify-center">
+                <Grid className="h-60 w-100 m-auto">
                     
                 </Grid>
             </Section>

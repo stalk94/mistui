@@ -73,7 +73,7 @@ export default function InfoAvatar(tab) {
                 <Grid>
                     {colors.map((color) => (
                         <Avatar 
-                            size="sm" 
+                            size="md" 
                             key={color} 
                             color={color} 
                             shadow="sm"
@@ -95,10 +95,9 @@ export default function InfoAvatar(tab) {
             >
                <div className="flex justify-center items-center">
                     {sizes.map((size) => (
-                        <div className="flex flex-col justify-center items-center">
+                        <div key={size}  className="flex flex-col justify-center items-center">
                             {size}
                             <Avatar 
-                                key={size} 
                                 size={size}
                                 variant='round'
                                 src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'

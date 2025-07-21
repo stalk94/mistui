@@ -41,6 +41,11 @@ import AppBar from './page/app-bar';
 import Stat from './page/stat';
 import Card from './media/card';
 import Promo from './media/promo';
+import Alert from './feedback/alert';
+import Drawer from './feedback/drawer';
+import Modal from './feedback/modal';
+import Popover from './feedback/popover';
+import Tooltip from './feedback/tooltip';
 import HorizontalCarousel from './media/horizontal-carousel';
 import VerticalCarousel from './media/vertical-carousel';
 import { useMemo } from 'react';
@@ -110,11 +115,11 @@ const category = {
         HorizontalCarousel: HorizontalCarousel,
     },
     feedback: {
-        Alert: undefined,
-        Tooltip: undefined,
-        Modal: undefined,
-        Popover: undefined,
-        Drawer: undefined,
+        Alert: Alert,
+        Tooltip: Tooltip,
+        Modal: Modal,
+        Popover: Popover,
+        Drawer: Drawer,
     },
     form: {},
 }
