@@ -92,7 +92,7 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
                 badge-${variant}
                 ${variant === 'soft' && 'badge-soft'}
                 ${getSize}
-                ${className && className}
+                ${className ?? ''}
                 animate-slide-up
             `}
             style={{

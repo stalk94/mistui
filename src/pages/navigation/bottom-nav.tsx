@@ -3,6 +3,7 @@ import { Section, Grid as BottomNavGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Divdder, Typography } from '@/index';
 import { Cog8ToothIcon, HomeIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { baseMeta } from '../meta';
 
 const items = [
     { icon: <HomeIcon/>, label: 'home' },
@@ -11,9 +12,10 @@ const items = [
 ];
 
 
-export default function InfoBottomNav() {
+export default function InfoBottomNav(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="BottomNav" 
@@ -98,38 +100,25 @@ export default function InfoBottomNav() {
 }
 
 
+const { children, ...rest } = baseMeta;
 InfoBottomNav.meta = {
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
+    ...rest,
+    active: {
+        values: ['number'],
+        type: 'number',
+        default: 0,
+        description: ''
     },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
+    onChange: {
+        values: [''],
+        type: 'func',
+        description: ''
     },
-    variant: {
-        values: ["box", "border", "lift"],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+    items: {
+        values: [{
+            
+        }],
+        type: 'array',
+        description: ''
     }
 }

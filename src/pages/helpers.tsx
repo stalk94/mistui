@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/buttons';
-import { Typography } from '@/components/text';
+import { Button, IconButton } from '@/components/buttons';
+import { Typography, Link } from '@/components/text';
 import Badge from '@/components/utils/badge';
 import ShikiHighlighter from "react-shiki";
 import { AiOutlineFieldString } from "react-icons/ai";
@@ -10,13 +10,9 @@ import { MdDataArray } from "react-icons/md";
 import { MdDataObject } from "react-icons/md";
 import { CgMenuMotion } from "react-icons/cg";
 import { AiOutlineFunction } from "react-icons/ai";
+export { colors, variants, sizes, shadows, textShadows, variantsText } from './meta';
 
-export const colors = ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'];
-export const variants = ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'];
-export const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'auto'];
-export const shadows = ['xs', 'sm', 'md', 'lg', 'xl'];
-export const textShadows = ['xs', 'sm', 'md', 'lg', 'xl'];
-export const variantsText = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', 'overline', 'button']
+
 export const colorsCustom = [
     '#A155B9', // Lavender Plum
     '#E26D5A', // Coral Clay
@@ -68,9 +64,15 @@ export function Section({
     const [view, setView] = useState<'preview' | 'code'>('preview');
 
     return (
-        <div className="space-y-2">
+        <div className="space-y-2 shadow-sm border-1 border-[#80808020] rounded-sm p-1">
             <div className="flex items-center justify-between">
-                <Typography variant="">{`# ${title}`}</Typography>
+                <div className='flex items-center'>
+                    <button
+                        children='#'
+                        className='mr-1 btn btn-ghost p-2'
+                    />
+                    <Typography variant=''>{`${title}`}</Typography>
+                </div>
                 {code && (
                     <div className="flex gap-2">
                         <Button
@@ -91,13 +93,13 @@ export function Section({
                 )}
             </div>
 
-            <Typography variant="caption" className="text-gray-500">
+            <Typography variant="caption" className="text-gray-500 ml-2">
                 {description}
             </Typography>
 
             {view !== 'code' &&
                 <div
-                    className="border-1 p-3 rounded-md border-[#4f4f4f] bg-[#696a6c43] relative overflow-auto"
+                    className="border-1 p-3 rounded-md border-[#0f0f0f89] bg-[#262d42bb] relative overflow-auto"
                 >
                     {view === 'preview' && children}
                 </div>
@@ -135,16 +137,17 @@ const TypeBadge =({ type }: {type: TypeVariants})=> {
         array: MdDataArray,
         object: MdDataObject,
         enum: CgMenuMotion,
+        union: CgMenuMotion,
         func: AiOutlineFunction
     }[type];
     
 
     return (
         <Badge
-            iconLeft={<Icon />}
+            iconLeft={<Icon /> }
             color={curColor}
-            variant='ghost'
-            size='md'
+            variant='outline'
+            size='sm'
         >
             { type }
         </Badge>
@@ -157,52 +160,55 @@ export function TypeTable({ preview, meta }: { preview: string, meta: Record<str
             || metaProp.type === 'enum'
             || metaProp.type === 'boolean'
         ) return [
-            <td key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td key="variants">{metaProp.values.join(' | ')}</td>,
-            <td key="default">
+            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
+            <td className='py-0' key="default">
                 {metaProp.default
                     ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
                     : <span className='text-[#f44c4c]'>-</span>}
             </td>,
-            <td key="description">{metaProp.description}</td>
+            <td className='py-0' key="description">{metaProp.description}</td>
         ];
         else if (metaProp.type === 'func') return [
-            <td key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td key="variants">{metaProp.values.join(' | ')}</td>,
-            <td key="default">
+            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
+            <td className='py-0' key="default">
                 {metaProp.default
                     ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
                     : <span className='text-[#f44c4c]'>-</span>}
             </td>,
-            <td key="description">{metaProp.description}</td>
+            <td className='py-0' key="description">{metaProp.description}</td>
         ];
         else if (metaProp.type === 'array') return [
-            <td key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td key="variants">{metaProp.values.join(' | ')}</td>,
-            <td key="default">
+            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
+            <td className='py-0' key="default">
                 {metaProp.default
                     ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
                     : <span className='text-[#f44c4c]'>-</span>}
             </td>,
-            <td key="description">{metaProp.description}</td>
+            <td className='py-0' key="description">{metaProp.description}</td>
         ];
         else return [
-            <td key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td key="variants">{metaProp.values.join(' | ')}</td>,
-            <td key="default">
+            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
+            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
+            <td className='py-0' key="default">
                 {metaProp.default
                     ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
                     : <span className='text-[#f44c4c]'>-</span>}
             </td>,
-            <td key="description">{metaProp.description}</td>
+            <td className='py-0' key="description">{metaProp.description}</td>
         ];
     }
 
 
     return (
-        <table className="table table-fixed w-full">
+        <table 
+            className="table table-fixed w-full text-[11px]"
+            style={{ fontFamily: '"Inter", sans-serif'}}
+        >
             {/* head */}
-            <thead className='bg-gray-600'>
+            <thead className='bg-[#3f49696d]'>
                 <tr>
                     <th>props name</th>
                     <th>type</th>

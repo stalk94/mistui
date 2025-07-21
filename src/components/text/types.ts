@@ -66,8 +66,11 @@ export type LinkProps = BaseTypographyProps & {
 }
 
 export type MarqueeTextProps = LinkProps & {
-    /** seconds */
-    speed?: number;
-    direction?: 'left' | 'right';
+    /** px second */
+    pxPerSecond?: number
+    copies?: number
+    pauseOnHover?: boolean
+    gap?: number
+    direction?: 'left' | 'right'
     children: React.ReactNode
 }

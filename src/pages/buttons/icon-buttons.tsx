@@ -2,12 +2,14 @@ import { IconButton } from '@/components/buttons';
 import { Section, Grid as IconButtonGrid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { HomeIcon, DocumentIcon } from '@heroicons/react/24/solid';
+import ButtonInfo from './button';
 
 
 
-export default function InfoIconButton() {
+export default function InfoIconButton(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="IconButton" description="кнопка" code={`<IconButton size='sm'>default</IconButton>`}>
                 <div className="flex justify-center">
@@ -18,7 +20,7 @@ export default function InfoIconButton() {
             </Section>
 
             {/* rounded */}
-            <Section title="IconButton" description="кнопка" code={`<IconButton size='sm'>default</IconButton>`}>
+            <Section title="Rounded" description="кнопка" code={`<IconButton size='sm'>default</IconButton>`}>
                 <div className="flex justify-center">
                     <IconButton size='sm' isRounded>
                         <HomeIcon />
@@ -108,58 +110,22 @@ export default function InfoIconButton() {
 }
 
 
+const { children, ...rest } = ButtonInfo.meta;
 InfoIconButton.meta = {
+    ...rest,
+    isRounded: {
+        values: ['any'],
+        type: 'boolean',
+        description: ''
+    },
+    icon: {
+        values: ['React.ReactNode'],
+        type: 'enum',
+        description: 'Icon component.'
+    },
     children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
+        values: ['React.ReactNode'],
         type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isGradient: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: 'Icon component.'
     }
 }

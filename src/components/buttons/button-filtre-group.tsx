@@ -19,7 +19,8 @@ export default function ToggleButtonFiltreGroup({
     onlyId,
     variant,
     color,
-    style,
+    style = {},
+    styleButtonReset = {},
     ...props
 }: FilterToggleButtonGroupProps) {
     const { plugins, variants, mixers } = useTheme();
@@ -73,6 +74,7 @@ export default function ToggleButtonFiltreGroup({
                         `}
                         style={{
                             transition: 'background-color 0.3s ease, border-color 0.3s ease',
+                            ...styleButtonReset
                         }}
                         type="reset"
                         value="×"

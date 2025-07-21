@@ -1,7 +1,7 @@
 import Footer from '@/components/footers/base';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-
+import { baseMeta, orientationMeta } from '../meta';
 
 const Body = () => (
     <>
@@ -67,9 +67,10 @@ const Body = () => (
 );
 
 
-export default function InfoFooter() {
+export default function InfoFooter(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="Footer" 
@@ -117,42 +118,12 @@ export default function InfoFooter() {
 
 
 InfoFooter.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    orientation: {
-        values: ['horizontal', 'vertical'],
-        default: 'horizontal',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
+    ...baseMeta,
+    ...orientationMeta,
     isCenter: {
-        values: ['true', 'false'],
+        values: ['any'],
+        type: 'boolean',
         default: 'false',
-        type: 'boolean',
-        description: 'Визуальный стиль компонента.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: ''
     }
 }

@@ -1,6 +1,8 @@
 import { HorizontalCarousel } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta } from '../meta';
+
 
 const items = [
     { type: 'image', src: 'https://picsum.photos/600/600' },
@@ -60,7 +62,9 @@ export default function InfoHorizontalCarousel(tab) {
 }
 
 
+const { children, ...rest } = baseMeta;
 InfoHorizontalCarousel.meta = {
+    ...rest,
     items: {
         type: 'array',
         values: [{
@@ -95,29 +99,21 @@ InfoHorizontalCarousel.meta = {
         description: ''
     },
     slidesToScroll: {
-
+        values: ['number'],
+        type: 'number',
+        default: 1,
+        description: ''
     },
     autoplayDelay: {
-
+        values: ['number'],
+        type: 'number',
+        default: 3000,
+        description: ''
     },
     slidesToShow: {
-
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        values: ['number'],
+        type: 'number',
+        default: 3,
+        description: ''
     }
 }

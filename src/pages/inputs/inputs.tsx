@@ -5,9 +5,10 @@ import { BaseInput } from '@/components/inputs';
 
 
 // ! код примеров нет
-export default function InfoInput() {
+export default function InfoInput(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="BaseInput" description="кнопка"
                 code={`<BaseInput type='text' size='sm' placeholder='placeholder'></BaseInput>`}

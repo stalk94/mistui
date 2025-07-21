@@ -1,9 +1,10 @@
 import List from '@/components/list/base';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
-import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { baseMeta, variantMeta } from '../meta';
 import { IconButton } from '@/components/buttons';
 import { Fragment } from 'react/jsx-runtime';
+
 
 const items = [
     <Fragment key={1}>
@@ -51,9 +52,10 @@ const items = [
 ];
 
 
-export default function InfoBadge() {
+export default function InfoList(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="List" 
@@ -78,7 +80,7 @@ export default function InfoBadge() {
             >
                 <div className="flex flex-col justify-center items-center">
                     {sizes.map((size) => (
-                        <div className="flex flex-col border-1 rounded border-[#535353] mb-2">
+                        <div key={size} className="flex flex-col border-1 rounded border-[#535353] mb-2">
                             {size}
                             <List
                                 key={size}
@@ -94,58 +96,16 @@ export default function InfoBadge() {
 }
 
 
-InfoBadge.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+InfoList.meta = {
+    ...baseMeta,
+    listStyle: {
+        values: ['React.CSSProperties'],
+        type: 'object',
+        description: ''
     },
-    title: {
+    classNameList: {
         values: ['string'],
         type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isGradient: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: '',
     }
 }

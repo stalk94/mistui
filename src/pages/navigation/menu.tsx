@@ -3,6 +3,7 @@ import { Section, Grid as MenuGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Divdder, Typography } from '@/index';
 import { Cog8ToothIcon, HomeIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { baseMeta } from '../meta';
 
 
 const items = [
@@ -25,9 +26,10 @@ const items = [
 ];
 
 
-export default function InfoMenu() {
+export default function InfoMenu(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="Menu" 
@@ -117,37 +119,26 @@ export default function InfoMenu() {
 
 
 InfoMenu.meta = {
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
+    style: baseMeta.style,
+    className: baseMeta.className,
+    size: baseMeta.size,
+    onSelect: {
+        values: [''],
+        type: 'func',
+        description: ''
     },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
+    items: {
+        values: [{
+            
+        }],
+        type: 'array',
+        description: ''
     },
-    variant: {
-        values: ["box", "border", "lift"],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    disabled: {
-        values: ['boolean'],
+    color: baseMeta.color,
+    shadow: baseMeta.shadow,
+    isNested: {
+        values: ['any'],
         type: 'boolean',
-        description: 'Отключает компонент.'
+        description: ''
     },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
 }

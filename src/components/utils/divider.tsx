@@ -8,7 +8,7 @@ export default function Divider({
     children,
     size, 
     color, 
-    position, 
+    position = 'center', 
     orientation = 'horizontal', 
     style,
     variant = 'solid',

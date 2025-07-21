@@ -1,12 +1,14 @@
 import { Splitter, SplitterPanel } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta, orientationMeta } from '../meta';
 
 
 
-export default function InfoSplitter() {
+export default function InfoSplitter(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="Splitter" description="кнопка" code={`<Splitter></Splitter>`}>
                 <Grid className="justify-center">
@@ -117,37 +119,17 @@ export default function InfoSplitter() {
 
 
 InfoSplitter.meta = {
+    ...baseMeta,
+    ...orientationMeta,
     children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    orienattion: {
-        values: ["horizontal", "vertical"],
-        default: 'horizontal',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
+        values: ['SplitterPanel[]', 'SplitterPanel', 'Splitter', 'Splitter[]'],
+        type: 'object',
+        description: ''
     },
     disabled: {
-        values: ['boolean'],
+        values: ['any'],
         type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        default: 'false',
+        description: ''
     }
 }

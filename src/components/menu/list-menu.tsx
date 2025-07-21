@@ -46,9 +46,10 @@ export default function MenuList({
     isNested,
     onSelect,
     items,
-    color
+    color,
+    shadow
 }: MainListProps) {
-    const { autosizes, variants } = useTheme(); 
+    const { autosizes, variants, shadows } = useTheme(); 
     const textSize = (size && size !== 'auto') ? `text-${size}` :  autosizes.text;
     const sizeIcon = tableSize[size];
 

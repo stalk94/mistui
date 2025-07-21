@@ -7,7 +7,7 @@ import clsx from 'clsx';
 
 
 
-const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Button(
+const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
     {
         icon,
         children,
@@ -16,7 +16,6 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
         variant = 'contained',
         color,
         className,
-        isSoft,
         isRounded,
         isGradient,
         selected,
@@ -83,7 +82,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
         }
         
         return st;
-    }, [style, color, variant, isSoft]);
+    }, [style, color, variant]);
     const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
@@ -102,7 +101,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
             ? plugins.contrast(inlneTxt)
             : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
         );
-    }, [style, color, variant, isSoft]);
+    }, [style, color, variant]);
     
     
     return (
@@ -137,7 +136,6 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function Butto
                     ${variant ? `btn-${variant}` : ''} 
                     ${color ? `btn-${color}` : ''} 
                     ${getSize}
-                    ${isSoft ? 'btn-soft' : ''}
                     font-bold 
                     uppercase
                     transition-transform 

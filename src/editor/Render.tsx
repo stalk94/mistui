@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PropsVariator, { store } from './config-props';
 import Acordeon from '../components/acordeon';
 import BreadCrumbs from '../components/breadcrumbs';
@@ -973,16 +974,13 @@ const patterns = {
 export default function SandBox() {
     const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
     const cache = store.cache.use();
-    const preview = store.preview.use();
     const emmiter = store.emmiterProps.use();
-    
+    const { componentName } = useParams();
     
     React.useEffect(()=> {
         //__generate()
-        store.variants.set(Object.keys(patterns));
     
         if (emmiter) {
-            //console.log(emmiter);
             store.cache.set((old)=> {
                 if (!emmiter.colorCustom) return ({...old, ...emmiter});
                 else return ({...old, color: emmiter.colorCustom});
@@ -1012,18 +1010,18 @@ export default function SandBox() {
 
             {mod === 'playground' && <PropsVariator />}
 
-            {mod === 'playground' && (preview && patterns[preview]) &&
+            {mod === 'playground' && (componentName && patterns[componentName]) &&
                 <Layer
-                    name={preview}
+                    name={componentName}
                 >
                     <div className='flex-1 p-2'>
-                        { patterns[preview](cache) }
+                        { patterns[componentName](cache) }
                     </div>
                 </Layer>
             }
             {mod === 'documentation' &&
                 <Documentation
-                    preview={preview}
+                    preview={componentName}
                 />
             }
         </main>

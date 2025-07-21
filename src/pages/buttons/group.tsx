@@ -2,15 +2,17 @@ import { GroupButton } from '@/components/buttons';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { HomeIcon, DocumentIcon } from '@heroicons/react/24/solid';
+import ButtonInfo from './button';
+import { Divdder, Typography } from '@/index';
 
 
-
-export default function InfoGroupButton() {
+export default function InfoGroupButton(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
+            
             {/* default */}
-
-            <Section title="GroupButton" description="кнопка" code={`<GroupButton size='sm'>default</GroupButton>`}>
+            <Section title="GroupButton" description="кнопка" code={`<GroupButton value='playground' items={['documentation', 'playground', 'any']} size='sm'/>`}>
                 <div className="flex justify-center">
                     <GroupButton 
                         size='sm' 
@@ -32,13 +34,22 @@ export default function InfoGroupButton() {
             >
                 <Grid className='flex-col justify-center'>
                     {variants.map((variant) => (
-                        <div className="flex-col justify-center w-120 m-auto">
-                            {variant}
+                        <div key={variant} className="flex-col justify-center w-full">
+                            <Divdder
+                                className='py-4'
+                                variant='dashed'
+                                position='end'
+                            >
+                                <Typography color='#daf166' variant='caption'>
+                                    { variant }
+                                </Typography>
+                            </Divdder>
                             <GroupButton 
                                 size='sm' 
                                 value='playground'
                                 key={variant} 
                                 variant={variant}
+                                className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
                             />
                         </div>
@@ -56,12 +67,21 @@ export default function InfoGroupButton() {
             >
                 <Grid className='flex-col justify-center'>
                     {sizes.map((size) => (
-                        <div className="flex-col justify-center w-120 m-auto">
-                            {size}
+                        <div key={size} className="flex-col justify-center w-full m-auto">
+                            <Divdder
+                                className='py-4'
+                                variant='dashed'
+                                position='end'
+                            >
+                                <Typography color='#daf166' variant='caption'>
+                                    { size }
+                                </Typography>
+                            </Divdder>
                             <GroupButton
                                 size={size}
                                 key={size}
                                 value='playground'
+                                className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
                             />
                         </div>
@@ -80,8 +100,15 @@ export default function InfoGroupButton() {
             >
                 <Grid>
                     {colors.map((color) => (
-                        <div className='flex flex-col'>
-                            {color}
+                        <div key={color} className='flex flex-col'>
+                            <Divdder
+                                className='py-4'
+                                variant='dashed'
+                            >
+                                <Typography color={color} variant='caption'>
+                                    { color }
+                                </Typography>
+                            </Divdder>
                             <GroupButton 
                                 size="sm" 
                                 key={color} 
@@ -99,58 +126,34 @@ export default function InfoGroupButton() {
 }
 
 
+const { children, ...rest } = ButtonInfo.meta;
 InfoGroupButton.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
+    ...rest,
+    value: {
+        values: ['string', 'number'],
         type: 'enum',
-        description: 'Размер компонента.'
+        description: ''
     },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+    items: {
+        values: [{
+            id: {
+                values: ['string', 'number'],
+                type: 'enum',
+                description: ''
+            },
+            label: {
+                values: ['React.ReactElement'],
+                type: 'enum',
+                description: ''
+            }
+        }],
+        type: 'array',
+        description: ''
+    },
+    orientation: {
+        values: ['horizontal', 'vertical'],
         type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isGradient: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        default: 'horizontal',
+        description: ''
     }
 }

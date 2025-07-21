@@ -4,9 +4,10 @@ import { colors, colorsCustom, variants, sizes } from '../helpers';
 
 
 
-export default function InfoButton() {
+export default function InfoButton(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="Button" description="кнопка" code={`<Button size='sm'>default</Button>`}>
                 <div className="flex justify-center">
@@ -125,8 +126,18 @@ export default function InfoButton() {
 InfoButton.meta = {
     children: {
         values: ['string', 'React.ReactNode'],
-        type: 'union',
+        type: 'enum',
         description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+    },
+    style: {
+        values: ['React.CSSProperties'],
+        type: 'object',
+        description: 'Инлайн-стили, применяемые к компоненту.',
+    },
+    className: {
+        values: ['string'],
+        type: 'string',
+        description: 'Дополнительные CSS классы для компонента.',
     },
     title: {
         values: ['string'],
@@ -151,7 +162,7 @@ InfoButton.meta = {
         description: 'Визуальный стиль компонента.'
     },
     color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
+        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error', 'string'],
         default: 'neutral',
         type: 'enum',
         description: 'Цветовая тема компонента.'

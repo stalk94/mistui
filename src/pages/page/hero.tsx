@@ -3,6 +3,7 @@ import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Typography } from '@/components/text';
 import { Button } from '@/components/buttons';
+import { baseMeta, orientationMeta } from '../meta';
 
 
 const Body = () => (
@@ -31,9 +32,10 @@ const Body = () => (
 );
 
 
-export default function InfoHero() {
+export default function InfoHero(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="Hero" 
@@ -73,35 +75,20 @@ export default function InfoHero() {
 
 
 InfoHero.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
+    ...baseMeta,
     fontImageOverlaySrc: {
         values: ['string'],
         type: 'string',
         description: 'url'
     },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
+    classNameContent: {
         values: ['string'],
         type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: '',
+    },
+    styleContent: {
+        values: ['React.CSSProperties'],
+        type: 'object',
+        description: '',
     }
 }

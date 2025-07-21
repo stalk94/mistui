@@ -1,7 +1,7 @@
 import { Card, Button } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-
+import { baseMeta, orientationMeta } from '../meta';
 
 
 export default function InfoCard(tab) {
@@ -91,29 +91,7 @@ export default function InfoCard(tab) {
 
 
 InfoCard.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'enum',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    orienattion: {
-        values: ["horizontal", "vertical"],
-        default: 'horizontal',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
+    ...baseMeta,
     imageIsSide: {
         values: ['boolean'],
         default: 'false',
@@ -126,9 +104,29 @@ InfoCard.meta = {
         type: 'boolean',
         description: ''
     },
-    'aria-label': {
+    imageSrc: {
         values: ['string'],
         type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: 'URL'
+    },
+    title: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: ''
+    },
+    description: {
+        values: ['string','React.ReactNode'],
+        type: 'enum',
+        description: ''
+    },
+    actions: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: ''
+    },
+    classNameBody: {
+        values: ['string'],
+        type: 'string',
+        description: ''
     }
 }

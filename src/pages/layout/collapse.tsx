@@ -1,14 +1,15 @@
 import { Collapse } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta, orientationMeta } from '../meta';
+
+const icons = ['none', "plus", "arrow"];
 
 
-const icons = ["plus", "arrow"];
-
-
-export default function InfoCollapse() {
+export default function InfoCollapse(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="Collapse" 
@@ -28,38 +29,23 @@ export default function InfoCollapse() {
 
 
 InfoCollapse.meta = {
-    children: {
+    ...baseMeta,
+    classNameTitle: baseMeta.className,
+    styleTitle: baseMeta.style,
+    title: {
         values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    variant: {
-        values: ["contained", "outline", "dash", "soft", "ghost"],
-        default: 'contained',
         type: 'enum',
         description: ''
     },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
+    content: {
+        values: ['string', 'React.ReactNode'],
         type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isExpand: {
-        values: ['boolean'],
-        default: 'false',
-        type: 'boolean',
         description: ''
     },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+    icon: {
+        values: icons,
+        type: 'enum',
+        default: 'none',
+        description: ''
     }
 }

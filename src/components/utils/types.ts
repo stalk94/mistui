@@ -15,7 +15,7 @@ export type DividerProps = {
     children?: string | React.ReactElement
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
-    position?: 'start' | 'end'
+    position?: 'center' | 'start' | 'end'
     orientation?: 'horizontal' | 'vertical'
     variant?: 'solid' | 'dashed' | 'dotted' 
     style?: React.CSSProperties
@@ -102,7 +102,7 @@ export type StatProps = Props & {
     figure?: React.ReactNode
     title?: React.ReactNode
     value?: React.ReactNode
-    desccription?: React.ReactNode
+    description?: React.ReactNode
     actions?: React.ReactNode
 }
 export type StatsProps = Props & {

@@ -1,13 +1,15 @@
 import Avatar from '@/components/avatar';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta } from '../meta';
 
 const variants = ['base', 'square', 'round'];
 
 
-export default function InfoAvatar() {
+export default function InfoAvatar(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="Avatar" 
@@ -22,6 +24,7 @@ export default function InfoAvatar() {
                     />
                 </div>
             </Section>
+
             {/* placeholder */}
             <Section
                 title="Avatar placeholder"
@@ -31,7 +34,7 @@ export default function InfoAvatar() {
                 <Grid>
                     <Avatar
                         size='sm'
-                        variant='round'
+                        variant='square'
                     >
                         VS
                     </Avatar>
@@ -110,57 +113,16 @@ export default function InfoAvatar() {
 
 
 InfoAvatar.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
+    ...baseMeta,
     variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
+        values: ['base', 'square', 'round'],
+        default: 'base',
         type: 'enum',
         description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
     },
     isGradient: {
         values: ['boolean'],
         type: 'boolean',
         description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
     }
 }

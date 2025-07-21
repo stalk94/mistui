@@ -5,7 +5,7 @@ export default function Stat({
     figure,
     title,
     value,
-    desccription,
+    description,
     actions,
     className,
     ...props
@@ -31,9 +31,9 @@ export default function Stat({
                     { value }
                 </div>
             }
-            {desccription &&
+            {description &&
                 <div className="stat-desc">
-                    { desccription }
+                    { description }
                 </div>
             }
             {actions &&

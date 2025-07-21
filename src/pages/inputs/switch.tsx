@@ -2,9 +2,10 @@ import { SwitchBox } from '@/components/inputs';
 import { Section, Grid as ButtonGrid, colorsCustom, sizes, colors, variants } from '../helpers';
 
 
-export default function InfoSwitchBox() {
+export default function InfoSwitchBox(tab) {
     return (
-        <div className="p-6 space-y-8">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             
             <Section
                 title="Switch"

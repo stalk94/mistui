@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import Form from '../components/form/Form';
 import { createStore } from 'statekit-lite';
 import { typographyVariants } from '../components/text/types';
 import { Button, IconButton } from '../components/buttons';
 import Drn from './helpers/drn';
+
 
 const styleText = {
     fontWeight: {
@@ -81,7 +83,6 @@ const styleText = {
         ]
     }
 }
-
 const base = {
     size: {
         type: 'groupButton',
@@ -353,7 +354,6 @@ const CONFIG = {
 }
 
 export const store = createStore({
-    preview: undefined,
     propses: {
         ...CONFIG
     },
@@ -366,10 +366,11 @@ export const store = createStore({
 
 export default function() {
     const [colapse, setColapse] = useState(false);
-    const preview = store.preview.use();
+    const { componentName } = useParams();
     const propses = store.propses.use();
     const scheme = store.scheme.use();
 
+    
     const create = (config: Record<string, any>) => {
         return Object.entries(config).map(([key, value])=> {
             if (key !== 'style') {
@@ -389,12 +390,12 @@ export default function() {
     React.useEffect(()=> {
         store.cache.set({});
 
-        if (CONFIG[preview]) {
-            store.scheme.set(create(propses[preview]));
+        if (CONFIG[componentName]) {
+            store.scheme.set(create(propses[componentName]));
             store.emmiterProps.set(undefined);
         }
-    }, [preview, propses]);
-
+    }, [componentName, propses]);
+    
     
     return(
         <Drn>
@@ -404,7 +405,7 @@ export default function() {
                     zIndex: 999,
                     background: 'rgb(58, 58, 58)', 
                     boxShadow: "-3px 2px 2px rgba(1, 1, 1, 0.1), 3px 2px 2px rgba(1, 1, 1, 0.1)",
-                    visibility: preview ? 'visible' : 'hidden',
+                    visibility: componentName ? 'visible' : 'hidden',
                     width: colapse ? 40 : undefined,
                     height: colapse ? 20 : undefined,
                 }}

@@ -5,12 +5,13 @@ import { Typography } from '@/components/text';
 import { Button } from '@/components/buttons';
 import Divider from '@/components/utils/divider';
 import RadialProgress from '@/components/utils/radial-progress';
+import { baseMeta } from '../meta';
 
 
-
-export default function InfoStat() {
+export default function InfoStat(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="Stat" 
@@ -20,7 +21,7 @@ export default function InfoStat() {
                 <div className="flex justify-center">
                     <Stat
                         value='1200 %'
-                        desccription='description'
+                        description='description'
                         title='title'
                         figure={
                             <RadialProgress value={70}>
@@ -58,35 +59,31 @@ export default function InfoStat() {
 
 
 InfoStat.meta = {
-    children: {
+    value: {
         values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    direction: {
-        values: ["start", "end"],
         type: 'enum',
         description: ''
     },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
+    description: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: ''
     },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
+    title: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: ''
+    },
+    figure: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: ''
+    },
+    actions: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: ''
+    },
+    style: baseMeta.style,
+    className: baseMeta.className
 }

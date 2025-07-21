@@ -2,12 +2,13 @@ import Badge from '@/components/utils/badge';
 import { Section, Grid as BadgeGrid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { TrashIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { baseMeta, variantMeta } from '../meta';
 
 
-
-export default function InfoBadge() {
+export default function InfoBadge(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="Badge" 
@@ -129,57 +130,16 @@ export default function InfoBadge() {
 
 
 InfoBadge.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
+    ...baseMeta,
+    ...variantMeta,
+    iconLeft: {
+        values: ['SVGElement', 'React.ReactNode'],
         type: 'enum',
-        description: 'Размер компонента.'
+        description: ''
     },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+    iconRight: {
+        values: ['SVGElement', 'React.ReactNode'],
         type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isGradient: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: ''
     }
 }

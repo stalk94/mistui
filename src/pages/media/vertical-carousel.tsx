@@ -1,6 +1,7 @@
 import { VerticalCarousel } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import InfoCarousel from './horizontal-carousel';
 
 const items = [
     { type: 'image', src: 'https://picsum.photos/600/600' },
@@ -61,63 +62,5 @@ export default function InfoVerticalCarousel(tab) {
 
 
 InfoVerticalCarousel.meta = {
-    items: {
-        type: 'array',
-        values: [{
-            type: {
-                values: ['image', 'video', 'content'],
-                type: 'enum',
-                description: ''
-            },
-            src: {
-                values: ['string'],
-                type: 'string',
-                description: ''
-            },
-            style: {
-                values: ['React.CSSProperties'],
-                type: 'object',
-                description: ''
-            },
-        }],
-        description: ''
-    },
-    loop: {
-        values: ['boolean'],
-        default: 'false',
-        type: 'boolean',
-        description: ''
-    },
-    autoplay: {
-        values: ['boolean'],
-        default: 'false',
-        type: 'boolean',
-        description: ''
-    },
-    slidesToScroll: {
-
-    },
-    autoplayDelay: {
-
-    },
-    slidesToShow: {
-
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
+    ...InfoCarousel.meta
 }

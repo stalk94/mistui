@@ -17,7 +17,7 @@ export default function ToggleButtonGroup({
     onlyId,
     color,
     variant,
-    isVertiacal,
+    orientation = 'horizontal',
     ...props
 }: ToggleButtonGroupProps) {
     const { plugins, variants, mixers } = useTheme();
@@ -72,7 +72,7 @@ export default function ToggleButtonGroup({
                     flex-wrap
                     w-full 
                     gap-[2px]
-                    ${isVertiacal && 'join-vertical'}
+                    ${orientation === 'vertical' ? 'join-vertical' : ''}
                 `}
             >
                 {items.map((opt, index) => (

@@ -114,6 +114,7 @@ export default function PromoSlider({
                 title={(items ?? testData)[active]?.title}
                 description={
                     <Typography
+                        as='div'
                         variant='overline'
                         shadow='sm'
                     >

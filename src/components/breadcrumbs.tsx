@@ -69,7 +69,7 @@ export default function BreadcrumbsNav({
     pathname, 
     size, 
     Link, 
-    separator, 
+    separator = '›', 
     nameMap,
     className,
     classNameHomeicon,
@@ -152,7 +152,7 @@ export default function BreadcrumbsNav({
                             `}
                                 style={{ pointerEvents: 'none' }}
                             >
-                                { separator ?? '›' }
+                                { separator }
                             </span>
                         </li>
                     )

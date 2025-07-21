@@ -2,9 +2,10 @@ import { Select } from '@/components/inputs';
 import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../helpers';
 
 
-export default function InfoSelect() {
+export default function InfoSelect(tab) {
     return (
-        <div className="p-6 space-y-8">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             
             <Section
                 title="ColorPicker"

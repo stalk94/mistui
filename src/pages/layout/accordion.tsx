@@ -1,6 +1,7 @@
 import { Accordion } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta } from '../meta';
 
 
 const variants = ["contained", "outline", "dash", "soft", "ghost"];
@@ -15,9 +16,10 @@ const items = [
 ];
 
 
-export default function InfoAccordion() {
+export default function InfoAccordion(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section title="Accordion" description="кнопка" code={`<Accordion></Accordion>`}>
                 <Grid className="justify-center">
@@ -77,37 +79,12 @@ export default function InfoAccordion() {
 
 
 InfoAccordion.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
+    ...baseMeta,
     variant: {
-        values: ["contained", "outline", "dash", "soft", "ghost"],
-        default: 'contained',
+        values: variants,
         type: 'enum',
+        default: 'contained',
         description: ''
     },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
+    styleTitle: baseMeta.style
 }

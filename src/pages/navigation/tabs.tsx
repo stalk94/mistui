@@ -2,6 +2,7 @@ import Tabs from '@/components/tabs';
 import { Section, Grid as TabsGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Divdder, Typography } from '@/index';
+import { baseMeta } from '../meta';
 
 const variants: ("box" | "border" | "lift")[] = ["box", "border", "lift"];
 const items = [
@@ -11,9 +12,10 @@ const items = [
 ];
 
 
-export default function InfoTabs() {
+export default function InfoTabs(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="Tabs" 
@@ -127,38 +129,37 @@ export default function InfoTabs() {
 }
 
 
+const { children, ...rest } = baseMeta;
 InfoTabs.meta = {
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
+    ...rest,
+    activeIndexTab: {
+        values: ['number'],
+        type: 'number',
+        default: 0,
+        description: ''
     },
     variant: {
         values: ["box", "border", "lift"],
-        default: 'contained',
+        default: 'lift',
         type: 'enum',
-        description: 'Визуальный стиль компонента.'
+        description: ''
     },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
+    items: {
+        values: [{
+            label: {
+                values: ['string', 'React.ReactNode'],
+                type: 'enum',
+                description: ''
+            }, 
+            content: {
+                values: ['string', 'React.ReactNode'],
+                type: 'enum',
+                description: ''
+            }
+        }],
+        type: 'array',
+        description: ''
     },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
+    styleTab: baseMeta.style,
+    styleContent: baseMeta.style
 }

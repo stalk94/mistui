@@ -37,9 +37,10 @@ const testData = [
 
 
 
-export default function InfoDataTable() {
+export default function InfoDataTable(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="List" 
@@ -145,7 +146,7 @@ export default function InfoDataTable() {
 InfoDataTable.meta = {
     children: {
         values: ['string', 'React.ReactNode'],
-        type: 'union',
+        type: 'enum',
         description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
     },
     title: {

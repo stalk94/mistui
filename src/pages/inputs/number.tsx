@@ -3,9 +3,10 @@ import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../hel
 
 
 
-export default function InfoNumberInput() {
+export default function InfoNumberInput(tab) {
     return (
-        <div className="p-6 space-y-8">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section
                 title="NumberInput"

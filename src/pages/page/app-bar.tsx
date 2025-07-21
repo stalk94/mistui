@@ -5,6 +5,7 @@ import { Typography } from '@/components/text';
 import { TrashIcon, HomeIcon, Cog8ToothIcon, CircleStackIcon, FolderIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/buttons';
 import Divider from '@/components/utils/divider';
+import { baseMeta } from '../meta';
 
 
 const navLinksTest = [
@@ -54,9 +55,10 @@ const transformRouter = () => {
 }
 
 
-export default function InfoAppBar() {
+export default function InfoAppBar(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="AppBar" 
@@ -124,35 +126,25 @@ export default function InfoAppBar() {
 
 
 InfoAppBar.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+    ...baseMeta,
+    startSlot: {
+        values: ["React.ReactNode"],
+        type: 'object',
+        description: ''
     },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
+    centerSlot: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: ''
+    },
+    endSlot: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: ''
+    },
+    variant: {
+        values: ["center", "left"],
         type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    fontImageOverlaySrc: {
-        values: ['string'],
-        type: 'string',
-        description: 'url'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: ''
     }
 }

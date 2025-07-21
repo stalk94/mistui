@@ -15,7 +15,7 @@ export type ButtonProps = Props & {
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     isSoft?: boolean
     isGradient?: any
     selected?: boolean
@@ -23,25 +23,27 @@ export type ButtonProps = Props & {
     'aria-label'?: string
 }
 
-export type ToggleButtonGroupProps = ButtonProps & {
+export type ToggleButtonGroupProps = Omit<ButtonProps, 'children'> & {
     items: string[] | ItemSelect[]
     value?: string | number
     onChange?: React.Dispatch<React.SetStateAction<string | number | ItemSelect>>  | ((val: string | number | ItemSelect) => void)
     onlyId?: boolean
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
-    isVertiacal?: boolean
+    orientation?: 'horizontal' | 'vertical'
 }
 
-export type FilterToggleButtonGroupProps = ButtonProps & {
+export type FilterToggleButtonGroupProps = Omit<ButtonProps, 'children'> & {
     items: string[] | ItemSelectFilter[]
     onChange?: React.Dispatch<React.SetStateAction<string | number | ItemSelectFilter>>  | ((val: string | number | ItemSelectFilter) => void)
     name?: string
     valueReset?: string | number
     onlyId?: boolean
     value?: string | number
-     /** style прокидывается на саму обертку (section) */
+    /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
+    /** style button reset */
+    styleButtonReset?: React.CSSProperties
 }
 
 export type IconButtonProps =  Props & {
@@ -52,7 +54,6 @@ export type IconButtonProps =  Props & {
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link'
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    isSoft?: boolean
     isRounded?: boolean
     isGradient?: any
     disabled?: boolean

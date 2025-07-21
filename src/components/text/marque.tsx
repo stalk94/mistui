@@ -4,15 +4,13 @@ import Typography from './Typography';
 import { useTheme } from '../theme';
 
 
-/**
- * Бегушая строка текст
- */
+
 const MarqueeText = forwardRef<HTMLDivElement, MarqueeTextProps>(function MarqueeText(
     {
         children,
         variant,
         style = {},
-        pxPerSecond = 100,  // скорость в пикселях в секунду
+        pxPerSecond = 100,
         direction = 'right',
         color,
         pauseOnHover = false,
@@ -67,12 +65,15 @@ const MarqueeText = forwardRef<HTMLDivElement, MarqueeTextProps>(function Marque
                     ...style,
                     ...animationStyle,
                 }}
-                {...props}
             >
                 {[...Array(copies)].map((_, i) => (
                     <div key={i} style={{ paddingRight: gap }}>
-                        <Typography as="p" variant={variant ?? 'body1'}>
-                            {children}
+                        <Typography 
+                            as="p" 
+                            variant={variant ?? 'body1'}
+                            { ...props }
+                        >
+                            { children }
                         </Typography>
                     </div>
                 ))}

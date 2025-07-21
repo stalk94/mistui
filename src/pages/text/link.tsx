@@ -1,7 +1,7 @@
 import { Section, Grid as ButtonGrid, variantsText } from '../helpers';
 import { colors, colorsCustom, variantsText as variants, textShadows } from '../helpers';
 import { Link } from '@/components/text';
-
+import TypographyInfo from './typography';
 
 
 export default function InfoMarque(tab) {
@@ -68,49 +68,5 @@ export default function InfoMarque(tab) {
 
 
 InfoMarque.meta = {
-    children: {
-        values: ['React.ReactNode'],
-        type: 'node',
-        description: 'Содержимое компонента. Может быть текстом или JSX-элементом.',
-    },
-    variant: {
-        values: Object.keys(variants),
-        type: 'enum',
-        description: 'Вариант текста, определяющий стиль и размер.',
-    },
-    className: {
-        values: ['string'],
-        type: 'string',
-        description: 'Дополнительные CSS классы для компонента.',
-    },
-    style: {
-        values: ['React.CSSProperties'],
-        type: 'object',
-        description: 'Инлайн-стили, применяемые к компоненту.',
-    },
-    fontStyle: {
-        values: ['normal', 'italic'],
-        type: 'enum',
-        description: 'Стиль шрифта: обычный или курсив.',
-    },
-    fontFamily: {
-        values: Object.keys(variants),
-        type: 'enum',
-        description: 'Название шрифта из набора доступных семейств.',
-    },
-    fontSize: {
-        values: ['string', 'number'],
-        type: 'union',
-        description: 'Размер шрифта (например, 16 или "1.2rem").',
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl'],
-        type: 'enum',
-        description: 'Размер тени текста.',
-    },
-    colorShadow: {
-        values: ['string'],
-        type: 'string',
-        description: 'Цвет тени текста (например, "rgba(0,0,0,0.3)").',
-    }
+    ...TypographyInfo.meta
 }

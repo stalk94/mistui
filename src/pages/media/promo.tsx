@@ -1,6 +1,8 @@
 import { PromoBanner } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta } from '../meta';
+
 
 const items = [
     {
@@ -119,12 +121,9 @@ export default function InfoPromoBanner(tab) {
 }
 
 
+const { children, ...rest } = baseMeta;
 InfoPromoBanner.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'enum',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
+    ...rest,
     items: {
         type: 'array',
         values: [{
@@ -151,21 +150,14 @@ InfoPromoBanner.meta = {
         }],
         description: ''
     },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
+    button: {
+        values: ['ButtonProps'],
+        type: 'object',
+        description: ''
     },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+    onChange: {
+        values: [''],
+        type: 'func',
+        description: ''
     }
 }

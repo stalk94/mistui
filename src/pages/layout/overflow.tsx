@@ -1,16 +1,17 @@
 import { Overflow, Button } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-
+import { baseMeta, orientationMeta } from '../meta';
 
 const direction = ["row", "column"];
 const jshoriz = ["start", "left", "center", "end"];
 const jsvertical = ["start", "center", "end"];
 
 
-export default function InfoOverflow() {
+export default function InfoOverflow(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="Overflow" 
@@ -50,38 +51,35 @@ export default function InfoOverflow() {
 
 
 InfoOverflow.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    variant: {
-        values: ["contained", "outline", "dash", "soft", "ghost"],
-        default: 'contained',
-        type: 'enum',
-        description: ''
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
+    children: baseMeta.children, 
+    className: baseMeta.className, 
     isExpand: {
         values: ['boolean'],
-        default: 'false',
         type: 'boolean',
+        default: 'false',
         description: ''
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+    }, 
+    direction: {
+        values: direction,
+        default: 'row'
+    }, 
+    justifyHorizontal: {
+        values: jshoriz,
+        default: 'start'
+    }, 
+    justifyVertical: {
+        values: jsvertical,
+        default: 'end'
+    }, 
+    style: baseMeta.style, 
+    onOverflow: {
+        values: [''],
+        type: 'func',
+        description: ''
+    }, 
+    overflowMap: {
+        values: ['any[]'],
+        type: 'array',
+        description: ''
     }
 }

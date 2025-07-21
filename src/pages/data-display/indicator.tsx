@@ -2,14 +2,16 @@ import Indicator from '@/components/utils/indicator';
 import Avatar from '@/components/avatar';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
+import { baseMeta } from '../meta';
 
 const positions = ["top", "middle", "bottom"];
 const alignts = ["start", "center", "end"];
 
 
-export default function InfoIndicator() {
+export default function InfoIndicator(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="Indicator" 
@@ -134,30 +136,27 @@ export default function InfoIndicator() {
 
 
 InfoIndicator.meta = {
+    ...baseMeta,
     children: {
         values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
         type: 'enum',
-        description: 'Размер тени компонента.'
+        description: 'Контент внутри компонента. Будет обернут `content`.'
     },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
+    content: {
+        values: ['ItemIndicator[]', 'React.ReactNode'],
         type: 'enum',
-        description: 'Визуальный стиль компонента.'
+        description: 'Оборачивает `children`.'
     },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
+    position: {
+        values: ["top", "middle", "bottom"],
+        type: 'enum',
+        default: 'top',
+        description: ''
     },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+    align: {
+        values: ["start", "center", "end"],
+        type: 'enum',
+        default: 'end',
+        description: ''
     }
 }

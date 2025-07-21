@@ -2,12 +2,14 @@ import { GroupButtonFiltre } from '@/components/buttons';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { HomeIcon, DocumentIcon } from '@heroicons/react/24/solid';
+import InfoGroupButton from './group';
+import { Divdder, Typography } from '@/index';
 
 
-
-export default function InfoGroupButtonFiltre() {
+export default function InfoGroupButtonFiltre(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="GroupButtonFiltre" 
@@ -50,13 +52,22 @@ export default function InfoGroupButtonFiltre() {
             >
                 <Grid className='flex flex-col'>
                     {variants.map((variant) => (
-                        <div className="flex-col justify-center w-120 m-auto">
-                            {variant}
+                        <div key={variant} className="flex-col justify-center ">
+                            <Divdder
+                                className='py-4'
+                                variant='dashed'
+                                position='end'
+                            >
+                                <Typography color='#daf166' variant='caption'>
+                                    { variant }
+                                </Typography>
+                            </Divdder>
                             <GroupButtonFiltre 
                                 size='sm' 
                                 value='playground'
                                 key={variant} 
                                 variant={variant}
+                                className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
                             />
                         </div>
@@ -74,12 +85,21 @@ export default function InfoGroupButtonFiltre() {
             >
                 <Grid className='flex-col justify-center'>
                     {sizes.map((size) => (
-                        <div className="flex-col justify-center w-120 m-auto">
-                            {size}
+                        <div key={size} className="flex-col justify-center">
+                            <Divdder
+                                className='py-4'
+                                variant='dashed'
+                                position='end'
+                            >
+                                <Typography color='#daf166' variant='caption'>
+                                    { size }
+                                </Typography>
+                            </Divdder>
                             <GroupButtonFiltre
                                 size={size}
                                 key={size}
                                 value='playground'
+                                className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
                             />
                         </div>
@@ -98,12 +118,21 @@ export default function InfoGroupButtonFiltre() {
             >
                 <Grid className='flex-col'>
                     {colors.map((color) => (
-                        <div className='flex-col justify-center w-120 m-auto'>
-                            {color}
+                        <div key={color} className='flex-col justify-center'>
+                            <Divdder
+                                className='py-4'
+                                variant='dashed'
+                                position='end'
+                            >
+                                <Typography color={color} variant='caption'>
+                                    { color }
+                                </Typography>
+                            </Divdder>
                             <GroupButtonFiltre 
                                 size="sm" 
                                 key={color} 
                                 color={color} 
+                                className='w-120 m-auto'
                                 value={['documentation', 'playground', 'any'][Math.floor(Math.random() * 3)]}
                                 items={['documentation', 'playground', 'any']}
                             />
@@ -116,58 +145,17 @@ export default function InfoGroupButtonFiltre() {
 }
 
 
+
 InfoGroupButtonFiltre.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
+    ...InfoGroupButton.meta,
+    valueReset: {
+        values: ['string', 'number'],
         type: 'enum',
-        description: 'Размер компонента.'
+        description: ''
     },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isGradient: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
+    styleButtonReset: {
+        values: ['React.CSSProperties'],
+        type: 'object',
+        description: 'Инлайн-стили, применяемые к компоненту.',
     }
 }

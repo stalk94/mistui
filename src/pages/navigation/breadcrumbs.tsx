@@ -3,12 +3,13 @@ import { Section, Grid as BreadcrumbsGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Divdder, Typography } from '@/index';
 import { Cog8ToothIcon, HomeIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { baseMeta } from '../meta';
 
 
-
-export default function InfoBreadcrumbs() {
+export default function InfoBreadcrumbs(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* default */}
             <Section 
                 title="Breadcrumbs" 
@@ -111,38 +112,29 @@ export default function InfoBreadcrumbs() {
 }
 
 
+const { children, ...rest } = baseMeta;
 InfoBreadcrumbs.meta = {
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ["box", "border", "lift"],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
+   ...rest,
+    pathname: {
         values: ['string'],
         type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
+        description: 'path'
+    }, 
+    Link: {
+        values: ['ComponentType<{ href: string; children: React.ReactNode }>'],
+        type: 'func',
+        description: ''
+    }, 
+    separator: {
+        values: ['string', 'ReactNode'],
+        default: '›',
+        type: 'enum',
+        description: 'path'
+    }, 
+    nameMap: {
+        values: ['Record<string, string>'],
+        type: 'object',
+        description: 'path map'
+    },
+    classNameHomeicon: baseMeta.className
 }

@@ -3,12 +3,13 @@ import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Typography } from '@/components/text';
 import { Button } from '@/components/buttons';
+import { baseMeta, variantMeta } from '../meta';
 
 
-
-export default function InfoChat() {
+export default function InfoChat(tab) {
     return (
-        <div className="p-6 space-y-8 ">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             {/* image */}
             <Section 
                 title="Chat" 
@@ -62,36 +63,33 @@ export default function InfoChat() {
 }
 
 
+const { children, ...rest } = baseMeta;
 InfoChat.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'union',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
+    ...rest,
+    ...variantMeta,
     direction: {
-        values: ["start", "end"],
+        values: ['end', 'start'],
         type: 'enum',
         description: ''
     },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
+    avatarSrc: {
         values: ['string'],
         type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
+        description: ''
+    },
+    header: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: ''
+    },
+    children: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: ''
+    },
+    footerheader: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: ''
+    },
 }

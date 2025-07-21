@@ -2,9 +2,10 @@ import { RadioBox } from '@/components/inputs';
 import { Section, Grid as ButtonGrid, variantsText, sizes, colors, variants } from '../helpers';
 
 
-export default function InfoRadioBox() {
+export default function InfoRadioBox(tab) {
     return (
-        <div className="p-6 space-y-8">
+        <div className="p-6 space-y-8 shrink-0">
+            { tab }
             
             <Section
                 title="Radio"

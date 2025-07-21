@@ -1,5 +1,6 @@
 import { Section, Grid as ButtonGrid, variantsText } from '../helpers';
 import { colors, colorsCustom, variantsText as variants, textShadows } from '../helpers';
+import { baseMeta } from '../meta';
 import { Typography } from '@/components/text';
 
 
@@ -15,7 +16,7 @@ export default function InfoTypography(tab) {
                 code={`<Typography>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Typography>`}
             >
                 <div className="flex justify-center">
-                    <Typography>
+                    <Typography variant='body2' color='white'>
                         This converter creates fancy symbols. The explanation starts with unicode; an industry standard which
                     </Typography>
                 </div>
@@ -69,7 +70,7 @@ export default function InfoTypography(tab) {
             >
                 <ButtonGrid className='flex-col flex m-auto'>
                     {variants.map((variant, i) => (
-                        <div className="flex flex-col m-auto">
+                        <div key={i} className="flex flex-col m-auto">
                             <Typography
                                 key={variant}
                                 variant='h6'
@@ -164,25 +165,11 @@ export default function InfoTypography(tab) {
 
 
 InfoTypography.meta = {
-    children: {
-        values: ['React.ReactNode'],
-        type: 'node',
-        description: 'Содержимое компонента. Может быть текстом или JSX-элементом.',
-    },
+    ...baseMeta,
     variant: {
-        values: Object.keys(variants),
+        values: variants,
         type: 'enum',
         description: 'Вариант текста, определяющий стиль и размер.',
-    },
-    className: {
-        values: ['string'],
-        type: 'string',
-        description: 'Дополнительные CSS классы для компонента.',
-    },
-    style: {
-        values: ['React.CSSProperties'],
-        type: 'object',
-        description: 'Инлайн-стили, применяемые к компоненту.',
     },
     fontStyle: {
         values: ['normal', 'italic'],
@@ -190,19 +177,14 @@ InfoTypography.meta = {
         description: 'Стиль шрифта: обычный или курсив.',
     },
     fontFamily: {
-        values: Object.keys(variants),
-        type: 'enum',
+        values: ['string'],
+        type: 'string',
         description: 'Название шрифта из набора доступных семейств.',
     },
     fontSize: {
         values: ['string', 'number'],
-        type: 'union',
-        description: 'Размер шрифта (например, 16 или "1.2rem").',
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl'],
         type: 'enum',
-        description: 'Размер тени текста.',
+        description: 'Размер шрифта (например, 16 или "1.2rem").',
     },
     colorShadow: {
         values: ['string'],

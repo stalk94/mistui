@@ -88,10 +88,10 @@ export default function Avatar({
                     style={getStyle}
                     className={`
                         bg-gray-600 
-                        text-neutral-content 
+                        text-neutral-content
                         ${getSize}
                         ${className}
-                        ${variant === 'square' ? 'rounded' : ''}
+                        ${variant === 'square' ? 'rounded-xl' : ''}
                         ${variant === 'round' ? 'rounded-full' : ''}
                     `}
                     { ...props }
