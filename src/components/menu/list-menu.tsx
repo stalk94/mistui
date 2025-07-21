@@ -45,9 +45,10 @@ export default function MenuList({
     size = 'auto',
     isNested,
     onSelect,
-    items
+    items,
+    color
 }: MainListProps) {
-    const { autosizes } = useTheme(); 
+    const { autosizes, variants } = useTheme(); 
     const textSize = (size && size !== 'auto') ? `text-${size}` :  autosizes.text;
     const sizeIcon = tableSize[size];
 
@@ -82,6 +83,9 @@ export default function MenuList({
                 <li 
                     className='p-[1px]'
                     key={index}
+                    style={{
+                        color: (variants[color] ?? color),
+                    }}
                 >
                     {/* nested */}
                     { item?.children && (

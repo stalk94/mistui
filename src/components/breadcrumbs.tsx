@@ -36,6 +36,7 @@ export type BreadcrumbsNavProps = {
     Link: React.ComponentType<{ href: string; children: React.ReactNode }>
     /** container styles */
     style?: React.CSSProperties 
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
 }
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -72,24 +73,28 @@ export default function BreadcrumbsNav({
     nameMap,
     className,
     classNameHomeicon,
-    style
+    style,
+    color
 }: BreadcrumbsNavProps) {
-    const { autosizes } = useTheme();
+    const { autosizes, variants } = useTheme();
     const sizesText = (size && size !== 'auto') ? `text-${size}`: autosizes.text;
     const sizesIcon = size 
-        ? { xs:'h-4', sm:'h-4', md:'h-5', lg:'h-6', xl:'h-6' }
+        ? { xs:'h-4', sm:'h-4', md:'h-5', lg:'h-6', xl:'h-6' }[size]
         : 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6';
 
+    
     const crumbs = useBreadcrumbs(pathname, {
         nameMap,
         base: { 
             label: (
                 <HomeIcon
                     className={`
-                        fill-current ${sizesIcon}  
+                        fill-current 
+                        ${sizesIcon ?? 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6'}  
                         text-neutral-300
                         hover:text-red-400
-                        ${classNameHomeicon && classNameHomeicon}
+                        
+                        ${classNameHomeicon ?? ''}
                     `}
                 />
             ),
@@ -106,7 +111,7 @@ export default function BreadcrumbsNav({
                 no-separator
                 ${sizesText}
                 border-0
-                ${className && className}
+                ${className ?? ''}
             `}
         >
             <ul>
@@ -116,7 +121,10 @@ export default function BreadcrumbsNav({
                         <li 
                             className='text-neutral-200'
                             key={segment.href}
-                            style={{ pointerEvents: 'none' }}
+                            style={{
+                                color: (variants[color] ?? color), 
+                                pointerEvents: 'none' 
+                            }}
                         >
                             { segment.label }
                         </li>
@@ -125,6 +133,9 @@ export default function BreadcrumbsNav({
                         <li 
                             className='text-neutral-200'
                             key={segment.href}
+                            style={{ 
+                                color: (variants[color] ?? color) 
+                            }}
                         >
                             <Link
                                 href={segment.href}

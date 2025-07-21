@@ -42,7 +42,7 @@ export default function InfoTable() {
         <div className="p-6 space-y-8 ">
             {/* default */}
             <Section 
-                title="List" 
+                title="Table" 
                 description="кнопка" 
                 code={`<Badge size='sm'>default</Badge>`}
             >

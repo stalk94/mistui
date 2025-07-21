@@ -32,16 +32,20 @@ const BottomNav = forwardRef<HTMLDivElement, BottomNavProps>(function BottomNav(
     const curColor = (variants[color] ?? color);
     const sizes = (size && size !== 'auto') ? `dock-${size}` : autosizes.dock;
 
-
+    
     return (
         <div 
             ref={ref} 
-            className={`dock ${sizes}`}
-            style={style}
+            className={`dock ${sizes} ${className ?? ''}`}
+            style={{
+                color: curColor, 
+                ...style
+            }}
             { ...props }
         >
             { items.map((elem, index)=> 
                 <button
+                    key={index}
                     className={`${curActive === index && 'dock-active'}`}
                     onClick={()=> {
                         onChange?.(index);

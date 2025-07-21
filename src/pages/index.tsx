@@ -19,6 +19,10 @@ import Radio from './inputs/radio';
 import Switch from './inputs/switch';
 import Chek from './inputs/check';
 import Slider from './inputs/slider';
+import Tabs from './navigation/tabs';
+import Menu from './navigation/menu';
+import Breadcrumbs from './navigation/breadcrumbs';
+import BottomNav from './navigation/bottom-nav';
 
 
 const TypeTable = ({ preview }) => {
@@ -55,7 +59,7 @@ export default function Base({ preview }) {
 
     return (
         <main className="flex flex-col h-full w-full overflow-y-auto">
-            <Table />
+            <BottomNav />
         </main>
     );
 }

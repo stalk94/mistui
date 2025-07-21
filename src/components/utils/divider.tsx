@@ -45,7 +45,7 @@ export default function Divider({
                     ${orientation === 'vertical' ? 'divider-horizontal' : 'divider-vertical'}
                     ${getSize} 
                     text-neutral-500
-                    ${className && className}
+                    ${className ?? ''}
                 `}
                 style={{
                     borderColor: variant === 'solid' && color && color,        // !из темы

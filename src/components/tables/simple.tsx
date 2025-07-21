@@ -17,7 +17,7 @@ const sizesText = {
     xl: 18
 }
 
-
+// ! color
 export default function Table({
     value,
     children,

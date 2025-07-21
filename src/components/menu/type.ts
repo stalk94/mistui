@@ -52,4 +52,5 @@ export type MainListProps = {
     isNested?: boolean
     items: NavItem[]
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
 }

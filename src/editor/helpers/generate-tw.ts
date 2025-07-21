@@ -68,6 +68,7 @@ export const __generate =()=> {
         'footer-horizontal footer-vertical footer-center footer-title',
         'menu-xs menu-sm menu-md menu-lg menu-xl', 
         'text-shadow-xs text-shadow-md text-shadow-sm text-shadow-lg text-shadow-2xs',
+        'dock-xs dock-sm dock-md dock-lg dock-xl'
     );
     const allDaisySizeClass = allSizesClassDaisy(namesClassDaisy);
 
