@@ -1,7 +1,7 @@
 declare const IconButton: import("react").ForwardRefExoticComponent<{
-    className?: string | undefined | undefined;
+    className?: string | undefined;
     style?: import("react").CSSProperties | undefined;
-    onClick?: import("react").MouseEventHandler<HTMLButtonElement> | undefined;
+    onClick?: import("react").MouseEventHandler<HTMLButtonElement>;
 } & {
     icon?: React.ReactNode;
     children?: React.ReactNode;
@@ -10,7 +10,6 @@ declare const IconButton: import("react").ForwardRefExoticComponent<{
     variant?: "contained" | "outline" | "dash" | "soft" | "ghost" | "link";
     color?: "neutral" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "error" | string;
     size?: "auto" | "xs" | "sm" | "md" | "lg" | "xl";
-    isSoft?: boolean;
     isRounded?: boolean;
     isGradient?: any;
     disabled?: boolean;

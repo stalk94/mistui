@@ -34,6 +34,7 @@ const AppBar = forwardRef<HTMLHeadingElement, AppBarCustomProps>(function AppBar
                 backgroundColor: styles?.appBar?.backgroundColor,
                 position: 'sticky',
                 border: `1px solid`,
+                zIndex: 99,
                 backdropFilter: "blur(14px)",
                 borderColor: '#80808074',
                 boxShadow: shadows[shadow],

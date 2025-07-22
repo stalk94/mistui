@@ -5,6 +5,7 @@ declare const BaseInput: React.ForwardRefExoticComponent<{
     required?: boolean;
     type: "text" | "number" | "email" | "password" | "date" | "textarea" | "tel" | "url" | "time" | "datetime-local" | "search";
     size?: "xs" | "sm" | "md" | "lg" | "xl";
+    shadow?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
     placeholder?: string;
     labelLeft?: string | React.ReactElement;
     labelRight?: string | React.ReactElement;

@@ -15,14 +15,18 @@ export default function Dropdown({
     isHover = false,
     onClose,
     shadow,
-    usePortal = false
+    usePortal = false,
+    open: controlledOpen,
+    setOpen: setControlledOpen
 }: PopoverProps) {
     const { styles, shadows } = useTheme();
-    const [open, setOpen] = useState(false);
+    const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
     const triggerRef = useRef<HTMLDivElement>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const [coords, setCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+    const open = controlledOpen ?? uncontrolledOpen;
+    const setOpen = setControlledOpen ?? setUncontrolledOpen;
 
 
     const handleMouseEnter = () => {
@@ -125,24 +129,20 @@ export default function Dropdown({
                         exit={{ opacity: 0, scale: 0.95, y: -4 }}
                         transition={{ duration: 0.15 }}
                         className={`
-                            absolute 
-                            p-1
-                            pt-2
-                            z-[999] 
-                            min-w-[10rem]
-                            bg-[#2c2c2c]
-                            border 
-                            border-gray-500
+                            fixed
+                            min-w-25
                             rounded 
-                            shadow
+                            shadow 
                             ${getPositionClasses()}
                             ${className}
                         `}
                         style={{
                             boxShadow: shadows[shadow],
+                            backdropFilter: "blur(14px)",
                             position: usePortal ? "fixed" : "absolute",
                             top: usePortal ? coords.top : undefined,
                             left: usePortal ? coords.left : undefined,
+                            zIndex: 9999,
                             ...style
                         }}
                         onClick={(e) => e.stopPropagation()}

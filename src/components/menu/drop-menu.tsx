@@ -14,8 +14,8 @@ export default function Menu({
             className={`
                 dropdown 
                 menu
-                bg-[var(--color-base-400)]
-                max-h-60 
+                max-h-40 
+                w-full
                 overflow-y-auto 
                 z-[9999]
                 p-0
@@ -29,7 +29,7 @@ export default function Menu({
                     style={{ padding: 0 }}
                 >
                     <span 
-                        style={{ borderRadius:0 }}
+                        style={{ borderRadius: 0 }}
                         className={`
                             text-neutral-200 
                             border-b-1 

@@ -14,7 +14,6 @@ export type OverflowNavigationItemsProps = {
 };
 export type NavigationItemsDesktopProps = {
     items: NavItem[];
-    onOverfow: (overflowElements: NavItem[]) => void;
     className?: React.HTMLAttributes<HTMLDivElement>['className'];
     style?: React.CSSProperties;
 };
@@ -22,10 +21,10 @@ export type AppBarCustomProps = {
     startSlot: React.ReactNode;
     centerSlot: React.ReactNode;
     endSlot: React.ReactNode;
-    height: number;
     style?: React.CSSProperties;
     className?: React.HTMLAttributes<HTMLDivElement>['className'];
     variant?: 'center' | 'left';
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 };
 export type MobailBurgerProps = {
     items: NavItem[];

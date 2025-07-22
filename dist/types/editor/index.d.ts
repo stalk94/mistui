@@ -1,1 +1,1 @@
-export default function Sand({}: {}): import("react/jsx-runtime").JSX.Element;
+export default function SandBoxRoot({}: {}): import("react/jsx-runtime").JSX.Element;

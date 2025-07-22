@@ -9,12 +9,12 @@ export default function InfoColorPicker(tab) {
             { tab }
             {/* базовый */}
             <Section
-                title="ColorPicker"
+                title="base"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
                 <div className="flex justify-center">
-                    <ColorPicker placeholder="Выберите цвет" />
+                    <ColorPicker size='sm' placeholder="Выберите цвет" />
                 </div>
             </Section>
 
@@ -24,20 +24,9 @@ export default function InfoColorPicker(tab) {
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
                 <div className="flex justify-center">
-                    <BaseInput placeholder="" type='date'/>
+                    
                 </div>
             </Section>
-
-            <Section
-                title="ColorPicker"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
-            >
-                <div className="flex justify-center">
-                    <BaseInput placeholder="" type='time'/>
-                </div>
-            </Section>
-
         </div>
     );
 }

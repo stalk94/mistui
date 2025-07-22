@@ -87,9 +87,25 @@ export default function InfoFooter(tab) {
                 </div>
             </Section>
 
+            <Section 
+                title="vertical" 
+                description="кнопка" 
+                code={`<AvatarGroup variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></AvatarGroup>`}
+            >
+                <div className="flex justify-center">
+                    <Footer
+                        className='bg-[#00000049] p-10'
+                        style={{ width: '100%' }}
+                        orientation='vertical'
+                    >
+                        <Body />
+                    </Footer>
+                </div>
+            </Section>
+
             {/* orientation */}
             <Section
-                title="Footer orientation"
+                title="isCenter"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<AvatarGroup size="${size}" shadow="sm">${size}</AvatarGroup>`)
@@ -99,14 +115,7 @@ export default function InfoFooter(tab) {
                     <Footer
                         className='bg-[#00000049] p-10'
                         style={{ width: '100%' }}
-                        orientation='horizontal'
-                    >
-                        <Body />
-                    </Footer>
-                    <Footer
-                        className='bg-[#00000049] p-10'
-                        style={{ width: '100%' }}
-                        orientation='vertical'
+                        isCenter
                     >
                         <Body />
                     </Footer>

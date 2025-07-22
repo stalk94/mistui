@@ -69,6 +69,7 @@ export interface Theme {
         invert: (color: string) => string;
         contrast: (color: string) => string;
         alpha: (color: string, alpha: number) => string;
+        lighten: (color: string, cof: number) => string;
     };
 }
 export declare const clasesDaisy: {

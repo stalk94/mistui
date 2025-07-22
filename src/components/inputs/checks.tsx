@@ -33,7 +33,7 @@ export default function CheckBoxInput({
     type, 
     style = {},
     shadow,
-    variant,
+    variant = 'outline',
     className,
     ...props 
 }: CheckBoxInputProps) {

@@ -2,7 +2,7 @@ import type { SliderInputProps } from './type';
 import * as Slider from '@radix-ui/react-slider';
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 
 
 const sizeThumb = {
@@ -20,7 +20,7 @@ export default function SliderInput({
     onChange,
     onChangeEnd,
     disableForm,
-    variant = 'contained',
+    variant = 'outline',
     size,
     color = 'primary',
     value,
@@ -29,6 +29,7 @@ export default function SliderInput({
     step,
     ...props
 }: SliderInputProps) {
+    const ref = useRef<HTMLSpanElement>(null);
     const { styles, variants, plugins } = useTheme();
     const isValid = value !== undefined && (typeof value === 'number' && !isNaN(value));
     const numericValue = Array.isArray(value) ? value.join(',') : value;
@@ -36,6 +37,8 @@ export default function SliderInput({
  
 
     const useChange = (newValue: number[], clb?: (v: number | number[]) => void) => {
+        if (ref.current) ref.current.dataset.tip = `${newValue[0]}`;
+
         if (!clb) return;
 
         if (Array.isArray(value)) clb(newValue);
@@ -150,6 +153,7 @@ export default function SliderInput({
 
                 <Slider.Thumb 
                     data-tip={ Array.isArray(value) ? value[0] : (value ?? 0) }
+                    ref={ref}
                     style={{
                         border: 0,
                         ...styleThumb
@@ -157,6 +161,7 @@ export default function SliderInput({
                     className={`
                         block 
                         tooltip
+                        tooltip-primary
                         bg-gray-200 
                         border 
                         border-gray-400 

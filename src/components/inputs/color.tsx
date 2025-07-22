@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from 'react';
+import { Fragment, useMemo, useRef } from 'react';
 import type { SelectInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { RgbaColorPicker, RgbaColor } from 'react-colorful';
@@ -8,6 +8,7 @@ import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
 import stylesPicker from './styles/global.module.css';
 import { useUids } from '../hooks/uuid';
+import { Popover } from '../helpers';
 
 
 const Inputs = ({ updateComponent, input, styleInput }) => {
@@ -57,7 +58,7 @@ const Inputs = ({ updateComponent, input, styleInput }) => {
     );
 }
 
-// ! доработать размеры color preview
+
 export default function SelectColor({ 
     onChange, 
     placeholder, 
@@ -69,6 +70,7 @@ export default function SelectColor({
     color = 'primary',
     ...props 
 }: SelectInputProps) {
+    const ref = useRef<HTMLDivElement>(null);
     const { styles, variants } = useTheme();
     const uid = useUids('color');
     const [input, setInput] = useCache(value);
@@ -78,9 +80,6 @@ export default function SelectColor({
     const debouncedOnChange = useDebounced((val: string) => {
         onChange?.(val);
     }, 100, [onChange]);
-    useClickOutside(['[data-color-root]', '[data-color-dropdown]'], 
-        ()=> setOpen(false)
-    );
     const handleChangePicker = (value: RgbaColor) => {
         const str = rgbaToString(value);
         setInput(str);
@@ -112,69 +111,68 @@ export default function SelectColor({
                 `}
             </style>
 
-            <FormWrapper
-                size={size}
-                data-color-root
-                data-style-id={uid}
-                style={{ position: 'relative' }}
-                color={color}
-                labelRight={ 
-                    <button className='cursor-pointer'
-                        onClick={()=> setOpen(true)}
+            <Popover
+                usePortal
+                open={open}
+                setOpen={setOpen}
+                style={{marginTop: 10}}
+                trigger={
+                    <FormWrapper
+                        size={size}
+                        ref={ref}
+                        data-style-id={uid}
+                        style={{ position: 'relative' }}
+                        color={color}
+                        labelRight={
+                            <button className='cursor-pointer'>
+                                <span
+                                    className={`
+                                        cursor-pointer
+                                        bg-neutral-600
+                                        rounded-[2px]
+                                    `}
+                                    style={{ background: input }}
+                                />
+                            </button>
+                        }
+                        {...props}
                     >
-                        <span 
-                            className={`
-                                cursor-pointer
-                                bg-neutral-600
-                                rounded-[2px]
-                            `}
-                            style={{ background: input }}
+                        <Inputs
+                            styleInput={{
+                                color: styles?.input?.fontColor,
+                                placeholderColor: styles?.input?.placeholderColor
+                            }}
+                            input={input}
+                            updateComponent={handleChangeInputs}
                         />
-                    </button>
+                    </FormWrapper>
                 }
-                { ...props }
             >
-                <Inputs
-                    styleInput={{
-                        color: styles?.input?.fontColor,
-                        placeholderColor: styles?.input?.placeholderColor
+                <div
+                    id="popover-color"
+                    style={{
+                        width: ref?.current?.offsetWidth,
                     }}
-                    input={input}
-                    updateComponent={handleChangeInputs}
-                />
-
-                { open && 
-                    <div
-                        id="popover-color" 
-                        style={{ 
-                            position: 'absolute',
-                            top: 'calc(100% + 2px)',
-                            left: 0,
-                            width: '100%'
-                        }}
-                        className={`
-                            dropdown 
-                            shadow-md
-                            backdrop-blur-[3px]
-                            max-h-80 
-                            overflow-y-auto 
-                            z-[9999]
-                            p-2
-                            rounded-box
-                        `}
-                        data-color-dropdown
-                    >
-                        <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
-                            <RgbaColorPicker
-                                style={{width:'100%'}}
-                                className="colorPicker"
-                                color={stringToRgba(input)}
-                                onChange={handleChangePicker}
-                            /> 
-                        </div>
+                    className={`
+                        dropdown 
+                        shadow-md
+                        backdrop-blur-[3px]
+                        max-h-80 
+                        overflow-y-auto 
+                        p-2
+                        rounded-box
+                    `}
+                >
+                    <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
+                        <RgbaColorPicker
+                            style={{ width: '100%' }}
+                            className="colorPicker"
+                            color={stringToRgba(input)}
+                            onChange={handleChangePicker}
+                        />
                     </div>
-                }
-            </FormWrapper>
+                </div>
+            </Popover>
         </>
     );
 }

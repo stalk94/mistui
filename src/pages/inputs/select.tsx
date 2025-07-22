@@ -15,6 +15,7 @@ export default function InfoSelect(tab) {
             >
                 <div className="flex justify-center">
                     <Select
+                        size='sm'
                         placeholder="select"
                         items={[
                             'apple',

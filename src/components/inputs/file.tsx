@@ -15,7 +15,6 @@ export default function FileInput({
     accept, 
     maxSize, 
     onError, 
-    styleInput,
     style,
     color = 'primary',
     ...props 
@@ -65,7 +64,6 @@ export default function FileInput({
     return (
         <FormWrapper
             size={size}
-            styleInput={styleInput}
             style={style}
             color={color}
             labelLeft={

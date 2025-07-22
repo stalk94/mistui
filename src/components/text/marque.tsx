@@ -61,6 +61,7 @@ const MarqueeText = forwardRef<HTMLDivElement, MarqueeTextProps>(function Marque
                     display: 'inline-flex',
                     whiteSpace: 'nowrap',
                     boxSizing: 'border-box',
+                    willChange: 'transform',
                     color: variants[color] ?? color,
                     ...style,
                     ...animationStyle,

@@ -15,6 +15,7 @@ export default function InfoAutoComplete(tab) {
             >
                 <div className="flex justify-center">
                     <AutoComplete 
+                        size='sm'
                         placeholder="autocomplete"
                         options={[
                             'apple',

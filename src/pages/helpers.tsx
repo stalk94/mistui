@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, IconButton } from '@/components/buttons';
+import { motion } from "framer-motion";
 import { Typography, Link } from '@/components/text';
 import Badge from '@/components/utils/badge';
 import ShikiHighlighter from "react-shiki";
@@ -33,18 +34,25 @@ export const colorsCustom = [
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 export function CodeBlock({ code }) {
     return (
-        <ShikiHighlighter
-            showLanguage={true}
-            language="ts"
-            theme='one-dark-pro'
-            className='shadow-sm'
-            style={{
-                fontSize: 12,
-                fontFamily: 'JetBrains Mono, monospace'
-            }}
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
         >
-            { code.trim() }
-        </ShikiHighlighter>
+            <ShikiHighlighter
+                showLanguage={true}
+                language="ts"
+                theme='one-dark-pro'
+                className='shadow-sm'
+                delay={100}
+                style={{
+                    fontSize: 12,
+                    fontFamily: 'JetBrains Mono, monospace'
+                }}
+            >
+                { code.trim() }
+            </ShikiHighlighter>
+        </motion.div>
     );
 }
 export function Grid({ children, className }: { children: React.ReactNode, className?: HTMLDivElement['className']}) {
@@ -55,11 +63,13 @@ export function Section({
     description,
     children,
     code,
+    className
 }: {
     title: string;
     description: string;
     children: React.ReactNode;
     code?: string;
+    className?: string
 }) {
     const [view, setView] = useState<'preview' | 'code'>('preview');
 
@@ -93,13 +103,13 @@ export function Section({
                 )}
             </div>
 
-            <Typography variant="caption" className="text-gray-500 ml-2">
+            <Typography variant="caption" className={`text-gray-500 ml-2`}>
                 {description}
             </Typography>
 
             {view !== 'code' &&
                 <div
-                    className="border-1 p-3 rounded-md border-[#0f0f0f89] bg-[#262d42bb] relative overflow-auto"
+                    className={`border-1 p-3 rounded-md border-[#6b6b6b4b] bg-[#27292e] relative overflow-auto ${className??''}`}
                 >
                     {view === 'preview' && children}
                 </div>
@@ -203,28 +213,33 @@ export function TypeTable({ preview, meta }: { preview: string, meta: Record<str
 
 
     return (
-        <table 
-            className="table table-fixed w-full text-[11px]"
-            style={{ fontFamily: '"Inter", sans-serif'}}
-        >
-            {/* head */}
-            <thead className='bg-[#3f49696d]'>
-                <tr>
-                    <th>props name</th>
-                    <th>type</th>
-                    <th>variants</th>
-                    <th>default</th>
-                    <th>description</th>
-                </tr>
-            </thead>
-            <tbody>
-                {Object.entries(meta).map(([name, value]) =>
-                    <tr key={name}>
-                        <th>{name}</th>
-                        {render(value)}
+        <div className="max-h-80 overflow-y-auto">
+            <table 
+                className="table table-fixed w-full text-[11px]"
+                style={{ fontFamily: '"Inter", sans-serif', background:'#282C34'}}
+            >
+                {/* head */}
+                <thead 
+                    className='sticky top-0 bg-[#3f49696d] z-10 shadow-xs'
+                    style={{backdropFilter: "blur(14px)"}}
+                >
+                    <tr>
+                        <th className="rounded-tl-md">props name</th>
+                        <th>type</th>
+                        <th>variants</th>
+                        <th>default</th>
+                        <th className="rounded-tr-md">description</th>
                     </tr>
-                )}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {Object.entries(meta).map(([name, value]) =>
+                        <tr key={name}>
+                            <th>{name}</th>
+                            {render(value)}
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </div>
     );
 }

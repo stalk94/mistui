@@ -1,4 +1,2 @@
-import type { BaseProps } from './type';
-type TextAreaProps = Omit<BaseProps, 'type'>;
-export default function TextAreaInput({ onChange, placeholder, size, color, labelTop, required, value, style, ...props }: TextAreaProps): import("react/jsx-runtime").JSX.Element;
-export {};
+import type { TextAreaProps } from './type';
+export default function TextAreaInput({ onChange, placeholder, size, color, variant, labelTop, required, value, shadow, style, ...props }: TextAreaProps): import("react/jsx-runtime").JSX.Element;

@@ -1,34 +1,32 @@
 import type { SelectInputProps } from './type';
 import { FormWrapper } from './atomize';
 import DropMenu from '../menu/drop-menu';
-import { useCache, useClickOutside } from '../hooks';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
-import { useMemo } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import { Popover } from '../helpers';
 
 
 
-export default function Select({ 
-    onChange, 
-    placeholder, 
-    items, 
-    size, 
+export default function Select({
+    onChange,
+    placeholder,
+    items,
+    size,
     value,
     required,
     style = {},
     color = 'primary',
-    ...props 
+    ...props
 }: SelectInputProps) {
+    const ref = useRef<HTMLDivElement>(null);
     const { styles, variants } = useTheme();
-    const uid = useUids('autocomplete');
-    const [input, setInput] = useCache(value);
-    const [open, setOpen] = useCache(false);
+    const uid = useUids('select');
+    const [input, setInput] = useState(value);
+    const [open, setOpen] = useState(false);
 
 
-    useClickOutside(['[data-select-root]', '[data-select-dropdown]'], 
-        ()=> setOpen(false)
-    );
     const focusWithinColor = useMemo(() => {
         const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
 
@@ -54,54 +52,52 @@ export default function Select({
                 `}
             </style>
 
-            <FormWrapper
-                size={size}
-                data-select-root
-                data-style-id={uid}
-                color={color}
-                style={{ position: 'relative', ...style }}
-                labelRight={
-                    <button className='cursor-pointer'
-                        onClick={() => setOpen(v => !v)}
+            <Popover
+                usePortal
+                open={open}
+                setOpen={setOpen}
+                trigger={
+                    <FormWrapper
+                        size={size}
+                        ref={ref}
+                        data-style-id={uid}
+                        color={color}
+                        style={{ ...style }}
+                        labelRight={
+                            <button className='cursor-pointer'>
+                                <ChevronDownIcon
+                                    fill={(style?.color ?? styles?.input?.fontColor)}
+                                    className={`
+                                        label w-[1em] h-[1em]
+                                        ${open && 'rotate-180'}
+                                    `}
+                                />
+                            </button>
+                        }
+                        {...props}
                     >
-                        <ChevronDownIcon
-                            fill={(style?.color ?? styles?.input?.fontColor)}
-                            className={`
-                            label w-[1em] h-[1em]
-                            ${open && 'rotate-180'}
-                        `}
-                        />
-                    </button>
-                }
-                {...props}
-            >
-                <span
-                    onClick={() => setOpen(v => !v)}
-                    className="w-full h-full flex items-center cursor-pointer"
-                >
-                    {input
-                        ? input
-                        : <span style={{ color: styles?.input?.placeholderColor }}>
-                            {placeholder}
+                        <span
+                            className="w-full h-full flex items-center cursor-pointer"
+                        >
+                            {input
+                                ? input
+                                : <span style={{ color: styles?.input?.placeholderColor }}>
+                                    { placeholder }
+                                </span>
+                            }
                         </span>
-                    }
-                </span>
-
-                {open &&
-                    <DropMenu
-                        data-select-dropdown
-                        id="popover-select"
-                        style={{
-                            position: 'absolute',
-                            top: 'calc(100% + 2px)',
-                            left: 0,
-                            width: '100%'
-                        }}
-                        items={items}
-                        onSelect={handleSelect}
-                    />
+                    </FormWrapper>
                 }
-            </FormWrapper>
+            >
+                <DropMenu
+                    id="popover-select"
+                    items={items}
+                    style={{
+                        width: ref?.current?.offsetWidth
+                    }}
+                    onSelect={handleSelect}
+                />
+            </Popover>
         </>
     );
 }

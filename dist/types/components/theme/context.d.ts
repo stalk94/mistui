@@ -1,3 +1,6 @@
+import '@/style/index.css';
+import '@/style/animate.css';
+import "@/style/tailwind.css";
 import { PropsWithChildren } from 'react';
 import { Theme } from './types';
 type ThemeProviderProps = PropsWithChildren<{

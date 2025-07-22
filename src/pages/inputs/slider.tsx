@@ -3,36 +3,39 @@ import { Section, Grid as ButtonGrid, colorsCustom, sizes, colors, variants } fr
 import { inputsMeta } from '../meta';
 
 
+
 export default function InfoSlider(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             
             <Section
+                className='overflow-visible'
                 title="Slider"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
-                <div className="flex justify-center mt-2">
+                <div className="flex justify-center mt-2 overflow-visible">
                     <SliderInput
-
                     />
                 </div>
             </Section>
 
             {/* disabled form */}
             <Section
+                className='overflow-visible'
                 title="Disabled form"
                 description="Базовый компонент выбора цвета"
                 code={`<SliderInput disableForm />`}
             >
                 <div className="flex justify-center">
-                    <SliderInput className='mt-6' disableForm />
+                    <SliderInput disableForm />
                 </div>
             </Section>
 
             {/* variants */}
             <Section
+                className='overflow-visible'
                 title="Slider variants"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
@@ -40,7 +43,6 @@ export default function InfoSlider(tab) {
                 <ButtonGrid className='flex-col w-100 m-auto'>
                     <SliderInput
                         variant='dash'
-                        className='mt-6'
                         disableForm
                         size='sm'
                     />
@@ -55,7 +57,8 @@ export default function InfoSlider(tab) {
 
             {/* sizes */}
             <Section
-                title="Slider sizes"
+                className='overflow-visible'
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
@@ -67,6 +70,7 @@ export default function InfoSlider(tab) {
                             disableForm
                             key={size} 
                             size={size} 
+                            variant='outline'
                             labelTop={size}
                         />
                     ))}
@@ -75,7 +79,8 @@ export default function InfoSlider(tab) {
 
             {/* colors */}
             <Section
-                title="Slider base variants theme colors"
+                className='overflow-visible'
+                title="base variants theme colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
@@ -86,7 +91,6 @@ export default function InfoSlider(tab) {
                         <SliderInput 
                             key={i} 
                             disableForm
-                            className='mt-2'
                             variant='outline'
                             color={color}
                             labelTop={color}
@@ -98,6 +102,7 @@ export default function InfoSlider(tab) {
 
             {/*  labels */}
             <Section
+                className='overflow-visible'
                 title="Slider label position varints"
                 description="разные цвета"
                 code={colors

@@ -37,7 +37,7 @@ export default function InfoAvatarGroup(tab) {
             >
                <div className="flex-col justify-center items-center">
                     {sizes.map((size) => (
-                        <div className="flex flex-col justify-center items-center">
+                        <div key={size} className="flex flex-col justify-center items-center">
                             {size}
                             <AvatarGroup 
                                 size={size}

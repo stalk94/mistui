@@ -1,5 +1,5 @@
 declare const Footer: import("react").ForwardRefExoticComponent<{
-    className?: string | undefined | undefined;
+    className?: string | undefined;
     style?: import("react").CSSProperties | undefined;
 } & {
     isCenter?: boolean;

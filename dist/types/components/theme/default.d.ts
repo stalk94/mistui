@@ -67,7 +67,9 @@ declare const defaultTheme: {
             fontColor: string;
             theadFontColor: string;
         };
-        appBar: {};
+        appBar: {
+            backgroundColor: string;
+        };
         leftBar: {
             backgroundColor: string;
         };
@@ -86,8 +88,9 @@ declare const defaultTheme: {
     };
     plugins: {
         invert: (color: string) => string;
-        contrast: (color: string) => string;
-        alpha: (color: string, alpha: number) => string | false;
+        contrast: (color: string, dark?: string, light?: string) => string;
+        alpha: (color: string, alpha: number) => string;
+        lighten: (color: string, cof: number) => string;
     };
 };
 export type Varinats = keyof typeof variantsColor;

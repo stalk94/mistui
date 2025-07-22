@@ -7,12 +7,15 @@ export default function InfoTextArea(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             <Section
-                title="ColorPicker"
-                description="Базовый компонент выбора цвета"
+                title="base"
+                description="base"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
-                <div className="flex justify-center">
-                    <TextArea placeholder="text area" />
+                <div className="max-w-80 m-auto">
+                    <TextArea 
+                        labelTop='top label'
+                        placeholder="text area"
+                    />
                 </div>
             </Section>
         </div>

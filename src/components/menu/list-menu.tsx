@@ -68,6 +68,7 @@ export default function MenuList({
                     w-full
                     menu-${size}
                     p-[2px]
+                    
                     ${textSize}
                     ${className ?? ''}
                 `}

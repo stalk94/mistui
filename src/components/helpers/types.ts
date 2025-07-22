@@ -37,4 +37,6 @@ export type PopoverProps = Props & {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     onClose?: ()=> void
     usePortal?: boolean
+    open?: boolean;
+    setOpen?: (val: boolean) => void;
 }

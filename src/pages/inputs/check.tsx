@@ -9,12 +9,13 @@ export default function InfoCheckBox(tab) {
             { tab }
             
             <Section
-                title="Switch"
+                title="base"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
                 <div className="flex justify-center">
                     <CheckBox
+                        className='mr-2'
                         value={false}
                     />
                     <CheckBox
@@ -25,16 +26,18 @@ export default function InfoCheckBox(tab) {
 
             {/* variants */}
             <Section
-                title="Switch variants"
+                title="variants"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
                 <div className="flex justify-center">
-                    {variants.map((variant, i) => (
+                    {["contained", "outline", "dash", "ghost"].map((variant, i) => (
                         <CheckBox
                             key={i} 
                             variant={variant}
                             size='sm'
+                            color={colors[i+1]}
+                            className='mr-2'
                             value={true}
                         />
                     ))}
@@ -43,7 +46,7 @@ export default function InfoCheckBox(tab) {
 
             {/* sizes */}
             <Section
-                title="Switch sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
@@ -64,7 +67,7 @@ export default function InfoCheckBox(tab) {
 
             {/* colors */}
             <Section
-                title="Switch base variants theme colors"
+                title="base variants theme colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
@@ -85,7 +88,7 @@ export default function InfoCheckBox(tab) {
 
             {/* label left */}
             <Section
-                title="Switch label"
+                title="label"
                 description="цвета и стили"
                 code={variants
                     .map(
@@ -95,30 +98,34 @@ export default function InfoCheckBox(tab) {
                     .join('\n')}
             >
                 <ButtonGrid>
-                    <CheckBox
-                        variant={variants[1]}
-                        color={colorsCustom[2]}
-                        size='sm'
-                        labelTop={'top-label'}
-                    />
-                    <CheckBox
-                        variant={variants[1]}
-                        color={colorsCustom[2]}
-                        size='sm'
-                        labelLeft={'left-label'}
-                    />
-                    <CheckBox
-                        variant={variants[1]}
-                        color={colorsCustom[2]}
-                        size='sm'
-                        labelRight={'right-label'}
-                    />
+                    <div className="flex-col m-auto">
+                        <CheckBox
+                            variant={variants[1]}
+                            color={colorsCustom[2]}
+                            size='sm'
+                            labelTop={'top-label'}
+                            className="mb-3"
+                        />
+                        <CheckBox
+                            variant={variants[1]}
+                            color={colorsCustom[2]}
+                            size='sm'
+                            labelLeft={'left-label'}
+                            className="mb-3"
+                        />
+                        <CheckBox
+                            variant={variants[1]}
+                            color={colorsCustom[2]}
+                            size='sm'
+                            labelRight={'right-label'}
+                        />
+                    </div>
                 </ButtonGrid>
             </Section>
 
             {/* combo label */}
             <Section
-                title="Switch label position varints"
+                title="label position varints"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)

@@ -23,6 +23,7 @@ export declare const FormWrapper: React.ForwardRefExoticComponent<{
     validator?: string | React.ReactElement | boolean;
     style?: React.CSSProperties;
     className?: clsx.ClassValue;
-    variant?: "dash" | "outline";
+    shadow?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+    variant?: "dash" | "outline" | "ghost";
 } & React.RefAttributes<HTMLDivElement>>;
 export default FormWrapper;

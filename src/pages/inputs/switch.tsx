@@ -9,13 +9,14 @@ export default function InfoSwitchBox(tab) {
             { tab }
             
             <Section
-                title="Switch"
+                title="base"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
                 <div className="flex justify-center">
                     <SwitchBox
                         value={false}
+                        className='mr-2'
                     />
                     <SwitchBox
                         value={true}
@@ -25,7 +26,7 @@ export default function InfoSwitchBox(tab) {
 
             {/* variants */}
             <Section
-                title="Switch variants"
+                title="variants"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
@@ -35,6 +36,7 @@ export default function InfoSwitchBox(tab) {
                             key={i} 
                             variant={variant}
                             size='sm'
+                            className='mr-2'
                             value={true}
                         />
                     ))}
@@ -43,7 +45,7 @@ export default function InfoSwitchBox(tab) {
 
             {/* sizes */}
             <Section
-                title="Switch sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
@@ -57,6 +59,7 @@ export default function InfoSwitchBox(tab) {
                             shadow="sm"
                             labelTop={size}
                             value={true}
+                            className='mr-2'
                         />
                     ))}
                 </ButtonGrid>
@@ -64,7 +67,7 @@ export default function InfoSwitchBox(tab) {
 
             {/* colors */}
             <Section
-                title="Switch base variants theme colors"
+                title="base variants theme colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
@@ -85,7 +88,7 @@ export default function InfoSwitchBox(tab) {
 
             {/* label left */}
             <Section
-                title="Switch label"
+                title="label"
                 description="цвета и стили"
                 code={variants
                     .map(
@@ -95,30 +98,34 @@ export default function InfoSwitchBox(tab) {
                     .join('\n')}
             >
                 <ButtonGrid>
-                    <SwitchBox
-                        variant={variants[1]}
-                        color={colorsCustom[2]}
-                        size='sm'
-                        labelTop={'top-label'}
-                    />
-                    <SwitchBox
-                        variant={variants[1]}
-                        color={colorsCustom[2]}
-                        size='sm'
-                        labelLeft={'left-label'}
-                    />
-                    <SwitchBox
-                        variant={variants[1]}
-                        color={colorsCustom[2]}
-                        size='sm'
-                        labelRight={'right-label'}
-                    />
+                    <div className="flex-col m-auto">
+                        <SwitchBox
+                            variant={variants[1]}
+                            color={colorsCustom[2]}
+                            size='sm'
+                            labelTop={'top-label'}
+                            className="mb-3"
+                        />
+                        <SwitchBox
+                            variant={variants[1]}
+                            color={colorsCustom[2]}
+                            size='sm'
+                            labelLeft={'left-label'}
+                            className="mb-3"
+                        />
+                        <SwitchBox
+                            variant={variants[1]}
+                            color={colorsCustom[2]}
+                            size='sm'
+                            labelRight={'right-label'}
+                        />
+                    </div>
                 </ButtonGrid>
             </Section>
 
             {/* combo label */}
             <Section
-                title="Switch label position varints"
+                title="label position varints"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)

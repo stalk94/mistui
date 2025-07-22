@@ -12,7 +12,7 @@ export default function InfoGroupButton(tab) {
             { tab }
             
             {/* default */}
-            <Section title="GroupButton" description="кнопка" code={`<GroupButton value='playground' items={['documentation', 'playground', 'any']} size='sm'/>`}>
+            <Section title="base" description="кнопка" code={`<GroupButton value='playground' items={['documentation', 'playground', 'any']} size='sm'/>`}>
                 <div className="flex justify-center">
                     <GroupButton 
                         size='sm' 
@@ -25,7 +25,7 @@ export default function InfoGroupButton(tab) {
 
             {/* variants */}
             <Section
-                title="GroupButton variants"
+                title="variants"
                 description="разные стили"
                 code={variants
                     .map((variant) => `<GroupButton size="sm" variant="${variant}">${variant}</GroupButton>`)
@@ -37,7 +37,6 @@ export default function InfoGroupButton(tab) {
                         <div key={variant} className="flex-col justify-center w-full">
                             <Divdder
                                 className='py-4'
-                                variant='dashed'
                                 position='end'
                             >
                                 <Typography color='#daf166' variant='caption'>
@@ -59,7 +58,7 @@ export default function InfoGroupButton(tab) {
 
             {/* sizes */}
             <Section
-                title="GroupButton sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<GroupButton size="${size}" shadow="sm">${size}</GroupButton>`)
@@ -70,7 +69,6 @@ export default function InfoGroupButton(tab) {
                         <div key={size} className="flex-col justify-center w-full m-auto">
                             <Divdder
                                 className='py-4'
-                                variant='dashed'
                                 position='end'
                             >
                                 <Typography color='#daf166' variant='caption'>
@@ -92,7 +90,7 @@ export default function InfoGroupButton(tab) {
 
             {/* colors */}
             <Section
-                title="GroupButton colors"
+                title="colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<GroupButton size="sm" color="${color}" shadow="sm">${color}</GroupButton>`)
@@ -103,7 +101,6 @@ export default function InfoGroupButton(tab) {
                         <div key={color} className='flex flex-col'>
                             <Divdder
                                 className='py-4'
-                                variant='dashed'
                             >
                                 <Typography color={color} variant='caption'>
                                     { color }

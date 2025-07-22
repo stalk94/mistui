@@ -1,10 +1,9 @@
-import React from "react";
 import type { AppBarCustomProps } from './types';
 /**
  * строительный шаблон для app bar
- * - `start` - левый слот
- * - `center` - центральный слот (к примеру линейная навигация)
- * - `end` - правый слот (к примеру user, main)
+ * - `startSlot` - левый слот
+ * - `centerSlot` - центральный слот (к примеру линейная навигация)
+ * - `endSlot` - правый слот (к примеру user, main)
  */
-declare const AppBar: React.ForwardRefExoticComponent<AppBarCustomProps & React.RefAttributes<HTMLHeadingElement>>;
+declare const AppBar: import("react").ForwardRefExoticComponent<AppBarCustomProps & import("react").RefAttributes<HTMLHeadingElement>>;
 export default AppBar;

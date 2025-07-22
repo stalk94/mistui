@@ -3,15 +3,16 @@ export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'classNa
         /** label аккордеона */
         title: React.ReactElement | string;
         /** тело аккордеона */
-        content: React.ReactElement;
+        content: React.ReactElement | string;
     }[];
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost';
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     /** массив индексов развернутых вкладок [0, 1, 2 ...] */
     activeIndexs?: number[];
     style?: React.CSSProperties;
     styleTitle?: React.CSSProperties;
     classNameTitle?: React.HTMLAttributes<HTMLDivElement>['className'];
 };
-export default function Acordeon({ items, size, activeIndexs, style, variant, color, styleTitle, className, classNameTitle }: AccordionProps): import("react/jsx-runtime").JSX.Element;
+export default function Acordeon({ items, size, activeIndexs, style, variant, color, shadow, styleTitle, className, classNameTitle }: AccordionProps): import("react/jsx-runtime").JSX.Element;

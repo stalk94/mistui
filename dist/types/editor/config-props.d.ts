@@ -1,7 +1,6 @@
 import { typographyVariants } from '../components/text/types';
 export declare const store: {
     get: (clone?: boolean) => {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -286,6 +285,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -325,6 +332,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -347,6 +362,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -371,18 +394,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -404,6 +858,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -439,6 +901,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -461,6 +931,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -498,6 +976,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -520,6 +1006,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -556,6 +1050,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -582,6 +1084,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -610,6 +1120,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -632,6 +1150,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -656,6 +1182,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -673,12 +1207,11 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     };
     set: (value: {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -963,6 +1496,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -1002,6 +1543,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -1024,6 +1573,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -1048,18 +1605,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -1081,6 +2069,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -1116,6 +2112,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -1138,6 +2142,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -1175,6 +2187,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -1197,6 +2217,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -1233,6 +2261,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -1259,6 +2295,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -1287,6 +2331,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -1309,6 +2361,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -1333,6 +2393,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -1350,11 +2418,10 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     } | ((prev: {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -1639,6 +2706,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -1678,6 +2753,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -1700,6 +2783,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -1724,18 +2815,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -1757,6 +3279,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -1792,6 +3322,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -1814,6 +3352,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -1851,6 +3397,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -1873,6 +3427,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -1909,6 +3471,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -1935,6 +3505,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -1963,6 +3541,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -1985,6 +3571,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -2009,6 +3603,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -2026,11 +3628,10 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     }) => {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -2315,6 +3916,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -2354,6 +3963,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -2376,6 +3993,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -2400,18 +4025,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -2433,6 +4489,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -2468,6 +4532,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -2490,6 +4562,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -2527,6 +4607,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -2549,6 +4637,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -2585,6 +4681,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -2611,6 +4715,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -2639,6 +4751,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -2661,6 +4781,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -2685,6 +4813,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -2702,12 +4838,11 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     })) => void;
     update: (fn: (prev: {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -2992,6 +5127,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -3031,6 +5174,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -3053,6 +5204,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -3077,18 +5236,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -3110,6 +5700,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -3145,6 +5743,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -3167,6 +5773,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -3204,6 +5818,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -3226,6 +5848,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -3262,6 +5892,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -3288,6 +5926,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -3316,6 +5962,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -3338,6 +5992,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -3362,6 +6024,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -3379,11 +6049,10 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     }) => {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -3668,6 +6337,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -3707,6 +6384,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -3729,6 +6414,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -3753,18 +6446,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -3786,6 +6910,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -3821,6 +6953,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -3843,6 +6983,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -3880,6 +7028,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -3902,6 +7058,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -3938,6 +7102,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -3964,6 +7136,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -3992,6 +7172,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -4014,6 +7202,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -4038,6 +7234,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -4055,12 +7259,11 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     }) => void;
     use: () => {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -4345,6 +7548,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -4384,6 +7595,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -4406,6 +7625,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -4430,18 +7657,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -4463,6 +8121,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -4498,6 +8164,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -4520,6 +8194,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -4557,6 +8239,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -4579,6 +8269,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -4615,6 +8313,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -4641,6 +8347,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -4669,6 +8383,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -4691,6 +8413,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -4715,6 +8445,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -4732,12 +8470,11 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     };
     watch: (fn: (val: {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -5022,6 +8759,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -5061,6 +8806,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -5083,6 +8836,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -5107,18 +8868,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -5140,6 +9332,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -5175,6 +9375,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -5197,6 +9405,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -5234,6 +9450,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -5256,6 +9480,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -5292,6 +9524,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -5318,6 +9558,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -5346,6 +9594,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -5368,6 +9624,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -5392,6 +9656,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -5409,12 +9681,11 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     }, unsub: () => void) => void) => () => void;
     export: () => {
-        preview: undefined;
         propses: {
             Typography: {
                 variant: {
@@ -5699,6 +9970,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -5738,6 +10017,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -5760,6 +10047,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -5784,18 +10079,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -5817,6 +10543,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -5852,6 +10586,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -5874,6 +10616,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -5911,6 +10661,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -5933,6 +10691,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -5969,6 +10735,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -5995,6 +10769,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -6023,6 +10805,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -6045,6 +10835,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Collapse: {
@@ -6069,6 +10867,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Stat: {};
             Card: {
@@ -6086,19 +10892,11 @@ export declare const store: {
             };
             Promo: {};
         };
-        scheme: never[];
+        scheme: any[];
         cache: {};
-        emmiterProps: undefined;
+        emmiterProps: any;
     };
 } & {
-    preview: {
-        get: (clone?: boolean) => undefined;
-        set: (value: ((prev: undefined) => undefined) | undefined) => void;
-        update: (fn: (prev: undefined) => undefined) => void;
-        use: () => undefined;
-        watch: (fn: (val: undefined, unsub: () => void) => void) => () => void;
-        export: () => undefined;
-    };
     propses: {
         get: (clone?: boolean) => {
             Typography: {
@@ -6384,6 +11182,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -6423,6 +11229,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -6445,6 +11259,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -6469,18 +11291,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -6502,6 +11755,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -6537,6 +11798,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -6559,6 +11828,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -6596,6 +11873,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -6618,6 +11903,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -6654,6 +11947,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -6680,6 +11981,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -6708,6 +12017,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -6731,6 +12048,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -6753,6 +12078,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -7055,6 +12388,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -7094,6 +12435,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -7116,6 +12465,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -7140,18 +12497,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -7173,6 +12961,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -7208,6 +13004,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -7230,6 +13034,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -7267,6 +13079,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -7289,6 +13109,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -7325,6 +13153,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -7351,6 +13187,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -7379,6 +13223,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -7402,6 +13254,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -7424,6 +13284,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -7725,6 +13593,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -7764,6 +13640,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -7786,6 +13670,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -7810,18 +13702,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -7843,6 +14166,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -7878,6 +14209,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -7900,6 +14239,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -7937,6 +14284,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -7959,6 +14314,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -7995,6 +14358,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -8021,6 +14392,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -8049,6 +14428,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -8072,6 +14459,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -8094,6 +14489,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -8395,6 +14798,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -8434,6 +14845,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -8456,6 +14875,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -8480,18 +14907,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -8513,6 +15371,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -8548,6 +15414,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -8570,6 +15444,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -8607,6 +15489,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -8629,6 +15519,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -8665,6 +15563,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -8691,6 +15597,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -8719,6 +15633,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -8742,6 +15664,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -8764,6 +15694,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -9066,6 +16004,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -9105,6 +16051,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -9127,6 +16081,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -9151,18 +16113,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -9184,6 +16577,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -9219,6 +16620,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -9241,6 +16650,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -9278,6 +16695,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -9300,6 +16725,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -9336,6 +16769,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -9362,6 +16803,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -9390,6 +16839,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -9413,6 +16870,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -9435,6 +16900,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -9736,6 +17209,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -9775,6 +17256,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -9797,6 +17286,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -9821,18 +17318,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -9854,6 +17782,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -9889,6 +17825,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -9911,6 +17855,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -9948,6 +17900,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -9970,6 +17930,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -10006,6 +17974,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -10032,6 +18008,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -10060,6 +18044,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -10083,6 +18075,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -10105,6 +18105,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -10407,6 +18415,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -10446,6 +18462,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -10468,6 +18492,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -10492,18 +18524,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -10525,6 +18988,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -10560,6 +19031,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -10582,6 +19061,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -10619,6 +19106,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -10641,6 +19136,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -10677,6 +19180,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -10703,6 +19214,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -10731,6 +19250,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -10754,6 +19281,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -10776,6 +19311,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -11078,6 +19621,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -11117,6 +19668,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -11139,6 +19698,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -11163,18 +19730,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -11196,6 +20194,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -11231,6 +20237,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -11253,6 +20267,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -11290,6 +20312,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -11312,6 +20342,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -11348,6 +20386,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -11374,6 +20420,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -11402,6 +20456,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -11425,6 +20487,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -11447,6 +20517,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -11749,6 +20827,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             IconButton: {
                 isGradient: {
@@ -11788,6 +20874,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             GroupButtons: {
                 size: {
@@ -11810,6 +20904,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             GroupButtonFiltre: {
@@ -11834,18 +20936,449 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
-            TextInput: {};
-            NumberInput: {};
-            Color: {};
-            Date: {};
-            Time: {};
-            TextArea: {};
-            File: {};
-            Radio: {};
-            Switch: {};
-            CheckBox: {};
-            Slider: {};
+            TextInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            NumberInput: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Color: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Date: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            ColorPicker: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Time: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            TextArea: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            File: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Radio: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Switch: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            CheckBox: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Slider: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Select: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Autocomplete: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
             Tabs: {
                 variant: {
                     type: string;
@@ -11867,6 +21400,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             BottomNavigation: {};
@@ -11902,6 +21443,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Avatar: {
                 size: {
@@ -11924,6 +21473,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Indicator: {
@@ -11961,6 +21518,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Tooltip: {
                 size: {
@@ -11983,6 +21548,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Alert: {};
@@ -12019,6 +21592,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Splitter: {
                 orientation: {
@@ -12045,6 +21626,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Chat: {
@@ -12073,6 +21662,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Accordion: {
                 size: {
@@ -12096,6 +21693,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             Collapse: {
                 size: {
@@ -12118,6 +21723,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
             Stat: {};
@@ -19897,6 +29510,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 isGradient: {
@@ -19928,6 +29549,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 isGradient: {
                     type: string;
@@ -19958,6 +29587,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 isGradient: {
                     type: string;
@@ -19987,6 +29624,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -20019,6 +29664,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 isGradient: {
                     type: string;
@@ -20048,6 +29701,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -20080,6 +29741,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 isGradient: {
@@ -20111,6 +29780,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 isGradient: {
@@ -20141,6 +29818,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -20580,6 +30265,137 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         IconButton: {
             get: (clone?: boolean) => {
@@ -20620,6 +30436,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 isGradient: {
@@ -20659,6 +30483,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 isGradient: {
                     type: string;
@@ -20697,6 +30529,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 isGradient: {
                     type: string;
@@ -20734,6 +30574,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -20774,6 +30622,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 isGradient: {
                     type: string;
@@ -20811,6 +30667,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -20851,6 +30715,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 isGradient: {
@@ -20890,6 +30762,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 isGradient: {
@@ -20928,6 +30808,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -21498,6 +31386,137 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         GroupButtons: {
             get: (clone?: boolean) => {
@@ -21522,6 +31541,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -21545,6 +31572,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -21567,6 +31602,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -21588,6 +31631,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -21612,6 +31663,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -21633,6 +31692,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -21657,6 +31724,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -21680,6 +31755,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -21702,6 +31785,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -22009,6 +32100,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         GroupButtonFiltre: {
@@ -22034,6 +32256,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -22057,6 +32287,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -22079,6 +32317,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -22100,6 +32346,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -22124,6 +32378,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -22145,6 +32407,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -22169,6 +32439,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -22192,6 +32470,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -22214,6 +32500,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -22522,95 +32816,10148 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         TextInput: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         NumberInput: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Color: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Date: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
+        ColorPicker: {
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Time: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         TextArea: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         File: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Radio: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Switch: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         CheckBox: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Slider: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
+        Select: {
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
+        Autocomplete: {
+            get: (clone?: boolean) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
         Tabs: {
             get: (clone?: boolean) => {
                 variant: {
@@ -22634,6 +42981,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 variant: {
@@ -22657,6 +43012,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 variant: {
                     type: string;
@@ -22679,6 +43042,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 variant: {
                     type: string;
@@ -22700,6 +43071,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -22724,6 +43103,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 variant: {
                     type: string;
@@ -22745,6 +43132,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -22769,6 +43164,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 variant: {
@@ -22792,6 +43195,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 variant: {
@@ -22814,6 +43225,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -23121,6 +43540,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         BottomNavigation: {
@@ -23178,6 +43728,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 isGradient: {
@@ -23209,6 +43767,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 isGradient: {
                     type: string;
@@ -23239,6 +43805,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 isGradient: {
                     type: string;
@@ -23268,6 +43842,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -23300,6 +43882,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 isGradient: {
                     type: string;
@@ -23329,6 +43919,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -23361,6 +43959,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 isGradient: {
@@ -23392,6 +43998,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 isGradient: {
@@ -23422,6 +44036,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -23861,6 +44483,137 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         Avatar: {
             get: (clone?: boolean) => {
@@ -23885,6 +44638,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -23908,6 +44669,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -23930,6 +44699,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -23951,6 +44728,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -23975,6 +44760,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -23996,6 +44789,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -24020,6 +44821,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -24043,6 +44852,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -24065,6 +44882,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -24372,6 +45197,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         Indicator: {
@@ -24665,6 +45621,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -24688,6 +45652,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -24710,6 +45682,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -24731,6 +45711,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -24755,6 +45743,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -24776,6 +45772,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -24800,6 +45804,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -24823,6 +45835,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -24845,6 +45865,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -25152,6 +46180,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         Tooltip: {
@@ -25177,6 +46336,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -25200,6 +46367,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -25222,6 +46397,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -25243,6 +46426,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -25267,6 +46458,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -25288,6 +46487,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -25312,6 +46519,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -25335,6 +46550,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -25357,6 +46580,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -25664,6 +46895,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         Alert: {
@@ -25729,6 +47091,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 variant: {
@@ -25760,6 +47130,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 variant: {
                     type: string;
@@ -25790,6 +47168,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 variant: {
                     type: string;
@@ -25819,6 +47205,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -25851,6 +47245,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 variant: {
                     type: string;
@@ -25880,6 +47282,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -25912,6 +47322,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 variant: {
@@ -25943,6 +47361,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 variant: {
@@ -25973,6 +47399,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -26399,6 +47833,137 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         Splitter: {
             get: (clone?: boolean) => {
@@ -26427,6 +47992,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 orientation: {
@@ -26454,6 +48027,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 orientation: {
                     type: string;
@@ -26480,6 +48061,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 orientation: {
                     type: string;
@@ -26505,6 +48094,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -26533,6 +48130,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 orientation: {
                     type: string;
@@ -26558,6 +48163,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -26586,6 +48199,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 orientation: {
@@ -26613,6 +48234,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 orientation: {
@@ -26639,6 +48268,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -27006,6 +48643,137 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         Chat: {
             get: (clone?: boolean) => {
@@ -27034,6 +48802,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 direction: {
@@ -27061,6 +48837,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 direction: {
                     type: string;
@@ -27087,6 +48871,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 direction: {
                     type: string;
@@ -27112,6 +48904,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -27140,6 +48940,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 direction: {
                     type: string;
@@ -27165,6 +48973,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -27193,6 +49009,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 direction: {
@@ -27220,6 +49044,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 direction: {
@@ -27246,6 +49078,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -27613,6 +49453,137 @@ export declare const store: {
                     export: () => string;
                 }[];
             };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
         };
         Accordion: {
             get: (clone?: boolean) => {
@@ -27637,6 +49608,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -27660,6 +49639,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -27682,6 +49669,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -27703,6 +49698,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -27727,6 +49730,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -27748,6 +49759,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -27772,6 +49791,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -27795,6 +49822,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -27817,6 +49852,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -28124,6 +50167,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         Collapse: {
@@ -28149,6 +50323,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             set: (value: {
                 size: {
@@ -28172,6 +50354,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             } | ((prev: {
                 size: {
                     type: string;
@@ -28194,6 +50384,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -28215,6 +50413,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             })) => void;
             update: (fn: (prev: {
@@ -28239,6 +50445,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }) => {
                 size: {
                     type: string;
@@ -28260,6 +50474,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             }) => void;
             use: () => {
@@ -28284,6 +50506,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             };
             watch: (fn: (val: {
                 size: {
@@ -28307,6 +50537,14 @@ export declare const store: {
                     type: string;
                     items: string[];
                 };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 size: {
@@ -28329,6 +50567,14 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
                 };
             };
         } & {
@@ -28636,6 +50882,137 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
             };
         };
         Stat: {
@@ -28939,13 +51316,43 @@ export declare const store: {
         } & {};
     };
     scheme: {
-        get: (clone?: boolean) => never[];
-        set: (value: never[] | ((prev: never[]) => never[])) => void;
-        update: (fn: (prev: never[]) => never[]) => void;
-        use: () => never[];
-        watch: (fn: (val: never[], unsub: () => void) => void) => () => void;
-        export: () => never[];
-    } & never[];
+        get: (clone?: boolean) => any[];
+        set: (value: any[] | ((prev: any[]) => any[])) => void;
+        update: (fn: (prev: any[]) => any[]) => void;
+        use: () => any[];
+        watch: (fn: (val: any[], unsub: () => void) => void) => () => void;
+        export: () => any[];
+    } & ({
+        get: (clone?: boolean) => any;
+        set: (value: any) => void;
+        update: (fn: (prev: any) => any) => void;
+        use: () => any;
+        watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+        export: () => any;
+    } | ({
+        get: (clone?: boolean) => any;
+        set: (value: any) => void;
+        update: (fn: (prev: any) => any) => void;
+        use: () => any;
+        watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+        export: () => any;
+    } & {
+        [x: string]: {
+            get: (clone?: boolean) => any;
+            set: (value: any) => void;
+            update: (fn: (prev: any) => any) => void;
+            use: () => any;
+            watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+            export: () => any;
+        } | ({
+            get: (clone?: boolean) => any;
+            set: (value: any) => void;
+            update: (fn: (prev: any) => any) => void;
+            use: () => any;
+            watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+            export: () => any;
+        } & /*elided*/ any);
+    }))[];
     cache: {
         get: (clone?: boolean) => {};
         set: (value: {} | ((prev: {}) => {})) => void;
@@ -28955,12 +51362,35 @@ export declare const store: {
         export: () => {};
     } & {};
     emmiterProps: {
-        get: (clone?: boolean) => undefined;
-        set: (value: ((prev: undefined) => undefined) | undefined) => void;
-        update: (fn: (prev: undefined) => undefined) => void;
-        use: () => undefined;
-        watch: (fn: (val: undefined, unsub: () => void) => void) => () => void;
-        export: () => undefined;
-    };
+        get: (clone?: boolean) => any;
+        set: (value: any) => void;
+        update: (fn: (prev: any) => any) => void;
+        use: () => any;
+        watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+        export: () => any;
+    } | ({
+        get: (clone?: boolean) => any;
+        set: (value: any) => void;
+        update: (fn: (prev: any) => any) => void;
+        use: () => any;
+        watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+        export: () => any;
+    } & {
+        [x: string]: {
+            get: (clone?: boolean) => any;
+            set: (value: any) => void;
+            update: (fn: (prev: any) => any) => void;
+            use: () => any;
+            watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+            export: () => any;
+        } | ({
+            get: (clone?: boolean) => any;
+            set: (value: any) => void;
+            update: (fn: (prev: any) => any) => void;
+            use: () => any;
+            watch: (fn: (val: any, unsub: () => void) => void) => () => void;
+            export: () => any;
+        } & /*elided*/ any);
+    });
 };
 export default function (): import("react/jsx-runtime").JSX.Element;

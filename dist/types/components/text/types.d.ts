@@ -24,6 +24,9 @@ export type BaseTypographyProps = {
     fontStyle?: 'normal' | 'italic';
     fontFamily?: keyof typeof fontFamilyVariants;
     fontSize?: string | number;
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    colorShadow?: string;
+    tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
 };
 type AsProp<T extends ElementType> = {
     as?: T;
@@ -39,9 +42,12 @@ export type LinkProps = BaseTypographyProps & {
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
 };
-export type MarqueeTextProps = BaseTypographyProps & {
-    /** seconds */
-    speed?: number;
+export type MarqueeTextProps = LinkProps & {
+    /** px second */
+    pxPerSecond?: number;
+    copies?: number;
+    pauseOnHover?: boolean;
+    gap?: number;
     direction?: 'left' | 'right';
     children: React.ReactNode;
 };

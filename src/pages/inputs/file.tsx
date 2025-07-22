@@ -14,7 +14,7 @@ export default function InfoFile(tab) {
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
                 <div className="flex justify-center">
-                    <FileInput placeholder="pick file" />
+                    <FileInput className='w-80' size='sm' placeholder="pick file" />
                 </div>
             </Section>
         </div>

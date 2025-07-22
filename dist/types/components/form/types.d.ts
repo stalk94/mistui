@@ -1,6 +1,6 @@
 import type { BaseProps, NumberInputProps, SelectInputProps, SliderInputProps, SwitchBoxInputProps, FileInputProps, AutoInputProps, CheckBoxInputProps } from '../inputs';
 import type { ToggleButtonGroupProps, FilterToggleButtonGroupProps } from '../buttons';
-import type { DividerProps } from '../utils/divider';
+import type { DividerProps } from '../utils/types';
 export type TypeSchema = 'text' | 'textArea' | 'number' | 'date' | 'color' | 'time' | 'slider' | 'file' | 'radio' | 'switch' | 'toggle' | 'select' | 'checkbox' | 'autocomplete' | 'divider' | 'groupButton' | 'groupButtonFiltre' | 'custom';
 interface BaseSchema<T = any> {
     /** уникальный ключ */

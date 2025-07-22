@@ -23,7 +23,7 @@ export default function LinearNavigationItemsDesktop({
 
     return(
         <div 
-            className={`h-full pl-3 ${className ?? ''}`}
+            className={`h-full pl-3 pt-0.5 ${className ?? ''}`}
             style={{
                 display:'flex', 
                 flexWrap: 'nowrap',
@@ -36,7 +36,7 @@ export default function LinearNavigationItemsDesktop({
                     { item?.children 
                         ? (
                             <Popover
-                                shadow="md"
+                                shadow="md"      
                                 trigger={
                                     <Button
                                         size="md"

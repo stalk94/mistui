@@ -9,7 +9,7 @@ export default function InfoRadioBox(tab) {
             { tab }
             
             <Section
-                title="Radio"
+                title="base"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
@@ -21,7 +21,7 @@ export default function InfoRadioBox(tab) {
             </Section>
 
             <Section
-                title="Radio variants"
+                title="variants"
                 description="Базовый компонент выбора цвета"
                 code={`<ColorPicker placeholder="Выберите цвет" />`}
             >
@@ -32,6 +32,7 @@ export default function InfoRadioBox(tab) {
                             variant={variant}
                             size='sm'
                             value={true}
+                            className='mr-2'
                         />
                     ))}
                 </div>
@@ -39,7 +40,7 @@ export default function InfoRadioBox(tab) {
 
             {/* sizes */}
             <Section
-                title="Radio sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
@@ -60,7 +61,7 @@ export default function InfoRadioBox(tab) {
 
             {/* colors */}
             <Section
-                title="Radio base variants theme colors"
+                title="base variants theme colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)

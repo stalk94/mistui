@@ -13,7 +13,8 @@ export type ListProps = {
      *      <div>right</div>
      * </>
      */
-    items: ListItem[];
+    children: ListItem[];
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto';
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
 };

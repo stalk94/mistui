@@ -18,6 +18,7 @@ export function BurgerMenu({
     return (
         <Popover
             position="bottom-end"
+            className="min-w-40 py-2"
             trigger={
                 <IconButton
                     size={size}

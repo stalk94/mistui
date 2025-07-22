@@ -119,8 +119,6 @@ export type FileInputProps = {
     labelTop?: string | React.ReactElement
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
-    /** это прокидывается на сам инпут input class */
-    styleInput?: React.CSSProperties
     className?: ClassValue
 }
 

@@ -12,9 +12,9 @@ export type DividerProps = {
     children?: string | React.ReactElement;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
-    position?: 'start' | 'end';
+    position?: 'center' | 'start' | 'end';
     orientation?: 'horizontal' | 'vertical';
-    variant?: 'dashed' | 'dotted';
+    variant?: 'solid' | 'dashed' | 'dotted';
     style?: React.CSSProperties;
     className?: Props['className'];
 };
@@ -22,6 +22,8 @@ export type SplitterProps = SpliterStProps & {
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
     orientation?: 'horizontal' | 'vertical';
     className?: Props['className'];
+    /** disable resize */
+    disabled?: boolean;
 };
 export type SplitterPanelProps = SpliterPanelStProps & {
     children?: React.ReactNode;
@@ -54,16 +56,26 @@ export type CollapseProps = {
     content?: React.ReactNode;
     icon?: 'plus' | 'arrow';
 };
+type ItemIndicator = {
+    content: string | React.ReactElement;
+    className?: Props['className'];
+    position?: 'top' | 'middle' | 'bottom';
+    align?: 'start' | 'center' | 'end';
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    style?: React.CSSProperties;
+};
 export type IndicatorProps = {
     /** content collapse, children or content props */
     children?: string | React.ReactElement;
-    content?: string | React.ReactElement;
+    /** one or optional count element */
+    content?: ItemIndicator[] | string | React.ReactElement;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
     style?: React.CSSProperties;
     className?: Props['className'];
     position?: 'top' | 'middle' | 'bottom';
     align?: 'start' | 'center' | 'end';
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 };
 export type TooltipProps = {
     /** wraparound component */
@@ -81,7 +93,7 @@ export type StatProps = Props & {
     figure?: React.ReactNode;
     title?: React.ReactNode;
     value?: React.ReactNode;
-    desccription?: React.ReactNode;
+    description?: React.ReactNode;
     actions?: React.ReactNode;
 };
 export type StatsProps = Props & {
@@ -133,5 +145,15 @@ export type OverflowProps = Props & {
      */
     onOverflow?: (hidden: React.ReactNode[] | any[]) => void;
     overflowMap?: any[];
+};
+export type RadialProgressProps = {
+    /** content collapse, children or content props */
+    children?: string | React.ReactElement;
+    value: number;
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    style?: React.CSSProperties;
+    className?: Props['className'];
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 };
 export {};

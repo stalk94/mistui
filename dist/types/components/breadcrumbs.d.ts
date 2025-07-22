@@ -33,10 +33,11 @@ export type BreadcrumbsNavProps = {
     }>;
     /** container styles */
     style?: React.CSSProperties;
+    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
 };
 export declare function useBreadcrumbs(pathname: string, options?: Options): {
     isLast: boolean;
     label: React.ReactElement | string;
     href: string;
 }[];
-export default function BreadcrumbsNav({ pathname, size, Link, separator, nameMap, className, classNameHomeicon, style }: BreadcrumbsNavProps): import("react/jsx-runtime").JSX.Element;
+export default function BreadcrumbsNav({ pathname, size, Link, separator, nameMap, className, classNameHomeicon, style, color }: BreadcrumbsNavProps): import("react/jsx-runtime").JSX.Element;
