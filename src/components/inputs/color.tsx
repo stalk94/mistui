@@ -7,6 +7,7 @@ import { useCache, useClickOutside } from '../hooks';
 import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
 import stylesPicker from './styles/global.module.css';
+import { cs } from '../hooks/cs';
 import { useUids } from '../hooks/uuid';
 import { Popover } from '../helpers';
 
@@ -101,14 +102,14 @@ export default function SelectColor({
     return (
         <>
             <style>
-                {`
+                {cs(`
                     input[data-style-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
                     .input-focus[data-style-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
-                `}
+                `)}
             </style>
 
             <Popover
@@ -126,11 +127,11 @@ export default function SelectColor({
                         labelRight={
                             <button className='cursor-pointer'>
                                 <span
-                                    className={`
+                                    className={cs(`
                                         cursor-pointer
                                         bg-neutral-600
                                         rounded-[2px]
-                                    `}
+                                    `)}
                                     style={{ background: input }}
                                 />
                             </button>
@@ -153,7 +154,7 @@ export default function SelectColor({
                     style={{
                         width: ref?.current?.offsetWidth,
                     }}
-                    className={`
+                    className={cs(`
                         dropdown 
                         shadow-md
                         backdrop-blur-[3px]
@@ -161,7 +162,7 @@ export default function SelectColor({
                         overflow-y-auto 
                         p-2
                         rounded-box
-                    `}
+                    `)}
                 >
                     <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
                         <RgbaColorPicker

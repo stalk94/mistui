@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useTheme } from './theme';
-import { createGradientStyle } from './hooks';
+import { cs } from './hooks/cs';
+
 
 
 export type AvatarProps = {
@@ -86,14 +87,14 @@ export default function Avatar({
             {!src &&
                 <div
                     style={getStyle}
-                    className={`
+                    className={cs(`
                         bg-gray-600 
                         text-neutral-content
                         ${getSize}
                         ${className}
                         ${variant === 'square' ? 'rounded-xl' : ''}
                         ${variant === 'round' ? 'rounded-full' : ''}
-                    `}
+                    `)}
                     { ...props }
                 >
                     <span 
@@ -106,12 +107,12 @@ export default function Avatar({
             {src &&
                 <div
                     style={getStyle}
-                    className={`
+                    className={cs(`
                         ${variant === 'square' ? 'rounded' : ''}
                         ${variant === 'round' ? 'rounded-full' : ''}
                         ${getSize}
                         ${className}
-                    `}
+                    `)}
                     { ...props }
                 >
                     <img

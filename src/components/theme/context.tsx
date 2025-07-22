@@ -5,6 +5,7 @@ import { PropsWithChildren, useContext, useRef, useState, createContext, useEffe
 import { Theme } from './types';
 import { deepMerge } from './helpers';
 import defaultTheme from './default';
+import { cs } from '../hooks/cs';
 import SafeTailwindClasses from '../../TailwindSafeClasses';
 
 type ThemeProviderProps = PropsWithChildren<{theme?: Theme}>;
@@ -46,7 +47,7 @@ const Cache = () => {
 
     return (
         <style className='__styles__'>
-            {`
+            {cs(`
                 input::placeholder {
                     color: ${styles?.input?.placeholderColor};
                 }
@@ -77,7 +78,7 @@ const Cache = () => {
                     --color-primary-content: rgb(220, 220, 220);
                     --selected: ${colors.selected};
                 } 
-            `}
+            `)}
         </style>
     );
 }

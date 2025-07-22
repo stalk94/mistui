@@ -3,6 +3,7 @@ import type { IconButtonProps } from './type';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 import { createGradientStyle } from '../hooks';
+import { cs } from '../hooks/cs';
 import clsx from 'clsx';
 
 
@@ -128,7 +129,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                     ...getGradient,
                     ...getStyle 
                 }}
-                className={`
+                className={cs(`
                     btn 
                     whitespace-nowrap
                     ${variant === 'ghost' && 'btn-ghost'}
@@ -142,7 +143,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                     duration-200 
                     ${selected && 'bg-[var(--selected)] border-[var(--selected)] text-white'}
                     ${className ?? ''}
-                `}
+                `)}
                 { ...props }
             >
                 { mergedIcon }

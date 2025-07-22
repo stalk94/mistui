@@ -4,7 +4,7 @@ import { useClientValidity, useCache } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import type { BaseProps } from './type';
-
+import { cs } from '../hooks/cs';
 
 
 const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
@@ -52,14 +52,14 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
     return(
         <>
             <style>
-                {`
+                {cs(`
                     input[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
                     .input-focus[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
-                `}
+                `)}
             </style>
             
             <FormWrapper 

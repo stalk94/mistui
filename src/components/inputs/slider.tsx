@@ -2,6 +2,7 @@ import type { SliderInputProps } from './type';
 import * as Slider from '@radix-ui/react-slider';
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 import { useMemo, useRef } from 'react';
 
 
@@ -112,7 +113,7 @@ export default function SliderInput({
                 max={max ?? 100}
                 min={min ?? 0}
                 step={step ?? 1}
-                className={`
+                className={cs(`
                     flex
                     relative 
                     items-center 
@@ -122,7 +123,7 @@ export default function SliderInput({
                     cursor-pointer
                     mt-1
                     min-w-60
-                `}
+                `)}
             >
                 <Slider.Track 
                     style={{
@@ -130,24 +131,24 @@ export default function SliderInput({
                         ...styleTrack,
                         ...borderVariant,
                     }}
-                    className={`
+                    className={cs(`
                         relative 
                         grow 
                         rounded-full 
-                    `}
+                    `)}
                 >
                     <Slider.Range
                         style={{
                             height: `${styles?.input?.sliderTrackFillHeight}rem`,
                             ...styleRange
                         }}
-                        className={`
+                        className={cs(`
                             absolute
                             rounded-full 
                             h-full
                             top-1/2
                             -translate-y-1/2
-                        `}
+                        `)}
                     />
                 </Slider.Track>
 
@@ -158,7 +159,7 @@ export default function SliderInput({
                         border: 0,
                         ...styleThumb
                     }}
-                    className={`
+                    className={cs(`
                         block 
                         tooltip
                         tooltip-primary
@@ -168,7 +169,7 @@ export default function SliderInput({
                         rounded-full 
                         shadow 
                         ${sizeThumb[size] ?? sizeThumb.auto}
-                    `}
+                    `)}
                 />
             </Slider.Root>
         </FormWrapper>

@@ -1,5 +1,6 @@
 import { useTheme } from '../theme';
 import type { CardProps } from './types';
+import { cs } from '../hooks/cs';
 
 
 // ! возможно стоит добавить color пропс
@@ -22,13 +23,13 @@ export default function Card({
 
     return(
         <div 
-            className={`
+            className={cs(`
                 card
                 bg-base-300
                 ${imageIsSide && 'card-side'}
                 ${imageIsFull && 'card-image-full-no-overlay'}
                 ${className ?? ''}
-            `}
+            `)}
             style={{
                 boxShadow: shadows[shadow],
                 ...style

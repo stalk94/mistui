@@ -1,6 +1,7 @@
 import type { IndicatorProps } from './types';
 import { forwardRef  } from 'react';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 
 
 
@@ -38,12 +39,12 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
                             boxShadow: shadows[elem.shadow],
                             ...elem.style
                         }}
-                        className={`
+                        className={cs(`
                             indicator-item
                             indicator-${elem.position} 
                             indicator-${elem.align}
                             ${elem.className ?? ''}
-                        `}
+                        `)}
                         children={elem.content}
                     />
                 )
@@ -56,12 +57,12 @@ const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
                         boxShadow: shadows[shadow],
                         ...style
                     }}
-                    className={`
+                    className={cs(`
                         indicator-item
                         indicator-${position} 
                         indicator-${align}
                         ${className ?? ''}
-                    `}
+                    `)}
                     children={content}
                 />
             }

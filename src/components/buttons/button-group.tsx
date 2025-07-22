@@ -5,6 +5,7 @@ import { useCache } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import { useCallback } from 'react';
+import { cs } from '../hooks/cs';
 import { colord } from 'colord';
 
 
@@ -67,13 +68,13 @@ export default function ToggleButtonGroup({
             </style>
 
             <div 
-                className={`
+                className={cs(`
                     join 
                     flex-wrap
                     w-full 
                     gap-[2px]
                     ${orientation === 'vertical' ? 'join-vertical' : ''}
-                `}
+                `)}
             >
                 {items.map((opt, index) => (
                     <Button
@@ -81,10 +82,7 @@ export default function ToggleButtonGroup({
                         key={opt?.id ?? index}
                         size={size}
                         color={color}
-                        className={`
-                            join-item 
-                            flex-auto
-                        `}
+                        className={`join-item flex-auto`}
                         selected={select === opt}
                         variant={variant}
                         onClick={() => handleChange(opt)}

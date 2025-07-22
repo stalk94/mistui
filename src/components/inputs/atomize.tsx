@@ -4,7 +4,7 @@ import { useTheme } from '../theme';
 import React from 'react';
 import clsx from 'clsx';
 import { createGradientStyle } from '../hooks';
-import { colord } from 'colord';
+import { cs } from '../hooks/cs';
 
 
 export const LabelTop = ({ children, style, size, required,  }: LabelTopProps) => {
@@ -172,10 +172,10 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                             height: '100%', 
                             marginInlineEnd: (!disabledVisibility && (size==='xs'||size==='sm')) && 8
                         }}
-                        className={`
+                        className={cs(`
                             label 
                             ${disabledVisibility && 'mr-4'}
-                        `}
+                        `)}
                     >
                         { labelLeft }
                     </span>
@@ -190,10 +190,10 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                             height: '100%', 
                             marginInlineStart: (!disabledVisibility && (size==='xs'||size==='sm')) && 4 
                         }}
-                        className={`
+                        className={cs(`
                             label
                             ${disabledVisibility && 'ml-4'}
-                        `}
+                        `)}
                     >
                         { labelRight }
                         { required && !labelTop &&

@@ -9,7 +9,7 @@ export default function InfoButton(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="Button" description="кнопка" code={`<Button size='sm'>default</Button>`}>
+            <Section title="base" description="кнопка" code={`<Button size='sm'>default</Button>`}>
                 <div className="flex justify-center">
                     <Button size='sm'>default</Button>
                 </div>
@@ -17,7 +17,7 @@ export default function InfoButton(tab) {
 
             {/* variants */}
             <Section
-                title="Button variants"
+                title="variants"
                 description="разные стили"
                 code={variants
                     .map((variant) => `<Button size="sm" variant="${variant}">${variant}</Button>`)
@@ -34,7 +34,7 @@ export default function InfoButton(tab) {
             </Section>
 
             <Section
-                title="Button colors"
+                title="colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<Button size="sm" color="${color}" shadow="sm">${color}</Button>`)
@@ -51,7 +51,7 @@ export default function InfoButton(tab) {
 
             {/* sizes */}
             <Section
-                title="Button sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
@@ -68,7 +68,7 @@ export default function InfoButton(tab) {
 
             {/* custom 1 */}
             <Section
-                title="Button custom color"
+                title="custom color"
                 description="цвета и стили"
                 code={variants
                     .map(
@@ -94,7 +94,7 @@ export default function InfoButton(tab) {
 
             {/* custom 2 */}
             <Section
-                title="Button custom color"
+                title="disabled"
                 description="цвета и стили"
                 code={colors
                     .map(

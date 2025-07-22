@@ -3,6 +3,7 @@ import type { ButtonProps } from './type';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 import { createGradientStyle } from '../hooks';
+import { cs } from '../hooks/cs';
 
 
 
@@ -116,7 +117,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     ...getGradient,
                     color: props?.disabled ? '#d1d0d0' : getStyle.color,
                 }}
-                className={`
+                className={cs(`
                     btn 
                     text-shadow-none
                     whitespace-nowrap
@@ -131,7 +132,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     duration-200 
                     hover:scale-97
                     ${className ?? ''}
-                `}
+                `)}
                 { ...props }
             >
                 { children }

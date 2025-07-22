@@ -2,6 +2,7 @@ import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 import type { SplitterPanelProps, SplitterProps } from './types';
+import { cs } from '../hooks/cs';
 import { Fragment } from 'react';
 
 
@@ -22,7 +23,7 @@ export function SplitterCustom({
     return (
         <Fragment>
              <style>
-                {`
+                {cs(`
                     .p-splitter[data-style-id="${uid}"] {
                         border: 1px solid ${plugins.alpha(curColor, 0.3)};
                         border-radius: 2px;
@@ -45,7 +46,7 @@ export function SplitterCustom({
                     .p-splitter[data-style-id="${uid}"] .p-splitter-gutter-resizing {
                         background: ${plugins.alpha(curColor, 0.2)};
                     }
-                `}
+                `)}
             </style>
 
             <Splitter

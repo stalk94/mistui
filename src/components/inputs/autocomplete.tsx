@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import { useMemo, useRef, useState } from 'react';
+import { cs } from '../hooks/cs';
 import { Popover } from '../helpers';
 
 
@@ -45,7 +46,7 @@ export default function Autocomplete({
     return (
         <>
             <style>
-                {`
+                {cs(`
                     input[data-style-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
@@ -55,7 +56,7 @@ export default function Autocomplete({
                     input[data-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor};
                     }
-                `}
+                `)}
             </style>
 
             <Popover

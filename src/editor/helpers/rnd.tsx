@@ -130,6 +130,19 @@ export default function ResizableBox({
     
     return (
         <div className="w-full h-full relative" style={style}>
+            <style>
+                {`
+                    [data-cursor-move]:hover {
+                        border: 1px solid red;
+                        border-radius: 5;
+                    }
+                    [data-cursor-size]:hover {
+                        border: 1px solid rgb(85, 79, 244);
+                        border-radius: 5;
+                    }
+                `}
+            </style>
+            
             <div
                 ref={containerRef}
                 className="flex w-full h-full absolute rounded overflow-hidden border-1 border-dashed border-[#7e7d7e63]"
@@ -141,7 +154,8 @@ export default function ResizableBox({
             >
                 <div
                     onMouseDown={startDrag}
-                    className="absolute top-0 left-0 w-4 h-4 cursor-move z-20 rounded-bl-sm"
+                    data-cursor-move
+                    className="absolute top-0 left-0 w-5 h-5 cursor-move z-20 rounded-bl-sm"
                     style={{color: 'red', marginTop:'-8px'}}
                 >
                     ⊹
@@ -150,6 +164,7 @@ export default function ResizableBox({
                 { children }
 
                 <div
+                    data-cursor-size
                     onMouseDown={startResize}
                     className="absolute w-4 h-4 right-0 bottom-0 cursor-se-resize"
                     style={{color: '#2940f4', marginBottom:'2px', marginRight: '2px'}}

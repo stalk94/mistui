@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import type { BaseFooter } from './types';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 
 
 const Footer = forwardRef<HTMLElement, BaseFooter>(function Footer(
@@ -21,12 +22,12 @@ const Footer = forwardRef<HTMLElement, BaseFooter>(function Footer(
     return (
         <footer 
             ref={ref} 
-            className={`
+            className={cs(`
                 footer
                 ${isCenter && 'footer-center'} 
                 footer-${orientation}
                 ${className}
-            `}
+            `)}
             style={style}
             { ...props }
         >

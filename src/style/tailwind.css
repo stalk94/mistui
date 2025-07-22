@@ -169,7 +169,8 @@
           100% {
             transform: translateX(0);
           }
-        }  
+    }  
+
     .main {
         font-family: var(--font-family-base);
     }

@@ -4,6 +4,7 @@ import { FaCheck } from "react-icons/fa";
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
 import { useCache } from '../hooks';
+import { cs } from '../hooks/cs';
 import { useCallback, useMemo } from 'react';
 
 ///////////////////////////////////////////////////////////////////////////
@@ -143,7 +144,7 @@ export default function SwitchBox({
                     ...getStyle,
                     ...borderVariant
                 }}
-                className={`
+                className={cs(`
                     relative inline-flex flex-shrink-0 cursor-pointer items-center 
                     rounded-full 
                     transition-colors 
@@ -151,14 +152,14 @@ export default function SwitchBox({
                     ${sizeClass[size] ?? autoSwitchSize}
                     transition-all
                     duration-200
-                `}
+                `)}
             >
                 <Switch.Thumb
-                    className={`
+                    className={cs(`
                         transition-transform duration-300 ease-in-out
                         ${translate[size] ?? translate.auto}
                         data-[state=unchecked]:translate-x-0
-                    `}
+                    `)}
                 >
                     <div 
                         style={{
@@ -166,25 +167,25 @@ export default function SwitchBox({
                             borderWidth: 1,
                             ...colorThumb
                         }}
-                        className={`
+                        className={cs(`
                             flex
                             ring-0
                             rounded-full 
                             shadow-lg 
                             ${thumbSizeClass[size] ?? autoThumbSize}
-                        `}
+                        `)}
                     >
                         <FaCheck
                             fontSize="inherit"
                             color={getStyle?.color}
-                            className={`
+                            className={cs(`
                                 pointer-events-none inline-block 
                                 border-0
                                 m-auto
                                 ring-0
                                 h-[60%]
                                 ${!chek && 'opacity-0'}
-                            `}
+                            `)}
                         />
                     </div>
                 </Switch.Thumb>

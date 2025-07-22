@@ -6,7 +6,7 @@ import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import { useMemo, useRef, useState } from 'react';
 import { Popover } from '../helpers';
-
+import { cs } from '../hooks/cs';
 
 
 export default function Select({
@@ -42,14 +42,14 @@ export default function Select({
     return (
         <>
             <style>
-                {`
+                {cs(`
                     input[data-style-id="${uid}"]::placeholder {
                         color: ${styles?.input?.placeholderColor}
                     }
                     .input-focus[data-style-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
-                `}
+                `)}
             </style>
 
             <Popover
@@ -67,10 +67,10 @@ export default function Select({
                             <button className='cursor-pointer'>
                                 <ChevronDownIcon
                                     fill={(style?.color ?? styles?.input?.fontColor)}
-                                    className={`
+                                    className={cs(`
                                         label w-[1em] h-[1em]
                                         ${open && 'rotate-180'}
-                                    `}
+                                    `)}
                                 />
                             </button>
                         }

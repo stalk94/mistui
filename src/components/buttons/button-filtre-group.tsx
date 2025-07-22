@@ -6,6 +6,7 @@ import { useCache } from '../hooks';
 import { Fragment } from 'react';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 import { colord } from 'colord';
 
 
@@ -64,14 +65,14 @@ export default function ToggleButtonFiltreGroup({
             <form className="filter w-full flex-wrap gap-[0.25rem] over">
                 { select &&
                     <input
-                        className={`
+                        className={cs(`
                             btn 
                             ${getSize}
                             btn-square
                             hover:border-neutral-500
                             hover:bg-[var(--btn-color)]
                             bg-[#0a0a0a3a]
-                        `}
+                        `)}
                         style={{
                             transition: 'background-color 0.3s ease, border-color 0.3s ease',
                             ...styleButtonReset

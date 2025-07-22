@@ -3,6 +3,7 @@ import { forwardRef, cloneElement, useMemo, useCallback  } from 'react';
 import { useTheme } from '../theme';
 import { createGradientStyle } from '../hooks';
 import clsx from 'clsx';
+import { cs } from '../hooks/cs';
 
 
 
@@ -87,14 +88,14 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     return (
         <div 
             ref={ref}
-            className={`
+            className={cs(`
                 badge
                 badge-${variant}
                 ${variant === 'soft' && 'badge-soft'}
                 ${getSize}
                 ${className ?? ''}
                 animate-slide-up
-            `}
+            `)}
             style={{
                 boxShadow: shadows[shadow], 
                 ...getStyle,

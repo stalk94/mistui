@@ -1,6 +1,7 @@
 import { Fragment, useMemo } from 'react';
 import { useUids } from '../hooks/uuid';
 import type { DividerProps } from './types';
+import { cs } from '../hooks/cs';
 import { useTheme } from '../theme';
 
 
@@ -39,14 +40,14 @@ export default function Divider({
 
             <div 
                 data-id={uid}
-                className={`
+                className={cs(`
                     divider
                     divider-${position}
                     ${orientation === 'vertical' ? 'divider-horizontal' : 'divider-vertical'}
                     ${getSize} 
                     text-neutral-500
                     ${className ?? ''}
-                `}
+                `)}
                 style={{
                     borderColor: variant === 'solid' && color && color,        // !из темы
                     borderStyle: variant,

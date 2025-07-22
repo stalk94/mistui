@@ -34,8 +34,6 @@ export const colorsCustom = [
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 export function CodeBlock({ code }) {
-   
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -49,7 +47,7 @@ export function CodeBlock({ code }) {
                 className='shadow-sm'
                 delay={100}
                 style={{
-                    fontSize: 12,
+                    fontSize: 14,
                     fontFamily: 'JetBrains Mono, monospace'
                 }}
             >

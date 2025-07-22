@@ -1,7 +1,7 @@
 import type { CheckBoxInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
-import clsx from 'clsx';
+import { cs } from '../hooks/cs';
 import { useMemo, useCallback } from 'react';
 
 
@@ -74,7 +74,7 @@ export default function CheckBoxInput({
                             ?? styles?.input?.borderColor,
                         ...borderVariant
                     }}
-                    className={clsx(`
+                    className={cs(`
                         ${sizes[size] ?? sizes.auto}
                         border-1
                         border-[var(--input-color)]
@@ -83,12 +83,13 @@ export default function CheckBoxInput({
                         duration-200
                         peer-checked:brightness-200
                         flex items-center justify-center
-                    `, className)}
+                        ${className}
+                    `)}
                 />
 
                 {/* галочка */}
                 <svg
-                    className={`
+                    className={cs(`
                         absolute 
                         left-0 top-0 
                         ${sizes[size] ?? sizes.auto} 
@@ -99,7 +100,7 @@ export default function CheckBoxInput({
                         peer-checked:opacity-100 
                         peer-checked:scale-100
                         transition-all duration-200
-                    `}
+                    `)}
                     fill="none"
                     stroke={(variants[color] ?? color) 
                         ?? (style?.backgroundColor 

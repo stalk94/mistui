@@ -1,6 +1,7 @@
 import { forwardRef, Fragment, useState, useRef, useEffect } from 'react';
 import type { PopoverProps } from './types';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -128,14 +129,14 @@ export default function Dropdown({
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -4 }}
                         transition={{ duration: 0.15 }}
-                        className={`
+                        className={cs(`
                             fixed
                             min-w-25
                             rounded 
                             shadow 
                             ${getPositionClasses()}
                             ${className}
-                        `}
+                        `)}
                         style={{
                             boxShadow: shadows[shadow],
                             backdropFilter: "blur(14px)",
