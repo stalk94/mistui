@@ -49,110 +49,90 @@ const patterns = {
     `),
 
     // Inputs
-    TextInput: (props) => (
-        <BaseInput
-            labelTop='text'
-            placeholder='test'
-            type='text'
-            {...props}
-        />
-    ),
-    NumberInput: (props)=> (
-        <NumberInput
-            labelTop='number'
-            iconEnable
-            placeholder='test'
-            {...props}
-        />
-    ),
-    ColorPicker: (props)=> (
+    TextInput: (props) => (`
+        <BaseInput ${toJSXProps(props)} />
+    `),
+    NumberInput: (props)=> (`
+        <NumberInput${toJSXProps(props)} />
+    `),
+    ColorPicker: (props)=> (`
         <ColorPicker
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Radio: (props)=> (
+    `),
+    Radio: (props)=> (`
         <RadioBox
-            labelTop='radio'
-            value={true}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Switch: (props)=> (
+    `),
+    Switch: (props)=> (`
         <SwitchBox
-            labelTop='switch'
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    CheckBox: (props)=> (
+    `),
+    CheckBox: (props)=> (`
         <CheckBox
-            labelTop='checkbox'
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    TextArea: (props)=> (
+    `),
+    TextArea: (props)=> (`
         <TextArea
-            placeholder='text-area'
-            labelTop='textarea'
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Slider: (props)=> (
+    `),
+    Slider: (props)=> (`
         <SliderInput 
             labelTop='slider'
             disableForm
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    File: (props)=> (
+    `),
+    File: (props)=> (`
         <FileInput
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Date: (props)=> (
+    `),
+    Date: (props)=> (`
         <BaseInput
-            labelTop='date'
-            placeholder='date'
             type='date'
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Time: (props)=> (
+    `),
+    Time: (props)=> (`
         <BaseInput
-            labelTop='time'
-            placeholder='time'
             type='time'
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Select: (props)=> (
+    `),
+    Select: (props)=> (`
         <Select
             placeholder='select'
             items={['test', 'test2']}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Autocomplete: (props)=> (
+    `),
+    Autocomplete: (props)=> (`
         <AutoComplete
             placeholder='autocomplete'
             options={['test', 'test2']}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
+    `),
 
     // Navigation
-    Tabs: (props)=> (
+    Tabs: (props)=> (`
         <Tabs
             items={[
                 {label: 'test', content:'content-1'}, 
                 {label: 'test-2', content:'content-2'},
                 {label: 'test-3', content:'content-3'}
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Breadcrumbs: (props)=> (
+    `),
+    Breadcrumbs: (props)=> (`
         <BreadCrumbs
-            pathname='test/xro'
+            pathname='home/test/catalog'
             Link={({ href, children }) =>
                 <div
                     onClick={() => console.log(href)}
@@ -160,19 +140,19 @@ const patterns = {
                     {children}
                 </div>
             }
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    BottomNavigation: (props)=> (
+    `),
+    BottomNavigation: (props)=> (`
         <BottomNavigation
             items={[
                 { icon: <HomeIcon />, label: 'home' },
                 { icon: <Cog8ToothIcon />, label: 'settings' }
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Menu: (props)=> (
+    `),
+    Menu: (props)=> (`
         <Menu
             onSelect={console.log}
             size='xs'
@@ -198,22 +178,18 @@ const patterns = {
                     ]
                 }
             ]}
-            { ...props }
+            ${toJSXProps(props)}
         />
-    ),
+    `),
 
     // data-display
-    Avatar: (props)=> (
+    Avatar: (props)=> (`
         <Avatar
-            size='md'
-            {...props}
-            
-            children={'xro'}
+            ${toJSXProps(props)}
         />
-    ),
-    AvatarGroup: (props)=> (
+    `),
+    AvatarGroup: (props)=> (`
         <AvatarGroup
-            size='md'
             items={[
                 { src: 'https://img.daisyui.com/images/profile/demo/yellingwoman@192.webp'},
                 { src: 'https://img.daisyui.com/images/profile/demo/superperson@192.webp'},
@@ -221,25 +197,23 @@ const patterns = {
                 { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp'},
                 { children: '+99' }
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Badge: (props)=> (
-        <>
-            <Badge
-                iconLeft={<TrashIcon />}
-                {...props}
-            >
-                badge
-            </Badge>
-        </>
-    ),
-    Indicator: (props) => (
+    `),
+    Badge: (props)=> (`
+        <Badge
+            iconLeft={<TrashIcon />}
+            ${toJSXProps(props)}
+        >
+            badge
+        </Badge>
+    `),
+    Indicator: (props) => (`
         <div className='m-5'>
             <Indicator
                 className='badge badge-success'
-                {...props}
                 content={'new'}
+                ${toJSXProps(props)}
             >
                 <Avatar
                     size='lg'
@@ -247,8 +221,8 @@ const patterns = {
                 />
             </Indicator>
         </div>
-    ),
-    List: (props)=> (
+    `),
+    List: (props)=> (`
         <List
             items={[
                 <>
@@ -294,19 +268,17 @@ const patterns = {
                     </div>
                 </>
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Table: (props)=> (
-        <div className='w-200'>
-            <TableRender
-                { ...props }
-            />
-        </div>
-    ),
+    `),
+    Table: (props)=> (`
+        <TableRender
+            ${toJSXProps(props)}
+        />
+    `),
 
     // feedback
-    Modal: (props) => (
+    Modal: (props) => (`
         <>
             <Button
                 shadow='sm'
@@ -330,11 +302,10 @@ const patterns = {
                 }
                 {...props}
             />
-        </>
+        </>`
     ),
-    Popover: (props) => (
+    Popover: (props) => (`
         <Popover
-            {...props}
             trigger={
                 <Button
                     shadow='sm'
@@ -344,17 +315,13 @@ const patterns = {
                     {props?.isHover ? 'hover my' : 'click my'}
                 </Button>
             }
+            ${toJSXProps(props)}
         >
-            <div>
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-            </div>
+            content
         </Popover>
-    ),
-    Drawer: (props) => (
+    `),
+    Drawer: (props) => (`
         <Drawer
-            {...props}
-            position='top'
             trigger={
                 <Button
                     shadow='sm'
@@ -365,17 +332,15 @@ const patterns = {
                     {'click my'}
                 </Button>
             }
+            ${toJSXProps(props)}
         >
-            <>
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-            </>
+            content
         </Drawer>
-    ),
-    Alert: (props)=> (
-        <AlertRender {...props} />
-    ),
-    Tooltip: (props)=> (
+    `),
+    Alert: (props)=> (`
+        <AlertRender ${toJSXProps(props)} />
+    `),
+    Tooltip: (props)=> (`
         <Tooltip
             children={
                 <Button
@@ -388,25 +353,19 @@ const patterns = {
                     hover my
                 </Button>
             }
-            content='tooltip content'
-            { ...props }
+            ${toJSXProps(props)}
         />
-    ),
+    `),
 
     // layout
-    Divider: (props)=> (
+    Divider: (props)=> (`
         <Divider 
-            color='primary' 
-            style={{ borderStyle: 'dashed', color: 'silver' }}
-            {...props}
-        >
-            divider
-        </Divider>
-    ), 
-    Splitter: (props) => (
+            ${toJSXProps(props)}
+        />
+    `), 
+    Splitter: (props) => (`
         <Splitter
-            style={{height: 400, width: 500}}
-            { ...props }
+            ${toJSXProps(props)}
         >
             <SplitterPanel className="flex justify-center items-center" size={20} minSize={10}>
                 Panel 1
@@ -429,8 +388,8 @@ const patterns = {
                 </Splitter>
             </SplitterPanel>
         </Splitter>
-    ),
-    Accordion: (props) => (
+    `),
+    Accordion: (props) => (`
         <Acordeon
             items={[{
                 content: <div>content</div>,
@@ -440,17 +399,15 @@ const patterns = {
                 title: 'title-2'
             }
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Collapse: (props) => (
+    `),
+    Collapse: (props) => (`
         <Collapse
-            title='title-1'
-            content='content'
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Overflow: (props) => (
+    `),
+    Overflow: (props) => (`
         <div style={{width:300, border:'1px solid red'}}>
             <Overflow
                 onOverflow={(items)=> console.log('overflow: ', items)}
@@ -477,32 +434,20 @@ const patterns = {
                 </Button>
             </Overflow>
         </div>
-    ),
+    `),
 
     // media
-    Card: (props)=> (
+    Card: (props)=> (`
         <Card
-            imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
-            title='Card Title'
-            description='A card component has a figure, a body part, and inside body there are title and actions parts'
-            actions={
-                <Button
-                    size='sm'
-                    color='success'
-                    shadow='lg'
-                >
-                    go to
-                </Button>
-            }
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Promo: (props)=> (
+    `),
+    Promo: (props)=> (`
         <PromoBanner
-            { ...props }
+            ${toJSXProps(props)}
         />
-    ),
-    VerticalCarousel: (props) => (
+    `),
+    VerticalCarousel: (props) => (`
         <VerticalCarousel
             items={[
                 { type: 'image', src: 'https://picsum.photos/600/600' },
@@ -510,10 +455,10 @@ const patterns = {
                 { type: 'image', src: 'https://picsum.photos/300/300' },
                 { type: 'image', src: 'https://picsum.photos/300/300' }
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    HorizontalCarousel: (props) => (
+    `),
+    HorizontalCarousel: (props) => (`
         <HorizontalCarousel
             items={[
                 { type: 'image', src: 'https://picsum.photos/600/600' },
@@ -521,16 +466,14 @@ const patterns = {
                 { type: 'image', src: 'https://picsum.photos/300/300' },
                 { type: 'image', src: 'https://picsum.photos/300/300' }
             ]}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
+    `),
 
     // page
-    Hero: (props)=> (
+    Hero: (props)=> (`
         <Hero
-            className='min-h-150 min-w-170'
-            fontImageOverlaySrc='https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp'
-            {...props}
+            ${toJSXProps(props)}
         >
             <div className="max-w-md">
                 <Typography
@@ -555,12 +498,10 @@ const patterns = {
                 </Button>
             </div>
         </Hero>
-    ),
-    Footer: (props)=> (
+    `),
+    Footer: (props)=> (`
         <Footer
-            className='bg-[#00000049] p-10'
-            style={{ width: '100%' }}
-            {...props}
+            ${toJSXProps(props)}
         >
             <nav>
                 <h6 className="footer-title">Services</h6>
@@ -621,13 +562,13 @@ const patterns = {
                 </div>
             </nav>
         </Footer>
-    ),
-    AppBar: (props)=> (
+    `),
+    AppBar: (props)=> (`
         <Preview
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    Chat: (props)=> (
+    `),
+    Chat: (props)=> (`
         <>
             <Chat
                 avatarSrc='https://img.daisyui.com/images/profile/demo/kenobee@192.webp'
@@ -656,12 +597,10 @@ const patterns = {
                 direction='end'
             />
         </>
-    ),
-    Stat: (props) => (
+    `),
+    Stat: (props) => (`
         <Stat
-            value='value'
-            desccription='description'
-            title='title'
+            ${toJSXProps(props)}
             figure={
                 <div 
                     className="radial-progress" 
@@ -682,14 +621,7 @@ const patterns = {
                 </>
             }
         />
-    ),
-
-    // any
-    form: (props) => (
-        <Form
-            scheme={testSchema}
-        />
-    ),
+    `),
 }
 
 

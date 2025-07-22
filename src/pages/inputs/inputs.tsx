@@ -18,7 +18,7 @@ export default function InfoInput(tab) {
                     <BaseInput
                         size="sm"
                         placeholder="placeholder"
-                        labelLeft="🔍"
+                        labelLeft="🔍︎"
                         labelTop="label"
                     />
                 `}
@@ -28,7 +28,7 @@ export default function InfoInput(tab) {
                         type="text"
                         size="sm"
                         placeholder="placeholder"
-                        labelLeft="🔍"
+                        labelLeft="🔍︎"
                         labelTop="label"
                     />
                 </div>
@@ -123,7 +123,7 @@ export default function InfoInput(tab) {
             <Section
                 title="Label Left"
                 description="label left"
-                code={`<BaseInput labelLeft="🔍" />`}
+                code={`<BaseInput labelLeft="🔍︎" />`}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
@@ -133,7 +133,7 @@ export default function InfoInput(tab) {
                             variant={variant}
                             color={colors[i]}
                             placeholder={colorsCustom[i]}
-                            labelLeft="🔍"
+                            labelLeft="🔍︎"
                         />
                     ))}
                 </ButtonGrid>
@@ -143,7 +143,7 @@ export default function InfoInput(tab) {
             <Section
                 title="Label Right"
                 description="label right"
-                code={`<BaseInput labelRight="🔍" />`}
+                code={`<BaseInput labelRight="✔️" />`}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
@@ -153,7 +153,7 @@ export default function InfoInput(tab) {
                             variant={variant}
                             color={colors[i]}
                             placeholder={colorsCustom[i]}
-                            labelRight="🔍"
+                            labelRight="✔️"
                         />
                     ))}
                 </ButtonGrid>
@@ -183,7 +183,7 @@ export default function InfoInput(tab) {
             <Section
                 title="Mixed Labels"
                 description=""
-                code={`<BaseInput labelTop="..." labelLeft="🔍" labelRight="🔍" />`}
+                code={`<BaseInput labelTop="..." labelLeft="🔍︎" labelRight="🔍︎" />`}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
@@ -193,8 +193,8 @@ export default function InfoInput(tab) {
                             variant={variant}
                             color={colors[i]}
                             placeholder={colorsCustom[i]}
-                            labelLeft="🔍"
-                            labelRight="🔍"
+                            labelLeft="🔍︎"
+                            labelRight="🔍︎"
                             labelTop={`${variant} ${colors[i]}`}
                         />
                     ))}

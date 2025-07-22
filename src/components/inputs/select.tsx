@@ -18,6 +18,8 @@ export default function Select({
     required,
     style = {},
     color = 'primary',
+    disabledForm,
+    rightIcon,
     ...props
 }: SelectInputProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -63,15 +65,21 @@ export default function Select({
                         data-style-id={uid}
                         color={color}
                         style={{ ...style }}
+                        disabledVisibility={disabledForm}
                         labelRight={
                             <button className='cursor-pointer'>
-                                <ChevronDownIcon
-                                    fill={(style?.color ?? styles?.input?.fontColor)}
-                                    className={cs(`
-                                        label w-[1em] h-[1em]
-                                        ${open && 'rotate-180'}
-                                    `)}
-                                />
+                                {rightIcon 
+                                    ? rightIcon
+                                    : (
+                                        <ChevronDownIcon
+                                            fill={(style?.color ?? styles?.input?.fontColor)}
+                                            className={cs(`
+                                                label w-[1em] h-[1em]
+                                                ${open && 'rotate-180'}
+                                            `)}
+                                        />
+                                    )
+                                }
                             </button>
                         }
                         {...props}

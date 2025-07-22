@@ -36,20 +36,21 @@ export default function InfoGroupButton(tab) {
                     .join('\n')
                 }
             >
-                <Grid className='flex-col justify-center'>
+                <Grid>
                     {variants.map((variant) => (
-                        <div key={variant} className="flex-col justify-center w-full">
+                        <div key={variant} className="flex-col">
                             <Divdder
                                 className='py-4'
                                 position='end'
                             >
-                                <Typography color='#daf166' variant='caption'>
+                                <Typography color='#a3a3a2' variant='caption'>
                                     { variant }
                                 </Typography>
                             </Divdder>
                             <GroupButton 
                                 size='sm' 
                                 value='playground'
+                                color='secondary'
                                 variant={variant}
                                 className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
@@ -67,17 +68,13 @@ export default function InfoGroupButton(tab) {
                     .map((size) => `<GroupButton shadow='sm' color='secondary' variant='dash' value='play' size="${size}" shadow="sm" items={['doc', 'play', 'any']}/>`)
                     .join('\n')}
             >
-                <Grid className='flex-col justify-center'>
+                <Grid>
                     {sizes.map((size) => (
                         <div key={size} className="flex-col justify-center">
-                            <Divdder
-                                className='py-4'
-                                position='end'
-                            >
-                                <Typography color='#daf166' variant='caption'>
-                                    { size }
-                                </Typography>
-                            </Divdder>
+                            <Typography color='#a3a3a2' variant='caption'>
+                                { size }
+                            </Typography>
+
                             <GroupButton
                                 size={size}
                                 value='play'

@@ -153,7 +153,10 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                 }}
                 className={clsx(
                     disabledVisibility
-                        ? getSize
+                        ? [
+                            getSize,
+                            'flex'
+                        ]
                         : [
                               'input',
                               'w-full',

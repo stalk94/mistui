@@ -4,7 +4,7 @@
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "next start",
     "dev": "vite",
@@ -13,6 +13,15 @@
     "nextbuild": "next build",
     "build": "vite build"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "stalk9424",
   "license": "ISC",
@@ -29,7 +38,6 @@
     "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
-    "daisyui": "^5.0.43",
     "dayjs": "^1.11.13",
     "express": "^4.21.1",
     "notistack": "^3.0.2",
@@ -46,13 +54,13 @@
     "vite": "^7.0.4",
     "vite-plugin-dts": "^4.5.4",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.1.4"
+    "vitest": "^3.1.4",
+    "react-shiki": "^0.7.2",
+     "colord": "^2.9.3"
   },
   "dependencies": {
     "buffer": "^6.0.3",
-    "colord": "^2.9.3",
     "framer-motion": "^12.23.3",
-    "next": "^15.3.2",
-    "react-shiki": "^0.7.2"
+    "daisyui": "^5.0.43"
   }
 }

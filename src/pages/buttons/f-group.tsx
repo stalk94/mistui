@@ -52,7 +52,7 @@ export default function InfoGroupButtonFiltre(tab) {
             >
                 <Grid className='flex flex-col'>
                     {variants.map((variant) => (
-                        <div key={variant} className="flex-col justify-center ">
+                        <div key={variant} className="flex-col justify-center">
                             <Divdder
                                 className='py-4'
                                 position='end'

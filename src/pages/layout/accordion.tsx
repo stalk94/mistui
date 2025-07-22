@@ -25,10 +25,10 @@ export default function InfoAccordion(tab) {
             <Section
                 title="Accordion"
                 description="Basic accordion component"
-                code={`<Accordion items={items} />`}
+                code={`<Accordion shadow='lg' items={items} />`}
             >
                 <Grid className="justify-center">
-                    <Accordion items={items} />
+                    <Accordion shadow='lg' items={items} />
                 </Grid>
             </Section>
 
@@ -36,15 +36,18 @@ export default function InfoAccordion(tab) {
             <Section
                 title="Accordion Variants"
                 description="Different styles"
-                code={variants.map(v => `<Accordion variant="${v}" items={items} />`).join('\n')}
+                code={variants.map(v => `<Accordion shadow='lg' variant="${v}" items={items} />`).join('\n')}
             >
-                <Grid className="flex-col justify-center">
+                <Grid className="flex justify-center">
                     {variants.map((variant) => (
-                        <Accordion 
-                            key={variant} 
-                            items={items} 
-                            variant={variant} 
-                        />
+                        <div key={variant} className='flex w-120 m-auto'>
+                            <Accordion 
+                                shadow='lg'
+                                key={variant} 
+                                items={items} 
+                                variant={variant} 
+                            />
+                        </div>
                     ))}
                 </Grid>
             </Section>
@@ -52,17 +55,19 @@ export default function InfoAccordion(tab) {
             {/* Colors */}
             <Section
                 title="Custom Colors"
-                description="Different color themes"
-                code={colors.map((color, i) => `<Accordion variant="${variants[i]}" color="${color}" items={items} />`).join('\n')}
+                description="custom color and variants"
+                code={colors.map((color, i) => `<Accordion shadow='lg' variant="${variants[i]}" color="${color}" items={items} />`).join('\n')}
             >
-                <Grid className="flex-col justify-center">
+                <Grid className="flex justify-center">
                     {colors.map((color, i) => (
-                        <Accordion
-                            key={color}
-                            items={items}
-                            variant={variants[i]}
-                            color={color}
-                        />
+                        <div key={color} className='flex w-120 m-auto'>
+                            <Accordion
+                                shadow='lg'
+                                items={items}
+                                variant={variants[i]}
+                                color={color}
+                            />
+                        </div>
                     ))}
                 </Grid>
             </Section>
@@ -71,16 +76,19 @@ export default function InfoAccordion(tab) {
             <Section
                 title="Sizes"
                 description="Different sizes"
-                code={sizes.map((size, i) => `<Accordion variant="${variants[i]}" size="${size}" items={items} />`).join('\n')}
+                code={sizes.map((size, i) => `<Accordion shadow='lg' variant="${variants[i]}" size="${size}" items={items} />`).join('\n')}
             >
-                <Grid className="flex-col justify-center">
+                <Grid className="flex justify-center">
                     {sizes.map((size, i) => (
-                        <Accordion
-                            key={size}
-                            items={items}
-                            variant={variants[i]}
-                            size={size}
-                        />
+                        <div key={size} className='flex w-120 m-auto'>
+                            { size }:
+                            <Accordion
+                                shadow='lg'
+                                items={items}
+                                variant={variants[i]}
+                                size={size}
+                            />
+                        </div>
                     ))}
                 </Grid>
             </Section>

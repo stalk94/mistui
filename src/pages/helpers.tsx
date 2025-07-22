@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, IconButton } from '@/components/buttons';
 import { motion } from "framer-motion";
 import { Typography, Link } from '@/components/text';
@@ -12,7 +12,9 @@ import { MdDataObject } from "react-icons/md";
 import { CgMenuMotion } from "react-icons/cg";
 import { AiOutlineFunction } from "react-icons/ai";
 import { formatCodeForShiki } from '@/editor/helpers/dom';
+import { translateText } from '@/editor/helpers/translate';
 export { colors, variants, sizes, shadows, textShadows, variantsText } from './meta';
+import { GoQuestion } from "react-icons/go";
 
 
 export const colorsCustom = [
@@ -30,9 +32,19 @@ export const colorsCustom = [
     '#F7B32B', // Mustard Yellow
     '#5D2E8C'  // Royal Purple
 ];
+const color = {
+    string: '#c8c8c8',
+    number: '#9b9bec',
+    boolean: '#e570d8',
+    array: 'orange',
+    object: '#ed5e5e',
+    enum: '#48d148',
+    func: '#4747cf'
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+// todo: #27292e #282C34
 export function CodeBlock({ code }) {
     return (
         <motion.div
@@ -72,8 +84,19 @@ export function Section({
     code?: string;
     className?: string
 }) {
+    const [descr, setDescr] = useState(description);
     const [view, setView] = useState<'preview' | 'code'>('preview');
 
+    useEffect(()=> {
+        const lang = globalStore.lang.get();
+
+        if (description && description.length > 0) {
+            translateText(description, lang)
+                .then(setDescr)
+        }
+    }, [title, description]);
+    
+    
     return (
         <div className="space-y-2 shadow-sm border-1 border-[#80808020] rounded-sm p-1">
             <div className="flex items-center justify-between">
@@ -104,13 +127,13 @@ export function Section({
                 )}
             </div>
 
-            <Typography variant="caption" className={`text-gray-500 ml-2`}>
-                {description}
+            <Typography variant="caption" color='#a2a2a2' className={`ml-2`}>
+                { descr }
             </Typography>
 
             {view !== 'code' &&
                 <div
-                    className={`border-1 p-3 rounded-md border-[#6b6b6b4b] bg-[#27292e] relative overflow-auto ${className??''}`}
+                    className={`border-1 p-3 rounded-md border-[#6b6b6b4b] bg-[#282828] relative overflow-auto ${className??''}`}
                 >
                     {view === 'preview' && children}
                 </div>
@@ -132,15 +155,16 @@ type MetaProp = {
     values: TypeVariants[] | MetaProp[]
 }
 const TypeBadge =({ type }: {type: TypeVariants})=> {
-    const curColor = {
-        string: 'gray',
-        number: '#8484e9',
-        boolean: '#e570d8',
-        array: '#f16767',
-        object: 'orange',
-        enum: '#48d148',
-        func: '#3333e9'
-    }[type]
+    const curColor = color[type]
+    const str = {
+        array: 'arr[]',
+        object: 'obj{}',
+        boolean: 'B ',
+        enum: '(...)',
+        func: 'ƒ=>',
+        number: 'N',
+        string: 'str'
+    }
     const Icon = {
         string: AiOutlineFieldString,
         number: GoNumber,
@@ -155,69 +179,85 @@ const TypeBadge =({ type }: {type: TypeVariants})=> {
 
     return (
         <Badge
-            iconLeft={<Icon /> }
+            //iconLeft={<Icon /> }
             color={curColor}
-            variant='outline'
+            variant='ghost'
             size='sm'
         >
-            { type }
+            { str[type] }
         </Badge>
     )
 }
-export function TypeTable({ preview, meta }: { preview: string, meta: Record<string, MetaProp> }) {
-    const render = (metaProp: MetaProp): JSX.Element[] => {
-        if (metaProp.type === 'string'
-            || metaProp.type === 'number'
-            || metaProp.type === 'enum'
-            || metaProp.type === 'boolean'
-        ) return [
-            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
-            <td className='py-0' key="default">
-                {metaProp.default
-                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
-                    : <span className='text-[#f44c4c]'>-</span>}
-            </td>,
-            <td className='py-0' key="description">{metaProp.description}</td>
-        ];
-        else if (metaProp.type === 'func') return [
-            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
-            <td className='py-0' key="default">
-                {metaProp.default
-                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
-                    : <span className='text-[#f44c4c]'>-</span>}
-            </td>,
-            <td className='py-0' key="description">{metaProp.description}</td>
-        ];
-        else if (metaProp.type === 'array') return [
-            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
-            <td className='py-0' key="default">
-                {metaProp.default
-                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
-                    : <span className='text-[#f44c4c]'>-</span>}
-            </td>,
-            <td className='py-0' key="description">{metaProp.description}</td>
-        ];
-        else return [
-            <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
-            <td className='py-0' key="variants">{metaProp.values.join(' | ')}</td>,
-            <td className='py-0' key="default">
-                {metaProp.default
-                    ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
-                    : <span className='text-[#f44c4c]'>-</span>}
-            </td>,
-            <td className='py-0' key="description">{metaProp.description}</td>
-        ];
-    }
+const Row = ({ metaProp }: {metaProp: MetaProp})=> {
+    const [descr, setDescr] = useState(metaProp?.description);
 
+    const parseArg =()=> {
+        const length = metaProp.values.length - 1;
+        const chek =(name)=> metaProp.default === name;
+
+        return (
+            <div className='flex flex-wrap'>
+                {
+                metaProp.values.map((name, i)=> {
+                    if (typeof name === 'object') return(
+                        <div key={i} style={{color:color.object}}>
+                            <IconButton isRounded variant='ghost'>
+                                <GoQuestion color='orange' size={16} />
+                            </IconButton>
+                            {length > i && <span className='text-[#4a4a4a]'> |&nbsp; </span>}
+                        </div>
+                    );
+                    else if(name?.includes?.('React')) return(
+                        <div key={i} style={{color:color.object}}>
+                            { name }
+                            {length > i && <span className='text-[#4a4a4a]'> |&nbsp; </span>}
+                        </div>
+                    );
+                    else if (color[name]) return(
+                        <div key={i} style={{color: color[name]}}>
+                            { name }
+                            {length > i && <span className='text-[#4a4a4a]'> |&nbsp; </span>}
+                        </div>
+                    );
+                    else return (
+                        <div key={i} className={`text-success ${chek(name)?'font-bold':''}`}> `{name}`
+                            {length > i && <span className='text-[#505050]'> |&nbsp; </span>}
+                        </div>
+                    );
+                })
+                }
+            </div>
+        )
+    }
+    useEffect(()=> {
+        const description = metaProp?.description;
+        const lang = globalStore.lang.get();
+
+        if (description &&  description.length > 0) {
+            translateText(description, lang)
+                .then(setDescr)
+        }
+    }, []);
+
+
+    return ([
+        <td className='py-0' key="type"><TypeBadge type={metaProp.type} /></td>,
+        <td className='py-0' key="variants">{parseArg()}</td>,
+        <td className='py-0' key="default">
+            {metaProp.default
+                ? <span className='text-[#5edcf5]'>{metaProp.default}</span>
+                : <span className='text-[#c8c8c8]'>-</span>}
+        </td>,
+        <td className='py-0 text-[#c8c8c8]' key="description">{descr}</td>
+    ]);
+}
+export function TypeTable({ preview, meta }: { preview: string, meta: Record<string, MetaProp> }) {
 
     return (
-        <div className="max-h-80 overflow-y-auto">
+        <div className="max-h-80 overflow-y-auto shadow-md">
             <table 
                 className="table table-fixed w-full text-[11px]"
-                style={{ fontFamily: '"Inter", sans-serif', background:'#282C34'}}
+                style={{ fontFamily: '"Inter", sans-serif', background:'#282828'}}
             >
                 {/* head */}
                 <thead 
@@ -236,7 +276,7 @@ export function TypeTable({ preview, meta }: { preview: string, meta: Record<str
                     {Object.entries(meta).map(([name, value]) =>
                         <tr key={name}>
                             <th>{name}</th>
-                            {render(value)}
+                            <Row metaProp={value}/>
                         </tr>
                     )}
                 </tbody>

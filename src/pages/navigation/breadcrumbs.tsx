@@ -39,15 +39,9 @@ export default function InfoBreadcrumbs(tab) {
                 <BreadcrumbsGrid className="flex-col">
                     {sizes.map((size, i) => (
                         <div key={i} className="flex flex-col justify-start">
-                            <Divdder className="py-4" position="end">
-                                <Typography color="#daf166" variant="caption">
-                                    {size}
-                                </Typography>
-                            </Divdder>
-
                             <Breadcrumbs
                                 size={size}
-                                pathname="catalog/test"
+                                pathname={`${size}/test`}
                                 Link={({ href, children }) => (
                                     <div onClick={() => console.log(href)}>{children}</div>
                                 )}
@@ -71,16 +65,10 @@ export default function InfoBreadcrumbs(tab) {
                 <BreadcrumbsGrid className="flex-col">
                     {colors.map((color, i) => (
                         <div key={i} className="flex flex-col">
-                            <Divdder className="py-4" position="end">
-                                <Typography color={color} variant="caption">
-                                    {color}
-                                </Typography>
-                            </Divdder>
-
                             <Breadcrumbs
                                 size="sm"
                                 color={color}
-                                pathname="catalog/test"
+                                pathname={`${color}/test`}
                                 Link={({ href, children }) => (
                                     <div onClick={() => console.log(href)}>{children}</div>
                                 )}

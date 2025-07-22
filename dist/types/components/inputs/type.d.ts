@@ -97,8 +97,6 @@ export type FileInputProps = {
     labelTop?: string | React.ReactElement;
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties;
-    /** это прокидывается на сам инпут input class */
-    styleInput?: React.CSSProperties;
     className?: ClassValue;
 };
 export type SelectInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
@@ -107,6 +105,8 @@ export type SelectInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
     onChange?: (val: string) => void;
     items?: string[] | ItemSelect[];
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    disabledForm?: boolean;
+    rightIcon?: React.ReactNode;
 };
 export type AutoInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
     value?: string;

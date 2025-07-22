@@ -1,3 +1,4 @@
+//import 'primereact/resources/primereact.min.css';
 import { useRef, useState, useEffect, useMemo, memo, Fragment } from 'react';
 import { DataTable, DataTableValueArray } from "primereact/datatable";
 import type { DataTablePropsWrapper, TableStyles, StyleTableWrapperProps } from './types';

@@ -128,6 +128,8 @@ export type SelectInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     onChange?: (val: string)=> void
     items?: string[] | ItemSelect[]
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    disabledForm?: boolean
+    rightIcon?: React.ReactNode
 }
 
 export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {

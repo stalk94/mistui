@@ -1,17 +1,19 @@
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';  
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-//import { SnackbarProvider } from 'notistack';
+import Introduction from './editor/page/introduction';
+import Install from './editor/page/install';
 import { AlertProvider } from './components/alert';
 import SandBoxRoot from './editor';
 import SandBox from './editor/Render';
 import { ThemeProvider } from './components/theme';
-import { AppBar, Collapse, Divider, IconButton, Typography } from './index';
+import { AppBar, Collapse, Divider, IconButton, Select, Typography } from './index';
 import { createStore } from 'statekit-lite';
 import { InformationCircleIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import { BurgerMenu, LinearNavigationItems } from '@/components/app-bar';
+import ComponentsRoot from './editor/page/root-components';
+import Home from './editor/page';
+import NotFound from './editor/page/error';
 
 
 const IconComponent = () => (
@@ -33,7 +35,7 @@ const CheckBox = ({onChange}) => (
             <input type="checkbox" onChange={(e)=> onChange(e.target.checked ? 'light' : 'dark')} />
 
             <svg
-                className="swap-on h-5 mt-[2px] fill-yellow-300"
+                className="swap-on h-4 mt-[2px] fill-yellow-300"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
                 <path
@@ -41,7 +43,7 @@ const CheckBox = ({onChange}) => (
             </svg>
 
             <svg
-                className="swap-off h-5 mt-[1px] fill-[silver]"
+                className="swap-off h-4 mt-[1px] fill-[silver]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
                 <path
@@ -50,26 +52,16 @@ const CheckBox = ({onChange}) => (
         </label>
     </IconButton>
 );
-function NotFound() {
-    return <h1>404: Не найдено</h1>
-}
-function Home() {
-    return <h1>Домашняя страница</h1>
-}
-function ComponentsRoot() {
-    return (
-        <>
-        </>
-    );
-}
 globalThis.globalStore = createStore({
-    preview: undefined
+    lang: 'ru'
 }, {
     persist: { key: 'global' }
 });
 
 
+
 const App = () => {
+    const lang = globalStore.lang.use();
     const [theme, setTheme] = React.useState('dark');
 
 
@@ -104,11 +96,11 @@ const App = () => {
                                 items={[
                                     { 
                                         id: 'info', 
-                                        label: "introduction", 
+                                        label: <Link to="components/introduction">introduction</Link>, 
                                         icon: <InformationCircleIcon /> 
                                     }, { 
                                         id: 'base', 
-                                        label: "install", 
+                                        label: <Link to="components/install">install</Link>, 
                                         icon: <CloudArrowDownIcon /> 
                                     }, { 
                                         id: 'components', 
@@ -119,20 +111,29 @@ const App = () => {
                             />
                         }
                         endSlot={
-                            <div className='flex items-center'>
+                            <div className='flex items-center'> 
                                 <CheckBox onChange={console.log} />
+                                <Select
+                                    size='sm'
+                                    disabledForm
+                                    color='inherit'
+                                    value={lang}
+                                    items={['ru', 'en', 'de']}
+                                    onChange={globalStore.lang.set}
+                                    rightIcon={<></>}
+                                />
                                 <Divider
                                     color="#000000"
                                     orientation='vertical'
-                                    className="py-1"
+                                    className="py-1 pr-2"
                                 />
-                                <BurgerMenu
-                                    items={[
-                                        { id: 'base', label: "Главная", },
-                                        { id: 'base', label: "Главная", },
-                                        { id: 'base', label: "Главная", }
-                                    ]}
-                                />
+                                {true &&
+                                    <BurgerMenu
+                                        items={[
+                                            { id: 'base', label: "in development", },
+                                        ]}
+                                    />
+                                }
                             </div>
                         }
                     />
@@ -142,6 +143,8 @@ const App = () => {
                         <Route path="/components" key={location.pathname} element={<SandBoxRoot />}>
                             <Route index element={<ComponentsRoot/>} />
                             <Route path=":componentName" element={<SandBox />} />
+                            <Route path="install" element={<Install />} />
+                            <Route path="introduction" element={<Introduction />} />
                         </Route>
                         <Route path="*" element={<NotFound />} />
                     </Routes>

@@ -15,7 +15,13 @@ export default function InfoNumberInput(tab) {
                 code={`<NumberInput placeholder="Enter a number" />`}
             >
                 <div className="flex justify-center">
-                    <NumberInput size="sm" placeholder="Enter a number" />
+                    <NumberInput 
+                        size="sm" 
+                        placeholder="Enter a number" 
+                        labelLeft="❌"
+                        labelRight="🔍︎"
+                        labelTop="label" 
+                    />
                 </div>
             </Section>
 
@@ -30,6 +36,7 @@ export default function InfoNumberInput(tab) {
                         size="sm"
                         value={3}
                         iconEnable
+                        labelTop="label"
                         placeholder="With icons"
                     />
                 </div>

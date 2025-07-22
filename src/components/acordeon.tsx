@@ -2,6 +2,7 @@ import { useCache, useHover } from './hooks';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from './theme';
 import { useMemo } from 'react';
+import { cs } from './hooks/cs';
 
 
 export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick'> & {
@@ -114,13 +115,13 @@ export default function Acordeon({
                 ...getStyle,
                 ...getStyleHovered
             }}
-            className={`
+            className={cs(`
                 join 
                 join-vertical 
                 w-full
                 ${sizeText}
-                ${className && className}
-            `}
+                ${className ?? ''}
+            `)}
         >
             {items.map((elem, index) =>
                 <div 
@@ -136,25 +137,25 @@ export default function Acordeon({
                 >
                     {/* title */}
                     <div
-                        className={`
+                        className={cs(`
                             collapse-title 
                             p-1
                             flex
                             justify-between 
                             items-center
                             ${classNameTitle && classNameTitle}
-                        `}
+                        `)}
                         style={styleTitle}
                     >
                         { elem.title }
                        
                         <ChevronDownIcon 
-                            className={`
+                            className={cs(`
                                 h-3
                                 transition-transform 
                                 duration-300 
                                 ${active === index && 'rotate-180'}
-                            `}
+                            `)}
                         />
                     </div>
                     
@@ -163,13 +164,13 @@ export default function Acordeon({
                         style={{ 
                             padding: active !== index ? 0 : 4,
                         }}
-                        className={`
+                        className={cs(`
                             collapse-content
                             border-[#0000001a]
                             border-t-1
                             border-b-1
                             bg-[#00000032]
-                        `}
+                        `)}
                     >
                         { elem.content }
                     </div>

@@ -25,7 +25,7 @@ export default function InfoSlider(tab) {
             <Section
                 className="overflow-visible"
                 title="Disabled form"
-                description="Disabled slider input"
+                description="Disabled form visibility"
                 code={`<SliderInput disableForm />`}
             >
                 <div className="flex justify-center">
