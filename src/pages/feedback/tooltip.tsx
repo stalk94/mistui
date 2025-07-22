@@ -4,7 +4,7 @@ import { colors, colorsCustom, sizes } from '../helpers';
 import { baseMeta, orientationMeta } from '../meta';
 
 
-function Render({ ...props }) {
+function Render({ cb, ...props }) {
     return (
         <Tooltip
             children={
@@ -13,7 +13,8 @@ function Render({ ...props }) {
                     size='md'
                     style={{ margin: 3 }}
                     className='w-full'
-                    color='primary'
+                    variant='dash'
+                    color={cb}
                 >
                     hover my
                 </Button>
@@ -32,15 +33,16 @@ export default function InfoTooltip(tab) {
             
             {/* base */}
             <Section title="base" description="кнопка" code={`<Card></Card>`}>
-                <Grid className="my-6 m-auto">
-                    <Render />
+                <Grid className="my-6 max-w-90 m-auto">
+                    <Render cb='error' />
                 </Grid>
             </Section>
 
             {/* colors */}
             <Section title="color" description="кнопка" code={`<Card></Card>`}>
-                <Grid className="my-6 m-auto">
+                <Grid className="my-6 max-w-90 m-auto">
                     <Render 
+                        cb='secondary'
                         color='secondary'
                     />
                 </Grid>

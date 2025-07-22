@@ -34,7 +34,7 @@ export default function InfoBreadcrumbs(tab) {
 
             {/* sizes */}
             <Section
-                title="Breadcrumbs sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<Breadcrumbs size="${size}" shadow="sm">${size}</Breadcrumbs>`)
@@ -45,7 +45,6 @@ export default function InfoBreadcrumbs(tab) {
                         <div key={i} className='flex flex-col justify-start'>
                             <Divdder
                                 className='py-4'
-                                variant='dashed'
                                 position='end'
                             >
                                 <Typography color='#daf166' variant='caption'>
@@ -71,7 +70,7 @@ export default function InfoBreadcrumbs(tab) {
 
             {/* colors */}
             <Section
-                title="Breadcrumbs colors"
+                title="colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<Breadcrumbs size="sm" color="${color}" shadow="sm">${color}</Breadcrumbs>`)
@@ -82,7 +81,6 @@ export default function InfoBreadcrumbs(tab) {
                         <div key={i} className='flex flex-col'>
                             <Divdder
                                 className='py-4'
-                                variant='dashed'
                                 position='end'
                             >
                                 <Typography color={color} variant='caption'>

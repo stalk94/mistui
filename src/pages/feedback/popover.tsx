@@ -12,7 +12,8 @@ function Render({ ...props }) {
                 <Button
                     shadow='sm'
                     size='md'
-                    color='primary'
+                    color='success'
+                    variant='dash'
                 >
                     {props?.isHover ? 'Hover my' : 'click my'}
                 </Button>

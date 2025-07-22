@@ -9,7 +9,7 @@ export default function InfoMarque(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="MarqueText" description="кнопка"
+            <Section title="base" description="кнопка"
                 code={`<MarqueText>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</MarqueText>`}
             >
                 <div className="flex justify-center">
@@ -21,7 +21,7 @@ export default function InfoMarque(tab) {
 
             {/* variants */}
             <Section
-                title="MarqueText variants"
+                title="variants"
                 description="разные стили"
                 code={variants
                     .map((variant) => `<MarqueText variant="${variant}">${variant}</MarqueText>`)
@@ -38,7 +38,7 @@ export default function InfoMarque(tab) {
 
             {/* custom color */}
             <Section
-                title="MarqueText custom color"
+                title="custom color"
                 description="цвета и стили"
                 code={variants
                     .map(

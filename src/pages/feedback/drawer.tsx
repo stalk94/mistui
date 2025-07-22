@@ -18,7 +18,8 @@ export default function InfoDrawer(tab) {
                                 shadow='sm'
                                 size='md'
                                 style={{ margin: 3 }}
-                                color='primary'
+                                color='success'
+                                variant='dash'
                             >
                                 {'click my'}
                             </Button>
@@ -42,7 +43,8 @@ export default function InfoDrawer(tab) {
                                 shadow='sm'
                                 size='md'
                                 style={{ margin: 3 }}
-                                color='primary'
+                                color='error'
+                                variant='dash'
                             >
                                 top
                             </Button>
@@ -66,7 +68,8 @@ export default function InfoDrawer(tab) {
                                 shadow='sm'
                                 size='md'
                                 style={{ margin: 3 }}
-                                color='primary'
+                                color='warning'
+                                variant='dash'
                             >
                                 right
                             </Button>
@@ -90,7 +93,8 @@ export default function InfoDrawer(tab) {
                                 shadow='sm'
                                 size='md'
                                 style={{ margin: 3 }}
-                                color='primary'
+                                color='accept'
+                                variant='dash'
                             >
                                 bottom
                             </Button>

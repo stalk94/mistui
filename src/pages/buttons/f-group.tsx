@@ -12,7 +12,7 @@ export default function InfoGroupButtonFiltre(tab) {
             { tab }
             {/* default */}
             <Section 
-                title="GroupButtonFiltre" 
+                title="base" 
                 description="кнопка" 
                 code={`<GroupButtonFiltre size='sm'>default</GroupButtonFiltre>`}
             >
@@ -27,8 +27,8 @@ export default function InfoGroupButtonFiltre(tab) {
 
             {/* select */}
             <Section 
-                title="GroupButtonFiltre" 
-                description="кнопка" 
+                title="selected" 
+                description="selected" 
                 code={`<GroupButtonFiltre size='sm'>default</GroupButtonFiltre>`}
             >
                 <div className="flex justify-center">
@@ -43,7 +43,7 @@ export default function InfoGroupButtonFiltre(tab) {
 
             {/* variants */}
             <Section
-                title="GroupButtonFiltre variants"
+                title="variants"
                 description="разные стили"
                 code={variants
                     .map((variant) => `<GroupButtonFiltre size="sm" variant="${variant}">${variant}</GroupButtonFiltre>`)
@@ -76,7 +76,7 @@ export default function InfoGroupButtonFiltre(tab) {
 
             {/* sizes */}
             <Section
-                title="GroupButtonFiltre sizes"
+                title="sizes"
                 description="разные размеры"
                 code={sizes
                     .map((size) => `<GroupButtonFiltre size="${size}" shadow="sm">${size}</GroupButtonFiltre>`)
@@ -96,6 +96,8 @@ export default function InfoGroupButtonFiltre(tab) {
                             <GroupButtonFiltre
                                 size={size}
                                 key={size}
+                                color='secondary'
+                                variant='dash'
                                 value='playground'
                                 className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
@@ -108,7 +110,7 @@ export default function InfoGroupButtonFiltre(tab) {
 
             {/* colors */}
             <Section
-                title="GroupButtonFiltre colors"
+                title="colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<GroupButtonFiltre size="sm" color="${color}" shadow="sm">${color}</GroupButtonFiltre>`)

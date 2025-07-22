@@ -12,7 +12,7 @@ export default function InfoTypography(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="Typography" description="кнопка"
+            <Section title="base" description="кнопка"
                 code={`<Typography>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Typography>`}
             >
                 <div className="flex justify-center">
@@ -24,7 +24,7 @@ export default function InfoTypography(tab) {
 
             {/* variants */}
             <Section
-                title="Typography variants"
+                title="variants"
                 description="разные стили"
                 code={variants
                     .map((variant) => `<Typography variant="${variant}">${variant}</Typography>`)
@@ -42,7 +42,7 @@ export default function InfoTypography(tab) {
 
             {/* base color variants */}
             <Section
-                title="Typography base variants theme colors"
+                title="base variants theme colors"
                 description="разные цвета"
                 code={colors
                     .map((color) => `<Typography color="${color}">'${color}'</Typography>`)
@@ -59,7 +59,7 @@ export default function InfoTypography(tab) {
 
             {/* custom color */}
             <Section
-                title="Typography custom color"
+                title="custom color"
                 description="цвета и стили"
                 code={variants
                     .map(
@@ -86,7 +86,7 @@ export default function InfoTypography(tab) {
 
             {/* shadows */}
             <Section
-                title="Typography shadow variants"
+                title="shadow"
                 description="цвета и стили"
                 code={textShadows
                     .map(
@@ -111,7 +111,7 @@ export default function InfoTypography(tab) {
 
             { /* shadows custom color */ }
             <Section
-                title="Typography shadow custom color"
+                title="shadow custom color"
                 description="цвета и стили"
                 code={colorsCustom
                     .map(
@@ -137,7 +137,7 @@ export default function InfoTypography(tab) {
 
             {/* tracking */}
             <Section
-                title="Typography tracings (later spacing)"
+                title="tracings (later spacing)"
                 description=""
                 code={trackingVariants
                     .map(

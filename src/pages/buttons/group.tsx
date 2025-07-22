@@ -66,7 +66,7 @@ export default function InfoGroupButton(tab) {
             >
                 <Grid className='flex-col justify-center'>
                     {sizes.map((size) => (
-                        <div key={size} className="flex-col justify-center w-full m-auto">
+                        <div key={size} className="flex-col justify-center">
                             <Divdder
                                 className='py-4'
                                 position='end'
@@ -78,9 +78,12 @@ export default function InfoGroupButton(tab) {
                             <GroupButton
                                 size={size}
                                 key={size}
-                                value='playground'
-                                className='w-120 m-auto'
-                                items={['documentation', 'playground', 'any']}
+                                value='play'
+                                variant='dash'
+                                shadow='sm'
+                                color='secondary'
+                                className='max-w-80 m-auto'
+                                items={['doc', 'play', 'any']}
                             />
                         </div>
                     ))}

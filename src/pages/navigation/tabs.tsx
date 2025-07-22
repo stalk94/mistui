@@ -44,7 +44,6 @@ export default function InfoTabs(tab) {
                         <div key={i} className='flex flex-col'>
                             <Divdder 
                                 className='py-4'
-                                variant='dashed' 
                                 position='end'
                             >
                                 <Typography color='#daf166' variant='caption'>
@@ -75,7 +74,6 @@ export default function InfoTabs(tab) {
                         <div key={i} className='flex flex-col'>
                             <Divdder 
                                 className='py-4'
-                                variant='dashed' 
                                 position='end'
                             >
                                 <Typography color='#daf166' variant='caption'>
@@ -106,7 +104,6 @@ export default function InfoTabs(tab) {
                         <div key={i} className='flex flex-col'>
                             <Divdder  
                                 className='py-4'
-                                variant='dashed' 
                                 position='end'
                             >
                                 <Typography color={color} variant='caption'>

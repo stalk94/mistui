@@ -11,6 +11,7 @@ import { MdDataArray } from "react-icons/md";
 import { MdDataObject } from "react-icons/md";
 import { CgMenuMotion } from "react-icons/cg";
 import { AiOutlineFunction } from "react-icons/ai";
+import { formatCodeForShiki } from '@/editor/helpers/dom';
 export { colors, variants, sizes, shadows, textShadows, variantsText } from './meta';
 
 
@@ -33,6 +34,8 @@ export const colorsCustom = [
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 export function CodeBlock({ code }) {
+   
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -41,7 +44,7 @@ export function CodeBlock({ code }) {
         >
             <ShikiHighlighter
                 showLanguage={true}
-                language="ts"
+                language="tsx"
                 theme='one-dark-pro'
                 className='shadow-sm'
                 delay={100}
@@ -50,7 +53,7 @@ export function CodeBlock({ code }) {
                     fontFamily: 'JetBrains Mono, monospace'
                 }}
             >
-                { code.trim() }
+                { formatCodeForShiki(code) }
             </ShikiHighlighter>
         </motion.div>
     );
@@ -81,7 +84,7 @@ export function Section({
                         children='#'
                         className='mr-1 btn btn-ghost p-2'
                     />
-                    <Typography variant=''>{`${title}`}</Typography>
+                    <Typography variant=''>{`${title.charAt(0).toUpperCase() + title.slice(1)}`}</Typography>
                 </div>
                 {code && (
                     <div className="flex gap-2">

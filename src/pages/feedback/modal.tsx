@@ -27,7 +27,8 @@ function Render() {
                 shadow='sm'
                 size='md'
                 style={{ margin: 3 }}
-                color='primary'
+                color='secondary'
+                variant='dash'
                 onClick={() => ref?.current?.showModal()}
             >
                 open modal
@@ -49,7 +50,8 @@ export default function InfoModal(tab) {
                         shadow='sm'
                         size='md'
                         style={{ margin: 3 }}
-                        color='primary'
+                        color='success'
+                        variant='dash'
                         onClick={() => document.querySelector('[data-modal-root]').showModal()}
                     >
                         open modal

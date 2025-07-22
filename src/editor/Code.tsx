@@ -1,329 +1,52 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import PropsVariator, { store } from './config-props';
-import Acordeon from '../components/acordeon';
-import BreadCrumbs from '../components/breadcrumbs';
-import Form from '../components/form/Form';
-import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, EnvelopeIcon, FolderIcon } from '@heroicons/react/24/outline';
-import { BaseInput, NumberInput, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
-import { 
-    MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
-    GroupButton, GroupButtonFiltre, IconButton, Divider,
-    Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
-    DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
-    Hero, Footer, AppBar, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert
-} from '../index';
-import List from '@/components/list/base';
-import Stat from '../components/utils/stat';
-import { Schema } from '../components/form/types';
-import { __generate } from './helpers/generate-tw';
-import Tabs from '../components/tabs';
-import Preview from '../components/app-bar/Preview';
-import Layer from './Layer';
-import Code from './Code';
-import Documentation from '../pages';
+import ShikiHighlighter from "react-shiki";
+import { store } from './config-props';
+import { formatCodeForShiki, toJSXProps } from './helpers/dom';
 
 
 
-const AlertRender = (props) => {
-    const { addAlert } = useAlert();
-
-    const useTextAllert = (type: 'error' | 'warning' | 'success' | 'info') => {
-        const words = [
-            "Ошибка", "Успешно", "Действие", "Обновлено", "Предупреждение", "Критическая",
-            "Операция", "Выполнена", "Проблема", "Запущено", "Анализ", "Внимание", "Процесс",
-            "Ожидание", "Прервано", "Система", "Доступ", "Разрешено", "Ограничено", "Завершено",
-            "Неудача", "Обнаружено", "Требуется", "Проверка", "Перезапуск", "Результат",
-            "Конфигурация", "Сбой", "Инициализация", "Запрос", "Режим", "Соединение"
-        ];
-
-        const length = Math.floor(Math.random() * (14 - 6 + 1)) + 6;
-        const randomText = Array.from({ length }, () =>
-            words[Math.floor(Math.random() * words.length)]
-        ).join(" ");
-
-
-        addAlert(type, randomText);
-    }
-
-    return (
-        <>
-            <Button
-                shadow='sm'
-                variant='outline'
-                size='md'
-                style={{ margin: 3 }}
-                color='success'
-                onClick={() => useTextAllert('success')}
-            >
-                success
-            </Button>
-            <Button
-                shadow='sm'
-                variant='outline'
-                size='md'
-                style={{ margin: 3 }}
-                color='info'
-                onClick={() => useTextAllert('info')}
-            >
-                info
-            </Button>
-            <Button
-                shadow='sm'
-                variant='outline'
-                size='md'
-                style={{ margin: 3 }}
-                color='error'
-                onClick={() => useTextAllert('error')}
-            >
-                error
-            </Button>
-            <Button
-                shadow='sm'
-                variant='outline'
-                size='md'
-                style={{ margin: 3 }}
-                color='warning'
-                onClick={() => useTextAllert('warning')}
-            >
-                warning
-            </Button>
-        </>
-    );
-}
-const TableRender = ({ size, ...props }) => {
-    const tab = {
-        xs: 'xss',
-        sm: 'xs',
-        md: 'sm',
-        lg: 'md',
-        xl: 'lg'
-    }
-    const testData = [
-        { name: "Amy Elsner", country: 'RU', rating: 4, data: '03-11-2025', image: 'https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg' },
-        { name: "John Doe", country: 'US', rating: 5, data: '12-05-2024', image: 'https://randomuser.me/api/portraits/men/1.jpg' },
-        { name: "Emma Smith", country: 'UK', rating: 3, data: '07-19-2023', image: 'https://randomuser.me/api/portraits/women/2.jpg' },
-        { name: "Carlos Rodríguez", country: 'ES', rating: 4, data: '11-22-2022', image: 'https://randomuser.me/api/portraits/men/3.jpg' },
-        { name: "Sofia Müller", country: 'DE', rating: 2, data: '05-14-2021', image: 'https://randomuser.me/api/portraits/women/4.jpg' },
-        { name: "Luca Moretti", country: 'IT', rating: 5, data: '09-30-2020', image: 'https://randomuser.me/api/portraits/men/5.jpg' },
-        { name: "Isabelle Dubois", country: 'FR', rating: 3, data: '04-10-2019', image: 'https://randomuser.me/api/portraits/women/6.jpg' },
-        { name: "Hiroshi Tanaka", country: 'JP', rating: 4, data: '08-27-2025', image: 'https://randomuser.me/api/portraits/men/7.jpg' },
-        { name: "Chen Wei", country: 'CN', rating: 5, data: '06-13-2024', image: 'https://randomuser.me/api/portraits/men/8.jpg' },
-        { name: "Olga Ivanova", country: 'RU', rating: 2, data: '03-03-2023', image: 'https://randomuser.me/api/portraits/women/9.jpg' },
-        { name: "Pedro Gomez", country: 'MX', rating: 3, data: '01-29-2022', image: 'https://randomuser.me/api/portraits/men/10.jpg' },
-        { name: "Fatima Al-Farsi", country: 'AE', rating: 4, data: '11-05-2021', image: 'https://randomuser.me/api/portraits/women/11.jpg' },
-        { name: "William Johnson", country: 'CA', rating: 5, data: '07-21-2020', image: 'https://randomuser.me/api/portraits/men/12.jpg' },
-        { name: "Elena Petrova", country: 'RU', rating: 3, data: '02-14-2019', image: 'https://randomuser.me/api/portraits/women/13.jpg' },
-        { name: "Mohammed Hassan", country: 'EG', rating: 2, data: '12-09-2025', image: 'https://randomuser.me/api/portraits/men/14.jpg' },
-        { name: "Aisha Khan", country: 'PK', rating: 4, data: '05-18-2024', image: 'https://randomuser.me/api/portraits/women/15.jpg' },
-        { name: "Benjamin Andersson", country: 'SE', rating: 5, data: '08-26-2023', image: 'https://randomuser.me/api/portraits/men/16.jpg' },
-        { name: "Laura García", country: 'AR', rating: 3, data: '10-31-2022', image: 'https://randomuser.me/api/portraits/women/17.jpg' },
-        { name: "Nathan Brown", country: 'AU', rating: 4, data: '06-20-2021', image: 'https://randomuser.me/api/portraits/men/18.jpg' },
-        { name: "Mia Nilsson", country: 'NO', rating: 2, data: '03-25-2020', image: 'https://randomuser.me/api/portraits/women/19.jpg' }
-    ];
-   
-
-    return (
-        <DataTable
-            key={`image-col-${size}`}
-            size={size}
-            {...props}
-            value={testData}
-            header={
-                <div>
-                    header
-                </div>
-            }
-            footer={
-                <div>
-                    footer
-                </div>
-            }
-        >
-            <ColumnDataTable
-                header="Image"
-                field="image"
-                body={(data) => <Avatar size={tab[size]} src={data?.image} />}
-            />
-            <ColumnDataTable header="Name" filter filterPlaceholder="По именам" sortable field="name" />
-            <ColumnDataTable
-                header="Rating"
-                sortable
-                field="rating"
-                body={(data) => (
-                    <div className={`rating rating-${size}`}>
-                        {[1, 2, 3, 4, 5].slice(0, data.rating).map((_, i) => (
-                            <div
-                                key={i}
-                                className="mask mask-star bg-amber-300"
-                                aria-label="1 star"
-                            />
-                        ))}
-                    </div>
-                )}
-            />
-            <ColumnDataTable header="Data" sortable field="data" />
-            <ColumnDataTable
-                header="Country"
-                sortable
-                field="country"
-                body={(data) => <Flag size={size} code={data?.country} />}
-            />
-        </DataTable>
-    );
-}
-const testSchema: Schema[] = [{
-    type: 'text',
-    placeholder: 'text',
-    value: 'xro',
-    id: 'text',
-    label: 'text',
-    labelLeft: 't',
-    size: 'sm',
-    required: true
-},{
-    type: 'number',
-    value: 3,
-    id: 'number',
-    label: 'number',
-    size: 'sm',
-    iconEnable: true
-},{
-    type: 'textArea',
-    value: 'text',
-    id: 'textArea',
-    placeholder: 'xro',
-    label: 'text area',
-    size: 'sm'
-},{
-    type: 'color',
-    value: 'red',
-    id: 'color',
-    label: 'color picker',
-    size: 'sm',
-},{
-    type: 'time',
-    value: 'test2',
-    id: 'time',
-    label: 'time',
-    size: 'sm',
-},{
-    type: 'date',
-    value: 'test2',
-    id: 'date',
-    label: 'date',
-    size: 'sm'
-},{
-    type: 'autocomplete',
-    placeholder: 'text',
-    value: 'test2',
-    id: 'autocomplete',
-    label: 'autocomplete',
-    size: 'sm',
-    options: ['test', 'test2']
-},{
-    type: 'select',
-    placeholder: 'test',
-    id: 'select',
-    label: 'select',
-    size: 'sm',
-    items: ['test', 'test2']
-},{
-    type: 'file',
-    value: 3,
-    id: 'file',
-    label: 'file loader',
-    size: 'sm'
-},{
-    type: 'slider',
-    value: 40,
-    labelLeft: 'test',
-    id: 'slider',
-    label: 'slider',
-    size: 'sm',
-},{
-    type: 'switch',
-    value: false,
-    id: 'switch',
-    labelRight: 'switch',
-    size: 'sm',
-    style: { marginTop: 10 }
-},{
-    type: 'checkbox',
-    value: false,
-    id: 'checkbox',
-    labelRight: 'checkbox',
-    style: { marginTop: 5, backgroundColor: 'inherit' },
-    size: 'sm'
-},{
-    type: 'radio',
-    value: true,
-    id: 'radio',
-    labelRight: 'radio',
-    style: { marginTop: 5 },
-    size: 'sm',
-}
-];
 const patterns = {
     // Texts
-    Typography: (props) => (
-        <div className="space-y-1">
-            <Typography
-                as='p'
-                variant='h1'
-                {...props}
-            >
-                tests and improvements
-            </Typography>
-        </div>
-    ),
-    MarqueText: (props) => (
-        <MarqueText
-            color='white'
-            {...props}
-        />
-    ),
-    Link: (props) => (
-        <Link
-            variant='subtitle1'
-            color='white'
-            children='link'
-            {...props}
-        />
-    ),
+    Typography: (props) => (`
+        <Typography
+            ${toJSXProps(props)}
+        >
+            tests and improvements
+        </Typography>
+    `),
+    MarqueText: (props) => (`
+        <MarqueText ${toJSXProps(props)} />
+    `),
+    Link: (props) => (`
+        <Link ${toJSXProps(props)} />
+    `),
 
     // Buttons
-    Button: (props) => (
-        <Button
-            shadow='lg'
-            style={{ margin: 3 }}
-            {...props}
-        >
+    Button: (props) => (`
+        <Button ${toJSXProps(props)}>
             button
         </Button>
-    ),
-    IconButton: (props) => (
+    `),
+    IconButton: (props) => (`
         <>
             <IconButton
-                style={{ margin: 3 }}
-                {...props}
+                ${toJSXProps(props)}
             >
                 <TrashIcon />
             </IconButton>
         </>
-    ),
-    GroupButtons: (props)=> (
+    `),
+    GroupButtons: (props)=> (`
         <GroupButton
             items={['test', 'test2']}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
-    GroupButtonFiltre: (props)=> (
+    `),
+    GroupButtonFiltre: (props)=> (`
         <GroupButtonFiltre
             items={['test', 'test2']}
-            {...props}
+            ${toJSXProps(props)}
         />
-    ),
+    `),
 
     // Inputs
     TextInput: (props) => (
@@ -971,61 +694,27 @@ const patterns = {
 
 
 
-export default function SandBox() {
-    const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
+export default function Code({ name }) {
     const cache = store.cache.use();
-    const emmiter = store.emmiterProps.use();
-    const { componentName } = useParams();
+  
     
-    React.useEffect(()=> {
-        //__generate()
-    
-        if (emmiter) {
-            store.cache.set((old)=> {
-                if (!emmiter.colorCustom) return ({...old, ...emmiter});
-                else return ({...old, color: emmiter.colorCustom});
-            });
-        }
-    }, [emmiter]);
-    
-
-    return (
-        <main className="flex flex-col h-full w-full" style={{maxWidth: '80%'}}>
-            <div
-                className="flex gap-4 px-1 rounded-sm w-fit shadow-sm"
-            >
-                <GroupButton
-                    variant='soft'
-                    color='info'
-                    size='xs'
-                    value={mod}
-                    onChange={setMod}
-                    style={{padding:2, margin: 'auto'}}
-                    items={['documentation', 'playground']}
-                />
-            </div>
-
-            {mod === 'playground' && 
-                <>
-                    <PropsVariator />
-                    <Code name={componentName} />
-                </>
-            }
-
-            {mod === 'playground' && (componentName && patterns[componentName]) &&
-                <Layer
-                    name={componentName}
+    return(
+        <div className='absolute bottom-0 w-[80%]'>
+            { patterns[name] && 
+                <ShikiHighlighter
+                    showLanguage={true}
+                    language="tsx"
+                    theme='one-dark-pro'
+                    className='shadow-sm'
+                    delay={100}
+                    style={{
+                        fontSize: 14,
+                        fontFamily: 'JetBrains Mono, monospace'
+                    }}
                 >
-                    <div className='flex-1 p-2'>
-                        { patterns[componentName](cache) }
-                    </div>
-                </Layer>
+                    { formatCodeForShiki(patterns[name](cache)) }
+                </ShikiHighlighter> 
             }
-            {mod === 'documentation' &&
-                <Documentation
-                    preview={componentName}
-                />
-            }
-        </main>
+        </div>
     );
 }
