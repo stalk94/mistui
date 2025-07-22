@@ -112,8 +112,8 @@ export function createGradientStyle(
 ): React.CSSProperties {
     const base = colord(baseColor);
 
-    const lighter = base.lighten(0.65).alpha(0.4).toHex();
-    const darker = base.lighten(0.5).alpha(0.4).toHex();
+    const lighter = base.lighten(0.65).alpha(0.2).toHex();
+    const darker = base.lighten(0.9).alpha(0.1).toHex();
 
     return {
         backgroundImage: `linear-gradient(${direction}, ${lighter}, ${baseColor}, ${darker})`,

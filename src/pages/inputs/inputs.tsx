@@ -8,39 +8,48 @@ import { inputsMeta } from '../meta';
 export default function InfoInput(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* default */}
-            <Section title="BaseInput" description="кнопка"
-                code={`<BaseInput type='text' size='sm' placeholder='placeholder'></BaseInput>`}
+            {tab}
+
+            {/* base */}
+            <Section
+                title="Base"
+                description="simple input with icons and label"
+                code={`
+                    <BaseInput
+                        size="sm"
+                        placeholder="placeholder"
+                        labelLeft="🔍"
+                        labelTop="label"
+                    />
+                `}
             >
                 <div className="flex justify-center">
                     <BaseInput
-                        type='text'
-                        size='sm'
-                        placeholder='placeholder'
-                        labelLeft={'🔍︎'}
-                        labelTop={'label'}
+                        type="text"
+                        size="sm"
+                        placeholder="placeholder"
+                        labelLeft="🔍"
+                        labelTop="label"
                     />
                 </div>
             </Section>
 
             {/* variants */}
             <Section
-                title="BaseInput variants"
-                description="разные стили"
+                title="Variants"
+                description=""
                 code={variants
-                    .map((variant) => `<BaseInput variant="${variant}">${variant}</BaseInput>`)
-                    .join('\n')
-                }
+                    .map((v) => `<BaseInput variant="${v}" placeholder="${v}" />`)
+                    .join('\n')}
             >
                 <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput 
-                            key={i} 
-                            variant={variant}
-                            type='text'
-                            size='sm'
+                    {variants.map((variant) => (
+                        <BaseInput
+                            key={variant}
+                            type="text"
+                            size="sm"
                             placeholder={variant}
+                            variant={variant}
                         />
                     ))}
                 </ButtonGrid>
@@ -48,20 +57,20 @@ export default function InfoInput(tab) {
 
             {/* colors */}
             <Section
-                title="BaseInput base variants theme colors"
-                description="разные цвета"
+                title="Theme Colors"
+                description=""
                 code={colors
-                    .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
+                    .map((c) => `<BaseInput color="${c}" variant="outline" placeholder="${c}" />`)
                     .join('\n')}
             >
                 <ButtonGrid>
-                    {colors.map((color, i) => (
-                        <BaseInput 
-                            key={i} 
-                            variant='outline'
+                    {colors.map((color) => (
+                        <BaseInput
+                            key={color}
+                            variant="outline"
                             color={color}
-                            type='text'
-                            size='sm'
+                            type="text"
+                            size="sm"
                             placeholder={color}
                         />
                     ))}
@@ -70,166 +79,130 @@ export default function InfoInput(tab) {
 
             {/* sizes */}
             <Section
-                title="Button sizes"
-                description="разные размеры"
+                title="Sizes"
+                description=""
                 code={sizes
-                    .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
+                    .map((size) => `<BaseInput size="${size}" placeholder="${size}" />`)
                     .join('\n')}
             >
                 <ButtonGrid>
                     {sizes.map((size) => (
-                        <BaseInput 
-                            key={size} 
-                            size={size} 
-                            shadow="sm"
-                            labelTop={size}
+                        <BaseInput
+                            key={size}
+                            size={size}
                             placeholder={size}
+                            labelTop={size}
                             value={size === 'xs' ? 'easter egg' : ''}
                         />
                     ))}
                 </ButtonGrid>
             </Section>
 
-            {/* custom color */}
+            {/* custom colors */}
             <Section
-                title="BaseInput custom color"
-                description="цвета и стили"
+                title="Custom Colors"
+                description=""
                 code={variants
-                    .map(
-                        (variant, i) =>
-                            `<BaseInput variant="${variant}" color="${colorsCustom[i]}">${variant}</BaseInput>`
-                    )
+                    .map((v, i) => `<BaseInput variant="${v}" color="${colorsCustom[i]}" />`)
                     .join('\n')}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
                         <BaseInput
                             key={variant}
+                            size="sm"
                             variant={variant}
-                            size='sm'
                             color={colorsCustom[i]}
                             placeholder={colorsCustom[i]}
-                        >
-                           
-                        </BaseInput>
+                        />
                     ))}
                 </ButtonGrid>
             </Section>
 
-            {/* label left */}
+            {/* labels left */}
             <Section
-                title="BaseInput label left"
-                description="цвета и стили"
-                code={variants
-                    .map(
-                        (variant, i) =>
-                            `<BaseInput variant="${variant}" color="${colorsCustom[i]}">${variant}</BaseInput>`
-                    )
-                    .join('\n')}
+                title="Label Left"
+                description="label left"
+                code={`<BaseInput labelLeft="🔍" />`}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
                         <BaseInput
                             key={variant}
+                            size="sm"
                             variant={variant}
                             color={colors[i]}
-                            size='sm'
-                            
                             placeholder={colorsCustom[i]}
-                            labelLeft={'🔍︎'}
-                        >
-                           
-                        </BaseInput>
+                            labelLeft="🔍"
+                        />
                     ))}
                 </ButtonGrid>
             </Section>
 
-             <Section
-                title="BaseInput label right"
-                description="цвета и стили"
-                code={variants
-                    .map(
-                        (variant, i) =>
-                            `<BaseInput variant="${variant}" color="${colorsCustom[i]}">${variant}</BaseInput>`
-                    )
-                    .join('\n')}
-            >
-                <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput
-                            key={variant}
-                            variant={variant}
-                            color={colors[i]}
-                            size='sm'
-                            
-                            placeholder={colorsCustom[i]}
-                            labelRight={'🔍︎'}
-                        >
-                           
-                        </BaseInput>
-                    ))}
-                </ButtonGrid>
-            </Section>
-
+            {/* labels right */}
             <Section
-                title="BaseInput label top"
-                description="цвета и стили"
-                code={variants
-                    .map(
-                        (variant, i) =>
-                            `<BaseInput variant="${variant}" color="${colorsCustom[i]}">${variant}</BaseInput>`
-                    )
-                    .join('\n')}
+                title="Label Right"
+                description="label right"
+                code={`<BaseInput labelRight="🔍" />`}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
                         <BaseInput
                             key={variant}
+                            size="sm"
                             variant={variant}
                             color={colors[i]}
-                            size='sm'
-                            
                             placeholder={colorsCustom[i]}
-                            labelTop={variant +' '+ colors[i]}
-                        >
-                           
-                        </BaseInput>
+                            labelRight="🔍"
+                        />
                     ))}
                 </ButtonGrid>
             </Section>
-            
-             <Section
-                title="BaseInput label mixed"
-                description="цвета и стили"
-                code={variants
-                    .map(
-                        (variant, i) =>
-                            `<BaseInput variant="${variant}" color="${colorsCustom[i]}">${variant}</BaseInput>`
-                    )
-                    .join('\n')}
+
+            {/* labels top */}
+            <Section
+                title="Label Top"
+                description="label-top"
+                code={`<BaseInput labelTop="Label" />`}
             >
                 <ButtonGrid>
                     {variants.map((variant, i) => (
                         <BaseInput
                             key={variant}
+                            size="sm"
                             variant={variant}
                             color={colors[i]}
-                            size='sm'
-                            
                             placeholder={colorsCustom[i]}
-                            labelLeft={'🔍︎'}
-                            labelRight={'🔍︎'}
-                            labelTop={variant +' '+ colors[i]}
-                        >
-                           
-                        </BaseInput>
+                            labelTop={`${variant} ${colors[i]}`}
+                        />
+                    ))}
+                </ButtonGrid>
+            </Section>
+
+            {/* mixed labels */}
+            <Section
+                title="Mixed Labels"
+                description=""
+                code={`<BaseInput labelTop="..." labelLeft="🔍" labelRight="🔍" />`}
+            >
+                <ButtonGrid>
+                    {variants.map((variant, i) => (
+                        <BaseInput
+                            key={variant}
+                            size="sm"
+                            variant={variant}
+                            color={colors[i]}
+                            placeholder={colorsCustom[i]}
+                            labelLeft="🔍"
+                            labelRight="🔍"
+                            labelTop={`${variant} ${colors[i]}`}
+                        />
                     ))}
                 </ButtonGrid>
             </Section>
         </div>
     );
 }
-
 
 InfoInput.meta = {
     ...inputsMeta

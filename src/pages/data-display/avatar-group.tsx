@@ -7,21 +7,32 @@ import { baseMeta } from '../meta';
 export default function InfoAvatarGroup(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* image */}
-            <Section 
-                title="AvatarGroup" 
-                description="кнопка" 
-                code={`<AvatarGroup variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></AvatarGroup>`}
+            {tab}
+
+            {/* base group */}
+            <Section
+                title="Base"
+                description="Avatar group with images and overflow"
+                code={`
+                    <AvatarGroup
+                        size="md"
+                        items={[
+                            { src: "https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" },
+                            { src: "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" },
+                            { src: "https://img.daisyui.com/images/profile/demo/batperson@192.webp" },
+                            { children: "+99" }
+                        ]}
+                    />
+                `}
             >
                 <div className="flex justify-center">
-                    <AvatarGroup 
-                        size='md'
+                    <AvatarGroup
+                        size="md"
                         items={[
-                            { src: 'https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'},
-                            { src: 'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp'},
-                            { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp'},
-                            { children: '+99' }
+                            { src: 'https://img.daisyui.com/images/profile/demo/yellingcat@192.webp' },
+                            { src: 'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp' },
+                            { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp' },
+                            { children: '+99' },
                         ]}
                     />
                 </div>
@@ -29,23 +40,25 @@ export default function InfoAvatarGroup(tab) {
 
             {/* sizes */}
             <Section
-                title="AvatarGroup sizes"
-                description="разные размеры"
+                title="Sizes"
+                description="Different avatar group sizes"
                 code={sizes
-                    .map((size) => `<AvatarGroup size="${size}" shadow="sm">${size}</AvatarGroup>`)
+                    .map(
+                        (size) => `<AvatarGroup size="${size}" items={[{ src: "..." }, { src: "..." }]} />`
+                    )
                     .join('\n')}
             >
-               <div className="flex-col justify-center items-center">
+                <div className="flex flex-col gap-4 items-center">
                     {sizes.map((size) => (
-                        <div key={size} className="flex flex-col justify-center items-center">
+                        <div key={size} className="flex flex-col items-center text-xs text-muted">
                             {size}
-                            <AvatarGroup 
+                            <AvatarGroup
                                 size={size}
                                 items={[
-                                    { src: 'https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'},
-                                    { src: 'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp'},
-                                    { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp'},
-                                    { children: '+99' }
+                                    {src: 'https://img.daisyui.com/images/profile/demo/yellingcat@192.webp',},
+                                    {src: 'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp',},
+                                    { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp',},
+                                    { children: '+99' },
                                 ]}
                             />
                         </div>
@@ -63,7 +76,7 @@ InfoAvatarGroup.meta = {
     isGradient: {
         values: ['boolean'],
         type: 'boolean',
-        description: 'Включает градиентную заливку.'
+        description: 'Controls the visual form style component.'
     },
     items: {
         values: ['AvatarProps'],

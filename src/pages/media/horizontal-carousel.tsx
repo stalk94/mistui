@@ -15,46 +15,47 @@ const items = [
 export default function InfoHorizontalCarousel(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
+            {tab}
+
             {/* default */}
-            <Section title="HorizontalCarousel" description="кнопка" code={`<HorizontalCarousel></HorizontalCarousel>`}>
+            <Section
+                title="HorizontalCarousel"
+                description="Basic horizontal carousel"
+                code={`<HorizontalCarousel items={items} />\n\n// items example:\n${JSON.stringify(items, null, 2)}`}
+            >
                 <Grid className="justify-center">
-                    <HorizontalCarousel
-                        items={items}
-                    />
+                    <HorizontalCarousel items={items} />
                 </Grid>
             </Section>
 
-            {/* isFull */}
+            {/* autoplay */}
             <Section
-                title="HorizontalCarousel vertical"
-                description="разные стили"
+                title="HorizontalCarousel with autoplay"
+                description="Carousel with autoplay enabled"
+                code={`<HorizontalCarousel autoplay items={items} />`}
+            >
+                <Grid className="justify-center">
+                    <HorizontalCarousel autoplay items={items} />
+                </Grid>
+            </Section>
+
+            {/* other styles */}
+            <Section
+                title="HorizontalCarousel different styles"
+                description="Various style options"
                 code={''}
             >
                 <Grid className="justify-center">
-                    <HorizontalCarousel
-                        autoplay
-                        items={items}
-                    />
+                    <HorizontalCarousel autoplay items={items} />
                 </Grid>
             </Section>
 
-            {/* isSide */}
+            {/* custom color */}
             <Section
-                title="HorizontalCarousel vertical"
-                description="разные стили"
-                code={''}
+                title="Custom color"
+                description="Example with custom styling"
+                code={`<HorizontalCarousel></HorizontalCarousel>`}
             >
-                <Grid className="justify-center">
-                    <HorizontalCarousel
-                        autoplay
-                        items={items}
-                    />
-                </Grid>
-            </Section>
-
-            {/* color */}
-            <Section title="Custom color" description="кнопка" code={`<HorizontalCarousel></HorizontalCarousel>`}>
                 <Grid className="justify-center">
                     
                 </Grid>
@@ -62,7 +63,6 @@ export default function InfoHorizontalCarousel(tab) {
         </div>
     );
 }
-
 
 const { children, ...rest } = baseMeta;
 InfoHorizontalCarousel.meta = {

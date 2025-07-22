@@ -11,7 +11,10 @@ export default function InfoIconButton(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="IconButton" description="кнопка" code={`<IconButton size='sm'>default</IconButton>`}>
+            <Section title="" 
+                description="" 
+                code={`<IconButton size='sm'><HomeIcon /></IconButton>`}
+            >
                 <div className="flex justify-center">
                     <IconButton size='sm'>
                         <HomeIcon />
@@ -20,7 +23,11 @@ export default function InfoIconButton(tab) {
             </Section>
 
             {/* rounded */}
-            <Section title="Rounded" description="кнопка" code={`<IconButton size='sm'>default</IconButton>`}>
+            <Section 
+                title="Rounded" 
+                description="" 
+                code={`<IconButton isRounded size='sm'><HomeIcon /></IconButton>`}
+            >
                 <div className="flex justify-center">
                     <IconButton size='sm' isRounded>
                         <HomeIcon />
@@ -30,10 +37,10 @@ export default function InfoIconButton(tab) {
 
             {/* variants */}
             <Section
-                title="IconButton variants"
-                description="разные стили"
+                title="variants"
+                description=""
                 code={variants
-                    .map((variant) => `<IconButton size="sm" variant="${variant}">${variant}</IconButton>`)
+                    .map((variant) => `<IconButton size="sm" variant="${variant}"><HomeIcon /></IconButton>`)
                     .join('\n')
                 }
             >
@@ -48,10 +55,10 @@ export default function InfoIconButton(tab) {
 
             {/* sizes */}
             <Section
-                title="IconButton sizes"
-                description="разные размеры"
+                title="sizes"
+                description=""
                 code={sizes
-                    .map((size) => `<IconButton size="${size}" shadow="sm">${size}</IconButton>`)
+                    .map((size) => `<IconButton size="${size}" shadow="sm"><HomeIcon /></IconButton>`)
                     .join('\n')}
             >
                 <IconButtonGrid>
@@ -65,10 +72,10 @@ export default function InfoIconButton(tab) {
 
             {/* colors */}
             <Section
-                title="IconButton colors"
-                description="разные цвета"
+                title="colors"
+                description=""
                 code={colors
-                    .map((color) => `<IconButton size="sm" color="${color}" shadow="sm">${color}</IconButton>`)
+                    .map((color) => `<IconButton size="sm" color="${color}" shadow="sm"><HomeIcon /></IconButton>`)
                     .join('\n')}
             >
                 <IconButtonGrid>
@@ -82,12 +89,12 @@ export default function InfoIconButton(tab) {
 
             {/* custom color */}
             <Section
-                title="IconButton custom color"
-                description="цвета и стили"
+                title="custom color"
+                description=""
                 code={variants
                     .map(
                         (variant, i) =>
-                            `<IconButton size="sm" variant="${variant}" color="${colorsCustom[i]}" shadow="xs">${variant}</IconButton>`
+                            `<IconButton size="sm" variant="${variant}" color="${colorsCustom[i]}" shadow="xs"><HomeIcon /></IconButton>`
                     )
                     .join('\n')}
             >
@@ -116,16 +123,16 @@ InfoIconButton.meta = {
     isRounded: {
         values: ['any'],
         type: 'boolean',
-        description: ''
+        description: 'Enables border rounding.'
     },
     icon: {
         values: ['React.ReactNode'],
         type: 'enum',
-        description: 'Icon component.'
+        description: 'SVG icon component (alternative children props)*'
     },
     children: {
         values: ['React.ReactNode'],
         type: 'enum',
-        description: 'Icon component.'
+        description: 'SVG icon component.'
     }
 }

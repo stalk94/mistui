@@ -15,81 +15,63 @@ const items = [
 export default function InfoBottomNav(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* default */}
-            <Section 
-                title="BottomNav" 
-                description="кнопка" 
-                code={`<BottomNav size='sm'>default</BottomNav>`}
+            {tab}
+
+            {/* Default */}
+            <Section
+                title=""
+                description="Basic bottom navigation component"
+                code={`<BottomNav size="sm" items={items} />`}
             >
                 <div className="flex justify-start">
-                    <BottomNav
-                        size='md'
-                        className='relative'
-                        items={items}
-                    />
+                    <BottomNav size="md" className="relative" items={items} />
                 </div>
             </Section>
 
-
-            {/* sizes */}
+            {/* Sizes */}
             <Section
-                title="BottomNav sizes"
-                description="разные размеры"
+                title="Sizes"
+                description="Different sizes"
                 code={sizes
-                    .map((size) => `<BottomNav size="${size}" shadow="sm">${size}</BottomNav>`)
+                    .map((size) => `<BottomNav size="${size}" items={items} />`)
                     .join('\n')}
             >
-                <BottomNavGrid className='flex-col'>
+                <BottomNavGrid className="flex-col">
                     {sizes.map((size, i) => (
-                        <div key={i} className='flex flex-col justify-start'>
-                            <Divdder
-                                className='py-4'
-                                variant='dashed'
-                                position='end'
-                            >
-                                <Typography color='#daf166' variant='caption'>
+                        <div key={i} className="flex flex-col justify-start">
+                            <Divdder className="py-4" variant="dashed" position="end">
+                                <Typography color="#daf166" variant="caption">
                                     {size}
                                 </Typography>
                             </Divdder>
-
-                            <BottomNav
-                                className='relative'
-                                size={size}
-                                items={items}
-                            />
+                            <BottomNav className="relative" size={size} items={items} />
                         </div>
                     ))}
                 </BottomNavGrid>
             </Section>
 
-            {/* colors */}
+            {/* Colors */}
             <Section
-                title="BottomNav colors"
-                description="разные цвета"
+                title="Colors"
+                description="Different theme colors"
                 code={colors
-                    .map((color) => `<BottomNav size="sm" color="${color}" shadow="sm">${color}</BottomNav>`)
+                    .map((color) => `<BottomNav size="sm" color="${color}" items={items} />`)
                     .join('\n')}
             >
-                <BottomNavGrid className='flex-col'>
+                <BottomNavGrid className="flex-col">
                     {colors.map((color, i) => (
-                        <div key={i} className='flex flex-col'>
-                            <Divdder
-                                className='py-4'
-                                variant='dashed'
-                                position='end'
-                            >
-                                <Typography color={color} variant='caption'>
+                        <div key={i} className="flex flex-col">
+                            <Divdder className="py-4" variant="dashed" position="end">
+                                <Typography color={color} variant="caption">
                                     {color}
                                 </Typography>
                             </Divdder>
-
                             <BottomNav
-                                size="sm"
                                 key={color}
+                                size="sm"
                                 color={color}
                                 items={items}
-                                className='relative'
+                                className="relative"
                             />
                         </div>
                     ))}

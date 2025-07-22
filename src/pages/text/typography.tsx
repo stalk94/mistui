@@ -12,7 +12,7 @@ export default function InfoTypography(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="base" description="кнопка"
+            <Section title="base" description=""
                 code={`<Typography>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Typography>`}
             >
                 <div className="flex justify-center">
@@ -25,7 +25,7 @@ export default function InfoTypography(tab) {
             {/* variants */}
             <Section
                 title="variants"
-                description="разные стили"
+                description=""
                 code={variants
                     .map((variant) => `<Typography variant="${variant}">${variant}</Typography>`)
                     .join('\n')
@@ -43,7 +43,7 @@ export default function InfoTypography(tab) {
             {/* base color variants */}
             <Section
                 title="base variants theme colors"
-                description="разные цвета"
+                description="system theme color"
                 code={colors
                     .map((color) => `<Typography color="${color}">'${color}'</Typography>`)
                     .join('\n')}
@@ -60,7 +60,7 @@ export default function InfoTypography(tab) {
             {/* custom color */}
             <Section
                 title="custom color"
-                description="цвета и стили"
+                description="custom color props"
                 code={variants
                     .map(
                         (variant, i) =>
@@ -87,7 +87,7 @@ export default function InfoTypography(tab) {
             {/* shadows */}
             <Section
                 title="shadow"
-                description="цвета и стили"
+                description=""
                 code={textShadows
                     .map(
                         (shadow, i) =>
@@ -112,7 +112,7 @@ export default function InfoTypography(tab) {
             { /* shadows custom color */ }
             <Section
                 title="shadow custom color"
-                description="цвета и стили"
+                description="text shadow color (e.g., `rgba(0,0,0,0.3)`) or color theme variants."
                 code={colorsCustom
                     .map(
                         (colorShadow, i) =>
@@ -169,26 +169,26 @@ InfoTypography.meta = {
     variant: {
         values: variants,
         type: 'enum',
-        description: 'Вариант текста, определяющий стиль и размер.',
+        description: 'Text variant that defines style and size.',
     },
     fontStyle: {
         values: ['normal', 'italic'],
         type: 'enum',
-        description: 'Стиль шрифта: обычный или курсив.',
+        description: 'Font style: normal or italic.',
     },
     fontFamily: {
         values: ['string'],
         type: 'string',
-        description: 'Название шрифта из набора доступных семейств.',
+        description: 'Font name from the available font families.',
     },
     fontSize: {
         values: ['string', 'number'],
         type: 'enum',
-        description: 'Размер шрифта (например, 16 или "1.2rem").',
+        description: 'Font size (e.g., 16 or "1.2rem").',
     },
     colorShadow: {
         values: ['string'],
         type: 'string',
-        description: 'Цвет тени текста (например, "rgba(0,0,0,0.3)").',
+        description: 'Text shadow color (e.g., "rgba(0,0,0,0.3)") or color theme variants.',
     }
 }

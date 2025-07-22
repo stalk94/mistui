@@ -6,44 +6,50 @@ import { inputsMeta } from '../meta';
 export default function InfoNumberInput(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* default */}
+            {tab}
+
+            {/* base */}
             <Section
-                title="NumberInput"
-                description="Базовый числовой инпут"
-                code={`<NumberInput placeholder="Введите число" />`}
+                title="Base"
+                description="Basic number input"
+                code={`<NumberInput placeholder="Enter a number" />`}
             >
                 <div className="flex justify-center">
-                    <NumberInput size='sm' placeholder="Введите число" />
+                    <NumberInput size="sm" placeholder="Enter a number" />
                 </div>
             </Section>
 
             {/* with icons */}
             <Section
-                title="NumberInput с иконками"
-                description="Инкремент и декремент"
-                code={`<NumberInput iconEnable placeholder="enableIcons" />`}
+                title="With Icons"
+                description="With enable increment and decrement icons"
+                code={`<NumberInput iconEnable placeholder="With icons" />`}
             >
                 <div className="flex justify-center">
-                    <NumberInput value={3} size='sm' iconEnable placeholder="enableIcons" />
+                    <NumberInput
+                        size="sm"
+                        value={3}
+                        iconEnable
+                        placeholder="With icons"
+                    />
                 </div>
             </Section>
 
             {/* sizes */}
             <Section
-                title="NumberInput sizes"
-                description="Разные размеры"
+                title="Sizes"
+                description="Different input sizes"
                 code={sizes
-                    .map((size) => `<NumberInput size="${size}" />`)
-                    .join('\n')}
+                    .map((s) => `<NumberInput size="${s}" placeholder="${s}" />`)
+                    .join("\n")}
             >
                 <ButtonGrid>
                     {sizes.map((size) => (
                         <NumberInput
                             key={size}
                             size={size}
-                            placeholder={size}
                             iconEnable
+                            placeholder={size}
                         />
                     ))}
                 </ButtonGrid>
@@ -51,20 +57,23 @@ export default function InfoNumberInput(tab) {
 
             {/* colors */}
             <Section
-                title="NumberInput colors"
-                description="Разные цвета"
+                title="Colors"
+                description="Theme colors"
                 code={colors
-                    .map((color) => `<NumberInput color="${color}" />`)
-                    .join('\n')}
+                    .map(
+                        (c) =>
+                            `<NumberInput color="${c}" iconEnable placeholder="${c}" />`
+                    )
+                    .join("\n")}
             >
                 <ButtonGrid>
                     {colors.map((color) => (
                         <NumberInput
                             key={color}
-                            size='sm'
+                            size="sm"
                             color={color}
-                            placeholder={color}
                             iconEnable
+                            placeholder={color}
                         />
                     ))}
                 </ButtonGrid>

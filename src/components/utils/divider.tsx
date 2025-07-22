@@ -5,10 +5,19 @@ import { cs } from '../hooks/cs';
 import { useTheme } from '../theme';
 
 
+const sizes = {
+    xs: 1,
+    sm: 1,
+    md: 2,
+    lg: 2,
+    xl: 3
+}
+
+
 export default function Divider({ 
     children,
-    size, 
-    color, 
+    size = 'xs', 
+    color = 'primary', 
     position = 'center', 
     orientation = 'horizontal', 
     style,
@@ -20,8 +29,9 @@ export default function Divider({
     const getSize = size ? `text-${size}` : autosizes.text;
 
     const getBorderStyle = useMemo(()=> {
-        const hs = `border-top: 1px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
-        const ws = `border-right: 1px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
+        const s = sizes[size];
+        const hs = `border-top: ${s}px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
+        const ws = `border-right: ${s}px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
         
         return orientation === 'horizontal' ? hs : ws;
     }, [color, orientation, variant])
@@ -30,10 +40,10 @@ export default function Divider({
     return (
         <Fragment>
             <style>
-                {/*css*/`
+                {`
                     .divider[data-id="${uid}"]::before,
                     .divider[data-id="${uid}"]::after {
-                        ${ getBorderStyle }
+                        ${ getBorderStyle };
                     }
                 `}
             </style>

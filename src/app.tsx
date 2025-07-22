@@ -139,7 +139,7 @@ const App = () => {
 
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/components" element={<SandBoxRoot />}>
+                        <Route path="/components" key={location.pathname} element={<SandBoxRoot />}>
                             <Route index element={<ComponentsRoot/>} />
                             <Route path=":componentName" element={<SandBox />} />
                         </Route>

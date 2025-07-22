@@ -9,8 +9,8 @@ export default function InfoMarque(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="base" description="кнопка"
-                code={`<Link>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Link>`}
+            <Section title="base" description="caption"
+                code={`<Link variant='caption'>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Link>`}
             >
                 <div className="flex justify-center">
                     <Link variant='caption'>
@@ -19,13 +19,12 @@ export default function InfoMarque(tab) {
                 </div>
             </Section>
 
-            {/* variants */}
+            {/* custom color */}
             <Section
-                title="variants"
-                description="разные стили"
-                code={variants
-                    .map((variant) => `<Link variant="${variant}">${variant}</Link>`)
-                    .join('\n')
+                title="color"
+                description="custom color value"
+                code={
+                    `<Link color='lightgray' variant='caption'>1 This converter creates fancy symbols</Link>`
                 }
             >
                  <div className="flex justify-center">
@@ -36,22 +35,21 @@ export default function InfoMarque(tab) {
             </Section>
 
 
-            {/* custom color */}
+            {/* variants */}
             <Section
-                title="custom color"
-                description="цвета и стили"
+                title="variants"
+                description="custom color or all variants"
                 code={variants
                     .map(
                         (variant, i) =>
-                            `<Link variant="${variant}" color="${colorsCustom[i]}">${variant}</Link>`
+                            `<Link variant="${variant}" tracking='tighter' color="${colorsCustom[i]}">${variant}</Link>`
                     )
                     .join('\n')}
             >
                 <div className="flex justify-center flex-col">
                     {variants.map((variant, i) => (
-                        <div className="flex flex-col m-auto">
+                        <div key={variant} className="flex flex-col m-auto">
                             <Link
-                                key={variant}
                                 variant={variant}
                                 color={colorsCustom[i]}
                                 tracking='tighter'

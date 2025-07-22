@@ -6,33 +6,38 @@ import { inputsMeta } from '../meta';
 export default function InfoRadioBox(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            
+            {tab}
+
+            {/* base */}
             <Section
-                title="base"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                title="Base"
+                description="Basic radio box"
+                code={`<RadioBox value={true} />`}
             >
                 <div className="flex justify-center">
-                    <RadioBox
-                        value={true}
-                    />
+                    <RadioBox value={true} />
                 </div>
             </Section>
 
+            {/* variants */}
             <Section
-                title="variants"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                title="Variants"
+                description="Different visual styles"
+                code={variants
+                    .map(
+                        (variant) =>
+                            `<RadioBox variant="${variant}" value={true} />`
+                    )
+                    .join("\n")}
             >
                 <div className="flex justify-center">
                     {variants.map((variant, i) => (
-                        <RadioBox 
-                            key={i} 
+                        <RadioBox
+                            key={i}
                             variant={variant}
-                            size='sm'
+                            size="sm"
                             value={true}
-                            className='mr-2'
+                            className="mr-2"
                         />
                     ))}
                 </div>
@@ -40,17 +45,20 @@ export default function InfoRadioBox(tab) {
 
             {/* sizes */}
             <Section
-                title="sizes"
-                description="разные размеры"
+                title="Sizes"
+                description="Different sizes"
                 code={sizes
-                    .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
-                    .join('\n')}
+                    .map(
+                        (size) =>
+                            `<RadioBox size="${size}" value={true} />`
+                    )
+                    .join("\n")}
             >
                 <ButtonGrid>
                     {sizes.map((size) => (
-                        <RadioBox 
-                            key={size} 
-                            size={size} 
+                        <RadioBox
+                            key={size}
+                            size={size}
                             shadow="sm"
                             labelTop={size}
                             value={true}
@@ -61,19 +69,22 @@ export default function InfoRadioBox(tab) {
 
             {/* colors */}
             <Section
-                title="base variants theme colors"
-                description="разные цвета"
+                title="Colors"
+                description="Theme colors"
                 code={colors
-                    .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
-                    .join('\n')}
+                    .map(
+                        (color) =>
+                            `<RadioBox color="${color}" variant="outline" value={true} />`
+                    )
+                    .join("\n")}
             >
                 <ButtonGrid>
                     {colors.map((color, i) => (
-                        <RadioBox 
-                            key={i} 
-                            variant='outline'
+                        <RadioBox
+                            key={i}
+                            variant="outline"
                             color={color}
-                            size='sm'
+                            size="sm"
                             value={true}
                         />
                     ))}
@@ -89,11 +100,11 @@ InfoRadioBox.meta = {
     value: {
         values: ['string'],
         type: 'string',
-        description: 'Текущее значение цвета в формате rgba().'
+        description: 'The current color value in rgba() format.'
     },
     onChange: {
         values: ['function'],
         type: 'func',
-        description: 'Вызывается при изменении цвета.'
+        description: 'Called when the color changes.'
     },
 }

@@ -119,6 +119,12 @@
 	width: 100%;
 	padding-inline: calc(0.25rem /* 4px */ * 3);
 }
+/* вырубаем фон бордера */
+.divider {
+    &:before, &:after {
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
 
 /* карточка когда image фон */
 .card-image-full-no-overlay {

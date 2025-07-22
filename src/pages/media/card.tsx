@@ -7,88 +7,121 @@ import { baseMeta, orientationMeta } from '../meta';
 export default function InfoCard(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            
+            {tab}
+
             {/* default */}
-            <Section title="Card" description="кнопка" code={`<Card></Card>`}>
+            <Section
+                title="Card"
+                description="Basic card component with image, title, description and actions"
+                code={`<Card 
+                        imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
+                        title="Card Title"
+                        description="A card component with image, title, description and actions."
+                        actions={<Button size="sm" color="success" shadow="lg">Go to</Button>}
+                    />
+                `}
+            >
                 <Grid className="h-80 w-120 m-auto">
                     <Card
-                        imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
-                        title='Card Title'
-                        description='A card component has a figure, a body part, and inside body there are title and actions parts'
+                        imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
+                        title="Card Title"
+                        description="A card component with image, title, description and actions."
                         actions={
-                            <Button
-                                size='sm'
-                                color='success'
-                                shadow='lg'
-                            >
-                                go to
+                            <Button size="sm" color="success" shadow="lg">
+                                Go to
                             </Button>
                         }
                     />
                 </Grid>
             </Section>
 
-            {/* isFull */}
+            {/* full image */}
             <Section
-                title="Card vertical"
-                description="разные стили"
-                code={''}
-            >
-                <Grid className="h-80 w-120 m-auto">
-                    <Card
-                        imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
-                        title='Card Title'
-                        description='A card component has a figure, a body part, and inside body there are title and actions parts'
+                title="Card with full image"
+                description="Card with image covering full card area"
+                code={`
+                    <Card 
+                        imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
                         imageIsFull
-                        actions={
-                            <Button
-                                size='sm'
-                                color='success'
-                                shadow='lg'
-                            >
-                                go to
-                            </Button>
-                        }
+                        title="Card Title"
+                        description="Image covers entire card"
+                        actions={<Button size="sm" color="success" shadow="lg">Go to</Button>}
                     />
-                </Grid>
-            </Section>
-
-            {/* isSide */}
-            <Section
-                title="Card vertical"
-                description="разные стили"
-                code={''}
+                `}
             >
                 <Grid className="h-80 w-120 m-auto">
                     <Card
-                        imageSrc='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'
-                        title='Card Title'
-                        description='A card component has a figure, a body part, and inside body there are title and actions parts'
-                        imageIsSide
+                        imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
+                        imageIsFull
+                        title="Card Title"
+                        description="Image covers entire card"
                         actions={
-                            <Button
-                                size='sm'
-                                color='success'
-                                shadow='lg'
-                            >
-                                go to
+                            <Button size="sm" color="success" shadow="lg">
+                                Go to
                             </Button>
                         }
                     />
                 </Grid>
             </Section>
 
-            {/* color */}
-            <Section title="Custom color" description="кнопка" code={`<Card></Card>`}>
+            {/* side image */}
+            <Section
+                title="Card with side image"
+                description="Card with image shown on the side"
+                code={`
+                    <Card 
+                        imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
+                        imageIsSide
+                        title="Card Title"
+                        description="Image shown on the side"
+                        actions={<Button size="sm" color="success" shadow="lg">Go to</Button>}
+                    />
+                `}
+            >
+                <Grid className="h-80 w-120 m-auto">
+                    <Card
+                        imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
+                        imageIsSide
+                        title="Card Title"
+                        description="Image shown on the side"
+                        actions={
+                            <Button size="sm" color="success" shadow="lg">
+                                Go to
+                            </Button>
+                        }
+                    />
+                </Grid>
+            </Section>
+
+            {/* custom color */}
+            <Section
+                title="Custom color"
+                description="Card with custom background color"
+                code={`
+                    <Card 
+                        color="primary"
+                        title="Colored Card"
+                        description="Card with custom color background."
+                        actions={<Button size="sm" color="success" shadow="lg">Go to</Button>}
+                    />
+                `}
+            >
                 <Grid className="justify-center">
-                    
+                    <Card
+                        color="primary"
+                        title="Colored Card"
+                        description="Card with custom color background."
+                        actions={
+                            <Button size="sm" color="success" shadow="lg">
+                                Go to
+                            </Button>
+                        }
+                    />
                 </Grid>
             </Section>
         </div>
     );
 }
-
 
 InfoCard.meta = {
     ...baseMeta,

@@ -3,6 +3,7 @@ import { Section, Grid as TabsGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { Divdder, Typography } from '@/index';
 import { baseMeta } from '../meta';
+import { Fragment } from 'react/jsx-runtime';
 
 const variants: ("box" | "border" | "lift")[] = ["box", "border", "lift"];
 const items = [
@@ -15,109 +16,89 @@ const items = [
 export default function InfoTabs(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
+            {tab}
+
             {/* default */}
-            <Section 
-                title="Tabs" 
-                description="кнопка" 
+            <Section
+                title="Tabs"
+                description=""
                 code={`<Tabs size='sm'>default</Tabs>`}
             >
                 <div className="flex justify-center">
-                    <Tabs 
-                        size='md'
-                        items={items}
-                    />
+                    <Tabs size="md" items={items} />
                 </div>
             </Section>
 
             {/* variants */}
             <Section
-                title="Tabs variants"
-                description="разные стили"
+                title="variants"
+                description=""
                 code={variants
-                    .map((variant) => `<Tabs size="sm" variant="${variant}">${variant}</Tabs>`)
-                    .join('\n')
-                }
+                    .map(
+                        (variant) => `<Tabs size="sm" variant="${variant}">${variant}</Tabs>`
+                    )
+                    .join("\n")}
             >
-                <TabsGrid className='flex-col'>
+                <TabsGrid className="flex-col">
                     {variants.map((variant, i) => (
-                        <div key={i} className='flex flex-col'>
-                            <Divdder 
-                                className='py-4'
-                                position='end'
-                            >
-                                <Typography color='#daf166' variant='caption'>
-                                    { variant }
+                        <Fragment key={i}>
+                            <Divdder className="py-4" position="end">
+                                <Typography color="#daf166" variant="caption">
+                                    {variant}
                                 </Typography>
                             </Divdder>
-                            <Tabs 
-                                size='sm' 
-                                key={variant} 
-                                variant={variant}
-                                items={items}
-                            />
-                        </div>
+                            <div className="flex justify-center">
+                                <Tabs size="sm" variant={variant} items={items} />
+                            </div>
+                        </Fragment>
                     ))}
                 </TabsGrid>
             </Section>
 
             {/* sizes */}
             <Section
-                title="Tabs sizes"
-                description="разные размеры"
+                title="sizes"
+                description=""
                 code={sizes
                     .map((size) => `<Tabs size="${size}" shadow="sm">${size}</Tabs>`)
-                    .join('\n')}
+                    .join("\n")}
             >
-                <TabsGrid className='flex-col'>
+                <TabsGrid className="flex-col">
                     {sizes.map((size, i) => (
-                        <div key={i} className='flex flex-col'>
-                            <Divdder 
-                                className='py-4'
-                                position='end'
-                            >
-                                <Typography color='#daf166' variant='caption'>
-                                    { size }
+                        <Fragment key={i}>
+                            <Divdder className="py-4" position="end">
+                                <Typography color="#daf166" variant="caption">
+                                    {size}
                                 </Typography>
                             </Divdder>
-                            <Tabs 
-                                key={size} 
-                                size={size} 
-                                shadow="sm"
-                                items={items}
-                            />
-                        </div>
+                            <div className="flex justify-center">
+                                 <Tabs size={size} shadow="sm" items={items} />
+                            </div>
+                        </Fragment>
                     ))}
                 </TabsGrid>
             </Section>
 
             {/* colors */}
             <Section
-                title="Tabs colors"
-                description="разные цвета"
+                title="colors"
+                description=""
                 code={colors
                     .map((color) => `<Tabs size="sm" color="${color}" shadow="sm">${color}</Tabs>`)
-                    .join('\n')}
+                    .join("\n")}
             >
-                <TabsGrid className='flex-col'>
+                <TabsGrid className="flex-col">
                     {colors.map((color, i) => (
-                        <div key={i} className='flex flex-col'>
-                            <Divdder  
-                                className='py-4'
-                                position='end'
-                            >
-                                <Typography color={color} variant='caption'>
-                                    { color }
+                        <Fragment key={i}>
+                            <Divdder className="py-4" position="end">
+                                <Typography color={color} variant="caption">
+                                    {color}
                                 </Typography>
                             </Divdder>
-                            <Tabs
-                                size="sm"
-                                key={color}
-                                color={color}
-                                shadow="sm"
-                                items={items}
-                            />
-                        </div>
+                            <div className="flex justify-center">
+                                <Tabs size="sm" color={color} shadow="sm" items={items} />
+                            </div>
+                        </Fragment>
                     ))}
                 </TabsGrid>
             </Section>

@@ -4,6 +4,7 @@ import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { HomeIcon, DocumentIcon } from '@heroicons/react/24/solid';
 import ButtonInfo from './button';
 import { Divdder, Typography } from '@/index';
+import { orientationMeta } from '../meta';
 
 
 export default function InfoGroupButton(tab) {
@@ -12,7 +13,10 @@ export default function InfoGroupButton(tab) {
             { tab }
             
             {/* default */}
-            <Section title="base" description="кнопка" code={`<GroupButton value='playground' items={['documentation', 'playground', 'any']} size='sm'/>`}>
+            <Section title="base" 
+                description="" 
+                code={`<GroupButton value='playground' items={['documentation', 'playground', 'any']} size='sm'/>`}
+            >
                 <div className="flex justify-center">
                     <GroupButton 
                         size='sm' 
@@ -26,9 +30,9 @@ export default function InfoGroupButton(tab) {
             {/* variants */}
             <Section
                 title="variants"
-                description="разные стили"
+                description=""
                 code={variants
-                    .map((variant) => `<GroupButton size="sm" variant="${variant}">${variant}</GroupButton>`)
+                    .map((variant) => `<GroupButton size="sm" variant="${variant}" items={['doc', 'play', 'any']}/>`)
                     .join('\n')
                 }
             >
@@ -46,7 +50,6 @@ export default function InfoGroupButton(tab) {
                             <GroupButton 
                                 size='sm' 
                                 value='playground'
-                                key={variant} 
                                 variant={variant}
                                 className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
@@ -59,9 +62,9 @@ export default function InfoGroupButton(tab) {
             {/* sizes */}
             <Section
                 title="sizes"
-                description="разные размеры"
+                description=""
                 code={sizes
-                    .map((size) => `<GroupButton size="${size}" shadow="sm">${size}</GroupButton>`)
+                    .map((size) => `<GroupButton shadow='sm' color='secondary' variant='dash' value='play' size="${size}" shadow="sm" items={['doc', 'play', 'any']}/>`)
                     .join('\n')}
             >
                 <Grid className='flex-col justify-center'>
@@ -77,7 +80,6 @@ export default function InfoGroupButton(tab) {
                             </Divdder>
                             <GroupButton
                                 size={size}
-                                key={size}
                                 value='play'
                                 variant='dash'
                                 shadow='sm'
@@ -91,12 +93,12 @@ export default function InfoGroupButton(tab) {
                 </Grid>
             </Section>
 
-            {/* colors */}
+            {/* select */}
             <Section
-                title="colors"
-                description="разные цвета"
+                title="select"
+                description=""
                 code={colors
-                    .map((color) => `<GroupButton size="sm" color="${color}" shadow="sm">${color}</GroupButton>`)
+                    .map((color) => `<GroupButton size="sm" color="${color}" shadow="sm" value={'any'} items={['documentation', 'playground', 'any']}/>`)
                     .join('\n')}
             >
                 <Grid>
@@ -111,7 +113,6 @@ export default function InfoGroupButton(tab) {
                             </Divdder>
                             <GroupButton 
                                 size="sm" 
-                                key={color} 
                                 color={color} 
                                 shadow="sm"
                                 value={['documentation', 'playground', 'any'][Math.floor(Math.random() * 3)]}
@@ -132,7 +133,7 @@ InfoGroupButton.meta = {
     value: {
         values: ['string', 'number'],
         type: 'enum',
-        description: ''
+        description: 'The current value of the select.'
     },
     items: {
         values: [{
@@ -148,12 +149,7 @@ InfoGroupButton.meta = {
             }
         }],
         type: 'array',
-        description: ''
+        description: 'Scheme format data.'
     },
-    orientation: {
-        values: ['horizontal', 'vertical'],
-        type: 'enum',
-        default: 'horizontal',
-        description: ''
-    }
+    ...orientationMeta
 }

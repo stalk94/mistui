@@ -54,7 +54,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
             <style>
                 {cs(`
                     input[data-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor}
+                        color: ${styles?.input?.placeholderColor};
                     }
                     .input-focus[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
@@ -72,7 +72,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                 validator={validator}
                 required={required}
                 style={style}
-                className={className}
+                className={`filter saturate-150 ${className}`}
                 variant={variant}
                 shadow={shadow}
             >

@@ -9,8 +9,8 @@ export default function InfoMarque(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="base" description="кнопка"
-                code={`<MarqueText>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</MarqueText>`}
+            <Section title="base" description=""
+                code={`<MarqueText variant='button'>This converter creates fancy symbols. The explanation starts with unicode; an industry standard which</MarqueText>`}
             >
                 <div className="flex justify-center">
                     <MarqueText variant='button'>
@@ -19,31 +19,31 @@ export default function InfoMarque(tab) {
                 </div>
             </Section>
 
-            {/* variants */}
+            {/* speed */}
             <Section
-                title="variants"
-                description="разные стили"
+                title="speed"
+                description="x2 pxPerSecond = 200"
                 code={variants
-                    .map((variant) => `<MarqueText variant="${variant}">${variant}</MarqueText>`)
+                    .map((variant) => `<MarqueText pxPerSecond={200} variant='button'>1 This converter creates fancy symbols</MarqueText>`)
                     .join('\n')
                 }
             >
                  <div className="flex justify-center">
-                    <MarqueText variant='button'>
+                    <MarqueText pxPerSecond={200} variant='button'>
                         1 This converter creates fancy symbols
                     </MarqueText>
                 </div>
             </Section>
 
 
-            {/* custom color */}
+            {/* short text */}
             <Section
-                title="custom color"
-                description="цвета и стили"
+                title="short text"
+                description="short width text requires more `copies`"
                 code={variants
                     .map(
                         (variant, i) =>
-                            `<MarqueText variant="${variant}" color="${colorsCustom[i]}">${variant}</MarqueText>`
+                            `<MarqueText variant="h6" tracking='tighter' color="${colorsCustom[i]}">${variant}</MarqueText>`
                     )
                     .join('\n')}
             >
@@ -73,24 +73,24 @@ InfoMarque.meta = {
         values: ['number'],
         type: 'number',
         default: 100,
-        description: ''
+        description: 'Speed of the marquee animation in pixels per second.'
     },
     copies: {
         values: ['number'],
         type: 'number',
         default: 4,
-        description: ''
+        description: 'Number of duplicated elements to ensure smooth scrolling.'
     },
     pauseOnHover: {
         values: ['any'],
         type: 'boolean',
         default: 'false',
-        description: ''
+        description: 'Pauses the marquee animation when the user hovers over it.'
     },
     gap: {
         values: ['number'],
         type: 'number',
         default: 12,
-        description: ''
+        description: 'Space in pixels between repeated marquee items.'
     }
 }

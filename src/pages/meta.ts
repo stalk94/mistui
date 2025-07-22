@@ -10,39 +10,39 @@ export const baseMeta = {
     children: {
         values: ['string', 'React.ReactNode'],
         type: 'enum',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+        description: 'Content inside the component. Can be text or a React element.'
     },
     className: {
         values: ['string'],
         type: 'string',
-        description: 'Дополнительные CSS классы для компонента.',
+        description: 'Additional CSS/Tailwind classes for the component.',
     },
     style: {
         values: ['React.CSSProperties'],
         type: 'object',
-        description: 'Инлайн-стили, применяемые к компоненту.',
+        description: 'Inline styles applied to the component.',
     },
     size: {
         values: sizes,
         default: 'auto',
         type: 'enum',
-        description: 'Размер компонента.'
+        description: 'Specifies the overall size of the component.',
     },
     shadow: {
         values: shadows,
         type: 'enum',
-        description: 'Размер тени компонента.'
+        description: 'Applies a shadow style to the component.',
     },
     color: {
         values: [...colors, 'string'],
         default: 'neutral',
         type: 'enum',
-        description: 'Цветовая тема компонента.'
+        description: 'The current color theme of the component. Defined through the theme context settings.'
     },
     'aria-label': {
         values: ['string'],
         type: 'string',
-        description: 'Описание для screen reader (доступность).'
+        description: 'Description for screen reader (accessibility)'
     }
 }
 
@@ -52,22 +52,22 @@ export const inputsMeta = {
     value: {
         values: ['number', 'string'],
         type: 'enum',
-        description: 'Текущее значение поля ввода.'
+        description: 'The current value of the input field.'
     },
     onChange: {
         values: ['function'],
         type: 'func',
-        description: 'Функция, вызываемая при изменении значения.'
+        description: 'A function called when a value changes.'
     },
     placeholder: {
         values: ['string'],
         type: 'string',
-        description: 'Текст подсказки внутри поля.'
+        description: 'Hint text inside the field.'
     },
     required: {
         values: ['boolean'],
         type: 'boolean',
-        description: 'Является ли поле обязательным.'
+        description: 'Whether the field is required.'
     }
 }
 
@@ -76,7 +76,7 @@ export const variantMeta = {
     variant: {
         values: variants,
         type: 'enum',
-        description: 'Вариант текста, определяющий стиль и размер.',
+        description: 'Controls the visual style like filled, outlined, or link component.',
     }
 }
 export const orientationMeta = {
@@ -84,6 +84,6 @@ export const orientationMeta = {
         values: ["horizontal", "vertical"],
         default: 'horizontal',
         type: 'enum',
-        description: ''
+        description: 'Component direction: horizontal or vertical.'
     }
 }

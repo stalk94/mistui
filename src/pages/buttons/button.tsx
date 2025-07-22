@@ -1,7 +1,7 @@
 import { Button } from '@/components/buttons';
 import { Section, Grid as ButtonGrid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
-
+import { baseMeta, orientationMeta } from '../meta';
 
 
 export default function InfoButton(tab) {
@@ -9,7 +9,7 @@ export default function InfoButton(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             {/* default */}
-            <Section title="base" description="кнопка" code={`<Button size='sm'>default</Button>`}>
+            <Section title="base" description="" code={`<Button size='sm'>default</Button>`}>
                 <div className="flex justify-center">
                     <Button size='sm'>default</Button>
                 </div>
@@ -18,7 +18,7 @@ export default function InfoButton(tab) {
             {/* variants */}
             <Section
                 title="variants"
-                description="разные стили"
+                description="system theme variants"
                 code={variants
                     .map((variant) => `<Button size="sm" variant="${variant}">${variant}</Button>`)
                     .join('\n')
@@ -35,7 +35,7 @@ export default function InfoButton(tab) {
 
             <Section
                 title="colors"
-                description="разные цвета"
+                description="system theme color"
                 code={colors
                     .map((color) => `<Button size="sm" color="${color}" shadow="sm">${color}</Button>`)
                     .join('\n')}
@@ -49,27 +49,10 @@ export default function InfoButton(tab) {
                 </ButtonGrid>
             </Section>
 
-            {/* sizes */}
-            <Section
-                title="sizes"
-                description="разные размеры"
-                code={sizes
-                    .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
-                    .join('\n')}
-            >
-                <ButtonGrid>
-                    {sizes.map((size) => (
-                        <Button key={size} size={size} shadow="sm">
-                            {size}
-                        </Button>
-                    ))}
-                </ButtonGrid>
-            </Section>
-
-            {/* custom 1 */}
+            {/* custom */}
             <Section
                 title="custom color"
-                description="цвета и стили"
+                description="custom color props"
                 code={variants
                     .map(
                         (variant, i) =>
@@ -92,10 +75,54 @@ export default function InfoButton(tab) {
                 </ButtonGrid>
             </Section>
 
-            {/* custom 2 */}
+            {/* gradient */}
+            <Section
+                title="gradient"
+                description="`isGradient` props true"
+                code={variants
+                    .map(
+                        (variant, i) =>
+                            `<Button size="sm" isGradient variant="outline" color="${colorsCustom[i]}" shadow="xs">button</Button>`
+                    )
+                    .join('\n')}
+            >
+                <ButtonGrid>
+                    {variants.map((variant, i) => (
+                        <Button
+                            size="sm"
+                            key={variant}
+                            variant='outline'
+                            isGradient
+                            color={colorsCustom[i]}
+                            shadow="xs"
+                        >
+                            {variant}
+                        </Button>
+                    ))}
+                </ButtonGrid>
+            </Section>
+
+            {/* sizes */}
+            <Section
+                title="sizes"
+                description="system theme sizes"
+                code={sizes
+                    .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
+                    .join('\n')}
+            >
+                <ButtonGrid>
+                    {sizes.map((size) => (
+                        <Button key={size} size={size} shadow="sm">
+                            {size}
+                        </Button>
+                    ))}
+                </ButtonGrid>
+            </Section>
+
+            {/* disabled */}
             <Section
                 title="disabled"
-                description="цвета и стили"
+                description=""
                 code={colors
                     .map(
                         (color, i) =>
@@ -124,67 +151,26 @@ export default function InfoButton(tab) {
 
 
 InfoButton.meta = {
-    children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'enum',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
-    },
-    style: {
-        values: ['React.CSSProperties'],
-        type: 'object',
-        description: 'Инлайн-стили, применяемые к компоненту.',
-    },
-    className: {
-        values: ['string'],
-        type: 'string',
-        description: 'Дополнительные CSS классы для компонента.',
-    },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
+    ...baseMeta,
     variant: {
         values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
         default: 'contained',
         type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error', 'string'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
+        description: 'Controls the visual style like filled, outlined, or link component.'
     },
     isGradient: {
         values: ['boolean'],
         type: 'boolean',
-        description: 'Включает градиентную заливку.'
+        description: 'Enables gradient fill.'
     },
     selected: {
         values: ['boolean'],
         type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
+        description: 'Displays the component as selected.'
     },
     disabled: {
         values: ['boolean'],
         type: 'boolean',
-        description: 'Отключает компонент.'
+        description: 'Disables the component.'
     },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
 }

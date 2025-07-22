@@ -6,37 +6,35 @@ import { inputsMeta } from '../meta';
 export default function InfoSwitchBox(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            
+            {tab}
+
+            {/* base */}
             <Section
-                title="base"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                title="Base"
+                description="Basic switch component"
+                code={`<SwitchBox value={false} />\n<SwitchBox value={true} />`}
             >
                 <div className="flex justify-center">
-                    <SwitchBox
-                        value={false}
-                        className='mr-2'
-                    />
-                    <SwitchBox
-                        value={true}
-                    />
+                    <SwitchBox value={false} className="mr-2" />
+                    <SwitchBox value={true} />
                 </div>
             </Section>
 
             {/* variants */}
             <Section
-                title="variants"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                title="Variants"
+                description="Different visual styles"
+                code={variants
+                    .map((variant) => `<SwitchBox variant="${variant}" size="sm" value={true} />`)
+                    .join('\n')}
             >
                 <div className="flex justify-center">
                     {variants.map((variant, i) => (
                         <SwitchBox
-                            key={i} 
+                            key={i}
                             variant={variant}
-                            size='sm'
-                            className='mr-2'
+                            size="sm"
+                            className="mr-2"
                             value={true}
                         />
                     ))}
@@ -45,21 +43,21 @@ export default function InfoSwitchBox(tab) {
 
             {/* sizes */}
             <Section
-                title="sizes"
-                description="разные размеры"
+                title="Sizes"
+                description="Different sizes"
                 code={sizes
-                    .map((size) => `<Button size="${size}" shadow="sm">${size}</Button>`)
+                    .map((size) => `<SwitchBox size="${size}" labelTop="${size}" value={true} />`)
                     .join('\n')}
             >
                 <ButtonGrid>
                     {sizes.map((size) => (
                         <SwitchBox
-                            key={size} 
-                            size={size} 
+                            key={size}
+                            size={size}
                             shadow="sm"
                             labelTop={size}
                             value={true}
-                            className='mr-2'
+                            className="mr-2"
                         />
                     ))}
                 </ButtonGrid>
@@ -67,78 +65,77 @@ export default function InfoSwitchBox(tab) {
 
             {/* colors */}
             <Section
-                title="base variants theme colors"
-                description="разные цвета"
+                title="Colors"
+                description="Theme colors"
                 code={colors
-                    .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
+                    .map((color) => `<SwitchBox variant="outline" color="${color}" size="sm" value={true} />`)
                     .join('\n')}
             >
                 <ButtonGrid>
                     {colors.map((color, i) => (
-                        <SwitchBox 
-                            key={i} 
-                            variant='outline'
+                        <SwitchBox
+                            key={i}
+                            variant="outline"
                             color={color}
-                            size='sm'
+                            size="sm"
                             value={true}
                         />
                     ))}
                 </ButtonGrid>
             </Section>
 
-            {/* label left */}
+            {/* label positions */}
             <Section
-                title="label"
-                description="цвета и стили"
+                title="Label positions"
+                description="Top, left, and right label options"
                 code={variants
-                    .map(
-                        (variant, i) =>
-                            `<BaseInput variant="${variant}" color="${colorsCustom[i]}">${variant}</BaseInput>`
+                    .map((variant, i) =>
+                        `<SwitchBox variant="${variant}" color="${colorsCustom[i]}" size="sm" labelTop="top-label" />\n` +
+                        `<SwitchBox variant="${variant}" color="${colorsCustom[i]}" size="sm" labelLeft="left-label" />\n` +
+                        `<SwitchBox variant="${variant}" color="${colorsCustom[i]}" size="sm" labelRight="right-label" />`
                     )
                     .join('\n')}
             >
                 <ButtonGrid>
-                    <div className="flex-col m-auto">
+                    <div className="flex flex-col m-auto">
                         <SwitchBox
                             variant={variants[1]}
                             color={colorsCustom[2]}
-                            size='sm'
-                            labelTop={'top-label'}
+                            size="sm"
+                            labelTop="top-label"
                             className="mb-3"
                         />
                         <SwitchBox
                             variant={variants[1]}
                             color={colorsCustom[2]}
-                            size='sm'
-                            labelLeft={'left-label'}
+                            size="sm"
+                            labelLeft="left-label"
                             className="mb-3"
                         />
                         <SwitchBox
                             variant={variants[1]}
                             color={colorsCustom[2]}
-                            size='sm'
-                            labelRight={'right-label'}
+                            size="sm"
+                            labelRight="right-label"
                         />
                     </div>
                 </ButtonGrid>
             </Section>
 
-            {/* combo label */}
+            {/* combined labels */}
             <Section
-                title="label position varints"
-                description="разные цвета"
-                code={colors
-                    .map((color) => `<BaseInput color="${color}">'${color}'</BaseInput>`)
-                    .join('\n')}
+                title="Combined label positions"
+                description="Top, left, and right labels together"
+                code={`<SwitchBox variant="dash" color="${colorsCustom[2]}" size="sm" labelTop="top-label" labelRight="right-label" labelLeft="left-label" />`}
             >
                 <ButtonGrid>
                     <SwitchBox
-                        variant='dash'
+                        variant="dash"
                         color={colorsCustom[2]}
-                        size='sm'
-                        labelTop={'top-label'}
-                        labelRight={'right-label'}
-                        labelLeft={'left-label'}
+                        size="sm"
+                        labelTop="top-label"
+                        labelRight="right-label"
+                        labelLeft="left-label"
                     />
                 </ButtonGrid>
             </Section>
@@ -152,11 +149,11 @@ InfoSwitchBox.meta = {
     value: {
         values: ['string'],
         type: 'string',
-        description: 'Текущее значение цвета в формате rgba().'
+        description: 'The current color value in rgba() format.'
     },
     onChange: {
         values: ['function'],
         type: 'func',
-        description: 'Вызывается при изменении цвета.'
+        description: 'Called when the color changes.'
     },
 }

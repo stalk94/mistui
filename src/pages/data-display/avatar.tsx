@@ -9,54 +9,55 @@ const variants = ['base', 'square', 'round'];
 export default function InfoAvatar(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* image */}
-            <Section 
-                title="Avatar" 
-                description="кнопка" 
-                code={`<Avatar variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></Avatar>`}
+            {tab}
+
+            {/* base */}
+            <Section
+                title="Base"
+                description="Image avatar with rounded style"
+                code={`<Avatar variant="round" size="sm" src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />`}
             >
                 <div className="flex justify-center">
-                    <Avatar 
-                        variant='round'
-                        size='sm'
-                        src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                    <Avatar
+                        variant="round"
+                        size="sm"
+                        src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
                     />
                 </div>
             </Section>
 
             {/* placeholder */}
             <Section
-                title="Avatar placeholder"
-                description="кнопка"
-                code={`<Avatar variant='round' size='sm'>VS</Avatar>`}
+                title="Placeholder"
+                description="Initials instead of image"
+                code={`<Avatar variant="square" size="sm">VS</Avatar>`}
             >
-                <Grid>
-                    <Avatar
-                        size='sm'
-                        variant='square'
-                    >
+                <div className="flex justify-center">
+                    <Avatar variant="square" size="sm">
                         VS
                     </Avatar>
-                </Grid>
+                </div>
             </Section>
 
             {/* variants */}
             <Section
-                title="Avatar variants"
-                description=""
+                title="Variants"
+                description="Different avatar shapes"
                 code={variants
-                    .map((v) => `<Avatar size="sm" variant="${v}" shadow="sm"></Avatar>`)
+                    .map(
+                        (v) =>
+                            `<Avatar size="sm" variant="${v}" shadow="sm" src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />`
+                    )
                     .join('\n')}
             >
                 <Grid>
                     {variants.map((v) => (
-                        <Avatar 
-                            size="sm" 
-                            key={v} 
-                            shadow="sm"
+                        <Avatar
+                            key={v}
+                            size="sm"
                             variant={v}
-                            src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                            shadow="sm"
+                            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
                         />
                     ))}
                 </Grid>
@@ -64,22 +65,25 @@ export default function InfoAvatar(tab) {
 
             {/* placeholder colors */}
             <Section
-                title="Avatar placeholder colors"
-                description="разные цвета"
+                title="Colors"
+                description="Placeholder avatars with different background colors"
                 code={colors
-                    .map((color) => `<Avatar size="sm" color="${color}" shadow="sm">${color}</Avatar>`)
+                    .map(
+                        (color) =>
+                            `<Avatar size="md" color="${color}" shadow="sm">${color}</Avatar>`
+                    )
                     .join('\n')}
             >
                 <Grid>
                     {colors.map((color) => (
-                        <Avatar 
-                            size="md" 
-                            key={color} 
-                            color={color} 
+                        <Avatar
+                            key={color}
+                            size="md"
+                            color={color}
                             shadow="sm"
-                            variant='round'
+                            variant="round"
                         >
-                            { color }
+                            {color}
                         </Avatar>
                     ))}
                 </Grid>
@@ -87,20 +91,26 @@ export default function InfoAvatar(tab) {
 
             {/* sizes */}
             <Section
-                title="Avatar sizes"
-                description="разные размеры"
+                title="Sizes"
+                description="Avatar size options"
                 code={sizes
-                    .map((size) => `<Avatar size="${size}" shadow="sm">${size}</Avatar>`)
+                    .map(
+                        (size) =>
+                            `<Avatar size="${size}" variant="round" src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />`
+                    )
                     .join('\n')}
             >
-               <div className="flex justify-center items-center">
+                <div className="flex justify-center gap-4 items-end">
                     {sizes.map((size) => (
-                        <div key={size}  className="flex flex-col justify-center items-center">
+                        <div
+                            key={size}
+                            className="flex flex-col items-center text-xs text-muted"
+                        >
                             {size}
-                            <Avatar 
+                            <Avatar
                                 size={size}
-                                variant='round'
-                                src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                                variant="round"
+                                src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
                             />
                         </div>
                     ))}
@@ -110,18 +120,17 @@ export default function InfoAvatar(tab) {
     );
 }
 
-
 InfoAvatar.meta = {
     ...baseMeta,
     variant: {
         values: ['base', 'square', 'round'],
         default: 'base',
         type: 'enum',
-        description: 'Визуальный стиль компонента.'
+        description: 'Controls the visual form style component.'
     },
     isGradient: {
         values: ['boolean'],
         type: 'boolean',
-        description: 'Включает градиентную заливку.'
+        description: 'Enables gradient fill.'
     }
 }

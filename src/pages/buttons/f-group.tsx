@@ -13,8 +13,8 @@ export default function InfoGroupButtonFiltre(tab) {
             {/* default */}
             <Section 
                 title="base" 
-                description="кнопка" 
-                code={`<GroupButtonFiltre size='sm'>default</GroupButtonFiltre>`}
+                description="" 
+                code={`<GroupButtonFiltre variant='contained' size='sm' items={['documentation', 'playground', 'any']} />`}
             >
                 <div className="flex justify-center">
                     <GroupButtonFiltre 
@@ -28,8 +28,8 @@ export default function InfoGroupButtonFiltre(tab) {
             {/* select */}
             <Section 
                 title="selected" 
-                description="selected" 
-                code={`<GroupButtonFiltre size='sm'>default</GroupButtonFiltre>`}
+                description="selected current value" 
+                code={`<GroupButtonFiltre size='sm' variant='contained' value='playground' items={['documentation', 'playground', 'any']} />`}
             >
                 <div className="flex justify-center">
                     <GroupButtonFiltre 
@@ -44,9 +44,9 @@ export default function InfoGroupButtonFiltre(tab) {
             {/* variants */}
             <Section
                 title="variants"
-                description="разные стили"
+                description=""
                 code={variants
-                    .map((variant) => `<GroupButtonFiltre size="sm" variant="${variant}">${variant}</GroupButtonFiltre>`)
+                    .map((variant) => `<GroupButtonFiltre items={['doc', 'play', 'any']} size="sm" variant="${variant}" /> /**${variant}*/`)
                     .join('\n')
                 }
             >
@@ -64,7 +64,6 @@ export default function InfoGroupButtonFiltre(tab) {
                             <GroupButtonFiltre 
                                 size='sm' 
                                 value='playground'
-                                key={variant} 
                                 variant={variant}
                                 className='w-120 m-auto'
                                 items={['documentation', 'playground', 'any']}
@@ -77,9 +76,9 @@ export default function InfoGroupButtonFiltre(tab) {
             {/* sizes */}
             <Section
                 title="sizes"
-                description="разные размеры"
+                description=""
                 code={sizes
-                    .map((size) => `<GroupButtonFiltre size="${size}" shadow="sm">${size}</GroupButtonFiltre>`)
+                    .map((size) => `<GroupButtonFiltre size="${size}" shadow='sm' color='secondary' variant='dash' value='play' size="${size}" shadow="sm" items={['doc', 'play', 'any']} />`)
                     .join('\n')}
             >
                 <Grid className='flex-col justify-center'>
@@ -98,9 +97,9 @@ export default function InfoGroupButtonFiltre(tab) {
                                 key={size}
                                 color='secondary'
                                 variant='dash'
-                                value='playground'
+                                value='play'
                                 className='w-120 m-auto'
-                                items={['documentation', 'playground', 'any']}
+                                items={['doc', 'play', 'any']}
                             />
                         </div>
                     ))}
@@ -113,7 +112,7 @@ export default function InfoGroupButtonFiltre(tab) {
                 title="colors"
                 description="разные цвета"
                 code={colors
-                    .map((color) => `<GroupButtonFiltre size="sm" color="${color}" shadow="sm">${color}</GroupButtonFiltre>`)
+                    .map((color) => `<GroupButtonFiltre size="sm" color="${color}" shadow="sm" items={['docu', 'play', 'any']} />`)
                     .join('\n')}
             >
                 <Grid className='flex-col'>
@@ -132,8 +131,8 @@ export default function InfoGroupButtonFiltre(tab) {
                                 key={color} 
                                 color={color} 
                                 className='w-120 m-auto'
-                                value={['documentation', 'playground', 'any'][Math.floor(Math.random() * 3)]}
-                                items={['documentation', 'playground', 'any']}
+                                value={['doc', 'play', 'any'][Math.floor(Math.random() * 3)]}
+                                items={['doc', 'play', 'any']}
                             />
                         </div>
                     ))}
@@ -155,6 +154,6 @@ InfoGroupButtonFiltre.meta = {
     styleButtonReset: {
         values: ['React.CSSProperties'],
         type: 'object',
-        description: 'Инлайн-стили, применяемые к компоненту.',
+        description: 'Inline styles applied to the component button reset.',
     }
 }

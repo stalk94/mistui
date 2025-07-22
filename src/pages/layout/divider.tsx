@@ -140,6 +140,12 @@ export default function InfoDivider(tab) {
 InfoDivider.meta = {
     ...baseMeta,
     ...orientationMeta,
+    size: {
+        values: ['xs', 'sm', 'md', 'lg', 'xl'],
+        type: 'enum',
+        default: 'xs',
+        description: baseMeta.size.description
+    },
     variant: {
         values: variants,
         type: 'enum',

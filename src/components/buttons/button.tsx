@@ -4,6 +4,21 @@ import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
+import { colord } from "colord";
+
+
+function isBright(colorStr: string): boolean {
+    const c = colord(colorStr);
+    const rgb = c.toRgb();
+    // Формула восприятия яркости (0..255)
+    const brightness = Math.sqrt(
+        0.299 * (rgb.r * rgb.r) +
+        0.587 * (rgb.g * rgb.g) +
+        0.114 * (rgb.b * rgb.b)
+    );
+    
+    return brightness > 200;
+}
 
 
 
@@ -28,17 +43,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     
 
     const colorContrast = useMemo(() => {
-        if (variant === 'contained') {
-            return plugins.contrast((variants[color] ?? color));
+        if (variant === 'contained' || isGradient) {
+            return isBright(variants[color] ?? color) ? 'black' : 'white';
         }
         else return (variants[color] ?? color);
     }, [style, color, variant]);
     const getGradient = useMemo(() => {
         if (!isGradient) return {};
         const inlneBg = style?.backgroundColor;
-        const curVariant = variants[color];
+        const curVariant = (variants[color] ?? color);
 
-        return createGradientStyle(inlneBg ?? curVariant);
+        return createGradientStyle(inlneBg ?? curVariant, 'to bottom');
     }, [style, color, variant, isGradient]);
     const getStyle = useMemo(() => {
         if (variant === 'ghost') return style;
@@ -48,7 +63,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         let st = { 
             ...style,
             backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color ?? inlneBg),
-            color: (variant === 'dash' || variant === 'outline') 
+            color: (variant === 'dash' || variant === 'outline')
                 ? (variants[color] ?? color) 
                 : colorContrast
         }
@@ -64,13 +79,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };
         }
+        if (isGradient) st.color = colorContrast;
         if (selected) {
             st.backgroundColor = plugins.lighten(st.backgroundColor, 0.25);
             st.borderColor = plugins.lighten(st.borderColor, variant !== 'soft' ? 0.25 : 0.35);
         }
 
         return st;
-    }, [style, color, variant, selected]);
+    }, [style, color, variant, selected, isGradient]);
     const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
@@ -94,7 +110,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   
     return (
         <>
-            {!props['data-id'] && !selected &&
+            {(!props['data-id'] && !selected) &&
                 <style>
                     {`
                         button[data-id="${uid}"]:hover {

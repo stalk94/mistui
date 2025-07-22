@@ -8,39 +8,42 @@ import { baseMeta, variantMeta } from '../meta';
 export default function InfoBadge(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* default */}
-            <Section 
-                title="Badge" 
-                description="кнопка" 
-                code={`<Badge size='sm'>default</Badge>`}
+            {tab}
+
+            {/* base */}
+            <Section
+                title="Base"
+                description="Simple badge"
+                code={`<Badge size="sm">default</Badge>`}
             >
                 <div className="flex justify-center">
-                    <Badge size='md'>default</Badge>
+                    <Badge size="md">default</Badge>
                 </div>
             </Section>
 
-            {/* icons */}
-            <Section 
-                title="Badge icons" 
-                description="кнопка" 
-                code={`<Badge size='sm'>default</Badge>`}
+            {/* with icons */}
+            <Section
+                title="With icons"
+                description="Badge with left and right icons"
+                code={`
+                    <Badge iconLeft={<TrashIcon />}>left</Badge>
+                    <Badge iconRight={<XMarkIcon />}>right</Badge>
+                `}
             >
-                <div className="flex justify-center">
-                    <Badge 
-                        size='md'
-                        color='secondary'
-                        variant='dash'
+                <div className="flex justify-center gap-2">
+                    <Badge
+                        size="md"
+                        color="secondary"
+                        variant="dash"
                         iconLeft={<TrashIcon />}
                     >
                         left
                     </Badge>
-                    <Badge 
-                        className='ml-1'
-                        size='md'
-                        color='secondary'
-                        variant='dash'
-                        iconRight={<XMarkIcon className='rounded-3xl border-1' />}
+                    <Badge
+                        size="md"
+                        color="secondary"
+                        variant="dash"
+                        iconRight={<XMarkIcon className="rounded-3xl border-1" />}
                     >
                         right
                     </Badge>
@@ -49,17 +52,16 @@ export default function InfoBadge(tab) {
 
             {/* variants */}
             <Section
-                title="Badge variants"
-                description="разные стили"
+                title="Variants"
+                description="Different visual styles"
                 code={variants
-                    .map((variant) => `<Badge size="sm" variant="${variant}">${variant}</Badge>`)
-                    .join('\n')
-                }
+                    .map((v) => `<Badge size="sm" variant="${v}">${v}</Badge>`)
+                    .join('\n')}
             >
                 <BadgeGrid>
-                    {variants.map((variant) => (
-                        <Badge size='sm' key={variant} variant={variant}>
-                            {variant}
+                    {variants.map((v) => (
+                        <Badge key={v} size="sm" variant={v}>
+                            {v}
                         </Badge>
                     ))}
                 </BadgeGrid>
@@ -67,8 +69,8 @@ export default function InfoBadge(tab) {
 
             {/* sizes */}
             <Section
-                title="Badge sizes"
-                description="разные размеры"
+                title="Sizes"
+                description="Badge sizes"
                 code={sizes
                     .map((size) => `<Badge size="${size}" shadow="sm">${size}</Badge>`)
                     .join('\n')}
@@ -82,27 +84,27 @@ export default function InfoBadge(tab) {
                 </BadgeGrid>
             </Section>
 
-            {/* colors */}
+            {/* system colors */}
             <Section
-                title="Badge colors"
-                description="разные цвета"
+                title="System colors"
+                description="Predefined color palette"
                 code={colors
                     .map((color) => `<Badge size="sm" color="${color}" shadow="sm">${color}</Badge>`)
                     .join('\n')}
             >
                 <BadgeGrid>
                     {colors.map((color) => (
-                        <Badge size="sm" key={color} color={color} shadow="sm">
+                        <Badge key={color} size="sm" color={color} shadow="sm">
                             {color}
                         </Badge>
                     ))}
                 </BadgeGrid>
             </Section>
 
-            {/* colors custom */}
+            {/* custom colors */}
             <Section
-                title="Badge custom color"
-                description="цвета и стили"
+                title="Custom colors"
+                description="Custom color + variant combination"
                 code={variants
                     .map(
                         (variant, i) =>
@@ -113,8 +115,8 @@ export default function InfoBadge(tab) {
                 <BadgeGrid>
                     {variants.map((variant, i) => (
                         <Badge
-                            size="sm"
                             key={variant}
+                            size="sm"
                             variant={variant}
                             color={colorsCustom[i]}
                             shadow="xs"

@@ -11,21 +11,23 @@ const alignts = ["start", "center", "end"];
 export default function InfoIndicator(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
-            { tab }
-            {/* image */}
-            <Section 
-                title="Indicator" 
-                description="кнопка" 
-                code={`<Indicator variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></Indicator>`}
+            {tab}
+
+            {/* basic */}
+            <Section
+                title="Basic"
+                description="Badge over avatar"
+                code={`
+                    <Indicator content="new">
+                        <Avatar src="..." />
+                    </Indicator>
+                `}
             >
                 <div className="flex justify-center">
-                    <Indicator
-                        className='badge badge-success'
-                        content={'new'}
-                    >
+                    <Indicator className="badge badge-success" content="new">
                         <Avatar
-                            size='lg'
-                            src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                            size="lg"
+                            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
                         />
                     </Indicator>
                 </div>
@@ -33,99 +35,110 @@ export default function InfoIndicator(tab) {
 
             {/* positions */}
             <Section
-                title="Indicator position"
-                description="разные размеры"
-                code={sizes
-                    .map((size) => `<Indicator size="${size}" shadow="sm">${size}</Indicator>`)
+                title="Positions"
+                description="Custom placement of indicator"
+                code={positions
+                    .map(
+                        (pos) =>
+                            `<Indicator position="${pos}" content="${pos}"><Avatar /></Indicator>`
+                    )
                     .join('\n')}
             >
-               <div className="flex justify-center items-center">
+                <div className="flex justify-center flex-wrap gap-6">
                     {positions.map((pos, i) => (
-                        <div key={i} className="flex m-5 flex-col justify-center items-center">
-                            <Indicator
-                                className='badge badge-success'
-                                content={pos}
-                                position={pos}
-                                shadow='lg'
-                            >
-                                <Avatar
-                                    size='lg'
-                                    src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
-                                />
-                            </Indicator>
-                        </div>
+                        <Indicator
+                            key={i}
+                            className="badge badge-success"
+                            content={pos}
+                            position={pos}
+                            shadow="lg"
+                        >
+                            <Avatar
+                                size="lg"
+                                src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
+                            />
+                        </Indicator>
                     ))}
                 </div>
             </Section>
 
-            {/* alignts */}
+            {/* alignments */}
             <Section
-                title="Indicator alignts"
-                description="разные размеры"
-                code={sizes
-                    .map((size) => `<Indicator size="${size}" shadow="sm">${size}</Indicator>`)
+                title="Alignments"
+                description="Align indicator in corners"
+                code={alignts
+                    .map(
+                        (al) =>
+                            `<Indicator align="${al}" content="${al}"><Avatar /></Indicator>`
+                    )
                     .join('\n')}
             >
-               <div className="flex justify-center items-center">
+                <div className="flex justify-center flex-wrap gap-6">
                     {alignts.map((al, i) => (
-                        <div key={i} className="flex m-5 flex-col justify-center items-center">
-                            <Indicator
-                                className='badge badge-warning'
-                                content={al}
-                                align={al}
-                                shadow='lg'
-                            >
-                                <Avatar
-                                    size='lg'
-                                    src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
-                                />
-                            </Indicator>
-                        </div>
+                        <Indicator
+                            key={i}
+                            className="badge badge-warning"
+                            content={al}
+                            align={al}
+                            shadow="lg"
+                        >
+                            <Avatar
+                                size="lg"
+                                src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
+                            />
+                        </Indicator>
                     ))}
                 </div>
             </Section>
 
-            {/* custom class */}
-            <Section 
-                title="Indicator custom class content" 
-                description="кнопка" 
-                code={`<Indicator variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></Indicator>`}
+            {/* custom content */}
+            <Section
+                title="Custom badge"
+                description="Custom content style"
+                code={`
+                    <Indicator content="1" className="rounded-b-xl border-2 bg-[#343434] p-1 text-green-500">
+                        <Avatar />
+                    </Indicator>
+                `}
             >
                 <div className="flex justify-center">
                     <Indicator
-                        className='rounded-b-xl border-2 bg-[#343434] p-1 mt-1 text-xs text-center text-green-500'
-                        content={'1'}
+                        className="rounded-b-xl border-2 bg-[#343434] p-1 mt-1 text-xs text-center text-green-500"
+                        content="1"
                     >
                         <Avatar
-                            size='lg'
-                            src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                            size="lg"
+                            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
                         />
                     </Indicator>
                 </div>
             </Section>
 
-            {/* multi */}
-            <Section 
-                title="Indicator multi contents" 
-                description="кнопка" 
-                code={`<Indicator variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></Indicator>`}
+            {/* multiple indicators */}
+            <Section
+                title="Multiple"
+                description="Many indicators per item"
+                code={`
+                    <Indicator content={[{ position: 'top-end', align: 'start', content: '●' }, ...]}>
+                        <Avatar />
+                    </Indicator>
+                `}
             >
                 <div className="flex justify-center">
                     <Indicator
-                        content={[
-                            ...positions.flatMap((pos) =>
-                                alignts.map((al) => ({
-                                    content: '●',
-                                    position: pos,
-                                    className: 'badge badge-success badge-dash hover:bg-[#67f667] cursor-pointer',
-                                    align: al,
-                                }))
-                            )
-                        ]}
+                        content={positions.flatMap((pos) =>
+                            alignts.map((al) => ({
+                                content: '●',
+                                position: pos,
+                                align: al,
+                                className:
+                                    'badge badge-success badge-dash hover:bg-[#67f667] cursor-pointer',
+                            }))
+                        )}
                     >
                         <Avatar
-                            size='lg'
-                            src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'
+                            size="lg"
+                            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
                         />
                     </Indicator>
                 </div>
@@ -135,17 +148,18 @@ export default function InfoIndicator(tab) {
 }
 
 
+
 InfoIndicator.meta = {
     ...baseMeta,
     children: {
         values: ['string', 'React.ReactNode'],
         type: 'enum',
-        description: 'Контент внутри компонента. Будет обернут `content`.'
+        description: 'Content inside the component. Will be wrapped `content`.'
     },
     content: {
         values: ['ItemIndicator[]', 'React.ReactNode'],
         type: 'enum',
-        description: 'Оборачивает `children`.'
+        description: 'Wraps `children`.'
     },
     position: {
         values: ["top", "middle", "bottom"],
