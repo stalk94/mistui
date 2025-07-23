@@ -33,7 +33,6 @@ export default function InfoBadge(tab) {
                 <div className="flex justify-center gap-2">
                     <Badge
                         size="md"
-                        color="secondary"
                         variant="dash"
                         iconLeft={<TrashIcon />}
                     >
@@ -41,7 +40,6 @@ export default function InfoBadge(tab) {
                     </Badge>
                     <Badge
                         size="md"
-                        color="secondary"
                         variant="dash"
                         iconRight={<XMarkIcon className="rounded-3xl border-1" />}
                     >
@@ -134,6 +132,14 @@ export default function InfoBadge(tab) {
 InfoBadge.meta = {
     ...baseMeta,
     ...variantMeta,
+    variant: {
+        ...variantMeta.variant,
+        default: 'outline'
+    },
+    color: {
+        ...baseMeta.color,
+        default: 'accent'
+    },
     iconLeft: {
         values: ['SVGElement', 'React.ReactNode'],
         type: 'enum',

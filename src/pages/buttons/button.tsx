@@ -26,7 +26,7 @@ export default function InfoButton(tab) {
             >
                 <ButtonGrid>
                     {variants.map((variant) => (
-                        <Button size='sm' key={variant} variant={variant}>
+                        <Button size='sm' color='primary' key={variant} variant={variant}>
                             {variant}
                         </Button>
                     ))}

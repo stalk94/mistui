@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { TypographyComponent, typographyVariants, BaseTypographyProps, PolymorphicComponentProps, PolymorphicRef } from './types';
+import { TypographyComponent, BaseTypographyProps, PolymorphicComponentProps, PolymorphicRef } from './types';
 import clsx from 'clsx';
 import { useTheme } from '../theme';
 
@@ -37,12 +37,11 @@ const letterSpacingMap: Record<
 }
 
 
-const Typography = forwardRef(
-    <T extends React.ElementType = 'p'>(
+const Typography = forwardRef(<T extends React.ElementType = 'p'>(
         {
             as,
-            variant = 'body1',
-            color,
+            variant = 'body2',
+            color = 'primary',
             className,
             children,
             fontStyle = 'normal',
@@ -57,7 +56,7 @@ const Typography = forwardRef(
         ref?: PolymorphicRef<T>
     ) => {
         const Component = as || 'p';
-        const { variants } = useTheme();
+        const { variants, typography } = useTheme();
         const curShadow = shadows[shadow] ? `text-shadow-${shadows[shadow]}` : '';
         //const curColorShadow = colorShadow ? `text-shadow-[${colorShadow}]` : 'text-shadow-[#161616]';
         const shadowValue = shadows[shadow]; // например '1px 1px 2px'
@@ -69,7 +68,7 @@ const Typography = forwardRef(
         return (
             <Component
                 className={clsx(
-                    typographyVariants[variant],
+                    typography[variant],
                     fontStyle === 'italic' ? 'italic' : 'not-italic',
                     curShadow,
                     className,

@@ -2,11 +2,12 @@ import React, { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Form from '../components/form/Form';
 import { createStore } from 'statekit-lite';
-import { typographyVariants } from '../components/text/types';
 import { Button, IconButton } from '../components/buttons';
 import Drn from './helpers/drn';
+import { COUNTRY_CODES } from '@/components/utils/flag';
 
 
+const typographyVariants = [`h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `subtitle1`, `subtitle2`, `body1`, `body2`, `caption`, `overline`, `button`];
 const styleText = {
     fontWeight: {
         type: 'groupButton',
@@ -115,7 +116,7 @@ const base = {
 const typography = {
     variant: {
         type: 'select',
-        items: Object.keys(typographyVariants) as Array<keyof typeof typographyVariants>
+        items: typographyVariants
     },
     fontStyle: {
         type: 'groupButton',
@@ -128,7 +129,7 @@ const typography = {
     style: styleText
 }
 
-
+/** components props variant list */
 const CONFIG = {
     // text
     Typography: {
@@ -270,6 +271,13 @@ const CONFIG = {
             value: 'end',
             items: ["start", "center", "end"]
         },
+    },
+    Flag: {
+        code: {
+            type: 'select',
+            value: 'UA',
+            items: COUNTRY_CODES
+        }
     },
     List: {
 

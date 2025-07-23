@@ -23,7 +23,7 @@ export default function SliderInput({
     disableForm,
     variant = 'outline',
     size,
-    color = 'primary',
+    color = 'secondary',
     value,
     min,
     max,
@@ -54,7 +54,7 @@ export default function SliderInput({
             borderStyle: 'solid'
         }
         else return {};
-    }, [variant, styles]);
+    }, [variant]);
     const styleTrack = useMemo(() => {
         const systemBg = styles?.input?.sliderTrackColor;
 

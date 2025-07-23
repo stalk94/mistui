@@ -1,7 +1,9 @@
-import React from 'react';
-import type { FlagProps } from './types';
+import * as flags from 'country-flag-icons/react/3x2';
+import type { FlagCountryProps } from './types';
+import type { FC, SVGProps } from 'react';
 
-const imgNot = 'https://static.thenounproject.com/png/3405765-200.png';
+
+export const COUNTRY_CODES = Object.keys(flags).splice(0, Object.keys(flags).length - 1);
 const countryCodes = {
     "Russia": "RU",
     "Germany": "DE",
@@ -74,25 +76,35 @@ const sizes = {
 }
 
 
-export default ({ code, size = 'sm', margin }: FlagProps)=> {
-    const chek =(code: string)=> {
+export default function FlagCountry({ 
+    code, 
+    size = 'sm',
+    className,
+    style,
+    ...props
+}: FlagCountryProps) {
+    const chek =(code: string): string=> {
         if(code) code = code.toUpperCase();
-        if(code==='EN') code = 'GB';
+        if(code === 'EN' || code === 'UK') code = 'GB';
 
         if(countryCodes[code]) return countryCodes[code];
         else return code;
     }
+
+    const Flag: FC<SVGProps<SVGSVGElement>> = flags[chek(code)];
     
-    return(
-        <img 
-            alt={`flag-${code}`} 
-            style={{
-                width: sizes[size] ?? 20,
-                height: sizes[size] ?? 20,
-                marginTop: margin ?? '4px'
+
+    if (Flag) return( 
+        <Flag 
+            className={className}
+            style={{ 
+                height: (typeof size === 'number') 
+                    ? (size ?? 16) 
+                    : (sizes[size] ?? 16), 
+                ...style 
             }}
-            onError={(e)=> e.target.src = imgNot}
-            src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${chek(code)}.svg`}
-        />
+            { ...props }
+        /> 
     );
+    else return (code);
 }

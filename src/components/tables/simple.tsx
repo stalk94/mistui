@@ -1,6 +1,7 @@
-import { Fragment } from 'react/jsx-runtime';
+import { Fragment, useMemo } from 'react';
 import { useTheme } from '../theme';
 import type { TableProps } from './types';
+
 
 const sizeTable = {
     xs: 'table-xs',
@@ -16,11 +17,48 @@ const sizesText = {
     lg: 16,
     xl: 18
 }
+const useStyle = ({ style, color, variant }) => {
+    const { autosizes, shadows, variants, plugins } = useTheme();
 
-// ! color
+    const colorContrast = useMemo(() => {
+        if (variant !== 'dash' && variant !== 'outline' && variant !== 'soft') {
+            return plugins.contrast((variants[color] ?? color));
+        }
+        else return (variants[color] ?? color);
+    }, [style, color, variant]);
+    const getStyle = useMemo(() => {
+        const inlneBg = style?.backgroundColor;
+        const inlneBorder = style?.borderColor;
+
+        let st = {
+            ...style,
+            backgroundColor: (variants[color] ?? color),
+            borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.1),
+            color: plugins.alpha(colorContrast, 1)
+        }
+
+        if ((variant === 'dash' || variant === 'outline')) {
+            const { backgroundColor, ...rest } = style;
+
+            st = {
+                ...rest,
+                ...st,
+                backgroundColor: inlneBg ?? 'inherit',
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+
+
+        return st;
+    }, [style, color, variant]);
+}
+
+// ! castomization
 export default function Table({
     value,
     children,
+    schema,
     className,
     style,
     footer,
@@ -28,12 +66,15 @@ export default function Table({
     size,
     color,
     shadow,
+    variant = 'outline',
     ...props
 }: TableProps) {
     const { autosizes, shadows } = useTheme();
     const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.table;
+    const curSchema = schema ?? children;
 
-    const render = (data, rowIndex) => {
+    
+    const render = (data, rowIndex: number) => {
         // если есть children — отрисовываем по колонкам
         if (children && children.length > 0) {
             return children.map((col, colIndex) => (
@@ -74,7 +115,7 @@ export default function Table({
             </Fragment>
         ));
     }
-
+    
 
     return (
         <div
@@ -90,7 +131,7 @@ export default function Table({
                 boxShadow: shadows[shadow],
                 ...style
             }}
-            {...props}
+            { ...props }
         >
             {/* Заголовок */}
             <table className="table table-fixed w-full font-mono">
@@ -100,25 +141,27 @@ export default function Table({
                         boxShadow: shadows.xs
                     }}
                 >
+                    {/* top header */}
                     {header && (
                         <tr>
                             <td 
                                 className='p-0' 
-                                colSpan={children?.length || Object.keys(value[0]).length}
+                                colSpan={curSchema?.length || Object.keys(value[0]).length}
                             >
                                 { header }
                             </td>
                         </tr>
                     )}
+                    {/* label header */}
                     <tr>
-                        {(children || Object.keys(value[0])).map((col, i) => (
+                        {(curSchema || Object.keys(value[0])).map((col, i) => (
                             <th 
                                 key={i}
                                 className='p-1 text-[#686868] font-bold'
                             >
                                 {typeof col !== 'object' 
                                     ? col 
-                                    : col.header 
+                                    : col?.header 
                                 }
                             </th>
                         ))}
@@ -154,7 +197,7 @@ export default function Table({
                         <tr>
                             <td
                                 className='p-0' 
-                                colSpan={children?.length || Object.keys(value[0]).length}
+                                colSpan={curSchema?.length || Object.keys(value[0]).length}
                             >
                                 { footer }
                             </td>

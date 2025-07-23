@@ -3,6 +3,9 @@ export interface Theme {
     shadows: {
         
     }
+    typography: {
+        
+    }
     autosizes: {
         text: string
         input: string
@@ -63,17 +66,16 @@ export interface Theme {
             backgroundColor: React.CSSProperties['backgroundColor']
         }
     }
-    mixers: {
-        button: {
+    plugins: {
+        invert: (color: string)=> string 
+        isBright: (color: string, cof?: number)=> boolean
+        contrast: (color: string, dark?: string, light?: string)=> string 
+        alpha: (color: string, alpha: number)=> string 
+        lighten: (color: string, cof: number)=> string 
+        mixers: {
             color: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['color']
             background: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['backgroundColor']
         }
-    }
-    plugins: {
-        invert: (color: string)=> string 
-        contrast: (color: string)=> string 
-        alpha: (color: string, alpha: number)=> string 
-        lighten: (color: string, cof: number)=> string 
     }
 }
 

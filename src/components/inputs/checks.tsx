@@ -28,7 +28,7 @@ const top = {
 export default function CheckBoxInput({ 
     onChange, 
     size, 
-    color = 'primary', 
+    color = 'neutral', 
     value, 
     type, 
     style = {},
@@ -52,7 +52,7 @@ export default function CheckBoxInput({
             borderStyle: 'solid'
         }
         else return {};
-    }, [variant, style, styles]);
+    }, [variant, style]);
 
 
     return (
@@ -70,8 +70,7 @@ export default function CheckBoxInput({
                     style={{
                         color: styles?.input?.fontColor, 
                         borderColor: (variants[color] ?? color) 
-                            ?? style?.borderColor 
-                            ?? styles?.input?.borderColor,
+                            ?? style?.borderColor,
                         ...borderVariant
                     }}
                     className={cs(`
@@ -103,9 +102,8 @@ export default function CheckBoxInput({
                     `)}
                     fill="none"
                     stroke={(variants[color] ?? color) 
-                        ?? (style?.backgroundColor 
-                            ?? styles?.input?.checkBoxBackground) 
-                                ?? 'white'
+                        ?? style?.backgroundColor 
+                            ?? 'white'
                     }
                     strokeWidth="3"
                     viewBox="0 0 24 24"

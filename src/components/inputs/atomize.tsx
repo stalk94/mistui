@@ -47,7 +47,7 @@ export const ValidatorBottomLabel =({ children, 'data-id': dataId })=> {
 export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormWrapper(
     {
         children,
-        color,
+        color = 'neutral',
         labelLeft,
         labelRight,
         labelTop,
@@ -76,64 +76,44 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
             borderStyle: 'solid'
         }
         else return {};
-    }, [variant, style, styles]);
-    const getGradient = useMemo(() => {
-        const inlneBg = style?.backgroundColor;
-        const curVariant = variants[color];
-
-        return createGradientStyle(inlneBg ?? curVariant);
-    }, [style, color, variant]);
+    }, [variant, style]);
     const getStyle = useMemo(() => {
+        if (disabledVisibility) return {};
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
 
-        const fontColorTheme = styles?.input?.fontColor;
         const colorContrast = plugins.contrast((variants[color] ?? color));
 
         let st = {
             ...style,
             backgroundColor: (variant !== 'ghost') && (variants[color] ?? color),
             color: (variant === 'dash' || variant === 'outline')
-                ? (variants[color] ?? color) ?? fontColorTheme
+                ? (variants[color] ?? color)
                 : colorContrast,
+            borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.65),
+            borderStyle: variant === 'dash' ? 'dashed' : 'solid',
         }
 
-        if (variant === 'ghost') st.borderWidth = 0;
+        
+        if (color === 'neutral') st.borderColor = plugins.lighten(plugins.alpha(st.borderColor, 1), 0.2);
+        if (variant === 'ghost') {
+            st.borderWidth = 0;
+            st.backgroundColor = 'inherit';
+        }
         if ((variant === 'dash' || variant === 'outline')) {
             const { backgroundColor, ...rest } = style;
 
             st = {
                 ...rest,
                 ...st,
-                backgroundColor: plugins.alpha((variants[color] ?? color) ?? inlneBg, 0.05) ?? 'inherit',
-                borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.6),
-                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+                backgroundColor: plugins.alpha((variants[color] ?? color) ?? inlneBg, 0.05) ?? 'inherit'
             };
         }
 
 
         return st;
     }, [style, color, variant]);
-    const getColorHover = useCallback((key: 'backgroundColor' | 'color' | 'border') => {
-        const inlneBg = style?.backgroundColor;
-        const inlneBorder = style?.borderColor;
-        const inlneTxt = style?.color;
-        const curVariant = variants[color];
-
-        if (key === 'backgroundColor') return (inlneBg
-            ? mixers.button.background(inlneBg, 'hover')
-            : mixers.button.background(curVariant, 'hover')
-        );
-        else if (key === 'border') return (inlneBg
-            ? mixers.button.border(inlneBorder, 'hover')
-            : mixers.button.border(curVariant, 'hover')
-        );
-        else return (inlneTxt
-            ? plugins.contrast(inlneTxt)
-            : plugins.contrast((inlneBg ?? inlneBorder) ?? curVariant)
-        );
-    }, [style, color, variant]);
-
+ 
 
     return (
         <section className={clsx('formwrap', className)} style={filteredStyle}>
@@ -171,14 +151,14 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                  {/* [label][---] левый label */}
                 { labelLeft &&
                     <span 
-                        style={{ 
-                            height: '100%', 
-                            marginInlineEnd: (!disabledVisibility && (size==='xs'||size==='sm')) && 8
-                        }}
                         className={cs(`
                             label 
                             ${disabledVisibility && 'mr-4'}
                         `)}
+                        style={{ 
+                            height: '100%', 
+                            marginInlineEnd: (!disabledVisibility && (size==='xs'||size==='sm')) && 8
+                        }}
                     >
                         { labelLeft }
                     </span>

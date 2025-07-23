@@ -36,7 +36,7 @@ export default function NumberInput({
     value, 
     step, 
     placeholder,
-    color = 'primary',
+    color = 'neutral',
     required,
     ...props 
 }: NumberInputProps) {

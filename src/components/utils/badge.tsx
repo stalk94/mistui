@@ -12,8 +12,8 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
         style = {},
         children,
         size,
-        variant = 'contained',
-        color,
+        variant = 'outline',
+        color = 'accent',
         className,
         isGradient,
         iconLeft,
@@ -47,7 +47,7 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
         let st = {
             ...style,
             backgroundColor: (variant !== 'ghost' && variant !== 'link') && (variants[color] ?? color),
-            color: (variant !== 'soft' && variant !== 'contained') 
+            color: variant !== 'contained'
                 ? (variants[color] ?? color) 
                 : colorContrast
         }
@@ -62,6 +62,13 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
                 backgroundColor: inlneBg ?? '',
                 borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
+            };
+        }
+        if (variant === 'soft') {
+            st = {
+                ...st,
+                backgroundColor: plugins.alpha(st.backgroundColor, 0.3),
+                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
             };
         }
 

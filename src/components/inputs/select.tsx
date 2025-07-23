@@ -17,18 +17,34 @@ export default function Select({
     value,
     required,
     style = {},
-    color = 'primary',
+    color = 'neutral',
+    variant =  'outline', 
     disabledForm,
     rightIcon,
     ...props
 }: SelectInputProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const { styles, variants } = useTheme();
+    const { styles, variants, plugins } = useTheme();
     const uid = useUids('select');
     const [input, setInput] = useState(value);
     const [open, setOpen] = useState(false);
 
 
+    const colorPlaceholder = useMemo(() => {
+        const curColor = (variants[color] ?? color) ?? style?.color;
+        let cur = 'white';
+
+        if (!variants[color]) {
+            const isBright = plugins.isBright(curColor, 100);
+
+            if (!isBright) cur = 'white';
+            else cur = curColor;
+
+            if (variant === 'contained' || variant === 'soft') cur = 'black';
+        }
+
+        return plugins.alpha(cur, 0.4);
+    }, [color, style, variant]);
     const focusWithinColor = useMemo(() => {
         const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
 
@@ -44,14 +60,11 @@ export default function Select({
     return (
         <>
             <style>
-                {cs(`
-                    input[data-style-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor}
-                    }
+                {`
                     .input-focus[data-style-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
-                `)}
+                `}
             </style>
 
             <Popover
@@ -64,6 +77,7 @@ export default function Select({
                         ref={ref}
                         data-style-id={uid}
                         color={color}
+                        variant={variant}
                         style={{ ...style }}
                         disabledVisibility={disabledForm}
                         labelRight={
@@ -89,7 +103,7 @@ export default function Select({
                         >
                             {input
                                 ? input
-                                : <span style={{ color: styles?.input?.placeholderColor }}>
+                                : <span style={{ color: colorPlaceholder }}>
                                     { placeholder }
                                 </span>
                             }

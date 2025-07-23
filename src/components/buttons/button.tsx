@@ -28,7 +28,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         children,
         size,
         variant = 'contained',
-        color = 'primary',
+        color = 'neutral',
+        fullWidth,
         className,
         isGradient,
         selected,
@@ -37,7 +38,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     },
     ref
 ) {
-    const { variants, autosizes, mixers, plugins, shadows } = useTheme();
+    const { variants, autosizes, plugins, shadows } = useTheme();
     const uid = useUids('button');
     const getSize = (size && size!=='auto') ? `btn-${size}` : autosizes.btn;
     
@@ -63,6 +64,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         let st = { 
             ...style,
             backgroundColor: (variant !== 'soft' && variant !== 'link') && (variants[color] ?? color ?? inlneBg),
+            borderColor: plugins.alpha(variants[color], 0.3) ?? inlneBorder,
             color: (variant === 'dash' || variant === 'outline')
                 ? (variants[color] ?? color) 
                 : colorContrast
@@ -74,12 +76,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
             st = {
                 ...rest,
                 ...st,
-                backgroundColor: inlneBg ?? 'inherit',
                 borderColor: (variants[color] ?? color) ?? inlneBorder,
+                backgroundColor: inlneBg ?? 'inherit',
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };
         }
-        if (isGradient) st.color = colorContrast;
+        if (isGradient) {
+            st.color = colorContrast;
+            st.border = 'none';
+        }
         if (selected) {
             st.backgroundColor = plugins.lighten(st.backgroundColor, 0.25);
             st.borderColor = plugins.lighten(st.borderColor, variant !== 'soft' ? 0.25 : 0.35);
@@ -91,15 +96,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
         const inlneTxt = style?.color;
-        const curVariant = variants[color];
+        const curVariant = variants[color] ?? color;
 
         if (key === 'backgroundColor') return (inlneBg
-            ? mixers.button.background(inlneBg, 'hover')
-            : mixers.button.background(curVariant, 'hover')
+            ? plugins.mixers.background(inlneBg, 'hover')
+            : plugins.mixers.background(curVariant, 'hover')
         );
         else if (key === 'border') return (inlneBg
-            ? mixers.button.border(inlneBorder, 'hover')
-            : mixers.button.border(curVariant, 'hover')
+            ? plugins.mixers.border(inlneBorder, 'hover')
+            : plugins.mixers.border(curVariant, 'hover')
         );
         else return (inlneTxt
             ? plugins.contrast(inlneTxt)
@@ -125,7 +130,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
             <button
                 ref={ref}
                 type="button"
-                data-id={props['data-id'] ?? uid}
+                data-id={uid}
                 style={{ 
                     boxShadow: shadows[shadow], 
                     opacity: props.disabled && 0.3,
@@ -147,6 +152,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     transition-transform 
                     duration-200 
                     hover:scale-97
+                    ${fullWidth ? 'w-full' : ''}
                     ${className ?? ''}
                 `)}
                 { ...props }

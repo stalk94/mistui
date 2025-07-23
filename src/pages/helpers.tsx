@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, IconButton } from '@/components/buttons';
+import { Button, GroupButton, IconButton } from '@/components/buttons';
 import { motion } from "framer-motion";
 import { Typography, Link } from '@/components/text';
 import Badge from '@/components/utils/badge';
@@ -85,7 +85,8 @@ export function Section({
     className?: string
 }) {
     const [descr, setDescr] = useState(description);
-    const [view, setView] = useState<'preview' | 'code'>('preview');
+    const [view, setView] = useState<'view' | 'code'>('view');
+
 
     useEffect(()=> {
         const lang = globalStore.lang.get();
@@ -109,20 +110,14 @@ export function Section({
                 </div>
                 {code && (
                     <div className="flex gap-2">
-                        <Button
-                            size="xs"
-                            variant={view === 'preview' ? 'contained' : 'dash'}
-                            onClick={() => setView('preview')}
-                        >
-                            View
-                        </Button>
-                        <Button
-                            size="xs"
-                            variant={view === 'code' ? 'contained' : 'dash'}
-                            onClick={() => setView('code')}
-                        >
-                            Code
-                        </Button>
+                        <GroupButton
+                            items={['view', 'code']}
+                            size='xs'
+                            variant='soft'
+                            color='primary'
+                            value={view}
+                            onChange={setView}
+                        />
                     </div>
                 )}
             </div>
@@ -135,7 +130,7 @@ export function Section({
                 <div
                     className={`border-1 p-3 rounded-md border-[#6b6b6b4b] bg-[#282828] relative overflow-auto ${className??''}`}
                 >
-                    {view === 'preview' && children}
+                    {view === 'view' && children}
                 </div>
             }
 

@@ -89,8 +89,8 @@ export type BaseProps = InputStyle & {
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     onChange?: React.Dispatch<React.SetStateAction<number|string>> | ((val: string)=> void)
-    className?: ClassValue
-    variant?: 'dash' | 'outline'
+    className?: HTMLElement['className'] | ClassValue
+    variant?: 'contained' | 'outline' | 'dash' | 'ghost'
 }
 
 export type NumberInputProps = Omit<BaseProps, 'type'> & {
@@ -196,6 +196,7 @@ export type SliderInputProps = InputStyle & {
     className?: ClassValue
 }
 
-export type TextAreaProps = Omit<BaseProps, 'type'> & {
-    variant: 'ghost' | 'outline' | 'dash'
+export type TextAreaProps = Omit<BaseProps, 'type'|'variant'|'className'> & {
+    variant?: 'outline' | 'dash' | 'ghost'
+    className?: HTMLElement['className']
 }

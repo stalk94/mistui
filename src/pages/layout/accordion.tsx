@@ -34,8 +34,8 @@ export default function InfoAccordion(tab) {
 
             {/* Variants */}
             <Section
-                title="Accordion Variants"
-                description="Different styles"
+                title="Variants"
+                description=""
                 code={variants.map(v => `<Accordion shadow='lg' variant="${v}" items={items} />`).join('\n')}
             >
                 <Grid className="flex justify-center">
@@ -99,6 +99,10 @@ export default function InfoAccordion(tab) {
 
 InfoAccordion.meta = {
     ...baseMeta,
+    color: {
+        ...baseMeta.color,
+        default: 'neutral'
+    },
     variant: {
         values: variants,
         type: 'enum',

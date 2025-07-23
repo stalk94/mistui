@@ -38,7 +38,7 @@ export const mixerButtonBorderColor = (color: string, type?: 'hover' | 'selected
     if (!type) return color;
     
     else {
-       if (type === 'hover') return colord(color).alpha(0.1).lighten(0.1).toRgbString();
+       if (type === 'hover') return colord(color).lighten(0.1).toRgbString();
        else return colord(color).alpha(0.2).lighten(0.1).toRgbString();
     }
 }
@@ -73,22 +73,15 @@ export function getContrastingColor(bgColor: string, dark: string, light: string
     return contrastWithBlack > contrastWithWhite ? dark : light;
 }
 
-
-export function deepMerge(target: any, source: any): any {
-    if (typeof target !== 'object' || typeof source !== 'object') {
-        return source;
-    }
-
-    const result = { ...target };
-
-    for (const key in source) {
-        if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
-            result[key] = deepMerge(target[key], source[key]);
-        } 
-        else {
-            result[key] = source[key];
-        }
-    }
-
-    return result;
+export function isBright(colorStr: string, cof: number = 200): boolean {
+    const c = colord(colorStr);
+    const rgb = c.toRgb();
+    // Формула восприятия яркости (0..255)
+    const brightness = Math.sqrt(
+        0.299 * (rgb.r * rgb.r) +
+        0.587 * (rgb.g * rgb.g) +
+        0.114 * (rgb.b * rgb.b)
+    );
+    
+    return brightness > cof;
 }

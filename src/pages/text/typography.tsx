@@ -15,8 +15,8 @@ export default function InfoTypography(tab) {
             <Section title="base" description=""
                 code={`<Typography>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Typography>`}
             >
-                <div className="flex justify-center">
-                    <Typography variant='body2' color='white'>
+                <div className="flex">
+                    <Typography color='white'>
                         This converter creates fancy symbols. The explanation starts with unicode; an industry standard which
                     </Typography>
                 </div>
@@ -31,10 +31,10 @@ export default function InfoTypography(tab) {
                     .join('\n')
                 }
             >
-                <ButtonGrid>
+                <ButtonGrid className='flex-col justify-center'>
                     {variants.map((variant, i) => (
-                        <Typography key={i} variant={variant}>
-                            {variant}
+                        <Typography color='white' key={i} variant={variant}>
+                            {variant}: Lorem ipsum dolor sit amet
                         </Typography>
                     ))}
                 </ButtonGrid>
@@ -77,7 +77,7 @@ export default function InfoTypography(tab) {
                                 color={colorsCustom[i]}
                                 tracking='tighter'
                             >
-                                {variant}
+                                Lorem ipsum dolor sit amet
                             </Typography>
                         </div>
                     ))}
@@ -166,14 +166,20 @@ export default function InfoTypography(tab) {
 
 InfoTypography.meta = {
     ...baseMeta,
+    color: {
+        ...baseMeta.color,
+        default: 'primary'
+    },
     variant: {
         values: variants,
         type: 'enum',
         description: 'Text variant that defines style and size.',
+        default: 'body2'
     },
     fontStyle: {
         values: ['normal', 'italic'],
         type: 'enum',
+        default: 'normal',
         description: 'Font style: normal or italic.',
     },
     fontFamily: {

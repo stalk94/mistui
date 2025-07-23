@@ -208,6 +208,11 @@ const patterns = {
             badge
         </Badge>
     `),
+    Flag: (props) => (`
+        <Flag
+            ${toJSXProps(props)}
+        />
+    `),
     Indicator: (props) => (`
         <div className='m-5'>
             <Indicator
@@ -271,8 +276,15 @@ const patterns = {
             ${toJSXProps(props)}
         />
     `),
-    Table: (props)=> (`
-        <TableRender
+
+    // tables
+    DataTable: (props)=> (`
+        <DataTable
+            ${toJSXProps(props)}
+        />
+    `),
+    SimpleTable: (props)=> (`
+        <SimpleTable
             ${toJSXProps(props)}
         />
     `),

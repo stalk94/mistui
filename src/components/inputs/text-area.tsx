@@ -4,15 +4,17 @@ import { LabelTop } from './atomize';
 import { useCache } from '../hooks';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 
 
 
 export default function TextAreaInput({ 
     onChange, 
     placeholder, 
+    className,
     size, 
     color, 
-    variant,
+    variant = 'outline',
     labelTop, 
     required, 
     value, 
@@ -25,7 +27,22 @@ export default function TextAreaInput({
     const [val, setVal] = useCache(value);
     const sizes = size ? `textarea-${size}` : autosizes.textarea;
 
-    
+
+    const colorPlaceholder = useMemo(() => {
+        const curColor = (variants[color] ?? color) ?? style?.color;
+        let cur = 'white';
+
+        if (!variants[color]) {
+            const isBright = plugins.isBright(curColor, 100);
+
+            if (!isBright) cur = 'white';
+            else cur = curColor;
+
+            if (variant === 'contained' || variant === 'soft') cur = 'black';
+        }
+
+        return plugins.alpha(cur, 0.4);
+    }, [color, style, variant]);
     const borderVariant = useMemo(() => {
         if (variant === 'dash') return {
             borderStyle: 'dashed'
@@ -80,14 +97,14 @@ export default function TextAreaInput({
     return (
         <React.Fragment>
             <style>
-                {`
-                    textarea[data-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor}
+                {cs(`
+                    .textarea[data-id="${uid}"]::placeholder {
+                        color: ${colorPlaceholder}
                     }
-                    .input-focus[data-id="${uid}"]:focus-within {
+                    .textarea[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
-                `}
+                `)}
             </style>
             
             { labelTop &&
@@ -107,12 +124,13 @@ export default function TextAreaInput({
                     ...getStyle,
                     ...borderVariant
                 }}
-                className={`
+                className={cs(`
                     textarea
                     w-full
                     input-focus
                     ${sizes}
-                `}
+                    ${className ?? ''}
+                `)}
                 { ...props }
             />
         </React.Fragment>

@@ -10,8 +10,8 @@ import AvatarGrop from './data-display/avatar-group';
 import Indicator from './data-display/indicator';
 import Badges from './data-display/badge';
 import List from './data-display/list';
-import DataTable from './data-display/table';
-import Table from './data-display/simple-table';
+import DataTable from './tables/data';
+import Table from './tables/simple';
 import InputBase from './inputs/inputs';
 import Number from './inputs/number';
 import Color from './inputs/color';
@@ -48,8 +48,10 @@ import Popover from './feedback/popover';
 import Tooltip from './feedback/tooltip';
 import HorizontalCarousel from './media/horizontal-carousel';
 import VerticalCarousel from './media/vertical-carousel';
+import Flag from './data-display/flag';
 import { useMemo } from 'react';
 import { TypeTable } from './helpers';
+import Head from './head';
 
 
 const category = {
@@ -91,8 +93,7 @@ const category = {
         Indicator: Indicator,
         Badge: Badges,
         List: List,
-        DataTable: DataTable,
-        Table: Table
+        Flag: Flag,
     },
     layout: {
         Divider: Divider,
@@ -100,6 +101,10 @@ const category = {
         Collapse: Collapse,
         Accordion: Accordion,
         Overflow: Overflow,
+    },
+    tables: {
+        DataTable: DataTable,
+        SimpleTable: Table
     },
     page: {
         Footer: Footer,
@@ -136,10 +141,15 @@ export default function Base({ preview }) {
     }, []);
     const renderTable = (preview) => {
         if (catalog?.[preview]?.meta) return (
-            <TypeTable
-                preview={preview}
-                meta={catalog[preview].meta}
-            />
+            <>
+                <Head
+                    preview={preview}
+                />
+                <TypeTable
+                    preview={preview}
+                    meta={catalog[preview].meta}
+                />
+            </>
         );
     }
     

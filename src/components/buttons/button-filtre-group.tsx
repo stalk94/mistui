@@ -22,9 +22,10 @@ export default function ToggleButtonFiltreGroup({
     color,
     style = {},
     styleButtonReset = {},
+    fullWidth,
     ...props
 }: FilterToggleButtonGroupProps) {
-    const { plugins, variants, mixers } = useTheme();
+    const { plugins, variants } = useTheme();
     const uid = useUids('button-group');
     const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
     const [select, setSelect] = useCache(value);
@@ -42,12 +43,12 @@ export default function ToggleButtonFiltreGroup({
         const curVariant = variants[color];
 
         if (key === 'backgroundColor') return (inlneBg
-            ? mixers.button.background(inlneBg, 'hover')
-            : mixers.button.background(curVariant, 'hover')
+            ? plugins.mixers.background(inlneBg, 'hover')
+            : plugins.mixers.background(curVariant, 'hover')
         );
         else if (key === 'border') return (inlneBg
-            ? mixers.button.border(inlneBorder, 'hover')
-            : mixers.button.border(curVariant, 'hover')
+            ? plugins.mixers.border(inlneBorder, 'hover')
+            : plugins.mixers.border(curVariant, 'hover')
         );
         else return (inlneTxt
             ? colord(inlneTxt).alpha(0.6).toRgbString()
@@ -62,7 +63,15 @@ export default function ToggleButtonFiltreGroup({
             disabledVisibility
             { ...props }
         >
-            <form className="filter w-full flex-wrap gap-[0.25rem] over">
+            <form 
+                className={`
+                    filter 
+                    flex-wrap 
+                    gap-[0.25rem] 
+                    over
+                    ${fullWidth ? 'w-full' : ''}
+                `}
+            >
                 { select &&
                     <input
                         className={cs(`

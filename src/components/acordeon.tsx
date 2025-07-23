@@ -23,45 +23,40 @@ export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'classNa
     classNameTitle?: React.HTMLAttributes<HTMLDivElement>['className']
 }
 
-
+// ! size paddings variants computed
 export default function Acordeon({
     items,
     size,
     activeIndexs,
     style = {},
     variant = 'contained',
-    color = 'primary',
+    color = 'neutral',
     shadow,
     styleTitle,
     className,
     classNameTitle
 }: AccordionProps) {
     const [refHover, hovered] = useHover();
-    const { styles, autosizes, variants, shadows, plugins } = useTheme();
+    const { autosizes, variants, shadows, plugins } = useTheme();
     const sizeText = size ? `text-${size}` : autosizes.text;
     const [active, setActive] = useCache(activeIndexs ?? 0);
     
 
-    const colorContrast = useMemo(() => {
-        if (variant !== 'dash' && variant !== 'outline' && variant !== 'soft') {
-            return plugins.contrast((variants[color] ?? color));
-        }
-        else return (variants[color] ?? color);
-    }, [style, color, variant]);
     const getStyle = useMemo(() => {
         if (variant === 'ghost') return {
             borderColor: 'transparent',
             backgroundColor: 'transparent',
             ...style
         };
+
         const inlneBg = style?.backgroundColor;
         const inlneBorder = style?.borderColor;
         
         let st = {
-            ...style,
+            color: plugins.contrast((variants[color] ?? color)),
             backgroundColor: (variants[color] ?? color),
-            borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.1),
-            color: plugins.alpha(colorContrast, 1)
+            borderColor: plugins.alpha((variants[color] ?? color), 0.4),
+            ...style,
         }
 
         if (variant === 'soft') {
@@ -70,7 +65,8 @@ export default function Acordeon({
             st = {
                 ...rest,
                 ...st,
-                backgroundColor:  plugins.alpha(st.backgroundColor ?? inlneBg, 0.05) ?? 'inherit',
+                backgroundColor:  plugins.alpha(st.backgroundColor ?? inlneBg, 0.25) ?? 'inherit',
+                color: plugins.contrast(plugins.alpha(st.backgroundColor ?? inlneBg, 0.25)),
                 borderColor: plugins.alpha((variants[color] ?? color) ?? inlneBorder ?? inlneBg, 0.2),
                 borderStyle: 'solid',
             };
@@ -79,11 +75,11 @@ export default function Acordeon({
             const { backgroundColor, ...rest } = style;
 
             st = {
+                backgroundColor: inlneBg ?? 'inherit',
+                borderColor: (variants[color] ?? color) ?? inlneBorder,
+                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
                 ...rest,
                 ...st,
-                backgroundColor: inlneBg ?? 'inherit',
-                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
-                borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };
         }
 
@@ -92,12 +88,11 @@ export default function Acordeon({
     }, [style, color, variant]);
     const getStyleHovered = useMemo(() => {
         const inlneBg = style?.backgroundColor;
-        const inlneBorder = style?.borderColor;
         let st = {};
 
         if (hovered && variant === 'ghost') return {
             borderColor: 'transparent',
-            backgroundColor: plugins.alpha(variants[color] ?? color, 0.7),
+            backgroundColor: inlneBg ?? plugins.alpha(variants[color] ?? color, 0.7),
             ...style
         }
 
@@ -110,7 +105,6 @@ export default function Acordeon({
             ref={refHover}
             style={{ 
                 borderRadius: 6,
-                backgroundColor: styles?.accordeon?.backgroundColor,
                 boxShadow: shadows[shadow],
                 ...getStyle,
                 ...getStyleHovered
@@ -143,7 +137,7 @@ export default function Acordeon({
                             flex
                             justify-between 
                             items-center
-                            ${classNameTitle && classNameTitle}
+                            ${classNameTitle ?? ''}
                         `)}
                         style={styleTitle}
                     >

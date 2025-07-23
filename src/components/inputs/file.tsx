@@ -16,7 +16,7 @@ export default function FileInput({
     maxSize, 
     onError, 
     style,
-    color = 'primary',
+    color = 'neutral',
     ...props 
 }: FileInputProps) {
     const { styles } = useTheme();

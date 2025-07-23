@@ -20,6 +20,7 @@ export type ButtonProps = Props & {
     isGradient?: any
     selected?: boolean
     disabled?: boolean
+    fullWidth?: boolean
     'aria-label'?: string
 }
 

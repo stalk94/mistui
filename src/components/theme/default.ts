@@ -1,15 +1,13 @@
-import { CSSProperties } from 'react';
-import  type { Theme } from './types';
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
 import mixPlugin from "colord/plugins/mix";
 import namesPlugin from "colord/plugins/names";
 extend([namesPlugin, a11yPlugin, mixPlugin]);
-import { mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrastingColor } from './helpers';
+import { mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrastingColor, isBright } from './helpers';
 
 
 //////////////////////////////////////////////////////////////////////////
-//      default settings          
+//      default settings constant         
 //////////////////////////////////////////////////////////////////////////
 export const fontFamilyVariants = {
     'JetBrains Mono': '',
@@ -23,26 +21,7 @@ export const fontFamilyVariants = {
     Merriweather: '--font-family-merriweather',
     Raleway: '--font-family-raleway'
 }
-
-const COLORS = {
-    black: 'rgb(1, 1, 1)',
-    white: 'rgb(255, 255, 255)',
-    base: 'rgb(18, 18, 18)',                // основа, фон #1F1F1F
-    input: 'rgb(65, 65, 65)',               // !
-    button: 'rgb(43, 43, 43)',
-    selected: 'rgba(255, 255, 255, 0.7)'                        
-}
-const variantsColor = {
-    neutral: 'rgba(43, 43, 43)',
-    primary: 'rgba(108, 108, 108, 0.497)',
-    secondary: 'rgb(244, 48, 152)',
-    accent: 'rgb(0, 211, 187)',
-    error: 'rgb(255, 98, 103)',
-    success: 'rgb(0, 211, 144)',
-    warning: 'rgb(252, 183, 0)',
-    info: 'rgb(0, 186, 254)'
-}
-const typographyVariants = {
+const TYPOGRAPHY = {
     h1: 'text-4xl sm:text-5xl md:text-6xl font-bold',
     h2: 'text-3xl sm:text-4xl md:text-5xl font-semibold',
     h3: 'text-2xl sm:text-3xl md:text-4xl font-semibold',
@@ -61,7 +40,11 @@ const typographyVariants = {
 
     button: 'text-sm sm:text-base font-bold uppercase',
 }
-const sizes = {
+const COLORS = {
+    base: 'rgb(18, 18, 18)',
+    selected: 'rgba(255, 255, 255, 0.7)'                        
+}
+const SIZES = {
     text: {
         default: 'sm',
         sm: 'md',
@@ -120,107 +103,122 @@ const sizes = {
         md: 'md',
         lg: 'lg',
         xl: 'xl'
+    },
+    divider: {
+        xs: 1,
+        sm: 1,
+        md: 2,
+        lg: 2,
+        xl: 3
     }
 }
-
+const VARIANTS = {
+    primary: 'rgb(255, 255, 255)',                  // rgba(108, 108, 108, 0.497)
+    secondary: 'rgb(108, 108, 108)',                 // rgb(244, 48, 152)
+    accent: 'rgb(244, 48, 152)',                     // rgb(0, 211, 187)
+    success: 'rgb(0, 211, 144)',
+    warning: 'rgb(252, 183, 0)',
+    error: 'rgb(255, 98, 103)',
+    info: 'rgb(0, 186, 254)',
+    neutral: 'rgb(60, 60, 60)'                      // rgba(43, 43, 43)
+}
+const SHADOWS = {
+    xs: '0 1px 2px 1px rgba(1, 1, 1, 0.1)',
+    sm: '0 2px 3px 1px rgba(1, 1, 1, 0.1)',
+    md: '0 2px 3px 1px rgba(1, 1, 1, 0.2)',
+    lg: '0 3px 4px 1px rgba(1, 1, 1, 0.15)',
+    xl: '0 10px 15px -5px rgba(1, 1, 1, 0.2)',
+    xxl: '0 10px 15px -5px rgba(1, 1, 1, 0.25)'
+}
 
 
 //////////////////////////////////////////////////////////////////////////
 //            default theme object            
 //////////////////////////////////////////////////////////////////////////
-const defaultTheme = {
-    enableEditorMod: true,
-    autosizes: generateSizes(sizes),
-    colors: COLORS,
-    variants: variantsColor ,
-    shadows: {
-        xs: '0 1px 2px 1px rgba(1, 1, 1, 0.1)',
-        sm: '0 2px 3px 1px rgba(1, 1, 1, 0.1)',
-        md: '0 2px 3px 1px rgba(1, 1, 1, 0.2)',
-        lg: '0 3px 4px 1px rgba(1, 1, 1, 0.15)',
-        xl: '0 10px 15px -5px rgba(1, 1, 1, 0.2)',
-        xxl: '0 10px 15px -5px rgba(1, 1, 1, 0.25)'
-    },
-    styles: {
-        inputLabelTop: <CSSProperties> {
-            color: undefined,
-            fontFamily: undefined,
-            marginLeft: '0%',
-            borderBottomColor: undefined,
-            marginRight: undefined,
-            marginBottom: undefined,
-            justifyContent: 'start'
-        },
-        input: <CSSProperties> {
-            backgroundColor: colord(COLORS.base).lighten(0.08).toRgbString(),
-            focusOutlineColor: colord(COLORS.base).lighten(0.6).toRgbString(),
-            placeholderColor: colord(COLORS.base).lighten(0.4).toRgbString(),
-            fontColor: colord(COLORS.base).lighten(0.8).toRgbString(),
-            borderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
-            borderStyle: 'solid',
-            borderWidth: 1,
+export function createTheme({
+    colors,
+    sizes,
+    colorVariants,
+    typographyVariants,
+    shadows
+}) {
+    const theme = {
+        /** black/white */
+        theme: 'dark',
+        sizes: sizes,
+        autosizes: generateSizes(sizes),
+        colors: colors,
+        variants: colorVariants,
+        shadows: shadows,
+        typography: typographyVariants,
+        styles: {} as any, // временно
+        plugins: {} as any // временно
+    };
 
-            switchBorderColor: colord(COLORS.base).lighten(0.25).toRgbString(),
-            switchThumbBackgroundColor: colord(COLORS.base).lighten(0.25).toRgbString(),
+    theme.styles = {
+        input: {
+            focusOutlineColor: colord(theme.colors.base).lighten(0.6).toRgbString(),
+            fontColor: colord(theme.colors.base).lighten(0.8).toRgbString(),
 
             sliderTrackColor: 'rgb(169, 169, 169)',
             sliderTrackFillColor: 'rgb(211, 211, 211)',
             sliderTrackHeight: 0.1,
             sliderTrackFillHeight: 0.2,
         },
-        accordeon: {
-            backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
-        },
         tabs: {
-            borderColor: colord(COLORS.base).lighten(0.1).toRgbString()
+            borderColor: colord(theme.colors.base).lighten(0.1).toRgbString()
         },
         table: {
-            body: colord(COLORS.base).lighten(0.1).toRgbString(),
-            header: colord(COLORS.base).lighten(0.2).toRgbString(),
-            thead: colord(COLORS.base).lighten(0.3).toRgbString(),
-            border: colord(COLORS.base).lighten(0.25).toRgbString(),
-            fontColor: colord(COLORS.base).lighten(0.8).toRgbString(),
+            body: colord(theme.colors.base).lighten(0.1).toRgbString(),
+            header: colord(theme.colors.base).lighten(0.2).toRgbString(),
+            thead: colord(theme.colors.base).lighten(0.3).toRgbString(),
+            border: colord(theme.colors.base).lighten(0.25).toRgbString(),
+            fontColor: colord(theme.colors.base).lighten(0.8).toRgbString(),
             theadFontColor: 'grey',
         },
         appBar: {
-            backgroundColor: colord(COLORS.base).lighten(0.15).toRgbString()
+            backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString()
         },
         leftBar: {
-            backgroundColor: colord(COLORS.base).lighten(0.1).toRgbString()
+            backgroundColor: colord(theme.colors.base).lighten(0.1).toRgbString()
         },
-        button: {
-            selectedBackground: ''
-        },
-        popUp: {
+        popUp: {},
+        modal: {}
+    };
 
-        },
-        modal: {
+    theme.plugins = {
+        invert: (color: string) => colord(color).invert().toRgbString(),
+        isBright: (color: string, cof?: number)=> isBright(color, cof),
+        contrast: (color: string, dark?: string, light?: string) => {
+            const defaultDark = theme.theme === 'dark' ? 'black' : 'white';
+            const defaultLight = theme.theme === 'dark' ? 'white' : 'black';
 
+            return getContrastingColor(color, (dark ?? defaultDark), (light ?? defaultLight))
+        },
+        alpha: (color: string, alpha: number) =>
+            colord(color).isValid() && colord(color).alpha(alpha).toRgbString(),
+        lighten: (color: string, cof: number) =>
+            colord(color).lighten(cof).toRgbString(),
+        mixers: {
+            color: (color, type?: 'hover' | 'selected') =>
+                colord(mixerButtonColor(color, type)).alpha(0.6).toRgbString(),
+            background: (color, type?: 'hover' | 'selected') =>
+                mixerButtonColor(color, type),
+            border: (color, type?: 'hover' | 'selected') =>
+                mixerButtonBorderColor(color, type),
         }
-    },
+    };
 
-    mixers: {
-        button: {
-            color: (variant?: Varinats, type?: 'hover' | 'selected') =>
-                colord(mixerButtonColor(variant, type))
-                    .alpha(0.6)
-                    .toRgbString(),
-            background: (variant?: Varinats, type?: 'hover' | 'selected') => mixerButtonColor(variant, type),
-            border: (variant?: Varinats, type?: 'hover' | 'selected') => mixerButtonBorderColor(variant, type),
-        }
-    },
-    plugins: {
-        /* inversion color */
-        invert: (color: string)=> colord(color).invert().toRgbString(),
-        contrast: (color: string, dark?: string, light?: string)=> {
-            return getContrastingColor(color, dark ?? COLORS.black, light ?? COLORS.white);
-        },
-        alpha: (color: string, alpha: number)=> colord(color).isValid() && colord(color).alpha(alpha).toRgbString(),
-        lighten: (color: string, cof: number)=> colord(color).lighten(cof).toRgbString()
-    }
+
+    return theme;
 }
 
 
-
-export type Varinats = keyof typeof variantsColor;
-export default defaultTheme;
+export const defaultTheme = createTheme({
+    colors: COLORS, 
+    sizes: SIZES, 
+    colorVariants: VARIANTS, 
+    typographyVariants: TYPOGRAPHY,
+    shadows: SHADOWS
+});
+export type Variants = keyof typeof VARIANTS;

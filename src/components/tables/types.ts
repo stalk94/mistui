@@ -42,7 +42,12 @@ export type DataTablePropsWrapper = Omit<ComponentProps<typeof DataTable>, 'size
 }
 
 export type TableProps = {
-    children: {
+    schema: {
+        header: React.ReactNode
+        field: string
+        body?: (data: any) => React.ReactNode
+    }[], 
+    children?: {
         header: React.ReactNode
         field: string
         body?: (data: any) => React.ReactNode
@@ -55,4 +60,5 @@ export type TableProps = {
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     footer?: React.ReactNode
     header?: React.ReactNode
+    variant?: 'contained' | 'outline' | 'dash'
 }

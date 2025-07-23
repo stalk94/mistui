@@ -17,12 +17,13 @@ export default function Autocomplete({
     size,
     value,
     style = {},
-    color = 'primary',
+    color = 'neutral',
+    variant = 'outline',
     required,
     ...props
 }: AutoInputProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const { styles, variants } = useTheme();
+    const { styles, variants, plugins } = useTheme();
     const [input, setInput] = useState(value ?? '');
     const uid = useUids('autocomplete');
     const [open, setOpen] = useState(false);
@@ -31,8 +32,23 @@ export default function Autocomplete({
     const filtered = options.filter(opt =>
         opt.toLowerCase().includes(input.toLowerCase())
     );
+    const colorPlaceholder = useMemo(() => {
+        const curColor = (variants[color] ?? color) ?? style?.color;
+        let cur = 'white';
+
+        if (!variants[color]) {
+            const isBright = plugins.isBright(curColor, 100);
+
+            if (!isBright) cur = 'white';
+            else cur = curColor;
+
+            if (variant === 'contained' || variant === 'soft') cur = 'black';
+        }
+
+        return plugins.alpha(cur, 0.4);
+    }, [color, style, variant]);
     const focusWithinColor = useMemo(() => {
-        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
+        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor);
 
         return colorVarint;
     }, [color, style]);
@@ -47,17 +63,15 @@ export default function Autocomplete({
         <>
             <style>
                 {cs(`
-                    input[data-style-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor}
-                    }
-                    .input-focus[data-style-id="${uid}"]:focus-within {
-                        outline-color: ${focusWithinColor};
-                    }
                     input[data-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor};
+                        color: ${colorPlaceholder};
+                    }
+                    .input-focus[data-id="${uid}"]:focus-within {
+                        outline-color: ${focusWithinColor};
                     }
                 `)}
             </style>
+            
 
             <Popover
                 usePortal
@@ -68,6 +82,7 @@ export default function Autocomplete({
                         size={size}
                         data-style-id={uid}
                         color={color}
+                        variant={variant}
                         ref={ref}
                         style={{ position: 'relative', ...style }}
                         labelRight={

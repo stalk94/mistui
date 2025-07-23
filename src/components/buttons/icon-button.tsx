@@ -25,7 +25,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
     },
     ref
 ) {
-    const { variants, autosizes, mixers, plugins, shadows } = useTheme();
+    const { variants, autosizes, plugins, shadows } = useTheme();
     const uid = useUids('icon-button');
     const getSize = (size && size !== 'auto') ? `btn-${size}` : autosizes.btn;
 
@@ -68,7 +68,9 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                 ...rest,
                 ...st,
                 backgroundColor: inlneBg ?? 'inherit',
-                borderColor: (variants[color] ?? color) ?? inlneBorder ?? inlneBg,
+                borderColor: variants[color] 
+                    ? variants[color]
+                    : (color ?? inlneBorder) ?? inlneBg,
                 borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             };
         }
@@ -91,12 +93,12 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
         const curVariant = variants[color];
 
         if (key === 'backgroundColor') return (inlneBg
-            ? mixers.button.background(inlneBg, 'hover')
-            : mixers.button.background(curVariant, 'hover')
+            ? plugins.mixers.background(inlneBg, 'hover')
+            : plugins.mixers.background(curVariant, 'hover')
         );
         else if (key === 'border') return (inlneBg
-            ? mixers.button.border(inlneBorder, 'hover')
-            : mixers.button.border(curVariant, 'hover')
+            ? plugins.mixers.border(inlneBorder, 'hover')
+            : plugins.mixers.border(curVariant, 'hover')
         );
         else return (inlneTxt
             ? plugins.contrast(inlneTxt)

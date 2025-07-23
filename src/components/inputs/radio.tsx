@@ -18,7 +18,7 @@ const radioSize = {
 export default function RadioInput({ 
     onChange, 
     size, 
-    color, 
+    color = 'neutral',
     value, 
     type, 
     shadow,

@@ -19,9 +19,10 @@ export default function ToggleButtonGroup({
     color,
     variant,
     orientation = 'horizontal',
+    fullWidth,
     ...props
 }: ToggleButtonGroupProps) {
-    const { plugins, variants, mixers } = useTheme();
+    const { plugins, variants } = useTheme();
     const uid = useUids('button-group');
     const [select, setSelect] = useCache(value);
 
@@ -38,12 +39,12 @@ export default function ToggleButtonGroup({
         const curVariant = variants[color];
 
         if (key === 'backgroundColor') return (inlneBg
-            ? mixers.button.background(inlneBg, 'hover')
-            : mixers.button.background(curVariant, 'hover')
+            ? plugins.mixers.background(inlneBg, 'hover')
+            : plugins.mixers.background(curVariant, 'hover')
         );
         else if (key === 'border') return (inlneBg
-            ? mixers.button.border(inlneBorder, 'hover')
-            : mixers.button.border(curVariant, 'hover')
+            ? plugins.mixers.border(inlneBorder, 'hover')
+            : plugins.mixers.border(curVariant, 'hover')
         );
         else return (inlneTxt
             ? colord(inlneTxt).alpha(0.6).toRgbString()
@@ -71,7 +72,7 @@ export default function ToggleButtonGroup({
                 className={cs(`
                     join 
                     flex-wrap
-                    w-full 
+                    ${fullWidth ? 'w-full' : ''}
                     gap-[2px]
                     ${orientation === 'vertical' ? 'join-vertical' : ''}
                 `)}

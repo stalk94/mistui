@@ -3,46 +3,47 @@ import '@/style/animate.css';
 import "@/style/tailwind.css";
 import { PropsWithChildren, useContext, useRef, useState, createContext, useEffect } from 'react';
 import { Theme } from './types';
-import { deepMerge } from './helpers';
-import defaultTheme from './default';
+import { defaultTheme } from './default';
 import { cs } from '../hooks/cs';
 import SafeTailwindClasses from '../../TailwindSafeClasses';
 
-type ThemeProviderProps = PropsWithChildren<{theme?: Theme}>;
-type RegistrStylesProps = Record<string, any>;
-const ThemeContext = createContext<Theme>(defaultTheme);
-const RegistrStyles = createContext<RegistrStylesProps>({});
 
 ///////////////////////////////////////////////////////////////////////
+type ThemeProviderProps = PropsWithChildren<{theme?: Theme}>;
+const ThemeContext = createContext<Theme>(defaultTheme);
+///////////////////////////////////////////////////////////////////////
+
 export function useTheme() {
 	const context = useContext(ThemeContext);
 	return context;
 }
 
-export function useRegistStyle() {
-	const context = useContext(RegistrStyles);
-    const prev = useRef(context);
-	const [state, dispatch] = useState(context);
-	
-
-	// Следим за внешним изменением контекста
-	useEffect(() => {
-		if (prev.current !== context) {
-			prev.current = context;
-			dispatch(context);
-		}
-	}, [context]);
-
-
-	return [state, dispatch] as const;
-}
 export function createTheme(data: any): Theme {
+    const deepMerge = (target: any, source: any) => {
+        if (typeof target !== 'object' || typeof source !== 'object') {
+            return source;
+        }
+
+        const result = { ...target };
+
+        for (const key in source) {
+            if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+                result[key] = deepMerge(target[key], source[key]);
+            }
+            else {
+                result[key] = source[key];
+            }
+        }
+
+        return result;
+    }
+
 	return deepMerge(defaultTheme, data);
 }
-///////////////////////////////////////////////////////////////////////
 
+
+///////////////////////////////////////////////////////////////////////
 const Cache = () => {
-    const [state, setState] = useRegistStyle();
     const { styles, colors } = useTheme();
 
     return (
@@ -82,9 +83,8 @@ const Cache = () => {
         </style>
     );
 }
-
 export function ThemeProvider({ theme = defaultTheme, children }: ThemeProviderProps) {
-    const enable = theme.enableEditorMod;
+    //const enable = theme.enableEditorMod;
 
 	return (
 		<ThemeContext.Provider value={theme}>

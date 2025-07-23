@@ -1,20 +1,22 @@
-import React, { forwardRef, useMemo, useRef } from 'react';
+import { forwardRef, useMemo, useRef, useState } from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
-import { useClientValidity, useCache } from '../hooks';
+import { useClientValidity } from '../hooks';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import type { BaseProps } from './type';
 import { cs } from '../hooks/cs';
 
 
+
+// ! placeholder color
 const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
     {
         style,
         type,
         placeholder,
         size,
-        color = 'primary',
-        variant,
+        color = 'neutral',
+        variant = 'outline',
         labelLeft,
         labelTop,
         labelRight,
@@ -29,18 +31,33 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
     ref
 ) {
     const uid = useUids(type);
-    const { styles, variants } = useTheme();
-    const [val, setVal] = useCache(value);
-
+    const { styles, variants, plugins } = useTheme();
+    const [val, setVal] = useState(value);
     const internalRef = useRef<HTMLInputElement>(null);
     const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
     const isInvalid = useClientValidity(inputRef);
 
+    
+    const colorPlaceholder = useMemo(() => {
+        const curColor = (variants[color] ?? color) ?? style?.color;
+        let cur = 'white';
+
+        if (!variants[color]) {
+            const isBright = plugins.isBright(curColor, 100);
+
+            if (!isBright) cur = 'white';
+            else cur = curColor;
+
+            if (variant === 'contained' || variant === 'soft') cur = 'black';
+        }
+
+        return plugins.alpha(cur, 0.4);
+    }, [color, style]);
     const focusWithinColor = useMemo(() => {
-        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
+        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor);
 
         return colorVarint;
-    }, [color, style]);
+    }, [color, style, variant]);
 
     
     const handle = (newValue: string) => {
@@ -54,7 +71,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
             <style>
                 {cs(`
                     input[data-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor};
+                        color: ${colorPlaceholder};
                     }
                     .input-focus[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
@@ -77,6 +94,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                 shadow={shadow}
             >
                 <input
+                    data-id={uid}
                     ref={inputRef}
                     type={type}
                     placeholder={placeholder}

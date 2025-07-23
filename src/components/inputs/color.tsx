@@ -68,11 +68,12 @@ export default function SelectColor({
     value,
     required,
     style,
-    color = 'primary',
+    color = 'neutral',
+    variant = 'outline',
     ...props 
 }: SelectInputProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const { styles, variants } = useTheme();
+    const { styles, variants, plugins } = useTheme();
     const uid = useUids('color');
     const [input, setInput] = useCache(value);
     const [open, setOpen] = useCache(false);
@@ -92,8 +93,23 @@ export default function SelectColor({
         setInput(str);
         debouncedOnChange(str);
     }
+    const colorPlaceholder = useMemo(() => {
+        const curColor = (variants[color] ?? color) ?? style?.color;
+        let cur = 'white';
+
+        if (!variants[color]) {
+            const isBright = plugins.isBright(curColor, 100);
+
+            if (!isBright) cur = 'white';
+            else cur = curColor;
+
+            if (variant === 'contained' || variant === 'soft') cur = 'black';
+        }
+
+        return plugins.alpha(cur, 0.4);
+    }, [color, style]);
     const focusWithinColor = useMemo(() => {
-        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor) ?? styles?.input?.borderColor;
+        const colorVarint = ((variants[color] ?? color) ?? style?.borderColor);
 
         return colorVarint;
     }, [color, style]);
@@ -103,10 +119,10 @@ export default function SelectColor({
         <>
             <style>
                 {cs(`
-                    input[data-style-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor}
+                    input[data-id="${uid}"]::placeholder {
+                        color: ${colorPlaceholder};
                     }
-                    .input-focus[data-style-id="${uid}"]:focus-within {
+                    .input-focus[data-id="${uid}"]:focus-within {
                         outline-color: ${focusWithinColor};
                     }
                 `)}
@@ -124,6 +140,7 @@ export default function SelectColor({
                         data-style-id={uid}
                         style={{ position: 'relative' }}
                         color={color}
+                        variant={variant}
                         labelRight={
                             <button className='cursor-pointer'>
                                 <span
@@ -141,7 +158,7 @@ export default function SelectColor({
                         <Inputs
                             styleInput={{
                                 color: styles?.input?.fontColor,
-                                placeholderColor: styles?.input?.placeholderColor
+                                placeholderColor: colorPlaceholder
                             }}
                             input={input}
                             updateComponent={handleChangeInputs}

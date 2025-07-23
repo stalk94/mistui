@@ -1,14 +1,17 @@
 import { ComponentProps } from 'react';
+import * as flags from 'country-flag-icons/react/3x2';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
+import type { SVGProps } from 'react';
 
 type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 type SpliterStProps = ComponentProps<typeof Splitter>;
 type SpliterPanelStProps = ComponentProps<typeof SplitterPanel>;
 
-export type FlagProps = {
-    code: string
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    margin?: string
+export type FlagCountryProps = {
+    code: keyof typeof flags
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | number
+    className?: SVGProps<SVGSVGElement>['className']
+    style?: SVGProps<SVGSVGElement>['style']
 }
 
 export type DividerProps = {

@@ -8,7 +8,7 @@ import { store } from './config-props';
 import ListMenu from '../components/menu/list-menu';
 import type { NavItem } from '../components/menu/type';
 import { DocumentTextIcon, CursorArrowRaysIcon, PencilSquareIcon, ListBulletIcon,
-    CodeBracketSquareIcon, DocumentIcon, ChatBubbleBottomCenterTextIcon, PhotoIcon, FolderIcon
+    CodeBracketSquareIcon, DocumentIcon, ChatBubbleBottomCenterTextIcon, PhotoIcon, FolderIcon, TableCellsIcon
 } from '@heroicons/react/24/solid';
 import { useEffect } from 'react';
 import SandBox from './Render';
@@ -24,14 +24,16 @@ const icons = {
     page: <DocumentIcon />,
     feedback: <ChatBubbleBottomCenterTextIcon />,
     media: <PhotoIcon />,
-    form: <FolderIcon />
+    form: <FolderIcon />,
+    tables: <TableCellsIcon />
 }
 const category = {
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
     inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu'],
-    'data-display': ['Avatar', 'AvatarGroup', 'Indicator', 'Badge', 'List', 'Table'],
+    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List'],
+    tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
     feedback: ['Alert', 'Tooltip', 'Modal', 'Popover', 'Drawer'],

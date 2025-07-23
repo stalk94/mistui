@@ -18,18 +18,13 @@ export default function InfoInput(tab) {
                     <BaseInput
                         size="sm"
                         placeholder="placeholder"
-                        labelLeft="🔍︎"
-                        labelTop="label"
                     />
                 `}
             >
                 <div className="flex justify-center">
                     <BaseInput
-                        type="text"
                         size="sm"
                         placeholder="placeholder"
-                        labelLeft="🔍︎"
-                        labelTop="label"
                     />
                 </div>
             </Section>
@@ -37,16 +32,15 @@ export default function InfoInput(tab) {
             {/* variants */}
             <Section
                 title="Variants"
-                description=""
+                description="in the example is used default color variant"
                 code={variants
                     .map((v) => `<BaseInput variant="${v}" placeholder="${v}" />`)
                     .join('\n')}
             >
                 <ButtonGrid>
-                    {variants.map((variant) => (
+                    {variants.map((variant) => variant!=='link' && (
                         <BaseInput
                             key={variant}
-                            type="text"
                             size="sm"
                             placeholder={variant}
                             variant={variant}
@@ -54,6 +48,7 @@ export default function InfoInput(tab) {
                     ))}
                 </ButtonGrid>
             </Section>
+
 
             {/* colors */}
             <Section
@@ -77,6 +72,48 @@ export default function InfoInput(tab) {
                 </ButtonGrid>
             </Section>
 
+            {/* custom colors */}
+            <Section
+                title="Custom Colors"
+                description="passed custom color and `dash` variant to props"
+                code={colorsCustom
+                    .map((v, i) => `<BaseInput size="sm" variant="dash" color="${v}" />`)
+                    .join('\n')}
+            >
+                <ButtonGrid>
+                    {colorsCustom.map((color, i) => (
+                        <BaseInput
+                            key={color}
+                            size="sm"
+                            variant='dash'
+                            color={color}
+                            placeholder={color}
+                        />
+                    ))}
+                </ButtonGrid>
+            </Section>
+
+            {/* custom colors or random variants */}
+            <Section
+                title="variants and color"
+                description="passed themes color and variant to props"
+                code={variants
+                    .map((v, i) => `<BaseInput variant="${v}" color="${colorsCustom[i]}" />`)
+                    .join('\n')}
+            >
+                <ButtonGrid>
+                    {variants.map((variant, i) => variant!=='link' && (
+                        <BaseInput
+                            key={variant}
+                            size="sm"
+                            variant={variant}
+                            color={colorsCustom[i]}
+                            placeholder={variant}
+                        />
+                    ))}
+                </ButtonGrid>
+            </Section>
+
             {/* sizes */}
             <Section
                 title="Sizes"
@@ -91,29 +128,7 @@ export default function InfoInput(tab) {
                             key={size}
                             size={size}
                             placeholder={size}
-                            labelTop={size}
                             value={size === 'xs' ? 'easter egg' : ''}
-                        />
-                    ))}
-                </ButtonGrid>
-            </Section>
-
-            {/* custom colors */}
-            <Section
-                title="Custom Colors"
-                description=""
-                code={variants
-                    .map((v, i) => `<BaseInput variant="${v}" color="${colorsCustom[i]}" />`)
-                    .join('\n')}
-            >
-                <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput
-                            key={variant}
-                            size="sm"
-                            variant={variant}
-                            color={colorsCustom[i]}
-                            placeholder={colorsCustom[i]}
                         />
                     ))}
                 </ButtonGrid>
@@ -126,16 +141,13 @@ export default function InfoInput(tab) {
                 code={`<BaseInput labelLeft="🔍︎" />`}
             >
                 <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput
-                            key={variant}
-                            size="sm"
-                            variant={variant}
-                            color={colors[i]}
-                            placeholder={colorsCustom[i]}
-                            labelLeft="🔍︎"
-                        />
-                    ))}
+                    <BaseInput
+                        size="sm"
+                        variant='dash'
+                        color='secondary'
+                        placeholder={'placeholder'}
+                        labelLeft="🔍︎"
+                    />
                 </ButtonGrid>
             </Section>
 
@@ -143,61 +155,41 @@ export default function InfoInput(tab) {
             <Section
                 title="Label Right"
                 description="label right"
-                code={`<BaseInput labelRight="✔️" />`}
+                code={`<BaseInput labelRight="✔️" variant='dash' color='secondary'/>`}
             >
                 <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput
-                            key={variant}
-                            size="sm"
-                            variant={variant}
-                            color={colors[i]}
-                            placeholder={colorsCustom[i]}
-                            labelRight="✔️"
-                        />
-                    ))}
+                    <BaseInput
+                        size="sm"
+                        variant='dash'
+                        color='secondary'
+                        placeholder={'placeholder'}
+                        labelRight="✔️"
+                    />
                 </ButtonGrid>
             </Section>
 
             {/* labels top */}
             <Section
                 title="Label Top"
-                description="label-top"
-                code={`<BaseInput labelTop="Label" />`}
+                description="label top and mixery"
+                code={`<BaseInput labelTop="label top" color='secondary' variant='outline'/>`}
             >
                 <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput
-                            key={variant}
-                            size="sm"
-                            variant={variant}
-                            color={colors[i]}
-                            placeholder={colorsCustom[i]}
-                            labelTop={`${variant} ${colors[i]}`}
-                        />
-                    ))}
-                </ButtonGrid>
-            </Section>
-
-            {/* mixed labels */}
-            <Section
-                title="Mixed Labels"
-                description=""
-                code={`<BaseInput labelTop="..." labelLeft="🔍︎" labelRight="🔍︎" />`}
-            >
-                <ButtonGrid>
-                    {variants.map((variant, i) => (
-                        <BaseInput
-                            key={variant}
-                            size="sm"
-                            variant={variant}
-                            color={colors[i]}
-                            placeholder={colorsCustom[i]}
-                            labelLeft="🔍︎"
-                            labelRight="🔍︎"
-                            labelTop={`${variant} ${colors[i]}`}
-                        />
-                    ))}
+                    <BaseInput
+                        size="sm"
+                        variant='outline'
+                        color='secondary'
+                        placeholder='placeholder'
+                        labelTop={`label top`}
+                    />
+                    <BaseInput
+                        size="sm"
+                        placeholder={'placeholder'}
+                        labelLeft="🔍︎"
+                        labelRight="🔍︎"
+                        color='secondary'
+                        labelTop={`label mixery`}
+                    />
                 </ButtonGrid>
             </Section>
         </div>

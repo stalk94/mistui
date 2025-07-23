@@ -45,7 +45,40 @@ export default function InfoTable(tab) {
             <Section 
                 title="Table" 
                 description="кнопка" 
-                code={`<Badge size='sm'>default</Badge>`}
+                code={`
+                    <div className="flex justify-center h-[400px]">
+                        <Table
+                            size='xs'
+                            shadow='lg'
+                            value={testData}
+                            children={[
+                                { header: <div>image</div>, field: 'image', 
+                                    body: (data) => <img className='h-6 w-6' src={data} />
+                                },
+                                { header: 'name', field: 'name' },
+                                { header: 'country', field: 'country',
+                                    body: (data) => <Flag code={data} size='xs' />
+                                },
+                                { header: 'rating', field: 'rating',
+                                    body: (data) => (
+                                        <div className='rating rating-xs'>
+                                            {[1, 2, 3, 4, 5].slice(0, data).map((_, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="mask mask-star bg-amber-300"
+                                                    aria-label="1 star"
+                                                />
+                                            ))
+                                            }
+                                        </div>
+                                    )
+                                },
+                            ]}
+                            header={'header'}
+                            footer={'footer'}
+                        />
+                    </div>
+                `}
             >
                 <div className="flex justify-center h-[400px]">
                     <Table
@@ -87,56 +120,18 @@ export default function InfoTable(tab) {
 
 InfoTable.meta = {
     children: {
-        values: ['string', 'React.ReactNode'],
-        type: 'enum',
-        description: 'Контент внутри компонента. Может быть текстом или React-элементом.'
+        values: [{ 
+            header: {
+
+            }, 
+            field: {
+
+            }, 
+            body: {
+
+            }
+        }],
+        type: 'array',
+        description: ''
     },
-    title: {
-        values: ['string'],
-        type: 'string',
-        description: 'Заголовок компонента, если предусмотрен.'
-    },
-    size: {
-        values: ['auto', 'xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'auto',
-        type: 'enum',
-        description: 'Размер компонента.'
-    },
-    shadow: {
-        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
-        type: 'enum',
-        description: 'Размер тени компонента.'
-    },
-    variant: {
-        values: ['contained', 'outline', 'dash', 'soft', 'ghost', 'link'],
-        default: 'contained',
-        type: 'enum',
-        description: 'Визуальный стиль компонента.'
-    },
-    color: {
-        values: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'],
-        default: 'neutral',
-        type: 'enum',
-        description: 'Цветовая тема компонента.'
-    },
-    isGradient: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Включает градиентную заливку.'
-    },
-    selected: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отображает компонент как выбранный.'
-    },
-    disabled: {
-        values: ['boolean'],
-        type: 'boolean',
-        description: 'Отключает компонент.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Описание для screen reader (доступность).'
-    }
 }

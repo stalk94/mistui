@@ -5,19 +5,12 @@ import { cs } from '../hooks/cs';
 import { useTheme } from '../theme';
 
 
-const sizes = {
-    xs: 1,
-    sm: 1,
-    md: 2,
-    lg: 2,
-    xl: 3
-}
 
 
 export default function Divider({ 
     children,
     size = 'xs', 
-    color = 'primary', 
+    color = 'secondary', 
     position = 'center', 
     orientation = 'horizontal', 
     style,
@@ -25,11 +18,11 @@ export default function Divider({
     className
 }: DividerProps) {
     const uid = useUids('divider');
-    const { variants, autosizes } = useTheme();
+    const { variants, sizes, autosizes } = useTheme();
     const getSize = size ? `text-${size}` : autosizes.text;
 
     const getBorderStyle = useMemo(()=> {
-        const s = sizes[size];
+        const s = sizes.divider[size] ?? 1;
         const hs = `border-top: ${s}px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
         const ws = `border-right: ${s}px ${variant ?? 'solid'} ${(variants[color] ?? color) ?? 'currentColor'}`;
         

@@ -54,8 +54,8 @@ export default function SwitchBox({
     value, 
     style = {},
     styleThumb,
-    color,
-    variant,
+    color = 'neutral',
+    variant = 'outline',
     shadow,
     ...props 
 }: SwitchBoxInputProps) {
@@ -72,13 +72,12 @@ export default function SwitchBox({
             borderStyle: 'solid'
         }
         else return {};
-    }, [variant, style, styles]);
+    }, [variant, style]);
     const chekColor = useCallback((type: 'borderColor' | 'backgroundColor') => {
         if (type === 'borderColor') return(
             plugins.lighten(
                 (variants[color] ?? color) 
                         ?? borderColor 
-                        ?? styles?.input?.switchBorderColor
                 , 0.1)
         );
         else return (
@@ -106,8 +105,7 @@ export default function SwitchBox({
             borderColor: chek 
                 ? chekColor('borderColor')
                 : (variants[color] ?? color) 
-                        ?? inlneBg 
-                        ?? styles?.input?.switchBorderColor,
+                        ?? inlneBg,
             color: plugins.alpha(colorContrast, 0.6)
         }
 
@@ -119,8 +117,7 @@ export default function SwitchBox({
         return ({
             backgroundColor: plugins.lighten(
                 (variants[color] ?? color)
-                        ?? styleThumb?.backgroundColor 
-                        ?? styles?.input?.switchThumbBackgroundColor
+                        ?? styleThumb?.backgroundColor
                 , chek ? 0.3 : 0.1)
         });
     }, [chek, style, color, variant]);
