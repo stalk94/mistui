@@ -83,7 +83,7 @@ export default function InfoAvatar(tab) {
                             shadow="sm"
                             variant="round"
                         >
-                            {color}
+                            {color.slice(0, 2)}
                         </Avatar>
                     ))}
                 </Grid>

@@ -68,7 +68,7 @@ export default function MenuList({
                     w-full
                     menu-${size}
                     p-[2px]
-                    
+                    overflow-y-auto
                     ${textSize}
                     ${className ?? ''}
                 `}

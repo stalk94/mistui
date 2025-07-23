@@ -970,12 +970,13 @@ const patterns = {
 }
 
 
-
+// <Outlet />
 export default function SandBox() {
     const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
     const cache = store.cache.use();
     const emmiter = store.emmiterProps.use();
     const { componentName } = useParams();
+    
     
     React.useEffect(()=> {
         //__generate()
@@ -990,17 +991,15 @@ export default function SandBox() {
     
 
     return (
-        <main className="flex flex-col h-full w-full" style={{maxWidth: '80%'}}>
-            <div
-                className="flex gap-4 px-1 rounded-sm w-fit shadow-sm"
-            >
+        <main className='ml-4'>
+            <div className="sticky top-0 z-10 flex gap-4 px-1 rounded-sm w-fit shadow-sm">
                 <GroupButton
                     variant='soft'
                     color='info'
                     size='xs'
                     value={mod}
                     onChange={setMod}
-                    style={{padding:2, margin: 'auto'}}
+                    style={{ padding: 2, margin: 'auto' }}
                     items={['documentation', 'playground']}
                 />
             </div>

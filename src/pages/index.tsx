@@ -145,7 +145,7 @@ export default function Base({ preview }) {
     
 
     return (
-        <main className="flex flex-col h-full w-full overflow-y-auto">
+        <main className="flex flex-col h-full w-full">
             { catalog[preview] &&
                 catalog[preview](renderTable(preview))
             }

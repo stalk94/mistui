@@ -61,7 +61,6 @@ globalThis.globalStore = createStore({
 
 
 const App = () => {
-    const lang = globalStore.lang.use();
     const [theme, setTheme] = React.useState('dark');
 
 
@@ -69,87 +68,24 @@ const App = () => {
         <ThemeProvider>
             <AlertProvider variant='outline'>
                 <BrowserRouter>
-                <div
-                    data-theme={theme}
-                    className="flex h-full w-screen main flex-col"
-                    style={{fontFamily: 'JetBrains Mono'}}
-                >
-                    <AppBar
-                        startSlot={
-                            <img
-                                src="http://localhost:3001/logo.png"
-                                alt="Logo"
-                                className='ml-1'
-                                style={{
-                                    maxHeight: '40px',
-                                    boxShadow: '0 1px 2px 1px rgba(1, 1, 1, 0.1)',
-                                    padding: '5px',
-                                    objectFit: 'contain',
-                                    borderRadius: '3px',
-                                    border: '1px solid #fbfbfb32',
-                                }}
-                            />
-                        }
-                        centerSlot={
-                            <LinearNavigationItems
-                                style={{ marginLeft: '5%' }}
-                                items={[
-                                    { 
-                                        id: 'info', 
-                                        label: <Link to="components/introduction">introduction</Link>, 
-                                        icon: <InformationCircleIcon /> 
-                                    }, { 
-                                        id: 'base', 
-                                        label: <Link to="components/install">install</Link>, 
-                                        icon: <CloudArrowDownIcon /> 
-                                    }, { 
-                                        id: 'components', 
-                                        label: <Link to="components">components</Link>, 
-                                        icon: <IconComponent />
-                                    },
-                                ]}
-                            />
-                        }
-                        endSlot={
-                            <div className='flex items-center'> 
-                                <CheckBox onChange={console.log} />
-                                <Select
-                                    size='sm'
-                                    disabledForm
-                                    color='inherit'
-                                    value={lang}
-                                    items={['ru', 'en', 'de']}
-                                    onChange={globalStore.lang.set}
-                                    rightIcon={<></>}
-                                />
-                                <Divider
-                                    color="#000000"
-                                    orientation='vertical'
-                                    className="py-1 pr-2"
-                                />
-                                {true &&
-                                    <BurgerMenu
-                                        items={[
-                                            { id: 'base', label: "in development", },
-                                        ]}
-                                    />
-                                }
-                            </div>
-                        }
-                    />
-
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/components" key={location.pathname} element={<SandBoxRoot />}>
-                            <Route index element={<ComponentsRoot/>} />
-                            <Route path=":componentName" element={<SandBox />} />
-                            <Route path="install" element={<Install />} />
-                            <Route path="introduction" element={<Introduction />} />
-                        </Route>
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                    
-                </div>
+                    <div
+                        data-theme={theme}
+                        className="w-screen"
+                        style={{fontFamily: 'JetBrains Mono'}}
+                    >
+        
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/components" key={location.pathname} element={<SandBoxRoot />}>
+                                <Route index element={<ComponentsRoot/>} />
+                                <Route path=":componentName" element={<SandBox />} />
+                                <Route path="install" element={<Install />} />
+                                <Route path="introduction" element={<Introduction />} />
+                            </Route>
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                        
+                    </div>
                 </BrowserRouter>
             </AlertProvider>
         </ThemeProvider>
