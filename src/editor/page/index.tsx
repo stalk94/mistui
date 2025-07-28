@@ -3,8 +3,8 @@
 export default function Home() {
 
     return (
-        <h1>
-            Домашняя страница
-        </h1>
+        <main className="flex flex-col h-full w-full">
+            home page
+        </main>
     );
 }

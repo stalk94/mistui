@@ -2,6 +2,7 @@ import { AvatarGroup } from '@/components/avatar';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { baseMeta } from '../meta';
+import { maskClasses } from './flag';
 
 
 export default function InfoAvatarGroup(tab) {
@@ -56,6 +57,34 @@ export default function InfoAvatarGroup(tab) {
                                 size={size}
                                 items={[
                                     {src: 'https://img.daisyui.com/images/profile/demo/yellingcat@192.webp',},
+                                    {src: 'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp',},
+                                    { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp',},
+                                    { children: '+99' },
+                                ]}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </Section>
+
+            {/* mask */}
+            <Section
+                title="Sizes"
+                description="Different avatar group sizes"
+                code={sizes
+                    .map(
+                        (size) => `<AvatarGroup size="${size}" items={[{ src: "..." }, { src: "..." }]} />`
+                    )
+                    .join('\n')}
+            >
+                <div className="flex flex-col gap-4 items-center">
+                    {['mask-heart', 'mask-hexagon'].map((m) => (
+                        <div key={m} className="flex flex-col items-center text-xs text-muted">
+                            <AvatarGroup
+                                size='sm'
+                                className={`mask ${m}`}
+                                items={[
+                                    {src: 'https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'},
                                     {src: 'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp',},
                                     { src: 'https://img.daisyui.com/images/profile/demo/batperson@192.webp',},
                                     { children: '+99' },

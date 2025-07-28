@@ -13,7 +13,7 @@ export default function InfoInput(tab) {
             {/* base */}
             <Section
                 title="Base"
-                description="simple input with icons and label"
+                description="simple input"
                 code={`
                     <BaseInput
                         size="sm"
@@ -32,7 +32,7 @@ export default function InfoInput(tab) {
             {/* variants */}
             <Section
                 title="Variants"
-                description="in the example is used default color variant"
+                description="in the example is used `color` default"
                 code={variants
                     .map((v) => `<BaseInput variant="${v}" placeholder="${v}" />`)
                     .join('\n')}

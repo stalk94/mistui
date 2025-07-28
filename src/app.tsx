@@ -51,7 +51,7 @@ const CheckBox = ({onChange}) => (
     </IconButton>
 );
 globalThis.globalStore = createStore({
-    lang: 'ru'
+    lang: 'en'
 }, {
     persist: { key: 'global' }
 });
@@ -73,12 +73,15 @@ const App = () => {
                     >
         
                         <Routes>
-                            <Route path="/" element={<SandBoxRoot />} />
-                            <Route path="/components" key={location.pathname} element={<SandBoxRoot />}>
-                                <Route index element={<ComponentsRoot/>} />
-                                <Route path=":componentName" element={<SandBox />} />
+                            <Route path="/" key={location.pathname} element={<SandBoxRoot />} >
+                                <Route index element={<Home />} />
                                 <Route path="install" element={<Install />} />
                                 <Route path="introduction" element={<Introduction />} />
+                            </Route>
+
+                            <Route path="/components" key={location.pathname} element={<SandBoxRoot />} >
+                                <Route index element={<ComponentsRoot/>} />
+                                <Route path=":componentName" element={<SandBox />} />
                             </Route>
                             <Route path="*" element={<NotFound />} />
                         </Routes>

@@ -57,7 +57,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
         disabledVisibility,
         style = {},
         className,
-        variant,
+        variant = 'outline',
         shadow,
         ...props
     },

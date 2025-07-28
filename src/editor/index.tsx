@@ -1,9 +1,8 @@
 import CustomBar from '../components/nav-bars/bar'
 import { AppBar, GroupButton, Divider, IconButton, Select, Typography } from '../index';
-import { Link } from "react-router-dom";
 import { InformationCircleIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import { BurgerMenu, LinearNavigationItems } from '@/components/app-bar';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { store } from './config-props';
 import ListMenu from '../components/menu/list-menu';
 import type { NavItem } from '../components/menu/type';
@@ -12,6 +11,7 @@ import { DocumentTextIcon, CursorArrowRaysIcon, PencilSquareIcon, ListBulletIcon
 } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
 import SandBox from './Render';
+import logo from '../../public/logo.png';
 
 
 const icons = {
@@ -84,6 +84,7 @@ export default function SandBoxRoot({ }) {
     const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
     const lang = globalStore.lang.use();
     const variants = store.variants.use();
+    const { pathname } = useLocation();
     const navigate = useNavigate();
 
 
@@ -124,14 +125,14 @@ export default function SandBoxRoot({ }) {
         const result = create();
         store.variants.set(result);
     }, []);
-
+    
 
     return (
         <section className='flex flex-col h-full overflow-clip'>
             <AppBar
                 startSlot={
                     <img
-                        src="http://localhost:3001/logo.png"
+                        src={logo}
                         alt="Logo"
                         className='ml-1'
                         style={{
@@ -150,15 +151,15 @@ export default function SandBoxRoot({ }) {
                         items={[
                             {
                                 id: 'info',
-                                label: <Link to="components/introduction">introduction</Link>,
+                                label: <div onClick={()=> navigate('/introduction')}>introduction</div>,
                                 icon: <InformationCircleIcon />
                             }, {
-                                id: 'base',
-                                label: <Link to="components/install">install</Link>,
+                                id: 'install',
+                                label: <div onClick={()=> navigate('/install')}>install</div>,
                                 icon: <CloudArrowDownIcon />
                             }, {
                                 id: 'components',
-                                label: <Link to="components">components</Link>,
+                                label: <div onClick={()=> navigate('/components')}>components</div>,
                                 icon: <IconComponent />
                             },
                         ]}
@@ -226,7 +227,10 @@ export default function SandBoxRoot({ }) {
                         w-full 
                     `}
                 >
-                    <SandBox mod={mod} setMod={setMod}/>
+                    {pathname !== '/' && pathname !== '/install' && pathname !== '/introduction' && pathname !== '/components'
+                        ? <SandBox mod={mod} setMod={setMod}/> 
+                        : <Outlet />
+                    }
 
                     {/* test banner */}
                     {mod !== 'playground' &&
