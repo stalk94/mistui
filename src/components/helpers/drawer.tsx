@@ -50,7 +50,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
     ref
 ) {
     const [checked, setChecked] = useState(open ?? false);
-    const { } = useTheme();
+    const { styles } = useTheme();
 
 
     const handleToggle = (val: boolean) => {
@@ -105,7 +105,10 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
                             exit="exit"
                             variants={variants[position]}
                             transition={{ type: "tween", duration: 0.3 }}
-                            style={style}
+                            style={{
+                                ...styles.drawer,
+                                ...style
+                            }}
                             { ...props }
                         >
                             { children }

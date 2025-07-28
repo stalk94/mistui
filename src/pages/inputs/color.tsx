@@ -7,6 +7,7 @@ export default function InfoColorPicker(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
+            
             {/* базовый */}
             <Section
                 title="base"
@@ -18,15 +19,6 @@ export default function InfoColorPicker(tab) {
                 </div>
             </Section>
 
-            <Section
-                title="ColorPicker"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
-            >
-                <div className="flex justify-center">
-                    
-                </div>
-            </Section>
         </div>
     );
 }

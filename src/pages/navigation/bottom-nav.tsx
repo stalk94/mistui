@@ -40,7 +40,7 @@ export default function InfoBottomNav(tab) {
                     {sizes.map((size, i) => (
                         <div key={i} className="flex flex-col justify-start">
                             <Divdder className="py-4" variant="dashed" position="end">
-                                <Typography color="#daf166" variant="caption">
+                                <Typography color="#b9b9b9" variant="caption">
                                     {size}
                                 </Typography>
                             </Divdder>

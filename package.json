@@ -11,7 +11,8 @@
     "build:types": "tsc --emitDeclarationOnly",
     "nextdev": "npx open-cli http://localhost:3000 & next dev --turbo",
     "nextbuild": "next build",
-    "build": "vite build"
+    "build": "vite build",
+    "build:doc": "vite build --config ./vites.config.ts"
   },
   "exports": {
     ".": {

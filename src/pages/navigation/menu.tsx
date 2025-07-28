@@ -32,8 +32,8 @@ export default function InfoMenu(tab) {
             { tab }
             {/* default */}
             <Section 
-                title="Menu" 
-                description="кнопка" 
+                title="basic" 
+                description="" 
                 code={`<Menu size='sm'>default</Menu>`}
             >
                 <div className="flex justify-center">
@@ -49,8 +49,8 @@ export default function InfoMenu(tab) {
 
             {/* sizes */}
             <Section
-                title="Menu sizes"
-                description="разные размеры"
+                title="sizes"
+                description=""
                 code={sizes
                     .map((size) => `<Menu size="${size}" shadow="sm">${size}</Menu>`)
                     .join('\n')}
@@ -82,8 +82,8 @@ export default function InfoMenu(tab) {
 
             {/* colors */}
             <Section
-                title="Menu colors"
-                description="разные цвета"
+                title="colors"
+                description=""
                 code={colors
                     .map((color) => `<Menu size="sm" color="${color}" shadow="sm">${color}</Menu>`)
                     .join('\n')}

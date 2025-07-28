@@ -32,14 +32,26 @@ export default function InfoTooltip(tab) {
             { tab }
             
             {/* base */}
-            <Section title="base" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="basik" 
+                description="" 
+                code={`
+                    
+                `}
+            >
                 <Grid className="my-6 max-w-90 m-auto">
                     <Render cb='error' />
                 </Grid>
             </Section>
 
             {/* colors */}
-            <Section title="color" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="color"
+                description="" 
+                code={`
+                    
+                `}
+            >
                 <Grid className="my-6 max-w-90 m-auto">
                     <Render 
                         cb='secondary'

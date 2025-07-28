@@ -42,7 +42,8 @@ export default function Tabs({
                     ?? styles?.tabs?.borderColor;
 
             return({
-                borderColor: (variants[color] ?? color) ?? borderColor
+                borderColor: (variants[color] ?? color) 
+                    ?? borderColor
             });
         }
         else return({});
@@ -62,6 +63,7 @@ export default function Tabs({
                 boxShadow: shadows[shadow],
                 ...style
             }}
+            { ...props }
         >
             {items.map((tabData, index)=>
                 <Fragment key={index}>

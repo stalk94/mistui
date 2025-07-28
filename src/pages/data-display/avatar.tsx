@@ -2,6 +2,7 @@ import Avatar from '@/components/avatar';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { baseMeta } from '../meta';
+import { maskClasses } from './flag';
 
 const variants = ['base', 'square', 'round'];
 
@@ -61,6 +62,30 @@ export default function InfoAvatar(tab) {
                         />
                     ))}
                 </Grid>
+            </Section>
+
+             {/* mask */}
+            <Section
+                title="Mask"
+                description="Use mask-* classes from DaisyUI to shape the avatar"
+                code={maskClasses
+                    .map(
+                        (m) =>
+                            `<Avatar size="sm" className="mask ${m}" src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />`
+                    )
+                    .join('\n')}
+            >
+                <div className="flex flex-wrap">
+                    {maskClasses.map((m) => (
+                        <Avatar
+                            key={m}
+                            size='sm'
+                            shadow="sm"
+                            className={`mr-3 mask ${m}`}
+                            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
+                        />
+                    ))}
+                </div>
             </Section>
 
             {/* placeholder colors */}

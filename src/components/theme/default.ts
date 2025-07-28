@@ -42,7 +42,7 @@ const TYPOGRAPHY = {
 }
 const COLORS = {
     base: 'rgb(18, 18, 18)',
-    selected: 'rgba(255, 255, 255, 0.7)'                        
+    selected: 'rgba(255, 255, 255, 0.7)'            // ?                 
 }
 const SIZES = {
     text: {
@@ -136,6 +136,7 @@ const SHADOWS = {
 //            default theme object            
 //////////////////////////////////////////////////////////////////////////
 export function createTheme({
+    themeSchema,
     colors,
     sizes,
     colorVariants,
@@ -143,16 +144,15 @@ export function createTheme({
     shadows
 }) {
     const theme = {
-        /** black/white */
-        theme: 'dark',
+        theme: themeSchema ?? 'dark',                          // black/white
+        colors: colors,
         sizes: sizes,
         autosizes: generateSizes(sizes),
-        colors: colors,
-        variants: colorVariants,
+        variants: colorVariants,                // color variants theme
         shadows: shadows,
         typography: typographyVariants,
-        styles: {} as any, // временно
-        plugins: {} as any // временно
+        styles: {} as any,                      // component basic style settings
+        plugins: {} as any
     };
 
     theme.styles = {
@@ -165,9 +165,6 @@ export function createTheme({
             sliderTrackHeight: 0.1,
             sliderTrackFillHeight: 0.2,
         },
-        tabs: {
-            borderColor: colord(theme.colors.base).lighten(0.1).toRgbString()
-        },
         table: {
             body: colord(theme.colors.base).lighten(0.1).toRgbString(),
             header: colord(theme.colors.base).lighten(0.2).toRgbString(),
@@ -176,14 +173,27 @@ export function createTheme({
             fontColor: colord(theme.colors.base).lighten(0.8).toRgbString(),
             theadFontColor: 'grey',
         },
+        tabs: {
+            borderColor: colord(theme.colors.base).lighten(0.1).toRgbString()
+        },
         appBar: {
             backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString()
         },
-        leftBar: {
-            backgroundColor: colord(theme.colors.base).lighten(0.1).toRgbString()
+        popover: {
+            minWidth: 40,
+            backdropFilter: "blur(14px)"
         },
-        popUp: {},
-        modal: {}
+        modal: {
+            backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString(),
+            borderColor: colord(theme.colors.base).lighten(0.25).toRgbString(),
+            borderWidth: 1
+        },
+        drawer: {
+            backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString(),
+            borderColor: colord(theme.colors.base).lighten(0.25).toRgbString(),
+            borderWidth: 1,
+            padding: 8
+        }
     };
 
     theme.plugins = {
@@ -195,10 +205,9 @@ export function createTheme({
 
             return getContrastingColor(color, (dark ?? defaultDark), (light ?? defaultLight))
         },
-        alpha: (color: string, alpha: number) =>
-            colord(color).isValid() && colord(color).alpha(alpha).toRgbString(),
-        lighten: (color: string, cof: number) =>
-            colord(color).lighten(cof).toRgbString(),
+        alpha: (color: string, alpha: number) => colord(color).alpha(alpha).toRgbString(),
+        lighten: (color: string, cof: number) => colord(color).lighten(cof).toRgbString(),
+        darken: (color: string, cof: number) => colord(color).darken(cof).toRgbString(),
         mixers: {
             color: (color, type?: 'hover' | 'selected') =>
                 colord(mixerButtonColor(color, type)).alpha(0.6).toRgbString(),
@@ -215,6 +224,7 @@ export function createTheme({
 
 
 export const defaultTheme = createTheme({
+    themeSchema: 'dark',
     colors: COLORS, 
     sizes: SIZES, 
     colorVariants: VARIANTS, 

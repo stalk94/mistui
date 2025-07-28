@@ -18,6 +18,6 @@
     "incremental": true,
     "noEmit": false              // важно, чтобы tsc выдавал JS если надо, иначе ставь true и запускай отдельно
   },
-  "include": ["src", "dist/index.es.js", "dist/index.umd.js"],
+  "include": ["src", "dist/index.es.js", "dist/index.umd.js", "build", "build", "build"],
   "exclude": ["node_modules", "dist"]
 }

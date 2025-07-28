@@ -34,14 +34,26 @@ export default function InfoPopover(tab) {
             { tab }
             
             {/* click */}
-            <Section title="click" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="click" 
+                description="" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Render usePortal />
                 </Grid>
             </Section>
 
             {/* hover */}
-            <Section title="isHover" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="isHover" 
+                description="" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Render usePortal isHover />
                 </Grid>

@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { HomeIcon } from '@heroicons/react/24/solid';
 import { useTheme } from './theme';
+import { addClass } from './hooks/cs';
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,8 +30,8 @@ export type BreadcrumbsNavProps = {
     separator?: string | React.ReactNode
     /** container classes */
     className?: HTMLDivElement['className']
-    /** first icon classes */
-    classNameHomeicon?: HTMLDivElement['className']
+    /** first icon, custom svg */
+    homeIcon?: React.SVGProps<SVGSVGElement>
     /**
      * render component element navigation
      */
@@ -64,16 +66,17 @@ export function useBreadcrumbs(pathname: string, options?: Options) {
     }, [pathname, nameMap, exclude, base]);
 }
 
+
 // ! чучуть доработать (typography возможно стоит внедрить)
 export default function BreadcrumbsNav({ 
     pathname, 
     size, 
     Link, 
     separator = '›', 
-    nameMap,
     className,
-    classNameHomeicon,
+    homeIcon,
     style,
+    nameMap,
     color
 }: BreadcrumbsNavProps) {
     const { autosizes, variants } = useTheme();
@@ -87,14 +90,14 @@ export default function BreadcrumbsNav({
         nameMap,
         base: { 
             label: (
-                <HomeIcon
+                homeIcon 
+                ? addClass(homeIcon, `${sizesIcon ?? 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6'}`)
+                : <HomeIcon
                     className={`
                         fill-current 
-                        ${sizesIcon ?? 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6'}  
                         text-neutral-300
                         hover:text-red-400
-                        
-                        ${classNameHomeicon ?? ''}
+                        ${sizesIcon ?? 'h-4 sm:h-4 md:h-5 lg:h-5.5 xl:h-6'}  
                     `}
                 />
             ),
@@ -109,8 +112,8 @@ export default function BreadcrumbsNav({
             className={`
                 breadcrumbs 
                 no-separator
-                ${sizesText}
                 border-0
+                ${sizesText}
                 ${className ?? ''}
             `}
         >
@@ -144,12 +147,13 @@ export default function BreadcrumbsNav({
                                     { segment.label }
                                 </span>
                             </Link>
+
                             {/* separator */}
                             <span
                                 className={`
-                                mx-2
-                                text-neutral-600
-                            `}
+                                    mx-2
+                                    text-neutral-600
+                                `}
                                 style={{ pointerEvents: 'none' }}
                             >
                                 { separator }

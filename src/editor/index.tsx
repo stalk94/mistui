@@ -7,14 +7,15 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { store } from './config-props';
 import ListMenu from '../components/menu/list-menu';
 import type { NavItem } from '../components/menu/type';
-import { DocumentTextIcon, CursorArrowRaysIcon, PencilSquareIcon, ListBulletIcon,
+import { DocumentTextIcon, CursorArrowRaysIcon, PencilSquareIcon, ListBulletIcon, Bars3Icon,
     CodeBracketSquareIcon, DocumentIcon, ChatBubbleBottomCenterTextIcon, PhotoIcon, FolderIcon, TableCellsIcon
 } from '@heroicons/react/24/solid';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import SandBox from './Render';
 
 
 const icons = {
+    base: <Bars3Icon />,
     text: <DocumentTextIcon />,
     buttons: <CursorArrowRaysIcon/>,
     inputs: <PencilSquareIcon />,
@@ -28,6 +29,7 @@ const icons = {
     tables: <TableCellsIcon />
 }
 const category = {
+    base: ['ThemeProvider', 'AlertProvider'],
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
     inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
@@ -36,7 +38,7 @@ const category = {
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
-    feedback: ['Alert', 'Tooltip', 'Modal', 'Popover', 'Drawer'],
+    feedback: ['Tooltip', 'Modal', 'Popover', 'Drawer'],
     media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
     form: [''],
 }
@@ -79,6 +81,7 @@ const CheckBox = ({onChange}) => (
 
 
 export default function SandBoxRoot({ }) {
+    const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
     const lang = globalStore.lang.use();
     const variants = store.variants.use();
     const navigate = useNavigate();
@@ -215,18 +218,27 @@ export default function SandBoxRoot({ }) {
                     </CustomBar>
                 </div>
 
-                <div className='flex flex-row flex-1 overflow-y-auto'>
-                    <SandBox/>
+                <div 
+                    className={`
+                        flex 
+                        flex-row 
+                        ${mod !== 'playground' ? 'flex-1  overflow-y-auto' : 'overflow-clip'}
+                        w-full 
+                    `}
+                >
+                    <SandBox mod={mod} setMod={setMod}/>
 
                     {/* test banner */}
-                    <div className='min-w-[12%]'>
+                    {mod !== 'playground' &&
+                        <div className='min-w-[12%]'>
                         <div className="break-all overflow-hidden w-35 border-1 p-2 rounded mt-10 border-[#808080a6]">
                             <img src="https://srv.carbonads.net/static/30242/75dd292262b51c4fedced0ce4e76293bf16c44b5"/>
                             <div className='text-xs pt-2'>
                                 Frontend Masters — освойте навыки веб-разработки и сосания членов с помощью курсов под руководством экспертов!
                             </div>
                         </div>
-                    </div>
+                        </div>
+                    }
                 </div>
             </div>
         </section>

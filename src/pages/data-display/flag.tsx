@@ -5,7 +5,7 @@ import FlagCountry, { COUNTRY_CODES } from '@/components/utils/flag';
 
 //////////////////////////////////////////////////////////////////////////
 const flags10 = COUNTRY_CODES.slice(0, 10);
-const maskClasses = [
+export const maskClasses = [
     'mask-heart', 'mask-squircle',
     'mask-hexagon', 'mask-hexagon-2', 'mask-decagon', 'mask-pentagon', 
     'mask-diamond', 'mask-circle', 

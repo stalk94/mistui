@@ -9,9 +9,22 @@ export default function InfoAutoComplete(tab) {
             { tab }
             
             <Section
-                title="ColorPicker"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                title="base"
+                description=""
+                code={`
+                    <AutoComplete 
+                        size='sm'
+                        placeholder="autocomplete"
+                        options={[
+                            'apple',
+                            'banana',
+                            'egs',
+                            'road',
+                            'jam',
+                            'olive'
+                        ]}
+                    />
+                `}
             >
                 <div className="flex justify-center">
                     <AutoComplete 
@@ -34,5 +47,10 @@ export default function InfoAutoComplete(tab) {
 
 
 InfoAutoComplete.meta = {
-    ...inputsMeta
+    ...inputsMeta,
+    options: {
+        values: ['string'],
+        type: 'array',
+        description: ''
+    }
 }

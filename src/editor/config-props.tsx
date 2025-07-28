@@ -131,6 +131,13 @@ const typography = {
 
 /** components props variant list */
 const CONFIG = {
+    AlertProvider: {
+        
+    },
+    ThemeProvider: {
+
+    },
+
     // text
     Typography: {
         ...typography
@@ -289,9 +296,6 @@ const CONFIG = {
     // feedback
     Tooltip: {
         ...base,
-    },
-    Alert: {
-
     },
     Modal: {
 

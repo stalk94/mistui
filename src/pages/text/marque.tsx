@@ -6,16 +6,18 @@ import TypographyInfo from './typography';
 
 export default function InfoMarque(tab) {
     return (
-        <div className="p-6 space-y-8 shrink-0">
+        <div className="p-6 space-y-8">
             { tab }
             {/* default */}
             <Section title="base" description=""
                 code={`<MarqueText variant='button'>This converter creates fancy symbols. The explanation starts with unicode; an industry standard which</MarqueText>`}
             >
                 <div className="flex justify-center">
-                    <MarqueText variant='button'>
-                        1 This converter creates fancy symbols. 2The explanation starts with unicode; an industry standard which
-                    </MarqueText>
+                    <div className='max-w-200'>
+                        <MarqueText variant='button'>
+                            1 This converter creates fancy symbols. 2The explanation starts with unicode; an industry standard which
+                        </MarqueText>
+                    </div>
                 </div>
             </Section>
 
@@ -29,9 +31,11 @@ export default function InfoMarque(tab) {
                 }
             >
                  <div className="flex justify-center">
-                    <MarqueText pxPerSecond={200} variant='button'>
-                        1 This converter creates fancy symbols
-                    </MarqueText>
+                    <div className='max-w-200'>
+                        <MarqueText pxPerSecond={200} variant='button'>
+                            1 This converter creates fancy symbols
+                        </MarqueText>
+                    </div>
                 </div>
             </Section>
 
@@ -49,7 +53,7 @@ export default function InfoMarque(tab) {
             >
                 <div className="flex justify-center flex-col">
                     {variants.map((variant, i) => (
-                        <div key={i} className="flex flex-col m-auto">
+                        <div key={i} className="max-w-200 flex flex-col m-auto">
                             <MarqueText
                                 key={variant}
                                 variant='h6'

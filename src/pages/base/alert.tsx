@@ -71,13 +71,44 @@ const AlertRender = (props) => {
     );
 }
 
+
 export default function InfoAlert(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             
             {/* default */}
-            <Section title="Card" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="basic" 
+                description="" 
+                code={`
+                    const Component =()=> { 
+                        const { addAlert } = useAlert();
+
+                        return (
+                            <Button
+                                shadow='sm'
+                                variant='outline'
+                                size='md'
+                                style={{ margin: 3 }}
+                                color='success'
+                                onClick={() => addAlert('success', 'text alert message')}
+                            >
+                                success
+                            </Button>
+                        );
+                    }
+
+                    const App =()=> {
+                        return(
+                            <AlertProvider variant='outline'>
+                                <Component />
+                                ...
+                            </AlertProvider>
+                        );
+                    }
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <AlertRender />
                 </Grid>

@@ -13,7 +13,7 @@ export default function Divider({
     color = 'secondary', 
     position = 'center', 
     orientation = 'horizontal', 
-    style,
+    style = {},
     variant = 'solid',
     className
 }: DividerProps) {

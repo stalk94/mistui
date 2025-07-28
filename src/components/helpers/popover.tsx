@@ -1,4 +1,4 @@
-import { forwardRef, Fragment, useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import type { PopoverProps } from './types';
 import { useTheme } from '../theme';
 import { cs } from '../hooks/cs';
@@ -139,11 +139,11 @@ export default function Dropdown({
                         `)}
                         style={{
                             boxShadow: shadows[shadow],
-                            backdropFilter: "blur(14px)",
                             position: usePortal ? "fixed" : "absolute",
                             top: usePortal ? coords.top : undefined,
                             left: usePortal ? coords.left : undefined,
                             zIndex: 9999,
+                            ...styles.popover,
                             ...style
                         }}
                         onClick={(e) => e.stopPropagation()}

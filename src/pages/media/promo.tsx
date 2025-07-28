@@ -89,6 +89,7 @@ const shortItemsExample = [
     // ... other items omitted for brevity
 ];
 
+
 export default function InfoPromoBanner(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
@@ -96,24 +97,10 @@ export default function InfoPromoBanner(tab) {
 
             {/* default */}
             <Section
-                title="PromoBanner"
+                title="Basic"
                 description="Basic promo banner"
                 code={`<PromoBanner items={items} />\n\n// where items is like:\nconst items = ${JSON.stringify(shortItemsExample, null, 2)}\n// ... other items omitted`}
             >
-                <Grid className="h-60 w-100 m-auto">
-                    <PromoBanner items={items} />
-                </Grid>
-            </Section>
-
-            {/* isFull */}
-            <Section title="PromoBanner vertical" description="Different styles" code={``}>
-                <Grid className="h-60 w-100 m-auto">
-                    <PromoBanner items={items} />
-                </Grid>
-            </Section>
-
-            {/* isSide */}
-            <Section title="PromoBanner side" description="Different styles" code={``}>
                 <Grid className="h-60 w-100 m-auto">
                     <PromoBanner items={items} />
                 </Grid>

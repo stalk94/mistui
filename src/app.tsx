@@ -9,8 +9,6 @@ import SandBox from './editor/Render';
 import { ThemeProvider } from './components/theme';
 import { AppBar, Collapse, Divider, IconButton, Select, Typography } from './index';
 import { createStore } from 'statekit-lite';
-import { InformationCircleIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
-import { BurgerMenu, LinearNavigationItems } from '@/components/app-bar';
 import ComponentsRoot from './editor/page/root-components';
 import Home from './editor/page';
 import NotFound from './editor/page/error';
@@ -75,7 +73,7 @@ const App = () => {
                     >
         
                         <Routes>
-                            <Route path="/" element={<Home />} />
+                            <Route path="/" element={<SandBoxRoot />} />
                             <Route path="/components" key={location.pathname} element={<SandBoxRoot />}>
                                 <Route index element={<ComponentsRoot/>} />
                                 <Route path=":componentName" element={<SandBox />} />

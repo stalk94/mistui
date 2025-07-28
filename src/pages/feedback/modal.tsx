@@ -43,8 +43,14 @@ export default function InfoModal(tab) {
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             
-            {/* selector */}
-            <Section title="selector" description="кнопка" code={`<Card></Card>`}>
+            {/* basis */}
+            <Section 
+                title="basic" 
+                description="control modal through `[data-modal-root]` selector" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Button
                         shadow='sm'
@@ -71,8 +77,13 @@ export default function InfoModal(tab) {
                 </Grid>
             </Section>
 
-            {/* ref */}
-            <Section title="ref" description="кнопка" code={`<Card></Card>`}>
+            {/* ref control */}
+            <Section title="ref" 
+                description="control through `ref`"
+                code={`
+                    
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Render />
                 </Grid>
@@ -83,5 +94,34 @@ export default function InfoModal(tab) {
 
 
 InfoModal.meta = {
-    
+    onClose: {
+        type: 'func',
+        values: [''],
+        description: ''
+    },
+    position: {
+        type: 'enum',
+        default: "left",
+        values: ["left", "right", "bottom", "top"],
+        description: ''
+    },
+    open: {
+        type: 'boolean',
+        values: ["boolean"],
+        description: ''
+    },
+    children: {
+        type: 'object',
+        values: ["React.ReactNode"],
+        description: ''
+    },
+    actions: {
+        type: 'object',
+        values: ["React.ReactNode"],
+        description: ''
+    },
+    style: baseMeta.style,
+    classNameModalBox: baseMeta.className,
+    classNameActions: baseMeta.className,
+    className: baseMeta.className
 }

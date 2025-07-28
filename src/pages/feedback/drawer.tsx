@@ -10,7 +10,13 @@ export default function InfoDrawer(tab) {
             { tab }
             
             {/* left */}
-            <Section title="Card" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="basic" 
+                description="" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Drawer
                         trigger={
@@ -21,7 +27,7 @@ export default function InfoDrawer(tab) {
                                 color='success'
                                 variant='dash'
                             >
-                                {'click my'}
+                                click my
                             </Button>
                         }
                     >
@@ -34,7 +40,13 @@ export default function InfoDrawer(tab) {
             </Section>
 
             {/* top */}
-            <Section title="Card" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="top position" 
+                description="" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Drawer
                         position='top'
@@ -59,7 +71,13 @@ export default function InfoDrawer(tab) {
             </Section>
 
             {/* right */}
-            <Section title="Card" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="right" 
+                description="" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Drawer
                         position='right'
@@ -84,7 +102,13 @@ export default function InfoDrawer(tab) {
             </Section>
 
             {/* bottom */}
-            <Section title="Card" description="кнопка" code={`<Card></Card>`}>
+            <Section 
+                title="bottom" 
+                description="" 
+                code={`
+
+                `}
+            >
                 <Grid className="w-120 m-auto">
                     <Drawer
                         position='bottom'
@@ -113,5 +137,32 @@ export default function InfoDrawer(tab) {
 
 
 InfoDrawer.meta = {
-    
+    onClose: {
+        type: 'func',
+        values: [''],
+        description: ''
+    },
+    position: {
+        type: 'enum',
+        default: "left",
+        values: ["left", "right", "bottom", "top"],
+        description: ''
+    },
+    open: {
+        type: 'boolean',
+        values: ["boolean"],
+        description: ''
+    },
+    trigger: {
+        type: 'object',
+        values: ["React.ReactNode"],
+        description: ''
+    },
+    children: {
+        type: 'object',
+        values: ["React.ReactNode"],
+        description: ''
+    },
+    style: baseMeta.style,
+    className: baseMeta.className
 }

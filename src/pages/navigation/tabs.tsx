@@ -20,7 +20,7 @@ export default function InfoTabs(tab) {
 
             {/* default */}
             <Section
-                title="Tabs"
+                title="base"
                 description=""
                 code={`<Tabs size='sm'>default</Tabs>`}
             >
@@ -43,7 +43,7 @@ export default function InfoTabs(tab) {
                     {variants.map((variant, i) => (
                         <Fragment key={i}>
                             <Divdder className="py-4" position="end">
-                                <Typography color="#daf166" variant="caption">
+                                <Typography color="#b9b9b9" variant="caption">
                                     {variant}
                                 </Typography>
                             </Divdder>
@@ -67,7 +67,7 @@ export default function InfoTabs(tab) {
                     {sizes.map((size, i) => (
                         <Fragment key={i}>
                             <Divdder className="py-4" position="end">
-                                <Typography color="#daf166" variant="caption">
+                                <Typography color="#b9b9b9" variant="caption">
                                     {size}
                                 </Typography>
                             </Divdder>

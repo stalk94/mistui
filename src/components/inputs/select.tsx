@@ -9,6 +9,7 @@ import { Popover } from '../helpers';
 import { cs } from '../hooks/cs';
 
 
+//! color placeholder, text, size popover
 export default function Select({
     onChange,
     placeholder,
@@ -56,7 +57,7 @@ export default function Select({
         onChange?.(value);
     }
 
-
+    
     return (
         <>
             <style>
@@ -99,7 +100,7 @@ export default function Select({
                         {...props}
                     >
                         <span
-                            className="w-full h-full flex items-center cursor-pointer"
+                            className="w-full text-white h-full flex items-center cursor-pointer"
                         >
                             {input
                                 ? input

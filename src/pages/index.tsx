@@ -41,7 +41,8 @@ import AppBar from './page/app-bar';
 import Stat from './page/stat';
 import Card from './media/card';
 import Promo from './media/promo';
-import Alert from './feedback/alert';
+import Alert from './base/alert';
+import Theme from './base/theme';
 import Drawer from './feedback/drawer';
 import Modal from './feedback/modal';
 import Popover from './feedback/popover';
@@ -55,6 +56,10 @@ import Head from './head';
 
 
 const category = {
+    base: {
+        ThemeProvider: Theme,
+        AlertProvider: Alert,
+    },
     text: {
         Typography: Typography,
         Link: Link, 
@@ -120,7 +125,6 @@ const category = {
         HorizontalCarousel: HorizontalCarousel,
     },
     feedback: {
-        Alert: Alert,
         Tooltip: Tooltip,
         Modal: Modal,
         Popover: Popover,
@@ -142,12 +146,12 @@ export default function Base({ preview }) {
     const renderTable = (preview) => {
         if (catalog?.[preview]?.meta) return (
             <>
-                <Head
-                    preview={preview}
-                />
                 <TypeTable
                     preview={preview}
                     meta={catalog[preview].meta}
+                />
+                <Head
+                    preview={preview}
                 />
             </>
         );

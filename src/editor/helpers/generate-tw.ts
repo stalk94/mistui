@@ -1,6 +1,6 @@
 import { safeTw } from './plugins';
 
-const naskClasses = [
+const maskClasses = [
     'mask-heart', 'mask-squircle',
     'mask-hexagon', 'mask-hexagon-2', 'mask-decagon', 'mask-pentagon', 
     'mask-diamond', 'mask-circle', 
@@ -62,7 +62,7 @@ export const __generate =()=> {
 
     // any token
     classes.push(
-        ...justifyMap, ...alignMap, ...naskClasses,
+        ...justifyMap, ...alignMap, ...maskClasses,
         'top-1', 'top-2', 'top-1 sm:top-1 md:top-2 lg:top-2 xl:top-2', 
         'rotate-180', 'dropdown-hover', 
         'btn-soft', 'btn-info', 'btn-gnost', 'btn-outline btn-dash btn-link btn-circle btn-square',
@@ -70,7 +70,7 @@ export const __generate =()=> {
         'divider-start divider-end divider-horizontal divider-vertical',
         'tabs-lift tabs-box tabs-border tab-active', 'chat-start chat-end',
         'tooltip-top tooltip-bottom tooltip-left tooltip-right tooltip-open',
-        'modal-open', 'mask',
+        'modal-open', 'mask', 'glass',
         'indicator-center indicator-start indicator-end indicator-top indicator-middle indicator-bottom',
         'footer-horizontal footer-vertical footer-center footer-title',
         'menu-xs menu-sm menu-md menu-lg menu-xl', 

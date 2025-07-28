@@ -336,6 +336,15 @@ const testSchema: Schema[] = [{
 }
 ];
 const patterns = {
+    ThemeProvider: (props)=> (
+        <div
+            {...props} 
+        />
+    ),
+    AlertProvider: (props)=> (
+        <AlertRender {...props} />
+    ),
+
     // Texts
     Typography: (props) => (
         <div className="space-y-1">
@@ -735,9 +744,6 @@ const patterns = {
             </>
         </Drawer>
     ),
-    Alert: (props)=> (
-        <AlertRender {...props} />
-    ),
     Tooltip: (props)=> (
         <Tooltip
             children={
@@ -1057,8 +1063,7 @@ const patterns = {
 
 
 // <Outlet />
-export default function SandBox() {
-    const [mod, setMod] = useState<'documentation'|'playground'>('documentation');
+export default function SandBox({ mod, setMod }) {
     const cache = store.cache.use();
     const emmiter = store.emmiterProps.use();
     const { componentName } = useParams();
@@ -1077,7 +1082,7 @@ export default function SandBox() {
     
 
     return (
-        <main className='ml-4'>
+        <main className='ml-4 w-full'>
             <div className="sticky top-0 z-10 flex gap-4 px-1 rounded-sm w-fit shadow-sm">
                 <GroupButton
                     variant='soft'

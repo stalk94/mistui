@@ -99,6 +99,18 @@ export default function InfoAccordion(tab) {
 
 InfoAccordion.meta = {
     ...baseMeta,
+    items: {
+        type: 'array',
+        values: [{
+            content: {
+                ...baseMeta.children
+            },
+            title: {
+                ...baseMeta.children
+            }
+        }],
+        description: ''
+    },
     color: {
         ...baseMeta.color,
         default: 'neutral'

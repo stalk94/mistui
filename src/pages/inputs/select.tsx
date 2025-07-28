@@ -9,9 +9,20 @@ export default function InfoSelect(tab) {
             { tab }
             
             <Section
-                title="ColorPicker"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                title="base"
+                description=""
+                code={`<ColorPicker 
+                        placeholder="select" 
+                        items={[
+                            'apple',
+                            'banana',
+                            'egs',
+                            'road',
+                            'jam',
+                            'olive'
+                        ]} 
+                    />
+                `}
             >
                 <div className="flex justify-center">
                     <Select
@@ -34,5 +45,10 @@ export default function InfoSelect(tab) {
 
 
 InfoSelect.meta = {
-    ...inputsMeta
+    ...inputsMeta,
+    items: {
+        values: ['string'],
+        type: 'array',
+        description: ''
+    }
 }

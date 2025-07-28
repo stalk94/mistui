@@ -1,3 +1,6 @@
+// theme, createTheme, useTheme, defaultThemeObj, 
+export * from './components/theme';
+
 // все инпуты
 export * from './components/inputs';
 
