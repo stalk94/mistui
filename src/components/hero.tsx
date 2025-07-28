@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { useTheme } from './theme';
 
-const testUrl = 'https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp';
+
 type HeroProps = {
     children: React.ReactNode
     style?: React.CSSProperties

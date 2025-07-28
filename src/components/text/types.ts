@@ -1,6 +1,7 @@
 import { ClassValue } from 'clsx';
 import { fontFamilyVariants } from '../theme/default'
 import type { ElementType, ComponentPropsWithoutRef, ComponentPropsWithRef } from 'react';
+import { Variants } from '../theme/default';
 
 
 export type BaseTypographyProps = {
@@ -14,7 +15,7 @@ export type BaseTypographyProps = {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     colorShadow?: string
     tracking?: | 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
 }
 
 type AsProp<T extends ElementType> = {
@@ -41,7 +42,6 @@ export type TypographyComponent = <T extends React.ElementType = 'p'>(
 export type LinkProps = BaseTypographyProps & {
     children?: string
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
 }
 
 export type MarqueeTextProps = LinkProps & {

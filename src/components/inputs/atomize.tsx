@@ -63,7 +63,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
     },
     ref
 ) {
-    const { styles, autosizes, shadows, variants, plugins, mixers } = useTheme();
+    const { autosizes, shadows, variants, plugins } = useTheme();
     const getSize = size ? `input-${size}` : autosizes.input;
     const { borderColor, ...filteredStyle } = style;
 

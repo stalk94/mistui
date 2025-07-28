@@ -2,6 +2,7 @@ import { useCache, useHover } from './hooks';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from './theme';
 import { useMemo } from 'react';
+import type { Variants } from './theme/default';
 import { cs } from './hooks/cs';
 
 
@@ -14,7 +15,7 @@ export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'classNa
     }[] 
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     /** массив индексов развернутых вкладок [0, 1, 2 ...] */
     activeIndexs?: number[]

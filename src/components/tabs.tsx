@@ -1,5 +1,6 @@
 import { Fragment, useMemo, useState } from "react";
 import { useTheme } from './theme';
+import type { Variants } from './theme/default';
 
 
 type TabsProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick' | 'style'> & {
@@ -7,7 +8,7 @@ type TabsProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onCli
     variant?: 'box' | 'border' | 'lift'
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
     items: {
         label: string | React.ReactNode
         content: string | React.ReactNode

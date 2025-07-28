@@ -1,6 +1,7 @@
 import { ComponentProps } from 'react';
 import { DataTable, DataTableValueArray } from "primereact/datatable";
 import { Column } from 'primereact/column';
+import { Variants } from '../theme/default';
 
 
 export type ColumnDataTableProps = ComponentProps<typeof Column> & { }
@@ -57,7 +58,7 @@ export type TableProps = {
     style?: React.CSSProperties
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
     footer?: React.ReactNode
     header?: React.ReactNode
     variant?: 'contained' | 'outline' | 'dash'

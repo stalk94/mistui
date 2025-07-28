@@ -17,7 +17,7 @@ export default function InfoSlider(tab) {
                 code={`<SliderInput />`}
             >
                 <div className="flex justify-center mt-2 overflow-visible">
-                    <SliderInput />
+                    <SliderInput color='secondary'/>
                 </div>
             </Section>
 

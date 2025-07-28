@@ -1,3 +1,5 @@
+import { Variants } from '../theme/default';
+
 
 export type ItemDropMenu = {
     id: string | number
@@ -52,6 +54,6 @@ export type MainListProps = {
     isNested?: boolean
     items: NavItem[]
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }

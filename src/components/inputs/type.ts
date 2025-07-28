@@ -1,22 +1,11 @@
 import { ClassValue } from 'clsx';
+import { Variants } from '../theme/default';
 
 
 //////////////////////////////////////////////////////////////////
 //      Fragments
 ///////////////////////////////////////////////////////////////////
-type InputStyle = {
-    /** это прокидывается на сам инпут input class      
-     * 
-     *    color:  цвет ввода
-     *    borderColor: input бордюрка
-     *    borderStyle:       
-     *    borderWidth:      
-     *    backgroundColor:  input фон
-    */
-    styleInput?: React.CSSProperties
-}
-
-export type LabelProps = InputStyle & {
+export type LabelProps = {
     'data-id'?: string | number
     /** отключить видимость формы */
     disabledVisibility?: boolean
@@ -72,17 +61,17 @@ type ValidatorByType = {
 //////////////////////////////////////////////////////////////////
 //      COMPONENTS PROPS
 ///////////////////////////////////////////////////////////////////
-export type BaseProps = InputStyle & {
+export type BaseProps = {
     required?: boolean
     type: 'text' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'tel' | 'url' | 'time' | 'datetime-local' | 'search'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    placeholder?: string
+    placeholder?: string | React.ReactElement
     labelLeft?: string | React.ReactElement
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
     validator?: string | React.ReactElement | boolean
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
     /** tooltip текст подсказка при наведении */
     title?: string
     value?: string | number
@@ -102,21 +91,12 @@ export type NumberInputProps = Omit<BaseProps, 'type'> & {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
-export type FileInputProps = {
-    'data-id'?: string | number
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    color?: string
-    value?: number
+export type FileInputProps = Omit<BaseProps, 'type'> & {
     onChange?: (val: File)=> void
     onError?: (err: string)=> void
     accept?: string
     /** в megabite */
     maxSize?: number
-    placeholder?: string | React.ReactElement
-    labelLeft?: string | React.ReactElement
-    labelRight?: string | React.ReactElement
-    labelTop?: string | React.ReactElement
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
@@ -153,7 +133,7 @@ export type CheckBoxInputProps = {
     className?: ClassValue
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     variant?: 'contained' | 'outline' | 'dash' | 'ghost'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
 }
 
 export type RadioInputProps = CheckBoxInputProps & {
@@ -171,16 +151,8 @@ export type SwitchBoxInputProps = Omit<CheckBoxInputProps, 'type'> & {
     }
 }
 
-export type SliderInputProps = InputStyle & {
-    'data-id'?: string | number
+export type SliderInputProps = Omit<BaseProps, 'type'> & {
     disableForm?: boolean
-    variant?: 'contained' | 'outline' | 'dash' | 'ghost'
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    color?: string
-    labelLeft?: string | React.ReactElement
-    labelRight?: string | React.ReactElement
-    labelTop?: string | React.ReactElement
     value?: number | number[]
     onChange?: (val: number | number[])=> void
     /** вызывается в конце перетаскивания */

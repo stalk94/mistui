@@ -15,8 +15,8 @@ export default function InfoCheckBox(tab) {
                 code={`<CheckBox value={false} />\n<CheckBox value={true} />`}
             >
                 <div className="flex justify-center">
-                    <CheckBox className="mr-2" value={false} />
-                    <CheckBox value={true} />
+                    <CheckBox size="sm" className="mr-2" value={false} />
+                    <CheckBox size="sm" value={true} />
                 </div>
             </Section>
 

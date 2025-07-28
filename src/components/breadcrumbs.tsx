@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { HomeIcon } from '@heroicons/react/24/solid';
 import { useTheme } from './theme';
 import { addClass } from './hooks/cs';
-
+import type { Variants } from './theme/default';
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +38,7 @@ export type BreadcrumbsNavProps = {
     Link: React.ComponentType<{ href: string; children: React.ReactNode }>
     /** container styles */
     style?: React.CSSProperties 
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
 }
 ////////////////////////////////////////////////////////////////////////////////
 

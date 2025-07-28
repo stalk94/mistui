@@ -1,6 +1,6 @@
 import { forwardRef, useMemo } from 'react';
 import { useTheme } from './theme';
-import { createGradientStyle } from './hooks';
+import type { Variants } from './theme/default';
 
 
 export type ChatProps = {
@@ -17,7 +17,7 @@ export type ChatProps = {
     /** content below the chat bubble */
     footer?: React.ReactNode
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link' 
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
 }
 
 

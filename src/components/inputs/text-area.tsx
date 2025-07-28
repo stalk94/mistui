@@ -13,7 +13,7 @@ export default function TextAreaInput({
     placeholder, 
     className,
     size, 
-    color, 
+    color = 'neutral', 
     variant = 'outline',
     labelTop, 
     required, 

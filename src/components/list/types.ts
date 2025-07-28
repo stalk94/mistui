@@ -1,3 +1,6 @@
+import { Variants } from '../theme/default';
+
+
 type ListItem = React.ReactNode
 
 export type ListProps = {
@@ -17,5 +20,5 @@ export type ListProps = {
     children: ListItem[]
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
 }

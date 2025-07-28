@@ -103,6 +103,8 @@ export default function SliderInput({
         <FormWrapper
             size={size}
             disabledVisibility={disableForm}
+            variant={variant}
+            color={color}
             { ...props }
         >
             <Slider.Root

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import type { FileInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
@@ -19,12 +19,27 @@ export default function FileInput({
     color = 'neutral',
     ...props 
 }: FileInputProps) {
-    const { styles } = useTheme();
+    const { styles, variants, plugins } = useTheme();
     const fileRef = useRef<HTMLInputElement | null>(null);
     const [files, setFiles] = useCache<File>(null);
     const [progress, setProgress] = useCache<number>(0);
     
     
+    const colorPlaceholder = useMemo(() => {
+        const curColor = (variants[color] ?? color) ?? style?.color;
+        let cur = 'white';
+
+        if (!variants[color]) {
+            const isBright = plugins.isBright(curColor, 100);
+
+            if (!isBright) cur = 'white';
+            else cur = curColor;
+
+            if (props.variant === 'contained' || props.variant === 'soft') cur = 'black';
+        }
+
+        return plugins.alpha(cur, 0.4);
+    }, [color, style, props]);
     const readFile = (file: File, onProgress: (percent: number) => void) => {
         const reader = new FileReader();
 
@@ -114,7 +129,7 @@ export default function FileInput({
                             { files?.name }
                          </span>
                         : <span 
-                            style={{ color: styles?.input?.placeholderColor }} 
+                            style={{ color: colorPlaceholder }} 
                             className='text-neutral-500'
                          >
                             { placeholder ?? 'Загрузить файл' }

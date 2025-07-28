@@ -1,6 +1,7 @@
 import { forwardRef, cloneElement, useMemo, useState  } from 'react';
 import { useTheme } from './theme';
-import { Button } from './buttons';
+import type { Variants } from './theme/default';
+
 
 type BottomNavProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'> & {
     items: {
@@ -9,7 +10,7 @@ type BottomNavProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | '
     }[]
     active?: number
     size: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
+    color?: Variants | (string & {})
     onChange?: (activeIndex: number)=> void
 }
 
