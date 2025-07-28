@@ -13,7 +13,7 @@ export default function Stat({
     
     return (
         <div 
-            className={`stat ${className && className}`}
+            className={`stat ${className ?? ''}`}
             { ...props }
         >
             {figure &&

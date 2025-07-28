@@ -1,17 +1,21 @@
 import { ComponentProps } from 'react';
+import * as flags from 'country-flag-icons/react/3x2';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
+import type { SVGProps } from 'react';
+import type { Variants } from '../theme/default';
 type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 type SpliterStProps = ComponentProps<typeof Splitter>;
 type SpliterPanelStProps = ComponentProps<typeof SplitterPanel>;
-export type FlagProps = {
-    code: string;
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-    margin?: string;
+export type FlagCountryProps = {
+    code: keyof typeof flags;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | (number & {});
+    className?: SVGProps<SVGSVGElement>['className'];
+    style?: SVGProps<SVGSVGElement>['style'];
 };
 export type DividerProps = {
     children?: string | React.ReactElement;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     position?: 'center' | 'start' | 'end';
     orientation?: 'horizontal' | 'vertical';
     variant?: 'solid' | 'dashed' | 'dotted';
@@ -19,7 +23,7 @@ export type DividerProps = {
     className?: Props['className'];
 };
 export type SplitterProps = SpliterStProps & {
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     orientation?: 'horizontal' | 'vertical';
     className?: Props['className'];
     /** disable resize */
@@ -33,7 +37,7 @@ export type BadgeProps = {
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg';
     isHorizontal?: boolean;
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     style?: React.CSSProperties;
     className?: Props['className'];
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -45,7 +49,7 @@ export type CollapseProps = {
     /** content collapse, children or content props */
     children?: string | React.ReactElement;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     style?: React.CSSProperties;
     styleTitle?: React.CSSProperties;
     className?: Props['className'];
@@ -70,7 +74,7 @@ export type IndicatorProps = {
     /** one or optional count element */
     content?: ItemIndicator[] | string | React.ReactElement;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     style?: React.CSSProperties;
     className?: Props['className'];
     position?: 'top' | 'middle' | 'bottom';
@@ -83,7 +87,7 @@ export type TooltipProps = {
     /** hint content */
     content?: string;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     style?: React.CSSProperties;
     className?: Props['className'];
     position?: 'top' | 'left' | 'right' | 'bottom';
@@ -151,7 +155,7 @@ export type RadialProgressProps = {
     children?: string | React.ReactElement;
     value: number;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     style?: React.CSSProperties;
     className?: Props['className'];
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';

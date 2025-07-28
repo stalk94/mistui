@@ -1,2 +1,2 @@
 export * from './context';
-export { default as defaultTheme } from './default';
+export { defaultTheme } from './default';

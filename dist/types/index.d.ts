@@ -1,3 +1,4 @@
+export * from './components/theme';
 export * from './components/inputs';
 export * from './components/helpers';
 export * from './components/tables';

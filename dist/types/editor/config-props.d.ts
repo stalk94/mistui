@@ -1,11 +1,12 @@
-import { typographyVariants } from '../components/text/types';
 export declare const store: {
     get: (clone?: boolean) => {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -86,7 +87,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -177,7 +178,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -953,6 +954,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -1016,7 +1024,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -1213,10 +1220,12 @@ export declare const store: {
     };
     set: (value: {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -1297,7 +1306,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -1388,7 +1397,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -2164,6 +2173,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -2227,7 +2243,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -2423,10 +2438,12 @@ export declare const store: {
         emmiterProps: any;
     } | ((prev: {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -2507,7 +2524,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -2598,7 +2615,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -3374,6 +3391,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -3437,7 +3461,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -3633,10 +3656,12 @@ export declare const store: {
         emmiterProps: any;
     }) => {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -3717,7 +3742,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -3808,7 +3833,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -4584,6 +4609,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -4647,7 +4679,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -4844,10 +4875,12 @@ export declare const store: {
     })) => void;
     update: (fn: (prev: {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -4928,7 +4961,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -5019,7 +5052,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -5795,6 +5828,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -5858,7 +5898,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -6054,10 +6093,12 @@ export declare const store: {
         emmiterProps: any;
     }) => {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -6138,7 +6179,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -6229,7 +6270,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -7005,6 +7046,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -7068,7 +7116,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -7265,10 +7312,12 @@ export declare const store: {
     }) => void;
     use: () => {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -7349,7 +7398,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -7440,7 +7489,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -8216,6 +8265,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -8279,7 +8335,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -8476,10 +8531,12 @@ export declare const store: {
     };
     watch: (fn: (val: {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -8560,7 +8617,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -8651,7 +8708,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -9427,6 +9484,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -9490,7 +9554,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -9687,10 +9750,12 @@ export declare const store: {
     }, unsub: () => void) => void) => () => void;
     export: () => {
         propses: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -9771,7 +9836,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -9862,7 +9927,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -10638,6 +10703,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -10701,7 +10773,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -10899,10 +10970,12 @@ export declare const store: {
 } & {
     propses: {
         get: (clone?: boolean) => {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -10983,7 +11056,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -11074,7 +11147,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -11850,6 +11923,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -11913,7 +11993,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -12105,10 +12184,12 @@ export declare const store: {
             Promo: {};
         };
         set: (value: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -12189,7 +12270,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -12280,7 +12361,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -13056,6 +13137,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -13119,7 +13207,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -13310,10 +13397,12 @@ export declare const store: {
             };
             Promo: {};
         } | ((prev: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -13394,7 +13483,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -13485,7 +13574,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -14261,6 +14350,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -14324,7 +14420,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -14515,10 +14610,12 @@ export declare const store: {
             };
             Promo: {};
         }) => {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -14599,7 +14696,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -14690,7 +14787,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -15466,6 +15563,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -15529,7 +15633,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -15721,10 +15824,12 @@ export declare const store: {
             Promo: {};
         })) => void;
         update: (fn: (prev: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -15805,7 +15910,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -15896,7 +16001,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -16672,6 +16777,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -16735,7 +16847,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -16926,10 +17037,12 @@ export declare const store: {
             };
             Promo: {};
         }) => {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -17010,7 +17123,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -17101,7 +17214,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -17877,6 +17990,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -17940,7 +18060,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -18132,10 +18251,12 @@ export declare const store: {
             Promo: {};
         }) => void;
         use: () => {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -18216,7 +18337,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -18307,7 +18428,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -19083,6 +19204,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -19146,7 +19274,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -19338,10 +19465,12 @@ export declare const store: {
             Promo: {};
         };
         watch: (fn: (val: {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -19422,7 +19551,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -19513,7 +19642,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -20289,6 +20418,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -20352,7 +20488,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -20544,10 +20679,12 @@ export declare const store: {
             Promo: {};
         }, unsub: () => void) => void) => () => void;
         export: () => {
+            AlertProvider: {};
+            ThemeProvider: {};
             Typography: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -20628,7 +20765,7 @@ export declare const store: {
             Link: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -20719,7 +20856,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -21495,6 +21632,13 @@ export declare const store: {
                     items: string[];
                 };
             };
+            Flag: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
             List: {};
             Table: {
                 size: {
@@ -21558,7 +21702,6 @@ export declare const store: {
                     };
                 };
             };
-            Alert: {};
             Modal: {};
             Popover: {};
             Drawer: {};
@@ -21750,11 +21893,27 @@ export declare const store: {
             Promo: {};
         };
     } & {
+        AlertProvider: {
+            get: (clone?: boolean) => {};
+            set: (value: {} | ((prev: {}) => {})) => void;
+            update: (fn: (prev: {}) => {}) => void;
+            use: () => {};
+            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
+            export: () => {};
+        } & {};
+        ThemeProvider: {
+            get: (clone?: boolean) => {};
+            set: (value: {} | ((prev: {}) => {})) => void;
+            update: (fn: (prev: {}) => {}) => void;
+            use: () => {};
+            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
+            export: () => {};
+        } & {};
         Typography: {
             get: (clone?: boolean) => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -21835,7 +21994,7 @@ export declare const store: {
             set: (value: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -21915,7 +22074,7 @@ export declare const store: {
             } | ((prev: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -21995,7 +22154,7 @@ export declare const store: {
             }) => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -22076,7 +22235,7 @@ export declare const store: {
             update: (fn: (prev: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -22156,7 +22315,7 @@ export declare const store: {
             }) => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -22237,7 +22396,7 @@ export declare const store: {
             use: () => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -22318,7 +22477,7 @@ export declare const store: {
             watch: (fn: (val: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -22399,7 +22558,7 @@ export declare const store: {
             export: () => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -22481,36 +22640,36 @@ export declare const store: {
             variant: {
                 get: (clone?: boolean) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 set: (value: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 } | ((prev: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => void;
                 use: () => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 watch: (fn: (val: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
             } & {
                 type: {
@@ -22522,19 +22681,19 @@ export declare const store: {
                     export: () => string;
                 };
                 items: {
-                    get: (clone?: boolean) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
-                    set: (value: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[] | ((prev: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[])) => void;
-                    update: (fn: (prev: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => void;
-                    use: () => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
-                    watch: (fn: (val: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[], unsub: () => void) => void) => () => void;
-                    export: () => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
                 } & {
-                    get: (clone?: boolean) => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
-                    set: (value: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2" | ((prev: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")) => void;
-                    update: (fn: (prev: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => void;
-                    use: () => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
-                    watch: (fn: (val: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2", unsub: () => void) => void) => () => void;
-                    export: () => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
                 }[];
             };
             fontStyle: {
@@ -24252,7 +24411,7 @@ export declare const store: {
             get: (clone?: boolean) => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24333,7 +24492,7 @@ export declare const store: {
             set: (value: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24413,7 +24572,7 @@ export declare const store: {
             } | ((prev: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24493,7 +24652,7 @@ export declare const store: {
             }) => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24574,7 +24733,7 @@ export declare const store: {
             update: (fn: (prev: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24654,7 +24813,7 @@ export declare const store: {
             }) => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24735,7 +24894,7 @@ export declare const store: {
             use: () => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24816,7 +24975,7 @@ export declare const store: {
             watch: (fn: (val: {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24897,7 +25056,7 @@ export declare const store: {
             export: () => {
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -24979,36 +25138,36 @@ export declare const store: {
             variant: {
                 get: (clone?: boolean) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 set: (value: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 } | ((prev: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => void;
                 use: () => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 watch: (fn: (val: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
             } & {
                 type: {
@@ -25020,19 +25179,19 @@ export declare const store: {
                     export: () => string;
                 };
                 items: {
-                    get: (clone?: boolean) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
-                    set: (value: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[] | ((prev: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[])) => void;
-                    update: (fn: (prev: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => void;
-                    use: () => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
-                    watch: (fn: (val: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[], unsub: () => void) => void) => () => void;
-                    export: () => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
                 } & {
-                    get: (clone?: boolean) => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
-                    set: (value: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2" | ((prev: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")) => void;
-                    update: (fn: (prev: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => void;
-                    use: () => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
-                    watch: (fn: (val: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2", unsub: () => void) => void) => () => void;
-                    export: () => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
                 }[];
             };
             fontStyle: {
@@ -26760,7 +26919,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -26851,7 +27010,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -26941,7 +27100,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27031,7 +27190,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27122,7 +27281,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27212,7 +27371,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27303,7 +27462,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27394,7 +27553,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27485,7 +27644,7 @@ export declare const store: {
                 };
                 variant: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 fontStyle: {
                     type: string;
@@ -27712,36 +27871,36 @@ export declare const store: {
             variant: {
                 get: (clone?: boolean) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 set: (value: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 } | ((prev: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }) => void;
                 use: () => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
                 watch: (fn: (val: {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
-                    items: Array<keyof typeof typographyVariants>;
+                    items: string[];
                 };
             } & {
                 type: {
@@ -27753,19 +27912,19 @@ export declare const store: {
                     export: () => string;
                 };
                 items: {
-                    get: (clone?: boolean) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
-                    set: (value: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[] | ((prev: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[])) => void;
-                    update: (fn: (prev: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[]) => void;
-                    use: () => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
-                    watch: (fn: (val: ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[], unsub: () => void) => void) => () => void;
-                    export: () => ("button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")[];
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
                 } & {
-                    get: (clone?: boolean) => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
-                    set: (value: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2" | ((prev: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2")) => void;
-                    update: (fn: (prev: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2") => void;
-                    use: () => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
-                    watch: (fn: (val: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2", unsub: () => void) => void) => () => void;
-                    export: () => "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "overline" | "subtitle1" | "subtitle2" | "body1" | "body2";
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
                 }[];
             };
             fontStyle: {
@@ -45590,6 +45749,145 @@ export declare const store: {
                 }[];
             };
         };
+        Flag: {
+            get: (clone?: boolean) => {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
+            set: (value: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } | ((prev: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            }) => {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            })) => void;
+            update: (fn: (prev: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            }) => {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            }) => void;
+            use: () => {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
+            watch: (fn: (val: {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                code: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            };
+        } & {
+            code: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+        };
         List: {
             get: (clone?: boolean) => {};
             set: (value: {} | ((prev: {}) => {})) => void;
@@ -47028,14 +47326,6 @@ export declare const store: {
                 };
             };
         };
-        Alert: {
-            get: (clone?: boolean) => {};
-            set: (value: {} | ((prev: {}) => {})) => void;
-            update: (fn: (prev: {}) => {}) => void;
-            use: () => {};
-            watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
-            export: () => {};
-        } & {};
         Modal: {
             get: (clone?: boolean) => {};
             set: (value: {} | ((prev: {}) => {})) => void;

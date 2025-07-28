@@ -1,3 +1,4 @@
+import type { Variants } from './theme/default';
 export type ChatProps = {
     /** massage content chat bubble */
     children: React.ReactNode;
@@ -12,7 +13,7 @@ export type ChatProps = {
     /** content below the chat bubble */
     footer?: React.ReactNode;
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
 };
 /**
  * Chat bubbles are used to show one line of conversation and all its data, including the author image, author name, time, etc

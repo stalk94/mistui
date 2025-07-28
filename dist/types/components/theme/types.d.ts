@@ -1,15 +1,52 @@
 export interface Theme {
-    enableEditorMod?: boolean;
-    shadows: {};
+    theme: 'dark' | 'light';
     autosizes: {
         text: string;
+        dock: string;
         input: string;
         btn: string;
         textarea: string;
         avatar: string;
         badge: string;
+        table: string;
+        divider: string;
+    };
+    sizes: {
+        [key: string]: {
+            default: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
+    };
+    shadows: {
+        [key: string]: React.CSSProperties['boxShadow'];
+        xs: React.CSSProperties['boxShadow'];
+        sm: React.CSSProperties['boxShadow'];
+        md: React.CSSProperties['boxShadow'];
+        lg: React.CSSProperties['boxShadow'];
+        xl: React.CSSProperties['boxShadow'];
+        xxl: React.CSSProperties['boxShadow'];
+    };
+    typography: {
+        [key: string]: string;
+        h1: string;
+        h2: string;
+        h3: string;
+        h4: string;
+        h5: string;
+        h6: string;
+        subtitle1: string;
+        subtitle2: string;
+        body1: string;
+        body2: string;
+        caption: string;
+        overline: string;
+        button: string;
     };
     variants: {
+        [key: string]: string;
         neutral: string;
         primary: string;
         secondary: string;
@@ -20,34 +57,20 @@ export interface Theme {
     };
     colors: {
         base: string;
-        input: string;
-        button: string;
+        selected: string;
     };
     styles: {
         input?: React.CSSProperties & {
             focusOutlineColor?: React.CSSProperties['color'];
             fontColor?: React.CSSProperties['color'];
             placeholderColor?: React.CSSProperties['color'];
-            checkBoxBackground?: React.CSSProperties['backgroundColor'];
-            radioThumbColor?: React.CSSProperties['background'];
-            switchBorderColor?: React.CSSProperties['borderColor'];
-            switchThumbBorderColor?: React.CSSProperties['borderColor'];
-            switchThumbBackgroundColor?: React.CSSProperties['backgroundColor'];
-            switchThumbIconColor?: React.CSSProperties['color'];
             sliderTrackColor?: React.CSSProperties['backgroundColor'];
             sliderTrackHeight?: number;
             sliderTrackFillHeight?: number;
             sliderTrackFillColor?: React.CSSProperties['backgroundColor'];
-            sliderThumbBorderColor?: React.CSSProperties['borderColor'];
-            sliderThumbBackgroundColor?: React.CSSProperties['backgroundColor'];
-            sliderThumbHeight?: number;
-            sliderThumbWidth?: number;
         };
-        button: {
-            color: React.CSSProperties['color'];
-            background: React.CSSProperties['backgroundColor'];
-        };
-        table: {
+        button?: {};
+        table?: {
             body: string;
             header: string;
             thead: string;
@@ -55,21 +78,36 @@ export interface Theme {
             fontColor: string;
             theadFontColor: string;
         };
-        accordeon: {
-            backgroundColor: React.CSSProperties['backgroundColor'];
+        tabs?: {
+            borderColor: React.CSSProperties['color'];
         };
-    };
-    mixers: {
-        button: {
-            color: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['color'];
-            background: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['backgroundColor'];
+        appBar?: {
+            backgroundColor: React.CSSProperties['color'];
+        };
+        modal?: {
+            backgroundColor: React.CSSProperties['color'];
+            borderColor: React.CSSProperties['color'];
+            borderWidth: number;
+        };
+        drawer?: {
+            backgroundColor: React.CSSProperties['color'];
+            borderColor: React.CSSProperties['color'];
+        };
+        popover?: {
+            minWidth: React.CSSProperties['minWidth'];
         };
     };
     plugins: {
         invert: (color: string) => string;
-        contrast: (color: string) => string;
+        isBright: (color: string, cof?: number) => boolean;
+        contrast: (color: string, dark?: string, light?: string) => string;
         alpha: (color: string, alpha: number) => string;
         lighten: (color: string, cof: number) => string;
+        darken: (color: string, cof: number) => string;
+        mixers: {
+            color: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['color'];
+            background: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['backgroundColor'];
+        };
     };
 }
 export declare const clasesDaisy: {

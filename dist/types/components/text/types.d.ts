@@ -1,24 +1,10 @@
 import { ClassValue } from 'clsx';
 import { fontFamilyVariants } from '../theme/default';
 import type { ElementType, ComponentPropsWithoutRef, ComponentPropsWithRef } from 'react';
-export declare const typographyVariants: {
-    h1: string;
-    h2: string;
-    h3: string;
-    h4: string;
-    h5: string;
-    h6: string;
-    subtitle1: string;
-    subtitle2: string;
-    body1: string;
-    body2: string;
-    caption: string;
-    overline: string;
-    button: string;
-};
+import { Variants } from '../theme/default';
 export type BaseTypographyProps = {
     children: React.ReactNode;
-    variant?: keyof typeof typographyVariants;
+    variant?: `h1` | `h2` | `h3` | `h4` | `h5` | `h6` | `subtitle1` | `subtitle2` | `body1` | `body2` | `caption` | `overline` | `button`;
     className?: React.HTMLAttributes<HTMLElement>['className'] | ClassValue;
     style?: React.CSSProperties;
     fontStyle?: 'normal' | 'italic';
@@ -27,6 +13,7 @@ export type BaseTypographyProps = {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     colorShadow?: string;
     tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
+    color?: Variants | (string & {});
 };
 type AsProp<T extends ElementType> = {
     as?: T;
@@ -40,7 +27,6 @@ export type TypographyComponent = <T extends React.ElementType = 'p'>(props: Pol
 export type LinkProps = BaseTypographyProps & {
     children?: string;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
 };
 export type MarqueeTextProps = LinkProps & {
     /** px second */

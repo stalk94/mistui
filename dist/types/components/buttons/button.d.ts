@@ -8,11 +8,12 @@ declare const Button: import("react").ForwardRefExoticComponent<{
     size?: "auto" | "xs" | "sm" | "md" | "lg" | "xl";
     shadow?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
     variant?: "contained" | "outline" | "dash" | "soft" | "ghost" | "link";
-    color?: "neutral" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "error" | string;
+    color?: import("../theme/default").Variants | (string & {});
     isSoft?: boolean;
     isGradient?: any;
     selected?: boolean;
     disabled?: boolean;
+    fullWidth?: boolean;
     'aria-label'?: string;
 } & import("react").RefAttributes<HTMLButtonElement>>;
 export default Button;

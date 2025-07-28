@@ -26,7 +26,7 @@ export default defineConfig({
         outDir: 'dist',
         lib: {
             entry: 'index.ts',
-            name: 'MyLib',
+            name: 'mistui',
             fileName: (format) => `index.${format}.js`,
             formats: ['es', 'umd']
         },

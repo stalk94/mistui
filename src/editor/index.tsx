@@ -420,7 +420,7 @@ export default function SandBoxRoot({ }) {
                     {mod !== 'playground' &&
                         <div className='min-w-[12%] sticky top-0'>
                         <div
-                            className="break-all overflow-hidden w-35 border-1 p-1 rounded mt-3 border-[#808080a6]"
+                            className="break-all overflow-hidden w-35 border-1 p-1 rounded mt-3 border-[#808080a6] shadow-sm"
                         >
                             <a 
                                 href='https://www.npmjs.com/package/statekit-lite'
@@ -428,7 +428,10 @@ export default function SandBoxRoot({ }) {
                                 rel="noopener noreferrer"
                             >
                                 <img src={stk}/>
-                                <div className='text-xs pt-2'>
+                                <div 
+                                    className='text-xs pt-3'
+                                    style={{fontFamily: '"Inter", sans-serif',}}
+                                >
                                     statekit-lite — A minimal global state manager for React. Manage your wealth without complexity.
                                 </div>
                             </a>

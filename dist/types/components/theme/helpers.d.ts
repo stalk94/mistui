@@ -23,5 +23,5 @@ export declare const mixerButtonBorderColor: (color: string, type?: "hover" | "s
 export declare const fabrikSizeBreacpoints: (classKye: ClasVariants, config: Combo) => string;
 export declare const generateSizes: (sizes: any) => {};
 export declare function getContrastingColor(bgColor: string, dark: string, light: string): string;
-export declare function deepMerge(target: any, source: any): any;
+export declare function isBright(colorStr: string, cof?: number): boolean;
 export {};

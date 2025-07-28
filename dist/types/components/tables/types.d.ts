@@ -1,6 +1,7 @@
 import { ComponentProps } from 'react';
 import { DataTable, DataTableValueArray } from "primereact/datatable";
 import { Column } from 'primereact/column';
+import { Variants } from '../theme/default';
 export type ColumnDataTableProps = ComponentProps<typeof Column> & {};
 /** инлайн стилизация таблицы */
 export type TableStyles = {
@@ -36,7 +37,12 @@ export type DataTablePropsWrapper = Omit<ComponentProps<typeof DataTable>, 'size
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 };
 export type TableProps = {
-    children: {
+    schema: {
+        header: React.ReactNode;
+        field: string;
+        body?: (data: any) => React.ReactNode;
+    }[];
+    children?: {
         header: React.ReactNode;
         field: string;
         body?: (data: any) => React.ReactNode;
@@ -46,7 +52,8 @@ export type TableProps = {
     style?: React.CSSProperties;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     footer?: React.ReactNode;
     header?: React.ReactNode;
+    variant?: 'contained' | 'outline' | 'dash';
 };

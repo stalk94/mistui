@@ -15,8 +15,28 @@ export default function InfoStat(tab) {
             {/* image */}
             <Section 
                 title="Stat" 
-                description="кнопка" 
-                code={``}
+                description="" 
+                code={`
+                    <Stat
+                        value='1200 %'
+                        description='description'
+                        title='title'
+                        figure={
+                            <RadialProgress value={70}>
+                                70%
+                            </RadialProgress>
+                        }
+                        actions={
+                            <>
+                                <Divider>
+                                    actions
+                                </Divider>
+                                <Button size='sm' color='success'>one button</Button>
+                                <Button size='sm' color='error'>two button</Button>
+                            </>
+                        }
+                    />
+                `}
             >
                 <div className="flex justify-center">
                     <Stat
@@ -30,7 +50,7 @@ export default function InfoStat(tab) {
                         }
                         actions={
                             <>
-                                <Divider color='primary' style={{ borderStyle: 'dashed', color: 'silver' }}>
+                                <Divider>
                                     actions
                                 </Divider>
                                 <Button size='sm' color='success'>one button</Button>
@@ -41,18 +61,6 @@ export default function InfoStat(tab) {
                 </div>
             </Section>
 
-            {/*  */}
-            <Section
-                title="Stat orientation"
-                description="разные размеры"
-                code={sizes
-                    .map((size) => ``)
-                    .join('\n')}
-            >
-               <div className="flex-col justify-center">
-                    
-                </div>
-            </Section>
         </div>
     );
 }

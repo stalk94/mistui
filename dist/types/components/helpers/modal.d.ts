@@ -6,6 +6,7 @@ declare const Modal: import("react").ForwardRefExoticComponent<{
     actions?: React.ReactNode;
     isCloseClickOutside?: boolean;
     classNameModalBox?: React.HTMLAttributes<HTMLDivElement>["className"];
+    classNameActions?: React.HTMLAttributes<HTMLDivElement>["className"];
     open?: boolean;
 } & import("react").RefAttributes<HTMLDialogElement>>;
 export default Modal;

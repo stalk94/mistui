@@ -4,6 +4,7 @@ export type ModalProps = Props & {
     actions?: React.ReactNode;
     isCloseClickOutside?: boolean;
     classNameModalBox?: React.HTMLAttributes<HTMLDivElement>['className'];
+    classNameActions?: React.HTMLAttributes<HTMLDivElement>['className'];
     open?: boolean;
 };
 export type DrawerProps = Props & {

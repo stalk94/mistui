@@ -1,3 +1,4 @@
+import type { Variants } from './theme/default';
 export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick'> & {
     items: {
         /** label аккордеона */
@@ -7,7 +8,7 @@ export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'classNa
     }[];
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     /** массив индексов развернутых вкладок [0, 1, 2 ...] */
     activeIndexs?: number[];

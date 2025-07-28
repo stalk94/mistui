@@ -1,16 +1,6 @@
 import { ClassValue } from 'clsx';
-type InputStyle = {
-    /** это прокидывается на сам инпут input class
-     *
-     *    color:  цвет ввода
-     *    borderColor: input бордюрка
-     *    borderStyle:
-     *    borderWidth:
-     *    backgroundColor:  input фон
-    */
-    styleInput?: React.CSSProperties;
-};
-export type LabelProps = InputStyle & {
+import { Variants } from '../theme/default';
+export type LabelProps = {
     'data-id'?: string | number;
     /** отключить видимость формы */
     disabledVisibility?: boolean;
@@ -52,25 +42,25 @@ export type ValidatorProps = {
     minlength?: string | number;
     maxlength?: string | number;
 };
-export type BaseProps = InputStyle & {
+export type BaseProps = {
     required?: boolean;
     type: 'text' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'tel' | 'url' | 'time' | 'datetime-local' | 'search';
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-    placeholder?: string;
+    placeholder?: string | React.ReactElement;
     labelLeft?: string | React.ReactElement;
     labelRight?: string | React.ReactElement;
     labelTop?: string | React.ReactElement;
     validator?: string | React.ReactElement | boolean;
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     /** tooltip текст подсказка при наведении */
     title?: string;
     value?: string | number;
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties;
     onChange?: React.Dispatch<React.SetStateAction<number | string>> | ((val: string) => void);
-    className?: ClassValue;
-    variant?: 'dash' | 'outline';
+    className?: HTMLElement['className'] | ClassValue;
+    variant?: 'contained' | 'outline' | 'dash' | 'ghost';
 };
 export type NumberInputProps = Omit<BaseProps, 'type'> & {
     type?: 'number';
@@ -80,21 +70,12 @@ export type NumberInputProps = Omit<BaseProps, 'type'> & {
     onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: number) => void);
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 };
-export type FileInputProps = {
-    'data-id'?: string | number;
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-    color?: string;
-    value?: number;
+export type FileInputProps = Omit<BaseProps, 'type'> & {
     onChange?: (val: File) => void;
     onError?: (err: string) => void;
     accept?: string;
     /** в megabite */
     maxSize?: number;
-    placeholder?: string | React.ReactElement;
-    labelLeft?: string | React.ReactElement;
-    labelRight?: string | React.ReactElement;
-    labelTop?: string | React.ReactElement;
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties;
     className?: ClassValue;
@@ -128,7 +109,7 @@ export type CheckBoxInputProps = {
     className?: ClassValue;
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     variant?: 'contained' | 'outline' | 'dash' | 'ghost';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
 };
 export type RadioInputProps = CheckBoxInputProps & {
     styleThumb?: {
@@ -143,16 +124,8 @@ export type SwitchBoxInputProps = Omit<CheckBoxInputProps, 'type'> & {
         iconColor?: React.CSSProperties['backgroundColor'];
     };
 };
-export type SliderInputProps = InputStyle & {
-    'data-id'?: string | number;
+export type SliderInputProps = Omit<BaseProps, 'type'> & {
     disableForm?: boolean;
-    variant?: 'contained' | 'outline' | 'dash' | 'ghost';
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-    color?: string;
-    labelLeft?: string | React.ReactElement;
-    labelRight?: string | React.ReactElement;
-    labelTop?: string | React.ReactElement;
     value?: number | number[];
     onChange?: (val: number | number[]) => void;
     /** вызывается в конце перетаскивания */
@@ -167,7 +140,7 @@ export type SliderInputProps = InputStyle & {
     styleThumb?: React.CSSProperties;
     className?: ClassValue;
 };
-export type TextAreaProps = Omit<BaseProps, 'type'> & {
-    variant: 'ghost' | 'outline' | 'dash';
+export type TextAreaProps = Omit<BaseProps, 'type' | 'variant' | 'className'> & {
+    variant?: 'outline' | 'dash' | 'ghost';
+    className?: HTMLElement['className'];
 };
-export {};

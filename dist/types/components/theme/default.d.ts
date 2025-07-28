@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 export declare const fontFamilyVariants: {
     'JetBrains Mono': string;
     Ubuntu: string;
@@ -11,87 +10,44 @@ export declare const fontFamilyVariants: {
     Merriweather: string;
     Raleway: string;
 };
-declare const variantsColor: {
-    neutral: string;
+declare const VARIANTS: {
     primary: string;
     secondary: string;
     accent: string;
-    error: string;
     success: string;
     warning: string;
+    error: string;
     info: string;
+    neutral: string;
 };
-declare const defaultTheme: {
-    enableEditorMod: boolean;
+export declare function createTheme({ themeSchema, colors, sizes, colorVariants, typographyVariants, shadows }: {
+    themeSchema: any;
+    colors: any;
+    sizes: any;
+    colorVariants: any;
+    typographyVariants: any;
+    shadows: any;
+}): {
+    theme: any;
+    colors: any;
+    sizes: any;
     autosizes: {};
-    colors: {
-        black: string;
-        white: string;
-        base: string;
-        input: string;
-        button: string;
-        selected: string;
-    };
-    variants: {
-        neutral: string;
-        primary: string;
-        secondary: string;
-        accent: string;
-        error: string;
-        success: string;
-        warning: string;
-        info: string;
-    };
-    shadows: {
-        xs: string;
-        sm: string;
-        md: string;
-        lg: string;
-        xl: string;
-        xxl: string;
-    };
-    styles: {
-        inputLabelTop: CSSProperties;
-        input: CSSProperties;
-        accordeon: {
-            backgroundColor: string;
-        };
-        tabs: {
-            borderColor: string;
-        };
-        table: {
-            body: string;
-            header: string;
-            thead: string;
-            border: string;
-            fontColor: string;
-            theadFontColor: string;
-        };
-        appBar: {
-            backgroundColor: string;
-        };
-        leftBar: {
-            backgroundColor: string;
-        };
-        button: {
-            selectedBackground: string;
-        };
-        popUp: {};
-        modal: {};
-    };
-    mixers: {
-        button: {
-            color: (variant?: Varinats, type?: "hover" | "selected") => string;
-            background: (variant?: Varinats, type?: "hover" | "selected") => string;
-            border: (variant?: Varinats, type?: "hover" | "selected") => string;
-        };
-    };
-    plugins: {
-        invert: (color: string) => string;
-        contrast: (color: string, dark?: string, light?: string) => string;
-        alpha: (color: string, alpha: number) => string;
-        lighten: (color: string, cof: number) => string;
-    };
+    variants: any;
+    shadows: any;
+    typography: any;
+    styles: any;
+    plugins: any;
 };
-export type Varinats = keyof typeof variantsColor;
-export default defaultTheme;
+export declare const defaultTheme: {
+    theme: any;
+    colors: any;
+    sizes: any;
+    autosizes: {};
+    variants: any;
+    shadows: any;
+    typography: any;
+    styles: any;
+    plugins: any;
+};
+export type Variants = keyof typeof VARIANTS;
+export {};

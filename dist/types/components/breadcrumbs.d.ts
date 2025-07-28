@@ -1,3 +1,4 @@
+import type { Variants } from './theme/default';
 export type Breadcrumb = {
     label: string;
     href: string;
@@ -22,8 +23,8 @@ export type BreadcrumbsNavProps = {
     separator?: string | React.ReactNode;
     /** container classes */
     className?: HTMLDivElement['className'];
-    /** first icon classes */
-    classNameHomeicon?: HTMLDivElement['className'];
+    /** first icon, custom svg */
+    homeIcon?: React.SVGProps<SVGSVGElement>;
     /**
      * render component element navigation
      */
@@ -33,11 +34,11 @@ export type BreadcrumbsNavProps = {
     }>;
     /** container styles */
     style?: React.CSSProperties;
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
 };
 export declare function useBreadcrumbs(pathname: string, options?: Options): {
     isLast: boolean;
     label: React.ReactElement | string;
     href: string;
 }[];
-export default function BreadcrumbsNav({ pathname, size, Link, separator, nameMap, className, classNameHomeicon, style, color }: BreadcrumbsNavProps): import("react/jsx-runtime").JSX.Element;
+export default function BreadcrumbsNav({ pathname, size, Link, separator, className, homeIcon, style, nameMap, color }: BreadcrumbsNavProps): import("react/jsx-runtime").JSX.Element;

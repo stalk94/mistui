@@ -349,9 +349,6 @@ const patterns = {
             content
         </Drawer>
     `),
-    Alert: (props)=> (`
-        <AlertRender ${toJSXProps(props)} />
-    `),
     Tooltip: (props)=> (`
         <Tooltip
             children={
@@ -402,7 +399,7 @@ const patterns = {
         </Splitter>
     `),
     Accordion: (props) => (`
-        <Acordeon
+        <Accordion
             items={[{
                 content: <div>content</div>,
                 title: 'title-1'
@@ -625,7 +622,7 @@ const patterns = {
             }
             actions={
                 <>
-                    <Divider color='primary' style={{borderStyle:'dashed',color:'silver'}}>
+                    <Divider>
                         actions
                     </Divider>
                     <button className="btn btn-xs btn-info btn-outline">one button</button>

@@ -1,7 +1,8 @@
+import type { Variants } from './theme/default';
 export type AvatarProps = {
     children?: string | React.ReactElement;
     size?: 'auto' | 'xss' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
+    color?: Variants | (string & {});
     style?: React.CSSProperties;
     className?: React.HTMLAttributes<HTMLDivElement>['className'];
     src?: string;
