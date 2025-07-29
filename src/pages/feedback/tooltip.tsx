@@ -12,7 +12,6 @@ function Render({ cb, ...props }) {
                     shadow='sm'
                     size='md'
                     style={{ margin: 3 }}
-                    className='w-full'
                     variant='dash'
                     color={cb}
                 >
@@ -39,7 +38,7 @@ export default function InfoTooltip(tab) {
                     
                 `}
             >
-                <Grid className="my-6 max-w-90 m-auto">
+                <Grid className="my-6 max-w-110 m-auto">
                     <Render cb='error' />
                 </Grid>
             </Section>
@@ -52,7 +51,7 @@ export default function InfoTooltip(tab) {
                     
                 `}
             >
-                <Grid className="my-6 max-w-90 m-auto">
+                <Grid className="my-6 max-w-110 m-auto">
                     <Render 
                         cb='secondary'
                         color='secondary'

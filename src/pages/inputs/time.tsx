@@ -11,7 +11,7 @@ export default function InfoTime(tab) {
             <Section
                 title="Date input"
                 description=""
-                code={`<BaseInput placeholder="date" type='date'/>`}
+                code={`<TimeInput size='sm' />`}
             >
                 <div className="flex justify-center">
                     <Time

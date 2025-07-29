@@ -85,7 +85,7 @@ export default function Tooltip({
 
     return (
         <div
-            className={`tooltip w-full tooltip-${position}`}
+            className={`tooltip tooltip-${position}`}
             data-id={uid}
             { ...props }
         >

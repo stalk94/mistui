@@ -10,7 +10,7 @@ export default function InfoDate(tab) {
             <Section
                 title="Date input"
                 description=""
-                code={`<BaseInput placeholder="date" type='date'/>`}
+                code={`<DateInput size='sm' />`}
             >
                 <div className="flex justify-center">
                     <Date

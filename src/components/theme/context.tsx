@@ -68,17 +68,21 @@ const Cache = () => {
                     height: "5px";
                 },
                 .scrolable::-webkit-scrollbar-thumb: {
-                    backgroundColor: "#7e7e7e";
-                    borderRadius: '7px';
+                    background-color: #7e7e7e;
+                    borderRadius: 7px;
                 },
                 .scrolable::-webkit-scrollbar-track: {
-                    background: "#2e2e2e";
+                    background: #2e2e2e;
                 }
                 [data-theme="dark"] {
                     --color-primary: rgb(25, 25, 26);
                     --color-primary-content: rgb(220, 220, 220);
                     --selected: ${colors.selected};
-                } 
+                }
+                .selected {
+                    background-color: #7e7e7e81;
+                    border-radius: 5px;
+                }
             `)}
         </style>
     );

@@ -6,6 +6,7 @@ import { Cog8ToothIcon, HomeIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { baseMeta } from '../meta';
 
 
+
 const items = [
     { id: '1', label: 'test', icon: <Cog8ToothIcon className='h-4' /> },
     { id: '2', label: 'test', icon: <HomeIcon className='h-4' /> },
@@ -63,7 +64,7 @@ export default function InfoMenu(tab) {
                                 variant='dashed' 
                                 position='end'
                             >
-                                <Typography color='#daf166' variant='caption'>
+                                <Typography color='#acacaa' variant='caption'>
                                     { size }
                                 </Typography>
                             </Divdder>

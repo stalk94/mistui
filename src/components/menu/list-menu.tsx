@@ -1,4 +1,4 @@
-import { useCallback, cloneElement, isValidElement, ReactElement } from 'react';
+import { useCallback, cloneElement, isValidElement, ReactElement, useMemo } from 'react';
 import type { MainListProps, NavItem } from './type';
 import { useTheme } from '../theme';
 import { Typography } from '../text';
@@ -41,15 +41,15 @@ const tableSize = {
  */
 export default function MenuList({
     style = {},
+    select,
     className,
     size = 'auto',
     isNested,
     onSelect,
     items,
-    color,
-    shadow
+    color
 }: MainListProps) {
-    const { autosizes, variants, shadows } = useTheme(); 
+    const { autosizes, variants } = useTheme(); 
     const textSize = (size && size !== 'auto') ? `text-${size}` :  autosizes.text;
     const sizeIcon = tableSize[size];
 
@@ -83,10 +83,13 @@ export default function MenuList({
         render(
             items.map((item, index) => (
                 <li 
-                    className='p-[1px]'
+                    className={`
+                        p-[1px]
+                        ${(select === item || select === item.id) ? 'selected' : ''}
+                    `}
                     key={index}
                     style={{
-                        color: (variants[color] ?? color),
+                        color: (variants[color] ?? color)
                     }}
                 >
                     {/* nested */}
@@ -96,6 +99,7 @@ export default function MenuList({
                             { item?.title &&
                                 <Typography 
                                     variant='caption' 
+                                    color=''
                                     className="menu-title whitespace-nowrap"
                                     style={item?.style}
                                 >
@@ -104,13 +108,13 @@ export default function MenuList({
                             }
 
                             {/* parent */}
-                            <summary className='p-0 items-center'style={item?.style}>
+                            <summary className='p-0 items-center'>
                                {item.icon && isValidElement(item.icon) &&
                                     cloneElement(item.icon as ReactElement<any>, {
                                         className: sizeIcon
                                     })
                                 }
-                                <span className="ml-1 items-center whitespace-nowrap">
+                                <span className={`ml-1 items-center whitespace-nowrap ${textSize}`}>
                                     { item.label }
                                 </span>
                             </summary>
@@ -124,6 +128,7 @@ export default function MenuList({
                                     items={item.children} 
                                     isNested={true}
                                     onSelect={onSelect}
+                                    select={select}
                                 />
                             </ul>
                         </details>
@@ -134,7 +139,7 @@ export default function MenuList({
                         <>
                             <div 
                                 className='flex p-0 items-center' 
-                                onClick={(e)=>  handle(item)}
+                                onClick={(e)=> handle(item)}
                                 style={item?.style}
                             >
                                 <div className='flex items-center justify-center'>

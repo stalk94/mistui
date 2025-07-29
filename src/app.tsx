@@ -51,7 +51,8 @@ const CheckBox = ({onChange}) => (
     </IconButton>
 );
 globalThis.globalStore = createStore({
-    lang: 'en'
+    lang: 'en',
+    select: undefined
 }, {
     persist: { key: 'global' }
 });
