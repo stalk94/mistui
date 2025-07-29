@@ -1,7 +1,8 @@
-import { forwardRef, useCallback, useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 import type { BoxProps } from './types';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 
 
 
@@ -21,14 +22,18 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
 ) {
     const { shadows, styles } = useTheme();
 
+    const getStyle = useMemo(() => {
+
+    }, [variant, color, style]);
   
+
     return (
         <div
             ref={ref}
-            className={`
+            className={cs(`
                 ${className ?? ''}
                 ${variant === 'glass' ? 'glass' : ''}
-            `}
+            `)}
             style={{
                 boxShadow: shadows[shadow],
                 ...style

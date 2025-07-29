@@ -2,49 +2,56 @@ import type { RadialProgressProps } from './types';
 import { forwardRef  } from 'react';
 import { useTheme } from '../theme';
 
-const sizes = {
-    xs: '4rem',
-    sm: '6rem',
-    md: '8rem',
-    lg: '10rem',
-    xl: '12rem'
+
+const csizes = {
+    xs: '2rem',
+    sm: '3rem',
+    md: '5rem',
+    lg: '8rem',
+    xl: '10rem'
 }
 const thickness = {
-    xs: '2px',
+    xs: '3px',
     sm: '4px',
-    md: '6px',
-    lg: '12px',
-    xl: '18px'
+    md: '8px',
+    lg: '14px',
+    xl: '20px'
 }
 
-// !
+
 const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(function RadialProgress(
     {
         style = {},
         value = 0,
         children,
         size,
-        color,
+        color = 'secondary',
         className,
         shadow,
         ...props
     },
     ref
 ) {
-    const { shadows, variants } = useTheme();
-    const curColor = variants[color] ?? color;
-
+    const { shadows, variants, sizes, autosizes } = useTheme();
+    const curSize = csizes[size] ?? csizes.sm;
+    const curSizeThickness = thickness[size] ?? thickness.sm;
+    const sizeText = sizes.text[size] ? `text-${sizes.text[size]}` : autosizes.text;
+    const curColor = (variants[color] ?? color) ?? style?.color;
+    
 
     return (
         <div 
             ref={ref} 
-            className={`radial-progress`}
+            role="progressbar"
+            className={`radial-progress ${className ?? ''} ${sizeText}`}
             style={{ 
                 boxShadow: shadows[shadow],
                 ...style,
+                color: curColor,
                 "--value": value,
+                "--size": curSize,
+                "--thickness": curSizeThickness,
             }}
-            role="progressbar"
             aria-valuenow={value}
             { ...props }
         >

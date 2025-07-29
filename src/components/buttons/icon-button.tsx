@@ -2,6 +2,7 @@ import { forwardRef, useCallback, useMemo, cloneElement } from 'react';
 import type { IconButtonProps } from './type';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
+import Ripple from './animation';
 import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
 import clsx from 'clsx';
@@ -21,6 +22,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
         isGradient,
         selected,
         shadow,
+        ripple = true,
         ...props
     },
     ref
@@ -108,7 +110,10 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
     
     
     return (
-        <>
+        <Ripple 
+            isEnable={!props.disabled && ripple} 
+            className={`${isRounded ? 'btn-circle' : 'btn-square rounded'}`}
+        >
             {!props['data-id'] && !selected &&
                 <style>
                     {`
@@ -151,7 +156,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                 { mergedIcon }
             </button>
 
-        </>
+        </Ripple>
     );
 });
 

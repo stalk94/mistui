@@ -24,6 +24,7 @@ export type ButtonProps = Props & {
     selected?: boolean
     disabled?: boolean
     fullWidth?: boolean
+    ripple?: boolean
     'aria-label'?: string
 }
 
@@ -62,5 +63,6 @@ export type IconButtonProps =  Props & {
     isGradient?: any
     disabled?: boolean
     selected?: boolean
+    ripple?: boolean
     'aria-label'?: string
 }

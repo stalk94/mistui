@@ -85,8 +85,22 @@
         opacity: 0;
     }
 }
+@keyframes ripple {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
 
 
+.animate-ripple {
+    position: absolute;
+    border-radius: inherit;
+    transform: scale(0);
+    pointer-events: none;
+    animation: ripple 600ms ease-out;
+    z-index: 0;
+}
 .animate-fade-in {
     animation: fadeIn 0.3s ease-out forwards;
 }

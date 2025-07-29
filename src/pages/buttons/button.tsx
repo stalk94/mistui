@@ -173,4 +173,10 @@ InfoButton.meta = {
         type: 'boolean',
         description: 'Disables the component.'
     },
+    ripple: {
+        values: ['boolean'],
+        type: 'boolean',
+        default: 'true',
+        description: 'Enable ripple animation effect'
+    }
 }

@@ -5,6 +5,7 @@ import { useTheme } from '../theme';
 import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
 import { colord } from "colord";
+import Ripple from './animation';
 
 
 function isBright(colorStr: string): boolean {
@@ -34,6 +35,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         isGradient,
         selected,
         shadow,
+        ripple = true,
         ...props
     },
     ref
@@ -114,7 +116,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     
   
     return (
-        <>
+        <Ripple 
+            isEnable={!props.disabled && ripple} 
+            color={getColorHover('border')}
+            className='rounded text-shadow-none whitespace-nowrap'
+        >
             {(!props['data-id'] && !selected) &&
                 <style>
                     {`
@@ -159,8 +165,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
             >
                 { children }
             </button>
-
-        </>
+        </Ripple>
     );
 });
 

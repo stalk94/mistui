@@ -44,7 +44,7 @@ export default function InfoStat(tab) {
                         description='description'
                         title='title'
                         figure={
-                            <RadialProgress value={70}>
+                            <RadialProgress size='md' value={70}>
                                 70%
                             </RadialProgress>
                         }
@@ -53,7 +53,7 @@ export default function InfoStat(tab) {
                                 <Divider>
                                     actions
                                 </Divider>
-                                <Button size='sm' color='success'>one button</Button>
+                                <Button size='sm' className='mr-2' color='success'>one button</Button>
                                 <Button size='sm' color='error'>two button</Button>
                             </>
                         }

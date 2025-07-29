@@ -1,6 +1,6 @@
 {
-  "name": "mistui",
-  "version": "1.0.0",
+  "name": "mistui-kit",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -23,9 +23,12 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
+  "keywords": [
+    "tailwind", "react", "nextjs", "ui", "theme", "framework", 
+    "component", "tailwind component", "react component"
+  ],
   "author": "stalk9424",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",

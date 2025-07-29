@@ -35,7 +35,7 @@ const category = {
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
     inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu'],
-    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List'],
+    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'RadialProgress'],
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],

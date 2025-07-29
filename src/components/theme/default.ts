@@ -47,6 +47,7 @@ const COLORS = {
 const SIZES = {
     text: {
         default: 'sm',
+        xs: 'xs',
         sm: 'md',
         md: 'md',
         lg: 'lg',

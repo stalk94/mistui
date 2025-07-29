@@ -53,6 +53,7 @@ import Flag from './data-display/flag';
 import { useMemo } from 'react';
 import { TypeTable } from './helpers';
 import Head from './head';
+import Radial from './data-display/radial-progress';
 
 
 const category = {
@@ -99,6 +100,7 @@ const category = {
         Badge: Badges,
         List: List,
         Flag: Flag,
+        RadialProgress: Radial
     },
     layout: {
         Divider: Divider,

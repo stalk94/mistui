@@ -8,7 +8,7 @@ import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, Env
 import { BaseInput, NumberInput, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
     MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
-    GroupButton, GroupButtonFiltre, IconButton, Divider,
+    GroupButton, GroupButtonFiltre, IconButton, Divider, RadialProgress,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
     Hero, Footer, AppBar, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert, Table
@@ -658,6 +658,11 @@ const patterns = {
                 </>
             ]}
             {...props}
+        />
+    ),
+    RadialProgress: (props)=> (
+        <RadialProgress
+            { ...props }
         />
     ),
 

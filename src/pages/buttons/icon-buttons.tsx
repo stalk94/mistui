@@ -134,5 +134,11 @@ InfoIconButton.meta = {
         values: ['React.ReactNode'],
         type: 'enum',
         description: 'SVG icon component.'
+    },
+    ripple: {
+        values: ['boolean'],
+        type: 'boolean',
+        default: 'true',
+        description: 'Enable ripple animation effect'
     }
 }

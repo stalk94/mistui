@@ -160,10 +160,16 @@ export default function CarouselHorizontal({
         >
             { items.length > slidesToShow && (
                 <>
-                    <button className="carousel-button left" onClick={() => goTo(currentIndex - slidesToScroll)}>
+                    <button 
+                        className="carousel-button left" 
+                        onClick={() => goTo(currentIndex - slidesToScroll)}
+                    >
                         <ChevronLeftIcon fontSize="inherit" />
                     </button>
-                    <button className="carousel-button right" onClick={() => goTo(currentIndex + slidesToScroll)}>
+                    <button 
+                        className="carousel-button right" 
+                        onClick={() => goTo(currentIndex + slidesToScroll)}
+                    >
                         <ChevronRightIcon fontSize="inherit" />
                     </button>
                 </>

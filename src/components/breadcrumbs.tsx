@@ -143,7 +143,7 @@ export default function BreadcrumbsNav({
                             <Link
                                 href={segment.href}
                             >
-                                <span className='underline decoration-1 underline-offset-2'>
+                                <span className='decoration-1 underline-offset-3'>
                                     { segment.label }
                                 </span>
                             </Link>

@@ -88,6 +88,9 @@ export { default as List } from './components/list/base';
 // Divdder
 export { default as Divdder } from './components/utils/divider';
 
+// RadialProgress line
+export { default as RadialProgress } from './components/utils/radial-progress';
+
 // Splitter
 export { SplitterCustom as Splitter, SplitterPanelCustom as SplitterPanel } from './components/utils/splitter';
 

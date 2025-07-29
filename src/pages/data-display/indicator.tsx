@@ -3,6 +3,7 @@ import Avatar from '@/components/avatar';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { baseMeta } from '../meta';
+import Badge from '@/components/utils/badge';
 
 const positions = ["top", "middle", "bottom"];
 const alignts = ["start", "center", "end"];
@@ -18,13 +19,13 @@ export default function InfoIndicator(tab) {
                 title="Basic"
                 description="Badge over avatar"
                 code={`
-                    <Indicator content="new">
+                    <Indicator content={<Badge variant='contained' color='info'>new</Badge>}>
                         <Avatar src="..." />
                     </Indicator>
                 `}
             >
-                <div className="flex justify-center">
-                    <Indicator className="badge badge-success" content="new">
+                <div className="flex justify-center pt-1">
+                    <Indicator content={<Badge variant='contained' color='info'>new</Badge>}>
                         <Avatar
                             size="lg"
                             src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"

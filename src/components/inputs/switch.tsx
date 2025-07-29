@@ -117,7 +117,7 @@ export default function SwitchBox({
         return ({
             backgroundColor: plugins.lighten(
                 (variants[color] ?? color)
-                        ?? styleThumb?.backgroundColor
+                    ?? styleThumb?.backgroundColor
                 , chek ? 0.3 : 0.1)
         });
     }, [chek, style, color, variant]);

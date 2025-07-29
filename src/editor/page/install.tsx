@@ -16,7 +16,7 @@ export default function Install() {
             <div className="w-full bg-black p-4">
                 <pre>
                     <code>
-                        npm i mistui
+                        npm i mistui-kit
                     </code>
                 </pre>
             </div>

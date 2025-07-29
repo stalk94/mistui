@@ -7,13 +7,13 @@
 
 ```bash
 # Using npm
-npm install mistui
+npm install mistui-kit
 
 # Using yarn
-yarn add mistui
+yarn add mistui-kit
 
 # Using pnpm
-pnpm add mistui
+pnpm add mistui-kit
 ```
 
 

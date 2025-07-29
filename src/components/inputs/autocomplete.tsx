@@ -89,10 +89,12 @@ export default function Autocomplete({
                             <button className='cursor-pointer'>
                                 <ChevronDownIcon
                                     fill={(style?.color ?? styles?.input?.fontColor)}
-                                    className={`
-                                        label w-[1em] h-[1em]
+                                    className={cs(`
+                                        label 
+                                        w-[1em] 
+                                        h-[1em]
                                         ${open && 'rotate-180'}
-                                    `}
+                                    `)}
                                 />
                             </button>
                         }
@@ -112,7 +114,7 @@ export default function Autocomplete({
                 }
             >
                 <DropMenu
-                    id="popover-1"
+                    id="popover-autocomplete"
                     style={{
                         width: ref?.current?.offsetWidth
                     }}
