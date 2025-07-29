@@ -28,7 +28,7 @@ export default function Layer({
 }) {
     const layers = layersStore.use();
     const [position, setPosition] = useState({x:0, y: 0});
-    const [size, setSize] = useState({width:100, height: 100});
+    const [size, setSize] = useState({width:80, height: 80});
     const [style, setState] = useState(boirlplate);
 
     
@@ -78,16 +78,14 @@ export default function Layer({
     }, [name]);
 
 
-    return(
-        <>
-            <Rnd
-                initSize={size}
-                initPosition={position}
-                style={style}
-                onChange={changeState}
-            >
-                { children }
-            </Rnd>
-        </>
+    return (
+        <Rnd
+            initSize={size}
+            initPosition={position}
+            style={style}
+            onChange={changeState}
+        >
+            {children}
+        </Rnd>
     );
 }

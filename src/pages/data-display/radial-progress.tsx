@@ -15,7 +15,7 @@ export default function InfoRadial(tab) {
                 title="Basic"
                 description=""
                 code={`
-                    Radial
+                    <Radial
                         value={60}
                         color='success'
                         size='sm'
@@ -42,4 +42,9 @@ export default function InfoRadial(tab) {
 
 InfoRadial.meta = {
     ...baseMeta,
+    value: {
+        values: ['number'],
+        type: 'number',
+        description: 'The current value of the procent size line.'
+    }
 }

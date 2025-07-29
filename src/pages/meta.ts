@@ -4,6 +4,8 @@ export const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'auto'];
 export const shadows = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 export const textShadows = ['xs', 'sm', 'md', 'lg', 'xl'];
 export const variantsText = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', 'overline', 'button']
+export const spinerVariants = ['spinner', 'dots' , 'ring', 'ball', 'bars', 'infinity'];
+export const variantsSkeleton = ['text', 'circular', 'rectangular', 'rounded']; 
 
 
 export const baseMeta = {

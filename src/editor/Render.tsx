@@ -8,10 +8,10 @@ import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, Env
 import { BaseInput, NumberInput, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
     MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
-    GroupButton, GroupButtonFiltre, IconButton, Divider, RadialProgress,
+    GroupButton, GroupButtonFiltre, IconButton, Divider, RadialProgress, Paginator, Spinner,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
-    DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup,
-    Hero, Footer, AppBar, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert, Table
+    DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup, Progress,
+    Hero, Footer, AppBar, Skeleton, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert, Table
 } from '../index';
 import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
@@ -558,6 +558,11 @@ const patterns = {
             { ...props }
         />
     ),
+    Paginator: (props)=> (
+        <Paginator
+            { ...props }
+        />
+    ),
 
     // data-display
     Avatar: (props)=> (
@@ -660,8 +665,23 @@ const patterns = {
             {...props}
         />
     ),
+    Progress: (props)=> (
+        <Progress
+            { ...props }
+        />
+    ),
     RadialProgress: (props)=> (
         <RadialProgress
+            { ...props }
+        />
+    ),
+    Spinner: (props)=> (
+        <Spinner
+            { ...props }
+        />
+    ),
+    Skeleton: (props)=> (
+        <Skeleton
             { ...props }
         />
     ),
@@ -825,7 +845,7 @@ const patterns = {
         />
     ),
     Overflow: (props) => (
-        <div style={{width:300, border:'1px solid red'}}>
+        <div style={{border:'1px solid red'}}>
             <Overflow
                 onOverflow={(items)=> console.log('overflow: ', items)}
             >
@@ -1087,7 +1107,7 @@ export default function SandBox({ mod, setMod }) {
     
 
     return (
-        <main className='ml-4 w-full'>
+        <main className='ml-4 w-full h-full'>
             <div className="sticky top-0 z-10 flex gap-4 px-1 rounded-sm w-fit shadow-sm">
                 <GroupButton
                     variant='soft'
@@ -1111,9 +1131,7 @@ export default function SandBox({ mod, setMod }) {
                 <Layer
                     name={componentName}
                 >
-                    <div className='flex-1 p-2'>
-                        { patterns[componentName](cache) }
-                    </div>
+                    { patterns[componentName](cache) }
                 </Layer>
             }
             {mod === 'documentation' &&

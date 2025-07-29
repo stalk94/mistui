@@ -1,3 +1,5 @@
+import { OrganizationChartProps } from "primereact/organizationchart";
+
 type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 
 
@@ -15,4 +17,8 @@ export type CardProps = Props & {
     classNameBody?: React.HTMLAttributes<HTMLDivElement>['className']
     /** доп содержимое, либо если не передавать `title`, `description`, `actions` то станет основным содержимым карточки */
     children?: React.ReactNode
+}
+
+export type OrgChartProps = Props & OrganizationChartProps & {
+    
 }

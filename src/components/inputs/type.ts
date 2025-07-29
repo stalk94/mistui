@@ -91,6 +91,16 @@ export type NumberInputProps = Omit<BaseProps, 'type'> & {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 }
 
+export type TimeInputProps = Omit<BaseProps, 'type'> & {
+    value?: string
+    onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: string)=> void)
+}
+
+export type DateInputProps = Omit<BaseProps, 'type'> & {
+    value?: string
+    onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: string)=> void)
+}
+
 export type FileInputProps = Omit<BaseProps, 'type'> & {
     onChange?: (val: File)=> void
     onError?: (err: string)=> void
@@ -121,7 +131,6 @@ export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
 }
 
 export type CheckBoxInputProps = {
-    'data-id'?: string | number
     onChange?: (val: boolean)=> void
     value?: boolean 
     type?: 'checkbox' | 'toggle' | 'radio'
@@ -137,18 +146,11 @@ export type CheckBoxInputProps = {
 }
 
 export type RadioInputProps = CheckBoxInputProps & {
-    styleThumb?: {
-        thumbColor?: React.CSSProperties['backgroundColor'] 
-    }
+
 }
 
 export type SwitchBoxInputProps = Omit<CheckBoxInputProps, 'type'> & {
     value: boolean
-    styleThumb?: {
-        borderColor?: React.CSSProperties['borderColor']
-        backgroundColor?: React.CSSProperties['backgroundColor']
-        iconColor?: React.CSSProperties['backgroundColor']
-    }
 }
 
 export type SliderInputProps = Omit<BaseProps, 'type'> & {

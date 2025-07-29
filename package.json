@@ -24,9 +24,17 @@
     "dist"
   ],
   "keywords": [
-    "tailwind", "react", "nextjs", "ui", "theme", "framework", 
-    "component", "tailwind component", "react component"
+    "tailwind",
+    "react",
+    "nextjs",
+    "ui",
+    "theme",
+    "framework",
+    "component",
+    "tailwind component",
+    "react component"
   ],
+  "homepage": "https://gilded-tanuki-0eb52b.netlify.app/",
   "author": "stalk9424",
   "license": "MIT",
   "description": "",
@@ -41,10 +49,14 @@
     "@types/react": "^19.0.8",
     "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.21",
+    "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "colord": "^2.9.3",
+    "country-flag-icons": "^1.5.19",
+    "daisyui": "^5.0.43",
     "dayjs": "^1.11.13",
     "express": "^4.21.1",
+    "framer-motion": "^12.23.3",
     "notistack": "^3.0.2",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.3",
@@ -60,12 +72,9 @@
     "vite": "^7.0.4",
     "vite-plugin-dts": "^4.5.4",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.1.4",
-    "buffer": "^6.0.3",
-    "country-flag-icons": "^1.5.19",
-    "daisyui": "^5.0.43",
-    "framer-motion": "^12.23.3"
+    "vitest": "^3.1.4"
   },
   "dependencies": {
+    "react-day-picker": "^9.8.1"
   }
 }

@@ -181,6 +181,11 @@ const patterns = {
             ${toJSXProps(props)}
         />
     `),
+    Paginator: (props) => (`
+        <Paginator
+            ${toJSXProps(props)}
+        />
+    `),
 
     // data-display
     Avatar: (props)=> (`
@@ -273,6 +278,26 @@ const patterns = {
                     </div>
                 </>
             ]}
+            ${toJSXProps(props)}
+        />
+    `),
+    Progress: (props) => (`
+        <Progress
+            ${toJSXProps(props)}
+        />
+    `),
+    RadialProgress: (props) => (`
+        <RadialProgress
+            ${toJSXProps(props)}
+        />
+    `),
+    Spinner: (props) => (`
+        <Spinner
+            ${toJSXProps(props)}
+        />
+    `),
+    Skeleton: (props) => (`
+        <Skeleton
             ${toJSXProps(props)}
         />
     `),
@@ -640,22 +665,24 @@ export default function Code({ name }) {
   
     
     return(
-        <div className='absolute bottom-0 w-[80%]'>
-            { patterns[name] && 
-                <ShikiHighlighter
-                    showLanguage={true}
-                    language="tsx"
-                    theme='one-dark-pro'
-                    className='shadow-sm'
-                    delay={100}
-                    style={{
-                        fontSize: 14,
-                        fontFamily: 'JetBrains Mono, monospace'
-                    }}
-                >
-                    { formatCodeForShiki(patterns[name](cache)) }
-                </ShikiHighlighter> 
-            }
+        <div className='fixed z-30 bottom-0 w-[85%]'>
+            <div className="overflow-y-auto max-h-[20vh]">
+                {patterns[name] &&
+                    <ShikiHighlighter
+                        showLanguage={true}
+                        language="tsx"
+                        theme="one-dark-pro"
+                        className="shadow-sm"
+                        delay={100}
+                        style={{
+                            fontSize: 12,
+                            fontFamily: 'JetBrains Mono, monospace',
+                        }}
+                    >
+                        {formatCodeForShiki(patterns[name](cache))}
+                    </ShikiHighlighter>
+                }
+            </div>
         </div>
     );
 }

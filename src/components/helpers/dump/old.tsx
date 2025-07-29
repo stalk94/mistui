@@ -1,86 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import type { PopoverProps } from './types';
-import { useTheme } from '../theme';
-import { cs } from '../hooks/cs';
-import { motion, AnimatePresence } from "framer-motion";
-
-
-// ? возможно надо throtle
-export function useDropdownPosition(
-    triggerRef: React.RefObject<HTMLElement>,
-    dropdownRef: React.RefObject<HTMLElement>,
-    position: string,
-    isOpen: boolean
-) {
-    const [coords, setCoords] = useState({ top: 0, left: 0 });
-    const frame = useRef<number | null>(null);
-
-    useEffect(() => {
-        if (!isOpen) return;
-
-        const updateCoords = () => {
-            if (frame.current !== null) return; // не ставим новый пока старый не сработал
-
-            frame.current = requestAnimationFrame(() => {
-                frame.current = null;
-
-                const trigger = triggerRef.current;
-                const dropdown = dropdownRef.current;
-                if (!trigger || !dropdown) return;
-
-                const triggerRect = trigger.getBoundingClientRect();
-                const dropdownWidth = dropdown.offsetWidth ?? 160;
-                const dropdownHeight = dropdown.offsetHeight ?? 40;
-
-                // Ищем transform-родителя
-                let parent: HTMLElement | null = trigger;
-                while (parent && parent !== document.body) {
-                    const style = getComputedStyle(parent);
-                    if (style.transform !== "none") break;
-                    parent = parent.parentElement;
-                }
-
-                const parentRect = parent?.getBoundingClientRect() ?? { top: 0, left: 0 };
-
-                const offset = -6;
-                let top = triggerRect.bottom + offset;
-                let left = triggerRect.left;
-
-                if (position.startsWith("top")) {
-                    top = triggerRect.top - dropdownHeight - offset;
-                }
-                if (position.includes("end")) {
-                    left = triggerRect.right - dropdownWidth;
-                }
-
-                setCoords({
-                    top: top - parentRect.top,
-                    left: left - parentRect.left,
-                });
-            });
-        };
-
-        updateCoords();
-
-        const resizeObserver = new ResizeObserver(updateCoords);
-        triggerRef.current && resizeObserver.observe(triggerRef.current);
-        dropdownRef.current && resizeObserver.observe(dropdownRef.current);
-
-        window.addEventListener("scroll", updateCoords, true);
-        window.addEventListener("resize", updateCoords);
-
-        return () => {
-            if (frame.current) cancelAnimationFrame(frame.current);
-            resizeObserver.disconnect();
-            window.removeEventListener("scroll", updateCoords, true);
-            window.removeEventListener("resize", updateCoords);
-        };
-    }, [isOpen, position]);
-
-    return coords;
-}
-
-
+// ! позиционирование
 export default function Dropdown({ 
     trigger, 
     children, 
@@ -100,9 +18,9 @@ export default function Dropdown({
     const triggerRef = useRef<HTMLDivElement>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const [coords, setCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
     const open = controlledOpen ?? uncontrolledOpen;
     const setOpen = setControlledOpen ?? setUncontrolledOpen;
-    const coords = useDropdownPosition(triggerRef, dropdownRef, position, open);
 
 
     const handleMouseEnter = () => {
@@ -142,6 +60,30 @@ export default function Dropdown({
         }
     }
 
+    useEffect(() => {
+        if (usePortal && open && triggerRef.current) {
+            const raf = requestAnimationFrame(() => {
+                const rect = triggerRef.current!.getBoundingClientRect();
+                const dropdownWidth = dropdownRef.current?.offsetWidth ?? 160;
+                const offset = -6;
+
+                let top = rect.bottom + offset;
+                let left = rect.left;
+
+                if (position === "top-start") {
+                    top = rect.top - offset;
+                }
+
+                if (position.includes("end")) {
+                    left = rect.right - dropdownWidth;
+                }
+
+                setCoords({ top, left });
+            });
+
+            return () => cancelAnimationFrame(raf);
+        }
+    }, [open, usePortal, position]);
     useEffect(() => {
         const handler = (e: MouseEvent) => {
             const target = e.target as Node;

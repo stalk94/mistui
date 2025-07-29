@@ -1,3 +1,5 @@
+import type { Variants } from '../theme/default';
+
 type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 
 
@@ -40,4 +42,17 @@ export type PopoverProps = Props & {
     usePortal?: boolean
     open?: boolean;
     setOpen?: (val: boolean) => void;
+}
+
+export type TooltipProps = {
+    /** wraparound component */
+    children?: string | React.ReactElement
+    /** hint content */
+    content?: string
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: Variants | (string & {})
+    style?: React.CSSProperties
+    className?: Props['className']
+    position?: 'top' | 'left' | 'right' | 'bottom'
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link' 
 }

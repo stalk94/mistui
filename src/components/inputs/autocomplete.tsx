@@ -57,7 +57,7 @@ export default function Autocomplete({
         setOpen(false);
         onChange?.(value);
     }
-   
+
 
     return (
         <>
@@ -71,7 +71,7 @@ export default function Autocomplete({
                     }
                 `)}
             </style>
-            
+
 
             <Popover
                 usePortal
@@ -105,6 +105,11 @@ export default function Autocomplete({
                             type="text"
                             placeholder={placeholder}
                             value={input}
+                            style={{
+                                display: 'block',
+                                width: '100%',
+                                color: (style?.color ?? styles?.input?.fontColor)
+                            }}
                             onChange={(e) => {
                                 setInput(e.target.value);
                                 setOpen(true);

@@ -4,7 +4,7 @@ export * from './components/theme';
 // все инпуты
 export * from './components/inputs';
 
-// панели (modal, drawer, popover)
+// панели (modal, drawer, popover, tooltip)
 export * from './components/helpers';
 
 // таблицы
@@ -41,8 +41,6 @@ export { default as Accordion } from './components/acordeon';
 // Chat
 export { default as Chat } from './components/chat';
 
-// Tooltip
-export { default as Tooltip } from './components/utils/tooltip';
 
 // иконки флажки разделители и прочее
 export { default as Flag } from './components/utils/flag';
@@ -88,8 +86,15 @@ export { default as List } from './components/list/base';
 // Divdder
 export { default as Divdder } from './components/utils/divider';
 
-// RadialProgress line
+// RadialProgress, ProgressLine
 export { default as RadialProgress } from './components/utils/radial-progress';
+export { default as Progress } from './components/utils/progress';
+
+// Spinner
+export { default as Spinner } from './components/utils/spiners';
+
+// Skeleton
+export { default as Skeleton } from './components/utils/skeleton';
 
 // Splitter
 export { SplitterCustom as Splitter, SplitterPanelCustom as SplitterPanel } from './components/utils/splitter';
@@ -100,6 +105,8 @@ export { default as Badge } from './components/utils/badge';
 // Stat/Stats 
 export { default as Stat, Stats } from './components/utils/stat';
 
+// paginator 
+export { default as Paginator } from './components/list/pagination';
 
 ///////////////////////////////////////////////////////////////////////////
 //    на переработку

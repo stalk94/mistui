@@ -196,6 +196,19 @@
   --font-family-base: 'Fira Code', monospace;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}
+input[type="date"] {
+    -moz-appearance: textfield;
+}
+input[type="time"] {
+    -moz-appearance: textfield;
+}
+
 
 @layer base {
  @keyframes marquee-left {

@@ -1,6 +1,7 @@
-import { BaseInput } from '@/components/inputs';
+import Time from '@/components/inputs/time';
 import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../helpers';
 import { inputsMeta } from '../meta';
+
 
 export default function InfoTime(tab) {
     return (
@@ -13,7 +14,9 @@ export default function InfoTime(tab) {
                 code={`<BaseInput placeholder="date" type='date'/>`}
             >
                 <div className="flex justify-center">
-                    <BaseInput placeholder="time" type='time'/>
+                    <Time
+                        size='sm'
+                    />
                 </div>
             </Section>
         </div>

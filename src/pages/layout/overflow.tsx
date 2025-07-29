@@ -15,8 +15,10 @@ export default function InfoOverflow(tab) {
             {/* default */}
             <Section 
                 title="Overflow" 
-                description="кнопка" 
-                code={`<Accordion></Accordion>`}
+                description="" 
+                code={`
+
+                `}
             >
                 <Grid className="justify-center">
                     <Overflow

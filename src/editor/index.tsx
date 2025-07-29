@@ -34,8 +34,8 @@ const category = {
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
     inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch' , 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
-    navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu'],
-    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'RadialProgress'],
+    navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu', 'Paginator'],
+    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton'],
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
@@ -409,6 +409,7 @@ export default function SandBoxRoot({ }) {
                         flex-row 
                         ${mod !== 'playground' ? 'flex-1  overflow-y-auto' : 'overflow-clip'}
                         w-full 
+                        h-full
                     `}
                 >
                     {pathname !== '/' && pathname !== '/install' && pathname !== '/introduction' && pathname !== '/components'

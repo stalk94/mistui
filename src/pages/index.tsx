@@ -54,6 +54,10 @@ import { useMemo } from 'react';
 import { TypeTable } from './helpers';
 import Head from './head';
 import Radial from './data-display/radial-progress';
+import Progress from './data-display/progress';
+import Paginator from './navigation/paginator';
+import Spinner from './data-display/spiner';
+import Skeleton from './data-display/skeleton';
 
 
 const category = {
@@ -91,7 +95,8 @@ const category = {
         Tabs: Tabs, 
         Breadcrumbs: Breadcrumbs, 
         BottomNavigation: BottomNav, 
-        Menu: Menu
+        Menu: Menu,
+        Paginator: Paginator
     },
     'data-display': {
         Avatar: Avatar,
@@ -100,7 +105,10 @@ const category = {
         Badge: Badges,
         List: List,
         Flag: Flag,
-        RadialProgress: Radial
+        Progress: Progress,
+        RadialProgress: Radial,
+        Spinner: Spinner,
+        Skeleton: Skeleton
     },
     layout: {
         Divider: Divider,

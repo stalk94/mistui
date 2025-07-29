@@ -123,7 +123,7 @@ export default function FileInput({
                     ? (files?.name
                         ? <span 
                             style={{
-                                color: (style.color ?? styles?.input?.fontColor)
+                                color: (style?.color ?? styles?.input?.fontColor)
                             }}
                          >
                             { files?.name }

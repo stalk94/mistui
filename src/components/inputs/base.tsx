@@ -8,7 +8,6 @@ import { cs } from '../hooks/cs';
 
 
 
-// ! placeholder color
 const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
     {
         style,

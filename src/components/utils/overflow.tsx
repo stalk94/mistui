@@ -24,8 +24,7 @@ export default function Overflow({
         if (!container) return;
 
         const resizeObserver = new ResizeObserver(() => {
-            const containerSize =
-                direction === 'row' ? container.offsetWidth : container.offsetHeight;
+            const containerSize = direction === 'row' ? container.offsetWidth : container.offsetHeight;
 
             let totalSize = 0;
             let count = 0;
@@ -43,22 +42,25 @@ export default function Overflow({
                 count++;
             }
 
+            // Обновляем всегда, даже если count > visibleCount
             setVisibleCount(count);
         });
 
         resizeObserver.observe(container);
         return () => resizeObserver.disconnect();
     }, [children, direction]);
-    useEffect(()=> {
-        if (visibleCount < children.length) {
-            if (overflowMap) onOverflow?.(overflowMap.slice(visibleCount, children.length));
-            else onOverflow?.(children.slice(visibleCount, children.length));
-        }
-    }, [visibleCount, overflowMap]);
-
-
-    if (itemRefs.current?.length !== children.length) {
+    useEffect(() => {
         itemRefs.current = Array(children.length).fill(null);
+    }, [children.length]);
+    useEffect(() => {
+        const overflowed = children.slice(visibleCount);
+        const mapped = overflowMap ? overflowMap.slice(visibleCount) : overflowed;
+        onOverflow?.(mapped);
+    }, [visibleCount, overflowMap, children]);
+
+
+    if (itemRefs.current.length < children.length) {
+        itemRefs.current.length = children.length;
     }
 
 
@@ -73,18 +75,19 @@ export default function Overflow({
             `}
             style={style}
         >
-            {children.slice(0, visibleCount).map((child, index) => (
+             {children.map((child, index) => (
                 <div
                     key={index}
-                    ref={el => (itemRefs.current[index] = el!, undefined)}
+                    ref={el => (itemRefs.current[index] = el!)}
                     className={`
                         flex 
-                        ${isExpand ? 'grow shrink-0 basis-0' : ''}  
-                        items-${justifyVertical}
+                        ${isExpand ? 'grow shrink-0 basis-0' : ''} 
+                        items-${justifyVertical} 
                         justify-${justifyHorizontal}
                     `}
+                    style={{ visibility: index < visibleCount ? 'visible' : 'hidden' }}
                 >
-                    { child }
+                    {child}
                 </div>
             ))}
         </div>

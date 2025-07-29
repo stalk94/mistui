@@ -22,6 +22,7 @@ const alignMap = [
     'justify-around',
     'justify-evenly'
 ];
+const spinerVariants = ['spinner', 'dots' , 'ring', 'ball', 'bars', 'infinity'];
 
 
 const allSizesClassDaisy =(namesClassDaisy)=> {
@@ -42,7 +43,7 @@ const allSizesClassDaisy =(namesClassDaisy)=> {
 }
 export const __generate =()=> {
     const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const namesClassDaisy = ['radio', 'input', 'textarea', 'select', 'btn', 'badge', 'divider', 'tabs', 'table'];
+    const namesClassDaisy = ['radio', 'input', 'textarea', 'select', 'btn', 'badge', 'divider', 'tabs', 'table', 'loading'];
     const colors = ['primary', 'secondary', 'error', 'accent', 'success', 'warning', 'info'];
     const nameBreacpoints = ['xs', 'sm', 'md', 'lg', 'xl'];
     const breakpoints = ['', 'sm:', 'md:', 'lg:', 'xl:'];
@@ -59,6 +60,8 @@ export const __generate =()=> {
     const classes = breakpoints.flatMap(bp =>
         sizes.map(size => [`${bp}w-${size}`, `${bp}h-${size}`])
     ).flat();
+    // spiners variants
+    const classesSpiner = spinerVariants.flatMap(vr => `loading-${vr}`);
 
     // any token
     classes.push(
@@ -79,6 +82,6 @@ export const __generate =()=> {
     );
     const allDaisySizeClass = allSizesClassDaisy(namesClassDaisy);
 
-    safeTw([...classes, ...classesSize, ...classesColors, allDaisySizeClass]);
+    safeTw([...classes, ...classesSize, ...classesColors, ...classesSpiner, allDaisySizeClass]);
 }
 

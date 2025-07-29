@@ -145,7 +145,7 @@ export default function ResizableBox({
             
             <div
                 ref={containerRef}
-                className="flex w-full h-full absolute rounded overflow-hidden border-1 border-dashed border-[#7e7d7e63]"
+                className="absolute rounded overflow-hidden border-1 border-dashed border-[#7e7d7e63]"
                 style={{
                     width: `${size.width}%`,
                     height: `${size.height}%`,

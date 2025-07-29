@@ -1,4 +1,4 @@
-import { BaseInput } from '@/components/inputs';
+import Date from '@/components/inputs/date';
 import { Section, Grid as ButtonGrid, variantsText, sizes, colors } from '../helpers';
 import { inputsMeta } from '../meta';
 
@@ -13,7 +13,9 @@ export default function InfoDate(tab) {
                 code={`<BaseInput placeholder="date" type='date'/>`}
             >
                 <div className="flex justify-center">
-                    <BaseInput placeholder="date" type='date'/>
+                    <Date
+                        size='sm'
+                    />
                 </div>
             </Section>
         </div>
