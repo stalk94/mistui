@@ -1,16 +1,16 @@
-import { forwardRef } from "react";
-import type { AppBarCustomProps } from './types';
+import { forwardRef, useState } from "react";
+import type { AppBarProps } from './types';
 import { useTheme } from '../theme/index';
 
 
 
 /**
- * строительный шаблон для app bar
- * - `startSlot` - левый слот 
- * - `centerSlot` - центральный слот (к примеру линейная навигация)
- * - `endSlot` - правый слот (к примеру user, main)
+ * app bar - construction template on slots
+ * - `startSlot` - left slot (for example: logo image) 
+ * - `centerSlot` - center slot (for example: site navigation links) 
+ * - `endSlot` - right slot (for example: user burger menu) 
  */
-const AppBar = forwardRef<HTMLHeadingElement, AppBarCustomProps>(function AppBar(
+const AppBar = forwardRef<HTMLHeadingElement, AppBarProps>(function AppBar(
     {
         startSlot,
         centerSlot,
@@ -31,12 +31,12 @@ const AppBar = forwardRef<HTMLHeadingElement, AppBarCustomProps>(function AppBar
             ref={ref}
             className={`navbar ${className ?? ''}`}
             style={{ 
+                maxHeight: '3rem',
                 backgroundColor: styles?.appBar?.backgroundColor,
                 position: 'sticky',
                 border: `1px solid`,
-                zIndex: 99,
                 backdropFilter: "blur(14px)",
-                borderColor: '#80808074',
+                borderColor: styles?.appBar?.borderColor,
                 boxShadow: shadows[shadow],
                 ...style
             }}

@@ -1,17 +1,19 @@
-import { Fragment, cloneElement, isValidElement, useRef } from "react";
-import { Button, IconButton } from "../buttons";
+import { Fragment, cloneElement, isValidElement, useCallback } from "react";
+import { Button } from "../buttons";
 import clsx from 'clsx';
 import type { NavigationItemsDesktopProps } from './types';
 import { Popover } from "../helpers";
 import Menu from "../menu/list-menu";
+import Overflow from "../utils/overflow";
 
 
 
 /** линейная навигация для больших экранов */
-export default function LinearNavigationItemsDesktop({ 
+export default function LinearNavigationItems({ 
     items,
     style,
     className,
+    onOverflow,
     ...props
 }: NavigationItemsDesktopProps) {
     const mergedIcon = (icon)=> isValidElement(icon) && cloneElement(icon, {
@@ -20,23 +22,40 @@ export default function LinearNavigationItemsDesktop({
         ),
     });
 
+    const render = useCallback((children)=> {
+        if (onOverflow) return(
+            <Overflow
+                className={`h-full pl-3 pt-0.5 flex-wrap ${className ?? ''}`}
+                style={style}
+                onOverflow={(h)=> onOverflow?.(h)}
+                overflowMap={items}
+                { ...props }
+            >
+                { children }
+            </Overflow>
+        );
+        else return(
+            <div 
+                className={`h-full pl-3 pt-0.5 ${className ?? ''}`}
+                style={style}
+                { ...props }
+            >
+                { children }
+            </div>
+        );
+    }, [onOverflow])
+
 
     return(
-        <div 
-            className={`h-full pl-3 pt-0.5 ${className ?? ''}`}
-            style={{
-                display:'flex', 
-                flexWrap: 'nowrap',
-                ...style
-            }}
-            { ...props }
-        >
-            {items.map((item, index) => (
+        render(
+            items.map((item, index) => (
                 <Fragment key={index}>
                     { item?.children 
                         ? (
                             <Popover
-                                shadow="md"      
+                                usePortal
+                                shadow="md"  
+                                className="min-w-40 p-2"    
                                 trigger={
                                     <Button
                                         size="md"
@@ -73,7 +92,7 @@ export default function LinearNavigationItemsDesktop({
                         )
                     }
                 </Fragment>
-            ))}
-        </div>
+            ))
+        )
     );
 }

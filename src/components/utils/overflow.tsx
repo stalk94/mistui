@@ -12,7 +12,7 @@ export default function Overflow({
     justifyVertical = 'end',
     style,
     onOverflow,
-    overflowMap
+    overflowMap,
 }: OverflowProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [visibleCount, setVisibleCount] = useState(children.length);
@@ -87,7 +87,7 @@ export default function Overflow({
                     `}
                     style={{ visibility: index < visibleCount ? 'visible' : 'hidden' }}
                 >
-                    {child}
+                    { child }
                 </div>
             ))}
         </div>

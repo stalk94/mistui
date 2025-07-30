@@ -91,6 +91,7 @@ export interface Theme {
         }
         appBar?: {
             backgroundColor: React.CSSProperties['color']
+            borderColor: React.CSSProperties['color']
         }
         modal?: {
             backgroundColor: React.CSSProperties['color']

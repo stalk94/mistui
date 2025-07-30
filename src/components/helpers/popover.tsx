@@ -3,95 +3,51 @@ import type { PopoverProps } from './types';
 import { useTheme } from '../theme';
 import { cs } from '../hooks/cs';
 import { motion, AnimatePresence } from "framer-motion";
+import * as Popover from "@radix-ui/react-popover";
 
 
-// ? возможно надо throtle
-export function useDropdownPosition(
-    triggerRef: React.RefObject<HTMLElement>,
-    dropdownRef: React.RefObject<HTMLElement>,
-    position: string,
-    isOpen: boolean
-) {
-    const [coords, setCoords] = useState({ top: 0, left: 0 });
-    const frame = useRef<number | null>(null);
+function PortalDrop({ trigger, children, side, align, open, onOpenChange, anchor }) {
+    
+    return(
+        <Popover.Root
+            open={open}
+            onOpenChange={onOpenChange}
+        >
+            {anchor &&
+                <Popover.Anchor>
+                    { anchor }
+                </Popover.Anchor>
+            }
 
-    useEffect(() => {
-        if (!isOpen) return;
-
-        const updateCoords = () => {
-            if (frame.current !== null) return; // не ставим новый пока старый не сработал
-
-            frame.current = requestAnimationFrame(() => {
-                frame.current = null;
-
-                const trigger = triggerRef.current;
-                const dropdown = dropdownRef.current;
-                if (!trigger || !dropdown) return;
-
-                const triggerRect = trigger.getBoundingClientRect();
-                const dropdownWidth = dropdown.offsetWidth ?? 160;
-                const dropdownHeight = dropdown.offsetHeight ?? 40;
-
-                // Ищем transform-родителя
-                let parent: HTMLElement | null = trigger;
-                while (parent && parent !== document.body) {
-                    const style = getComputedStyle(parent);
-                    if (style.transform !== "none") break;
-                    parent = parent.parentElement;
-                }
-
-                const parentRect = parent?.getBoundingClientRect() ?? { top: 0, left: 0 };
-
-                const offset = -6;
-                let top = triggerRect.bottom + offset;
-                let left = triggerRect.left;
-
-                if (position.startsWith("top")) {
-                    top = triggerRect.top - dropdownHeight - offset;
-                }
-                if (position.includes("end")) {
-                    left = triggerRect.right - dropdownWidth;
-                }
-
-                setCoords({
-                    top: top - parentRect.top,
-                    left: left - parentRect.left,
-                });
-            });
-        };
-
-        updateCoords();
-
-        const resizeObserver = new ResizeObserver(updateCoords);
-        triggerRef.current && resizeObserver.observe(triggerRef.current);
-        dropdownRef.current && resizeObserver.observe(dropdownRef.current);
-
-        window.addEventListener("scroll", updateCoords, true);
-        window.addEventListener("resize", updateCoords);
-
-        return () => {
-            if (frame.current) cancelAnimationFrame(frame.current);
-            resizeObserver.disconnect();
-            window.removeEventListener("scroll", updateCoords, true);
-            window.removeEventListener("resize", updateCoords);
-        };
-    }, [isOpen, position]);
-
-    return coords;
+            <Popover.Trigger asChild>
+                { trigger }
+            </Popover.Trigger>
+            
+            <Popover.Portal>
+                <Popover.Content
+                    side={side}
+                    align={align}
+                >
+                    { children }
+                </Popover.Content>
+            </Popover.Portal>
+        </Popover.Root>
+    );
 }
 
 
 export default function Dropdown({ 
     trigger, 
     children, 
-    position = "bottom-start", 
+    align,
+    side, 
     className = "",
-    classNameContainer = "",
     style = {},
     isHover = false,
     onClose,
     shadow,
     usePortal = false,
+    anchor,
     open: controlledOpen,
     setOpen: setControlledOpen
 }: PopoverProps) {
@@ -102,7 +58,6 @@ export default function Dropdown({
     const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const open = controlledOpen ?? uncontrolledOpen;
     const setOpen = setControlledOpen ?? setUncontrolledOpen;
-    const coords = useDropdownPosition(triggerRef, dropdownRef, position, open);
 
 
     const handleMouseEnter = () => {
@@ -119,29 +74,6 @@ export default function Dropdown({
             }, 200);
         }
     }
-    const getPositionClasses = (): string => {
-        switch (position) {
-            case "top-start":
-                return "bottom-full left-0 mb-2";
-            case "top-end":
-                return "bottom-full right-0 mb-2";
-            case "bottom-start":
-                return "top-full left-0 mt-2";
-            case "bottom-end":
-                return "top-full right-0 mt-2";
-            case "left-start":
-                return "right-full top-0 mr-2";
-            case "left-end":
-                return "right-full bottom-0 mr-2";
-            case "right-start":
-                return "left-full top-0 ml-2";
-            case "right-end":
-                return "left-full bottom-0 ml-2";
-            default:
-                return "top-full left-0 mt-2";
-        }
-    }
-
     useEffect(() => {
         const handler = (e: MouseEvent) => {
             const target = e.target as Node;
@@ -157,11 +89,39 @@ export default function Dropdown({
         return () => document.removeEventListener("mousedown", handler);
     }, []);
     
-
+    
+    if (usePortal) return (
+        <PortalDrop
+            side={side}
+            align={align}
+            trigger={trigger}
+            open={open}
+            onOpenChange={setOpen}
+            anchor={anchor}
+            children={
+                <motion.div
+                    ref={dropdownRef}
+                    initial={{ opacity: 0, scale: 0.95, y: -12 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className={className}
+                    style={{
+                        boxShadow: shadows[shadow],
+                        ...styles.popover,
+                        ...style
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    { children }
+                </motion.div>
+            }
+        />
+    );
     return (
         <div 
             ref={triggerRef}
-            className={`relative inline-block ${classNameContainer}`}
+            className={`relative inline-block`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -185,15 +145,12 @@ export default function Dropdown({
                             min-w-25
                             rounded 
                             shadow 
-                            ${getPositionClasses()}
                             ${className}
                         `)}
                         style={{
                             boxShadow: shadows[shadow],
-                            position: usePortal ? "fixed" : "absolute",
-                            top: usePortal ? coords.top : undefined,
-                            left: usePortal ? coords.left : undefined,
-                            zIndex: 9999,
+                            position: "absolute",
+                            zIndex: 999,
                             ...styles.popover,
                             ...style
                         }}

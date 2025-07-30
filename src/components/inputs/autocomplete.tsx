@@ -59,6 +59,7 @@ export default function Autocomplete({
     }
 
 
+
     return (
         <>
             <style>
@@ -72,9 +73,8 @@ export default function Autocomplete({
                 `)}
             </style>
 
-
             <Popover
-                usePortal
+                style={{position: 'fixed'}}
                 open={open}
                 setOpen={setOpen}
                 trigger={
@@ -84,17 +84,17 @@ export default function Autocomplete({
                         color={color}
                         variant={variant}
                         ref={ref}
-                        style={{ position: 'relative', ...style }}
+                        style={{ ...style }}
                         labelRight={
                             <button className='cursor-pointer'>
                                 <ChevronDownIcon
                                     fill={(style?.color ?? styles?.input?.fontColor)}
                                     className={cs(`
-                                        label 
-                                        w-[1em] 
-                                        h-[1em]
-                                        ${open && 'rotate-180'}
-                                    `)}
+                                    label 
+                                    w-[1em] 
+                                    h-[1em]
+                                    ${open && 'rotate-180'}
+                                `)}
                                 />
                             </button>
                         }
@@ -112,7 +112,7 @@ export default function Autocomplete({
                             }}
                             onChange={(e) => {
                                 setInput(e.target.value);
-                                setOpen(true);
+                                setOpen(true)
                             }}
                         />
                     </FormWrapper>

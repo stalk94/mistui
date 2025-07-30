@@ -192,7 +192,8 @@ export function createTheme({
             borderColor: colord(theme.colors.base)[basis](0.1).toRgbString()
         },
         appBar: {
-            backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString()
+            backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString(),
+            borderColor: colord(theme.colors.base)[basis](0.25).toRgbString()
         },
         popover: {
             minWidth: 40,

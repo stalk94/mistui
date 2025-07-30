@@ -1,4 +1,3 @@
-import { useState, forwardRef } from "react";
 import { Button, IconButton } from "../buttons";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import type { MobailBurgerProps, NestedMenuProps } from './types';
@@ -12,13 +11,15 @@ export function BurgerMenu({
     items,
     children,
     size,
-    handleMenuOpen
+    handleMenuOpen,
+    disabled
 }: MobailBurgerProps) {
 
     return (
         <Popover
-            position="bottom-end"
+            usePortal
             className="min-w-40 py-2"
+            align="end"
             trigger={
                 <IconButton
                     size={size}
@@ -26,6 +27,7 @@ export function BurgerMenu({
                     isRounded
                     aria-label="navigation-menu"
                     onClick={handleMenuOpen}
+                    disabled={disabled}
                 >
                     {children ?? <Bars3Icon className="w-7" />}
                 </IconButton>
@@ -35,7 +37,6 @@ export function BurgerMenu({
                 size={size}
                 items={items}
             />
-
         </Popover>
     );
 }
