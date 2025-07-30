@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import type { CarouselProps, SourceIremType } from './types';
+import { IconButton } from '../buttons';
 
 
 export default function CarouselHorizontal({
@@ -155,23 +156,25 @@ export default function CarouselHorizontal({
     
     
     return (
-        <div 
-            className='w-full h-full relative'
-        >
+        <div className='w-full h-full relative'>
             { items.length > slidesToShow && (
                 <>
-                    <button 
-                        className="carousel-button left" 
-                        onClick={() => goTo(currentIndex - slidesToScroll)}
-                    >
-                        <ChevronLeftIcon fontSize="inherit" />
-                    </button>
-                    <button 
-                        className="carousel-button right" 
-                        onClick={() => goTo(currentIndex + slidesToScroll)}
-                    >
-                        <ChevronRightIcon fontSize="inherit" />
-                    </button>
+                    <div className="carousel-button left rounded-2xl">
+                        <IconButton 
+                            className='rounded-2xl border-0'
+                            color='#29292981'
+                            onClick={() => goTo(currentIndex - slidesToScroll)}
+                            icon={<ChevronLeftIcon />}
+                        />
+                    </div>
+                    <div className="carousel-button right rounded-2xl">
+                        <IconButton 
+                            className='rounded-2xl border-0'
+                            color='#29292981'
+                            onClick={() => goTo(currentIndex + slidesToScroll)}
+                            icon={<ChevronRightIcon />}
+                        />
+                    </div>
                 </>
             )}
 
@@ -212,40 +215,6 @@ export default function CarouselHorizontal({
                     ))}
                 </motion.div>
             </div>
-
-            <style>
-                {`
-                    .carousel-button {
-                        position: absolute;
-                        top: ${'50%'};
-                        transform: translateY(-50%);
-                        z-index: 10;
-                        background: rgba(0, 0, 0, 0.3);
-                        border: none;
-                        color: white;
-                        font-size: 28px;
-                        width: 36px;
-                        height: 36px;
-                        cursor: pointer;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                        backdrop-filter: blur(4px);
-                        transition: background 0.25s ease;
-                    }
-                    .carousel-button:hover {
-                        background: rgba(0, 0, 0, 0.6);
-                    }
-                    .carousel-button.left {
-                        left: 4px;
-                    }
-                    .carousel-button.right {
-                        right: 4px;
-                    }
-                `}
-            </style>
         </div>
     );
 }

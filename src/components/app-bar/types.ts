@@ -34,6 +34,7 @@ export type MobailBurgerProps = {
     children?: React.ReactNode 
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     handleMenuOpen?: ()=> void
+    disabled?: boolean
 }
 
 export type PreviewProps = {

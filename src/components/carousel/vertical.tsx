@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import type { CarouselProps, SourceIremType } from './types';
+import { IconButton } from '../buttons';
 
 
 export default function CarouselVertical({ 
@@ -177,12 +178,22 @@ export default function CarouselVertical({
         <div className='w-full h-full relative'>
             {items.length > slidesToShow && (
                 <>
-                    <button className="vcarousel-button top" onClick={() => goTo(currentIndex - slidesToScroll)}>
-                        <ChevronUpIcon fontSize="inherit" />
-                    </button>
-                    <button className="vcarousel-button bottom" onClick={() => goTo(currentIndex + slidesToScroll)}>
-                        <ChevronDownIcon fontSize="inherit" />
-                    </button>
+                    <div className="vcarousel-button top rounded-2xl">
+                        <IconButton 
+                            className='rounded-2xl border-0'
+                            color='#29292981'
+                            onClick={() => goTo(currentIndex - slidesToScroll)}
+                            icon={<ChevronUpIcon />}
+                        />
+                    </div>
+                    <div className="vcarousel-button bottom rounded-2xl">
+                        <IconButton 
+                            className='rounded-2xl border-0'
+                            color='#29292981'
+                            onClick={() => goTo(currentIndex + slidesToScroll)}
+                            icon={<ChevronDownIcon />}
+                        />
+                    </div>
                 </>
             )}
 
@@ -222,37 +233,6 @@ export default function CarouselVertical({
                     ))}
                 </motion.div>
             </div>
-
-            <style>
-                {`
-                    .vcarousel-button {
-                        position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        z-index: 10;
-                        background: rgba(0, 0, 0, 0.3);
-                        border: none;
-                        color: white;
-                        font-size: 28px;
-                        width: 36px;
-                        height: 36px;
-                        cursor: pointer;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                        backdrop-filter: blur(4px);
-                        transition: background 0.25s ease;
-                    }
-                    .vcarousel-button.top {
-                        top: 4px;
-                    }
-                    .vcarousel-button.bottom {
-                        bottom: 4px;
-                    }
-                `}
-            </style>
         </div>
     );
 }

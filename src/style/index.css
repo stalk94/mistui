@@ -38,6 +38,37 @@ body {
     overflow-x: hidden;
 }
 
+/* carousel */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  transition: background 0.25s ease;
+}
+.carousel-button.left {
+  left: 4px;
+}
+.carousel-button.right {
+  right: 4px;
+}
+.vcarousel-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  transition: background 0.25s ease;
+}
+.vcarousel-button.top {
+  top: 4px;
+}
+.vcarousel-button.bottom {
+  bottom: 4px;
+}
+
+
 /* cyrillic-ext */
 @font-face {
     font-family: 'Roboto Condensed';
