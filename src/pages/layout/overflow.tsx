@@ -20,7 +20,7 @@ export default function InfoOverflow(tab) {
 
                 `}
             >
-                <Grid className="justify-center">
+                <div className="flex justify-center">
                     <Overflow
                         onOverflow={(items) => console.log('overflow: ', items)}
                     >
@@ -45,7 +45,7 @@ export default function InfoOverflow(tab) {
                             button-3
                         </Button>
                     </Overflow>
-                </Grid>
+                </div>
             </Section>
         </div>
     );

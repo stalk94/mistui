@@ -39,6 +39,7 @@ export { SplitterCustom as Splitter, SplitterPanelCustom as SplitterPanel } from
 export { default as Badge } from './components/utils/badge';
 export { default as Stat, Stats } from './components/utils/stat';
 export { default as Paginator } from './components/list/pagination';
+export { default as Box } from './components/blocks/box';
 export { default as LeftSideBar } from './components/nav-bars/left-nav';
 export { default as LeftSideBarAndTool } from './components/nav-bars/tool-left';
 export { default as AppBar } from './components/app-bar/AppBar';

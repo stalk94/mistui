@@ -1,8 +1,4 @@
 import { NavItem } from '../menu/type';
-export type PreviewProps = {
-    linkItems?: NavItem[];
-    onClick?: (path: string) => void;
-};
 export type NestedMenuProps = {
     item: NavItem;
     onSelect?: (item: NavItem) => void;
@@ -16,8 +12,9 @@ export type NavigationItemsDesktopProps = {
     items: NavItem[];
     className?: React.HTMLAttributes<HTMLDivElement>['className'];
     style?: React.CSSProperties;
+    onOverflow?: (hidden: React.ReactNode[] | any[]) => void;
 };
-export type AppBarCustomProps = {
+export type AppBarProps = {
     startSlot: React.ReactNode;
     centerSlot: React.ReactNode;
     endSlot: React.ReactNode;
@@ -32,4 +29,13 @@ export type MobailBurgerProps = {
     children?: React.ReactNode;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     handleMenuOpen?: () => void;
+};
+export type PreviewProps = {
+    startSlot?: React.ReactNode;
+    centerSlot?: React.ReactNode;
+    endSlot?: React.ReactNode;
+    variant?: 'center' | 'left';
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    items: NavItem[];
+    onClick?: (path: string) => void;
 };

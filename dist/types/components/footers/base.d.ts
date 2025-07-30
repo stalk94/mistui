@@ -1,6 +1,6 @@
 declare const Footer: import("react").ForwardRefExoticComponent<{
-    className?: string | undefined;
     style?: import("react").CSSProperties | undefined;
+    className?: string | undefined;
 } & {
     isCenter?: boolean;
     orientation?: "horizontal" | "vertical";

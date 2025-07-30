@@ -22,6 +22,7 @@ import Preview from '../components/app-bar/Preview';
 import Layer from './Layer';
 import Code from './Code';
 import Documentation from '../pages';
+import Box from '@/components/blocks/box';
 
 
 
@@ -1076,6 +1077,14 @@ const patterns = {
                 </>
             }
         />
+    ),
+    Box: (props)=> (
+        <div className='w-full h-full p-6'>
+            <Box 
+                rounded={2}
+                { ...props }
+            />
+        </div>
     ),
 
     // any

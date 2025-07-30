@@ -108,6 +108,9 @@ export { default as Stat, Stats } from './components/utils/stat';
 // paginator 
 export { default as Paginator } from './components/list/pagination';
 
+// Box
+export { default as Box } from './components/blocks/box';
+
 ///////////////////////////////////////////////////////////////////////////
 //    на переработку
 ///////////////////////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+import type { CreateThemeOptions } from './types';
 export declare const fontFamilyVariants: {
     'JetBrains Mono': string;
     Ubuntu: string;
@@ -20,16 +21,12 @@ declare const VARIANTS: {
     info: string;
     neutral: string;
 };
-export declare function createTheme({ themeSchema, colors, sizes, colorVariants, typographyVariants, shadows }: {
-    themeSchema: any;
-    colors: any;
-    sizes: any;
-    colorVariants: any;
-    typographyVariants: any;
-    shadows: any;
-}): {
-    theme: any;
-    colors: any;
+export declare function createTheme({ themeSchema, colors, sizes, colorVariants, typographyVariants, shadows }: CreateThemeOptions): {
+    theme: "dark" | "light";
+    colors: {
+        base: string;
+        selected: string;
+    };
     sizes: any;
     autosizes: {};
     variants: any;
@@ -37,10 +34,14 @@ export declare function createTheme({ themeSchema, colors, sizes, colorVariants,
     typography: any;
     styles: any;
     plugins: any;
+    variables: any;
 };
 export declare const defaultTheme: {
-    theme: any;
-    colors: any;
+    theme: "dark" | "light";
+    colors: {
+        base: string;
+        selected: string;
+    };
     sizes: any;
     autosizes: {};
     variants: any;
@@ -48,6 +49,7 @@ export declare const defaultTheme: {
     typography: any;
     styles: any;
     plugins: any;
+    variables: any;
 };
 export type Variants = keyof typeof VARIANTS;
 export {};

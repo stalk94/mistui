@@ -347,6 +347,26 @@ const CONFIG = {
     Stat: {
 
     },
+    Box: {
+        elevation: {
+            type: 'slider',
+            value: 1,
+            min: -25,
+            max: 25
+        },
+        variant: {
+            type: 'groupButton',
+            value: 'contained',
+            items: ['contained', 'outline', 'dash', 'soft', 'ghost', 'glass']
+        },
+        color: {
+            type: 'groupButton',
+            items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
+        },
+        colorCustom: {
+            type: 'color'
+        }
+    },
 
     // media 
     Card: {

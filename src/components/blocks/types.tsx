@@ -10,4 +10,5 @@ export type BoxProps = {
     style?: React.CSSProperties
     className?: React.HTMLAttributes<HTMLDivElement>['className']
     rounded?: number
+    elevation?: number
 }

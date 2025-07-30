@@ -656,6 +656,11 @@ const patterns = {
             }
         />
     `),
+    Box: (props)=> (`
+        <Box 
+            ${toJSXProps(props)}
+        />
+    `),
 }
 
 

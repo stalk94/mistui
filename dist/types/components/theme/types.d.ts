@@ -83,6 +83,7 @@ export interface Theme {
         };
         appBar?: {
             backgroundColor: React.CSSProperties['color'];
+            borderColor: React.CSSProperties['color'];
         };
         modal?: {
             backgroundColor: React.CSSProperties['color'];
@@ -109,6 +110,9 @@ export interface Theme {
             background: (variant?: string, type?: 'hover' | 'selected') => React.CSSProperties['backgroundColor'];
         };
     };
+    variables: {
+        [key: string]: string;
+    };
 }
 export declare const clasesDaisy: {
     colors: string[];
@@ -128,3 +132,80 @@ export declare const clasesDaisy: {
     modal: string[];
     components: string[];
 };
+type VariantSize = 'sm' | 'xs' | 'md' | 'lg' | 'xl';
+type VariantCoficientSize = number | string;
+type SizeElement = {
+    default: VariantSize;
+    xs: VariantSize;
+    sm: VariantSize;
+    md: VariantSize;
+    lg: VariantSize;
+    xl: VariantSize;
+};
+export type CreateThemeOptions = {
+    themeSchema: 'dark' | 'light';
+    colors: {
+        base: string;
+        selected?: string;
+    };
+    sizes?: {
+        text: SizeElement;
+        dock: SizeElement;
+        input: SizeElement;
+        btn: SizeElement;
+        textarea: SizeElement;
+        badge: SizeElement;
+        table: SizeElement;
+        /** special */
+        avatar: {
+            default: VariantCoficientSize;
+            xs: VariantCoficientSize;
+            sm: VariantCoficientSize;
+            md: VariantCoficientSize;
+            lg: VariantCoficientSize;
+            xl: VariantCoficientSize;
+        };
+        /** special */
+        divider: {
+            xs: VariantCoficientSize;
+            sm: VariantCoficientSize;
+            md: VariantCoficientSize;
+            lg: VariantCoficientSize;
+            xl: VariantCoficientSize;
+        };
+    };
+    colorVariants?: {
+        primary?: string;
+        secondary?: string;
+        accent?: string;
+        success?: string;
+        warning?: string;
+        error?: string;
+        info?: string;
+        neutral?: string;
+    };
+    typographyVariants?: {
+        h1?: string;
+        h2?: string;
+        h3?: string;
+        h4?: string;
+        h5?: string;
+        h6?: string;
+        subtitle1?: string;
+        subtitle2?: string;
+        body1?: string;
+        body2?: string;
+        caption?: string;
+        overline?: string;
+        button?: string;
+    };
+    shadows?: {
+        xs?: string;
+        sm?: string;
+        md?: string;
+        lg?: string;
+        xl?: string;
+        xxl?: string;
+    };
+};
+export {};

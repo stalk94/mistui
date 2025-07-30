@@ -1,9 +1,9 @@
-import type { AppBarCustomProps } from './types';
+import type { AppBarProps } from './types';
 /**
- * строительный шаблон для app bar
- * - `startSlot` - левый слот
- * - `centerSlot` - центральный слот (к примеру линейная навигация)
- * - `endSlot` - правый слот (к примеру user, main)
+ * app bar - construction template on slots
+ * - `startSlot` - left slot (for example: logo image)
+ * - `centerSlot` - center slot (for example: site navigation links)
+ * - `endSlot` - right slot (for example: user burger menu)
  */
-declare const AppBar: import("react").ForwardRefExoticComponent<AppBarCustomProps & import("react").RefAttributes<HTMLHeadingElement>>;
+declare const AppBar: import("react").ForwardRefExoticComponent<AppBarProps & import("react").RefAttributes<HTMLHeadingElement>>;
 export default AppBar;

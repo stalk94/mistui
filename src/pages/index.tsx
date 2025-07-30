@@ -58,6 +58,7 @@ import Progress from './data-display/progress';
 import Paginator from './navigation/paginator';
 import Spinner from './data-display/spiner';
 import Skeleton from './data-display/skeleton';
+import Box from './page/box';
 
 
 const category = {
@@ -122,6 +123,7 @@ const category = {
         SimpleTable: Table
     },
     page: {
+        Box: Box,
         Footer: Footer,
         Hero: Hero,
         AppBar: AppBar,

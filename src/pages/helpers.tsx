@@ -128,7 +128,8 @@ export function Section({
 
             {view !== 'code' &&
                 <div
-                    className={`border-1 p-3 border-[#6b6b6b4b] bg-[#282828] relative overflow-y-auto max-w-full ${className??''}`}
+                    key={title}
+                    className={`border-1 p-3 border-[#6b6b6b4b] bg-[#282828] h-fit relative overflow-y-auto max-w-full ${className??''}`}
                 >
                     {view === 'view' && children}
                 </div>

@@ -7,6 +7,5 @@ type ThemeProviderProps = PropsWithChildren<{
     theme?: Theme;
 }>;
 export declare function useTheme(): Theme;
-export declare function createTheme(data: any): Theme;
 export declare function ThemeProvider({ theme, children }: ThemeProviderProps): import("react/jsx-runtime").JSX.Element;
 export {};

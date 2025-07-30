@@ -1199,6 +1199,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -2418,6 +2438,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -3636,6 +3676,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -4854,6 +4914,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -6073,6 +6153,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -7291,6 +7391,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -8510,6 +8630,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -9729,6 +9869,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -10948,6 +11108,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -12168,6 +12348,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -13382,6 +13582,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -14595,6 +14815,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -15808,6 +16048,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -17022,6 +17282,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -18235,6 +18515,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -19449,6 +19749,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -20663,6 +20983,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -21877,6 +22217,26 @@ export declare const store: {
                 };
             };
             Stat: {};
+            Box: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
             Card: {
                 imageIsSide: {
                     type: string;
@@ -51313,6 +51673,442 @@ export declare const store: {
             watch: (fn: (val: {}, unsub: () => void) => void) => () => void;
             export: () => {};
         } & {};
+        Box: {
+            get: (clone?: boolean) => {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
+            set: (value: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            } | ((prev: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            }) => {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            })) => void;
+            update: (fn: (prev: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            }) => {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            }) => void;
+            use: () => {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
+            watch: (fn: (val: {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                elevation: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+            };
+        } & {
+            elevation: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                set: (value: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                } | ((prev: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                }) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                }) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                min: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                max: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+        };
         Card: {
             get: (clone?: boolean) => {
                 imageIsSide: {

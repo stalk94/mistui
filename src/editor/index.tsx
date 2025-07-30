@@ -46,7 +46,7 @@ const category = {
     'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton'],
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
-    page: ['Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
+    page: ['Box', 'Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
     feedback: ['Tooltip', 'Modal', 'Popover', 'Drawer'],
     media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
     form: [''],
