@@ -33,7 +33,7 @@ export default function Paginator({
 
 
     return (
-        <div className={`join ${className ?? ''}`} { ...props }>
+        <div className={`flex ${className ?? ''}`} { ...props }>
             { showFirstButton &&
                 <IconButton
                     className="mr-0.5"

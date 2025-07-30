@@ -26,6 +26,7 @@ type Combo = {
 }
 
 
+
 export const mixerButtonColor = (color: string, type?: 'hover' | 'selected') => {
     if (!type) return color;
     
@@ -42,8 +43,6 @@ export const mixerButtonBorderColor = (color: string, type?: 'hover' | 'selected
        else return colord(color).alpha(0.2).lighten(0.1).toRgbString();
     }
 }
-
-
 export const fabrikSizeBreacpoints = (classKye: ClasVariants, config: Combo) => {
     if(classKye === 'avatar') return Object.entries(config).map(([key, value])=> {
         if (key === 'default') return `${value}`;
@@ -56,8 +55,13 @@ export const fabrikSizeBreacpoints = (classKye: ClasVariants, config: Combo) => 
     }).join(' ');
 }
 
+
+const createSizesSpecial =()=> {
+    
+}
 export const generateSizes = (sizes) => {
     const generate = {}
+
     Object.entries(sizes).map(([key, value])=> {
         const result = fabrikSizeBreacpoints(key, value);
         generate[key] = result;
@@ -65,6 +69,26 @@ export const generateSizes = (sizes) => {
 
     return generate;
 }
+export const deepMerge = (target: any, source: any) => {
+    if (typeof target !== 'object' || typeof source !== 'object') {
+        return source;
+    }
+
+    const result = { ...target };
+
+    for (const key in source) {
+        if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+            result[key] = deepMerge(target[key], source[key]);
+        }
+        else {
+            result[key] = source[key];
+        }
+    }
+
+    return result;
+}
+
+
 
 export function getContrastingColor(bgColor: string, dark: string, light: string) {
     const contrastWithBlack = colord(bgColor).contrast(dark);
@@ -72,7 +96,6 @@ export function getContrastingColor(bgColor: string, dark: string, light: string
 
     return contrastWithBlack > contrastWithWhite ? dark : light;
 }
-
 export function isBright(colorStr: string, cof: number = 200): boolean {
     const c = colord(colorStr);
     const rgb = c.toRgb();

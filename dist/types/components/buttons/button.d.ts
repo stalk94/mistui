@@ -14,6 +14,7 @@ declare const Button: import("react").ForwardRefExoticComponent<{
     selected?: boolean;
     disabled?: boolean;
     fullWidth?: boolean;
+    ripple?: boolean;
     'aria-label'?: string;
 } & import("react").RefAttributes<HTMLButtonElement>>;
 export default Button;

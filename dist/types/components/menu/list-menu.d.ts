@@ -24,4 +24,4 @@ import type { MainListProps } from './type';
                 ]}
             />
  */
-export default function MenuList({ style, className, size, isNested, onSelect, items, color, shadow }: MainListProps): import("react/jsx-runtime").JSX.Element;
+export default function MenuList({ style, select, className, size, isNested, onSelect, items, color }: MainListProps): import("react/jsx-runtime").JSX.Element;

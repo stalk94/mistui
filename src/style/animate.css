@@ -90,6 +90,15 @@
         transform: scale(3);
         opacity: 0;
     }
+} 
+
+@keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(var(--move-distance) * -1)); }
+}
+@keyframes marquee-right {
+    0% { transform: translateX(calc(var(--move-distance) * -1));}
+    100% { transform: translateX(0); }
 }
 
 
@@ -124,13 +133,4 @@
 }
 .animate-shake {
     animation: shake 0.4s ease-in-out;
-}
-
-
-.neon-wrapper svg {
-  filter:
-    drop-shadow(0 0 0.5px var(--neon-color))
-    drop-shadow(0 0 1px var(--neon-color, rgba(0, 255, 255, 0.2)))
-    drop-shadow(0 0 1.5px var(--neon-color, rgba(0, 255, 255, 0.1)));
-  transition: filter 0.3s ease;
 }

@@ -19,4 +19,18 @@ export type ListProps = {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     color?: Variants | (string & {});
 };
+export type PaginatorProps = {
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto';
+    className?: HTMLElement['className'];
+    color?: Variants | (string & {});
+    style?: React.CSSProperties;
+    count?: number;
+    page?: number;
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link';
+    isRounded?: boolean;
+    showFirstButton?: boolean;
+    showLastButton?: boolean;
+    onChange?: (page: number) => void;
+};
 export {};

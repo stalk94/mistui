@@ -10,6 +10,8 @@ export { default as AutoComplete } from './autocomplete';
 export { default as SwitchBox } from './switch';
 export { default as RadioBox } from './radio';
 export { default as ColorPicker } from './color';
+export { default as TimePicker } from './time';
+export { default as DatePicker } from './date';
 /** паттерны регулярок */
 export declare const baseValidators: {
     password: string;

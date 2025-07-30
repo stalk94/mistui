@@ -45,7 +45,7 @@ export type NavItem = {
     style?: React.CSSProperties;
 };
 export type MainListProps = {
-    onSelect?: (item: NavItem) => void;
+    onSelect?: (select: NavItem | NavItem['id']) => void;
     className?: React.HTMLAttributes<HTMLElement>['className'];
     style?: React.CSSProperties;
     isNested?: boolean;
@@ -53,4 +53,5 @@ export type MainListProps = {
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: Variants | (string & {});
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    select?: NavItem | NavItem['id'];
 };

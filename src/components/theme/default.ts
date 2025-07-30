@@ -3,12 +3,14 @@ import a11yPlugin from 'colord/plugins/a11y';
 import mixPlugin from "colord/plugins/mix";
 import namesPlugin from "colord/plugins/names";
 extend([namesPlugin, a11yPlugin, mixPlugin]);
-import { mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrastingColor, isBright } from './helpers';
+import { 
+    mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrastingColor, 
+    isBright, deepMerge
+} from './helpers';
+import type { CreateThemeOptions } from './types';
 
 
-//////////////////////////////////////////////////////////////////////////
-//      default settings constant         
-//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 export const fontFamilyVariants = {
     'JetBrains Mono': '',
     Ubuntu: '',
@@ -21,6 +23,10 @@ export const fontFamilyVariants = {
     Merriweather: '--font-family-merriweather',
     Raleway: '--font-family-raleway'
 }
+
+//////////////////////////////////////////////////////////////////////////
+//      default settings constant         
+//////////////////////////////////////////////////////////////////////////
 const TYPOGRAPHY = {
     h1: 'text-4xl sm:text-5xl md:text-6xl font-bold',
     h2: 'text-3xl sm:text-4xl md:text-5xl font-semibold',
@@ -42,7 +48,7 @@ const TYPOGRAPHY = {
 }
 const COLORS = {
     base: 'rgb(18, 18, 18)',
-    selected: 'rgba(255, 255, 255, 0.7)'            // ?                 
+    selected: 'rgba(255, 255, 255, 0.255)'            // ?                 
 }
 const SIZES = {
     text: {
@@ -134,7 +140,7 @@ const SHADOWS = {
 
 
 //////////////////////////////////////////////////////////////////////////
-//            default theme object            
+//            create theme object            
 //////////////////////////////////////////////////////////////////////////
 export function createTheme({
     themeSchema,
@@ -143,55 +149,63 @@ export function createTheme({
     colorVariants,
     typographyVariants,
     shadows
-}) {
+}: CreateThemeOptions) {
+    const mergeSizes = deepMerge(SIZES, sizes);
+    const basis = (themeSchema === 'light') ? 'darken' : 'lighten';
+
     const theme = {
-        theme: themeSchema ?? 'dark',                          // black/white
-        colors: colors,
-        sizes: sizes,
-        autosizes: generateSizes(sizes),
-        variants: colorVariants,                // color variants theme
-        shadows: shadows,
-        typography: typographyVariants,
-        styles: {} as any,                      // component basic style settings
-        plugins: {} as any
+        theme: themeSchema ?? 'dark',
+        colors: {
+            base: colors.base,
+            selected: colors?.selected ?? colord(colors.base).invert().alpha(0.25).toRgbString()
+        },
+        sizes: mergeSizes,
+        autosizes: generateSizes(mergeSizes),
+        variants: deepMerge(VARIANTS, colorVariants),                                // color variants theme
+        shadows: deepMerge(SHADOWS, shadows),
+        typography: deepMerge(TYPOGRAPHY, typographyVariants),
+        styles: {} as any,                                      // component basis style settings
+        plugins: {} as any,
+        variables: {} as any
     };
+    
 
     theme.styles = {
         input: {
-            focusOutlineColor: colord(theme.colors.base).lighten(0.6).toRgbString(),
-            fontColor: colord(theme.colors.base).lighten(0.8).toRgbString(),
+            focusOutlineColor: colord(theme.colors.base)[basis](0.6).toRgbString(),
+            fontColor: colord(theme.colors.base)[basis](0.8).toRgbString(),
 
-            sliderTrackColor: 'rgb(169, 169, 169)',
-            sliderTrackFillColor: 'rgb(211, 211, 211)',
+            sliderTrackColor: 'rgb(169, 169, 169)',         //!
+            sliderTrackFillColor: 'rgb(211, 211, 211)',     //!
             sliderTrackHeight: 0.1,
             sliderTrackFillHeight: 0.2,
         },
         table: {
-            body: colord(theme.colors.base).lighten(0.1).toRgbString(),
-            header: colord(theme.colors.base).lighten(0.2).toRgbString(),
-            thead: colord(theme.colors.base).lighten(0.3).toRgbString(),
-            border: colord(theme.colors.base).lighten(0.25).toRgbString(),
-            fontColor: colord(theme.colors.base).lighten(0.8).toRgbString(),
-            theadFontColor: 'grey',
+            body: colord(theme.colors.base)[basis](0.1).toRgbString(),
+            header: colord(theme.colors.base)[basis](0.2).toRgbString(),
+            thead: colord(theme.colors.base)[basis](0.3).toRgbString(),
+            border: colord(theme.colors.base)[basis](0.25).toRgbString(),
+            fontColor: colord(theme.colors.base)[basis](0.8).toRgbString(),
+            theadFontColor: 'grey',     //!
         },
         tabs: {
-            borderColor: colord(theme.colors.base).lighten(0.1).toRgbString()
+            borderColor: colord(theme.colors.base)[basis](0.1).toRgbString()
         },
         appBar: {
-            backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString()
+            backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString()
         },
         popover: {
             minWidth: 40,
             backdropFilter: "blur(14px)"
         },
         modal: {
-            backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString(),
-            borderColor: colord(theme.colors.base).lighten(0.25).toRgbString(),
+            backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString(),
+            borderColor: colord(theme.colors.base)[basis](0.25).toRgbString(),
             borderWidth: 1
         },
         drawer: {
-            backgroundColor: colord(theme.colors.base).lighten(0.15).toRgbString(),
-            borderColor: colord(theme.colors.base).lighten(0.25).toRgbString(),
+            backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString(),
+            borderColor: colord(theme.colors.base)[basis](0.25).toRgbString(),
             borderWidth: 1,
             padding: 8
         }
@@ -199,16 +213,16 @@ export function createTheme({
 
     theme.plugins = {
         invert: (color: string) => colord(color).invert().toRgbString(),
-        isBright: (color: string, cof?: number)=> isBright(color, cof),
+        isBright: (color: string, cof?: number) => isBright(color, cof),
+        alpha: (color: string, alpha: number) => colord(color).alpha(alpha).toRgbString(),
+        lighten: (color: string, cof: number) => colord(color).lighten(cof).toRgbString(),
+        darken: (color: string, cof: number) => colord(color).darken(cof).toRgbString(),
         contrast: (color: string, dark?: string, light?: string) => {
             const defaultDark = theme.theme === 'dark' ? 'black' : 'white';
             const defaultLight = theme.theme === 'dark' ? 'white' : 'black';
 
             return getContrastingColor(color, (dark ?? defaultDark), (light ?? defaultLight))
         },
-        alpha: (color: string, alpha: number) => colord(color).alpha(alpha).toRgbString(),
-        lighten: (color: string, cof: number) => colord(color).lighten(cof).toRgbString(),
-        darken: (color: string, cof: number) => colord(color).darken(cof).toRgbString(),
         mixers: {
             color: (color, type?: 'hover' | 'selected') =>
                 colord(mixerButtonColor(color, type)).alpha(0.6).toRgbString(),
@@ -218,7 +232,13 @@ export function createTheme({
                 mixerButtonBorderColor(color, type),
         }
     };
-
+    // css variables generation
+    theme.variables = {
+        base100: theme.plugins[basis](colors.base, 0.1),
+        base200: theme.plugins[basis](colors.base, 0.2),
+        base300: theme.plugins[basis](colors.base, 0.3),
+        base400: theme.plugins[basis](colors.base, 0.35),
+    };
 
     return theme;
 }

@@ -14,6 +14,7 @@ declare const IconButton: import("react").ForwardRefExoticComponent<{
     isGradient?: any;
     disabled?: boolean;
     selected?: boolean;
+    ripple?: boolean;
     'aria-label'?: string;
 } & import("react").RefAttributes<HTMLButtonElement>>;
 export default IconButton;

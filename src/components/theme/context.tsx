@@ -1,7 +1,7 @@
 import '@/style/index.css';
 import '@/style/animate.css';
 import "@/style/tailwind.css";
-import { PropsWithChildren, useContext, useRef, useState, createContext, useEffect } from 'react';
+import { PropsWithChildren, useContext, createContext } from 'react';
 import { Theme } from './types';
 import { defaultTheme } from './default';
 import { cs } from '../hooks/cs';
@@ -18,40 +18,15 @@ export function useTheme() {
 	return context;
 }
 
-export function createTheme(data: any): Theme {
-    const deepMerge = (target: any, source: any) => {
-        if (typeof target !== 'object' || typeof source !== 'object') {
-            return source;
-        }
-
-        const result = { ...target };
-
-        for (const key in source) {
-            if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
-                result[key] = deepMerge(target[key], source[key]);
-            }
-            else {
-                result[key] = source[key];
-            }
-        }
-
-        return result;
-    }
-
-	return deepMerge(defaultTheme, data);
-}
-
 
 ///////////////////////////////////////////////////////////////////////
-const Cache = () => {
-    const { styles, colors } = useTheme();
+const StyleCache = () => {
+    const { styles, colors, variables } = useTheme();
+
 
     return (
         <style className='__styles__'>
             {cs(`
-                input::placeholder {
-                    color: ${styles?.input?.placeholderColor};
-                }
                 .input-focus {
                     outline-color: ${styles?.input?.borderColor};
 	                transition: outline-color 0.8s ease, border-color 0.6s ease;
@@ -74,25 +49,27 @@ const Cache = () => {
                 .scrolable::-webkit-scrollbar-track: {
                     background: #2e2e2e;
                 }
-                [data-theme="dark"] {
-                    --color-primary: rgb(25, 25, 26);
-                    --color-primary-content: rgb(220, 220, 220);
-                    --selected: ${colors.selected};
-                }
+                
                 .selected {
-                    background-color: #7e7e7e81;
-                    border-radius: 5px;
+                    background-color: ${colors.selected};
+                    border-radius: 3px;
+                }
+                
+                :root {
+                    --color-base-100: ${variables.base100};
+                    --color-base-200: ${variables.base200};
+                    --color-base-300: ${variables.base300};
+                    --color-base-400: ${variables.base400};
                 }
             `)}
         </style>
     );
 }
-export function ThemeProvider({ theme = defaultTheme, children }: ThemeProviderProps) {
-    //const enable = theme.enableEditorMod;
 
+export function ThemeProvider({ theme = defaultTheme, children }: ThemeProviderProps) {
 	return (
 		<ThemeContext.Provider value={theme}>
-			<Cache />
+			<StyleCache />
 			{ children }
             <SafeTailwindClasses />
 		</ThemeContext.Provider>

@@ -142,13 +142,12 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                     ${variant === 'ghost' && 'btn-ghost'}
                     ${isRounded ? 'btn-circle' : 'btn-square'}
                     ${variant ? `btn-${variant}` : ''} 
-                    ${color ? `btn-${color}` : ''} 
                     ${getSize}
                     font-bold 
                     uppercase
                     transition-transform 
                     duration-200 
-                    ${selected && 'bg-[var(--selected)] border-[var(--selected)] text-white'}
+                    ${selected && 'selected'}
                     ${className ?? ''}
                 `)}
                 { ...props }

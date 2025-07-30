@@ -68,7 +68,7 @@ const App = () => {
             <AlertProvider variant='outline'>
                 <BrowserRouter>
                     <div
-                        data-theme={theme}
+                        //data-theme={theme}
                         className="w-screen"
                         style={{fontFamily: 'JetBrains Mono'}}
                     >

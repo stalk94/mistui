@@ -7,34 +7,6 @@
 }
 
 
- 
-@plugin "daisyui/theme" {
-    name: "dark";
-    default: true;
-
-    /* fonts */
-    --font-family-base: 'Roboto', sans-serif;
-    --font-family-roboto: 'Roboto', sans-serif;
-    --font-family-inter: 'Inter', sans-serif;
-    --font-family-open: 'Open Sans', sans-serif;
-    --font-family-poppins: 'Poppins', sans-serif;
-    --font-family-lato: 'Lato', sans-serif;
-    --font-family-montserrat: 'Montserrat', sans-serif;
-    --font-family-source: 'Source Sans 3', sans-serif;
-    --font-family-merriweather: 'Merriweather', serif;
-    --font-family-raleway: 'Raleway', sans-serif;
-
-    /* base */
-    --color-bg: rgb(34, 34, 34);
-
-    --color-base-100: rgb(45, 45, 45);
-    --color-base-200: rgb(45, 45, 45);
-    --color-base-300: rgb(58, 58, 58);
-    --color-base-400: rgb(50, 52, 54);
-    --color-neutral-500: rgb(43, 43, 43);
-}
-
-
 
 .tabs-lift > .tab {
     background-image: none;
@@ -185,6 +157,8 @@
     }
 }
 
+
+
 /* fonts */
 [data-font="inter"] {
   --font-family-base: 'Inter', sans-serif;
@@ -207,28 +181,4 @@ input[type="date"] {
 }
 input[type="time"] {
     -moz-appearance: textfield;
-}
-
-
-@layer base {
- @keyframes marquee-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(var(--move-distance) * -1));
-          }
-        }
-        @keyframes marquee-right {
-          0% {
-            transform: translateX(calc(var(--move-distance) * -1));
-          }
-          100% {
-            transform: translateX(0);
-          }
-    }  
-
-    .main {
-        font-family: var(--font-family-base);
-    }
 }

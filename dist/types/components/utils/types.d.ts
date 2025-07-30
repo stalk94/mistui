@@ -22,6 +22,23 @@ export type DividerProps = {
     style?: React.CSSProperties;
     className?: Props['className'];
 };
+export type SpinerProps = {
+    children?: string | React.ReactElement;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    color?: Variants | (string & {});
+    variant?: 'spinner' | 'dots' | 'ring' | 'ball' | 'bars' | 'infinity';
+    style?: React.CSSProperties;
+    className?: Props['className'];
+};
+export type SkeletonProps = {
+    children?: string | React.ReactElement;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    style?: React.CSSProperties;
+    className?: HTMLElement['className'];
+    variant?: 'text' | 'circular' | 'rectangular' | 'rounded';
+    width?: number;
+    height?: number;
+};
 export type SplitterProps = SpliterStProps & {
     color?: Variants | (string & {});
     orientation?: 'horizontal' | 'vertical';
@@ -81,18 +98,6 @@ export type IndicatorProps = {
     align?: 'start' | 'center' | 'end';
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 };
-export type TooltipProps = {
-    /** wraparound component */
-    children?: string | React.ReactElement;
-    /** hint content */
-    content?: string;
-    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: Variants | (string & {});
-    style?: React.CSSProperties;
-    className?: Props['className'];
-    position?: 'top' | 'left' | 'right' | 'bottom';
-    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link';
-};
 export type StatProps = Props & {
     figure?: React.ReactNode;
     title?: React.ReactNode;
@@ -150,14 +155,16 @@ export type OverflowProps = Props & {
     onOverflow?: (hidden: React.ReactNode[] | any[]) => void;
     overflowMap?: any[];
 };
-export type RadialProgressProps = {
-    /** content collapse, children or content props */
-    children?: string | React.ReactElement;
-    value: number;
+export type ProgressProps = {
+    value?: number;
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     color?: Variants | (string & {});
     style?: React.CSSProperties;
     className?: Props['className'];
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    max?: number;
+};
+export type RadialProgressProps = Omit<ProgressProps, 'max'> & {
+    children?: string | React.ReactElement;
 };
 export {};
