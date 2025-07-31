@@ -78,7 +78,7 @@ export const useAlert =()=> {
  */
 export function AlertProvider({ 
     children, 
-    delDelay, 
+    delDelay = 6000, 
     position, 
     variant = 'contained', 
     isSoft 
@@ -140,7 +140,7 @@ export function AlertProvider({
 
         setTimeout(()=> {
             setStack((prevStack)=> prevStack.filter(alert => alert.id !== id));
-        }, (delDelay ?? 6000));
+        }, (delDelay));
     }
     useEffect(()=> {
         if (stack.length > 4) {
@@ -176,7 +176,7 @@ export function AlertProvider({
                                 <div 
                                     role="alert" 
                                     className={`
-                                        alert 
+                                        alert
                                         alert-${type}
                                         ${isSoft && 'alert-soft'}
                                     `}

@@ -70,7 +70,7 @@ const MarqueeText = forwardRef<HTMLDivElement, MarqueeTextProps>(function Marque
                 {[...Array(copies)].map((_, i) => (
                     <div key={i} style={{ paddingRight: gap }}>
                         <Typography 
-                            as="p" 
+                            as="div" 
                             variant={variant ?? 'body1'}
                             { ...props }
                         >

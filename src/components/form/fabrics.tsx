@@ -2,7 +2,7 @@ import React from 'react';
 import { Schema, TypeSchema } from './types';
 import { 
     BaseInput, NumberInput, ColorPicker, SliderInput, SwitchBox, TextArea,
-    Select, CheckBox, FileInput, AutoComplete, RadioBox
+    Select, CheckBox, FileInput, AutoComplete, RadioBox, TimePicker, DatePicker
 } from '../inputs';
 import { GroupButton, GroupButtonFiltre } from '../buttons';
 import Divider from '../utils/divider';
@@ -14,8 +14,8 @@ export const fabricsInput: Record<TypeSchema, (schema: any) =>  React.JSX.Elemen
     textArea: (schema) => <TextArea {...schema} />,
     number: (schema) => <NumberInput {...schema} />,
     color: (schema) => <ColorPicker {...schema} />,
-    date: (schema) => <BaseInput type='date' {...schema} />,
-    time: (schema) => <BaseInput type='time' {...schema} />,
+    date: (schema) => <DatePicker {...schema} />,
+    time: (schema) => <TimePicker {...schema} />,
     file: (schema) => <FileInput {...schema} />,
 
     checkbox: (schema) => <CheckBox {...schema} />,

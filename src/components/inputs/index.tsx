@@ -12,6 +12,7 @@ export { default as RadioBox } from './radio';
 export { default as ColorPicker } from './color';
 export { default as TimePicker } from './time';
 export { default as DatePicker } from './date';
+export { default as PasswordInput } from './password';
 
 
 /** паттерны регулярок */

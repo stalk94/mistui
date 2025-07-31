@@ -119,7 +119,7 @@ export function formatCodeForShikiOld(code: string): string {
 
     return formatted.join('\n');
 }
-export function formatCodeForShiki(code: string): string {
+export function formatCodeForShikiOld2(code: string): string {
     const rawLines = code
         .replace(/\r\n/g, '\n')
         .split('\n')
@@ -197,4 +197,7 @@ export function formatCodeForShiki(code: string): string {
     };
 
     return processBlock([...rawLines]).join('\n');
+}
+export function formatCodeForShiki(code: string): string {
+   return code
 }

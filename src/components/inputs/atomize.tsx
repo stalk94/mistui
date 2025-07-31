@@ -7,7 +7,7 @@ import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
 
 
-export const LabelTop = ({ children, style, size, required,  }: LabelTopProps) => {
+export const LabelTop = ({ children, style, size, required  }: LabelTopProps) => {
     const getSize = size ? `input-${size}` : 'input-sm sm:input-md md:input-md lg:input-lg xl:input-lg';
 
 
@@ -30,7 +30,7 @@ export const LabelTop = ({ children, style, size, required,  }: LabelTopProps) =
         </label>
     );
 }
-export const ValidatorBottomLabel =({ children, 'data-id': dataId })=> {
+export const ValidatorBottomLabel =({ children })=> {
     return(
         <span
             style={{

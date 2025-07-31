@@ -108,16 +108,15 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                     { ...props }
                 />
                 { validator && typeof validator === 'boolean' && isInvalid &&
-                    <ValidatorBottomLabel data-id={props['data-id']}>
+                    <ValidatorBottomLabel>
                         !
                     </ValidatorBottomLabel>
                 }
             </FormWrapper>
-            { validator && isInvalid &&
-                (typeof validator === 'object' || typeof validator === 'string') && 
-                    <ValidatorBottomLabel data-id={props['data-id']}>
-                        { validator }
-                    </ValidatorBottomLabel>
+            { validator && typeof validator !== 'boolean' && isInvalid && 
+                <ValidatorBottomLabel>
+                    { validator }
+                </ValidatorBottomLabel>
             }
         </>
     );

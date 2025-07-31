@@ -1,8 +1,9 @@
 import React from 'react';
-import { LabelLogin, LabelPassword, LabelEmail, LabelPhone } from '../input/labels.inputs';
-import { CheckBoxAgrement } from '../input/checkbox';
-import { Button, ButtonProps, CircularProgress, SxProps, FormHelperText } from '@mui/material';
-import { Person, Key, Tag, AlternateEmail, Label } from '@mui/icons-material';
+import { BaseInput, CheckBox, Spinner, Button } from '../../index';
+import { IoMdPerson } from "react-icons/io";
+import { FaKey } from "react-icons/fa";
+import { FaTag } from "react-icons/fa6";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 import { validateEmail, validateLogin, validatePass, validatePhone, validateConfirm } from './validator-defolt';
 
 
@@ -132,26 +133,27 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
                 };
 
                 const componentMap: Record<string, React.JSX.Element> = {
-                    login: <LabelLogin key={index} {...commonProps} left={<Person />} useVerify={validatorsRender[type]} />,
-                    password: <LabelPassword key={index} {...commonProps} left={<Key />} useVerify={validatorsRender[type]} />,
-                    password2: <LabelPassword key={index} {...commonProps} left={<Key />} useVerify={validatorsRender[type]} />,
-                    email: <LabelEmail key={index} {...commonProps} left={<AlternateEmail />} useVerify={validatorsRender[type]} />,
-                    phone: <LabelPhone key={index} {...commonProps} left={<Tag />} useVerify={validatorsRender[type]} />,
-                    confirm: <CheckBoxAgrement key={index} {...commonProps} useVerify={validatorsRender[type]} />
+                    login: <BaseInput key={index} {...commonProps} labelLeft={<IoMdPerson />} useVerify={validatorsRender[type]} />,
+                    password: <BaseInput type='password' key={index} {...commonProps} labelLeft={<FaKey />} useVerify={validatorsRender[type]} />,
+                    password2: <BaseInput type='password' key={index} {...commonProps} labelLeft={<FaKey />} useVerify={validatorsRender[type]} />,
+                    email: <BaseInput key={index} {...commonProps} labelLeft={<MdOutlineAlternateEmail />} useVerify={validatorsRender[type]} />,
+                    phone: <BaseInput key={index} {...commonProps} labelLeft={<FaTag />} useVerify={validatorsRender[type]} />,
+                    confirm: <CheckBox key={index} {...commonProps} />
                 };
 
                 return componentMap[keyName] ?? null;
             })}
 
             {/* кнопка регистрации */}
-            <Button sx={{ mt: 2 }}
+            <Button
                 variant='outlined'
                 color='success'
                 disabled={!isValid || loading} 
                 onClick={()=> onRegistration && onRegistration(state)}
-                startIcon={loading ? <CircularProgress size={24} color="inherit" /> : null}
                 { ...button }
-            />
+            >
+                {loading && <Spinner />}
+            </Button>
         </React.Fragment>
     );
 }

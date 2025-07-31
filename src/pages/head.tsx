@@ -4,14 +4,20 @@ import { useEffect, useState } from 'react';
 
 
 const components = {
+    ThemeProvider: `
+        🎨 The ThemeProvider component wraps your entire app and is required for all MistUI components to function correctly. To customize the theme, pass a config object using the 'theme' prop, created with createTheme().
+    `,
+    AlertProvider: `
+        🔔 The AlertProvider component sets up a global alert system using React context. It allows you to trigger styled alert messages (toasts) from anywhere in your app using the useAlert() hook.  
+    `,
     Typography: `
-        Компонент Typography повторяет концепцию MUI Typography, но адаптирован под Tailwind специфику классов, семейства 'text'.
+       ✏️ The Typography component follows the Material UI concept but is adapted to Tailwind CSS conventions and uses the text-* utility classes family.
     `,
     Link: `
-        
+        🔗 The Link component is an extension of the base [Typography] component, designed specifically for navigation purposes with optional support for custom routing logic.
     `,
     MarqueText: `
-        
+        🏃‍♂️ MarqueeText is a visual component for creating a continuous scrolling text (marquee effect) with customizable direction, speed, and optional pause on hover. It is fully compatible with Typography, from which it inherits visual styles and properties.
     `,
 
     Button: `

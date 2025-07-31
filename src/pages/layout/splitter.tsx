@@ -13,10 +13,12 @@ export default function InfoSplitter(tab) {
             <Section
                 title="Splitter"
                 description="Basic horizontal splitter"
-                code={`<Splitter style={{ height: 400, width: 500 }}>
-                <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
-                <SplitterPanel size={80}>Panel 2</SplitterPanel>
-                </Splitter>`}
+                code={`
+                    <Splitter style={{ height: 400, width: 500 }}>
+                        <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
+                        <SplitterPanel size={80}>Panel 2</SplitterPanel>
+                    </Splitter>
+                `}
             >
                 <Grid className="justify-center">
                     <Splitter style={{ height: 400, width: 500 }}>
@@ -34,10 +36,12 @@ export default function InfoSplitter(tab) {
             <Section
                 title="Vertical Splitter"
                 description="Splitter with vertical orientation"
-                code={`<Splitter orientation="vertical" style={{ height: 400, width: 500 }}>
-                <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
-                <SplitterPanel size={80}>Panel 2</SplitterPanel>
-                </Splitter>`}
+                code={`
+                    <Splitter orientation="vertical" style={{ height: 400, width: 500 }}>
+                        <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
+                        <SplitterPanel size={80}>Panel 2</SplitterPanel>
+                    </Splitter>
+                `}
             >
                 <Grid className="justify-center">
                     <Splitter orientation="vertical" style={{ height: 400, width: 500 }}>
@@ -55,20 +59,22 @@ export default function InfoSplitter(tab) {
             <Section
                 title="Nested Panels"
                 description="Splitter inside another splitter"
-                code={`<Splitter style={{ height: 400, width: 500 }}>
-                    <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
-                    <SplitterPanel size={80}>
-                        <Splitter orientation="vertical">
-                        <SplitterPanel size={15}>Panel 2</SplitterPanel>
-                        <SplitterPanel size={85}>
-                            <Splitter>
-                            <SplitterPanel size={20}>Panel 3</SplitterPanel>
-                            <SplitterPanel size={80}>Panel 4</SplitterPanel>
+                code={`
+                    <Splitter style={{ height: 400, width: 500 }}>
+                        <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
+                        <SplitterPanel size={80}>
+                            <Splitter orientation="vertical">
+                            <SplitterPanel size={15}>Panel 2</SplitterPanel>
+                            <SplitterPanel size={85}>
+                                <Splitter>
+                                <SplitterPanel size={20}>Panel 3</SplitterPanel>
+                                <SplitterPanel size={80}>Panel 4</SplitterPanel>
+                                </Splitter>
+                            </SplitterPanel>
                             </Splitter>
                         </SplitterPanel>
-                        </Splitter>
-                    </SplitterPanel>
-                    </Splitter>`}
+                    </Splitter>
+                `}
             >
                 <Grid className="justify-center">
                     <Splitter style={{ height: 400, width: 500 }}>
@@ -100,10 +106,12 @@ export default function InfoSplitter(tab) {
             <Section
                 title="Disabled Resize"
                 description="Splitter with resizing disabled"
-                code={`<Splitter disabled style={{ height: 400, width: 500 }}>
-                <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
-                <SplitterPanel size={80}>Panel 2</SplitterPanel>
-                </Splitter>`}
+                code={`
+                    <Splitter disabled style={{ height: 400, width: 500 }}>
+                        <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
+                        <SplitterPanel size={80}>Panel 2</SplitterPanel>
+                    </Splitter>
+                `}
             >
                 <Grid className="justify-center">
                     <Splitter disabled style={{ height: 400, width: 500 }}>
@@ -121,10 +129,12 @@ export default function InfoSplitter(tab) {
             <Section
                 title="Custom Color"
                 description="Splitter with custom color"
-                code={`<Splitter color="success" style={{ height: 400, width: 500 }}>
-                <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
-                <SplitterPanel size={80}>Panel 2</SplitterPanel>
-                </Splitter>`}
+                code={`
+                    <Splitter color="success" style={{ height: 400, width: 500 }}>
+                        <SplitterPanel size={20} minSize={10}>Panel 1</SplitterPanel>
+                        <SplitterPanel size={80}>Panel 2</SplitterPanel>
+                    </Splitter>
+                `}
             >
                 <Grid className="justify-center">
                     <Splitter color="success" style={{ height: 400, width: 500 }}>

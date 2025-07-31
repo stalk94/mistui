@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button, ButtonProps, CircularProgress } from '@mui/material';
-import { Google, Facebook, GitHub, Telegram, ExitToApp } from '@mui/icons-material';
+import { Button } from '../buttons';
+import { Spinner } from '@/index';
+import { FaGoogle, FaFacebookF, FaTelegramPlane, FaGithub } from "react-icons/fa";
+import { MdOutlineExitToApp } from "react-icons/md";
 
 
 export type TypeOauth = 'google' | 'facebook' | 'github' | 'telegram';
@@ -17,10 +19,10 @@ type SocialAuthButtonsProps = {
 
 
 const ICONS: Record<TypeOauth, React.ReactNode> = {
-    google: <Google />,
-    facebook: <Facebook />,
-    github: <GitHub />,
-    telegram: <Telegram />,
+    google: <FaGoogle />,
+    facebook: <FaFacebookF />,
+    github: <FaGithub />,
+    telegram: <FaTelegramPlane />,
 };
 
 
@@ -44,9 +46,9 @@ export default function SocialAuthButtons({ scheme, loading = false, onClick, }:
                         variant="outlined"
                         color="secondary"
                         startIcon={
-                            loading ? <CircularProgress size={20} color="inherit" /> : icon
+                            loading ? <Spinner /> : icon
                         }
-                        endIcon={<ExitToApp />}
+                        endIcon={<MdOutlineExitToApp />}
                         {...item.button}
                     >
                         { label }

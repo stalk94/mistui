@@ -101,6 +101,11 @@ export type DateInputProps = Omit<BaseProps, 'type'> & {
     onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: string)=> void)
 }
 
+export type PasswordInputProps = Omit<BaseProps, 'type'> & {
+    value?: string
+    onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: string)=> void)
+}
+
 export type FileInputProps = Omit<BaseProps, 'type'> & {
     onChange?: (val: File)=> void
     onError?: (err: string)=> void

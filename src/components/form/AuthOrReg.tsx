@@ -1,7 +1,8 @@
-import React from 'react';
-import { ButtonProps, Divider, Typography } from '@mui/material';
 import OauthForm, { SchemaOauth } from './oauth';
 import RegOrAuthForm, { TypeSchema, Schema, ValidatorCustom } from './auth-reg';
+import Divider from '../utils/divider';
+import { Typography } from '../text';
+import { Button } from '../buttons';
 
 
 export type FormAuthOrRegProps = {
@@ -9,9 +10,7 @@ export type FormAuthOrRegProps = {
     onClickRegistration: (data: Record<string, string | number>)=> void
     onClickOauthButton: (type: TypeSchema)=> void
     schemeAuthForm?: Schema[]
-    propsButton?: ButtonProps & {
-        children: string
-    }
+    propsButton?: typeof Button
     schemeOauth?: SchemaOauth[]
     validatorsAuthForm?: Record<'password' | 'login' | 'email' | 'phone', ValidatorCustom>
 }

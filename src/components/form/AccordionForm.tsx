@@ -102,8 +102,6 @@ export default function Form({ scheme, onChange, onSpecificChange, labelPosition
     return(
         <Accordion
             activeIndexs={useActive()}
-            tabStyle={{ px:0.7, pb:2, border: '1px dotted #8686865b' }}
-            headerStyle={headerStyle}
             items={
                 scheme.map((acform) => ({
                     title: acform.label,

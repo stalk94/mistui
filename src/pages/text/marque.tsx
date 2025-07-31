@@ -2,14 +2,18 @@ import { Section, Grid as ButtonGrid, variantsText } from '../helpers';
 import { colors, colorsCustom, variantsText as variants, textShadows } from '../helpers';
 import { MarqueText } from '@/components/text';
 import TypographyInfo from './typography';
+import { Button } from '@/components/buttons';
 
 
 export default function InfoMarque(tab) {
     return (
         <div className="p-6 space-y-8">
             { tab }
+
             {/* default */}
-            <Section title="base" description=""
+            <Section 
+                title="base" 
+                description=""
                 code={`<MarqueText variant='button'>This converter creates fancy symbols. The explanation starts with unicode; an industry standard which</MarqueText>`}
             >
                 <div className="flex justify-center">
@@ -66,6 +70,31 @@ export default function InfoMarque(tab) {
                     ))}
                 </div>
             </Section>
+
+            {/* not text */}
+            <Section 
+                title="extended" 
+                description="You can use more than just text"
+                code={`
+                    <MarqueText>
+                        <>
+                             /̵͇̿̿/'̿'̿ ̿ ̿̿ ̿̿ ̿̿   🌹  💡  💥 
+                            <Button>click my</Button>
+                        </>
+                    </MarqueText>
+                `}
+            >
+                <div className="flex justify-center">
+                    <div className='max-w-200'>
+                        <MarqueText>
+                            <>
+                                /̵͇̿̿/'̿'̿ ̿ ̿̿ ̿̿ ̿̿   🌹  💡  💥 
+                                <Button>click my</Button>
+                            </>
+                        </MarqueText>
+                    </div>
+                </div>
+            </Section>
         </div>
     );
 }
@@ -73,6 +102,10 @@ export default function InfoMarque(tab) {
 
 InfoMarque.meta = {
     ...TypographyInfo.meta,
+    as: {
+        ...TypographyInfo.meta.as,
+        default: 'div'
+    },
     pxPerSecond: {
         values: ['number'],
         type: 'number',

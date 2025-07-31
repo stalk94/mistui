@@ -41,15 +41,15 @@ const category = {
     base: ['ThemeProvider', 'AlertProvider'],
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
+    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton'],
     inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch', 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu', 'Paginator'],
-    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton'],
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
     page: ['Box', 'Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
     feedback: ['Tooltip', 'Modal', 'Popover', 'Drawer'],
     media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
-    form: [''],
+    form: ['in development'],
 }
 const Bubles = () => (
     <>

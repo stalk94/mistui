@@ -11,8 +11,29 @@ export default function InfoTypography(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
+            
+            <Typography as='div' variant='caption'>
+                Supports a polymorphic as prop, allowing rendering of any HTML element (e.g., p, span, h1, etc.).
+                Uses theme-configured typography variants (variant), applying Tailwind-based classes like body2, h1, subtitle. <br/><br/>
+
+                Allows customizing text styles: <br/>
+                - Color (color) sourced from the theme's color variants <br/>
+                - Font style (fontStyle), e.g., normal or italic <br/>
+                - Font family (fontFamily) <br/>
+                - Font size (fontSize) can be set manually <br/><br/>
+
+                Supports text shadows: <br/>
+                - Predefined shadow styles are configured in the theme and selected via the shadow prop <br/>
+                - Custom shadow color can be controlled via colorShadow <br/><br/>
+
+                Controls letter spacing (tracking) using preset values from the theme or custom inputs<br/>
+                Easily extendable via className(Tailwind, etc.) and inline style prop<br/>
+            </Typography>
+
             {/* default */}
-            <Section title="base" description=""
+            <Section 
+                title="base" 
+                description=""
                 code={`<Typography>'This converter creates fancy symbols. The explanation starts with unicode; an industry standard which'</Typography>`}
             >
                 <div className="flex">
@@ -25,7 +46,7 @@ export default function InfoTypography(tab) {
             {/* variants */}
             <Section
                 title="variants"
-                description=""
+                description="all variants preview"
                 code={variants
                     .map((variant) => `<Typography variant="${variant}">${variant}</Typography>`)
                     .join('\n')
@@ -87,7 +108,7 @@ export default function InfoTypography(tab) {
             {/* shadows */}
             <Section
                 title="shadow"
-                description=""
+                description="example of using different shadow options props"
                 code={textShadows
                     .map(
                         (shadow, i) =>
@@ -138,7 +159,7 @@ export default function InfoTypography(tab) {
             {/* tracking */}
             <Section
                 title="tracings (later spacing)"
-                description=""
+                description="laterSpacing is a typography setting that defines additional spacing between lines of text appearing sequentially (e.g., during animations or progressive rendering). It helps improve readability and the visual flow of textual content"
                 code={trackingVariants
                     .map(
                         (tr, i) =>
@@ -166,6 +187,12 @@ export default function InfoTypography(tab) {
 
 InfoTypography.meta = {
     ...baseMeta,
+    as: {
+        values: ['any html tag name'],
+        type: 'enum',
+        description: 'html tag name (polymorphic)',
+        default: 'p'
+    },
     color: {
         ...baseMeta.color,
         default: 'primary'
@@ -196,5 +223,10 @@ InfoTypography.meta = {
         values: ['string'],
         type: 'string',
         description: 'Text shadow color (e.g., "rgba(0,0,0,0.3)") or color theme variants.',
+    },
+    tracking: {
+        values: ["tighter", "tight", "normal", "wide", "wider", "widest"],
+        type: 'enum',
+        description: 'later Spacing',
     }
 }

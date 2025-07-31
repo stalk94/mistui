@@ -40,11 +40,6 @@ export const baseMeta = {
         default: 'neutral',
         type: 'enum',
         description: 'The current color theme of the component. Defined through the theme context settings.'
-    },
-    'aria-label': {
-        values: ['string'],
-        type: 'string',
-        description: 'Description for screen reader (accessibility)'
     }
 }
 

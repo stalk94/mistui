@@ -178,5 +178,10 @@ InfoButton.meta = {
         type: 'boolean',
         default: 'true',
         description: 'Enable ripple animation effect'
+    },
+    'aria-label': {
+        values: ['string'],
+        type: 'string',
+        description: 'Description for screen reader (accessibility)'
     }
 }

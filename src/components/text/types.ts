@@ -13,7 +13,7 @@ export type BaseTypographyProps = {
     fontFamily?: keyof typeof fontFamilyVariants
     fontSize?: string | number
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    colorShadow?: string
+    colorShadow?: Variants | (string & {})
     tracking?: | 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
     color?: Variants | (string & {})
 }
@@ -41,7 +41,10 @@ export type TypographyComponent = <T extends React.ElementType = 'p'>(
 
 export type LinkProps = BaseTypographyProps & {
     children?: string
+    href?: string
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    isHover?: boolean
+    navigate?: (href: string) => void
 }
 
 export type MarqueeTextProps = LinkProps & {

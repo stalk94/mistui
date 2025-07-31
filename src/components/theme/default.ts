@@ -191,6 +191,9 @@ export function createTheme({
         tabs: {
             borderColor: colord(theme.colors.base)[basis](0.1).toRgbString()
         },
+        bottomNav: {
+            backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString(),
+        },
         appBar: {
             backgroundColor: colord(theme.colors.base)[basis](0.15).toRgbString(),
             borderColor: colord(theme.colors.base)[basis](0.25).toRgbString()

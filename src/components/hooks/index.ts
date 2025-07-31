@@ -18,6 +18,7 @@ export function useClientValidity<T extends HTMLInputElement | HTMLTextAreaEleme
         }
         const onInput = () => {
             setInvalid(!el.validity.valid);
+            //if (validator) validator(el.value);
         }
 
         el.addEventListener('invalid', onInvalid);

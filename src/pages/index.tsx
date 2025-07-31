@@ -171,7 +171,10 @@ export default function Base({ preview }) {
     
 
     return (
-        <main className="flex flex-col h-full w-full">
+        <main 
+            className="flex flex-col h-full w-full"
+            style={{fontFamily: '"Inter", sans-serif'}}
+        >
             { catalog[preview] &&
                 catalog[preview](renderTable(preview))
             }

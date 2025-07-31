@@ -112,7 +112,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
     return (
         <Ripple 
             isEnable={!props.disabled && ripple} 
-            className={`${isRounded ? 'btn-circle' : 'btn-square rounded'}`}
+            className={`${isRounded ? 'btn-circle' : 'btn-square rounded'} ${className ?? ''}`}
         >
             {!props['data-id'] && !selected &&
                 <style>

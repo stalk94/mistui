@@ -122,7 +122,8 @@ export default function TextAreaInput({
                     minHeight: 'calc(0.25rem * 10)',
                     boxShadow: shadows[shadow],
                     ...getStyle,
-                    ...borderVariant
+                    ...borderVariant,
+                    color: (style?.color ?? styles?.input?.fontColor),
                 }}
                 className={cs(`
                     textarea

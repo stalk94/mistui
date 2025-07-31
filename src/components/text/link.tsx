@@ -8,21 +8,33 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
     {
         style = {},
         children,
+        href = '#',
         size,
         color,
         className,
+        isHover,
+        navigate,
         ...props
     },
     ref
 ) {
     const { variants } = useTheme();
 
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (navigate) {
+            e.preventDefault();
+            navigate(href);
+        }
+        if (props?.onClick) props.onClick(e);
+    }
 
+    
     return (
         <Typography
             as='a'
             ref={ref}
-            className={`hover:opacity-70 link ${className ?? ''}`}
+            className={`hover:opacity-70 link ${isHover ? 'link-hover' : ''} ${className ?? ''}`}
+            onClick={handleClick}
             style={{
                 color: variants[color] ?? color,
                 ...style
