@@ -1,14 +1,12 @@
-import { ButtonProps } from '@mui/material';
 import { SchemaOauth } from './oauth';
 import { TypeSchema, Schema, ValidatorCustom } from './auth-reg';
+import { Button } from '../buttons';
 export type FormAuthOrRegProps = {
     loading: boolean;
     onClickRegistration: (data: Record<string, string | number>) => void;
     onClickOauthButton: (type: TypeSchema) => void;
     schemeAuthForm?: Schema[];
-    propsButton?: ButtonProps & {
-        children: string;
-    };
+    propsButton?: typeof Button;
     schemeOauth?: SchemaOauth[];
     validatorsAuthForm?: Record<'password' | 'login' | 'email' | 'phone', ValidatorCustom>;
 };

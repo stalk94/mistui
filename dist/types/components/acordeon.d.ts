@@ -2,9 +2,9 @@ import type { Variants } from './theme/default';
 export type AccordionProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick'> & {
     items: {
         /** label аккордеона */
-        title: React.ReactElement | string;
+        title: React.ReactNode;
         /** тело аккордеона */
-        content: React.ReactElement | string;
+        content: React.ReactNode;
     }[];
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost';

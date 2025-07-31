@@ -1,6 +1,6 @@
 {
   "name": "mistui-kit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",

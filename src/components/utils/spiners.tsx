@@ -17,7 +17,7 @@ const Spiner = forwardRef<HTMLSpanElement, SpinerProps>(function Spiner(
     },
     ref
 ) {
-    const { shadows, variants, sizes, autosizes } = useTheme();
+    const { variants, sizes, autosizes } = useTheme();
     const curSize = sizes.text[size] ? `loading-${sizes.text[size]}` : autosizes.text;
     const curColor = (variants[color] ?? color) ?? style?.color;
     

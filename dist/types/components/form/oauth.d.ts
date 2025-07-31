@@ -1,4 +1,3 @@
-import { ButtonProps } from '@mui/material';
 export type TypeOauth = 'google' | 'facebook' | 'github' | 'telegram';
 export type SchemaOauth = {
     type: TypeOauth;

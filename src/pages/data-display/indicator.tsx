@@ -25,7 +25,7 @@ export default function InfoIndicator(tab) {
                 `}
             >
                 <div className="flex justify-center pt-1">
-                    <Indicator content={<Badge variant='contained' color='info'>new</Badge>}>
+                    <Indicator content={<Badge variant='contained' color='info'>1</Badge>}>
                         <Avatar
                             size="lg"
                             src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
@@ -118,9 +118,15 @@ export default function InfoIndicator(tab) {
             {/* multiple indicators */}
             <Section
                 title="Multiple"
-                description="Many indicators per item"
+                description="Multiple indicators per element. To do this, simply pass an array of objects with parameters for each indicator (as if they were props)."
                 code={`
-                    <Indicator content={[{ position: 'top-end', align: 'start', content: '●' }, ...]}>
+                    <Indicator 
+                        content={[
+                            { position: 'top', align: 'start', content: '●' }, 
+                            { position: 'top', align: 'center', content: '●' } 
+                            ...
+                        ]}
+                     >
                         <Avatar />
                     </Indicator>
                 `}

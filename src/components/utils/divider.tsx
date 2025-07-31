@@ -6,7 +6,7 @@ import { useTheme } from '../theme';
 
 
 
-
+//  ${orientation === 'vertical' ? 'vertical-text' : ''}
 export default function Divider({ 
     children,
     size = 'xs', 
@@ -59,7 +59,14 @@ export default function Divider({
                 }}
             >
                 {(typeof children === 'string') &&
-                    <span className='text-xs sm:text-xs text-neutral-600 tracking-normal'>
+                    <span 
+                        className={cs(`
+                            text-xs 
+                            sm:text-xs 
+                            text-neutral-600 
+                            tracking-normal 
+                        `)}
+                    >
                         { children }
                     </span>
                 }

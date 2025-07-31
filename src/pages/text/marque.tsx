@@ -73,6 +73,7 @@ export default function InfoMarque(tab) {
 
             {/* not text */}
             <Section 
+                dot='hot'
                 title="extended" 
                 description="You can use more than just text"
                 code={`

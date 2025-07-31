@@ -1,4 +1,3 @@
-import { ButtonProps, SxProps } from '@mui/material';
 export type TypeSchema = 'login' | 'password' | 'email' | 'phone' | 'confirm';
 export type ValidatorCustom = (value: any) => {
     result: boolean;

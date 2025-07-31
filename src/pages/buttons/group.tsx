@@ -1,27 +1,64 @@
 import { GroupButton } from '@/components/buttons';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
-import { HomeIcon, DocumentIcon } from '@heroicons/react/24/solid';
+import { HomeIcon, DocumentIcon, FilmIcon } from '@heroicons/react/24/solid';
 import ButtonInfo from './button';
 import { Divdder, Typography } from '@/index';
 import { orientationMeta } from '../meta';
+import { useEffect, useState } from 'react';
+
 
 
 export default function InfoGroupButton(tab) {
+    
+
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
             
             {/* default */}
             <Section title="base" 
-                description="" 
-                code={`<GroupButton value='playground' items={['documentation', 'playground', 'any']} size='sm'/>`}
+                description="the values are simple strings in this example" 
+                code={`
+                    <GroupButton 
+                        value='playground' 
+                        onChange={console.log}
+                        items={['documentation', 'playground', 'any']} 
+                        size='sm'
+                    />
+                `}
             >
                 <div className="flex justify-center">
                     <GroupButton 
                         size='sm' 
                         variant='contained'
                         value='playground'
+                        onChange={console.log}
+                        items={['documentation', 'playground', 'any']}
+                    />
+                </div>
+            </Section>
+
+            {/* orientation */}
+            <Section title="vertical" 
+                description="vertiacal orientation" 
+                code={`
+                    <GroupButton 
+                        value='playground' 
+                        onChange={console.log}
+                        orientation='vertical'
+                        items={['documentation', 'playground', 'any']} 
+                        size='sm'
+                    />
+                `}
+            >
+                <div className="flex justify-center">
+                    <GroupButton 
+                        size='sm' 
+                        variant='contained'
+                        value='playground'
+                        orientation='vertical'
+                        onChange={console.log}
                         items={['documentation', 'playground', 'any']}
                     />
                 </div>
@@ -37,11 +74,10 @@ export default function InfoGroupButton(tab) {
                 }
             >
                 <Grid>
-                    {variants.map((variant) => (
+                    {variants.map((variant) => variant !== 'ghost' && (
                         <div key={variant} className="flex-col">
                             <Divdder
                                 className='py-4'
-                                position='end'
                             >
                                 <Typography color='#a3a3a2' variant='caption'>
                                     { variant }
@@ -90,10 +126,10 @@ export default function InfoGroupButton(tab) {
                 </Grid>
             </Section>
 
-            {/* select */}
+            {/* colors */}
             <Section
-                title="select"
-                description=""
+                title="colors"
+                description="or your color"
                 code={colors
                     .map((color) => `<GroupButton size="sm" color="${color}" shadow="sm" value={'any'} items={['documentation', 'playground', 'any']}/>`)
                     .join('\n')}
@@ -118,6 +154,42 @@ export default function InfoGroupButton(tab) {
                         </div>
                     ))}
                 </Grid>
+            </Section>
+
+            {/* icon */}
+            <Section 
+                dot='⚡'
+                title="icon" 
+                description={`
+                    This component is smart enough to manage its own internal state, while also allowing controlled usage. The passed value acts like a default (not locked), 
+                    so you don't need to manually sync every change. It supports hybrid values — either a primitive (string/number) or an object with an 'id' — and handles comparison automatically
+                `}
+                code={`
+                    <GroupButton 
+                        size='sm' 
+                        variant='contained'
+                        value={{id: 'film'}}
+                        onChange={console.log}
+                        items={[
+                            { id: 'home', label: <HomeIcon className='h-4'/> }, 
+                            { id: 'doc', label: <DocumentIcon className='h-4'/> },
+                            { id: 'film', label: <FilmIcon className='h-4'/> }
+                        ]}
+                    />
+                `}
+            >
+                <div className="flex justify-center">
+                    <GroupButton
+                        size='sm'
+                        variant='contained'
+                        value={{id: 'film'}}
+                        items={[
+                            { id: 'home', label: <HomeIcon className='h-4' /> },
+                            { id: 'doc', label: <DocumentIcon className='h-4' /> },
+                            { id: 'film', label: <FilmIcon className='h-4' /> }
+                        ]}
+                    />
+                </div>
             </Section>
         </div>
     );

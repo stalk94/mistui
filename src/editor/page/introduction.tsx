@@ -33,7 +33,7 @@ export default function Intro() {
                     </>
                 }
             >
-                These class names are a high-level abstraction of Tailwind CSS utility classes.
+                
             </Segment>
             
             <Segment

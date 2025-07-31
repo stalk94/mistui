@@ -25,7 +25,9 @@ export type ButtonProps = Props & {
 };
 export type ToggleButtonGroupProps = Omit<ButtonProps, 'children'> & {
     items: string[] | ItemSelect[];
-    value?: string | number;
+    value?: string | number | ItemSelect | {
+        id: string | number;
+    };
     onChange?: React.Dispatch<React.SetStateAction<string | number | ItemSelect>> | ((val: string | number | ItemSelect) => void);
     onlyId?: boolean;
     /** style прокидывается на саму обертку (section) */

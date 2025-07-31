@@ -55,9 +55,8 @@ export default function InfoGroupButtonFiltre(tab) {
                         <div key={variant} className="flex-col justify-center">
                             <Divdder
                                 className='py-4'
-                                position='end'
                             >
-                                <Typography color='#daf166' variant='caption'>
+                                <Typography color='#a3a3a2' variant='caption'>
                                     { variant }
                                 </Typography>
                             </Divdder>
@@ -86,9 +85,8 @@ export default function InfoGroupButtonFiltre(tab) {
                         <div key={size} className="flex-col justify-center">
                             <Divdder
                                 className='py-4'
-                                position='end'
                             >
-                                <Typography color='#daf166' variant='caption'>
+                                <Typography color='#a3a3a2' variant='caption'>
                                     { size }
                                 </Typography>
                             </Divdder>
@@ -120,7 +118,6 @@ export default function InfoGroupButtonFiltre(tab) {
                         <div key={color} className='flex-col justify-center'>
                             <Divdder
                                 className='py-4'
-                                position='end'
                             >
                                 <Typography color={color} variant='caption'>
                                     { color }

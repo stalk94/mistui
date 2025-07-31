@@ -4,7 +4,7 @@ import { useTheme } from '../theme';
 import { cs } from '../hooks/cs';
 
 
-// ! наследование варрианта и цвета
+// ! наследование варрианта и цвета + подгонка к округлым
 const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(
     {
         style = {},

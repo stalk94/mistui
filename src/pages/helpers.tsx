@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, GroupButton, IconButton } from '@/components/buttons';
+import { FaFireAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Typography, Link } from '@/components/text';
 import Badge from '@/components/utils/badge';
@@ -76,13 +77,15 @@ export function Section({
     description,
     children,
     code,
+    dot,
     className
 }: {
     title: string;
     description: string;
     children: React.ReactNode;
     code?: string;
-    className?: string
+    className?: string;
+    dot?: React.ReactNode | 'hot'
 }) {
     const [descr, setDescr] = useState(description);
     const [view, setView] = useState<'view' | 'code'>('view');
@@ -103,7 +106,7 @@ export function Section({
             <div className="flex items-center justify-between">
                 <div className='flex items-center'>
                     <button
-                        children='#'
+                        children={dot==='hot' ? <FaFireAlt /> : (dot ?? '#')}
                         className='mr-1 btn btn-ghost p-2'
                     />
                     <Typography variant=''>{`${title.charAt(0).toUpperCase() + title.slice(1)}`}</Typography>

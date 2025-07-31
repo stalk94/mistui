@@ -33,12 +33,9 @@ export default function InfoSpiner(tab) {
             <Section
                 title="Variants"
                 description=""
-                code={`
-                    <Spiner
-                        color='success'
-                        size='sm'
-                    />
-                `}
+                 code={spinerVariants
+                    .map((v) => `<Spiner size="sm" variant="${v}"/>`)
+                    .join('\n')}
             >
                 <div className="flex justify-center">
                     {spinerVariants.map((v, i) => (
@@ -55,9 +52,9 @@ export default function InfoSpiner(tab) {
             {/* colors */}
             <Section
                 title="System colors"
-                description="Predefined color palette"
+                description="Predefined color palette (or your color)"
                 code={colors
-                    .map((color) => `<Progress value={30} size="sm" color="${color}" shadow="sm"/>`)
+                    .map((color) => `<Spiner size="sm" color="${color}"/>`)
                     .join('\n')}
             >
                 <Grid>
@@ -70,12 +67,38 @@ export default function InfoSpiner(tab) {
                     ))}
                 </Grid>
             </Section>
+
+            {/* sizes */}
+            <Section
+                title="sizes"
+                description=""
+                code={sizes
+                    .map((s) => `<Spiner size="${s}"/>`)
+                    .join('\n')}
+            >
+                <Grid>
+                    {sizes.map((s, i) => (
+                        <div key={s} className='flex flex-col'>
+                            <div>{s}</div>
+                            <Spiner
+                                size={s}
+                            />
+                        </div>
+                    ))}
+                </Grid>
+            </Section>
         </div>
     );
 }
 
 
-
+const { children, shadow, ...rest} = baseMeta;
 InfoSpiner.meta = {
-    ...baseMeta,
+    ...rest,
+    variant: {
+        values: spinerVariants,
+        type: 'enum',
+        default: 'spinner',
+        description: 'Controls the visual style',
+    }
 }
