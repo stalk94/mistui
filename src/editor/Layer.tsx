@@ -69,8 +69,8 @@ export default function Layer({
             }
             else layersStore[name].set({
                 ...boirlplate,
-                width: 100, 
-                height: 100,
+                width: 80, 
+                height: 60,
                 x: 0,
                 y: 0
             });

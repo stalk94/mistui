@@ -7,8 +7,9 @@ export default function RippleWrapper({
     className = '',
     isEnable = false,
     color = 'rgba(255, 255, 255, 0.4)',
+    fullWidth,
     ...rest
-}: React.HTMLAttributes<HTMLDivElement> & { isEnable?: boolean }) {
+}: React.HTMLAttributes<HTMLDivElement> & { isEnable?: boolean, fullWidth?: boolean }) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const createRipple = (event: MouseEvent<HTMLDivElement>) => {
@@ -48,7 +49,14 @@ export default function RippleWrapper({
         <div
             ref={containerRef}
             onClick={createRipple}
-            className={`relative inline-block overflow-hidden h-fit w-fit ${className}`}
+            className={`
+                relative 
+                overflow-hidden 
+                inline-flex
+                h-fit 
+                ${fullWidth ? 'w-full' : 'w-fit'} 
+                ${className}
+            `}
             { ...rest }
         >
             { children }

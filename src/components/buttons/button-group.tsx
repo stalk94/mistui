@@ -24,6 +24,7 @@ export default function ToggleButtonGroup({
 }: ToggleButtonGroupProps) {
     const { plugins, variants } = useTheme();
     const uid = useUids('button-group');
+    const isHorizontal = orientation === 'horizontal';
     const [select, setSelect] = useCache(value);
 
 
@@ -91,7 +92,7 @@ export default function ToggleButtonGroup({
                     join 
                     flex-wrap
                     ${fullWidth ? 'w-full' : ''}
-                    gap-[2px]
+                    gap-[3px]
                     ${orientation === 'vertical' ? 'join-vertical' : ''}
                 `)}
             >
@@ -101,7 +102,19 @@ export default function ToggleButtonGroup({
                         key={opt?.id ?? index}
                         size={size}
                         color={color}
-                        className={`join-item flex-auto`}
+                        className={cs(`
+                            join-item 
+                            flex-auto 
+                            flex-grow-0 
+                            flex-shrink-0
+                            ${isHorizontal && 'rounded-none'}
+                            ${isHorizontal && index === 0 && "rounded-l-md"}
+                            ${isHorizontal && index === items.length - 1 && "rounded-r-md"}
+                            ${isHorizontal && index !== 0 && index !== items.length - 1 && "rounded-none"}
+                            ${!isHorizontal && "w-full rounded-none"}
+                            ${!isHorizontal && index === 0 && "rounded-t-md"}
+                            ${!isHorizontal && index === items.length - 1 && "rounded-b-md"}
+                        `)}
                         selected={isSelected(opt)}
                         variant={variant}
                         onClick={() => handleChange(opt)}

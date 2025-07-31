@@ -119,6 +119,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         <Ripple 
             isEnable={!props.disabled && ripple} 
             color={getColorHover('border')}
+            fullWidth={fullWidth}
             className={`rounded text-shadow-none whitespace-nowrap ${className ?? ''}`}
         >
             {(!props['data-id'] && !selected) &&
@@ -142,7 +143,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     opacity: props.disabled && 0.3,
                     ...getStyle,
                     ...getGradient,
-                    color: props?.disabled ? '#d1d0d0' : getStyle.color,
+                    color: props?.disabled ? '#d1d0d0' : getStyle.color
                 }}
                 className={cs(`
                     btn 

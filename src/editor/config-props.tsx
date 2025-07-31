@@ -5,9 +5,10 @@ import { createStore } from 'statekit-lite';
 import { Button, IconButton } from '../components/buttons';
 import Drn from './helpers/drn';
 import { COUNTRY_CODES } from '@/components/utils/flag';
+import { spinerVariants, variantsText } from '@/pages/meta';
 
 
-const typographyVariants = [`h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `subtitle1`, `subtitle2`, `body1`, `body2`, `caption`, `overline`, `button`];
+
 const styleText = {
     fontWeight: {
         type: 'groupButton',
@@ -104,7 +105,8 @@ const base = {
     },
     shadow: {
         type: 'groupButton',
-        items: ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+        items: ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+        value: 'none'
     },
     disabled: {
         type: 'switch',
@@ -116,15 +118,25 @@ const base = {
 const typography = {
     variant: {
         type: 'select',
-        items: typographyVariants
+        items: variantsText,
+        value: 'body2'
+    },
+    shadow: {
+        type: 'groupButton',
+        items: ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+        value: 'none'
     },
     fontStyle: {
         type: 'groupButton',
-        items: ["normal", "italic"]
+        items: ['none', "normal", "italic"],
+        value: 'none'
     },
     color: {
         type: 'groupButton',
         items: ['neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error']
+    },
+    colorCustom: {
+        type: 'color'
     },
     style: styleText
 }
@@ -292,6 +304,30 @@ const CONFIG = {
     Table: {
         ...base,
     },
+    Spinner: {
+        ...base,
+        variant: {
+            type: 'groupButton',
+            value: 'spinner',
+            items: spinerVariants
+        }
+    },
+    Progress: {
+        ...base,
+        value: {
+            type: 'slider',
+            min: 0,
+            max: 100
+        }
+    },
+    RadialProgress: {
+        ...base,
+        value: {
+            type: 'slider',
+            min: 0,
+            max: 100
+        }
+    },
 
     // feedback
     Tooltip: {
@@ -312,11 +348,13 @@ const CONFIG = {
         ...base,
         variant: {
             type: 'groupButton',
-            items: ["dotted", "dashed"]
+            items: ["solid", "dotted", "dashed"],
+            variant: 'solid'
         },
         position: {
             type: 'groupButton',
-            items: ['start', 'end']
+            items: ['center', 'start', 'end'],
+            value: 'center'
         },
         orientation: {
             type: 'groupButton',

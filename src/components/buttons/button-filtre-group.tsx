@@ -10,6 +10,7 @@ import { cs } from '../hooks/cs';
 import { colord } from 'colord';
 
 
+// ! reset button style
 export default function ToggleButtonFiltreGroup({
     items,
     value,
@@ -90,6 +91,7 @@ export default function ToggleButtonFiltreGroup({
                     ${fullWidth ? 'w-full' : ''}
                 `}
             >
+                {/* select button */}
                 { select &&
                     <input
                         className={cs(`

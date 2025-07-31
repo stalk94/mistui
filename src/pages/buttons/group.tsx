@@ -5,7 +5,6 @@ import { HomeIcon, DocumentIcon, FilmIcon } from '@heroicons/react/24/solid';
 import ButtonInfo from './button';
 import { Divdder, Typography } from '@/index';
 import { orientationMeta } from '../meta';
-import { useEffect, useState } from 'react';
 
 
 
@@ -21,9 +20,9 @@ export default function InfoGroupButton(tab) {
                 description="the values are simple strings in this example" 
                 code={`
                     <GroupButton 
-                        value='playground' 
+                        value='play' 
                         onChange={console.log}
-                        items={['documentation', 'playground', 'any']} 
+                        items={['doc', 'play', 'any']} 
                         size='sm'
                     />
                 `}
@@ -32,9 +31,9 @@ export default function InfoGroupButton(tab) {
                     <GroupButton 
                         size='sm' 
                         variant='contained'
-                        value='playground'
+                        value='play'
                         onChange={console.log}
-                        items={['documentation', 'playground', 'any']}
+                        items={['doc', 'play', 'any']}
                     />
                 </div>
             </Section>
@@ -44,10 +43,10 @@ export default function InfoGroupButton(tab) {
                 description="vertiacal orientation" 
                 code={`
                     <GroupButton 
-                        value='playground' 
+                        value='play' 
                         onChange={console.log}
                         orientation='vertical'
-                        items={['documentation', 'playground', 'any']} 
+                        items={['doc', 'play', 'any']} 
                         size='sm'
                     />
                 `}
@@ -56,10 +55,10 @@ export default function InfoGroupButton(tab) {
                     <GroupButton 
                         size='sm' 
                         variant='contained'
-                        value='playground'
+                        value='play'
                         orientation='vertical'
                         onChange={console.log}
-                        items={['documentation', 'playground', 'any']}
+                        items={['docn', 'play', 'any']}
                     />
                 </div>
             </Section>
@@ -69,13 +68,13 @@ export default function InfoGroupButton(tab) {
                 title="variants"
                 description=""
                 code={variants
-                    .map((variant) => `<GroupButton size="sm" variant="${variant}" items={['doc', 'play', 'any']}/>`)
+                    .map((variant) => `<GroupButton size="sm" variant="${variant}" items={['doc', 'play', 'game', 'any']}/>`)
                     .join('\n')
                 }
             >
                 <Grid>
                     {variants.map((variant) => variant !== 'ghost' && (
-                        <div key={variant} className="flex-col">
+                        <div key={variant} className="flex-col justify-center">
                             <Divdder
                                 className='py-4'
                             >
@@ -85,11 +84,11 @@ export default function InfoGroupButton(tab) {
                             </Divdder>
                             <GroupButton 
                                 size='sm' 
-                                value='playground'
+                                value='play'
                                 color='secondary'
                                 variant={variant}
-                                className='w-120 m-auto'
-                                items={['documentation', 'playground', 'any']}
+                                className='m-auto'
+                                items={['doc', 'play', 'game', 'any']}
                             />
                         </div>
                     ))}
@@ -131,7 +130,7 @@ export default function InfoGroupButton(tab) {
                 title="colors"
                 description="or your color"
                 code={colors
-                    .map((color) => `<GroupButton size="sm" color="${color}" shadow="sm" value={'any'} items={['documentation', 'playground', 'any']}/>`)
+                    .map((color) => `<GroupButton size="sm" color="${color}" shadow="sm" value={'any'} items={['doc', 'play', 'any']}/>`)
                     .join('\n')}
             >
                 <Grid>
@@ -148,8 +147,8 @@ export default function InfoGroupButton(tab) {
                                 size="sm" 
                                 color={color} 
                                 shadow="sm"
-                                value={['documentation', 'playground', 'any'][Math.floor(Math.random() * 3)]}
-                                items={['documentation', 'playground', 'any']}
+                                value={['doc', 'play', 'any'][Math.floor(Math.random() * 3)]}
+                                items={['doc', 'play', 'any']}
                             />
                         </div>
                     ))}

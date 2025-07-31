@@ -14,13 +14,13 @@ export default function InfoGroupButtonFiltre(tab) {
             <Section 
                 title="base" 
                 description="" 
-                code={`<GroupButtonFiltre variant='contained' size='sm' items={['documentation', 'playground', 'any']} />`}
+                code={`<GroupButtonFiltre variant='contained' size='sm' items={['doc', 'play', 'any']} />`}
             >
                 <div className="flex justify-center">
                     <GroupButtonFiltre 
                         size='sm' 
                         variant='contained'
-                        items={['documentation', 'playground', 'any']}
+                        items={['doc', 'play', 'any']}
                     />
                 </div>
             </Section>
@@ -29,14 +29,14 @@ export default function InfoGroupButtonFiltre(tab) {
             <Section 
                 title="selected" 
                 description="selected current value" 
-                code={`<GroupButtonFiltre size='sm' variant='contained' value='playground' items={['documentation', 'playground', 'any']} />`}
+                code={`<GroupButtonFiltre size='sm' variant='contained' value='play' items={['doc', 'play', 'any']} />`}
             >
                 <div className="flex justify-center">
                     <GroupButtonFiltre 
                         size='sm' 
                         variant='contained'
-                        value='playground'
-                        items={['documentation', 'playground', 'any']}
+                        value='play'
+                        items={['doc', 'play', 'any']}
                     />
                 </div>
             </Section>
@@ -50,7 +50,7 @@ export default function InfoGroupButtonFiltre(tab) {
                     .join('\n')
                 }
             >
-                <Grid className='flex flex-col'>
+                <Grid>
                     {variants.map((variant) => (
                         <div key={variant} className="flex-col justify-center">
                             <Divdder
@@ -62,10 +62,9 @@ export default function InfoGroupButtonFiltre(tab) {
                             </Divdder>
                             <GroupButtonFiltre 
                                 size='sm' 
-                                value='playground'
                                 variant={variant}
-                                className='w-120 m-auto'
-                                items={['documentation', 'playground', 'any']}
+                                className='m-auto'
+                                items={['doc', 'play', 'any']}
                             />
                         </div>
                     ))}
@@ -80,7 +79,7 @@ export default function InfoGroupButtonFiltre(tab) {
                     .map((size) => `<GroupButtonFiltre size="${size}" shadow='sm' color='secondary' variant='dash' value='play' size="${size}" shadow="sm" items={['doc', 'play', 'any']} />`)
                     .join('\n')}
             >
-                <Grid className='flex-col justify-center'>
+                <Grid>
                     {sizes.map((size) => (
                         <div key={size} className="flex-col justify-center">
                             <Divdder
@@ -95,8 +94,7 @@ export default function InfoGroupButtonFiltre(tab) {
                                 key={size}
                                 color='secondary'
                                 variant='dash'
-                                value='play'
-                                className='w-120 m-auto'
+                                className='m-auto'
                                 items={['doc', 'play', 'any']}
                             />
                         </div>
@@ -113,7 +111,7 @@ export default function InfoGroupButtonFiltre(tab) {
                     .map((color) => `<GroupButtonFiltre size="sm" color="${color}" shadow="sm" items={['docu', 'play', 'any']} />`)
                     .join('\n')}
             >
-                <Grid className='flex-col'>
+                <Grid>
                     {colors.map((color) => (
                         <div key={color} className='flex-col justify-center'>
                             <Divdder
@@ -127,8 +125,7 @@ export default function InfoGroupButtonFiltre(tab) {
                                 size="sm" 
                                 key={color} 
                                 color={color} 
-                                className='w-120 m-auto'
-                                value={['doc', 'play', 'any'][Math.floor(Math.random() * 3)]}
+                                className='m-auto'
                                 items={['doc', 'play', 'any']}
                             />
                         </div>

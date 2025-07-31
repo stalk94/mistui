@@ -48,6 +48,17 @@ export default function InfoButton(tab) {
                 </ButtonGrid>
             </Section>
 
+            {/* full width */}
+            <Section 
+                title="Button block" 
+                description="full width" 
+                code={`<Button fullWidth size='sm'>full</Button>`}
+            >
+                <div className="flex justify-center">
+                    <Button fullWidth size='sm'>full</Button>
+                </div>
+            </Section>
+
             <Section
                 title="colors"
                 description="system theme color"
@@ -184,6 +195,12 @@ InfoButton.meta = {
         values: ['boolean'],
         type: 'boolean',
         description: 'Displays the component as selected.'
+    },
+    fullWidth: {
+        values: ['boolean'],
+        type: 'boolean',
+        default: 'false',
+        description: 'full width'
     },
     disabled: {
         values: ['boolean'],
