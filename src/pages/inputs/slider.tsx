@@ -12,8 +12,8 @@ export default function InfoSlider(tab) {
             {/* base */}
             <Section
                 className="overflow-visible"
-                title="Slider"
-                description="Basic slider component"
+                title="basic"
+                description="Basic slider with form"
                 code={`<SliderInput />`}
             >
                 <div className="flex justify-center mt-2 overflow-visible">
@@ -115,5 +115,23 @@ export default function InfoSlider(tab) {
 
 
 InfoSlider.meta = {
-    ...inputsMeta
+    ...inputsMeta,
+    min: {
+        values: ['number'],
+        default: 0,
+        type: 'number',
+        description: 'min value slider'
+    },
+    max: {
+        values: ['number'],
+        default: 100,
+        type: 'number',
+        description: 'max value slider'
+    },
+    step: {
+        values: ['number'],
+        default: 1,
+        type: 'number',
+        description: 'step change value slider'
+    },
 }

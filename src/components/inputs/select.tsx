@@ -4,12 +4,12 @@ import DropMenu from '../menu/drop-menu';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { Popover } from '../helpers';
 import { cs } from '../hooks/cs';
 
 
-//! color placeholder, text, size popover
+//! color placeholder, text
 export default function Select({
     onChange,
     placeholder,
@@ -56,6 +56,19 @@ export default function Select({
         setOpen(false);
         onChange?.(value);
     }
+    useEffect(() => {
+        if (value === null) return;
+
+        const isPrimitive = (v: any) => typeof v !== 'object' || v === null;
+        const getId = (v: any) => (isPrimitive(v) ? v : v?.id);
+
+        const valueId = getId(value);
+        const selectId = getId(input);
+
+        if (valueId !== selectId) {
+            setInput(value);
+        }
+    }, [value]);
 
     
     return (

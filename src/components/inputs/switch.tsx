@@ -3,9 +3,8 @@ import * as Switch  from "@radix-ui/react-switch";
 import { FaCheck } from "react-icons/fa";
 import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
-import { useCache } from '../hooks';
 import { cs } from '../hooks/cs';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 ///////////////////////////////////////////////////////////////////////////
 const sizeClass = {
@@ -60,7 +59,7 @@ export default function SwitchBox({
     ...props 
 }: SwitchBoxInputProps) {
     const { styles, variants, plugins, shadows } = useTheme();
-    const [chek, setChek] = useCache(value);
+    const [chek, setChek] = useState(value);
     const { backgroundColor, borderColor, ...styleRest } = style;
     
 

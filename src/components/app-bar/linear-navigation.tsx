@@ -80,7 +80,7 @@ export default function LinearNavigationItems({
                         : (
                             <Button 
                                 size="md"
-                                className="px-2"
+                                className="px-1"
                                 variant="ghost"
                                 onClick={() => item.comand?.(item)}
                             >

@@ -27,6 +27,10 @@ const StyleCache = () => {
     return (
         <style className='__styles__'>
             {cs(`
+                html {
+                    font-size: 16px;
+                }
+                
                 .input-focus {
                     outline-color: ${styles?.input?.borderColor};
 	                transition: outline-color 0.8s ease, border-color 0.6s ease;

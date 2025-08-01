@@ -1,9 +1,8 @@
-import { Fragment, useMemo, useRef } from 'react';
+import { Fragment, useMemo, useRef, useState, useEffect } from 'react';
 import type { SelectInputProps } from './type';
 import { FormWrapper } from './atomize';
 import { RgbaColorPicker, RgbaColor } from 'react-colorful';
 import { rgbaToString, stringToRgba } from '../hooks/helpers';
-import { useCache, useClickOutside } from '../hooks';
 import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
 import stylesPicker from './styles/global.module.css';
@@ -66,6 +65,7 @@ export default function SelectColor({
     items, 
     size, 
     value,
+    openPicker,
     required,
     style,
     color = 'neutral',
@@ -75,8 +75,8 @@ export default function SelectColor({
     const ref = useRef<HTMLDivElement>(null);
     const { styles, variants, plugins } = useTheme();
     const uid = useUids('color');
-    const [input, setInput] = useCache(value);
-    const [open, setOpen] = useCache(false);
+    const [input, setInput] = useState(value);
+    const [open, setOpen] = useState(false);
 
 
     const debouncedOnChange = useDebounced((val: string) => {
@@ -113,6 +113,14 @@ export default function SelectColor({
 
         return colorVarint;
     }, [color, style]);
+    useEffect(() => {
+        if (value === undefined) return;
+        if (value !== input) setInput(value);
+    }, [value]);
+    useEffect(() => {
+        if (openPicker === undefined) return;
+        if (openPicker !== open) setOpen(openPicker);
+    }, [openPicker]);
 
 
     return (

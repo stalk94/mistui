@@ -132,7 +132,7 @@ export default function FileInput({
                             style={{ color: colorPlaceholder }} 
                             className='text-neutral-500'
                          >
-                            { placeholder ?? 'Загрузить файл' }
+                            { placeholder ?? 'load file' }
                          </span>
                      )
                     : <>

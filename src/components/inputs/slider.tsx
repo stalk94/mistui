@@ -6,15 +6,6 @@ import { cs } from '../hooks/cs';
 import { useMemo, useRef } from 'react';
 
 
-const sizeThumb = {
-    xs: 'w-4 h-2',
-    sm: 'w-4 h-3',
-    md: 'w-4 h-3',
-    lg: 'w-6 h-4',
-    xl: 'w-6 h-4',
-    auto: 'w-4 h-3 sm:w-4 sm:h-3 md:w-4 md:h-3 lg:w-6 lg:h-4 xl:w-6 xl:h-4'
-}
-
 
 // ! tooltip style
 export default function SliderInput({
@@ -25,17 +16,17 @@ export default function SliderInput({
     size,
     color = 'secondary',
     value,
-    min,
-    max,
-    step,
+    min = 0,
+    max = 100,
+    step = 1,
     ...props
 }: SliderInputProps) {
     const ref = useRef<HTMLSpanElement>(null);
-    const { styles, variants, plugins } = useTheme();
+    const { styles, variants, sizes, autosizes, plugins } = useTheme();
     const isValid = value !== undefined && (typeof value === 'number' && !isNaN(value));
     const numericValue = Array.isArray(value) ? value.join(',') : value;
     const sliderKey = `${numericValue}`; 
- 
+    
 
     const useChange = (newValue: number[], clb?: (v: number | number[]) => void) => {
         if (ref.current) ref.current.dataset.tip = `${newValue[0]}`;
@@ -112,9 +103,9 @@ export default function SliderInput({
                 defaultValue={isValid ? (Array.isArray(value) ? value : [value]) : [0]}
                 onValueChange={(v) => useChange(v, onChange)}
                 onValueCommit={(v) => useChange(v, onChangeEnd)}
-                max={max ?? 100}
-                min={min ?? 0}
-                step={step ?? 1}
+                max={max}
+                min={min}
+                step={step}
                 className={cs(`
                     flex
                     relative 
@@ -170,7 +161,7 @@ export default function SliderInput({
                         border-gray-400 
                         rounded-full 
                         shadow 
-                        ${sizeThumb[size] ?? sizeThumb.auto}
+                        ${sizes.thumb[size] ?? autosizes.thumb}
                     `)}
                 />
             </Slider.Root>

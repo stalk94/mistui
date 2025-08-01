@@ -1,5 +1,5 @@
 import { FaRegCalendarAlt } from "react-icons/fa";
-import Base from './base';
+import BaseInput from './base';
 import { IconButton } from '../buttons';
 import { useRef } from 'react';
 import type { DateInputProps } from './type';
@@ -19,7 +19,7 @@ export default function Date({
 
 
     return(
-        <Base
+        <BaseInput
             ref={ref}
             type='date'
             size={size}

@@ -11,7 +11,8 @@ export default function InfoSelect(tab) {
             <Section
                 title="base"
                 description=""
-                code={`<ColorPicker 
+                code={`
+                    <ColorPicker 
                         placeholder="select" 
                         items={[
                             'apple',
@@ -39,15 +40,53 @@ export default function InfoSelect(tab) {
                     />
                 </div>
             </Section>
+
+            <Section
+                title="label"
+                description=""
+                code={`
+                    <ColorPicker 
+                        placeholder="select" 
+                        labelLeft='☢️'
+                        labelTop='pick frut'
+                        items={[
+                            'apple',
+                            'banana',
+                            'egs',
+                            'road',
+                            'jam',
+                            'olive'
+                        ]} 
+                    />
+                `}
+            >
+                <div className="flex justify-center">
+                    <Select
+                        size='sm'
+                        placeholder="select"
+                        labelLeft='☢️'
+                        labelTop='pick frut'
+                        items={[
+                            'apple',
+                            'banana',
+                            'egs',
+                            'road',
+                            'jam',
+                            'olive'
+                        ]}
+                    />
+                </div>
+            </Section>
         </div>
     );
 }
 
 
+const {labelRight, ...rest} = inputsMeta;
 InfoSelect.meta = {
-    ...inputsMeta,
+    ...rest,
     items: {
-        values: ['string'],
+        values: ['string', '{id: string, label: React.ReactNode}'],
         type: 'array',
         description: ''
     }

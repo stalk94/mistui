@@ -1,12 +1,12 @@
-import { ClassValue } from 'clsx';
-import { Variants } from '../theme/default';
+import type { ItemDropMenu } from './../menu/type';
+import type { ClassValue } from 'clsx';
+import type { Variants } from '../theme/default';
 
 
 //////////////////////////////////////////////////////////////////
 //      Fragments
 ///////////////////////////////////////////////////////////////////
 export type LabelProps = {
-    'data-id'?: string | number
     /** отключить видимость формы */
     disabledVisibility?: boolean
     popovertarget?: string
@@ -18,7 +18,8 @@ export type LabelProps = {
     colorBorder?: string
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    validator?: string | React.ReactElement | boolean
+    valid?:  boolean
+    error?: React.ReactNode
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties
     className?: ClassValue
@@ -40,23 +41,6 @@ export type LabelsSliderProps = {
     className?: ClassValue
 }
 
-export type ValidatorProps = {
-    pattern: string
-    min?: string | number
-    max?: string | number
-    step?: string | number
-    minlength?: string | number
-    maxlength?: string | number
-}
-type ValidatorByType = {
-    text: Pick<ValidatorProps, 'pattern' | 'minlength' | 'maxlength'>;
-    password: Pick<ValidatorProps, 'pattern' | 'minlength' | 'maxlength'>;
-    email: Pick<ValidatorProps, 'pattern' | 'minlength' | 'maxlength'>;
-    number: Pick<ValidatorProps, 'min' | 'max' | 'step'>;
-    date: Pick<ValidatorProps, 'min' | 'max'>;
-    range: Pick<ValidatorProps, 'min' | 'max' | 'step'>;
-    textarea: Pick<ValidatorProps, 'minlength' | 'maxlength'>;
-}
 
 //////////////////////////////////////////////////////////////////
 //      COMPONENTS PROPS
@@ -70,7 +54,8 @@ export type BaseProps = {
     labelLeft?: string | React.ReactElement
     labelRight?: string | React.ReactElement
     labelTop?: string | React.ReactElement
-    validator?: string | React.ReactElement | boolean
+    /** function validation input value */
+    validator?: (value: string|number|boolean) => { valid: boolean; helper: React.ReactNode }
     color?: Variants | (string & {})
     /** tooltip текст подсказка при наведении */
     title?: string
@@ -109,7 +94,7 @@ export type PasswordInputProps = Omit<BaseProps, 'type'> & {
 export type FileInputProps = Omit<BaseProps, 'type'> & {
     onChange?: (val: File)=> void
     onError?: (err: string)=> void
-    accept?: string
+    accept?: HTMLInputElement['accept']
     /** в megabite */
     maxSize?: number
     /** style прокидывается на саму обертку (section) */
@@ -119,9 +104,10 @@ export type FileInputProps = Omit<BaseProps, 'type'> & {
 
 export type SelectInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     value?: string
+    openPicker?: boolean
     color?: string
     onChange?: (val: string)=> void
-    items?: string[] | ItemSelect[]
+    items?: string[] | ItemDropMenu[]
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     disabledForm?: boolean
     rightIcon?: React.ReactNode

@@ -407,7 +407,7 @@ const patterns = {
     ),
 
     // Inputs
-    TextInput: (props) => (
+    BaseInput: (props) => (
         <BaseInput
             labelTop='text'
             placeholder='test'

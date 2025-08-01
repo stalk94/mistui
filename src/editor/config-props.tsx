@@ -204,7 +204,7 @@ const CONFIG = {
     },
 
     // inputs
-    TextInput: {
+    BaseInput: {
         ...base
     },
     NumberInput: {

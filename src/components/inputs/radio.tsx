@@ -3,16 +3,8 @@ import { FormWrapper } from './atomize';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
 import { useMemo, useCallback, useState } from 'react';
+import { cs } from '../hooks/cs';
 
-
-const radioSize = {
-    xs: 'w-4 h-4',
-    sm: 'w-5 h-5',
-    md: 'w-6 h-6',
-    lg: 'w-6 h-6',
-    xl: 'w-7 h-7',
-    auto: 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 xl:w-7 xl:h-7'
-}
 
 
 export default function RadioInput({ 
@@ -27,9 +19,9 @@ export default function RadioInput({
     ...props 
 }: RadioInputProps) {
     const [cheked, setCheked] = useState(value);
-    const { styles, variants, shadows, plugins } = useTheme();
+    const { styles, variants, sizes, autosizes, plugins } = useTheme();
     const uid = useUids('radio');
-
+    
 
     const borderVariant = useMemo(() => {
         if (style?.borderStyle) return {
@@ -69,7 +61,6 @@ export default function RadioInput({
                 ? chekColor('borderColor')
                 : (variants[color] ?? color)
                     ?? inlneBg
-                    ?? styles?.input?.switchBorderColor,
         }
 
         if (variant === 'ghost') st.borderWidth = cheked ? 0 : 1;
@@ -85,7 +76,7 @@ export default function RadioInput({
             { ...props }
         >
             <style>
-                {`
+                {cs(`
                     .radio[data-style-id="${uid}"]::before {
                         background: ${cheked
                             ? chekColor('backgroundColor')
@@ -93,7 +84,10 @@ export default function RadioInput({
                         };    
                         opacity: ${!cheked ? 0 : 100 };
                     }
-                `}
+                    .radio[data-style-id="${uid}"]:hover::before {
+                        transform: scale(0.9);
+                    }
+                `)}
             </style>
             
             <input 
@@ -108,10 +102,10 @@ export default function RadioInput({
                     ...borderVariant,
                     ...getStyle
                 }}
-                className={`
+                className={cs(`
                     radio
-                    ${radioSize[size] ?? radioSize.auto}
-                `}
+                    ${sizes.radio[size] ?? autosizes.radio}
+                `)}
             />
         </FormWrapper>
     );

@@ -78,7 +78,7 @@ const category = {
         GroupButtonFiltre: InfoGroupButtonFiltre
     },
     inputs: {
-        TextInput: InputBase,
+        BaseInput: InputBase,
         NumberInput: Number, 
         ColorPicker: Color, 
         Radio: Radio, 

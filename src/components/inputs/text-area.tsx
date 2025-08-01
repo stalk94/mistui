@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import { useMemo, useState, useEffect, Fragment } from 'react';
 import type { TextAreaProps } from './type';
 import { LabelTop } from './atomize';
-import { useCache } from '../hooks';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 import { cs } from '../hooks/cs';
@@ -24,7 +23,7 @@ export default function TextAreaInput({
 }: TextAreaProps) {
     const { styles, shadows, autosizes, variants, plugins } = useTheme();
     const uid = useUids('text-area');
-    const [val, setVal] = useCache(value);
+    const [val, setVal] = useState(value);
     const sizes = size ? `textarea-${size}` : autosizes.textarea;
 
 
@@ -92,10 +91,15 @@ export default function TextAreaInput({
         setVal(newValue);
         onChange?.(newValue);
     }
+    useEffect(() => {
+        if (value === undefined) return;
+    
+        if (value !== val) setVal(value);
+    }, [value]);
 
 
     return (
-        <React.Fragment>
+        <Fragment>
             <style>
                 {cs(`
                     .textarea[data-id="${uid}"]::placeholder {
@@ -134,6 +138,6 @@ export default function TextAreaInput({
                 `)}
                 { ...props }
             />
-        </React.Fragment>
+        </Fragment>
     );
 }

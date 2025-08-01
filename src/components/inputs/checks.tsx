@@ -37,7 +37,7 @@ export default function CheckBoxInput({
     className,
     ...props 
 }: CheckBoxInputProps) {
-    const { styles, variants, plugins } = useTheme();
+    const { styles, variants } = useTheme();
     const { backgroundColor, ...styleRest } = style;
 
 

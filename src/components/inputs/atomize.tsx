@@ -1,10 +1,9 @@
-import { forwardRef, useMemo, useCallback } from 'react';
+import { forwardRef, useMemo } from 'react';
 import type { LabelProps, LabelTopProps } from './type';
 import { useTheme } from '../theme';
-import React from 'react';
 import clsx from 'clsx';
-import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
+import { Typography } from '../text';
 
 
 export const LabelTop = ({ children, style, size, required  }: LabelTopProps) => {
@@ -30,16 +29,16 @@ export const LabelTop = ({ children, style, size, required  }: LabelTopProps) =>
         </label>
     );
 }
-export const ValidatorBottomLabel =({ children })=> {
-    return(
-        <span
-            style={{
-                marginTop: 0
-            }} 
-            className="validator-hint"
+export const ValidatorBottomLabel = ({ children }) => {
+    return (
+        <Typography
+            as='span'
+            variant='caption'
+            color='error'
+            className='m-0.5'
         >
-            { children }
-        </span>
+            {children}
+        </Typography>
     )
 }
 
@@ -52,7 +51,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
         labelRight,
         labelTop,
         size,
-        validator,
+        error,
         required,
         disabledVisibility,
         style = {},
@@ -66,7 +65,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
     const { autosizes, shadows, variants, plugins } = useTheme();
     const getSize = size ? `input-${size}` : autosizes.input;
     const { borderColor, ...filteredStyle } = style;
-
+    
 
     const borderVariant = useMemo(()=> {
         if (variant === 'dash') return { 
@@ -77,6 +76,10 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
         }
         else return {};
     }, [variant, style]);
+    const getStyleEvent = useMemo(()=> {
+        if (error) return { borderColor:  variants.error };
+        else return {};
+    }, [error]);
     const getStyle = useMemo(() => {
         if (disabledVisibility) return {};
         const inlneBg = style?.backgroundColor;
@@ -113,7 +116,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
 
         return st;
     }, [style, color, variant]);
- 
+    
 
     return (
         <section className={clsx('formwrap', className)} style={filteredStyle}>
@@ -130,6 +133,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                     boxShadow: shadows[shadow],
                     ...getStyle,
                     ...borderVariant,
+                    ...getStyleEvent
                 }}
                 className={clsx(
                     disabledVisibility
@@ -142,8 +146,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                               'w-full',
                               'flex',
                               'input-focus',
-                              getSize,
-                              validator && 'validator',
+                              getSize
                           ]
                 )}
                 { ...props }
@@ -153,7 +156,7 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                     <span 
                         className={cs(`
                             label 
-                            ${disabledVisibility && 'mr-4'}
+                            ${disabledVisibility ? 'mr-4' : ''}
                         `)}
                         style={{ 
                             height: '100%', 
@@ -179,14 +182,12 @@ export const FormWrapper = forwardRef<HTMLDivElement, LabelProps>(function FormW
                         `)}
                     >
                         { labelRight }
-                        { required && !labelTop &&
-                            <div className='ml-1 text-red-600'>
-                                *
-                            </div>
-                        }
                     </span>
                 }
             </div>
+
+            {/* error massages */}
+            { error && error}
         </section>
     );
 });

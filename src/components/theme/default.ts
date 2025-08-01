@@ -5,7 +5,7 @@ import namesPlugin from "colord/plugins/names";
 extend([namesPlugin, a11yPlugin, mixPlugin]);
 import { 
     mixerButtonColor, generateSizes, mixerButtonBorderColor, getContrastingColor, 
-    isBright, deepMerge
+    isBright, deepMerge, generateSizesSpecial
 } from './helpers';
 import type { CreateThemeOptions } from './types';
 
@@ -112,11 +112,28 @@ const SIZES = {
         xl: 'xl'
     },
     divider: {
+        default: 1,
         xs: 1,
         sm: 1,
         md: 2,
         lg: 2,
         xl: 3
+    },
+    thumb: {
+        default: [4, 3],
+        xs: [4, 2],
+        sm: [4, 3],
+        md: [4, 3],
+        lg: [6, 4],
+        xl: [6, 4],
+    },
+    radio: {
+        default: [4, 4],
+        xs: [4, 4],
+        sm: [5, 5],
+        md: [6, 6],
+        lg: [6, 6],
+        xl: [7, 7],
     }
 }
 const VARIANTS = {
@@ -152,6 +169,7 @@ export function createTheme({
 }: CreateThemeOptions) {
     const mergeSizes = deepMerge(SIZES, sizes);
     const basis = (themeSchema === 'light') ? 'darken' : 'lighten';
+    
 
     const theme = {
         theme: themeSchema ?? 'dark',
@@ -159,7 +177,7 @@ export function createTheme({
             base: colors.base,
             selected: colors?.selected ?? colord(colors.base).invert().alpha(0.25).toRgbString()
         },
-        sizes: mergeSizes,
+        sizes: generateSizesSpecial(mergeSizes),
         autosizes: generateSizes(mergeSizes),
         variants: deepMerge(VARIANTS, colorVariants),                                // color variants theme
         shadows: deepMerge(SHADOWS, shadows),
@@ -168,7 +186,6 @@ export function createTheme({
         plugins: {} as any,
         variables: {} as any
     };
-    
 
     theme.styles = {
         input: {

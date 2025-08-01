@@ -98,9 +98,9 @@ export default function InfoRadioBox(tab) {
 InfoRadioBox.meta = {
     ...inputsMeta,
     value: {
-        values: ['string'],
-        type: 'string',
-        description: 'The current color value in rgba() format.'
+        values: ['boolean'],
+        type: 'boolean',
+        description: 'Checked or unchecked'
     },
     onChange: {
         values: ['function'],

@@ -4,7 +4,7 @@ import DropMenu from '../menu/drop-menu';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useTheme } from '../theme';
 import { useUids } from '../hooks/uuid';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { cs } from '../hooks/cs';
 import { Popover } from '../helpers';
 
@@ -57,8 +57,11 @@ export default function Autocomplete({
         setOpen(false);
         onChange?.(value);
     }
-
-
+    useEffect(() => {
+        if (value === undefined) return;
+        if (value !== input) setInput(value);
+    }, [value]);
+  
 
     return (
         <>
@@ -74,7 +77,7 @@ export default function Autocomplete({
             </style>
 
             <Popover
-                style={{position: 'fixed'}}
+                style={{position: 'fixed',  marginTop: 3}}
                 open={open}
                 setOpen={setOpen}
                 trigger={

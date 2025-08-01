@@ -6,7 +6,7 @@ import { AiFillDatabase } from "react-icons/ai";
 import { CgListTree } from "react-icons/cg";
 import { AppBar, GroupButton, Divider, IconButton, Select, Typography } from '../index';
 import { InformationCircleIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
-import { BurgerMenu, LinearNavigationItems } from '@/components/app-bar';
+import { BurgerMenu, LinearAppBar, LinearNavigationItems } from '@/components/app-bar';
 import { Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { store } from './config-props';
 import ListMenu from '../components/menu/list-menu';
@@ -42,7 +42,7 @@ const category = {
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
     'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton'],
-    inputs: ['TextInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch', 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
+    inputs: ['BaseInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch', 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu', 'Paginator'],
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
@@ -340,7 +340,8 @@ export default function SandBoxRoot({ }) {
                 }
                 centerSlot={
                     <LinearNavigationItems
-                        style={{ marginLeft: '5%' }}
+                        onOverflow={console.log}
+                        style={{ marginLeft: '4%' }}
                         items={[
                             {
                                 id: 'info',

@@ -1,40 +1,36 @@
 import { colord } from 'colord';
 import { useState, useEffect, SetStateAction, Dispatch, useRef, useCallback } from 'react';
+import { useDebounced } from './debounce';
 export { default as useBreakpoints } from './useBreackpoints';
 
 
 export function useClientValidity<T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
+    func: (value: string|number|boolean) => { valid: boolean; helper: React.ReactNode },
     ref: React.RefObject<T>
 ) {
-    const [invalid, setInvalid] = useState(false);
+    if (!func) return { isValid: true, text: undefined };
+    const [text, setText] = useState<React.ReactNode | undefined>();
+
+   
+    const validate = useDebounced((value: string) => {
+        const res = func(value);
+        if (!res.valid) setText(res.helper);
+        else setText(undefined);
+    }, 500);
 
     useEffect(() => {
         const el = ref.current;
-        if (!el) return;
+        if (!el || !func) return;
 
-        const onInvalid = (e: Event) => {
-            //e.preventDefault(); // подавляем нативный тултип
-            setInvalid(true);
-        }
         const onInput = () => {
-            setInvalid(!el.validity.valid);
-            //if (validator) validator(el.value);
-        }
-
-        el.addEventListener('invalid', onInvalid);
-        el.addEventListener('input', onInput);
-
-        // инициализация на клиенте
-        setInvalid(!el.validity.valid);
-
-        return () => {
-            el.removeEventListener('invalid', onInvalid);
-            el.removeEventListener('input', onInput);
+            validate(el.value);
         };
-    }, [ref]);
 
-    
-    return invalid;
+        el.addEventListener('input', onInput);
+        return () => el.removeEventListener('input', onInput);
+    }, [ref, validate]);
+
+    return { isValid: !text, text };
 }
 
 

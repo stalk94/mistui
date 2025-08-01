@@ -45,7 +45,13 @@ export const baseMeta = {
 
 const { children, ...rest } = baseMeta;
 export const inputsMeta = {
-   ...rest,
+    ...rest,
+    variant: {
+        values: ["contained", "outline", "dash", "ghost"],
+        type: 'enum',
+        default: 'outline',
+        description: 'Controls the visual style like filled, outlined form.',
+    },
     value: {
         values: ['number', 'string'],
         type: 'enum',
@@ -65,7 +71,27 @@ export const inputsMeta = {
         values: ['boolean'],
         type: 'boolean',
         description: 'Whether the field is required.'
-    }
+    },
+    validator: {
+        values: ['Validator'],
+        type: 'func',
+        description: 'the function is called after user input, checks the validity of the input'
+    },
+    labelLeft: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: 'Custom component, icon, or string label on the left slot'
+    },
+    labelTop: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: 'Custom component, icon, or string label on the top'
+    },
+    labelRight: {
+        values: ['string', 'React.ReactNode'],
+        type: 'enum',
+        description: 'Custom component, icon, or string label on the right slot'
+    },
 }
 
 

@@ -1,4 +1,4 @@
-import { forwardRef, useMemo, useRef, useState } from 'react';
+import { forwardRef, useMemo, useRef, useState, useEffect } from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
 import { useClientValidity } from '../hooks';
 import { useTheme } from '../theme';
@@ -34,7 +34,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
     const [val, setVal] = useState(value);
     const internalRef = useRef<HTMLInputElement>(null);
     const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
-    const isInvalid = useClientValidity(inputRef);
+    const { isValid, text } = useClientValidity(validator, inputRef);
 
     
     const colorPlaceholder = useMemo(() => {
@@ -63,6 +63,11 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
         setVal(newValue);
         onChange?.(newValue);
     }
+    useEffect(() => {
+        if (value === undefined) return;
+
+        if (value !== val) setVal(value);
+    }, [value]);
     
 
     return(
@@ -85,12 +90,17 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                 labelTop={labelTop}
                 size={size}
                 color={color}
-                validator={validator}
                 required={required}
                 style={style}
                 className={`filter saturate-150 ${className}`}
                 variant={variant}
                 shadow={shadow}
+                error={
+                    !isValid &&
+                        <ValidatorBottomLabel>
+                            { text }
+                        </ValidatorBottomLabel>
+                }
             >
                 <input
                     data-id={uid}
@@ -107,17 +117,7 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                     onChange={(e)=> handle(e.target.value)}
                     { ...props }
                 />
-                { validator && typeof validator === 'boolean' && isInvalid &&
-                    <ValidatorBottomLabel>
-                        !
-                    </ValidatorBottomLabel>
-                }
             </FormWrapper>
-            { validator && typeof validator !== 'boolean' && isInvalid && 
-                <ValidatorBottomLabel>
-                    { validator }
-                </ValidatorBottomLabel>
-            }
         </>
     );
 });

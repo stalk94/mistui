@@ -11,6 +11,8 @@ export interface Theme {
         badge: string
         table: string
         divider: string
+        thumb: string       // рукоятка slider
+        radio: string
     }
     sizes: {
         [key: string]: {

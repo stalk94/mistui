@@ -1,14 +1,18 @@
+export type Validator = (value: string|number|boolean) =>  { valid: boolean, helper: React.ReactNode }
+
+
 // валидатор логина
 export const validateLogin = (value: string) => {
     let helper;
     let result = true;
 
     if (value.length > 5) {
-        if (value.length > 32) helper = 'Логин более 32 символов';
+        if (value.length > 32) helper = '❗ login more than 32 characters';
     }
-    else helper = 'Логин менее 6 символов';
+    else helper = '❗ Login less than 6 characters';
+
     if (value.length > 1 && !/^[a-zA-Z0-9_-]+$/.test(value)) {
-        helper = 'Присутствуют запрешенные символы.';
+        helper = '❗ Contains prohibited characters.';
     }
 
 
@@ -17,8 +21,8 @@ export const validateLogin = (value: string) => {
     }
 
     return {
-        result,
-        helperText: helper
+        valid: result,
+        helper: helper
     }
 }
 
@@ -28,17 +32,17 @@ export const validatePass = (value: string) => {
     let result = true;
 
     if (value.length > 5) {
-        if (value.length > 32) helper = 'Пароль более 32 символов';
+        if (value.length > 32) helper = 'Password is more than 32 characters';
     }
-    else helper = 'Пароль менее 6 символов';
+    else helper = 'Password less than 6 characters';
 
     if (helper) {
         result = false;
     }
 
     return {
-        result,
-        helperText: helper
+        valid: result,
+        helper: helper
     }
 }
 
@@ -47,11 +51,11 @@ export const validatePhone = (phone: string) => {
     let helperText;
     const phoneRegex = /^\+?[1-9]\d{6,14}$/;
     const result = phoneRegex.test(phone);
-    if (!result) helperText = 'Неверный формат номера';
+    if (!result) helperText = 'Invalid number format';
 
     return {
-        result,
-        helperText
+        valid: result,
+        helper: helperText
     }
 }
 
@@ -60,11 +64,11 @@ export const validateEmail = (email: string) => {
     let helperText;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const result = emailRegex.test(email ?? '');
-    if (!result) helperText = 'Неверный формат email';
+    if (!result) helperText = 'Invalid email format';
 
     return {
-        result,
-        helperText
+        valid: result,
+        helper: helperText
     }
 
 }
@@ -72,10 +76,10 @@ export const validateEmail = (email: string) => {
 // Проверка валидности принятия соглашения
 export const validateConfirm = (isChecked: boolean) => {
     let helperText;
-    if (!isChecked) helperText = 'Надо принять пользовательское соглашение';
+    if (!isChecked) helperText = 'You must accept the user agreement';
 
     return {
-        result: isChecked,
-        helperText
+        valid: isChecked,
+        helper: helperText
     }
 }

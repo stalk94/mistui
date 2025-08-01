@@ -1,9 +1,10 @@
-import { useCache } from '../hooks';
+import { useClientValidity } from '../hooks';
 import type { NumberInputProps } from './type';
 import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
-import { FormWrapper } from './atomize'
+import { FormWrapper, ValidatorBottomLabel } from './atomize'
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 
 const Icon = ({ useClick, tag, 'data-id': dataId }) => {
@@ -30,19 +31,26 @@ const Icon = ({ useClick, tag, 'data-id': dataId }) => {
 }
 
 
-export default function NumberInput({ 
-    iconEnable, 
-    onChange, 
-    value, 
-    step, 
-    placeholder,
-    color = 'neutral',
-    required,
-    ...props 
-}: NumberInputProps) {
+const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(function NumberInput(
+    { 
+        iconEnable, 
+        onChange, 
+        value, 
+        step, 
+        placeholder,
+        color = 'neutral',
+        required,
+        validator,
+        ...props 
+    }, 
+    ref
+) {
+    const internalRef = useRef<HTMLInputElement>(null);
+    const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
     const uid = useUids('number');
     const { styles } = useTheme();
-    const [val, setVal] = useCache(
+    const { isValid, text } = useClientValidity(validator, inputRef);
+    const [val, setVal] = useState(
         typeof value === 'number' 
             ? value 
             : parseFloat(value as any) || undefined
@@ -63,8 +71,17 @@ export default function NumberInput({
             return result;
         });
     }
+    useEffect(()=> {
+        if (value === undefined) return;
+
+        if (value !== val) setVal(
+            typeof value === 'number' 
+                ? value 
+                : parseFloat(value as any) || undefined
+        );
+    }, [value]);
     
-    
+
     return (
         <FormWrapper
             data-id={uid}
@@ -85,6 +102,12 @@ export default function NumberInput({
                         useClick={increment}
                     />
             }
+            error={
+                !isValid &&
+                    <ValidatorBottomLabel>
+                        { text }
+                    </ValidatorBottomLabel>
+            }
             { ...props }
         >
             <style>
@@ -97,6 +120,7 @@ export default function NumberInput({
 
             <input
                 type='number'
+                ref={inputRef}
                 placeholder={placeholder}
                 required={required}
                 style={{ 
@@ -120,4 +144,7 @@ export default function NumberInput({
             />
         </FormWrapper>
     );
-}
+});
+
+
+export default NumberInput;

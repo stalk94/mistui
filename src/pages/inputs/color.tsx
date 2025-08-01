@@ -11,19 +11,34 @@ export default function InfoColorPicker(tab) {
             {/* базовый */}
             <Section
                 title="base"
-                description="Базовый компонент выбора цвета"
-                code={`<ColorPicker placeholder="Выберите цвет" />`}
+                description=""
+                code={`<ColorPicker />`}
             >
                 <div className="flex justify-center">
-                    <ColorPicker size='sm' placeholder="Выберите цвет" />
+                    <ColorPicker size='sm' />
                 </div>
             </Section>
 
+            {/* opener */}
+            <Section
+                title="open pick pallete"
+                description="see example code"
+                code={`<ColorPicker openPicker />`}
+            >
+                <div className="flex justify-center">
+                    <ColorPicker size='sm' />
+                </div>
+            </Section>
         </div>
     );
 }
 
 
 InfoColorPicker.meta = {
-    ...inputsMeta
+    ...inputsMeta,
+    openPicker: {
+        values: ['boolean'],
+        type: 'boolean',
+        description: 'Open popup color pallete'
+    }
 }

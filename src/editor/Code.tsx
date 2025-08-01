@@ -49,7 +49,7 @@ const patterns = {
     `),
 
     // Inputs
-    TextInput: (props) => (`
+    BaseInput: (props) => (`
         <BaseInput ${toJSXProps(props)} />
     `),
     NumberInput: (props)=> (`

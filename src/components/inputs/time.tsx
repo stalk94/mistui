@@ -1,5 +1,5 @@
 import { LuClock4 } from "react-icons/lu";
-import Base from './base';
+import BaseInput from './base';
 import { IconButton } from '../buttons';
 import { useRef } from 'react';
 import type { TimeInputProps } from './type';
@@ -19,7 +19,7 @@ export default function Time({
 
 
     return(
-        <Base
+        <BaseInput
             ref={ref}
             type='time'
             size={size}

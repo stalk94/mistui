@@ -15,7 +15,7 @@ import mixPlugin from "colord/plugins/mix";
     color.mix(color2)
 */
 
-type ClasVariants = 'input' | 'btn' | 'text' | 'avatar';
+type ClasVariants = 'input' | 'btn' | 'text' | 'avatar' | 'thumb' | 'radio' | 'divider';
 type BreacpointsVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xs';
 type Combo = {
     default: BreacpointsVariants,
@@ -44,20 +44,56 @@ export const mixerButtonBorderColor = (color: string, type?: 'hover' | 'selected
     }
 }
 export const fabrikSizeBreacpoints = (classKye: ClasVariants, config: Combo) => {
-    if(classKye === 'avatar') return Object.entries(config).map(([key, value])=> {
+    if (classKye === 'avatar') return Object.entries(config).map(([key, value]) => {
         if (key === 'default') return `${value}`;
         else return `${key}:${value}`;
     }).join(' ');
+    else if (classKye === 'thumb' || classKye === 'radio') return Object.entries(config).map(([key, v]) => {
+        if (key === 'default') return `w-${v[0]} h-${v[1]}`;
+        else return `${key}:w-${v[0]} ${key}:h-${v[1]}`;
+    }).join(' ');
+    else if (classKye === 'divider') return Object.entries(config).map(([key, v]) => {
+        if (key === 'default') return `h-${v}`;
+        else return `${key}:h-${v}`;
+    }).join(' ');
 
-    return Object.entries(config).map(([key, value])=> {
+
+    return Object.entries(config).map(([key, value]) => {
         if (key === 'default') return `${classKye}-${value}`;
         else return `${key}:${classKye}-${value}`;
     }).join(' ');
 }
+const generateSize = (value) => {
+    const result = {};
+
+    Object.entries(value).map(([key, v]) => {
+        if (Array.isArray(v)) {
+            let rs = '';
+
+            if(v[0] !== undefined)  rs = rs + `w-${v[0]}`;
+            if(v[1] !== undefined)  rs = rs + ` h-${v[1]}`;
+            
+
+            result[key] = rs;
+        }
+    });
+
+    return result;
+}
 
 
-const createSizesSpecial =()=> {
-    
+export const generateSizesSpecial =(sizes)=> {
+    const list = ['thumb', 'radio'];
+    const generate = {}
+
+    Object.entries(sizes).map(([key, value])=> {
+        if (list.includes(key)) {
+            generate[key] = generateSize(value);
+        }
+        else generate[key] = value;
+    });
+
+    return generate;
 }
 export const generateSizes = (sizes) => {
     const generate = {}
