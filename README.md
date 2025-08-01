@@ -1,4 +1,4 @@
-# 🌈 MistUI
+# 🌈 MistUI +
 **👉 [Try MistUi Live](https://gilded-tanuki-0eb52b.netlify.app/) — interactive playground & docs**
 
  **MistUi** is a modern UI library focused on simplicity, flexibility, and real-world usability. It draws inspiration from MUI, Tailwind, DaisyUI, and Atomic Design—but without the complexity, "magic," or headaches.
@@ -11,6 +11,7 @@ MistUi helps you build interfaces that are stylish out of the box, easily custom
 - 🧠 Smart defaults with full customization when needed  
 - 🛠️ Built on Tailwind + DaisyUI for a strong foundation, minimal footprint, and great performance  
 - 🎯 Aligned with Material Design principles  
+
 
 
 ## 📦 Installation
