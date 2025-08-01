@@ -1,7 +1,7 @@
-import { ClassValue } from 'clsx';
-import { Variants } from '../theme/default';
+import type { ItemDropMenu } from './../menu/type';
+import type { ClassValue } from 'clsx';
+import type { Variants } from '../theme/default';
 export type LabelProps = {
-    'data-id'?: string | number;
     /** отключить видимость формы */
     disabledVisibility?: boolean;
     popovertarget?: string;
@@ -13,7 +13,8 @@ export type LabelProps = {
     colorBorder?: string;
     color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | string;
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    validator?: string | React.ReactElement | boolean;
+    valid?: boolean;
+    error?: React.ReactNode;
     /** style прокидывается на саму обертку (section) */
     style?: React.CSSProperties;
     className?: ClassValue;
@@ -34,14 +35,6 @@ export type LabelsSliderProps = {
     labelRight?: string | React.ReactElement;
     className?: ClassValue;
 };
-export type ValidatorProps = {
-    pattern: string;
-    min?: string | number;
-    max?: string | number;
-    step?: string | number;
-    minlength?: string | number;
-    maxlength?: string | number;
-};
 export type BaseProps = {
     required?: boolean;
     type: 'text' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'tel' | 'url' | 'time' | 'datetime-local' | 'search';
@@ -51,7 +44,11 @@ export type BaseProps = {
     labelLeft?: string | React.ReactElement;
     labelRight?: string | React.ReactElement;
     labelTop?: string | React.ReactElement;
-    validator?: string | React.ReactElement | boolean;
+    /** function validation input value */
+    validator?: (value: string | number | boolean) => {
+        valid: boolean;
+        helper: React.ReactNode;
+    };
     color?: Variants | (string & {});
     /** tooltip текст подсказка при наведении */
     title?: string;
@@ -85,7 +82,7 @@ export type PasswordInputProps = Omit<BaseProps, 'type'> & {
 export type FileInputProps = Omit<BaseProps, 'type'> & {
     onChange?: (val: File) => void;
     onError?: (err: string) => void;
-    accept?: string;
+    accept?: HTMLInputElement['accept'];
     /** в megabite */
     maxSize?: number;
     /** style прокидывается на саму обертку (section) */
@@ -94,9 +91,10 @@ export type FileInputProps = Omit<BaseProps, 'type'> & {
 };
 export type SelectInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
     value?: string;
+    openPicker?: boolean;
     color?: string;
     onChange?: (val: string) => void;
-    items?: string[] | ItemSelect[];
+    items?: string[] | ItemDropMenu[];
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     disabledForm?: boolean;
     rightIcon?: React.ReactNode;

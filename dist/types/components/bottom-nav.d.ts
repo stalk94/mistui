@@ -1,5 +1,5 @@
 import type { Variants } from './theme/default';
-declare const BottomNav: import("react").ForwardRefExoticComponent<Pick<import("react").HTMLAttributes<HTMLDivElement>, "style" | "className"> & {
+declare const BottomNav: import("react").ForwardRefExoticComponent<Pick<import("react").HTMLAttributes<HTMLDivElement>, "className" | "style"> & {
     items: {
         icon: React.ReactNode;
         label?: string | React.ReactNode;

@@ -9,7 +9,7 @@
     color.rotate(90);          // Повернуть оттенок (hue)
     color.mix(color2)
 */
-type ClasVariants = 'input' | 'btn' | 'text' | 'avatar';
+type ClasVariants = 'input' | 'btn' | 'text' | 'avatar' | 'thumb' | 'radio' | 'divider';
 type BreacpointsVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xs';
 type Combo = {
     default: BreacpointsVariants;
@@ -21,6 +21,7 @@ type Combo = {
 export declare const mixerButtonColor: (color: string, type?: "hover" | "selected") => string;
 export declare const mixerButtonBorderColor: (color: string, type?: "hover" | "selected") => string;
 export declare const fabrikSizeBreacpoints: (classKye: ClasVariants, config: Combo) => string;
+export declare const generateSizesSpecial: (sizes: any) => {};
 export declare const generateSizes: (sizes: any) => {};
 export declare const deepMerge: (target: any, source: any) => any;
 export declare function getContrastingColor(bgColor: string, dark: string, light: string): string;

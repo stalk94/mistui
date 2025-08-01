@@ -27,7 +27,7 @@ export declare function createTheme({ themeSchema, colors, sizes, colorVariants,
         base: string;
         selected: string;
     };
-    sizes: any;
+    sizes: {};
     autosizes: {};
     variants: any;
     shadows: any;
@@ -42,7 +42,7 @@ export declare const defaultTheme: {
         base: string;
         selected: string;
     };
-    sizes: any;
+    sizes: {};
     autosizes: {};
     variants: any;
     shadows: any;

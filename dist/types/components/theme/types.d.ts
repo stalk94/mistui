@@ -10,6 +10,8 @@ export interface Theme {
         badge: string;
         table: string;
         divider: string;
+        thumb: string;
+        radio: string;
     };
     sizes: {
         [key: string]: {

@@ -1,2 +1,9 @@
-import type { NumberInputProps } from './type';
-export default function NumberInput({ iconEnable, onChange, value, step, placeholder, color, required, ...props }: NumberInputProps): import("react/jsx-runtime").JSX.Element;
+declare const NumberInput: import("react").ForwardRefExoticComponent<Omit<import("./type").BaseProps, "type"> & {
+    type?: "number";
+    iconEnable?: boolean;
+    value?: number;
+    step?: number;
+    onChange?: React.Dispatch<React.SetStateAction<number>> | ((val: number) => void);
+    shadow?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+} & import("react").RefAttributes<HTMLInputElement>>;
+export default NumberInput;

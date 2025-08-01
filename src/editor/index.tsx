@@ -4,7 +4,7 @@ import { MdOutlineTextFields } from "react-icons/md";
 import { RiInputCursorMove } from "react-icons/ri";
 import { AiFillDatabase } from "react-icons/ai";
 import { CgListTree } from "react-icons/cg";
-import { AppBar, GroupButton, Divider, IconButton, Select, Typography } from '../index';
+import { AppBar, GroupButton, Divider, IconButton, Select, Typography, Link } from '../index';
 import { InformationCircleIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import { BurgerMenu, LinearAppBar, LinearNavigationItems } from '@/components/app-bar';
 import { Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
@@ -361,7 +361,10 @@ export default function SandBoxRoot({ }) {
                 }
                 endSlot={
                     <div className='flex items-center'>
-                        <CheckBox onChange={console.log} />
+                        {/*<CheckBox onChange={console.log} />*/}
+                        <Link fontSize={12} className='mr-12' href='https://www.npmjs.com/package/mistui-kit'>
+                            v 1.0.5 alpha
+                        </Link>
                         <Select
                             size='sm'
                             disabledForm

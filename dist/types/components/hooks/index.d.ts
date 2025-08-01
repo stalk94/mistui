@@ -1,6 +1,12 @@
 import { SetStateAction, Dispatch } from 'react';
 export { default as useBreakpoints } from './useBreackpoints';
-export declare function useClientValidity<T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(ref: React.RefObject<T>): boolean;
+export declare function useClientValidity<T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(func: (value: string | number | boolean) => {
+    valid: boolean;
+    helper: React.ReactNode;
+}, ref: React.RefObject<T>): {
+    isValid: boolean;
+    text: import("react").ReactNode;
+};
 export declare function useCache<T>(value: T): [T, Dispatch<SetStateAction<T>>];
 export declare function useConditionalRef<T extends HTMLElement>(uid?: string): import("react").RefObject<T>;
 export declare function useClickOutside(selectorsIgnore: string[], onClickOutside: () => void): void;

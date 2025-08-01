@@ -1,20 +1,24 @@
+export type Validator = (value: string | number | boolean) => {
+    valid: boolean;
+    helper: React.ReactNode;
+};
 export declare const validateLogin: (value: string) => {
-    result: boolean;
-    helperText: any;
+    valid: boolean;
+    helper: any;
 };
 export declare const validatePass: (value: string) => {
-    result: boolean;
-    helperText: any;
+    valid: boolean;
+    helper: any;
 };
 export declare const validatePhone: (phone: string) => {
-    result: boolean;
-    helperText: any;
+    valid: boolean;
+    helper: any;
 };
 export declare const validateEmail: (email: string) => {
-    result: boolean;
-    helperText: any;
+    valid: boolean;
+    helper: any;
 };
 export declare const validateConfirm: (isChecked: boolean) => {
-    result: boolean;
-    helperText: any;
+    valid: boolean;
+    helper: any;
 };

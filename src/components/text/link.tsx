@@ -35,6 +35,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
             ref={ref}
             className={`hover:opacity-70 link ${isHover ? 'link-hover' : ''} ${className ?? ''}`}
             onClick={handleClick}
+            href={navigate ? undefined : href}
             style={{
                 color: variants[color] ?? color,
                 ...style

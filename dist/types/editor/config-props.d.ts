@@ -7,14 +7,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -88,14 +98,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -179,14 +199,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -285,6 +315,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -332,6 +363,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -363,6 +395,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -394,6 +427,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -404,7 +438,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -425,6 +459,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -456,6 +491,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -487,6 +523,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -518,6 +555,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -549,6 +587,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -580,6 +619,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -611,6 +651,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -642,6 +683,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -673,6 +715,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -704,6 +747,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -735,6 +779,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -766,6 +811,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -797,6 +843,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -828,6 +875,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -859,6 +907,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -901,6 +950,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -932,6 +982,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -983,6 +1034,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1014,6 +1172,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1031,10 +1190,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -1056,6 +1217,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1091,6 +1253,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1126,6 +1289,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1157,6 +1321,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1188,6 +1353,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1246,14 +1412,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -1327,14 +1503,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -1418,14 +1604,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -1524,6 +1720,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1571,6 +1768,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1602,6 +1800,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1633,6 +1832,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1643,7 +1843,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -1664,6 +1864,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1695,6 +1896,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1726,6 +1928,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1757,6 +1960,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1788,6 +1992,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1819,6 +2024,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1850,6 +2056,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1881,6 +2088,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1912,6 +2120,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1943,6 +2152,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -1974,6 +2184,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2005,6 +2216,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2036,6 +2248,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2067,6 +2280,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2098,6 +2312,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2140,6 +2355,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2171,6 +2387,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2222,6 +2439,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2253,6 +2577,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2270,10 +2595,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -2295,6 +2622,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2330,6 +2658,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2365,6 +2694,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2396,6 +2726,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2427,6 +2758,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2484,14 +2816,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -2565,14 +2907,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -2656,14 +3008,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -2762,6 +3124,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2809,6 +3172,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2840,6 +3204,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2871,6 +3236,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2881,7 +3247,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -2902,6 +3268,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2933,6 +3300,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2964,6 +3332,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -2995,6 +3364,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3026,6 +3396,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3057,6 +3428,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3088,6 +3460,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3119,6 +3492,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3150,6 +3524,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3181,6 +3556,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3212,6 +3588,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3243,6 +3620,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3274,6 +3652,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3305,6 +3684,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3336,6 +3716,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3378,6 +3759,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3409,6 +3791,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3460,6 +3843,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3491,6 +3981,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3508,10 +3999,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -3533,6 +4026,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3568,6 +4062,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3603,6 +4098,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3634,6 +4130,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3665,6 +4162,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -3722,14 +4220,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -3803,14 +4311,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -3894,14 +4412,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -4000,6 +4528,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4047,6 +4576,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4078,6 +4608,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4109,6 +4640,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4119,7 +4651,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -4140,6 +4672,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4171,6 +4704,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4202,6 +4736,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4233,6 +4768,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4264,6 +4800,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4295,6 +4832,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4326,6 +4864,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4357,6 +4896,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4388,6 +4928,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4419,6 +4960,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4450,6 +4992,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4481,6 +5024,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4512,6 +5056,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4543,6 +5088,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4574,6 +5120,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4616,6 +5163,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4647,6 +5195,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4698,6 +5247,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4729,6 +5385,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4746,10 +5403,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -4771,6 +5430,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4806,6 +5466,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4841,6 +5502,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4872,6 +5534,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4903,6 +5566,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -4961,14 +5625,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -5042,14 +5716,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -5133,14 +5817,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -5239,6 +5933,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5286,6 +5981,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5317,6 +6013,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5348,6 +6045,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5358,7 +6056,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -5379,6 +6077,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5410,6 +6109,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5441,6 +6141,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5472,6 +6173,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5503,6 +6205,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5534,6 +6237,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5565,6 +6269,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5596,6 +6301,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5627,6 +6333,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5658,6 +6365,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5689,6 +6397,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5720,6 +6429,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5751,6 +6461,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5782,6 +6493,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5813,6 +6525,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5855,6 +6568,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5886,6 +6600,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5937,6 +6652,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5968,6 +6790,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -5985,10 +6808,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -6010,6 +6835,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6045,6 +6871,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6080,6 +6907,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6111,6 +6939,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6142,6 +6971,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6199,14 +7029,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -6280,14 +7120,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -6371,14 +7221,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -6477,6 +7337,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6524,6 +7385,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6555,6 +7417,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6586,6 +7449,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6596,7 +7460,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -6617,6 +7481,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6648,6 +7513,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6679,6 +7545,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6710,6 +7577,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6741,6 +7609,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6772,6 +7641,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6803,6 +7673,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6834,6 +7705,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6865,6 +7737,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6896,6 +7769,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6927,6 +7801,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6958,6 +7833,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -6989,6 +7865,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7020,6 +7897,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7051,6 +7929,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7093,6 +7972,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7124,6 +8004,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7175,6 +8056,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7206,6 +8194,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7223,10 +8212,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -7248,6 +8239,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7283,6 +8275,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7318,6 +8311,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7349,6 +8343,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7380,6 +8375,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7438,14 +8434,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -7519,14 +8525,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -7610,14 +8626,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -7716,6 +8742,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7763,6 +8790,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7794,6 +8822,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7825,6 +8854,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7835,7 +8865,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -7856,6 +8886,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7887,6 +8918,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7918,6 +8950,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7949,6 +8982,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -7980,6 +9014,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8011,6 +9046,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8042,6 +9078,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8073,6 +9110,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8104,6 +9142,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8135,6 +9174,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8166,6 +9206,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8197,6 +9238,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8228,6 +9270,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8259,6 +9302,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8290,6 +9334,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8332,6 +9377,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8363,6 +9409,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8414,6 +9461,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8445,6 +9599,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8462,10 +9617,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -8487,6 +9644,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8522,6 +9680,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8557,6 +9716,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8588,6 +9748,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8619,6 +9780,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -8677,14 +9839,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -8758,14 +9930,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -8849,14 +10031,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -8955,6 +10147,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9002,6 +10195,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9033,6 +10227,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9064,6 +10259,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9074,7 +10270,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -9095,6 +10291,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9126,6 +10323,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9157,6 +10355,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9188,6 +10387,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9219,6 +10419,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9250,6 +10451,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9281,6 +10483,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9312,6 +10515,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9343,6 +10547,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9374,6 +10579,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9405,6 +10611,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9436,6 +10643,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9467,6 +10675,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9498,6 +10707,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9529,6 +10739,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9571,6 +10782,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9602,6 +10814,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9653,6 +10866,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9684,6 +11004,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9701,10 +11022,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -9726,6 +11049,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9761,6 +11085,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9796,6 +11121,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9827,6 +11153,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9858,6 +11185,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -9916,14 +11244,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -9997,14 +11335,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -10088,14 +11436,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -10194,6 +11552,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10241,6 +11600,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10272,6 +11632,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10303,6 +11664,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10313,7 +11675,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -10334,6 +11696,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10365,6 +11728,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10396,6 +11760,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10427,6 +11792,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10458,6 +11824,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10489,6 +11856,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10520,6 +11888,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10551,6 +11920,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10582,6 +11952,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10613,6 +11984,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10644,6 +12016,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10675,6 +12048,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10706,6 +12080,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10737,6 +12112,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10768,6 +12144,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10810,6 +12187,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10841,6 +12219,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10892,6 +12271,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10923,6 +12409,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -10940,10 +12427,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -10965,6 +12454,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11000,6 +12490,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11035,6 +12526,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11066,6 +12558,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11097,6 +12590,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11156,14 +12650,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -11237,14 +12741,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -11328,14 +12842,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -11434,6 +12958,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11481,6 +13006,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11512,6 +13038,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11543,6 +13070,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11553,7 +13081,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -11574,6 +13102,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11605,6 +13134,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11636,6 +13166,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11667,6 +13198,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11698,6 +13230,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11729,6 +13262,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11760,6 +13294,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11791,6 +13326,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11822,6 +13358,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11853,6 +13390,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11884,6 +13422,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11915,6 +13454,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11946,6 +13486,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -11977,6 +13518,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12008,6 +13550,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12050,6 +13593,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12081,6 +13625,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12132,6 +13677,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12163,6 +13815,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12180,10 +13833,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -12205,6 +13860,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12240,6 +13896,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12275,6 +13932,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12306,6 +13964,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12337,6 +13996,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12390,14 +14050,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -12471,14 +14141,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -12562,14 +14242,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -12668,6 +14358,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12715,6 +14406,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12746,6 +14438,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12777,6 +14470,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12787,7 +14481,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -12808,6 +14502,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12839,6 +14534,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12870,6 +14566,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12901,6 +14598,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12932,6 +14630,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12963,6 +14662,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -12994,6 +14694,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13025,6 +14726,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13056,6 +14758,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13087,6 +14790,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13118,6 +14822,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13149,6 +14854,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13180,6 +14886,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13211,6 +14918,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13242,6 +14950,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13284,6 +14993,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13315,6 +15025,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13366,6 +15077,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13397,6 +15215,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13414,10 +15233,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -13439,6 +15260,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13474,6 +15296,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13509,6 +15332,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13540,6 +15364,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13571,6 +15396,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13623,14 +15449,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -13704,14 +15540,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -13795,14 +15641,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -13901,6 +15757,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13948,6 +15805,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -13979,6 +15837,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14010,6 +15869,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14020,7 +15880,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -14041,6 +15901,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14072,6 +15933,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14103,6 +15965,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14134,6 +15997,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14165,6 +16029,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14196,6 +16061,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14227,6 +16093,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14258,6 +16125,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14289,6 +16157,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14320,6 +16189,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14351,6 +16221,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14382,6 +16253,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14413,6 +16285,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14444,6 +16317,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14475,6 +16349,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14517,6 +16392,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14548,6 +16424,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14599,6 +16476,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14630,6 +16614,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14647,10 +16632,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -14672,6 +16659,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14707,6 +16695,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14742,6 +16731,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14773,6 +16763,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14804,6 +16795,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -14856,14 +16848,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -14937,14 +16939,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -15028,14 +17040,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -15134,6 +17156,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15181,6 +17204,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15212,6 +17236,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15243,6 +17268,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15253,7 +17279,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -15274,6 +17300,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15305,6 +17332,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15336,6 +17364,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15367,6 +17396,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15398,6 +17428,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15429,6 +17460,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15460,6 +17492,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15491,6 +17524,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15522,6 +17556,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15553,6 +17588,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15584,6 +17620,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15615,6 +17652,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15646,6 +17684,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15677,6 +17716,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15708,6 +17748,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15750,6 +17791,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15781,6 +17823,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15832,6 +17875,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15863,6 +18013,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15880,10 +18031,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -15905,6 +18058,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15940,6 +18094,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -15975,6 +18130,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16006,6 +18162,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16037,6 +18194,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16090,14 +18248,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -16171,14 +18339,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -16262,14 +18440,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -16368,6 +18556,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16415,6 +18604,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16446,6 +18636,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16477,6 +18668,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16487,7 +18679,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -16508,6 +18700,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16539,6 +18732,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16570,6 +18764,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16601,6 +18796,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16632,6 +18828,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16663,6 +18860,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16694,6 +18892,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16725,6 +18924,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16756,6 +18956,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16787,6 +18988,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16818,6 +19020,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16849,6 +19052,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16880,6 +19084,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16911,6 +19116,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16942,6 +19148,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -16984,6 +19191,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17015,6 +19223,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17066,6 +19275,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17097,6 +19413,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17114,10 +19431,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -17139,6 +19458,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17174,6 +19494,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17209,6 +19530,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17240,6 +19562,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17271,6 +19594,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17323,14 +19647,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -17404,14 +19738,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -17495,14 +19839,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -17601,6 +19955,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17648,6 +20003,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17679,6 +20035,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17710,6 +20067,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17720,7 +20078,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -17741,6 +20099,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17772,6 +20131,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17803,6 +20163,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17834,6 +20195,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17865,6 +20227,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17896,6 +20259,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17927,6 +20291,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17958,6 +20323,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -17989,6 +20355,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18020,6 +20387,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18051,6 +20419,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18082,6 +20451,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18113,6 +20483,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18144,6 +20515,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18175,6 +20547,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18217,6 +20590,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18248,6 +20622,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18299,6 +20674,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18330,6 +20812,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18347,10 +20830,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -18372,6 +20857,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18407,6 +20893,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18442,6 +20929,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18473,6 +20961,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18504,6 +20993,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18557,14 +21047,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -18638,14 +21138,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -18729,14 +21239,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -18835,6 +21355,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18882,6 +21403,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18913,6 +21435,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18944,6 +21467,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -18954,7 +21478,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -18975,6 +21499,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19006,6 +21531,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19037,6 +21563,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19068,6 +21595,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19099,6 +21627,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19130,6 +21659,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19161,6 +21691,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19192,6 +21723,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19223,6 +21755,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19254,6 +21787,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19285,6 +21819,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19316,6 +21851,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19347,6 +21883,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19378,6 +21915,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19409,6 +21947,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19451,6 +21990,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19482,6 +22022,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19533,6 +22074,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19564,6 +22212,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19581,10 +22230,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -19606,6 +22257,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19641,6 +22293,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19676,6 +22329,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19707,6 +22361,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19738,6 +22393,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -19791,14 +22447,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -19872,14 +22538,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -19963,14 +22639,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -20069,6 +22755,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20116,6 +22803,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20147,6 +22835,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20178,6 +22867,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20188,7 +22878,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -20209,6 +22899,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20240,6 +22931,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20271,6 +22963,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20302,6 +22995,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20333,6 +23027,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20364,6 +23059,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20395,6 +23091,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20426,6 +23123,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20457,6 +23155,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20488,6 +23187,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20519,6 +23219,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20550,6 +23251,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20581,6 +23283,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20612,6 +23315,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20643,6 +23347,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20685,6 +23390,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20716,6 +23422,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20767,6 +23474,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20798,6 +23612,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20815,10 +23630,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -20840,6 +23657,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20875,6 +23693,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20910,6 +23729,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20941,6 +23761,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -20972,6 +23793,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21025,14 +23847,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -21106,14 +23938,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -21197,14 +24039,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -21303,6 +24155,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21350,6 +24203,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21381,6 +24235,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21412,6 +24267,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21422,7 +24278,7 @@ export declare const store: {
                     };
                 };
             };
-            TextInput: {
+            BaseInput: {
                 size: {
                     type: string;
                     value: string;
@@ -21443,6 +24299,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21474,6 +24331,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21505,6 +24363,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21536,6 +24395,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21567,6 +24427,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21598,6 +24459,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21629,6 +24491,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21660,6 +24523,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21691,6 +24555,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21722,6 +24587,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21753,6 +24619,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21784,6 +24651,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21815,6 +24683,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21846,6 +24715,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21877,6 +24747,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21919,6 +24790,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -21950,6 +24822,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22001,6 +24874,113 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Spinner: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            Progress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            RadialProgress: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22032,6 +25012,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22049,10 +25030,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -22074,6 +25057,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22109,6 +25093,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22144,6 +25129,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22175,6 +25161,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22206,6 +25193,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -22274,14 +25262,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22355,14 +25353,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22435,14 +25443,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22515,14 +25533,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22596,14 +25624,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22676,14 +25714,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22757,14 +25805,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22838,14 +25896,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -22919,14 +25987,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -23001,35 +26079,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -23055,40 +26142,133 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             fontStyle: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -23114,6 +26294,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             color: {
                 get: (clone?: boolean) => {
@@ -23173,6 +26361,41 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             style: {
                 get: (clone?: boolean) => {
@@ -24772,14 +27995,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -24853,14 +28086,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -24933,14 +28176,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25013,14 +28266,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25094,14 +28357,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25174,14 +28447,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25255,14 +28538,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25336,14 +28629,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25417,14 +28720,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -25499,35 +28812,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -25553,40 +28875,133 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             fontStyle: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -25612,6 +29027,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             color: {
                 get: (clone?: boolean) => {
@@ -25671,6 +29094,41 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             style: {
                 get: (clone?: boolean) => {
@@ -27280,14 +30738,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27371,14 +30839,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27461,14 +30939,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27551,14 +31039,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27642,14 +31140,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27732,14 +31240,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27823,14 +31341,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -27914,14 +31442,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -28005,14 +31543,24 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
                 };
                 fontStyle: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 color: {
                     type: string;
                     items: string[];
+                };
+                colorCustom: {
+                    type: string;
                 };
                 style: {
                     fontWeight: {
@@ -28232,35 +31780,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -28286,40 +31843,133 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             fontStyle: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -28345,6 +31995,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             color: {
                 get: (clone?: boolean) => {
@@ -28404,6 +32062,41 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             style: {
                 get: (clone?: boolean) => {
@@ -30028,6 +33721,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30067,6 +33761,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30105,6 +33800,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30143,6 +33839,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30182,6 +33879,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30220,6 +33918,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30259,6 +33958,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30298,6 +33998,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30337,6 +34038,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -30729,35 +34431,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -30783,6 +34494,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -30954,6 +34673,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31001,6 +34721,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31047,6 +34768,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31093,6 +34815,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31140,6 +34863,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31186,6 +34910,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31233,6 +34958,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31280,6 +35006,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31327,6 +35054,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -31850,35 +35578,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -31904,6 +35641,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -32059,6 +35804,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32090,6 +35836,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32120,6 +35867,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32150,6 +35898,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32181,6 +35930,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32211,6 +35961,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32242,6 +35993,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32273,6 +36025,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32304,6 +36057,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32565,35 +36319,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -32619,6 +36382,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -32774,6 +36545,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32805,6 +36577,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32835,6 +36608,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32865,6 +36639,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32896,6 +36671,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32926,6 +36702,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32957,6 +36734,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -32988,6 +36766,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33019,6 +36798,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33280,35 +37060,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -33334,6 +37123,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -33467,7 +37264,7 @@ export declare const store: {
                 };
             };
         };
-        TextInput: {
+        BaseInput: {
             get: (clone?: boolean) => {
                 size: {
                     type: string;
@@ -33489,6 +37286,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33520,6 +37318,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33550,6 +37349,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33580,6 +37380,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33611,6 +37412,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33641,6 +37443,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33672,6 +37475,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33703,6 +37507,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33734,6 +37539,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -33995,35 +37801,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -34049,6 +37864,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -34204,6 +38027,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34235,6 +38059,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34265,6 +38090,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34295,6 +38121,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34326,6 +38153,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34356,6 +38184,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34387,6 +38216,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34418,6 +38248,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34449,6 +38280,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34710,35 +38542,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -34764,6 +38605,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -34919,6 +38768,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34950,6 +38800,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -34980,6 +38831,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35010,6 +38862,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35041,6 +38894,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35071,6 +38925,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35102,6 +38957,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35133,6 +38989,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35164,6 +39021,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35425,35 +39283,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -35479,6 +39346,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -35634,6 +39509,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35665,6 +39541,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35695,6 +39572,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35725,6 +39603,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35756,6 +39635,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35786,6 +39666,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35817,6 +39698,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35848,6 +39730,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -35879,6 +39762,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36140,35 +40024,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -36194,6 +40087,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -36349,6 +40250,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36380,6 +40282,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36410,6 +40313,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36440,6 +40344,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36471,6 +40376,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36501,6 +40407,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36532,6 +40439,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36563,6 +40471,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36594,6 +40503,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -36855,35 +40765,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -36909,6 +40828,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -37064,6 +40991,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37095,6 +41023,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37125,6 +41054,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37155,6 +41085,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37186,6 +41117,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37216,6 +41148,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37247,6 +41180,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37278,6 +41212,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37309,6 +41244,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37570,35 +41506,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -37624,6 +41569,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -37779,6 +41732,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37810,6 +41764,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37840,6 +41795,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37870,6 +41826,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37901,6 +41858,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37931,6 +41889,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37962,6 +41921,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -37993,6 +41953,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38024,6 +41985,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38285,35 +42247,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -38339,6 +42310,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -38494,6 +42473,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38525,6 +42505,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38555,6 +42536,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38585,6 +42567,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38616,6 +42599,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38646,6 +42630,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38677,6 +42662,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38708,6 +42694,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -38739,6 +42726,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39000,35 +42988,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -39054,6 +43051,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -39209,6 +43214,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39240,6 +43246,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39270,6 +43277,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39300,6 +43308,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39331,6 +43340,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39361,6 +43371,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39392,6 +43403,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39423,6 +43435,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39454,6 +43467,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39715,35 +43729,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -39769,6 +43792,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -39924,6 +43955,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39955,6 +43987,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -39985,6 +44018,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40015,6 +44049,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40046,6 +44081,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40076,6 +44112,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40107,6 +44144,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40138,6 +44176,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40169,6 +44208,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40430,35 +44470,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -40484,6 +44533,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -40639,6 +44696,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40670,6 +44728,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40700,6 +44759,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40730,6 +44790,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40761,6 +44822,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40791,6 +44853,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40822,6 +44885,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40853,6 +44917,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -40884,6 +44949,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41145,35 +45211,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -41199,6 +45274,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -41354,6 +45437,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41385,6 +45469,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41415,6 +45500,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41445,6 +45531,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41476,6 +45563,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41506,6 +45594,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41537,6 +45626,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41568,6 +45658,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41599,6 +45690,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -41860,35 +45952,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -41914,6 +46015,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -42069,6 +46178,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42100,6 +46210,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42130,6 +46241,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42160,6 +46272,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42191,6 +46304,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42221,6 +46335,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42252,6 +46367,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42283,6 +46399,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42314,6 +46431,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42575,35 +46693,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -42629,6 +46756,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -42784,6 +46919,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42815,6 +46951,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42845,6 +46982,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42875,6 +47013,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42906,6 +47045,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42936,6 +47076,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42967,6 +47108,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -42998,6 +47140,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43029,6 +47172,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43290,35 +47434,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -43344,6 +47497,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -43499,6 +47660,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43530,6 +47692,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43560,6 +47723,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43590,6 +47754,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43621,6 +47786,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43651,6 +47817,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43682,6 +47849,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43713,6 +47881,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -43744,6 +47913,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44005,35 +48175,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -44059,6 +48238,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -44246,6 +48433,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44285,6 +48473,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44323,6 +48512,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44361,6 +48551,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44400,6 +48591,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44438,6 +48630,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44477,6 +48670,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44516,6 +48710,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44555,6 +48750,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -44947,35 +49143,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -45001,6 +49206,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -45156,6 +49369,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45187,6 +49401,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45217,6 +49432,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45247,6 +49463,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45278,6 +49495,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45308,6 +49526,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45339,6 +49558,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45370,6 +49590,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45401,6 +49622,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -45662,35 +49884,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -45716,6 +49947,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -46278,6 +50517,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46309,6 +50549,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46339,6 +50580,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46369,6 +50611,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46400,6 +50643,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46430,6 +50674,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46461,6 +50706,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46492,6 +50738,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46523,6 +50770,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -46784,6 +51032,653 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
+        Spinner: {
+            get: (clone?: boolean) => {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
                 };
                 set: (value: {
                     type: string;
@@ -46838,6 +51733,1827 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
+        Progress: {
+            get: (clone?: boolean) => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            value: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                set: (value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                } | ((prev: {
+                    type: string;
+                    min: number;
+                    max: number;
+                }) => {
+                    type: string;
+                    min: number;
+                    max: number;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    min: number;
+                    max: number;
+                }) => {
+                    type: string;
+                    min: number;
+                    max: number;
+                }) => void;
+                use: () => {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    min: number;
+                    max: number;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                min: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                max: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+            };
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            disabled: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                set: (value: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                } | ((prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }) => void;
+                use: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                size: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                color: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                style: {
+                    get: (clone?: boolean) => {
+                        marginTop: number;
+                    };
+                    set: (value: {
+                        marginTop: number;
+                    } | ((prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    })) => void;
+                    update: (fn: (prev: {
+                        marginTop: number;
+                    }) => {
+                        marginTop: number;
+                    }) => void;
+                    use: () => {
+                        marginTop: number;
+                    };
+                    watch: (fn: (val: {
+                        marginTop: number;
+                    }, unsub: () => void) => void) => () => void;
+                    export: () => {
+                        marginTop: number;
+                    };
+                } & {
+                    marginTop: {
+                        get: (clone?: boolean) => number;
+                        set: (value: number | ((prev: number) => number)) => void;
+                        update: (fn: (prev: number) => number) => void;
+                        use: () => number;
+                        watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                        export: () => number;
+                    };
+                };
+            };
+        };
+        RadialProgress: {
+            get: (clone?: boolean) => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            set: (value: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            } | ((prev: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            })) => void;
+            update: (fn: (prev: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }) => void;
+            use: () => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+            watch: (fn: (val: {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            }, unsub: () => void) => void) => () => void;
+            export: () => {
+                value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                size: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                variant: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                color: {
+                    type: string;
+                    items: string[];
+                };
+                colorCustom: {
+                    type: string;
+                };
+                shadow: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                disabled: {
+                    type: string;
+                    size: string;
+                    color: string;
+                    style: {
+                        marginTop: number;
+                    };
+                };
+            };
+        } & {
+            value: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                set: (value: {
+                    type: string;
+                    min: number;
+                    max: number;
+                } | ((prev: {
+                    type: string;
+                    min: number;
+                    max: number;
+                }) => {
+                    type: string;
+                    min: number;
+                    max: number;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    min: number;
+                    max: number;
+                }) => {
+                    type: string;
+                    min: number;
+                    max: number;
+                }) => void;
+                use: () => {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    min: number;
+                    max: number;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    min: number;
+                    max: number;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                min: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                max: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+            };
+            size: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            variant: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            color: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                }) => {
+                    type: string;
+                    items: string[];
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+            };
+            colorCustom: {
+                get: (clone?: boolean) => {
+                    type: string;
+                };
+                set: (value: {
+                    type: string;
+                } | ((prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                }) => {
+                    type: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+            };
+            shadow: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                set: (value: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                } | ((prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }) => void;
+                use: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    items: string[];
+                    value: string;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    items: string[];
+                    value: string;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                items: {
+                    get: (clone?: boolean) => string[];
+                    set: (value: string[] | ((prev: string[]) => string[])) => void;
+                    update: (fn: (prev: string[]) => string[]) => void;
+                    use: () => string[];
+                    watch: (fn: (val: string[], unsub: () => void) => void) => () => void;
+                    export: () => string[];
+                } & {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -46993,6 +53709,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47024,6 +53741,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47054,6 +53772,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47084,6 +53803,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47115,6 +53835,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47145,6 +53866,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47176,6 +53898,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47207,6 +53930,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47238,6 +53962,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47499,35 +54224,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -47553,6 +54287,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -47715,10 +54457,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47740,6 +54484,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47754,10 +54499,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47779,6 +54526,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47792,10 +54540,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47817,6 +54567,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47830,10 +54581,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47855,6 +54608,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47869,10 +54623,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47894,6 +54650,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47907,10 +54664,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47932,6 +54691,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47946,10 +54706,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -47971,6 +54733,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -47985,10 +54748,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -48010,6 +54775,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48024,10 +54790,12 @@ export declare const store: {
                 variant: {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 position: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 orientation: {
                     type: string;
@@ -48049,6 +54817,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48064,35 +54833,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    variant: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    variant: string;
                 }) => {
                     type: string;
                     items: string[];
+                    variant: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    variant: string;
                 }) => {
                     type: string;
                     items: string[];
+                    variant: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    variant: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    variant: string;
                 };
             } & {
                 type: {
@@ -48118,40 +54896,57 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                variant: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             position: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -48177,6 +54972,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             orientation: {
                 get: (clone?: boolean) => {
@@ -48428,35 +55231,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -48482,6 +55294,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -48641,6 +55461,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48676,6 +55497,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48710,6 +55532,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48744,6 +55567,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48779,6 +55603,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48813,6 +55638,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48848,6 +55674,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48883,6 +55710,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -48918,6 +55746,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49238,35 +56067,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -49292,6 +56130,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -49451,6 +56297,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49486,6 +56333,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49520,6 +56368,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49554,6 +56403,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49589,6 +56439,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49623,6 +56474,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49658,6 +56510,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49693,6 +56546,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -49728,6 +56582,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50048,35 +56903,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -50102,6 +56966,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -50257,6 +57129,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50288,6 +57161,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50318,6 +57192,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50348,6 +57223,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50379,6 +57255,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50409,6 +57286,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50440,6 +57318,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50471,6 +57350,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50502,6 +57382,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -50763,35 +57644,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -50817,6 +57707,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
@@ -50972,6 +57870,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51003,6 +57902,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51033,6 +57933,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51063,6 +57964,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51094,6 +57996,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51124,6 +58027,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51155,6 +58059,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51186,6 +58091,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51217,6 +58123,7 @@ export declare const store: {
                 shadow: {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 disabled: {
                     type: string;
@@ -51478,35 +58385,44 @@ export declare const store: {
                 get: (clone?: boolean) => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 set: (value: {
                     type: string;
                     items: string[];
+                    value: string;
                 } | ((prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 })) => void;
                 update: (fn: (prev: {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => {
                     type: string;
                     items: string[];
+                    value: string;
                 }) => void;
                 use: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
                 watch: (fn: (val: {
                     type: string;
                     items: string[];
+                    value: string;
                 }, unsub: () => void) => void) => () => void;
                 export: () => {
                     type: string;
                     items: string[];
+                    value: string;
                 };
             } & {
                 type: {
@@ -51532,6 +58448,14 @@ export declare const store: {
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
                 }[];
+                value: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
             };
             disabled: {
                 get: (clone?: boolean) => {
