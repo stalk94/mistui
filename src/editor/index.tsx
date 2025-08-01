@@ -340,7 +340,7 @@ export default function SandBoxRoot({ }) {
                 }
                 centerSlot={
                     <LinearNavigationItems
-                        onOverflow={console.log}
+                        onOverflow={()=> true}
                         style={{ marginLeft: '4%' }}
                         items={[
                             {

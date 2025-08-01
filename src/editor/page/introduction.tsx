@@ -25,7 +25,7 @@ const Segment =({ children, label })=> (
 export default function Intro() {
 
     return (
-        <main className="flex flex-col h-full w-full space-y-2 p-8">
+        <main className="flex flex-col h-full w-full space-y-2 p-8" style={{ fontFamily: '"Inter", sans-serif' }}>
             <Segment
                 label={
                     <>
@@ -33,31 +33,97 @@ export default function Intro() {
                     </>
                 }
             >
-                
-            </Segment>
-            
-            <Segment
-                label={
-                    <>
-                        
-                    </>
-                }
-            >
-                
+                mistUI is a modern UI library focused on simplicity, flexibility, and real-world usability. It draws inspiration from MUI, Tailwind, DaisyUI, and Atomic Design — but without the complexity, "magic," or headaches.
             </Segment>
 
             <Segment
                 label={
                     <>
-                        How does mistUI fit in Atomic Design principles?
+                        Why should I use <b>mistUI?</b>
+                    </>
+                }
+            >
+                <ul className="list-disc list-inside ml-4 my-1">
+                    <li>Fast, flexible components — ready to use and customize</li>
+                    <li>Perfect base for your own design system</li>
+                    <li>Feels familiar if you've used MUI, Tailwind, or DaisyUI</li>
+                    <li>Built to scale with your project — strong typing, easy overrides, auto palette</li>
+                    <li>Minimal dependencies — no styled-components or emotion</li>
+                    <li>No "magic" — transparent styles, predictable behavior</li>
+                    <li>Supports both controlled and uncontrolled inputs with hybrid state logic</li>
+                    <li>Components follow Atomic Design principles for better structure</li>
+                    <li>Ideal for building visual editors and UI builders</li>
+                    <li>Playground for live experimenting with props and styles</li>
+                    <li>Lightweight, optimized for performance and real-world usage</li>
+                    <li>Easy to theme, extend, and adapt to your brand</li>
+                </ul>
+            </Segment>
+
+            <Segment
+                label={
+                    <>
+                        How does <b>mistUI</b> fit in Atomic Design principles?
                     </>
                 }
             >
                 Atomic Design is a methodology for creating design systems. It breaks down the UI into smaller parts, like atoms, molecules, organisms, etc.
+                They are the smallest parts of the UI that you can use to build larger parts. MistUI components are like molecules and organisms.
+                Larger parts of the UI, like templates and pages, are quickly possible by combining these molecules and organisms using layouts, grid/flexbox, and adding content.
+            </Segment>
 
-You can think of Tailwind CSS utility classes as atoms. They are the smallest parts of the UI that you can use to build larger parts. daisyUI classes are like molecules and organisms. They are higher-level abstractions of the UI parts that are made of atoms.
+            <Segment
+                label={
+                    <>
+                        Can I use <b>mistUI</b> with other UI frameworks?
+                    </>
+                }
+            >
+                Yes, as long as they do not conflict with mistUI’s styling system or theming engine.
+            </Segment>
 
-Larger parts of the UI, like templates and pages are quickly possible by putting these molecules and organisms together in layouts, using grid or flexbox, and adding functionality and content to them.
+            <Segment
+                label={
+                    <>
+                        Is there a <b>playground</b> to try components?
+                    </>
+                }
+            >
+                Yes! Just visit any component page — at the top, you'll find a switch to toggle between documentation and playground mode.
+                <br />
+                You can edit props, toggle styles, and test UI behavior in real time.
+            </Segment>
+
+            <Segment
+                label={
+                    <>
+                        How does <b>theming</b> work in mistUI?
+                    </>
+                }
+            >
+                mistUI has a powerful theming system inspired by DaisyUI and MUI. You can override colors, sizes, shadows, font families, variants, and more — globally or per component.
+                It's perfect for aligning with your brand or supporting multiple themes (like dark/light modes).
+            </Segment>
+
+            <Segment
+                label={
+                    <>
+                        Is <b>mistUI</b> production-ready?
+                    </>
+                }
+            >
+                mistUI is currently under active development. While many components are stable and usable, documentation and some features are still being finalized.
+                Use it in side projects or internal tools, and feel free to contribute or report issues on GitHub.
+            </Segment>
+
+            <Segment
+                label={
+                    <>
+                        What’s the <b>philosophy</b> behind mistUI?
+                    </>
+                }
+            >
+                We believe in **simplicity over magic**.
+                That means no over-abstractions, no magic props, and no hidden behavior. Everything is visible, debuggable, and intuitive.
             </Segment>
         </main>
     );
