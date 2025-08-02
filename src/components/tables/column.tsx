@@ -1,4 +1,6 @@
-import { Column } from 'primereact/column';
+import { Column, ColumnProps } from 'primereact/column';
 
 
-export default Column;
+export default function DataTableColumn(props: ColumnProps) {
+    return <Column {...props} />;
+}

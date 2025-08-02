@@ -1,8 +1,9 @@
 import Table from '@/components/tables/simple';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
-import Avatar from '@/components/avatar';
 import { Flag } from '@/index';
+import { baseMeta } from '../meta';
+
 
 
 const tab = {
@@ -41,10 +42,38 @@ export default function InfoTable(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
+
             {/* default */}
             <Section 
-                title="Table" 
-                description="кнопка" 
+                title="basic" 
+                description="not configure" 
+                code={`
+                    <div className="flex justify-center h-[400px]">
+                        <Table
+                            size='xs'
+                            shadow='lg'
+                            value={testData}
+                            header={'header'}
+                            footer={'footer'}
+                        />
+                    </div>
+                `}
+            >
+                <div className="flex justify-center h-[400px]">
+                    <Table
+                        size='xs'
+                        shadow='lg'
+                        value={testData}
+                        header={<div className='p-2'>header</div>}
+                        footer={<div className='p-1'>footer</div>}
+                    />
+                </div>
+            </Section>
+            
+            {/* column configure */}
+            <Section 
+                title="column configure" 
+                description="passed configuration of `children` props properties array objects" 
                 code={`
                     <div className="flex justify-center h-[400px]">
                         <Table
@@ -86,16 +115,19 @@ export default function InfoTable(tab) {
                         shadow='lg'
                         value={testData}
                         children={[
-                            { header: <div>image</div>, field: 'image', 
+                            {
+                                header: <div>image</div>, field: 'image',
                                 body: (data) => <img className='h-6 w-6' src={data} />
                             },
                             { header: 'name', field: 'name' },
-                            { header: 'country', field: 'country',
+                            {
+                                header: 'country', field: 'country',
                                 body: (data) => <Flag code={data} size='xs' />
                             },
-                            { header: 'rating', field: 'rating',
+                            {
+                                header: 'rating', field: 'rating',
                                 body: (data) => (
-                                    <div className={`rating rating-xs`}>
+                                    <div className='rating rating-xs'>
                                         {[1, 2, 3, 4, 5].slice(0, data).map((_, i) => (
                                             <div
                                                 key={i}
@@ -108,8 +140,62 @@ export default function InfoTable(tab) {
                                 )
                             },
                         ]}
-                        header={'header'}
-                        footer={'footer'}
+                        header={<div className='p-2'>header</div>}
+                        footer={<div className='p-1'>footer</div>}
+                    />
+                </div>
+            </Section>
+
+            <Section 
+                title="dash" 
+                description="variant dash" 
+                code={`
+                    <div className="flex justify-center h-[400px]">
+                        <Table
+                            size='xs'
+                            shadow='lg'
+                            value={testData}
+                            header={'header'}
+                            footer={'footer'}
+                            variant='dash'
+                        />
+                    </div>
+                `}
+            >
+                <div className="flex justify-center h-[400px]">
+                    <Table
+                        size='xs'
+                        shadow='lg'
+                        value={testData}
+                        variant='dash'
+                        children={[
+                            {
+                                header: <div>image</div>, field: 'image',
+                                body: (data) => <img className='h-6 w-6' src={data} />
+                            },
+                            { header: 'name', field: 'name' },
+                            {
+                                header: 'country', field: 'country',
+                                body: (data) => <Flag code={data} size='xs' />
+                            },
+                            {
+                                header: 'rating', field: 'rating',
+                                body: (data) => (
+                                    <div className='rating rating-xs'>
+                                        {[1, 2, 3, 4, 5].slice(0, data).map((_, i) => (
+                                            <div
+                                                key={i}
+                                                className="mask mask-star bg-amber-300"
+                                                aria-label="1 star"
+                                            />
+                                        ))
+                                        }
+                                    </div>
+                                )
+                            },
+                        ]}
+                        header={<div className='p-2'>header</div>}
+                        footer={<div className='p-1'>footer</div>}
                     />
                 </div>
             </Section>
@@ -119,6 +205,7 @@ export default function InfoTable(tab) {
 
 
 InfoTable.meta = {
+    ...baseMeta,
     children: {
         values: [{ 
             header: {
@@ -133,5 +220,20 @@ InfoTable.meta = {
         }],
         type: 'array',
         description: ''
+    },
+    value: {
+        values: ['object'],
+        type: 'array',
+        description: 'An array of objects to display.'
+    },
+    header: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: 'Slot custom header component'
+    },
+    footer: {
+        values: ['React.ReactNode'],
+        type: 'object',
+        description: 'Slot custom footer component'
     },
 }

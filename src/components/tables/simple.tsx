@@ -54,7 +54,7 @@ const useStyle = ({ style, color, variant }) => {
     }, [style, color, variant]);
 }
 
-// ! castomization
+// ! variant, color
 export default function Table({
     value,
     children,
@@ -64,9 +64,9 @@ export default function Table({
     footer,
     header,
     size,
-    color,
     shadow,
     variant = 'outline',
+    color,
     ...props
 }: TableProps) {
     const { autosizes, shadows } = useTheme();
@@ -145,7 +145,8 @@ export default function Table({
                     {header && (
                         <tr>
                             <td 
-                                className='p-0' 
+                                className='p-0'
+                                style={{paddingBlock: 0}} 
                                 colSpan={curSchema?.length || Object.keys(value[0]).length}
                             >
                                 { header }
@@ -157,7 +158,7 @@ export default function Table({
                         {(curSchema || Object.keys(value[0])).map((col, i) => (
                             <th 
                                 key={i}
-                                className='p-1 text-[#686868] font-bold'
+                                className='p-1 opacity-60 font-bold'
                             >
                                 {typeof col !== 'object' 
                                     ? col 
@@ -178,6 +179,7 @@ export default function Table({
                                 className='p-0'
                                 key={index}
                                 style={{
+                                    borderStyle: variant === 'outline' ? 'solid' : 'dashed',
                                     fontSize: sizesText[size] 
                                         ? sizesText[size]
                                         : undefined
@@ -197,6 +199,7 @@ export default function Table({
                         <tr>
                             <td
                                 className='p-0' 
+                                style={{paddingBlock: 0}} 
                                 colSpan={curSchema?.length || Object.keys(value[0]).length}
                             >
                                 { footer }

@@ -9,14 +9,6 @@ import { useUids } from '../hooks/uuid';
 import { useBreakpoints } from '../hooks';
 
 /////////////////////////////////////////////////////////////////////
-const tableSize = {
-    default: 'xs',
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-    xl: 'lg',
-    xxl: 'xl'
-}
 const sizesText = {
     xs: 9,
     sm: 12,
@@ -40,9 +32,9 @@ const StyleTableWrapper = memo(({
     shadow,
     hoverVariant
 }: StyleTableWrapperProps) => {
-    const { shadows } = useTheme();
+    const { shadows, sizes } = useTheme();
     const breackpoint = useBreakpoints();
-    const curSize = useMemo(()=> (size === 'auto') ? tableSize[breackpoint] : size, [size, breackpoint]);
+    const curSize = useMemo(()=> (size === 'auto') ? sizes.table[breackpoint] : size, [size, breackpoint]);
     const fontFamily =  style?.body?.fontFamily ? `font-family: ${ style.body.fontFamily };` : '';
     const tabShadow =  shadows[shadow] ? `box-shadow: ${ shadows[shadow] }` : '';
     

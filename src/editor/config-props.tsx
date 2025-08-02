@@ -386,16 +386,23 @@ const CONFIG = {
 
     },
     Box: {
-        elevation: {
+        shadowSize: {
             type: 'slider',
             value: 1,
             min: -25,
             max: 25
         },
+        elevation: {
+            type: 'slider',
+            value: 0.6,
+            min: 0,
+            max: 1,
+            step: 0.01
+        },
         variant: {
             type: 'groupButton',
             value: 'contained',
-            items: ['contained', 'outline', 'dash', 'soft', 'ghost', 'glass']
+            items: ['contained', 'outline', 'dash', 'neumorph', 'glass']
         },
         color: {
             type: 'groupButton',
@@ -468,9 +475,9 @@ export default function() {
     
     
     return(
-        <Drn>
+        <>
             <div
-                className='flex flex-col w-70 absolute right-0'
+                className='flex flex-col w-70 absolute right-0 top-14'
                 style={{ 
                     zIndex: 999,
                     background: 'rgb(58, 58, 58)', 
@@ -485,7 +492,6 @@ export default function() {
                         size='xs'
                         variant='ghost'
                         className='ml-auto'
-                        onClick={()=> setColapse(v => !v)}
                     >
                         x
                     </Button>
@@ -499,6 +505,6 @@ export default function() {
                     }
                 </span>
             </div>
-        </Drn>
+        </>
     );
 }

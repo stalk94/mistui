@@ -122,10 +122,10 @@ const components = {
     `,
 
     SimpleTable: `
-        
+        📊 A minimalist, customizable table component designed for easy rendering of tabular data from either a schema or raw objects. It features fixed headers with sticky top/bottom rows, flexible column rendering via children or schema, smooth vertical scrolling, and seamless integration with theming for consistent sizing, shadows, and styles. Ideal for lightweight data display without heavy dependencies.
     `,
     DataTable: `
-        
+       📊 A lightweight wrapper around PrimeReact's <DataTable> with enhanced UX and theming integration. It simplifies design customization, solves scroll/height issues, and connects seamlessly to your theme context.
     `,
 
     Divider: `
