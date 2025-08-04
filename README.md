@@ -3,6 +3,9 @@
 
  **MistUi** is a modern UI library focused on simplicity, flexibility, and real-world usability. It draws inspiration from MUI, Tailwind, DaisyUI, and Atomic Design—but without the complexity, "magic," or headaches.
 
+![preview](https://i.postimg.cc/8Ch3Djk1/preview.png)
+
+
 MistUi helps you build interfaces that are stylish out of the box, easily customizable, and architecturally unobtrusive.
 
 - ⚡️ Instant start with no theme or global providers required  
@@ -12,7 +15,6 @@ MistUi helps you build interfaces that are stylish out of the box, easily custom
 - 🛠️ Built on Tailwind + DaisyUI for a strong foundation, minimal footprint, and great performance  
 - 🎯 Aligned with Material Design principles  
 
-![preview](https://i.postimg.cc/8Ch3Djk1/preview.png)
 
 
 ## 📦 Installation
