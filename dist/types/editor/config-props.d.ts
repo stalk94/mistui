@@ -1391,6 +1391,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -2803,6 +2810,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -4214,6 +4228,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -5624,6 +5645,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
             Card: {
@@ -7037,6 +7065,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -8447,6 +8482,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
             Card: {
@@ -9860,6 +9902,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -11272,6 +11321,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -12683,6 +12739,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
             Card: {
@@ -14097,6 +14160,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -15504,6 +15574,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -16910,6 +16987,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -18315,6 +18399,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
             Card: {
@@ -19723,6 +19814,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -21128,6 +21226,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
             Card: {
@@ -22536,6 +22641,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -23943,6 +24055,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             Card: {
                 imageIsSide: {
@@ -25349,6 +25468,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
             Card: {
@@ -58750,6 +58876,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             set: (value: {
                 shadowSize: {
@@ -58777,6 +58910,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             } | ((prev: {
                 shadowSize: {
                     type: string;
@@ -58803,6 +58943,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             }) => {
                 shadowSize: {
                     type: string;
@@ -58828,6 +58975,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             })) => void;
             update: (fn: (prev: {
@@ -58856,6 +59010,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             }) => {
                 shadowSize: {
                     type: string;
@@ -58881,6 +59042,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             }) => void;
             use: () => {
@@ -58909,6 +59077,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             };
             watch: (fn: (val: {
                 shadowSize: {
@@ -58936,6 +59111,13 @@ export declare const store: {
                 colorCustom: {
                     type: string;
                 };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
             }, unsub: () => void) => void) => () => void;
             export: () => {
                 shadowSize: {
@@ -58962,6 +59144,13 @@ export declare const store: {
                 };
                 colorCustom: {
                     type: string;
+                };
+                rounded: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
                 };
             };
         } & {
@@ -59322,6 +59511,109 @@ export declare const store: {
                     use: () => string;
                     watch: (fn: (val: string, unsub: () => void) => void) => () => void;
                     export: () => string;
+                };
+            };
+            rounded: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
+                set: (value: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                } | ((prev: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                min: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                max: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                step: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
                 };
             };
         };

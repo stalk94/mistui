@@ -1,7 +1,7 @@
 import Tabs from '@/components/tabs';
 import { Section, Grid as TabsGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-import { Divdder, Typography } from '@/index';
+import { Divder, Typography } from '@/index';
 import { baseMeta } from '../meta';
 import { Fragment } from 'react/jsx-runtime';
 
@@ -53,11 +53,11 @@ export default function InfoTabs(tab) {
                 <TabsGrid className="flex-col">
                     {variants.map((variant, i) => (
                         <Fragment key={i}>
-                            <Divdder className="py-4" position="end">
+                            <Divder className="py-4" position="end">
                                 <Typography color="#b9b9b9" variant="caption">
                                     {variant}
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <div className="flex justify-center">
                                 <Tabs size="sm" variant={variant} items={items} />
                             </div>
@@ -77,11 +77,11 @@ export default function InfoTabs(tab) {
                 <TabsGrid className="flex-col">
                     {sizes.map((size, i) => (
                         <Fragment key={i}>
-                            <Divdder className="py-4" position="end">
+                            <Divder className="py-4" position="end">
                                 <Typography color="#b9b9b9" variant="caption">
                                     {size}
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <div className="flex justify-center">
                                  <Tabs size={size} shadow="sm" items={items} />
                             </div>
@@ -101,11 +101,11 @@ export default function InfoTabs(tab) {
                 <TabsGrid className="flex-col">
                     {colors.map((color, i) => (
                         <Fragment key={i}>
-                            <Divdder className="py-4" position="end">
+                            <Divder className="py-4" position="end">
                                 <Typography color={color} variant="caption">
                                     {color}
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <div className="flex justify-center">
                                 <Tabs size="sm" color={color} shadow="sm" items={items} />
                             </div>

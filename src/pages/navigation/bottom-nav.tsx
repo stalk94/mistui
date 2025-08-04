@@ -1,7 +1,7 @@
 import BottomNav from '@/components/bottom-nav';
 import { Section, Grid as BottomNavGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-import { Divdder, Typography } from '@/index';
+import { Divder, Typography } from '@/index';
 import { Cog8ToothIcon, HomeIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { baseMeta } from '../meta';
 
@@ -39,11 +39,11 @@ export default function InfoBottomNav(tab) {
                 <BottomNavGrid className="flex-col">
                     {sizes.map((size, i) => (
                         <div key={i} className="flex flex-col justify-start">
-                            <Divdder className="py-4" variant="dashed" position="end">
+                            <Divder className="py-4" variant="dashed" position="end">
                                 <Typography color="#b9b9b9" variant="caption">
                                     {size}
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <BottomNav className="relative" size={size} items={items} />
                         </div>
                     ))}
@@ -61,11 +61,11 @@ export default function InfoBottomNav(tab) {
                 <BottomNavGrid className="flex-col">
                     {colors.map((color, i) => (
                         <div key={i} className="flex flex-col">
-                            <Divdder className="py-4" variant="dashed" position="end">
+                            <Divder className="py-4" variant="dashed" position="end">
                                 <Typography color={color} variant="caption">
                                     {color}
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <BottomNav
                                 key={color}
                                 size="sm"

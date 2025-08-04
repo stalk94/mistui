@@ -1,7 +1,9 @@
-import { OrganizationChartProps } from "primereact/organizationchart";
+import { Variants } from '../theme/default';
 type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 export type CardProps = Props & {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    color?: Variants | (string & {});
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     /** картинка сбоку */
     imageIsSide?: boolean;
     /** изображение станет фоном карточки */
@@ -15,5 +17,4 @@ export type CardProps = Props & {
     /** доп содержимое, либо если не передавать `title`, `description`, `actions` то станет основным содержимым карточки */
     children?: React.ReactNode;
 };
-export type OrgChartProps = Props & OrganizationChartProps & {};
 export {};

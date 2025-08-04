@@ -83,8 +83,8 @@ export { default as Collapse } from './components/utils/collapse';
 // list
 export { default as List } from './components/list/base';
 
-// Divdder
-export { default as Divdder } from './components/utils/divider';
+// Divder
+export { default as Divder } from './components/utils/divider';
 
 // RadialProgress, ProgressLine
 export { default as RadialProgress } from './components/utils/radial-progress';

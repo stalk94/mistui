@@ -1,8 +1,9 @@
+import { Button } from '../buttons';
 export type TypeOauth = 'google' | 'facebook' | 'github' | 'telegram';
 export type SchemaOauth = {
     type: TypeOauth;
     label?: string;
-    button?: ButtonProps;
+    button?: typeof Button;
 };
 type SocialAuthButtonsProps = {
     scheme: SchemaOauth[];

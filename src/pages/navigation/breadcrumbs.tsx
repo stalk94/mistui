@@ -1,7 +1,6 @@
 import Breadcrumbs from '@/components/breadcrumbs';
 import { Section, Grid as BreadcrumbsGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-import { Divdder, Typography } from '@/index';
 import { Cog8ToothIcon, HomeIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { baseMeta } from '../meta';
 
@@ -145,6 +144,7 @@ export default function InfoBreadcrumbs(tab) {
         </div>
     );
 }
+
 
 const { children, ...rest } = baseMeta;
 InfoBreadcrumbs.meta = {

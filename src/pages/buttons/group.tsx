@@ -3,7 +3,7 @@ import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { HomeIcon, DocumentIcon, FilmIcon } from '@heroicons/react/24/solid';
 import ButtonInfo from './button';
-import { Divdder, Typography } from '@/index';
+import { Divder, Typography } from '@/index';
 import { orientationMeta } from '../meta';
 
 
@@ -75,13 +75,13 @@ export default function InfoGroupButton(tab) {
                 <Grid>
                     {variants.map((variant) => variant !== 'ghost' && (
                         <div key={variant} className="flex-col justify-center">
-                            <Divdder
+                            <Divder
                                 className='py-4'
                             >
                                 <Typography color='#a3a3a2' variant='caption'>
                                     { variant }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <GroupButton 
                                 size='sm' 
                                 value='play'
@@ -136,13 +136,13 @@ export default function InfoGroupButton(tab) {
                 <Grid>
                     {colors.map((color) => (
                         <div key={color} className='flex flex-col'>
-                            <Divdder
+                            <Divder
                                 className='py-4'
                             >
                                 <Typography color={color} variant='caption'>
                                     { color }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <GroupButton 
                                 size="sm" 
                                 color={color} 

@@ -1,7 +1,7 @@
 import Menu from '@/components/menu/list-menu';
 import { Section, Grid as MenuGrid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
-import { Divdder, Typography } from '@/index';
+import { Divder, Typography } from '@/index';
 import { Cog8ToothIcon, HomeIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { baseMeta } from '../meta';
 
@@ -59,7 +59,7 @@ export default function InfoMenu(tab) {
                 <MenuGrid className='flex-col'>
                     {sizes.map((size, i) => (
                         <div key={i} className='flex flex-col'>
-                            <Divdder 
+                            <Divder 
                                 className='py-4'
                                 variant='dashed' 
                                 position='end'
@@ -67,7 +67,7 @@ export default function InfoMenu(tab) {
                                 <Typography color='#acacaa' variant='caption'>
                                     { size }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <div className="flex justify-center m-auto">
                                 <Menu 
                                     key={size} 
@@ -92,7 +92,7 @@ export default function InfoMenu(tab) {
                 <MenuGrid className='flex-col'>
                     {colors.map((color, i) => (
                         <div key={i} className='flex flex-col'>
-                            <Divdder  
+                            <Divder  
                                 className='py-4'
                                 variant='dashed' 
                                 position='end'
@@ -100,7 +100,7 @@ export default function InfoMenu(tab) {
                                 <Typography color={color} variant='caption'>
                                     { color }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <div className="flex justify-center m-auto">
                                 <Menu
                                     size="sm"

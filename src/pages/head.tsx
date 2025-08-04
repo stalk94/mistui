@@ -188,7 +188,7 @@ const components = {
         🗖 Modal is a dialog window component that overlays content and focuses user attention for tasks like alerts, forms, or confirmations.
     `,
     Popover: `
-        🔽 Dropdown is a flexible, headless dropdown/popup component designed for both hover and click interactions.
+        🔽 Popover is a flexible, headless dropdown/popup component designed for both hover and click interactions.
     `,
     Drawer: `
         🚪 Drawer is a sliding panel component that appears from the specified screen edge (left, right, top, or bottom).

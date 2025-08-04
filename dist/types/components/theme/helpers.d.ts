@@ -9,7 +9,7 @@
     color.rotate(90);          // Повернуть оттенок (hue)
     color.mix(color2)
 */
-type ClasVariants = 'input' | 'btn' | 'text' | 'avatar' | 'thumb' | 'radio' | 'divider';
+type ClasVariants = 'input' | 'btn' | 'text' | 'avatar' | 'thumb' | 'radio' | 'divider' | 'progress' | 'rad-progress';
 type BreacpointsVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xs';
 type Combo = {
     default: BreacpointsVariants;

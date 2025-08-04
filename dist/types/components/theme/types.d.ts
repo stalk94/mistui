@@ -12,6 +12,7 @@ export interface Theme {
         divider: string;
         thumb: string;
         radio: string;
+        progress: string;
     };
     sizes: {
         [key: string]: {

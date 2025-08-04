@@ -38,7 +38,24 @@ export default function InfoPopover(tab) {
                 title="click" 
                 description="" 
                 code={`
-
+                    <Popover
+                        usePortal
+                        trigger={
+                            <Button
+                                shadow='sm'
+                                size='md'
+                                color='success'
+                                variant='dash'
+                            >
+                                {props?.isHover ? 'Hover my' : 'click my'}
+                            </Button>
+                        }
+                    >
+                        <div>
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </div>
+                    </Popover>
                 `}
             >
                 <Grid className="w-120 m-auto">
@@ -51,7 +68,25 @@ export default function InfoPopover(tab) {
                 title="isHover" 
                 description="" 
                 code={`
-
+                    <Popover
+                        usePortal
+                        isHover
+                        trigger={
+                            <Button
+                                shadow='sm'
+                                size='md'
+                                color='success'
+                                variant='dash'
+                            >
+                                {props?.isHover ? 'Hover my' : 'click my'}
+                            </Button>
+                        }
+                    >
+                        <div>
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </div>
+                    </Popover>
                 `}
             >
                 <Grid className="w-120 m-auto">
@@ -64,5 +99,56 @@ export default function InfoPopover(tab) {
 
 
 InfoPopover.meta = {
-    
+    trigger: {
+        type: 'object',
+        values: ["React.ReactNode"],
+        description: ''
+    },
+    children: {
+        type: 'object',
+        values: ["React.ReactNode"],
+        description: ''
+    },
+    align: {
+        values: ["center", "end", "start"],
+        type: 'enum',
+        description: ''
+    },
+    side: {
+        values: ["left", "right", "bottom", "top"],
+        type: 'enum',
+        description: ''
+    }, 
+    open: {
+        type: 'boolean',
+        values: ["boolean"],
+        description: ''
+    },
+    usePortal: {
+        type: 'boolean',
+        values: ["boolean"],
+        description: ''
+    },
+    isHover: {
+        type: 'boolean',
+        values: ["boolean"],
+        description: ''
+    },  
+    setOpen: {
+        values: [],
+        type: 'func',
+        description: ''
+    },
+    onClose: {
+        values: [],
+        type: 'func',
+        description: ''
+    },
+    anchor: {
+        values: [],
+        type: 'object',
+        description: ''
+    },
+    className: baseMeta.className,
+    style: baseMeta.style
 }

@@ -3,7 +3,7 @@ import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, variants, sizes } from '../helpers';
 import { HomeIcon, DocumentIcon } from '@heroicons/react/24/solid';
 import InfoGroupButton from './group';
-import { Divdder, Typography } from '@/index';
+import { Divder, Typography } from '@/index';
 
 
 export default function InfoGroupButtonFiltre(tab) {
@@ -53,13 +53,13 @@ export default function InfoGroupButtonFiltre(tab) {
                 <Grid>
                     {variants.map((variant) => (
                         <div key={variant} className="flex-col justify-center">
-                            <Divdder
+                            <Divder
                                 className='py-4'
                             >
                                 <Typography color='#a3a3a2' variant='caption'>
                                     { variant }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <GroupButtonFiltre 
                                 size='sm' 
                                 variant={variant}
@@ -82,13 +82,13 @@ export default function InfoGroupButtonFiltre(tab) {
                 <Grid>
                     {sizes.map((size) => (
                         <div key={size} className="flex-col justify-center">
-                            <Divdder
+                            <Divder
                                 className='py-4'
                             >
                                 <Typography color='#a3a3a2' variant='caption'>
                                     { size }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <GroupButtonFiltre
                                 size={size}
                                 key={size}
@@ -114,13 +114,13 @@ export default function InfoGroupButtonFiltre(tab) {
                 <Grid>
                     {colors.map((color) => (
                         <div key={color} className='flex-col justify-center'>
-                            <Divdder
+                            <Divder
                                 className='py-4'
                             >
                                 <Typography color={color} variant='caption'>
                                     { color }
                                 </Typography>
-                            </Divdder>
+                            </Divder>
                             <GroupButtonFiltre 
                                 size="sm" 
                                 key={color} 

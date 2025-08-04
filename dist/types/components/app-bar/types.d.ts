@@ -38,5 +38,6 @@ export type PreviewProps = {
     variant?: 'center' | 'left';
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     items: NavItem[];
-    onClick?: (path: string) => void;
+    /** callback navigation */
+    navigate?: (path: string) => void;
 };
