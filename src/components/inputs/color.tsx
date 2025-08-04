@@ -16,7 +16,10 @@ const Inputs = ({ updateComponent, input, styleInput }) => {
     
 
     return(
-        <div className="flex gap-1 items-center w-full h-full">
+        <div 
+            className="flex gap-1 items-center w-full h-full" 
+            onClick={(e)=> e.preventDefault()}
+        >
             {(['r', 'g', 'b'] as const).map((ch) => (
                 <Fragment key={ch}>
                     <span className='text-neutral-500' 
@@ -113,6 +116,7 @@ export default function SelectColor({
 
         return colorVarint;
     }, [color, style]);
+    
     useEffect(() => {
         if (value === undefined) return;
         if (value !== input) setInput(value);

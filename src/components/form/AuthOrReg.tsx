@@ -1,18 +1,19 @@
 import OauthForm, { SchemaOauth } from './oauth';
-import RegOrAuthForm, { TypeSchema, Schema, ValidatorCustom } from './auth-reg';
+import RegOrAuthForm, { TypeSchema, Schema } from './auth-reg';
 import Divider from '../utils/divider';
 import { Typography } from '../text';
 import { Button } from '../buttons';
+import type { Validator } from './validator-defolt';
 
 
-export type FormAuthOrRegProps = {
+export type FormAuthProps = {
     loading: boolean
     onClickRegistration: (data: Record<string, string | number>)=> void
     onClickOauthButton: (type: TypeSchema)=> void
     schemeAuthForm?: Schema[]
     propsButton?: typeof Button
     schemeOauth?: SchemaOauth[]
-    validatorsAuthForm?: Record<'password' | 'login' | 'email' | 'phone', ValidatorCustom>
+    validatorsAuthForm?: Record<'password' | 'login' | 'email' | 'phone', Validator>
 }
 
 
@@ -32,28 +33,16 @@ export default function FormAuthOrReg({
     schemeAuthForm,
     propsButton,
     schemeOauth
-}: FormAuthOrRegProps) {
-    const sx = {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: '100%', 
-        opacity: 0.85,
-        mb: 1.5,
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis'
-    }
-
+}: FormAuthProps) {
     const testSchemeBaseInput = [
-        { placeholder: 'min 6 simbol', type: 'login', sx: { mt: 2 } },
-        { type: 'email', sx: { mt: 2 } },
-        { placeholder: 'min 6 simbol', type: 'password', sx: { mt: 2 } },
-        { placeholder: 'min 6 simbol', type: 'password2', sx: { mt: 2 } }
+        { placeholder: 'min 6 simbol', type: 'login' },
+        { type: 'email' },
+        { placeholder: 'min 6 simbol', type: 'password' },
+        { placeholder: 'min 6 simbol', type: 'password2' }
     ];
     const schemeOauthTest = [
-        { type: 'google', button: { sx, color: 'primary' } },
-        { type: 'facebook', button: { sx, color: 'primary' } }
+        { type: 'google', button: { color: 'primary' } },
+        { type: 'facebook', button: { color: 'primary' } }
     ];
 
 
@@ -68,8 +57,8 @@ export default function FormAuthOrReg({
                 scheme={schemeOauth ?? schemeOauthTest}
             />
 
-            <Divider sx={{ mt: 2 }}>
-                <Typography variant="body1" color="text.secondary">
+            <Divider>
+                <Typography variant="body1" color="secondary">
                     or
                 </Typography>
             </Divider>
@@ -83,14 +72,8 @@ export default function FormAuthOrReg({
                 }}
                 button={{
                     children: 'registration',
-                    variant: 'outlined',
+                    variant: 'outline',
                     color: 'success',
-                    size: 'large',
-                    sx: {
-                        width: '100%',
-                        mt: 5,
-                        boxShadow: 1,
-                    },
                     ...propsButton
                 }}
             />

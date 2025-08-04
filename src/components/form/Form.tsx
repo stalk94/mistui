@@ -95,7 +95,6 @@ export default function Form({ scheme, onChange, labelPosition }: FormProps) {
 
 
     const handleChange = useCallback((id: any, newValue: any) => {
-        console.log(id, newValue);
         onChange?.(id, newValue);
     }, [onChange]);
     const renderedFields = useMemo(() => {

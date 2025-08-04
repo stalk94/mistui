@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect, Fragment } from 'react';
+import { useMemo, forwardRef, useEffect, Fragment, useRef } from 'react';
 import type { TextAreaProps } from './type';
 import { LabelTop } from './atomize';
 import { useUids } from '../hooks/uuid';
@@ -7,23 +7,27 @@ import { cs } from '../hooks/cs';
 
 
 
-export default function TextAreaInput({ 
-    onChange, 
-    placeholder, 
-    className,
-    size, 
-    color = 'neutral', 
-    variant = 'outline',
-    labelTop, 
-    required, 
-    value, 
-    shadow,
-    style = {},
-    ...props 
-}: TextAreaProps) {
+const TextAreaInput = forwardRef<HTMLTextAreaElement, TextAreaProps>(function TextAreaInput(
+    { 
+        onChange, 
+        placeholder, 
+        className,
+        size, 
+        color = 'neutral', 
+        variant = 'outline',
+        labelTop, 
+        required, 
+        value, 
+        shadow,
+        style = {},
+        ...props 
+    },
+    ref
+) {
+    const internalRef = useRef<HTMLTextAreaElement>(null);
+    const inputRef = (ref as React.RefObject<HTMLTextAreaElement>) || internalRef;
     const { styles, shadows, autosizes, variants, plugins } = useTheme();
     const uid = useUids('text-area');
-    const [val, setVal] = useState(value);
     const sizes = size ? `textarea-${size}` : autosizes.textarea;
 
 
@@ -88,13 +92,15 @@ export default function TextAreaInput({
         return st;
     }, [style, color, variant]);
     const handle = (newValue: string) => {
-        setVal(newValue);
         onChange?.(newValue);
     }
+
     useEffect(() => {
         if (value === undefined) return;
-    
-        if (value !== val) setVal(value);
+
+        if (value !== undefined && inputRef.current?.value !== value) {
+            inputRef.current.value = String(value);
+        }
     }, [value]);
 
 
@@ -119,9 +125,9 @@ export default function TextAreaInput({
 
             <textarea
                 data-id={uid}
+                ref={inputRef}
                 onChange={(e) => handle(e.target.value)}
                 placeholder={placeholder}
-                value={val}
                 style={{
                     minHeight: 'calc(0.25rem * 10)',
                     boxShadow: shadows[shadow],
@@ -140,4 +146,7 @@ export default function TextAreaInput({
             />
         </Fragment>
     );
-}
+});
+
+
+export default TextAreaInput;

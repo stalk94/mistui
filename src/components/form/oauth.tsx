@@ -9,14 +9,13 @@ export type TypeOauth = 'google' | 'facebook' | 'github' | 'telegram';
 export type SchemaOauth = {
     type: TypeOauth
     label?: string
-    button?: ButtonProps
+    button?: typeof Button
 }
 type SocialAuthButtonsProps = {
     scheme: SchemaOauth[]
     loading?: boolean 
     onClick: (type: TypeOauth)=> void
 }
-
 
 const ICONS: Record<TypeOauth, React.ReactNode> = {
     google: <FaGoogle />,
@@ -43,15 +42,15 @@ export default function SocialAuthButtons({ scheme, loading = false, onClick, }:
                         key={index}
                         onClick={() => onClick?.(item.type)}
                         disabled={loading}
-                        variant="outlined"
+                        variant="outline"
                         color="secondary"
-                        startIcon={
-                            loading ? <Spinner /> : icon
-                        }
-                        endIcon={<MdOutlineExitToApp />}
                         {...item.button}
                     >
-                        { label }
+                        <>
+                            { loading ? <Spinner /> : icon }
+                            { label }
+                            <MdOutlineExitToApp />
+                        </>
                     </Button>
                 );
             })}

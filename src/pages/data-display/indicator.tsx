@@ -172,12 +172,12 @@ InfoIndicator.meta = {
         values: ["top", "middle", "bottom"],
         type: 'enum',
         default: 'top',
-        description: ''
+        description: 'Vertical position of the indicator relative to its target element'
     },
     align: {
         values: ["start", "center", "end"],
         type: 'enum',
         default: 'end',
-        description: ''
+        description: 'Horizontal alignment of the indicator (left, center, or right relative to the target)'
     }
 }

@@ -59,6 +59,8 @@ import Paginator from './navigation/paginator';
 import Spinner from './data-display/spiner';
 import Skeleton from './data-display/skeleton';
 import Box from './page/box';
+import AuthForm from './forms/auth';
+import Form from './forms/form';
 
 
 const category = {
@@ -142,7 +144,10 @@ const category = {
         Popover: Popover,
         Drawer: Drawer,
     },
-    form: {},
+    form: {
+        AuthForm: AuthForm,
+        Form: Form
+    },
 }
 
 

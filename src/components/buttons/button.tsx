@@ -4,22 +4,7 @@ import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
 import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
-import { colord } from "colord";
 import Ripple from './animation';
-
-
-function isBright(colorStr: string): boolean {
-    const c = colord(colorStr);
-    const rgb = c.toRgb();
-    // Формула восприятия яркости (0..255)
-    const brightness = Math.sqrt(
-        0.299 * (rgb.r * rgb.r) +
-        0.587 * (rgb.g * rgb.g) +
-        0.114 * (rgb.b * rgb.b)
-    );
-    
-    return brightness > 200;
-}
 
 
 
@@ -47,7 +32,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 
     const colorContrast = useMemo(() => {
         if (variant === 'contained' || isGradient) {
-            return isBright(variants[color] ?? color) ? 'black' : 'white';
+            return plugins.isBright(variants[color] ?? color) 
+                ? 'black' 
+                : 'white';
         }
         else return (variants[color] ?? color);
     }, [style, color, variant]);

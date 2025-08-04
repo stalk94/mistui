@@ -1,39 +1,35 @@
-import React from 'react';
-import { BaseInput, CheckBox, Spinner, Button } from '../../index';
+import { useEffect, useState, useRef, useMemo, Fragment } from 'react';
+import { BaseInput, CheckBox, Spinner, Button, PasswordInput } from '../../index';
 import { IoMdPerson } from "react-icons/io";
 import { FaKey } from "react-icons/fa";
 import { FaTag } from "react-icons/fa6";
 import { MdOutlineAlternateEmail } from "react-icons/md";
-import { validateEmail, validateLogin, validatePass, validatePhone, validateConfirm } from './validator-defolt';
+import { validateEmail, validateLogin, validatePass, validatePhone, validateConfirm, Validator } from './validator-defolt';
 
 
 export type TypeSchema = 'login' | 'password' | 'email' | 'phone' | 'confirm';
 type TypeSchemaHandlerValid = TypeSchema | 'password2';
-export type ValidatorCustom =(value: any)=> {
-    result: boolean
-    helperText?: string
-}
+
 export type Schema = {
     placeholder?: string 
     label?: string 
     type: TypeSchema
-    sx: SxProps
 }
 export type BaseFormProps = {
     loading: boolean
     scheme: Schema[]
     onRegistration: (outScheme: Record<string, string|number>)=> void  
-    button?: ButtonProps
+    button?: typeof Button
     /** Кастомные валидаторы */
-    validators?: Record<'password' | 'login' | 'email' | 'phone' | string, ValidatorCustom>
+    validators?: Record<'password' | 'login' | 'email' | 'phone' | string, Validator>
 }
 
 
 
 export default function RegistrationForm({ scheme, loading, onRegistration, button, validators }: BaseFormProps) {
-    const ref = React.useRef<Record<TypeSchema, boolean|string>>({});
-    const [isValid, setIsValid] = React.useState(true);
-    const [state, setState] = React.useState<Record<TypeSchemaHandlerValid, any>>({});
+    const ref = useRef<Record<TypeSchema, boolean|string>>({});
+    const [isValid, setIsValid] = useState(true);
+    const [state, setState] = useState<Record<TypeSchemaHandlerValid, any>>({});
     
 
     // совпадение пароля в confirm password форме
@@ -42,20 +38,20 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
             setIsValid(false);
 
             return {
-                result: false,
-                helperText: 'The passwords do not match'
+                valid: false,
+                helper: 'The passwords do not match'
             }
         }
         else {
             setIsValid(true);
 
             return {
-                result: true
+                valid: true
             }
         }
     }
-    const handlerValidate =(type: TypeSchemaHandlerValid, value: string | boolean | string[])=> {
-        let result: {result: boolean, helperText?: string} = {result: true};
+    const handlerValidate =(type: TypeSchemaHandlerValid, value: string | boolean | number | string[])=> {
+        let result: {valid: boolean, helper?: string} = {valid: true};
         
         if(type === 'login') result = validators?.[type]?.(value) ?? validateLogin(value);
         else if(type === 'password') result = validators?.[type]?.(value) ?? validatePass(value);
@@ -65,8 +61,8 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
         else if(type === 'confirm') result = validators?.[type]?.(value) ?? validateConfirm(value);
 
         if(ref.current) {
-            if(result.result && ref.current[type]) delete ref.current[type];
-            else if(!result.result) ref.current[type] = result.helperText ?? true;
+            if(result.valid && ref.current[type]) delete ref.current[type];
+            else if(!result.valid) ref.current[type] = result.helper ?? true;
         }
 
 
@@ -89,7 +85,7 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
 
         setState(shab);
     }
-    const validatorsRender = React.useMemo(() => ({
+    const validatorsRender = useMemo(() => ({
         login: () => handlerValidate('login', state.login),
         password: () => handlerValidate('password', state.password),
         password2: () => handlerValidate('password2', [state.password, state.password2]),
@@ -98,7 +94,7 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
         confirm: () => handlerValidate('confirm', state.confirm),
     }), [state]);
 
-    React.useEffect(()=> {
+    useEffect(()=> {
         if (typeof window === 'undefined') return;
         
         useTransform(scheme);
@@ -116,7 +112,7 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
     
 
     return (
-        <React.Fragment>
+        <Fragment>
             { Object.keys(state).map((keyName: TypeSchema, index) => {
                 const element = getScheme(keyName);
                 const type = keyName as TypeSchema;
@@ -133,11 +129,11 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
                 };
 
                 const componentMap: Record<string, React.JSX.Element> = {
-                    login: <BaseInput key={index} {...commonProps} labelLeft={<IoMdPerson />} useVerify={validatorsRender[type]} />,
-                    password: <BaseInput type='password' key={index} {...commonProps} labelLeft={<FaKey />} useVerify={validatorsRender[type]} />,
-                    password2: <BaseInput type='password' key={index} {...commonProps} labelLeft={<FaKey />} useVerify={validatorsRender[type]} />,
-                    email: <BaseInput key={index} {...commonProps} labelLeft={<MdOutlineAlternateEmail />} useVerify={validatorsRender[type]} />,
-                    phone: <BaseInput key={index} {...commonProps} labelLeft={<FaTag />} useVerify={validatorsRender[type]} />,
+                    login: <BaseInput key={index} {...commonProps} labelLeft={<IoMdPerson />} validator={validatorsRender[type]} />,
+                    password: <PasswordInput key={index} {...commonProps} labelLeft={<FaKey />} validator={validatorsRender[type]} />,
+                    password2: <PasswordInput key={index} {...commonProps} labelLeft={<FaKey />} validator={validatorsRender[type]} />,
+                    email: <BaseInput key={index} {...commonProps} labelLeft={<MdOutlineAlternateEmail />} validator={validatorsRender[type]} />,
+                    phone: <BaseInput key={index} {...commonProps} labelLeft={<FaTag />} validator={validatorsRender[type]} />,
                     confirm: <CheckBox key={index} {...commonProps} />
                 };
 
@@ -146,14 +142,14 @@ export default function RegistrationForm({ scheme, loading, onRegistration, butt
 
             {/* кнопка регистрации */}
             <Button
-                variant='outlined'
+                variant='outline'
                 color='success'
                 disabled={!isValid || loading} 
-                onClick={()=> onRegistration && onRegistration(state)}
+                onClick={()=> onRegistration?.(state)}
                 { ...button }
             >
-                {loading && <Spinner />}
+                { loading && <Spinner /> }
             </Button>
-        </React.Fragment>
+        </Fragment>
     );
 }

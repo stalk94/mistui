@@ -214,7 +214,8 @@ const components = {
     `,
     Spinner: `
         🔄 A simple loading indicator component using DaisyUI's loading classes.
-    `
+    `,
+    Form: "📦 Form dynamically renders a list of form fields based on the passed `scheme[]`. Supports value passing, change handling, and centralized label position management."
 }
 
 

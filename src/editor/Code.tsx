@@ -661,6 +661,12 @@ const patterns = {
             ${toJSXProps(props)}
         />
     `),
+
+    Form: (props) => (`
+        <Form
+                
+        />
+    `),
 }
 
 

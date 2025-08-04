@@ -49,7 +49,7 @@ const category = {
     page: ['Box', 'Footer', 'Hero', 'AppBar', 'Chat', 'Stat'],
     feedback: ['Tooltip', 'Modal', 'Popover', 'Drawer'],
     media: ['Card', 'Promo', 'VerticalCarousel', 'HorizontalCarousel'],
-    form: ['in development'],
+    form: ['Form'],
 }
 const Bubles = () => (
     <>
@@ -363,7 +363,7 @@ export default function SandBoxRoot({ }) {
                     <div className='flex items-center'>
                         {/*<CheckBox onChange={console.log} />*/}
                         <Link fontSize={12} className='mr-12' href='https://www.npmjs.com/package/mistui-kit'>
-                            v 1.0.5 alpha
+                            v 1.1.0
                         </Link>
                         <Select
                             size='sm'

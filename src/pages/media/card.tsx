@@ -13,7 +13,8 @@ export default function InfoCard(tab) {
             <Section
                 title="Card"
                 description="Basic card component with image, title, description and actions"
-                code={`<Card 
+                code={`
+                    <Card 
                         imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
                         title="Card Title"
                         description="A card component with image, title, description and actions."
@@ -44,7 +45,7 @@ export default function InfoCard(tab) {
                         imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
                         imageIsFull
                         title="Card Title"
-                        description="Image covers entire card"
+                        description="A card component with image, title, description and actions."
                         actions={<Button size="sm" color="success" shadow="lg">Go to</Button>}
                     />
                 `}
@@ -54,7 +55,7 @@ export default function InfoCard(tab) {
                         imageSrc="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"
                         imageIsFull
                         title="Card Title"
-                        description="Image covers entire card"
+                        description="A card component with image, title, description and actions."
                         actions={
                             <Button size="sm" color="success" shadow="lg">
                                 Go to
@@ -129,33 +130,33 @@ InfoCard.meta = {
         values: ['boolean'],
         default: 'false',
         type: 'boolean',
-        description: ''
+        description: 'If true, the image is displayed on the side of the content (horizontal layout)'
     },
     imageIsFull: {
         values: ['boolean'],
         default: 'false',
         type: 'boolean',
-        description: ''
+        description: 'If true, the image takes up the full width or height of the card (depending on layout orientation)'
     },
     imageSrc: {
         values: ['string'],
         type: 'string',
-        description: 'URL'
+        description: 'Image URL to be displayed in the card'
     },
     title: {
         values: ['string', 'React.ReactNode'],
         type: 'enum',
-        description: ''
+        description: 'Title of the card. Can be a plain string or a React node'
     },
     description: {
-        values: ['string','React.ReactNode'],
+        values: ['string', 'React.ReactNode'],
         type: 'enum',
-        description: ''
+        description: 'Description or supporting text below the title. Accepts string or React node'
     },
     actions: {
         values: ['React.ReactNode'],
         type: 'object',
-        description: ''
+        description: 'Action section — usually buttons or links displayed at the bottom of the card'
     },
     classNameBody: {
         values: ['string'],

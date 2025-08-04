@@ -94,7 +94,16 @@ export default function Dropdown({
         <PortalDrop
             side={side}
             align={align}
-            trigger={trigger}
+            trigger={
+                isHover
+                    ? <div 
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                     >
+                        {  trigger }
+                     </div>
+                    : trigger
+            }
             open={open}
             onOpenChange={setOpen}
             anchor={anchor}

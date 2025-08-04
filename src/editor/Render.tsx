@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import PropsVariator, { store } from './config-props';
 import Acordeon from '../components/acordeon';
 import BreadCrumbs from '../components/breadcrumbs';
-import Form from '../components/form/Form';
 import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, EnvelopeIcon, FolderIcon } from '@heroicons/react/24/outline';
 import { BaseInput, NumberInput, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
@@ -11,7 +10,8 @@ import {
     GroupButton, GroupButtonFiltre, IconButton, Divider, RadialProgress, Paginator, Spinner,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup, Progress,
-    Hero, Footer, AppBar, Skeleton, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert, Table
+    Hero, Footer, AppBar, Skeleton, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert, Table,
+    AuthForm, Form
 } from '../index';
 import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
@@ -1087,10 +1087,15 @@ const patterns = {
         </div>
     ),
 
-    // any
-    form: (props) => (
+    // form
+    Form: (props) => (
         <Form
-            scheme={testSchema}
+            scheme={[]}
+        />
+    ),
+    AuthForm: (props) => (
+        <AuthForm
+            
         />
     ),
 }
