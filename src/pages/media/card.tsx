@@ -99,7 +99,7 @@ export default function InfoCard(tab) {
                 description="(!in development) Card with custom background color"
                 code={`
                     <Card 
-                        color="primary"
+                        color="secondary"
                         title="Colored Card"
                         description="Card with custom color background."
                         actions={<Button size="sm" color="success" shadow="lg">Go to</Button>}
@@ -108,7 +108,7 @@ export default function InfoCard(tab) {
             >
                 <Grid className="justify-center">
                     <Card
-                        color="primary"
+                        color="secondary"
                         title="Colored Card"
                         description="Card with custom color background."
                         actions={

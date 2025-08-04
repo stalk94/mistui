@@ -3,7 +3,7 @@ import type { CardProps } from './types';
 import { cs } from '../hooks/cs';
 
 
-// ! color, size
+// ! size
 export default function Card({ 
     style = {}, 
     shadow,
@@ -20,8 +20,8 @@ export default function Card({
     size,
     ...props 
 }: CardProps) {
-    const { shadows } = useTheme();
-   
+    const { shadows, variants } = useTheme();
+
 
     return(
         <div 
@@ -34,6 +34,7 @@ export default function Card({
             `)}
             style={{
                 boxShadow: shadows[shadow],
+                backgroundColor: (variants[color] ?? color) ?? variants.neutral,
                 ...style
             }}
             { ...props }
@@ -49,7 +50,12 @@ export default function Card({
             }
             
             {/* основное тело */}
-            <div className={`card-body ${classNameBody ?? ''}`}>
+            <div 
+                className={cs(`
+                    card-body 
+                    ${classNameBody ?? ''}
+                `)}
+            >
                 { title &&
                     <div className="card-title">
                         { title }

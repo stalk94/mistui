@@ -1,6 +1,7 @@
 import { OrganizationChart } from "primereact/organizationchart";
 import type { OrgChartProps } from './types';
 
+
 const testData = [{
     label: 'F.C Barcelona',
     expanded: true,
