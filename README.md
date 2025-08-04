@@ -12,6 +12,7 @@ MistUi helps you build interfaces that are stylish out of the box, easily custom
 - 🛠️ Built on Tailwind + DaisyUI for a strong foundation, minimal footprint, and great performance  
 - 🎯 Aligned with Material Design principles  
 
+![preview](https://i.postimg.cc/8Ch3Djk1/preview.png)
 
 
 ## 📦 Installation

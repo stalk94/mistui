@@ -12,6 +12,7 @@ import { createStore } from 'statekit-lite';
 import ComponentsRoot from './editor/page/root-components';
 import Home from './editor/page';
 import NotFound from './editor/page/error';
+import Present from './presentation';
 
 
 const IconComponent = () => (
@@ -79,6 +80,7 @@ const App = () => {
                                 <Route path="install" element={<Install />} />
                                 <Route path="introduction" element={<Introduction />} />
                             </Route>
+                            <Route path="present" element={<Present />} />
 
                             <Route path="/components" key={location.pathname} element={<SandBoxRoot />} >
                                 <Route index element={<ComponentsRoot/>} />
