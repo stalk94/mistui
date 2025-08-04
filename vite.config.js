@@ -23,7 +23,7 @@ export default defineConfig({
         port: 3001
     },
     build: {
-        outDir: 'dist',
+        outDir: '../dist',
         lib: {
             entry: 'index.ts',
             name: 'mistui',

@@ -134,6 +134,22 @@ const SIZES = {
         md: [6, 6],
         lg: [6, 6],
         xl: [7, 7],
+    },
+    progress: {
+        default: '0.3rem',
+        xs: '0.1rem',
+        sm: '0.3rem',
+        md: '0.5rem',
+        lg: '0.8rem',
+        xl: '1.2rem'
+    },
+    'rad-progress': {
+        default: '3rem',
+        xs: '2rem',
+        sm: '3rem',
+        md: '5rem',
+        lg: '8rem',
+        xl: '10rem'
     }
 }
 const VARIANTS = {

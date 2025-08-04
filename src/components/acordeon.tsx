@@ -122,12 +122,12 @@ export default function Acordeon({
                 <div 
                     onClick={() => setActive(index)}
                     key={index} 
-                    className={`
+                    className={cs(`
                         collapse 
                         join-item 
                         border
                         ${active === index && 'collapse-open'}
-                    `}
+                    `)}
                     style={getStyle}
                 >
                     {/* title */}

@@ -4,7 +4,7 @@ import { BaseInput } from '@/components/inputs';
 import { inputsMeta } from '../meta';
 import { Typography } from '@/components/text';
 import { FaRegUserCircle } from "react-icons/fa";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 const Render = () => {

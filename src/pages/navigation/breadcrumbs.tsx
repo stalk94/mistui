@@ -6,11 +6,12 @@ import { Cog8ToothIcon, HomeIcon, Bars3Icon } from '@heroicons/react/24/outline'
 import { baseMeta } from '../meta';
 
 
+
 export default function InfoBreadcrumbs(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             {tab}
-
+            
             {/* default */}
             <Section
                 title="Basic"

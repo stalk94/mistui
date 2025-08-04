@@ -19,7 +19,6 @@ const components = {
     MarqueText: `
         🏃‍♂️ MarqueeText is a visual component for creating a continuous scrolling text (marquee effect) with customizable direction, speed, and optional pause on hover. It is fully compatible with Typography, from which it inherits visual styles and properties.
     `,
-
     Button: `
         🔘 The Button component is a highly customizable UI element built on top of native <button>, providing extended styling options, theme integration, dynamic hover effects, gradient support, and ripple animation.
         It is tightly integrated with the design system (via useTheme()), and inherits consistent sizing, color variants, shadows, and utilities from your theme setup.
@@ -91,16 +90,15 @@ const components = {
     `,
 
     Tabs: `
-        
+        📑 Tabs component renders a set of selectable tab labels with corresponding content panels — perfect for organizing related sections into a compact, switchable interface.
+        It supports multiple visual styles (e.g., lift variant), dynamic sizing, shadows, and custom theming via colors and styles.
     `,
     Breadcrumbs: `
-        
-    `,
-    BottomNavigation: `
-        
+        🧭 Breadcrumbs component displays a navigation trail based on the current path — perfect for showing users their location within a site or app hierarchy.
+        It generates clickable breadcrumb links with customizable separators and supports a home icon for quick access to the root.
     `,
     Menu: `
-        
+        📋 Menu component renders a flexible, optionally nested navigation menu — perfect for sidebars, dropdowns, or multi-level menus.
     `,
 
     Avatar: `
@@ -117,33 +115,49 @@ const components = {
     Badge: `
         🔖 The Badge component is a small, stylized label used to highlight, tag, or annotate content. It supports variants, color (themes or optional), shadows, and optional icons.
     `,
-    List: `
-        
-    `,
 
     SimpleTable: `
         📊 A minimalist, customizable table component designed for easy rendering of tabular data from either a schema or raw objects. It features fixed headers with sticky top/bottom rows, flexible column rendering via children or schema, smooth vertical scrolling, and seamless integration with theming for consistent sizing, shadows, and styles. Ideal for lightweight data display without heavy dependencies.
     `,
     DataTable: `
-       📊 A lightweight wrapper around PrimeReact's <DataTable> with enhanced UX and theming integration. It simplifies design customization, solves scroll/height issues, and connects seamlessly to your theme context.
+       📊 A table for more complex tasks is not just about displaying rows and columns. <DataTable> is designed to handle large volumes of data and offers a wide range of features: filtering, sorting, pagination, editable fields, customizable columns, and support for various data types. It is a powerful and flexible component that can be easily adapted to specific interface requirements and business logic. A lightweight wrapper around PrimeReact's <DataTable> with enhanced UX and theming integration. It simplifies design customization, solves scroll/height issues, and connects seamlessly to your theme context.
     `,
 
     Divider: `
         ⌇ A flexible line divider used to visually separate content. You can customize orientation, color, thickness, and add optional content (like a label or icon) in the center, left, or right.
     `,
     Splitter: `
-        
+        𝄜 Splitter  component provides a resizable layout system that supports horizontal or vertical orientation. It integrates with your design system for dynamic theming — allowing custom colors, shadows, and disabled interaction.
+        You can nest multiple Splitter components inside each other to create complex, multi-directional split layouts (e.g., vertical split inside a horizontal one).
+    `,
+    Progress: `
+       🧩 Progress component is a themed wrapper around the native <progress> HTML element. It supports customizable color, size, shadows, and inline styles based on your design system.
+    `,
+    RadialProgress: `
+       ⭕ RadialProgress component renders a circular progress indicator with customizable size, color, thickness, and content. It uses CSS variables and integrates with your design system
     `,
     Collapse: `
-        
+        📑 The Collapse component provides a simple, accessible way to toggle visibility of content using a checkbox-powered expand/collapse mechanism.
+        It’s ideal for showing optional or additional content under a titled section, such as FAQs, expandable menus, or detail summaries.
     `,
     Accordion: `
-        
+        📂 The Acordeon component renders a vertically stacked list of collapsible panels — ideal for organizing content into expandable sections.
+        It supports multiple visual variants (contained, outline, ghost, soft, dash) and dynamic styling based on theme context.
+        Each panel includes a clickable title and hidden content area that expands when selected.
+        It also supports hover effects, shadows, and custom styles for both the container and individual titles.
+        You can control the initially active item and apply dynamic themes like neutral, primary, or any other registered color.
     `,
     Overflow: `
+        📏 The Overflow component intelligently renders only the visible portion of its children based on available space — perfect for responsive layouts, toolbars, or dynamic menus.
+        It automatically measures child sizes and hides the overflowed items, giving you full control over layout behavior
+    `,
+    
+    List: `
         
     `,
-
+    BottomNavigation: `
+        
+    `,
     Footer: `
         
     `,
@@ -157,10 +171,6 @@ const components = {
         
     `,
     Stat: `
-        
-    `,
-
-    Alert: `
         
     `,
     Tooltip: `
@@ -177,16 +187,16 @@ const components = {
     `,
 
     Card: `
-        
+        🖼️ Card is a flexible content container component with optional image, title, description, actions, and custom content.
     `,
     Promo: `
-        
+        📦 Promo component is a promotional card slider component for showcasing featured content (hybrid of card and slider).
     `,
     VerticalCarousel: `
-        
+        📦 VerticalCarousel is a customizable vertical media slider.
     `,
     HorizontalCarousel: `
-        
+        📦 HorizontalCarousel is a customizable horizontal media slider.
     `,
     Skeleton: `
         🦴 Display a preview of your content before loading the data to reduce perceived loading time.
@@ -216,7 +226,7 @@ export default function Head({ preview }) {
 
     return(
         <div className=''>
-            <Typography variant='body2' color='white'>
+            <Typography variant='body1' color='white'>
                 { current }
             </Typography>
         </div>

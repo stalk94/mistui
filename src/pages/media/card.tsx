@@ -96,7 +96,7 @@ export default function InfoCard(tab) {
             {/* custom color */}
             <Section
                 title="Custom color"
-                description="Card with custom background color"
+                description="(!in development) Card with custom background color"
                 code={`
                     <Card 
                         color="primary"

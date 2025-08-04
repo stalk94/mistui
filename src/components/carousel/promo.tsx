@@ -82,13 +82,6 @@ export default function PromoSlider({
 }: PromoSliderProps) {
     const [active, setActive] = useState(0);
     const testData = useMemo(()=> generateTestData(), []);
-
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        
-        if (props.onChange) props.onChange(active);
-    }, [active]);
    
 
     return (

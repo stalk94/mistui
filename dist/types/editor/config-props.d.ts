@@ -1366,11 +1366,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -2771,11 +2778,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -4175,11 +4189,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -5579,11 +5600,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -6984,11 +7012,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -8388,11 +8423,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -9793,11 +9835,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -11198,11 +11247,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -12603,11 +12659,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -14009,11 +14072,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -15409,11 +15479,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -16808,11 +16885,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -18207,11 +18291,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -19607,11 +19698,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -21006,11 +21104,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -22406,11 +22511,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -23806,11 +23918,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -25206,11 +25325,18 @@ export declare const store: {
             };
             Stat: {};
             Box: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58599,11 +58725,18 @@ export declare const store: {
         } & {};
         Box: {
             get: (clone?: boolean) => {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58619,11 +58752,18 @@ export declare const store: {
                 };
             };
             set: (value: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58638,11 +58778,18 @@ export declare const store: {
                     type: string;
                 };
             } | ((prev: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58657,11 +58804,18 @@ export declare const store: {
                     type: string;
                 };
             }) => {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58677,11 +58831,18 @@ export declare const store: {
                 };
             })) => void;
             update: (fn: (prev: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58696,11 +58857,18 @@ export declare const store: {
                     type: string;
                 };
             }) => {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58716,11 +58884,18 @@ export declare const store: {
                 };
             }) => void;
             use: () => {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58736,11 +58911,18 @@ export declare const store: {
                 };
             };
             watch: (fn: (val: {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58756,11 +58938,18 @@ export declare const store: {
                 };
             }, unsub: () => void) => void) => () => void;
             export: () => {
+                shadowSize: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                };
                 elevation: {
                     type: string;
                     value: number;
                     min: number;
                     max: number;
+                    step: number;
                 };
                 variant: {
                     type: string;
@@ -58776,7 +58965,7 @@ export declare const store: {
                 };
             };
         } & {
-            elevation: {
+            shadowSize: {
                 get: (clone?: boolean) => {
                     type: string;
                     value: number;
@@ -58854,6 +59043,109 @@ export declare const store: {
                     export: () => number;
                 };
                 max: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+            };
+            elevation: {
+                get: (clone?: boolean) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
+                set: (value: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                } | ((prev: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                })) => void;
+                update: (fn: (prev: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }) => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }) => void;
+                use: () => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
+                watch: (fn: (val: {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                }, unsub: () => void) => void) => () => void;
+                export: () => {
+                    type: string;
+                    value: number;
+                    min: number;
+                    max: number;
+                    step: number;
+                };
+            } & {
+                type: {
+                    get: (clone?: boolean) => string;
+                    set: (value: string | ((prev: string) => string)) => void;
+                    update: (fn: (prev: string) => string) => void;
+                    use: () => string;
+                    watch: (fn: (val: string, unsub: () => void) => void) => () => void;
+                    export: () => string;
+                };
+                value: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                min: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                max: {
+                    get: (clone?: boolean) => number;
+                    set: (value: number | ((prev: number) => number)) => void;
+                    update: (fn: (prev: number) => number) => void;
+                    use: () => number;
+                    watch: (fn: (val: number, unsub: () => void) => void) => () => void;
+                    export: () => number;
+                };
+                step: {
                     get: (clone?: boolean) => number;
                     set: (value: number | ((prev: number) => number)) => void;
                     update: (fn: (prev: number) => number) => void;

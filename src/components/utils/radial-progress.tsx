@@ -3,13 +3,6 @@ import { forwardRef  } from 'react';
 import { useTheme } from '../theme';
 
 
-const csizes = {
-    xs: '2rem',
-    sm: '3rem',
-    md: '5rem',
-    lg: '8rem',
-    xl: '10rem'
-}
 const thickness = {
     xs: '3px',
     sm: '4px',
@@ -33,7 +26,7 @@ const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(function 
     ref
 ) {
     const { shadows, variants, sizes, autosizes } = useTheme();
-    const curSize = csizes[size] ?? csizes.sm;
+    const curSize = sizes['rad-progress'][size] ?? autosizes['rad-progress'];
     const curSizeThickness = thickness[size] ?? thickness.sm;
     const sizeText = sizes.text[size] ? `text-${sizes.text[size]}` : autosizes.text;
     const curColor = (variants[color] ?? color) ?? style?.color;

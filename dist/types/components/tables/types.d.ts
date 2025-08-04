@@ -55,5 +55,5 @@ export type TableProps = {
     color?: Variants | (string & {});
     footer?: React.ReactNode;
     header?: React.ReactNode;
-    variant?: 'contained' | 'outline' | 'dash';
+    variant?: 'outline' | 'dash';
 };

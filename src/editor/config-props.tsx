@@ -410,6 +410,13 @@ const CONFIG = {
         },
         colorCustom: {
             type: 'color'
+        },
+        rounded: {
+            type: 'slider',
+            value: 2,
+            min: 0,
+            max: 56,
+            step: 1
         }
     },
 

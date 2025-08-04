@@ -3,14 +3,6 @@ import { forwardRef  } from 'react';
 import { useTheme } from '../theme';
 
 
-const csizes = {
-    xs: '0.1rem',
-    sm: '0.3rem',
-    md: '0.5rem',
-    lg: '0.8rem',
-    xl: '1.2rem'
-}
-
 
 const Progress = forwardRef<HTMLProgressElement, ProgressProps>(function Progress(
     {
@@ -26,8 +18,7 @@ const Progress = forwardRef<HTMLProgressElement, ProgressProps>(function Progres
     ref
 ) {
     const { shadows, variants, sizes, autosizes } = useTheme();
-    const curSize = csizes[size] ?? csizes.sm;
-    const sizeText = sizes.text[size] ? `text-${sizes.text[size]}` : autosizes.text;
+    const curSize = sizes.progress[size] ?? autosizes.progress;
     const curColor = (variants[color] ?? color) ?? style?.color;
     
 

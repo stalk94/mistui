@@ -22,7 +22,18 @@ export default function InfoTabs(tab) {
             <Section
                 title="base"
                 description=""
-                code={`<Tabs size='sm'>default</Tabs>`}
+                code={`
+                    const items = [
+                        { label: 'tab-1', content: 'Tab content 1' },
+                        { label: 'tab-2', content: 'Tab content 2' },
+                        { label: 'tab-3', content: 'Tab content 3' },
+                    ];
+
+                    <Tabs 
+                        size='md'
+                        items={items}
+                    />
+                `}
             >
                 <div className="flex justify-center">
                     <Tabs size="md" items={items} />
@@ -35,7 +46,7 @@ export default function InfoTabs(tab) {
                 description=""
                 code={variants
                     .map(
-                        (variant) => `<Tabs size="sm" variant="${variant}">${variant}</Tabs>`
+                        (variant) => `<Tabs size="sm" variant="${variant}" items={items}/>`
                     )
                     .join("\n")}
             >
@@ -60,7 +71,7 @@ export default function InfoTabs(tab) {
                 title="sizes"
                 description=""
                 code={sizes
-                    .map((size) => `<Tabs size="${size}" shadow="sm">${size}</Tabs>`)
+                    .map((size) => `<Tabs size="${size}" shadow="sm" items={items}/>`)
                     .join("\n")}
             >
                 <TabsGrid className="flex-col">
@@ -84,7 +95,7 @@ export default function InfoTabs(tab) {
                 title="colors"
                 description=""
                 code={colors
-                    .map((color) => `<Tabs size="sm" color="${color}" shadow="sm">${color}</Tabs>`)
+                    .map((color) => `<Tabs size="sm" color="${color}" shadow="sm" items={items}/>`)
                     .join("\n")}
             >
                 <TabsGrid className="flex-col">
@@ -114,13 +125,13 @@ InfoTabs.meta = {
         values: ['number'],
         type: 'number',
         default: 0,
-        description: ''
+        description: 'current active index tab'
     },
     variant: {
         values: ["box", "border", "lift"],
         default: 'lift',
         type: 'enum',
-        description: ''
+        description: 'variants visual style'
     },
     items: {
         values: [{

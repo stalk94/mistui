@@ -67,27 +67,6 @@ const items = [
         ]
     }
 ];
-const shortItemsExample = [
-    {
-        title: "ORIENTAL GOLD BALL",
-        buttonText: "detail",
-        description: "The sleek and sizzling Ball comes with gold LED lighting...",
-        images: [
-            "https://placehold.co/600x400/353636/gray?text=Promo+image&font=roboto",
-            "... more images ..."
-        ]
-    },
-    {
-        title: "INCREDIBLE METAL GLOVES",
-        buttonText: "detail",
-        description: "Discover the hateful new Towels with an exciting mix...",
-        images: [
-            "https://placehold.co/600x400/353636/gray?text=Promo+image&font=roboto",
-            "... more images ..."
-        ]
-    },
-    // ... other items omitted for brevity
-];
 
 
 export default function InfoPromoBanner(tab) {
@@ -99,7 +78,31 @@ export default function InfoPromoBanner(tab) {
             <Section
                 title="Basic"
                 description="Basic promo banner"
-                code={`<PromoBanner items={items} />\n\n// where items is like:\nconst items = ${JSON.stringify(shortItemsExample, null, 2)}\n// ... other items omitted`}
+                code={`
+                    const items = [
+                        {
+                            title: "ORIENTAL GOLD BALL",
+                            buttonText: "detail",
+                            description: "The sleek and sizzling Ball comes with gold LED lighting...",
+                            images: [
+                                "https://placehold.co/600x400/353636/gray?text=Promo+image&font=roboto",
+                                "... more images ..."
+                            ]
+                        },
+                        {
+                            title: "INCREDIBLE METAL GLOVES",
+                            buttonText: "detail",
+                            description: "Discover the hateful new Towels with an exciting mix...",
+                            images: [
+                                "https://placehold.co/600x400/353636/gray?text=Promo+image&font=roboto",
+                                "... more images ..."
+                            ]
+                        },
+                        // ... other items omitted for brevity
+                    ];
+
+                    <PromoBanner items={items} />
+                `}
             >
                 <Grid className="h-60 w-100 m-auto">
                     <PromoBanner items={items} />

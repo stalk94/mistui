@@ -95,10 +95,10 @@ export default function CheckBoxInput({
                         p-[2px]
                         pointer-events-none
                         opacity-0
-                        scale-75
                         peer-checked:opacity-100 
                         peer-checked:scale-100
                         transition-all duration-200
+                        peer-hover:scale-120
                     `)}
                     fill="none"
                     stroke={(variants[color] ?? color) 

@@ -15,7 +15,7 @@ import mixPlugin from "colord/plugins/mix";
     color.mix(color2)
 */
 
-type ClasVariants = 'input' | 'btn' | 'text' | 'avatar' | 'thumb' | 'radio' | 'divider';
+type ClasVariants = 'input' | 'btn' | 'text' | 'avatar' | 'thumb' | 'radio' | 'divider' | 'progress' | 'rad-progress';
 type BreacpointsVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xs';
 type Combo = {
     default: BreacpointsVariants,
@@ -55,6 +55,10 @@ export const fabrikSizeBreacpoints = (classKye: ClasVariants, config: Combo) => 
     else if (classKye === 'divider') return Object.entries(config).map(([key, v]) => {
         if (key === 'default') return `h-${v}`;
         else return `${key}:h-${v}`;
+    }).join(' ');
+    else if (classKye === 'progress' || classKye === 'rad-progress') return Object.entries(config).map(([key, v]) => {
+        if (key === 'default') return `${v}`;
+        else return `${key}:${v}`;
     }).join(' ');
 
 

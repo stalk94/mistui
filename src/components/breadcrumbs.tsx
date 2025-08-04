@@ -67,7 +67,6 @@ export function useBreadcrumbs(pathname: string, options?: Options) {
 }
 
 
-// ! чучуть доработать (typography возможно стоит внедрить)
 export default function BreadcrumbsNav({ 
     pathname, 
     size, 

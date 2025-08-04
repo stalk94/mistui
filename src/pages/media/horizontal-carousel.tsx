@@ -1,4 +1,4 @@
-import { HorizontalCarousel } from '@/index';
+import { HorizontalCarousel, Typography } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { baseMeta } from '../meta';
@@ -17,11 +17,35 @@ export default function InfoHorizontalCarousel(tab) {
         <div className="p-6 space-y-8 shrink-0">
             {tab}
 
+            <Typography as='div' variant='body2'>
+                <ul className="list-disc list-inside ml-4 my-1">
+                    <li>📷 Mixed content: images, videos, or custom elements</li>
+                    <li>👇 Drag/Swipe navigation with spring animation</li>
+                    <li>🔁 Optional autoplay with loop and delay settings</li>
+                    <li>⚙️ Adjustable number of visible slides (slidesToShow) and scroll amount (slidesToScroll)</li>
+                    <li>🎯 Responsive resizing and height auto-detection based on parent</li>
+                    <li>↔️ Navigation buttons with smooth transitions</li>
+                </ul>
+            </Typography>
+            
+            <Typography variant='caption'>
+                💡 Dependency-free implementation — no external libraries for swipe handling, animation, or slide control. Built entirely with plain React and JavaScript.
+            </Typography>
+
             {/* default */}
             <Section
-                title="HorizontalCarousel"
+                title="basic"
                 description="Basic horizontal carousel"
-                code={`<HorizontalCarousel items={items} />\n\n// items example:\n${JSON.stringify(items, null, 2)}`}
+                code={`
+                    const items = [
+                    { type: 'image', src: 'https://picsum.photos/600/600' },
+                    { type: 'image', src: 'https://picsum.photos/400/400' },
+                    { type: 'image', src: 'https://picsum.photos/300/300' },
+                    { type: 'image', src: 'https://picsum.photos/300/300' }
+                ];
+
+                    <HorizontalCarousel items={items} />
+                `}
             >
                 <Grid className="justify-center">
                     <HorizontalCarousel items={items} />
@@ -30,7 +54,7 @@ export default function InfoHorizontalCarousel(tab) {
 
             {/* autoplay */}
             <Section
-                title="HorizontalCarousel with autoplay"
+                title="autoplay"
                 description="Carousel with autoplay enabled"
                 code={`<HorizontalCarousel autoplay items={items} />`}
             >
@@ -39,30 +63,10 @@ export default function InfoHorizontalCarousel(tab) {
                 </Grid>
             </Section>
 
-            {/* other styles */}
-            <Section
-                title="HorizontalCarousel different styles"
-                description="Various style options"
-                code={''}
-            >
-                <Grid className="justify-center">
-                    <HorizontalCarousel autoplay items={items} />
-                </Grid>
-            </Section>
-
-            {/* custom color */}
-            <Section
-                title="Custom color"
-                description="Example with custom styling"
-                code={`<HorizontalCarousel></HorizontalCarousel>`}
-            >
-                <Grid className="justify-center">
-                    
-                </Grid>
-            </Section>
         </div>
     );
 }
+
 
 const { children, ...rest } = baseMeta;
 InfoHorizontalCarousel.meta = {

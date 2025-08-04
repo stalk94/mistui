@@ -1,4 +1,4 @@
-import { VerticalCarousel } from '@/index';
+import { Typography, VerticalCarousel } from '@/index';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import InfoCarousel from './horizontal-carousel';
@@ -10,11 +10,6 @@ const items = [
     { type: 'image', src: 'https://picsum.photos/300/300' },
     { type: 'image', src: 'https://picsum.photos/300/300' }
 ];
-const shortItemsExample = [
-  { type: 'image', src: 'https://picsum.photos/600/600' },
-  { type: 'image', src: 'https://picsum.photos/400/400' },
-  // ...more images
-];
 
 
 export default function InfoVerticalCarousel(tab) {
@@ -22,11 +17,35 @@ export default function InfoVerticalCarousel(tab) {
         <div className="p-6 space-y-8 shrink-0">
             {tab}
 
+            <Typography as='div' variant='body2'>
+                <ul className="list-disc list-inside ml-4 my-1">
+                    <li>📷 Mixed content: images, videos, or custom elements</li>
+                    <li>👇 Drag/Swipe navigation with spring animation</li>
+                    <li>🔁 Optional autoplay with loop and delay settings</li>
+                    <li>⚙️ Adjustable number of visible slides (slidesToShow) and scroll amount (slidesToScroll)</li>
+                    <li>🎯 Responsive resizing and height auto-detection based on parent</li>
+                    <li>↔️ Navigation buttons with smooth transitions</li>
+                </ul>
+            </Typography>
+
+            <Typography variant='caption'>
+                💡 Dependency-free implementation — no external libraries for swipe handling, animation, or slide control. Built entirely with plain React and JavaScript.
+            </Typography>
+            
             {/* default */}
             <Section
-                title="VerticalCarousel"
+                title="basic"
                 description="Basic vertical carousel"
-                code={`<VerticalCarousel items={items} />\n\n// where items is like:\nconst items = ${JSON.stringify(shortItemsExample, null, 2)}\n// ...more items omitted`}
+                code={`
+                    const items = [
+                    { type: 'image', src: 'https://picsum.photos/600/600' },
+                    { type: 'image', src: 'https://picsum.photos/400/400' },
+                    { type: 'image', src: 'https://picsum.photos/300/300' },
+                    { type: 'image', src: 'https://picsum.photos/300/300' }
+                ];
+
+                    <VerticalCarousel items={items} />
+                `}
             >
                 <Grid className="h-160 w-90 m-auto">
                     <VerticalCarousel items={items} />
@@ -34,23 +53,15 @@ export default function InfoVerticalCarousel(tab) {
             </Section>
 
             {/* autoplay */}
-            <Section title="VerticalCarousel autoplay" description="Carousel with autoplay" code={''}>
+            <Section 
+                title="autoplay" 
+                description="Carousel with autoplay" 
+                code={`
+                    <VerticalCarousel autoplay items={items} />
+                `}
+            >
                 <Grid className="h-160 w-90 m-auto">
                     <VerticalCarousel autoplay items={items} />
-                </Grid>
-            </Section>
-
-            {/* other variations */}
-            <Section title="Other styles" description="Different carousel styles" code={''}>
-                <Grid className="h-160 w-90 m-auto">
-                    <VerticalCarousel autoplay items={items} />
-                </Grid>
-            </Section>
-
-            {/* custom color */}
-            <Section title="Custom color" description="Customization example" code={''}>
-                <Grid className="justify-center">
-                    
                 </Grid>
             </Section>
         </div>

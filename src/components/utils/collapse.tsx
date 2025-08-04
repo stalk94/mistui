@@ -1,6 +1,7 @@
 import type { CollapseProps } from './types';
 import { forwardRef, cloneElement, useMemo  } from 'react';
 import { useTheme } from '../theme';
+import { cs } from '../hooks/cs';
 
 
 const Collapse = forwardRef<HTMLDivElement, CollapseProps>(function Collapse(
@@ -9,17 +10,17 @@ const Collapse = forwardRef<HTMLDivElement, CollapseProps>(function Collapse(
         styleTitle = {},
         children,
         size,
-        color,
         className,
         classNameTitle,
         title,
         content,
         icon,
+        open,
         ...props
     },
     ref
 ) {
-    const { shadows, autosizes } = useTheme();
+    const { autosizes } = useTheme();
     const curIcon = icon ? `collapse-${icon}` : '';
     const sizeText = (size && size !== 'auto') ? `text-${size}` : autosizes.text;
 
@@ -27,19 +28,32 @@ const Collapse = forwardRef<HTMLDivElement, CollapseProps>(function Collapse(
     return (
         <div 
             ref={ref} 
-            className={`collapse ${curIcon} ${sizeText} ${className ?? ''}`}
+            className={cs(`
+                collapse
+                ${open ? 'collapse-open' : ''}
+                ${curIcon} 
+                ${sizeText} 
+                ${className ?? ''}
+            `)}
             style={style}
             { ...props }
         >
             <input type="checkbox" className="peer" />
 
             <div 
-                className={`collapse-title text-left ${classNameTitle ?? ''}`} 
+                className={cs(`
+                    collapse-title 
+                    text-left 
+                    ${classNameTitle ?? ''}
+                `)} 
                 style={styleTitle}
             >
                 { title }
             </div>
-            <div className={`collapse-content`} style={{padding: 0}}>
+            <div 
+                className={`collapse-content`} 
+                style={{ padding: 0 }}
+            >
                 { children ?? content }
             </div>
         </div>

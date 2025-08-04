@@ -5,21 +5,68 @@ import { baseMeta, orientationMeta } from '../meta';
 
 const icons = ['none', "plus", "arrow"];
 
-
+// ! примеры стилизованные
 export default function InfoCollapse(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
+
             {/* default */}
             <Section 
-                title="Collapse" 
-                description="кнопка" 
-                code={``}
+                title="basic" 
+                description="" 
+                code={`
+                    <Collapse
+                        title='title-1'
+                        content='content'
+                    />
+                `}
             >
                 <Grid className="justify-center">
                     <Collapse
                         title='title-1'
                         content='content'
+                    />
+                </Grid>
+            </Section>
+
+            {/* icon */}
+            <Section 
+                title="icon" 
+                description="icon arrow" 
+                code={`
+                    <Collapse
+                        title='title-1'
+                        content='content'
+                        icon='arrow'
+                    />
+                `}
+            >
+                <Grid className="justify-center">
+                    <Collapse
+                        title='title-1'
+                        content='content'
+                        icon='arrow'
+                    />
+                </Grid>
+            </Section>
+
+            <Section 
+                title="icon" 
+                description="icon plus/minus" 
+                code={`
+                    <Collapse
+                        title='title-1'
+                        content='content'
+                        icon='plus'
+                    />
+                `}
+            >
+                <Grid className="justify-center">
+                    <Collapse
+                        title='title-1'
+                        content='content'
+                        icon='plus'
                     />
                 </Grid>
             </Section>
@@ -46,6 +93,11 @@ InfoCollapse.meta = {
         values: icons,
         type: 'enum',
         default: 'none',
-        description: ''
+        description: 'Adds plus/minus or chevron icon or non icon'
+    },
+    open: {
+        values: ['boolean'],
+        type: 'boolean',
+        description: 'Force open'
     }
 }

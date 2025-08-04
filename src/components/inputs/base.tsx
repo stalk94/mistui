@@ -1,4 +1,4 @@
-import { forwardRef, useMemo, useRef, useState, useEffect } from 'react';
+import { forwardRef, useMemo, useRef, useEffect } from 'react';
 import { FormWrapper, ValidatorBottomLabel } from './atomize';
 import { useClientValidity } from '../hooks';
 import { useTheme } from '../theme';
@@ -31,7 +31,6 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
 ) {
     const uid = useUids(type);
     const { styles, variants, plugins } = useTheme();
-    const [val, setVal] = useState(value);
     const internalRef = useRef<HTMLInputElement>(null);
     const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
     const { isValid, text } = useClientValidity(validator, inputRef);
@@ -60,13 +59,14 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
 
     
     const handle = (newValue: string) => {
-        setVal(newValue);
         onChange?.(newValue);
     }
     useEffect(() => {
         if (value === undefined) return;
 
-        if (value !== val) setVal(value);
+        if (value !== undefined && inputRef.current?.value !== value) {
+            inputRef.current.value = String(value);
+        }
     }, [value]);
     
 
@@ -113,7 +113,6 @@ const BaseInput = forwardRef<HTMLInputElement, BaseProps>(function BaseInput(
                         width: '100%', 
                         color: (style?.color ?? styles?.input?.fontColor)
                     }}
-                    value={val}
                     onChange={(e)=> handle(e.target.value)}
                     { ...props }
                 />

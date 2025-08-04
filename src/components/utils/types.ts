@@ -86,6 +86,8 @@ export type CollapseProps = {
     /** content collapse, children or content props  */
     content?: React.ReactNode
     icon?: 'plus' | 'arrow'
+    /** force open */
+    open?: boolean
 }
 
 type ItemIndicator = {

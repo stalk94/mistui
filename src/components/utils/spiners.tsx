@@ -1,4 +1,4 @@
-import { Fragment, useMemo, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { useUids } from '../hooks/uuid';
 import type { SpinerProps } from './types';
 import { cs } from '../hooks/cs';

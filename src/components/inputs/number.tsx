@@ -4,7 +4,7 @@ import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 import { FormWrapper, ValidatorBottomLabel } from './atomize'
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
 
 const Icon = ({ useClick, tag, 'data-id': dataId }) => {
@@ -32,53 +32,44 @@ const Icon = ({ useClick, tag, 'data-id': dataId }) => {
 
 
 const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(function NumberInput(
-    { 
-        iconEnable, 
-        onChange, 
-        value, 
-        step, 
+    {
+        iconEnable,
+        onChange,
+        value,
+        step,
         placeholder,
         color = 'neutral',
         required,
         validator,
-        ...props 
-    }, 
+        ...props
+    },
     ref
 ) {
     const internalRef = useRef<HTMLInputElement>(null);
     const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef;
+
     const uid = useUids('number');
     const { styles } = useTheme();
     const { isValid, text } = useClientValidity(validator, inputRef);
-    const [val, setVal] = useState(
-        typeof value === 'number' 
-            ? value 
-            : parseFloat(value as any) || undefined
-    );
+    const safeStep = step ?? 1;
 
-    
     const increment = () => {
-        setVal((safeValue)=> {
-            const result = safeValue + (step ?? 1);
-            onChange?.(result);
-            return result;
-        });
+        const current = parseFloat(inputRef.current?.value || '0');
+        const result = current + safeStep;
+        inputRef.current.value = result;
+
+        onChange?.(result);
     }
     const decrement = () => {
-        setVal((safeValue)=> {
-            const result = safeValue - (step ?? 1);
-            onChange?.(result);
-            return result;
-        });
+        const current = parseFloat(inputRef.current?.value || '0');
+        const result = current - safeStep;
+        inputRef.current.value = result;
+        
+        onChange?.(result);
     }
-    useEffect(()=> {
-        if (value === undefined) return;
-
-        if (value !== val) setVal(
-            typeof value === 'number' 
-                ? value 
-                : parseFloat(value as any) || undefined
-        );
+    useEffect(() => {
+        if (value === undefined || inputRef.current?.value === String(value)) return;
+        inputRef.current!.value = String(value);
     }, [value]);
     
 
@@ -86,60 +77,57 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(function Numb
         <FormWrapper
             data-id={uid}
             color={color}
+            required={required}
             labelLeft={
-                iconEnable &&
+                iconEnable && (
                     <Icon
                         data-id={props['data-id']}
-                        tag='MinusIcon'
+                        tag="MinusIcon"
                         useClick={decrement}
                     />
+                )
             }
             labelRight={
-                iconEnable &&
+                iconEnable && (
                     <Icon
                         data-id={props['data-id']}
-                        tag='PlusIcon'
+                        tag="PlusIcon"
                         useClick={increment}
                     />
+                )
             }
             error={
-                !isValid &&
+                !isValid && (
                     <ValidatorBottomLabel>
-                        { text }
+                        {text}
                     </ValidatorBottomLabel>
+                )
             }
-            { ...props }
+            {...props}
         >
             <style>
                 {`
                     input[data-id="${uid}"]::placeholder {
-                        color: ${styles?.input?.placeholderColor}
+                        color: ${styles?.input?.placeholderColor};
                     }
                 `}
             </style>
 
             <input
-                type='number'
+                type="number"
                 ref={inputRef}
+                data-id={uid}
                 placeholder={placeholder}
                 required={required}
-                style={{ 
-                    display: 'block', 
+                style={{
+                    display: 'block',
                     width: '100%',
-                    color: (props?.style?.color ?? styles?.input?.fontColor)
+                    color: props?.style?.color ?? styles?.input?.fontColor,
                 }}
-                value={val ?? ''}
                 onChange={(e) => {
                     const v = e.target.value;
-
-                    if (v === '') {
-                        setVal(undefined);
-                        onChange?.(undefined);
-                    }
-                    else if (v !== undefined && v !== null && !isNaN(+v)) {
-                        setVal(+v);
-                        onChange?.(+v);
-                    }
+                    if (v === '') onChange?.(undefined);
+                    else if (!isNaN(+v)) onChange?.(+v);
                 }}
             />
         </FormWrapper>

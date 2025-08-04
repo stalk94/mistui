@@ -13,6 +13,7 @@ export interface Theme {
         divider: string
         thumb: string       // рукоятка slider
         radio: string
+        progress: string
     }
     sizes: {
         [key: string]: {

@@ -1,6 +1,7 @@
 import { Fragment, useMemo, useState } from "react";
 import { useTheme } from './theme';
 import type { Variants } from './theme/default';
+import { cs } from "./hooks/cs";
 
 
 type TabsProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onClick' | 'style'> & {
@@ -54,12 +55,12 @@ export default function Tabs({
     return (
         <div 
             role="tablist" 
-            className={`
+            className={cs(`
                 tabs
                 tabs-${size}
                 tabs-${variant}
                 ${className && className}
-            `}
+            `)}
             style={{
                 boxShadow: shadows[shadow],
                 ...style
@@ -86,13 +87,13 @@ export default function Tabs({
                     {/* контент вкладки */}
                     { curActive === index &&
                         <div 
-                            className={`
+                            className={cs(`
                                 tab-content 
                                 p-2
                                 ${variant === 'lift' && 'border-base-300'}
                                 rounded-[4px]
                                 ${sizeText}
-                            `}
+                            `)}
                             style={{
                                 ...styleContent, 
                                 ...borderStyle

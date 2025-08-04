@@ -3,7 +3,7 @@ import type { CardProps } from './types';
 import { cs } from '../hooks/cs';
 
 
-// ! возможно стоит добавить color пропс
+// ! color, size
 export default function Card({ 
     style = {}, 
     shadow,
@@ -16,6 +16,8 @@ export default function Card({
     description,
     actions,
     children,
+    color,
+    size,
     ...props 
 }: CardProps) {
     const { shadows } = useTheme();

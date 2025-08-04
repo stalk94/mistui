@@ -28,7 +28,7 @@ export default function Layer({
 }) {
     const layers = layersStore.use();
     const [position, setPosition] = useState({x:0, y: 0});
-    const [size, setSize] = useState({width:80, height: 80});
+    const [size, setSize] = useState({width:80, height: 50});
     const [style, setState] = useState(boirlplate);
 
     
@@ -70,7 +70,7 @@ export default function Layer({
             else layersStore[name].set({
                 ...boirlplate,
                 width: 80, 
-                height: 60,
+                height: 50,
                 x: 0,
                 y: 0
             });

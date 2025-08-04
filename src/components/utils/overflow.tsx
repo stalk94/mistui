@@ -1,3 +1,4 @@
+import { cs } from '../hooks/cs';
 import type { OverflowProps } from './types';
 import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 
@@ -67,24 +68,24 @@ export default function Overflow({
     return (
         <div
             ref={containerRef}
-            className={`
+            className={cs(`
                 flex
                 ${isRow ? 'flex-row' : 'flex-col'} 
                 ${className ?? ''} 
                 overflow-hidden
-            `}
+            `)}
             style={style}
         >
              {children.map((child, index) => (
                 <div
                     key={index}
                     ref={el => (itemRefs.current[index] = el!)}
-                    className={`
+                    className={cs(`
                         flex 
                         ${isExpand ? 'grow shrink-0 basis-0' : ''} 
                         items-${justifyVertical} 
                         justify-${justifyHorizontal}
-                    `}
+                    `)}
                     style={{ visibility: index < visibleCount ? 'visible' : 'hidden' }}
                 >
                     { child }

@@ -13,15 +13,86 @@ export default function InfoBox(tab) {
             <Section 
                 title="basic" 
                 description="" 
-                code={``}
+                code={`
+                    <Box 
+                        className='w-60 h-60' 
+                        rounded={12}
+                    />
+                `}
             >
                 <div className="flex justify-center p-10">
-                    <Box className='w-60 h-60' rounded={2}>
-                        
+                    <Box 
+                        className='w-60 h-60' 
+                        rounded={4}
+                    />
+                </div>
+            </Section>
+
+            <Section 
+                title="elevation" 
+                description="" 
+                code={`
+                    <Box 
+                        className='w-60 h-60'
+                        rounded={18} 
+                        elevation={0.46} 
+                        shadowSize={3} 
+                    />
+                    <Box 
+                        className='flex w-60 h-60'
+                        rounded={4} 
+                        elevation={0.60} 
+                        shadowSize={-6} 
+                    />
+                `}
+            >
+                <div className="flex justify-center p-10">
+                    <Box 
+                        className='flex w-60 h-60'
+                        rounded={4} 
+                        elevation={0.46} 
+                        shadowSize={3} 
+                    >
+                        <div className='m-auto'>
+                            shadowSize +
+                        </div>
+                    </Box>
+                    <Box 
+                        className='flex w-60 h-60 ml-2'
+                        rounded={4} 
+                        elevation={0.60} 
+                        shadowSize={-6} 
+                    >
+                        <div className='m-auto'>
+                            shadowSize -
+                        </div>
                     </Box>
                 </div>
             </Section>
 
+            <Section 
+                title="neomorph" 
+                description="" 
+                code={`
+                    <Box 
+                        className='w-60 h-60'
+                        rounded={32} 
+                        elevation={0.46} 
+                        shadowSize={9} 
+                        variant="neumorph"
+                    />
+                `}
+            >
+                <div className="flex justify-center p-10">
+                    <Box 
+                        className='w-60 h-60'
+                        rounded={32} 
+                        elevation={0.46} 
+                        shadowSize={9} 
+                        variant="neumorph"
+                    />
+                </div>
+            </Section>
         </div>
     );
 }

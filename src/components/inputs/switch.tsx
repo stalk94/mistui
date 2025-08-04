@@ -53,6 +53,7 @@ export default function SwitchBox({
     value, 
     style = {},
     styleThumb,
+    icon,
     color = 'neutral',
     variant = 'outline',
     shadow,
@@ -168,21 +169,25 @@ export default function SwitchBox({
                             ring-0
                             rounded-full 
                             shadow-lg 
+                            hover:scale-92
                             ${thumbSizeClass[size] ?? autoThumbSize}
                         `)}
                     >
-                        <FaCheck
-                            fontSize="inherit"
-                            color={getStyle?.color}
-                            className={cs(`
-                                pointer-events-none inline-block 
-                                border-0
-                                m-auto
-                                ring-0
-                                h-[60%]
-                                ${!chek && 'opacity-0'}
-                            `)}
-                        />
+                        { icon
+                            ? icon
+                            : <FaCheck
+                                fontSize="inherit"
+                                color={getStyle?.color}
+                                className={cs(`
+                                    pointer-events-none inline-block 
+                                    border-0
+                                    m-auto
+                                    ring-0
+                                    h-[60%]
+                                    ${!chek && 'opacity-0'}
+                                `)}
+                            />
+                        }                        
                     </div>
                 </Switch.Thumb>
             </Switch.Root>
