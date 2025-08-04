@@ -14,7 +14,24 @@ export default function InfoDrawer(tab) {
                 title="basic" 
                 description="" 
                 code={`
-
+                    <Drawer
+                        trigger={
+                            <Button
+                                shadow='sm'
+                                size='md'
+                                style={{ margin: 3 }}
+                                color='success'
+                                variant='dash'
+                            >
+                                click my
+                            </Button>
+                        }
+                    >
+                        <>
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </>
+                    </Drawer>
                 `}
             >
                 <Grid className="w-120 m-auto">
@@ -44,7 +61,10 @@ export default function InfoDrawer(tab) {
                 title="top position" 
                 description="" 
                 code={`
-
+                    <Drawer
+                        position='top'
+                        ...
+                    />
                 `}
             >
                 <Grid className="w-120 m-auto">
@@ -75,7 +95,10 @@ export default function InfoDrawer(tab) {
                 title="right" 
                 description="" 
                 code={`
-
+                    <Drawer
+                        position='right'
+                        ...
+                    />
                 `}
             >
                 <Grid className="w-120 m-auto">
@@ -106,7 +129,10 @@ export default function InfoDrawer(tab) {
                 title="bottom" 
                 description="" 
                 code={`
-
+                    <Drawer
+                        position='bottom'
+                        ...
+                    />
                 `}
             >
                 <Grid className="w-120 m-auto">

@@ -114,7 +114,49 @@ export default function InfoAppBar(tab) {
                 title="basic" 
                 description="" 
                 code={`
+                    import { AppBar, BurgerMenu, Divider } from 'mistui-kit';
 
+                    <AppBar
+                        startSlot={
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "flex-start",
+                                    alignItems: "center"
+                                }}
+                            >
+                                <img
+                                    src="https://arenadata.tech/wp-content/uploads/2024/10/logo-white-short.png"
+                                    alt="Logo"
+                                    style={{
+                                        maxHeight: '40px',
+                                        padding: '5px',
+                                        objectFit: 'contain',
+                                        borderRadius: '3px'
+                                    }}
+                                />
+                            </div>
+                        }
+                        centerSlot={
+                            <div className='flex gap-2 ml-5'>
+                                <a>link-1</a>
+                                <a>link-2</a>
+                                <a>link-3</a>
+                            </div>
+                        }
+                        endSlot={
+                            <div className="flex">
+                                <Divider
+                                    color="#171717"
+                                    orientation='vertical'
+                                    className="py-1"
+                                />
+                                <BurgerMenu
+                                    items={transformRouter}
+                                />
+                            </div>
+                        }
+                    />
                 `}
             >
                 <div className="flex justify-center w-full">
@@ -125,9 +167,12 @@ export default function InfoAppBar(tab) {
             {/* center */}
             <Section 
                 title="center" 
-                description="variant props" 
+                description="navigation center" 
                 code={`
-
+                    <AppBar
+                        variant='center'
+                        ...
+                    />
                 `}
             >
                 <div className="flex justify-center w-full">
@@ -138,9 +183,34 @@ export default function InfoAppBar(tab) {
             {/* overflow */}
             <Section
                 title="overflow"
-                description=""
+                description="navigation overflow. LinearAppBar uses LinearNavigation in the center slot by default, and it also creates routes on its own."
                 code={`
-                    
+                    import { LinearAppBar, BurgerMenu } from 'mistui-kit';
+                    import { useRouter } from 'next/navigation';            // or any routing hook system
+
+                    const router = useRouter()
+
+                    // The id is treated as a path, with support for nested paths."
+                    const items = [
+                        { id: 'base', label: "Home", icon: <HomeIcon /> },
+                        { id: 'settings', label: "setiings", icon: <HomeIcon />, children: [
+                            { id: 'nested', label: "Nested", icon: <HomeIcon /> }           // will pass on to '/settings/nested' path
+                        ] }
+                        ...
+                    ];
+
+                    <LinearAppBar
+                        items={items}
+                        navigate={router.push}  // 
+                        endSlot={
+                            <BurgerMenu
+                                items={[
+                                    {id: 'base', label: "Home", icon: <HomeIcon />}, 
+                                    {id: 'base2', label:'test-2'}
+                                ]}
+                            />
+                        }
+                    />
                 `}
             >
                 <div className="flex justify-center w-full">

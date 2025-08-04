@@ -38,29 +38,18 @@ export default function InfoHero(tab) {
             { tab }
             {/* image */}
             <Section 
-                title="Hero" 
-                description="кнопка" 
-                code={`<AvatarGroup variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></AvatarGroup>`}
-            >
-                <div className="flex justify-center">
+                title="basic" 
+                description="" 
+                code={`
                     <Hero
                         className='min-h-150 min-w-170'
                         fontImageOverlaySrc='https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp'
                     >
                         <Body />
                     </Hero>
-                </div>
-            </Section>
-
-            {/*  */}
-            <Section
-                title="Hero orientation"
-                description="разные размеры"
-                code={sizes
-                    .map((size) => `<AvatarGroup size="${size}" shadow="sm">${size}</AvatarGroup>`)
-                    .join('\n')}
+                `}
             >
-               <div className="flex-col justify-center">
+                <div className="flex justify-center">
                     <Hero
                         className='min-h-150 min-w-170'
                         fontImageOverlaySrc='https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp'
@@ -79,7 +68,7 @@ InfoHero.meta = {
     fontImageOverlaySrc: {
         values: ['string'],
         type: 'string',
-        description: 'url'
+        description: 'url image font image'
     },
     classNameContent: {
         values: ['string'],

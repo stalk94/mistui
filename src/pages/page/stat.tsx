@@ -12,6 +12,7 @@ export default function InfoStat(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
+            
             {/* image */}
             <Section 
                 title="Stat" 

@@ -2,6 +2,7 @@ import Footer from '@/components/footers/base';
 import { Section, Grid } from '../helpers';
 import { colors, colorsCustom, sizes } from '../helpers';
 import { baseMeta, orientationMeta } from '../meta';
+import { Typography } from '@/components/text';
 
 const Body = () => (
     <>
@@ -71,11 +72,24 @@ export default function InfoFooter(tab) {
     return (
         <div className="p-6 space-y-8 shrink-0">
             { tab }
+
+            <Typography as='div' variant='body2'>
+                <ul className="list-disc list-inside ml-4 my-1">
+                    <li>Accepts any custom children</li>
+                    <li>Full style and className control</li>
+                    <li>⚙️ Responsive-ready (orientationBreacpoints reserved for future use)</li>
+                    <li>🎯 Optional centered layout (isCenter)</li>
+                    <li>↔️ Supports both horizontal and vertical orientation</li>
+                </ul>
+            </Typography>
+
             {/* image */}
             <Section 
-                title="Footer" 
-                description="кнопка" 
-                code={`<AvatarGroup variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></AvatarGroup>`}
+                title="basic" 
+                description="" 
+                code={`
+
+                `}
             >
                 <div className="flex justify-center">
                     <Footer
@@ -89,8 +103,10 @@ export default function InfoFooter(tab) {
 
             <Section 
                 title="vertical" 
-                description="кнопка" 
-                code={`<AvatarGroup variant='round' size='sm' src='https://img.daisyui.com/images/profile/demo/yellingcat@192.webp'></AvatarGroup>`}
+                description="orientation vertical" 
+                code={`
+
+                `}
             >
                 <div className="flex justify-center">
                     <Footer
@@ -106,10 +122,10 @@ export default function InfoFooter(tab) {
             {/* orientation */}
             <Section
                 title="isCenter"
-                description="разные размеры"
-                code={sizes
-                    .map((size) => `<AvatarGroup size="${size}" shadow="sm">${size}</AvatarGroup>`)
-                    .join('\n')}
+                description="isCenter true props"
+                code={`
+                    
+                `}
             >
                <div className="flex-col justify-center">
                     <Footer

@@ -153,37 +153,46 @@ const components = {
     `,
     
     List: `
-        
+        📋 List is a flexible component for rendering vertical lists with consistent spacing and styles.
     `,
     BottomNavigation: `
-        
-    `,
-    Footer: `
-        
-    `,
-    Hero: `
-        
+        📱 BottomNav is a mobile-friendly bottom navigation bar used to switch between main views or routes in an app.
     `,
     AppBar: `
-        
+        📌 A customizable app header bar with slot-based layout.
     `,
-    Chat: `
-        
+    Paginator: `
+        ⏭️ A flexible pagination control with customizable size, color, and button variants.
+    `,
+    Box: `
+        📦 Box is a fundamental building block component used to construct layouts, cards, panels, and containers.
+        It provides flexible styling options to help you create visually rich UI elements.
     `,
     Stat: `
-        
+        📊 Stat is a compact data display component used to show key metrics or summarized values in dashboards and cards.
     `,
+    Footer: `
+        📍 Footer is a flexible layout component for building responsive website footers.
+    `,
+    Hero: `
+        🎯 Hero is a component for displaying a large box or image with a title and description. Ideal for landing pages and prominent sections.
+    `,
+    Chat: `
+        💬 Chat bubbles are used to show one line of conversation and all its data, including the author image, author name, time, etc.
+    `,
+
     Tooltip: `
-        
+        💬 Tooltip is a versatile informational popup that appears on hover or focus, providing additional context or details about an element
     `,
     Modal: `
-        
+        🗖 Modal is a dialog window component that overlays content and focuses user attention for tasks like alerts, forms, or confirmations.
     `,
     Popover: `
-        
+        🔽 Dropdown is a flexible, headless dropdown/popup component designed for both hover and click interactions.
     `,
     Drawer: `
-        
+        🚪 Drawer is a sliding panel component that appears from the specified screen edge (left, right, top, or bottom).
+        It overlays the main content with a semi-transparent backdrop and supports smooth open/close animatio
     `,
 
     Card: `

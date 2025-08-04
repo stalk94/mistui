@@ -14,7 +14,7 @@ type BottomNavProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | '
     onChange?: (activeIndex: number)=> void
 }
 
-
+// ! color
 const BottomNav = forwardRef<HTMLDivElement, BottomNavProps>(function BottomNav(
     {
         style = {},

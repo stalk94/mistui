@@ -62,7 +62,7 @@ const navLinksTest = [
  */
 export default function LinearAppBar({ 
     items, 
-    onClick,
+    navigate,
     startSlot,
     endSlot,
     ...props
@@ -73,7 +73,7 @@ export default function LinearAppBar({
     // вяжется на все элементы навигации, получает rout нажатого элемента
     const handlerClickNavigation =(path: string)=> {
         console.log(path);
-        onClick && onClick(path);
+        navigate && navigate(path);
     }
     // ANCHOR - трансформатор id в rout
     const transformRouter = useMemo(()=> {
@@ -94,7 +94,7 @@ export default function LinearAppBar({
     
         const result = func(items ?? navLinksTest);
         return result;
-    }, [items, onClick]);
+    }, [items, navigate]);
     const handleOverflow = useCallback((items) => {
         setOverflow(prev =>
             JSON.stringify(prev) === JSON.stringify(items) ? prev : items

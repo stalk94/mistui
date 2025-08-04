@@ -19,7 +19,7 @@ export default function InfoBottomNav(tab) {
 
             {/* Default */}
             <Section
-                title=""
+                title="basic"
                 description="Basic bottom navigation component"
                 code={`<BottomNav size="sm" items={items} />`}
             >

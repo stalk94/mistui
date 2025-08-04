@@ -48,7 +48,27 @@ export default function InfoModal(tab) {
                 title="basic" 
                 description="control modal through `[data-modal-root]` selector" 
                 code={`
-
+                    <>
+                        <Button
+                            color='success'
+                            variant='dash'
+                            onClick={() => document.querySelector('[data-modal-root]').showModal()}
+                        >
+                            open modal
+                        </Button>
+                        <Modal
+                            children={
+                                <>
+                                    <Typography variant='h6'>
+                                        Hello
+                                    </Typography>
+                                    <Typography className="py-4" variant='subtitle2'>
+                                        Press ESC key or click outside to close
+                                    </Typography>
+                                </>
+                            }
+                        />
+                    </>
                 `}
             >
                 <Grid className="w-120 m-auto">
@@ -81,7 +101,29 @@ export default function InfoModal(tab) {
             <Section title="ref" 
                 description="control through `ref`"
                 code={`
+                    const ref = useRef<HTMLDialogElement>(null);
                     
+                    <>
+                        <Modal
+                            ref={ref}
+                            children={
+                                <>
+                                    <Typography variant='h6'>
+                                        Hello
+                                    </Typography>
+                                    <Typography className="py-4" variant='subtitle2'>
+                                        Press ESC key or click outside to close
+                                    </Typography>
+                                </>
+                            }
+                        />
+                        <Button
+                            variant='dash'
+                            onClick={() => ref?.current?.showModal()}
+                        >
+                            open modal
+                        </Button>
+                    </>
                 `}
             >
                 <Grid className="w-120 m-auto">

@@ -2,6 +2,7 @@ import type { TooltipProps } from './types';
 import { useTheme } from '../theme';
 import { useMemo } from 'react';
 import { useUids } from '../hooks/uuid';
+import { cs } from '../hooks/cs';
 
 
 
@@ -16,7 +17,7 @@ export default function Tooltip({
     position = 'top',
     ...props
 }: TooltipProps) {
-    const { shadows, plugins, autosizes, variants } = useTheme();
+    const { plugins, autosizes, variants } = useTheme();
     const uid = useUids('tooltip');
     const sizeText = (size && size !== 'auto') ? `text-${size}` : autosizes.text;
 
@@ -99,7 +100,12 @@ export default function Tooltip({
             </style>
 
             <span 
-                className={`tooltip-content rounded shadow ${className ?? ''} ${sizeText}`}
+                className={cs(`
+                    tooltip-content 
+                    rounded 
+                    shadow 
+                    ${className ?? ''} ${sizeText}
+                `)}
                 style={getStyle}
             >
                 { content }
