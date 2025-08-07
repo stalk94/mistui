@@ -1,3 +1,4 @@
+export { SnackbarProvider, enqueueSnackbar as useSnackbar } from 'notistack';
 export * from './components/theme';
 export * from './components/inputs';
 export * from './components/helpers';
@@ -30,7 +31,7 @@ export { default as Footer } from './components/footers/base';
 export { default as Tabs } from './components/tabs';
 export { default as Collapse } from './components/utils/collapse';
 export { default as List } from './components/list/base';
-export { default as Divdder } from './components/utils/divider';
+export { default as Divder } from './components/utils/divider';
 export { default as RadialProgress } from './components/utils/radial-progress';
 export { default as Progress } from './components/utils/progress';
 export { default as Spinner } from './components/utils/spiners';

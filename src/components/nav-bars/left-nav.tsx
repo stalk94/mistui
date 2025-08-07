@@ -98,30 +98,7 @@ export function SidebarMenu({
             </div>
 
             {/* Меню */}
-            <ul
-                //anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                //transformOrigin={{ vertical: "center", horizontal: "left" }}
-            >
-                { currentChildren.map((child, index)=> (
-                    <li
-                        key={index}
-                        style={{ 
-                            backgroundColor: selectedItem === child.id 
-                                ? theme.palette?.toolNavBar?.select 
-                                : "transparent" 
-                        }}
-                        onClick={()=> {
-                            handleItemClick(child, child.parentId); // Используем parentLabel из child
-                            handleClosePopover();
-                        }}
-                    >
-                        <ListItemIcon sx={{ minWidth: 36, opacity: 0.6 }}>
-                            { renderIcon(child) }
-                        </ListItemIcon>
-                        <ListItemText primary={child.label} />
-                    </li>
-                ))}
-            </ul>
+            
         </React.Fragment>
     );
 }

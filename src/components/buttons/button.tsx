@@ -7,6 +7,8 @@ import { cs } from '../hooks/cs';
 import Ripple from './animation';
 
 
+const exclude = ['outline', 'dash', 'ghost'];
+
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     {
@@ -141,6 +143,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     ${getSize}
                     ${variant === 'soft' && `btn-soft btn-${color}`}
                     ${variant === 'link' && 'btn-link'}
+                    ${exclude.includes(variant) ? 'bg-none' : ''}
                     font-bold 
                     uppercase
                     transition-transform 

@@ -7,6 +7,7 @@ import { createGradientStyle } from '../hooks';
 import { cs } from '../hooks/cs';
 import clsx from 'clsx';
 
+const exclude = ['outline', 'dash', 'ghost'];
 
 
 const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
@@ -139,10 +140,11 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                 className={cs(`
                     btn 
                     whitespace-nowrap
-                    ${variant === 'ghost' && 'btn-ghost'}
+                    ${variant === 'ghost' ? 'btn-ghost' : ''}
                     ${isRounded ? 'btn-circle' : 'btn-square'}
                     ${variant ? `btn-${variant}` : ''} 
                     ${getSize}
+                    ${exclude.includes(variant) ? 'bg-none' : ''}
                     font-bold 
                     uppercase
                     transition-transform 

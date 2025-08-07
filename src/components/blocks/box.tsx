@@ -15,7 +15,7 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(function Box(
         children,
         size: propSize,
         variant = 'contained',
-        color = 'neutral',
+        color = 'none',
         shadowSize = 1, 
         rounded = 0, 
         shadow,

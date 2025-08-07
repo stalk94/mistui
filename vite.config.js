@@ -5,6 +5,7 @@ import writeFilePlugin from './plugins/vite-write';
 import viteSource from './plugins/vite-source';
 import viteSafeTw from './plugins/vite-tw-safe';
 import tailwindcss from '@tailwindcss/vite';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import path from 'path';
 
 
@@ -17,7 +18,8 @@ export default defineConfig({
         viteSafeTw(), 
         viteSource(), 
         writeFilePlugin(), 
-        tsconfigPaths()
+        tsconfigPaths(),
+        cssInjectedByJsPlugin()
     ],
     server: {
         port: 3001

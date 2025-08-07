@@ -1,7 +1,7 @@
 import type { Variants } from '../theme/default';
 
 
-export type BoxProps = {
+export type BoxProps = HTMLDivElement & {
     children: React.ReactNode
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'

@@ -33,4 +33,12 @@ export type PaginatorProps = {
     showLastButton?: boolean;
     onChange?: (page: number) => void;
 };
+export type StepsProps = {
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto';
+    className?: HTMLElement['className'];
+    color?: Variants | (string & {});
+    style?: React.CSSProperties;
+    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link';
+};
 export {};

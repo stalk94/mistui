@@ -1,3 +1,5 @@
+export { SnackbarProvider, enqueueSnackbar as useSnackbar } from 'notistack';
+
 // theme, createTheme, useTheme, defaultThemeObj, 
 export * from './components/theme';
 

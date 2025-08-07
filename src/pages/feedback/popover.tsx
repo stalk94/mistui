@@ -101,53 +101,53 @@ export default function InfoPopover(tab) {
 InfoPopover.meta = {
     trigger: {
         type: 'object',
-        values: ["React.ReactNode"],
-        description: ''
+        values: ['React.ReactNode'],
+        description: 'Element that triggers the popover (e.g. button or icon)'
     },
     children: {
         type: 'object',
-        values: ["React.ReactNode"],
-        description: ''
+        values: ['React.ReactNode'],
+        description: 'Content displayed inside the popover'
     },
     align: {
-        values: ["center", "end", "start"],
+        values: ['center', 'end', 'start'],
         type: 'enum',
-        description: ''
+        description: 'Horizontal alignment of the popover relative to the trigger'
     },
     side: {
-        values: ["left", "right", "bottom", "top"],
+        values: ['left', 'right', 'bottom', 'top'],
         type: 'enum',
-        description: ''
-    }, 
+        description: 'Side of the trigger where the popover will appear'
+    },
     open: {
         type: 'boolean',
-        values: ["boolean"],
-        description: ''
+        values: ['boolean'],
+        description: 'Controls whether the popover is open or closed'
     },
     usePortal: {
         type: 'boolean',
-        values: ["boolean"],
-        description: ''
+        values: ['boolean'],
+        description: 'Whether to render the popover inside a React portal'
     },
     isHover: {
         type: 'boolean',
-        values: ["boolean"],
-        description: ''
-    },  
+        values: ['boolean'],
+        description: 'Opens the popover on hover instead of click'
+    },
     setOpen: {
         values: [],
         type: 'func',
-        description: ''
+        description: 'Callback to manually control popover open state'
     },
     onClose: {
         values: [],
         type: 'func',
-        description: ''
+        description: 'Callback fired when the popover is closed'
     },
     anchor: {
         values: [],
         type: 'object',
-        description: ''
+        description: 'Optional custom anchor element to position the popover relative to'
     },
     className: baseMeta.className,
     style: baseMeta.style

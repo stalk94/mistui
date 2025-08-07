@@ -13,7 +13,7 @@ type ItemSelectFilter = {
 
 
 export type ButtonProps = Props & {
-    children: string | React.ReactElement
+    children: React.ReactNode
     title?: string
     size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
