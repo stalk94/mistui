@@ -1,0 +1,6068 @@
+{
+    "base": {
+        "ThemeProvider": {
+            "children": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "All content React JSX application"
+            },
+            "theme": {
+                "values": [
+                    "{themeSchema: dark, colors: { base: black }, ...}"
+                ],
+                "type": "object",
+                "description": "settings object base configure theme"
+            }
+        },
+        "AlertProvider": {
+            "children": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "All content React JSX application"
+            },
+            "position": {
+                "values": [
+                    "top-left",
+                    "top-right",
+                    "bottom-left",
+                    "bottom-right"
+                ],
+                "type": "enum",
+                "default": "top-right",
+                "description": "position alert"
+            },
+            "delDelay": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 6000,
+                "description": "The rate of disappearance is regulated through"
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash"
+                ],
+                "type": "enum",
+                "default": "contained",
+                "description": "Controls the visual style like filled."
+            }
+        }
+    },
+    "text": {
+        "Typography": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "primary",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "as": {
+                "values": [
+                    "any html tag name"
+                ],
+                "type": "enum",
+                "description": "html tag name (polymorphic)",
+                "default": "p"
+            },
+            "variant": {
+                "values": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    "subtitle1",
+                    "subtitle2",
+                    "body1",
+                    "body2",
+                    "caption",
+                    "overline",
+                    "button"
+                ],
+                "type": "enum",
+                "description": "Text variant that defines style and size.",
+                "default": "body2"
+            },
+            "fontStyle": {
+                "values": [
+                    "normal",
+                    "italic"
+                ],
+                "type": "enum",
+                "default": "normal",
+                "description": "Font style: normal or italic."
+            },
+            "fontFamily": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Font name from the available font families."
+            },
+            "fontSize": {
+                "values": [
+                    "string",
+                    "number"
+                ],
+                "type": "enum",
+                "description": "Font size (e.g., 16 or \"1.2rem\")."
+            },
+            "colorShadow": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Text shadow color (e.g., \"rgba(0,0,0,0.3)\") or color theme variants."
+            },
+            "tracking": {
+                "values": [
+                    "tighter",
+                    "tight",
+                    "normal",
+                    "wide",
+                    "wider",
+                    "widest"
+                ],
+                "type": "enum",
+                "description": "later Spacing"
+            }
+        },
+        "Link": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "primary",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "as": {
+                "values": [
+                    "any html tag name"
+                ],
+                "type": "enum",
+                "description": "html tag name (polymorphic)",
+                "default": "p"
+            },
+            "variant": {
+                "values": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    "subtitle1",
+                    "subtitle2",
+                    "body1",
+                    "body2",
+                    "caption",
+                    "overline",
+                    "button"
+                ],
+                "type": "enum",
+                "description": "Text variant that defines style and size.",
+                "default": "body2"
+            },
+            "fontStyle": {
+                "values": [
+                    "normal",
+                    "italic"
+                ],
+                "type": "enum",
+                "default": "normal",
+                "description": "Font style: normal or italic."
+            },
+            "fontFamily": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Font name from the available font families."
+            },
+            "fontSize": {
+                "values": [
+                    "string",
+                    "number"
+                ],
+                "type": "enum",
+                "description": "Font size (e.g., 16 or \"1.2rem\")."
+            },
+            "colorShadow": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Text shadow color (e.g., \"rgba(0,0,0,0.3)\") or color theme variants."
+            },
+            "tracking": {
+                "values": [
+                    "tighter",
+                    "tight",
+                    "normal",
+                    "wide",
+                    "wider",
+                    "widest"
+                ],
+                "type": "enum",
+                "description": "later Spacing"
+            }
+        },
+        "MarqueText": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "primary",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "as": {
+                "values": [
+                    "any html tag name"
+                ],
+                "type": "enum",
+                "description": "html tag name (polymorphic)",
+                "default": "div"
+            },
+            "variant": {
+                "values": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    "subtitle1",
+                    "subtitle2",
+                    "body1",
+                    "body2",
+                    "caption",
+                    "overline",
+                    "button"
+                ],
+                "type": "enum",
+                "description": "Text variant that defines style and size.",
+                "default": "body2"
+            },
+            "fontStyle": {
+                "values": [
+                    "normal",
+                    "italic"
+                ],
+                "type": "enum",
+                "default": "normal",
+                "description": "Font style: normal or italic."
+            },
+            "fontFamily": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Font name from the available font families."
+            },
+            "fontSize": {
+                "values": [
+                    "string",
+                    "number"
+                ],
+                "type": "enum",
+                "description": "Font size (e.g., 16 or \"1.2rem\")."
+            },
+            "colorShadow": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Text shadow color (e.g., \"rgba(0,0,0,0.3)\") or color theme variants."
+            },
+            "tracking": {
+                "values": [
+                    "tighter",
+                    "tight",
+                    "normal",
+                    "wide",
+                    "wider",
+                    "widest"
+                ],
+                "type": "enum",
+                "description": "later Spacing"
+            },
+            "pxPerSecond": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 100,
+                "description": "Speed of the marquee animation in pixels per second."
+            },
+            "copies": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 4,
+                "description": "Number of duplicated elements to ensure smooth scrolling."
+            },
+            "pauseOnHover": {
+                "values": [
+                    "any"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "Pauses the marquee animation when the user hovers over it."
+            },
+            "gap": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 12,
+                "description": "Space in pixels between repeated marquee items."
+            }
+        }
+    },
+    "buttons": {
+        "Button": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "default": "contained",
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component."
+            },
+            "isGradient": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Enables gradient fill."
+            },
+            "selected": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Displays the component as selected."
+            },
+            "fullWidth": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "full width"
+            },
+            "disabled": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Disables the component."
+            },
+            "ripple": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "true",
+                "description": "Enable ripple animation effect"
+            },
+            "aria-label": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Description for screen reader (accessibility)"
+            }
+        },
+        "IconButton": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "default": "contained",
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component."
+            },
+            "isGradient": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Enables gradient fill."
+            },
+            "selected": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Displays the component as selected."
+            },
+            "fullWidth": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "full width"
+            },
+            "disabled": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Disables the component."
+            },
+            "ripple": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "true",
+                "description": "Enable ripple animation effect"
+            },
+            "aria-label": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Description for screen reader (accessibility)"
+            },
+            "isRounded": {
+                "values": [
+                    "any"
+                ],
+                "type": "boolean",
+                "description": "Enables border rounding."
+            },
+            "icon": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "SVG icon component (alternative children props)*"
+            },
+            "children": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "SVG icon component."
+            }
+        },
+        "GroupButtons": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "default": "contained",
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component."
+            },
+            "isGradient": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Enables gradient fill."
+            },
+            "selected": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Displays the component as selected."
+            },
+            "fullWidth": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "full width"
+            },
+            "disabled": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Disables the component."
+            },
+            "ripple": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "true",
+                "description": "Enable ripple animation effect"
+            },
+            "aria-label": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Description for screen reader (accessibility)"
+            },
+            "value": {
+                "values": [
+                    "string",
+                    "number"
+                ],
+                "type": "enum",
+                "description": "The current value of the select."
+            },
+            "items": {
+                "values": [
+                    {
+                        "id": {
+                            "values": [
+                                "string",
+                                "number"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        },
+                        "label": {
+                            "values": [
+                                "React.ReactElement"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        }
+                    }
+                ],
+                "type": "array",
+                "description": "Scheme format data."
+            },
+            "orienattion": {
+                "values": [
+                    "horizontal",
+                    "vertical"
+                ],
+                "default": "horizontal",
+                "type": "enum",
+                "description": "Component direction: horizontal or vertical."
+            }
+        },
+        "GroupButtonFiltre": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "default": "contained",
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component."
+            },
+            "isGradient": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Enables gradient fill."
+            },
+            "selected": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Displays the component as selected."
+            },
+            "fullWidth": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "full width"
+            },
+            "disabled": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Disables the component."
+            },
+            "ripple": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "true",
+                "description": "Enable ripple animation effect"
+            },
+            "aria-label": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Description for screen reader (accessibility)"
+            },
+            "value": {
+                "values": [
+                    "string",
+                    "number"
+                ],
+                "type": "enum",
+                "description": "The current value of the select."
+            },
+            "items": {
+                "values": [
+                    {
+                        "id": {
+                            "values": [
+                                "string",
+                                "number"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        },
+                        "label": {
+                            "values": [
+                                "React.ReactElement"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        }
+                    }
+                ],
+                "type": "array",
+                "description": "Scheme format data."
+            },
+            "orienattion": {
+                "values": [
+                    "horizontal",
+                    "vertical"
+                ],
+                "default": "horizontal",
+                "type": "enum",
+                "description": "Component direction: horizontal or vertical."
+            },
+            "valueReset": {
+                "values": [
+                    "string",
+                    "number"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "styleButtonReset": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component button reset."
+            }
+        }
+    },
+    "inputs": {
+        "BaseInput": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "NumberInput": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            },
+            "step": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "Шаг при инкременте и декременте."
+            },
+            "iconEnable": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Включает кнопки плюс/минус."
+            }
+        },
+        "ColorPicker": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            },
+            "openPicker": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Open popup color pallete"
+            }
+        },
+        "Radio": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Checked or unchecked"
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "Called when the color changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "Switch": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Checked or unchecked"
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "Called when the color changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "CheckBox": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "The current color value in rgba() format."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "Called when the color changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "Slider": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            },
+            "min": {
+                "values": [
+                    "number"
+                ],
+                "default": 0,
+                "type": "number",
+                "description": "min value slider"
+            },
+            "max": {
+                "values": [
+                    "number"
+                ],
+                "default": 100,
+                "type": "number",
+                "description": "max value slider"
+            },
+            "step": {
+                "values": [
+                    "number"
+                ],
+                "default": 1,
+                "type": "number",
+                "description": "step change value slider"
+            }
+        },
+        "TextArea": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "Date": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "Time": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            }
+        },
+        "File": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "(file: File)=> void"
+                ],
+                "type": "func",
+                "description": "A function called when a file loaded."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "labelRight": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the right slot"
+            },
+            "accept": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "The accept attribute takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow."
+            },
+            "maxSize": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "Max size file, indicated in megabytes. (0.5 - half mb)"
+            }
+        },
+        "Autocomplete": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "options": {
+                "values": [
+                    "string"
+                ],
+                "type": "array",
+                "description": "array string variantes autocomplete"
+            }
+        },
+        "Select": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "outline",
+                "description": "Controls the visual style like filled, outlined form."
+            },
+            "value": {
+                "values": [
+                    "number",
+                    "string"
+                ],
+                "type": "enum",
+                "description": "The current value of the input field."
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when a value changes."
+            },
+            "placeholder": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Hint text inside the field."
+            },
+            "required": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Whether the field is required."
+            },
+            "validator": {
+                "values": [
+                    "Validator"
+                ],
+                "type": "func",
+                "description": "the function is called after user input, checks the validity of the input"
+            },
+            "labelLeft": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the left slot"
+            },
+            "labelTop": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Custom component, icon, or string label on the top"
+            },
+            "items": {
+                "values": [
+                    "string",
+                    "{id: string, label: React.ReactNode}"
+                ],
+                "type": "array",
+                "description": ""
+            }
+        }
+    },
+    "navigation": {
+        "Tabs": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "activeIndexTab": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 0,
+                "description": "current active index tab"
+            },
+            "variant": {
+                "values": [
+                    "box",
+                    "border",
+                    "lift"
+                ],
+                "default": "lift",
+                "type": "enum",
+                "description": "variants visual style"
+            },
+            "items": {
+                "values": [
+                    {
+                        "label": {
+                            "values": [
+                                "string",
+                                "React.ReactNode"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        },
+                        "content": {
+                            "values": [
+                                "string",
+                                "React.ReactNode"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        }
+                    }
+                ],
+                "type": "array",
+                "description": ""
+            },
+            "styleTab": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "styleContent": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            }
+        },
+        "Breadcrumbs": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "pathname": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "path"
+            },
+            "Link": {
+                "values": [
+                    "ComponentType<{ href: string; children: React.ReactNode }>"
+                ],
+                "type": "func",
+                "description": "render component element navigation"
+            },
+            "separator": {
+                "values": [
+                    "string",
+                    "ReactNode"
+                ],
+                "default": "›",
+                "type": "enum",
+                "description": "custom component separator"
+            },
+            "nameMap": {
+                "values": [
+                    "Record<string, string>"
+                ],
+                "type": "object",
+                "description": "path map"
+            },
+            "homeIcon": {
+                "values": [
+                    "SVGSVGElement"
+                ],
+                "type": "object",
+                "description": "custom svg icon home"
+            }
+        },
+        "BottomNavigation": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "active": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 0,
+                "description": ""
+            },
+            "onChange": {
+                "values": [
+                    "selectItem"
+                ],
+                "type": "func",
+                "description": ""
+            },
+            "items": {
+                "values": [
+                    {
+                        "icon": {
+                            "values": [
+                                "React.ReactNode"
+                            ],
+                            "type": "object",
+                            "description": ""
+                        },
+                        "label": {
+                            "values": [
+                                "React.ReactNode"
+                            ],
+                            "type": "object",
+                            "description": ""
+                        }
+                    }
+                ],
+                "type": "array",
+                "description": ""
+            }
+        },
+        "Menu": {
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "onSelect": {
+                "values": [
+                    ""
+                ],
+                "type": "func",
+                "description": ""
+            },
+            "items": {
+                "values": [
+                    {}
+                ],
+                "type": "array",
+                "description": ""
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "isNested": {
+                "values": [
+                    "any"
+                ],
+                "type": "boolean",
+                "description": ""
+            }
+        },
+        "Paginator": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component.",
+                "default": "soft"
+            },
+            "count": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 5,
+                "description": ""
+            },
+            "page": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": ""
+            },
+            "showFirstButton": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": ""
+            },
+            "showLastButton": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": ""
+            },
+            "onChange": {
+                "values": [
+                    "function"
+                ],
+                "type": "func",
+                "description": "A function called when page changes."
+            }
+        }
+    },
+    "data-display": {
+        "Avatar": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "base",
+                    "square",
+                    "round"
+                ],
+                "default": "base",
+                "type": "enum",
+                "description": "Controls the visual form style component."
+            },
+            "isGradient": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Enables gradient fill."
+            }
+        },
+        "AvatarGroup": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "isGradient": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Controls the visual form style component."
+            },
+            "items": {
+                "values": [
+                    "AvatarProps"
+                ],
+                "type": "array",
+                "description": ""
+            }
+        },
+        "Indicator": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Will be wrapped `content`."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "content": {
+                "values": [
+                    "ItemIndicator[]",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Wraps `children`."
+            },
+            "position": {
+                "values": [
+                    "top",
+                    "middle",
+                    "bottom"
+                ],
+                "type": "enum",
+                "default": "top",
+                "description": "Vertical position of the indicator relative to its target element"
+            },
+            "align": {
+                "values": [
+                    "start",
+                    "center",
+                    "end"
+                ],
+                "type": "enum",
+                "default": "end",
+                "description": "Horizontal alignment of the indicator (left, center, or right relative to the target)"
+            }
+        },
+        "Badge": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "accent",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component.",
+                "default": "outline"
+            },
+            "iconLeft": {
+                "values": [
+                    "SVGElement",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "iconRight": {
+                "values": [
+                    "SVGElement",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            }
+        },
+        "List": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "listStyle": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "classNameList": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": ""
+            }
+        },
+        "Flag": {
+            "code": {
+                "values": [
+                    "AC",
+                    "AD",
+                    "AE",
+                    "AF",
+                    "AG",
+                    "AI",
+                    "AL",
+                    "AM",
+                    "AO",
+                    "AQ",
+                    "...over 200"
+                ],
+                "type": "enum",
+                "description": "254 country variants flag code"
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto",
+                    "number"
+                ],
+                "type": "number",
+                "default": "sm",
+                "description": "standart variants size(`xs`, `sm`, `md`, `lg`, `xl`), or custom number value"
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            }
+        },
+        "Progress": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "max": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 100,
+                "description": ""
+            },
+            "value": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "The current value of the procent size line."
+            }
+        },
+        "RadialProgress": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "value": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "The current value of the procent size line."
+            }
+        },
+        "Spinner": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "spinner",
+                    "dots",
+                    "ring",
+                    "ball",
+                    "bars",
+                    "infinity"
+                ],
+                "type": "enum",
+                "default": "spinner",
+                "description": "Controls the visual style"
+            }
+        },
+        "Skeleton": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            }
+        }
+    },
+    "layout": {
+        "Divider": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl"
+                ],
+                "type": "enum",
+                "default": "xs",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "secondary",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "orienattion": {
+                "values": [
+                    "horizontal",
+                    "vertical"
+                ],
+                "default": "horizontal",
+                "type": "enum",
+                "description": "Component direction: horizontal or vertical."
+            },
+            "variant": {
+                "values": [
+                    "solid",
+                    "dashed",
+                    "dotted"
+                ],
+                "type": "enum",
+                "default": "solid",
+                "description": ""
+            },
+            "position": {
+                "values": [
+                    "start",
+                    "center",
+                    "end"
+                ],
+                "type": "enum",
+                "default": "center",
+                "description": ""
+            }
+        },
+        "Splitter": {
+            "children": {
+                "values": [
+                    "SplitterPanel[]",
+                    "SplitterPanel",
+                    "Splitter",
+                    "Splitter[]"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "orienattion": {
+                "values": [
+                    "horizontal",
+                    "vertical"
+                ],
+                "default": "horizontal",
+                "type": "enum",
+                "description": "Component direction: horizontal or vertical."
+            },
+            "disabled": {
+                "values": [
+                    "any"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "disabled resize all SplitterPanel"
+            }
+        },
+        "Collapse": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "classNameTitle": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "styleTitle": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "title": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "content": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "icon": {
+                "values": [
+                    "none",
+                    "plus",
+                    "arrow"
+                ],
+                "type": "enum",
+                "default": "none",
+                "description": "Adds plus/minus or chevron icon or non icon"
+            },
+            "open": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Force open"
+            }
+        },
+        "Accordion": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "items": {
+                "type": "array",
+                "values": [
+                    {
+                        "content": {
+                            "values": [
+                                "string",
+                                "React.ReactNode"
+                            ],
+                            "type": "enum",
+                            "description": "Content inside the component. Can be text or a React element."
+                        },
+                        "title": {
+                            "values": [
+                                "string",
+                                "React.ReactNode"
+                            ],
+                            "type": "enum",
+                            "description": "Content inside the component. Can be text or a React element."
+                        }
+                    }
+                ],
+                "description": ""
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost"
+                ],
+                "type": "enum",
+                "default": "contained",
+                "description": ""
+            },
+            "styleTitle": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            }
+        },
+        "Overflow": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "isExpand": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": "Expands all child items to evenly fill available space horizontally or vertically."
+            },
+            "direction": {
+                "values": [
+                    "row",
+                    "column"
+                ],
+                "type": "enum",
+                "default": "row",
+                "description": "Sets the layout direction of items: horizontal (`row`) or vertical (`column`)."
+            },
+            "justifyHorizontal": {
+                "values": [
+                    "start",
+                    "left",
+                    "center",
+                    "end"
+                ],
+                "type": "enum",
+                "default": "start",
+                "description": "Controls horizontal alignment of content within each item (e.g., `start`, `center`, `end`)."
+            },
+            "justifyVertical": {
+                "values": [
+                    "start",
+                    "center",
+                    "end"
+                ],
+                "type": "enum",
+                "default": "end",
+                "description": "Controls vertical alignment of content within each item (e.g., `start`, `center`, `end`)."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "onOverflow": {
+                "values": [
+                    ""
+                ],
+                "type": "func",
+                "description": "Callback function triggered when items overflow the container. Receives an array of hidden items or mapped data."
+            },
+            "overflowMap": {
+                "values": [
+                    "any[]"
+                ],
+                "type": "array",
+                "description": "Custom mapping array corresponding to each child item, used by `onOverflow` callback."
+            }
+        }
+    },
+    "tables": {
+        "DataTable": {
+            "children": {
+                "values": [
+                    "ColumnDataTable"
+                ],
+                "type": "array",
+                "description": "<ColumnDataTable> component array"
+            },
+            "value": {
+                "values": [
+                    "object"
+                ],
+                "type": "array",
+                "description": "An array of objects to display."
+            },
+            "header": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Custom header component"
+            },
+            "footer": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Custom footer component"
+            },
+            "responsiveLayout": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Defines the responsive mode, valid options are \"stack\" and \"scroll\"."
+            },
+            "paginator": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "When specified as true, enables the pagination."
+            },
+            "isAutoPagination": {
+                "values": [
+                    "boolean"
+                ],
+                "type": "boolean",
+                "description": "Switches to paginated mode automatically when more than 20 items are present."
+            },
+            "rows": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "Number of rows to display per page."
+            },
+            "sortMode": {
+                "values": [
+                    "single",
+                    "multiply"
+                ],
+                "type": "enum",
+                "default": "single",
+                "description": ""
+            },
+            "sortField": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Name of the field to sort data by default."
+            },
+            "sortOrder": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "Order to sort the data by default."
+            },
+            "multiSortMeta": {
+                "values": [
+                    "{ field: string, order: 1 | -1 }"
+                ],
+                "type": "array",
+                "description": "Defines multiple sort conditions when multi-column sorting is enabled."
+            },
+            "filterDisplay": {
+                "values": [
+                    "row",
+                    "menu"
+                ],
+                "type": "enum",
+                "default": "row",
+                "description": "Defines how filters are displayed: in a row under headers or inside dropdown menus."
+            },
+            "filters": {
+                "values": [
+                    "[fieldName]: {value: string | number | boolean | Date, matchMode: 'contains' | 'startsWith' | 'equals' | 'in' | ...}"
+                ],
+                "type": "array",
+                "description": "Defines the current filtering state for each column."
+            },
+            "selectOnEdit": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "true",
+                "type": "boolean",
+                "description": "Determines whether the cell editor will be opened when clicking to select any row on Selection and Cell Edit modes."
+            },
+            "editMode": {
+                "values": [
+                    "cell",
+                    "row"
+                ],
+                "type": "enum",
+                "default": "cell",
+                "description": "Defines editing mode, options are \"cell\" and \"row\"."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": ""
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": ""
+            }
+        },
+        "SimpleTable": {
+            "children": {
+                "values": [
+                    {
+                        "header": {
+                            "values": [
+                                "React.ReactNode"
+                            ],
+                            "type": "object",
+                            "description": ""
+                        },
+                        "field": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "string",
+                            "description": ""
+                        },
+                        "body": {
+                            "values": [
+                                "React.ReactNode"
+                            ],
+                            "type": "object",
+                            "description": ""
+                        }
+                    }
+                ],
+                "type": "array",
+                "description": ""
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "value": {
+                "values": [
+                    "object"
+                ],
+                "type": "array",
+                "description": "An array of objects to display."
+            },
+            "header": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Slot custom header component"
+            },
+            "footer": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Slot custom footer component"
+            }
+        }
+    },
+    "page": {
+        "Box": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "elevation": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "Controls the intensity of the shadow elevation effect, from 0 (no elevation) to 1 (maximum elevation). Overrides default shadow opacity."
+            },
+            "shadowSize": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "description": "Adjusts shadow spread and blur size. Accepts values from -25 to 25, where negative values create inset (depressed) shadows, and positive values create outset (raised) shadows."
+            }
+        },
+        "Footer": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "orienattion": {
+                "values": [
+                    "horizontal",
+                    "vertical"
+                ],
+                "default": "horizontal",
+                "type": "enum",
+                "description": "Component direction: horizontal or vertical."
+            },
+            "isCenter": {
+                "values": [
+                    "any"
+                ],
+                "type": "boolean",
+                "default": "false",
+                "description": ""
+            }
+        },
+        "Hero": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "fontImageOverlaySrc": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "url image font image"
+            },
+            "classNameContent": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": ""
+            },
+            "styleContent": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": ""
+            }
+        },
+        "AppBar": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "startSlot": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "centerSlot": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "endSlot": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "variant": {
+                "values": [
+                    "center",
+                    "left"
+                ],
+                "type": "enum",
+                "description": ""
+            }
+        },
+        "Chat": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component."
+            },
+            "direction": {
+                "values": [
+                    "end",
+                    "start"
+                ],
+                "type": "enum",
+                "description": "left or right message position"
+            },
+            "avatarSrc": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "url image avatar"
+            },
+            "header": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "top signature"
+            },
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "base message content"
+            },
+            "footer": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "lower signature"
+            }
+        },
+        "Stat": {
+            "value": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "description": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "title": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": ""
+            },
+            "figure": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "actions": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            }
+        }
+    },
+    "media": {
+        "Card": {
+            "children": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Content inside the component. Can be text or a React element."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "imageIsSide": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "false",
+                "type": "boolean",
+                "description": "If true, the image is displayed on the side of the content (horizontal layout)"
+            },
+            "imageIsFull": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "false",
+                "type": "boolean",
+                "description": "If true, the image takes up the full width or height of the card (depending on layout orientation)"
+            },
+            "imageSrc": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Image URL to be displayed in the card"
+            },
+            "title": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Title of the card. Can be a plain string or a React node"
+            },
+            "description": {
+                "values": [
+                    "string",
+                    "React.ReactNode"
+                ],
+                "type": "enum",
+                "description": "Description or supporting text below the title. Accepts string or React node"
+            },
+            "actions": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Action section — usually buttons or links displayed at the bottom of the card"
+            },
+            "classNameBody": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": ""
+            }
+        },
+        "Promo": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "items": {
+                "type": "array",
+                "values": [
+                    {
+                        "title": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "string",
+                            "description": ""
+                        },
+                        "buttonText": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "string",
+                            "description": ""
+                        },
+                        "description": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "string",
+                            "description": ""
+                        },
+                        "images": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "array",
+                            "description": "url"
+                        }
+                    }
+                ],
+                "description": ""
+            },
+            "button": {
+                "values": [
+                    "ButtonProps"
+                ],
+                "type": "object",
+                "description": ""
+            },
+            "onChange": {
+                "values": [
+                    ""
+                ],
+                "type": "func",
+                "description": ""
+            }
+        },
+        "VerticalCarousel": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "items": {
+                "type": "array",
+                "values": [
+                    {
+                        "type": {
+                            "values": [
+                                "image",
+                                "video",
+                                "content"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        },
+                        "src": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "string",
+                            "description": ""
+                        },
+                        "style": {
+                            "values": [
+                                "React.CSSProperties"
+                            ],
+                            "type": "object",
+                            "description": ""
+                        }
+                    }
+                ],
+                "description": ""
+            },
+            "loop": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "false",
+                "type": "boolean",
+                "description": ""
+            },
+            "autoplay": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "false",
+                "type": "boolean",
+                "description": ""
+            },
+            "slidesToScroll": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 1,
+                "description": ""
+            },
+            "autoplayDelay": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 3000,
+                "description": ""
+            },
+            "slidesToShow": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 3,
+                "description": ""
+            }
+        },
+        "HorizontalCarousel": {
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "items": {
+                "type": "array",
+                "values": [
+                    {
+                        "type": {
+                            "values": [
+                                "image",
+                                "video",
+                                "content"
+                            ],
+                            "type": "enum",
+                            "description": ""
+                        },
+                        "src": {
+                            "values": [
+                                "string"
+                            ],
+                            "type": "string",
+                            "description": ""
+                        },
+                        "style": {
+                            "values": [
+                                "React.CSSProperties"
+                            ],
+                            "type": "object",
+                            "description": ""
+                        }
+                    }
+                ],
+                "description": ""
+            },
+            "loop": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "false",
+                "type": "boolean",
+                "description": ""
+            },
+            "autoplay": {
+                "values": [
+                    "boolean"
+                ],
+                "default": "false",
+                "type": "boolean",
+                "description": ""
+            },
+            "slidesToScroll": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 1,
+                "description": ""
+            },
+            "autoplayDelay": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 3000,
+                "description": ""
+            },
+            "slidesToShow": {
+                "values": [
+                    "number"
+                ],
+                "type": "number",
+                "default": 3,
+                "description": ""
+            }
+        }
+    },
+    "feedback": {
+        "Tooltip": {
+            "children": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Content that will display a tooltip when hovered over."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "size": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "auto"
+                ],
+                "default": "auto",
+                "type": "enum",
+                "description": "Specifies the overall size of the component."
+            },
+            "shadow": {
+                "values": [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                    "xxl"
+                ],
+                "type": "enum",
+                "description": "Applies a shadow style to the component."
+            },
+            "color": {
+                "values": [
+                    "neutral",
+                    "primary",
+                    "secondary",
+                    "accent",
+                    "info",
+                    "success",
+                    "warning",
+                    "error",
+                    "string"
+                ],
+                "default": "neutral",
+                "type": "enum",
+                "description": "The current color theme of the component. Defined through the theme context settings."
+            },
+            "variant": {
+                "values": [
+                    "contained",
+                    "outline",
+                    "dash",
+                    "soft",
+                    "ghost",
+                    "link"
+                ],
+                "type": "enum",
+                "description": "Controls the visual style like filled, outlined, or link component."
+            },
+            "content": {
+                "values": [
+                    "React.ReactNode"
+                ],
+                "type": "object",
+                "description": "Hint content"
+            },
+            "position": {
+                "values": [
+                    "top",
+                    "left",
+                    "right",
+                    "bottom"
+                ],
+                "type": "enum",
+                "default": "top",
+                "description": ""
+            }
+        },
+        "Modal": {
+            "onClose": {
+                "type": "func",
+                "values": [
+                    ""
+                ],
+                "description": ""
+            },
+            "position": {
+                "type": "enum",
+                "default": "left",
+                "values": [
+                    "left",
+                    "right",
+                    "bottom",
+                    "top"
+                ],
+                "description": ""
+            },
+            "open": {
+                "type": "boolean",
+                "values": [
+                    "boolean"
+                ],
+                "description": ""
+            },
+            "children": {
+                "type": "object",
+                "values": [
+                    "React.ReactNode"
+                ],
+                "description": ""
+            },
+            "actions": {
+                "type": "object",
+                "values": [
+                    "React.ReactNode"
+                ],
+                "description": ""
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "classNameModalBox": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "classNameActions": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            }
+        },
+        "Popover": {
+            "trigger": {
+                "type": "object",
+                "values": [
+                    "React.ReactNode"
+                ],
+                "description": "Element that triggers the popover (e.g. button or icon)"
+            },
+            "children": {
+                "type": "object",
+                "values": [
+                    "React.ReactNode"
+                ],
+                "description": "Content displayed inside the popover"
+            },
+            "align": {
+                "values": [
+                    "center",
+                    "end",
+                    "start"
+                ],
+                "type": "enum",
+                "description": "Horizontal alignment of the popover relative to the trigger"
+            },
+            "side": {
+                "values": [
+                    "left",
+                    "right",
+                    "bottom",
+                    "top"
+                ],
+                "type": "enum",
+                "description": "Side of the trigger where the popover will appear"
+            },
+            "open": {
+                "type": "boolean",
+                "values": [
+                    "boolean"
+                ],
+                "description": "Controls whether the popover is open or closed"
+            },
+            "usePortal": {
+                "type": "boolean",
+                "values": [
+                    "boolean"
+                ],
+                "description": "Whether to render the popover inside a React portal"
+            },
+            "isHover": {
+                "type": "boolean",
+                "values": [
+                    "boolean"
+                ],
+                "description": "Opens the popover on hover instead of click"
+            },
+            "setOpen": {
+                "values": [],
+                "type": "func",
+                "description": "Callback to manually control popover open state"
+            },
+            "onClose": {
+                "values": [],
+                "type": "func",
+                "description": "Callback fired when the popover is closed"
+            },
+            "anchor": {
+                "values": [],
+                "type": "object",
+                "description": "Optional custom anchor element to position the popover relative to"
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            }
+        },
+        "Drawer": {
+            "onClose": {
+                "type": "func",
+                "values": [
+                    ""
+                ],
+                "description": ""
+            },
+            "position": {
+                "type": "enum",
+                "default": "left",
+                "values": [
+                    "left",
+                    "right",
+                    "bottom",
+                    "top"
+                ],
+                "description": ""
+            },
+            "open": {
+                "type": "boolean",
+                "values": [
+                    "boolean"
+                ],
+                "description": ""
+            },
+            "trigger": {
+                "type": "object",
+                "values": [
+                    "React.ReactNode"
+                ],
+                "description": ""
+            },
+            "children": {
+                "type": "object",
+                "values": [
+                    "React.ReactNode"
+                ],
+                "description": ""
+            },
+            "style": {
+                "values": [
+                    "React.CSSProperties"
+                ],
+                "type": "object",
+                "description": "Inline styles applied to the component."
+            },
+            "className": {
+                "values": [
+                    "string"
+                ],
+                "type": "string",
+                "description": "Additional CSS/Tailwind classes for the component."
+            }
+        }
+    },
+    "form": {
+        "AuthForm": {},
+        "Form": {
+            "scheme": {
+                "values": [],
+                "type": "array",
+                "description": "An array of field definitions that describe the structure and behavior of the form inputs."
+            },
+            "onChange": {
+                "values": [
+                    ""
+                ],
+                "type": "func",
+                "description": "Callback function triggered when any field value changes. Receives the field id and its new value."
+            },
+            "labelPosition": {
+                "values": [
+                    "left",
+                    "top",
+                    "right"
+                ],
+                "type": "enum",
+                "description": "Default label position applied to all fields unless overridden individually."
+            }
+        }
+    }
+}

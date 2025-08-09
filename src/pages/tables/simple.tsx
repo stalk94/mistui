@@ -209,13 +209,19 @@ InfoTable.meta = {
     children: {
         values: [{ 
             header: {
-
+                values: ['React.ReactNode'],
+                type: 'object',
+                description: ''
             }, 
             field: {
-
+                values: ['string'],
+                type: 'string',
+                description: ''
             }, 
             body: {
-
+                values: ['React.ReactNode'],
+                type: 'object',
+                description: ''
             }
         }],
         type: 'array',

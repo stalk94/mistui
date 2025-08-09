@@ -165,3 +165,13 @@ export type TextAreaProps = Omit<BaseProps, 'type'|'variant'|'className'> & {
     variant?: 'outline' | 'dash' | 'ghost'
     className?: HTMLElement['className']
 }
+
+export type RatingProps = {
+    value?: number
+    max?: number
+    color?: Variants | (string & {})
+    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    onChange?: (value: number)=> void
+    className?: string
+}

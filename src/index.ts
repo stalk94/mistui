@@ -16,9 +16,6 @@ export * from './components/tables';
 export * from './components/form';
 export type { Schema } from './components/form/types';
 
-// формы
-export * from './components/form';
-
 // кнопки
 export * from './components/buttons';
 
@@ -113,14 +110,6 @@ export { default as Paginator } from './components/list/pagination';
 // Box
 export { default as Box } from './components/blocks/box';
 
-///////////////////////////////////////////////////////////////////////////
-//    на переработку
-///////////////////////////////////////////////////////////////////////////
-// левая панелька как в vs code
-export { default as LeftSideBar } from './components/nav-bars/left-nav';
-export { default as LeftSideBarAndTool } from './components/nav-bars/tool-left';
 
-// appBar
-export { default as AppBar } from './components/app-bar/AppBar';
-// слоты appBar
-//export { Start, LinearNavigation, MobailBurger } from './components/app-bar';
+// appBars
+export * from './components/app-bar';

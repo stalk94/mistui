@@ -92,13 +92,22 @@ InfoBottomNav.meta = {
         description: ''
     },
     onChange: {
-        values: [''],
+        values: ['selectItem'],
         type: 'func',
         description: ''
     },
     items: {
         values: [{
-            
+            icon: {
+                values: ['React.ReactNode'],
+                type: 'object',
+                description: ''
+            },
+            label: {
+                values: ['React.ReactNode'],
+                type: 'object',
+                description: ''
+            }
         }],
         type: 'array',
         description: ''

@@ -144,7 +144,6 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconB
                     ${isRounded ? 'btn-circle' : 'btn-square'}
                     ${variant ? `btn-${variant}` : ''} 
                     ${getSize}
-                    ${exclude.includes(variant) ? 'bg-none' : ''}
                     font-bold 
                     uppercase
                     transition-transform 

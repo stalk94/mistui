@@ -110,3 +110,19 @@ export const orientationMeta = {
         description: 'Component direction: horizontal or vertical.'
     }
 }
+
+export const createNavItem = () => ({
+    id: {},
+    label: {},
+    title: {},
+    icon: {},
+    open: {},
+    action: {},
+    divider: {},
+    /** nested */
+    children: [createNavItem()],
+    /** custom command handle click element */
+    comand: {},
+    /** dot stylization inline item */
+    style: {}
+});

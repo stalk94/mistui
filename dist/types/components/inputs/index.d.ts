@@ -13,6 +13,7 @@ export { default as ColorPicker } from './color';
 export { default as TimePicker } from './time';
 export { default as DatePicker } from './date';
 export { default as PasswordInput } from './password';
+export { default as Rating } from './rating';
 /** паттерны регулярок */
 export declare const baseValidators: {
     password: string;

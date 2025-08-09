@@ -61,6 +61,7 @@ import Skeleton from './data-display/skeleton';
 import Box from './page/box';
 import AuthForm from './forms/auth';
 import Form from './forms/form';
+import { writeFile } from '@/editor/helpers/plugins';
 
 
 const category = {
@@ -185,4 +186,18 @@ export default function Base({ preview }) {
             }
         </main>
     );
+}
+
+
+const createmeta = () => {
+    const result = {};
+
+    Object.keys(category).forEach((catKey) => {
+        result[catKey] = Object.entries(category[catKey]).reduce((acc, [itemKey, val]) => {
+            acc[itemKey] = val.meta;
+            return acc;
+        }, {});
+    });
+
+    writeFile('src', 'meta.json', JSON.stringify(result)).then(console.log);
 }

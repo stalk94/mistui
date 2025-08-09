@@ -183,6 +183,9 @@ input[type="time"] {
     -moz-appearance: textfield;
 }
 
+.rounded {
+    background: none !important;
+}
 
 
 .vertical-text {

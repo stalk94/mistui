@@ -143,7 +143,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
                     ${getSize}
                     ${variant === 'soft' && `btn-soft btn-${color}`}
                     ${variant === 'link' && 'btn-link'}
-                    ${exclude.includes(variant) ? 'bg-none' : ''}
                     font-bold 
                     uppercase
                     transition-transform 
