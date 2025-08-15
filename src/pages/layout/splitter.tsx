@@ -165,5 +165,10 @@ InfoSplitter.meta = {
         type: 'boolean',
         default: 'false',
         description: 'disabled resize all SplitterPanel'
+    },
+    hidden: {
+        values: ['any'],
+        type: 'boolean',
+        description: 'disabled visible borders'
     }
 }

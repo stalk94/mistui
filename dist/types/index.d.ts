@@ -1,5 +1,7 @@
 export { SnackbarProvider, enqueueSnackbar as useSnackbar } from 'notistack';
+export { default as hooks } from './components/hooks/module';
 export * from './components/theme';
+export * from './components/chart';
 export * from './components/inputs';
 export * from './components/helpers';
 export * from './components/tables';

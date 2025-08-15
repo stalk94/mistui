@@ -33,6 +33,7 @@ export default function List({
     shadow,
     color,
     size = 'auto',
+    onClick,
     className,
     classNameList,
     style = {}, 
@@ -50,11 +51,12 @@ export default function List({
                     key={index} 
                     className={`list-row ${classNameList || ''}`} 
                     style={listStyle}
+                    onClick={()=> onClick?.(index)}
                 >
                     { child }
                 </li>
             );
-        })
+        });
     }
 
 
@@ -86,7 +88,10 @@ export default function List({
             style={style}
             {...props}
         >
-            <li className={`list-row ${classNameList || ''}`} style={listStyle}>
+            <li 
+                className={`list-row ${classNameList || ''}`} 
+                style={listStyle}
+            >
                 { children }
             </li>
         </ul>

@@ -126,7 +126,7 @@ export default function PromoSlider({
                         <IconGroup
                             active={active}
                             setActive={setActive}
-                            count={3}
+                            count={(items ?? testData).length}
                             style={{}}
                         />
                     </div>

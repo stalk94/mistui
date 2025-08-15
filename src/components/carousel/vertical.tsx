@@ -13,6 +13,7 @@ export default function CarouselVertical({
     loop = false,
     slidesToShow = 3,
     slidesToScroll = 1,
+    sizeButton,
     ...props 
 }: CarouselProps) {
     const pointer = useRef({ startY: 0, dragging: false });
@@ -94,6 +95,7 @@ export default function CarouselVertical({
                 style={{ 
                     ...item?.style,
                     width: '100%', 
+                    height: slideHeight, 
                     paddingTop: 2,
                     paddingBottom: 2,
                     //height: calculateHeightSlide - 4, 
@@ -182,6 +184,7 @@ export default function CarouselVertical({
                         <IconButton 
                             className='rounded-2xl border-0'
                             color='#29292981'
+                            size={sizeButton}
                             onClick={() => goTo(currentIndex - slidesToScroll)}
                             icon={<ChevronUpIcon />}
                         />
@@ -190,6 +193,7 @@ export default function CarouselVertical({
                         <IconButton 
                             className='rounded-2xl border-0'
                             color='#29292981'
+                            size={sizeButton}
                             onClick={() => goTo(currentIndex + slidesToScroll)}
                             icon={<ChevronDownIcon />}
                         />

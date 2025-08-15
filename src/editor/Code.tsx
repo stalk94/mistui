@@ -118,6 +118,11 @@ const patterns = {
             ${toJSXProps(props)}
         />
     `),
+    Rating: (props)=> (`
+        <Rating
+            ${toJSXProps(props)}
+        />
+    `),
 
     // Navigation
     Tabs: (props)=> (`

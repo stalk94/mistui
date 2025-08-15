@@ -10,6 +10,7 @@ export function SplitterCustom({
     color, 
     orientation = 'horizontal',
     disabled,
+    hidden,
     ...props
 }: SplitterProps) {
     const uid = useUids('splitter');
@@ -25,13 +26,13 @@ export function SplitterCustom({
              <style>
                 {cs(`
                     .p-splitter[data-style-id="${uid}"] {
-                        border: 1px solid ${plugins.alpha(curColor, 0.3)};
+                        border: ${!hidden &&`1px solid ${plugins.alpha(curColor, 0.3)}`};
                         border-radius: 2px;
                         color: rgba(255, 255, 255, 0.87);
                     }
                     .p-splitter[data-style-id="${uid}"] .p-splitter-gutter {
                         transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                        background: ${colorGutter};
+                        background: ${!hidden && colorGutter};
                         ${disabled ? 'pointer-events: none' : ''};
                     }
                     .p-splitter[data-style-id="${uid}"] .p-splitter-gutter .p-splitter-gutter-handle {

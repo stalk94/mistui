@@ -1,8 +1,7 @@
 import Button from './button';
 import type { FilterToggleButtonGroupProps } from './type';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FormWrapper } from '../inputs/atomize';
-import { useCache } from '../hooks';
 import { Fragment } from 'react';
 import { useUids } from '../hooks/uuid';
 import { useTheme } from '../theme';
@@ -29,7 +28,7 @@ export default function ToggleButtonFiltreGroup({
     const { plugins, variants } = useTheme();
     const uid = useUids('button-group');
     const getSize = size ? `btn-${size}` : 'btn-sm sm:btn-md md:btn-md lg:btn-lg xl:btn-lg';
-    const [select, setSelect] = useCache(value);
+    const [select, setSelect] = useState(value);
 
 
     const handleChange = (current: string | number | any) => {
@@ -64,7 +63,6 @@ export default function ToggleButtonFiltreGroup({
         if (value == null) return;
 
         const isPrimitive = (v: any) => typeof v !== 'object' || v === null;
-
         const getId = (v: any) => (isPrimitive(v) ? v : v?.id);
 
         const valueId = getId(value);

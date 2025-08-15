@@ -7,7 +7,7 @@ import { AlertProvider } from './components/alert';
 import SandBoxRoot from './editor';
 import SandBox from './editor/Render';
 import { ThemeProvider } from './components/theme';
-import { AppBar, Collapse, Divider, IconButton, Select, Typography } from './index';
+import { AppBar, Collapse, Divider, IconButton, Select, Typography, OrgChart } from './index';
 import { createStore } from 'statekit-lite';
 import ComponentsRoot from './editor/page/root-components';
 import Home from './editor/page';
@@ -95,8 +95,24 @@ const App = () => {
         </ThemeProvider>
     );
 }
+const Test = () => {
 
+    return (
+        <ThemeProvider>
+            <AlertProvider variant='outline'>
+                <div
+                    //data-theme={theme}
+                    className="w-screen"
+                    style={{ fontFamily: 'JetBrains Mono' }}
+                >
+                    <OrgChart
 
+                    />
+                </div>
+            </AlertProvider>
+        </ThemeProvider>
+    );
+}
 
 //------------------------------------------------------------------------
 const container = document.querySelector('.root');

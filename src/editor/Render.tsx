@@ -6,12 +6,12 @@ import BreadCrumbs from '../components/breadcrumbs';
 import { TrashIcon, HomeIcon, Cog8ToothIcon, Battery50Icon, CircleStackIcon, EnvelopeIcon, FolderIcon } from '@heroicons/react/24/outline';
 import { BaseInput, NumberInput, TextArea, RadioBox, CheckBox, SwitchBox, SliderInput, FileInput } from '../components/inputs';
 import { 
-    MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip,
+    MarqueText, Link, BottomNavigation, Badge, Splitter, Indicator, Chat, Tooltip, Chart, OrgChart,
     GroupButton, GroupButtonFiltre, IconButton, Divider, RadialProgress, Paginator, Spinner,
     Modal, Popover, Drawer, Typography, VerticalCarousel, HorizontalCarousel, PromoBanner, Card, 
     DataTable, ColumnDataTable, Flag, Collapse, SplitterPanel, Avatar, AvatarGroup, Progress,
     Hero, Footer, AppBar, Skeleton, Menu, Overflow, Button, AutoComplete, Select, ColorPicker, useAlert, Table,
-    AuthForm, Form
+    AuthForm, Form, Rating
 } from '../index';
 import List from '@/components/list/base';
 import Stat from '../components/utils/stat';
@@ -493,6 +493,21 @@ const patterns = {
         <AutoComplete
             placeholder='autocomplete'
             options={['test', 'test2']}
+            {...props}
+        />
+    ),
+    Rating: (props)=> (
+        <Rating
+            {...props}
+        />
+    ),
+    Chart: (props)=> (
+        <Chart
+            {...props}
+        />
+    ),
+    OrgChart: (props)=> (
+        <OrgChart
             {...props}
         />
     ),

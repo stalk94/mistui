@@ -41,8 +41,8 @@ const category = {
     base: ['ThemeProvider', 'AlertProvider'],
     text: ['Typography', 'Link', 'MarqueText'],
     buttons: ['Button', 'IconButton', 'GroupButtons', 'GroupButtonFiltre'],
-    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton'],
-    inputs: ['BaseInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch', 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select'],
+    'data-display': ['Avatar', 'AvatarGroup', 'Flag', 'Indicator', 'Badge', 'List', 'Progress', 'RadialProgress', 'Spinner', 'Skeleton', 'Chart', 'OrgChart'],
+    inputs: ['BaseInput', 'NumberInput', 'ColorPicker', 'Radio', 'Switch', 'CheckBox', 'Slider', 'TextArea', 'Date', 'Time', 'File', 'Autocomplete', 'Select', 'Rating'],
     navigation: ['Tabs', 'Breadcrumbs', 'BottomNavigation', 'Menu', 'Paginator'],
     tables: ['SimpleTable', 'DataTable'],
     layout: ['Divider', 'Splitter', 'Collapse', 'Accordion', 'Overflow'],
@@ -363,7 +363,7 @@ export default function SandBoxRoot({ }) {
                     <div className='flex items-center'>
                         {/*<CheckBox onChange={console.log} />*/}
                         <Link fontSize={12} className='mr-12' href='https://www.npmjs.com/package/mistui-kit'>
-                            v 1.1.0
+                            v 1.2.5
                         </Link>
                         <Select
                             size='sm'

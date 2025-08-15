@@ -14,6 +14,7 @@ export type CarouselProps = {
     autoplayDelay?: number;
     slidesToShow?: number;
     items: SourceIremType[];
+    sizeButton?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 };
 export type PromoSliderProps = {
     editor?: React.ReactElement;

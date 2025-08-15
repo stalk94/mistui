@@ -14,6 +14,7 @@ export default function CarouselHorizontal({
     loop = false,
     slidesToShow = 3,
     slidesToScroll = 1,
+    sizeButton,
     ...props
 }: CarouselProps) {
     const pointer = useRef({ startX: 0, dragging: false });
@@ -163,12 +164,14 @@ export default function CarouselHorizontal({
                         <IconButton 
                             className='rounded-2xl border-0'
                             color='#29292981'
+                            size={sizeButton}
                             onClick={() => goTo(currentIndex - slidesToScroll)}
                             icon={<ChevronLeftIcon />}
                         />
                     </div>
                     <div className="carousel-button right rounded-2xl">
                         <IconButton 
+                            size={sizeButton}
                             className='rounded-2xl border-0'
                             color='#29292981'
                             onClick={() => goTo(currentIndex + slidesToScroll)}

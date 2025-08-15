@@ -61,6 +61,9 @@ import Skeleton from './data-display/skeleton';
 import Box from './page/box';
 import AuthForm from './forms/auth';
 import Form from './forms/form';
+import Rating from './inputs/rating';
+import Chart from './data-display/chart';
+import OrgChart from './data-display/org-chart';
 import { writeFile } from '@/editor/helpers/plugins';
 
 
@@ -94,6 +97,7 @@ const category = {
         File: File, 
         Autocomplete: Autocomplete, 
         Select: Select, 
+        Rating: Rating,
     },
     navigation: {
         Tabs: Tabs, 
@@ -112,7 +116,9 @@ const category = {
         Progress: Progress,
         RadialProgress: Radial,
         Spinner: Spinner,
-        Skeleton: Skeleton
+        Skeleton: Skeleton,
+        Chart: Chart,
+        OrgChart: OrgChart
     },
     layout: {
         Divider: Divider,

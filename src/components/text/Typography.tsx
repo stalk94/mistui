@@ -55,7 +55,7 @@ const Typography = forwardRef(<T extends React.ElementType = 'p'>(
         }: PolymorphicComponentProps<T, BaseTypographyProps>,
         ref?: PolymorphicRef<T>
     ) => {
-        const Component = as || 'p';
+        const Component = as || 'div';
         const { variants, typography } = useTheme();
         const curShadow = shadows[shadow] ? `text-shadow-${shadows[shadow]}` : '';
         //const curColorShadow = colorShadow ? `text-shadow-[${colorShadow}]` : 'text-shadow-[#161616]';

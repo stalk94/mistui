@@ -5,6 +5,7 @@ export type ListProps = {
     listStyle?: React.CSSProperties;
     className?: HTMLUListElement['className'];
     classNameList?: HTMLLIElement['className'];
+    onClick?: (indexSelect: number) => void;
     /**
      * каждый 'ListItem' можно пердставить как список элементов в три колонки,
      * третий элемент будет прижат в право

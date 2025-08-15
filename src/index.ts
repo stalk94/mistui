@@ -1,7 +1,13 @@
 export { SnackbarProvider, enqueueSnackbar as useSnackbar } from 'notistack';
 
+// хуки
+export { default as hooks } from './components/hooks/module';
+
 // theme, createTheme, useTheme, defaultThemeObj, 
 export * from './components/theme';
+
+// диаграммы
+export * from './components/chart';
 
 // все инпуты
 export * from './components/inputs';
