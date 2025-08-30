@@ -22,6 +22,9 @@ export default function Select({
     variant =  'outline', 
     disabledForm,
     rightIcon,
+    usePortal = true,
+    portalContainer,
+    onToogleOpen,
     ...props
 }: SelectInputProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -31,6 +34,10 @@ export default function Select({
     const [open, setOpen] = useState(false);
 
 
+    const handleToogleOpen =(value: boolean)=> {
+        onToogleOpen?.(value);
+        setOpen(value);
+    }
     const colorPlaceholder = useMemo(() => {
         const curColor = (variants[color] ?? color) ?? style?.color;
         let cur = 'white';
@@ -82,9 +89,10 @@ export default function Select({
             </style>
 
             <Popover
-                usePortal
+                usePortal={usePortal}
+                portalContainer={portalContainer}
                 open={open}
-                setOpen={setOpen}
+                setOpen={handleToogleOpen}
                 trigger={
                     <FormWrapper
                         size={size}
@@ -125,14 +133,16 @@ export default function Select({
                     </FormWrapper>
                 }
             >
-                <DropMenu
-                    id="popover-select"
-                    items={items}
-                    style={{
-                        width: ref?.current?.offsetWidth
-                    }}
-                    onSelect={handleSelect}
-                />
+                <div>
+                    <DropMenu
+                        id="popover-select"
+                        items={items}
+                        style={{
+                            width: ref?.current?.offsetWidth
+                        }}
+                        onSelect={handleSelect}
+                    />
+                </div>
             </Popover>
         </>
     );

@@ -6,7 +6,7 @@
     "jsx": "react-jsx",
     //"strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "declaration": true,
     "declarationDir": "dist/types",
     "skipLibCheck": true,
@@ -18,6 +18,6 @@
     "incremental": true,
     "noEmit": false              // важно, чтобы tsc выдавал JS если надо, иначе ставь true и запускай отдельно
   },
-  "include": ["src", "dist/index.es.js", "dist/index.umd.js", "build", "build", "build", "build", "build", "build"],
+  "include": ["src", "dist/index.es.js", "dist/index.umd.js", "build"],
   "exclude": ["node_modules", "dist"]
 }

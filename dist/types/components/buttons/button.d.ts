@@ -1,7 +1,7 @@
 declare const Button: import("react").ForwardRefExoticComponent<{
     className?: string | undefined;
-    onClick?: import("react").MouseEventHandler<HTMLButtonElement>;
     style?: import("react").CSSProperties | undefined;
+    onClick?: import("react").MouseEventHandler<HTMLButtonElement>;
 } & {
     children: React.ReactNode;
     title?: string;

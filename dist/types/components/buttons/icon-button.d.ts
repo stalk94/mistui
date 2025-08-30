@@ -1,7 +1,7 @@
 declare const IconButton: import("react").ForwardRefExoticComponent<{
     className?: string | undefined;
-    onClick?: import("react").MouseEventHandler<HTMLButtonElement>;
     style?: import("react").CSSProperties | undefined;
+    onClick?: import("react").MouseEventHandler<HTMLButtonElement>;
 } & {
     icon?: React.ReactNode;
     children?: React.ReactNode;

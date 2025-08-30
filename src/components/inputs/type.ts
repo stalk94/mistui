@@ -111,6 +111,12 @@ export type SelectInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     disabledForm?: boolean
     rightIcon?: React.ReactNode
+    /** render popup to portal */
+    usePortal?: boolean
+    /** element mount portal (default body) */
+    portalContainer?: HTMLElement
+    /** handle open/close popup */
+    onToogleOpen?: (v: boolean)=> void 
 }
 
 export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
@@ -119,6 +125,12 @@ export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     onChange?: (val: string)=> void
     options?: string[]
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+    /** render popup to portal */
+    usePortal?: boolean
+    /** element mount portal (default body) */
+    portalContainer?: HTMLElement
+     /** handle open/close popup */
+    onToogleOpen?: (v: boolean)=> void 
 }
 
 export type CheckBoxInputProps = {

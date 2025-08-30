@@ -176,12 +176,12 @@ const SHADOWS = {
 //            create theme object            
 //////////////////////////////////////////////////////////////////////////
 export function createTheme({
-    themeSchema,
-    colors,
-    sizes,
-    colorVariants,
-    typographyVariants,
-    shadows
+    themeSchema = 'dark',
+    colors = COLORS,
+    sizes = SIZES,
+    colorVariants = VARIANTS,
+    typographyVariants = TYPOGRAPHY,
+    shadows = SHADOWS
 }: CreateThemeOptions) {
     const mergeSizes = deepMerge(SIZES, sizes);
     const basis = (themeSchema === 'light') ? 'darken' : 'lighten';

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import * as Popover from "@radix-ui/react-popover";
 
 
-function PortalDrop({ trigger, children, side, align, open, onOpenChange, anchor }) {
+function PortalDrop({ trigger, children, side, align, open, onOpenChange, anchor, container }) {
     
     return(
         <Popover.Root
@@ -23,7 +23,7 @@ function PortalDrop({ trigger, children, side, align, open, onOpenChange, anchor
                 { trigger }
             </Popover.Trigger>
             
-            <Popover.Portal>
+            <Popover.Portal container={container}>
                 <Popover.Content
                     side={side}
                     align={align}
@@ -47,6 +47,7 @@ export default function Dropdown({
     onClose,
     shadow,
     usePortal = false,
+    portalContainer,
     anchor,
     open: controlledOpen,
     setOpen: setControlledOpen
@@ -107,6 +108,7 @@ export default function Dropdown({
             open={open}
             onOpenChange={setOpen}
             anchor={anchor}
+            container={portalContainer}
             children={
                 <motion.div
                     ref={dropdownRef}

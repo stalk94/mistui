@@ -30,15 +30,16 @@ export default defineConfig({
             entry: 'index.ts',
             name: 'mistui',
             fileName: (format) => `index.${format}.js`,
-            formats: ['es', 'umd']
+            formats: ['es', 'cjs', 'umd'], 
         },
         rollupOptions: {
-            external: ['react', 'react-dom'],
+            external: ['react', 'react-dom', 'react/jsx-runtime'],
             output: {
                 globals: {
                     react: 'React',
-                    'react-dom': 'ReactDOM'
-                }
+                    'react-dom': 'ReactDOM',
+                    'react/jsx-runtime': 'jsxRuntime',
+                },
             }
         }
     },
@@ -51,5 +52,5 @@ export default defineConfig({
     define: {
         'process.env.NODE_ENV': JSON.stringify('production'),
         'process.env': '{}'
-    },
+    }
 });

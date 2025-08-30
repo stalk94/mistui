@@ -36,6 +36,8 @@ export type PopoverProps = Props & {
     usePortal?: boolean
     open?: boolean;
     setOpen?: (val: boolean) => void;
+    /** element mount portal */
+    portalContainer?: HTMLElement
 }
 
 export type TooltipProps = {

@@ -20,6 +20,9 @@ export default function Autocomplete({
     color = 'neutral',
     variant = 'outline',
     required,
+    portalContainer,
+    usePortal = false,
+    onToogleOpen,
     ...props
 }: AutoInputProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -29,6 +32,10 @@ export default function Autocomplete({
     const [open, setOpen] = useState(false);
 
 
+    const handleToogleOpen =(value: boolean)=> {
+        onToogleOpen?.(value);
+        setOpen(value);
+    }
     const filtered = options.filter(opt =>
         opt.toLowerCase().includes(input.toLowerCase())
     );
@@ -79,7 +86,9 @@ export default function Autocomplete({
             <Popover
                 style={{position: 'fixed',  marginTop: 3}}
                 open={open}
-                setOpen={setOpen}
+                portalContainer={portalContainer}
+                setOpen={handleToogleOpen}
+                usePortal={usePortal}
                 trigger={
                     <FormWrapper
                         size={size}

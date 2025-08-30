@@ -73,6 +73,9 @@ export default function SelectColor({
     style,
     color = 'neutral',
     variant = 'outline',
+    usePortal = true,
+    portalContainer,
+    onToogleOpen,
     ...props 
 }: SelectInputProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -82,6 +85,10 @@ export default function SelectColor({
     const [open, setOpen] = useState(false);
 
 
+    const handleToogleOpen =(value: boolean)=> {
+        onToogleOpen?.(value);
+        setOpen(value);
+    }
     const debouncedOnChange = useDebounced((val: string) => {
         onChange?.(val);
     }, 100, [onChange]);
@@ -141,9 +148,10 @@ export default function SelectColor({
             </style>
 
             <Popover
-                usePortal
+                usePortal={usePortal}
                 open={open}
-                setOpen={setOpen}
+                setOpen={handleToogleOpen}
+                portalContainer={portalContainer}
                 style={{marginTop: 10}}
                 trigger={
                     <FormWrapper

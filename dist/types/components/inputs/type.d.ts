@@ -98,6 +98,9 @@ export type SelectInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     disabledForm?: boolean;
     rightIcon?: React.ReactNode;
+    refDropContent?: React.RefObject<HTMLDivElement>;
+    usePortal?: boolean;
+    onToogleOpen?: (v: boolean, ref?: React.RefObject<HTMLDivElement>) => void;
 };
 export type AutoInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
     value?: string;
@@ -105,6 +108,9 @@ export type AutoInputProps = Omit<BaseProps, 'labelRight' | 'type'> & {
     onChange?: (val: string) => void;
     options?: string[];
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    refDropContent?: React.RefObject<HTMLDivElement>;
+    usePortal?: boolean;
+    onToogleOpen?: (v: boolean, ref?: React.RefObject<HTMLDivElement>) => void;
 };
 export type CheckBoxInputProps = {
     onChange?: (val: boolean) => void;
