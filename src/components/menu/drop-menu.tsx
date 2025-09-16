@@ -36,7 +36,7 @@ export default function Menu({
                             border-b-neutral-700
                             hover:bg-neutral-600
                         `}
-                        onClick={(e)=> onSelect?.(onlyId ? (item.id ?? item) : item)}
+                        onClick={(e)=> onSelect?.(onlyId ? (item?.id ?? item) : item)}
                     >
                         { item?.label 
                             ? item.label

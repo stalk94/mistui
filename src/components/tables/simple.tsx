@@ -1,6 +1,7 @@
 import { Fragment, useMemo } from 'react';
 import { useTheme } from '../theme';
 import type { TableProps } from './types';
+import { cs } from '../hooks/cs';
 
 
 const sizeTable = {
@@ -54,8 +55,9 @@ const useStyle = ({ style, color, variant }) => {
     }, [style, color, variant]);
 }
 
-// ! variant, color
-export default function Table({
+
+
+export function TableOld({
     value,
     children,
     schema,
@@ -69,8 +71,9 @@ export default function Table({
     color,
     ...props
 }: TableProps) {
-    const { autosizes, shadows } = useTheme();
+    const { autosizes, shadows, variants } = useTheme();
     const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.table;
+    const baseColor = color ? variants[color] ?? color : undefined;
     const curSchema = schema ?? children;
 
     
@@ -203,6 +206,181 @@ export default function Table({
                                 colSpan={curSchema?.length || Object.keys(value[0]).length}
                             >
                                 { footer }
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            )}
+        </div>
+    );
+}
+
+export default function Table({
+    value,
+    children,
+    schema,
+    className,
+    style,
+    footer,
+    header,
+    size,
+    shadow,
+    variant = "outline",
+    color,
+    ...props
+}: TableProps) {
+    const { autosizes, shadows, variants, plugins, theme } = useTheme();
+    const getSize = sizeTable[size] ? sizeTable[size] : autosizes?.table;
+    const curSchema = schema ?? children;
+    const baseColor = color ? variants[color] ?? color : undefined;
+
+    
+    const bodyBg = baseColor
+        ? (variant === "contained"
+            ? baseColor
+            : plugins.alpha(baseColor, 0.1))
+        : undefined;
+
+    const theadBg = baseColor
+        ? plugins.alpha(plugins.darken(baseColor, 0.2), 1)
+        : undefined;
+
+    const headerFooterBg = baseColor
+        ? plugins.lighten(baseColor, 0.05)
+        : undefined;
+
+    const borderColor = baseColor
+        ? (theme === 'dark' ? plugins.lighten(baseColor, 0.2) : plugins.darken(baseColor, 0.2))
+        : "rgba(0,0,0,0.2)";  
+
+    const fontColor = baseColor
+        ? plugins.isBright(baseColor, 100)
+            ? "black"
+            : "white"
+        : undefined;
+
+    const render = (data, rowIndex: number) => {
+        if (children && children.length > 0) {
+            return children.map((col, colIndex) => (
+                <Fragment key={col.field + colIndex}>
+                    {colIndex === 0 && (
+                        <th className="p-0 font-light">
+                            {col?.body ? col.body(data[col.field]) : data[col.field]}
+                        </th>
+                    )}
+                    {colIndex !== 0 && (
+                        <td className="p-0 font-light">
+                            {col?.body ? col.body(data[col.field]) : data[col.field]}
+                        </td>
+                    )}
+                </Fragment>
+            ));
+        }
+        return Object.keys(data).map((key, colIndex) => (
+            <Fragment key={key + colIndex}>
+                {colIndex === 0 && <th className="p-0 font-light">{data[key]}</th>}
+                {colIndex !== 0 && <td className="p-0 font-light">{data[key]}</td>}
+            </Fragment>
+        ));
+    }
+
+
+    return (
+        <div
+            className={cs(`
+                rounded-box 
+                border 
+                h-full flex flex-col overflow-hidden 
+                ${className ?? ""}
+                ${getSize}
+            `)}
+            style={{
+                boxShadow: shadows[shadow],
+                borderColor,
+                background: bodyBg,
+                color: fontColor,
+                ...style,
+            }}
+            {...props}
+        >
+            {/* Заголовок */}
+            <table className="table table-fixed w-full font-mono">
+                <thead
+                    className="sticky top-0 z-10"
+                    style={{
+                        boxShadow: shadows.xs,
+                        background: headerFooterBg,
+                        color: fontColor,
+                    }}
+                >
+                    {/* top header */}
+                    {header && (
+                        <tr>
+                            <td
+                                className="p-0"
+                                style={{ paddingBlock: 0 }}
+                                colSpan={curSchema?.length || Object.keys(value[0]).length}
+                            >
+                                {header}
+                            </td>
+                        </tr>
+                    )}
+                    {/* label header */}
+                    <tr>
+                        {(curSchema || Object.keys(value[0])).map((col, i) => (
+                            <th
+                                key={i}
+                                className="p-1 font-bold"
+                                style={{
+                                    background: theadBg,
+                                    color: fontColor,
+                                }}
+                            >
+                                {typeof col !== "object" ? col : col?.header}
+                            </th>
+                        ))}
+                    </tr>
+                </thead>
+            </table>
+
+            {/* Скроллимое тело */}
+            <div className="flex-1 overflow-y-auto">
+                <table className="table table-fixed w-full">
+                    <tbody>
+                        {value.map((elem, index) => (
+                            <tr
+                                key={index}
+                                className="p-0"
+                                style={{
+                                    borderStyle: variant === "outline" ? "solid" : "dashed",
+                                    borderColor,
+                                    fontSize: sizesText[size] ? sizesText[size] : undefined,
+                                }}
+                            >
+                                {render(elem, index)}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
+            {/* Футер */}
+            {footer && (
+                <table className="table table-fixed w-full">
+                    <tfoot
+                        className="sticky bottom-0 z-10"
+                        style={{
+                            background: headerFooterBg,
+                            color: fontColor,
+                        }}
+                    >
+                        <tr>
+                            <td
+                                className="p-0"
+                                style={{ paddingBlock: 0 }}
+                                colSpan={curSchema?.length || Object.keys(value[0]).length}
+                            >
+                                {footer}
                             </td>
                         </tr>
                     </tfoot>

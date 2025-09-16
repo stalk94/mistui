@@ -1,6 +1,6 @@
 declare const Drawer: import("react").ForwardRefExoticComponent<{
-    className?: string | undefined;
     style?: import("react").CSSProperties | undefined;
+    className?: string | undefined;
 } & {
     children?: React.ReactNode;
     trigger?: React.ReactNode;

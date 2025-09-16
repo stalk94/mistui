@@ -89,7 +89,7 @@ const StyleTableWrapper = memo(({
                 ${ tabShadow }
             }
             [data-style-id="${uid}"] .p-datatable-header {
-                background: ${ lighten(style.body.backgroundColor, 0.02) };
+                background: ${ lighten(style.body.backgroundColor, 0.05) };
                 border-bottom: 1px solid #5f5f5f35;
                 color: ${ style.thead.color };
                 padding: ${ ['xs', 'sm'].includes(curSize) ? '0px 4px' : '6px 8px' };
@@ -97,14 +97,14 @@ const StyleTableWrapper = memo(({
             [data-style-id="${uid}"] .p-datatable-footer {
                 border-top: 1px solid;
                 border-color: ${ style.body.borderColor };
-                background: ${ lighten(style.body.backgroundColor, 0.02) };
+                background: ${ lighten(style.body.backgroundColor, 0.05) };
                 color: ${ style.body.color };
                 display: flex;
                 padding: ${ ['xs', 'sm'].includes(curSize) ? '0px 4px' : '6px 8px' };
             }
             /* панель фильтры и сортировка */
             [data-style-id="${uid}"] .p-datatable-thead > tr > th {
-                background: ${ lighten(style.body.backgroundColor, 0.05) };
+                background: ${ lighten(style.body.backgroundColor, 0.08) };
                 color: ${ style.thead.color };
                 font-weight: bold;
                 padding: ${ curSize==='xs' ? '0.2%' : (curSize ==='sm' ? '0.4%' : '1.5%') };
@@ -120,7 +120,7 @@ const StyleTableWrapper = memo(({
             }
             /* нечетные row */
             [data-style-id="${uid}"] .p-datatable-tbody > tr:nth-child(even) {
-                background: ${ style.body.backgroundColor };
+                background: ${ alpha(style.body.backgroundColor, 0.05) };
             }
             /* стили row текста */
             [data-style-id="${uid}"] .p-datatable-tbody > tr {
@@ -138,7 +138,7 @@ const StyleTableWrapper = memo(({
                 background: ${ hoverVariant === 'cell' ? lighten(style.body.backgroundColor, 0.15) : '' };
                 cursor: pointer;
             }
-            /* границы row */
+            /* границы row, border */
             [data-style-id="${uid}"] .p-datatable-tbody > tr > td {
                 padding: ${ paddings[curSize] };
                 border-bottom: 1px dashed ${ style.body.borderColor };
@@ -231,6 +231,7 @@ export default function DataTableCustom({
     shadow,
     isAutoPagination,
     hoverVariant = 'disabled',
+    color,
     styles = {
         body: {},
         header: {},
@@ -250,7 +251,6 @@ export default function DataTableCustom({
     
     
     const mergeStyle = useMemo(() => {
-        // из темы
         const bodyBcg = theme.styles?.table?.body;
         const headerBcg = theme.styles?.table?.header;
         const theadBcg = theme.styles?.table?.thead;
@@ -258,30 +258,47 @@ export default function DataTableCustom({
         const textColor = theme.styles?.table?.fontColor;
         const theadColor = theme.styles?.table?.theadFontColor;
 
+        // базовый цвет из color или из темы
+        const baseColor = color
+            ? (theme.variants[color] ?? color)
+            : bodyBcg;
+
+        const bodyColor = baseColor ?? bodyBcg;
+        const theadColorBcg = color ? colord(bodyColor).lighten(0.08).toRgbString() : theadBcg;
+        const headerColorBcg = color ? colord(bodyColor).lighten(0.04).toRgbString() : headerBcg;
+        const footerColorBcg = color ? colord(bodyColor).lighten(0.04).toRgbString() : headerBcg;
+
+        // текст динамически: светлый фон → тёмный текст, тёмный фон → светлый
+        const fontColorDynamic = color
+            ? (theme.plugins.isBright(bodyColor, 100) ? "black" : "white")
+            : textColor;
+
         const style: TableStyles = {
             body: {
-                backgroundColor: bodyBcg,
+                backgroundColor: bodyColor,
                 borderColor: borderColor,
-                color: textColor,
-                ...styles?.body
+                color: fontColorDynamic,
+                ...styles?.body,
             },
             header: {
-                backgroundColor: headerBcg,
-                ...styles?.header
+                backgroundColor: headerColorBcg,
+                color: fontColorDynamic,
+                ...styles?.header,
             },
             thead: {
-                backgroundColor: theadBcg,
-                color: theadColor,
-                ...styles?.thead
+                backgroundColor: theadColorBcg,
+                color: colord(fontColorDynamic).alpha(0.6).toRgbString(),
+                ...styles?.thead,
             },
             paginator: {
-                backgroundColor: theme.styles?.input?.backgroundColor,
-                ...styles?.paginator
-            }
-        }
+                backgroundColor: footerColorBcg,
+                color: fontColorDynamic,
+                ...styles?.paginator,
+            },
+        };
 
         return style;
-    }, [styles]);
+    }, [styles, color, theme]);
     const getPadding =(element: Element)=> {
         const style = getComputedStyle(element);
         const padding = parseFloat(style.paddingBottom);

@@ -6,9 +6,11 @@ import { rgbaToString, stringToRgba } from '../hooks/helpers';
 import { useDebounced } from '../hooks/debounce';
 import { useTheme } from '../theme';
 import stylesPicker from './styles/global.module.css';
+import { colorMemory, addColorToMemory } from "../memory/colorMemory";
 import { cs } from '../hooks/cs';
 import { useUids } from '../hooks/uuid';
 import { Popover } from '../helpers';
+import { Button } from '../buttons';
 
 
 const Inputs = ({ updateComponent, input, styleInput }) => {
@@ -76,6 +78,7 @@ export default function SelectColor({
     usePortal = true,
     portalContainer,
     onToogleOpen,
+    isMemory,
     ...props 
 }: SelectInputProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -83,11 +86,16 @@ export default function SelectColor({
     const uid = useUids('color');
     const [input, setInput] = useState(value);
     const [open, setOpen] = useState(false);
-
-
-    const handleToogleOpen =(value: boolean)=> {
+    const recent = colorMemory.colors.use();
+   
+    
+    const handleToogleOpen = (value: boolean) => {
         onToogleOpen?.(value);
         setOpen(value);
+
+        if (!value && input) {
+            addColorToMemory(input);
+        }
     }
     const debouncedOnChange = useDebounced((val: string) => {
         onChange?.(val);
@@ -96,6 +104,11 @@ export default function SelectColor({
         const str = rgbaToString(value);
         setInput(str);
         debouncedOnChange(str);
+    }
+    const handleReset = () => {
+        const none = "rgba(0,0,0,0)";
+        setInput(none);
+        debouncedOnChange(none);
     }
     const handleChangeInputs = (key: keyof RgbaColor, val: number, rgba: RgbaColor) => {
         const updated = { ...rgba, [key]: val };
@@ -197,11 +210,13 @@ export default function SelectColor({
                         backdrop-blur-[3px]
                         max-h-80 
                         overflow-y-auto 
+                        overflow-x-hidden
                         p-2
                         rounded-box
+                        flex
                     `)}
                 >
-                    <div className={stylesPicker.wrapper} style={{ padding: 9 }}>
+                    <div className={stylesPicker.wrapper} style={{ flex: 1, padding: 9 }}>
                         <RgbaColorPicker
                             style={{ width: '100%' }}
                             className="colorPicker"
@@ -209,6 +224,36 @@ export default function SelectColor({
                             onChange={handleChangePicker}
                         />
                     </div>
+                    
+                    {/* right main */}
+                    {isMemory &&
+                        <div className="flex flex-col gap-2 w-6 mx-1 ml-1">
+                            {/* кнопка сброса */}
+                            <Button
+                                size='xs'
+                                fullWidth
+                                onClick={handleReset}
+                            >
+                                🛇
+                            </Button>
+
+                            {/* список популярных цветов */}
+                            <div className="flex flex-col gap-1 mt-1">
+                                {recent?.slice(0, 6).map(({ color }) => (
+                                    <div
+                                        key={color}
+                                        onClick={() => {
+                                            setInput(color);
+                                            debouncedOnChange(color);
+                                            addColorToMemory(color);
+                                        }}
+                                        className="h-5 w-full rounded-sm"
+                                        style={{background: color}}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    }
                 </div>
             </Popover>
         </>

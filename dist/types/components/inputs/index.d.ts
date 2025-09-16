@@ -14,6 +14,7 @@ export { default as TimePicker } from './time';
 export { default as DatePicker } from './date';
 export { default as PasswordInput } from './password';
 export { default as Rating } from './rating';
+export { default as IconPicker } from './icon';
 /** паттерны регулярок */
 export declare const baseValidators: {
     password: string;

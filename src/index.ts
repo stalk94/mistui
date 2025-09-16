@@ -50,6 +50,7 @@ export { default as Chat } from './components/chat';
 // иконки флажки разделители и прочее
 export { default as Flag } from './components/utils/flag';
 export { default as Divider } from './components/utils/divider';
+export { default as IconsCatalog, icons, iconsList } from './components/utils/icons';
 
 // всплываюшие информационные окна
 export { AlertProvider, useAlert } from './components/alert';

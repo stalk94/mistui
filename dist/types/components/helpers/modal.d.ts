@@ -1,6 +1,6 @@
 declare const Modal: import("react").ForwardRefExoticComponent<{
-    className?: string | undefined;
     style?: import("react").CSSProperties | undefined;
+    className?: string | undefined;
 } & {
     children?: React.ReactNode;
     actions?: React.ReactNode;

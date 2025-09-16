@@ -30,7 +30,7 @@ export default defineConfig({
             entry: 'index.ts',
             name: 'mistui',
             fileName: (format) => `index.${format}.js`,
-            formats: ['es', 'cjs', 'umd'], 
+            formats: ['es', 'cjs'], 
         },
         rollupOptions: {
             external: ['react', 'react-dom', 'react/jsx-runtime'],

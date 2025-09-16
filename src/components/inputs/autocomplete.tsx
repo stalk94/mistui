@@ -118,8 +118,6 @@ export default function Autocomplete({
                             placeholder={placeholder}
                             value={input}
                             style={{
-                                display: 'block',
-                                width: '100%',
                                 color: (style?.color ?? styles?.input?.fontColor)
                             }}
                             onChange={(e) => {

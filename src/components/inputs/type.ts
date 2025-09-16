@@ -117,6 +117,8 @@ export type SelectInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
     portalContainer?: HTMLElement
     /** handle open/close popup */
     onToogleOpen?: (v: boolean)=> void 
+    /** enable panel memoization colors */
+    isMemory?: boolean
 }
 
 export type AutoInputProps = Omit<BaseProps, 'labelRight'|'type'> & {
@@ -186,4 +188,11 @@ export type RatingProps = {
     shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     onChange?: (value: number)=> void
     className?: string
+}
+
+export type IconPickerProps = Omit<BaseProps, 'type'> & {
+    /** style drop down container */
+    styleDropDown?: React.CSSProperties
+    isHover?: boolean
+    isSimple?: boolean
 }

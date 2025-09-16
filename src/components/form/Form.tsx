@@ -42,8 +42,7 @@ function useStableScheme(scheme: Schema[]): Schema[] {
 }
 
 
-const FieldRenderer = memo(
-    function FieldRenderer({
+const FieldRenderer = memo(function FieldRenderer({
         field,
         value,
         onChange,

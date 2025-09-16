@@ -19,6 +19,7 @@ export { default as Accordion } from './components/acordeon';
 export { default as Chat } from './components/chat';
 export { default as Flag } from './components/utils/flag';
 export { default as Divider } from './components/utils/divider';
+export { default as IconsCatalog, icons, iconsList } from './components/utils/icons';
 export { AlertProvider, useAlert } from './components/alert';
 export type { AlertManagerProps } from './components/alert';
 export { default as Menu } from './components/menu/list-menu';

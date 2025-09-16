@@ -124,7 +124,7 @@ export default function Select({
                             className="w-full text-white h-full flex items-center cursor-pointer"
                         >
                             {input
-                                ? input
+                                ? (input?.label ?? input)
                                 : <span style={{ color: colorPlaceholder }}>
                                     { placeholder }
                                 </span>

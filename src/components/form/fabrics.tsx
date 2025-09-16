@@ -30,4 +30,5 @@ export const fabricsInput: Record<TypeSchema, (schema: any) =>  React.JSX.Elemen
     groupButtonFiltre: (schema) => <GroupButtonFiltre {...schema} />,
 
     divider: (schema) => <Divider {...schema} />,
+    custom: ({ render, ...props }) => render(props)
 }
