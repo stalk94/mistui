@@ -33,6 +33,10 @@ const components = {
     GroupButtonFiltre: `
         🧮 The ToggleButtonFiltreGroup (<GroupButtonFiltre>) is a filter-style toggle button group designed for selecting a single option with a reset capability. It’s perfect for filter UIs, search tools, or segmented control bars.
     `,
+    Fab: `
+        🟢 FAB (Floating Action Button) stays in the bottom corner of screen. It includes a focusable and accessible element with button role. Clicking or focusing it shows additional buttons (known as Speed Dial buttons) in a vertical arrangement or a flower shape (quarter circle).
+    `,
+
     Flag: `
         🏳️ FlagCountry renders the SVG flag of a country based on its country code. It automatically normalizes some special codes (e.g., EN or UK become GB) and selects the correct SVG from the flags collection covering over 250 countries.
     `,

@@ -259,27 +259,39 @@ export default function Table({
             : "white"
         : undefined;
 
-    const render = (data, rowIndex: number) => {
+    const render = (rowData: any, rowIndex: number) => {
         if (children && children.length > 0) {
             return children.map((col, colIndex) => (
                 <Fragment key={col.field + colIndex}>
-                    {colIndex === 0 && (
+                    {colIndex === 0 ? (
                         <th className="p-0 font-light">
-                            {col?.body ? col.body(data[col.field]) : data[col.field]}
+                            {col?.body
+                                ? col.body(rowData[col.field], rowIndex) // ✅ value + index
+                                : rowData[col.field]}
                         </th>
-                    )}
-                    {colIndex !== 0 && (
+                    ) : (
                         <td className="p-0 font-light">
-                            {col?.body ? col.body(data[col.field]) : data[col.field]}
+                            {col?.body
+                                ? col.body(rowData[col.field], rowIndex) // ✅ value + index
+                                : rowData[col.field]}
                         </td>
                     )}
                 </Fragment>
             ));
         }
-        return Object.keys(data).map((key, colIndex) => (
+
+        // если schema не задана — по ключам объекта
+        return Object.keys(rowData).map((key, colIndex) => (
             <Fragment key={key + colIndex}>
-                {colIndex === 0 && <th className="p-0 font-light">{data[key]}</th>}
-                {colIndex !== 0 && <td className="p-0 font-light">{data[key]}</td>}
+                {colIndex === 0 ? (
+                    <th className="p-0 font-light">
+                        {rowData[key]}
+                    </th>
+                ) : (
+                    <td className="p-0 font-light">
+                        {rowData[key]}
+                    </td>
+                )}
             </Fragment>
         ));
     }
@@ -301,7 +313,7 @@ export default function Table({
                 color: fontColor,
                 ...style,
             }}
-            {...props}
+            { ...props }
         >
             {/* Заголовок */}
             <table className="table table-fixed w-full font-mono">

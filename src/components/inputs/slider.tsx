@@ -7,7 +7,6 @@ import { useMemo, useRef } from 'react';
 
 
 
-// ! tooltip style
 export default function SliderInput({
     onChange,
     onChangeEnd,
@@ -25,8 +24,8 @@ export default function SliderInput({
     const { styles, variants, sizes, autosizes, plugins } = useTheme();
     const isValid = value !== undefined && (typeof value === 'number' && !isNaN(value));
     const numericValue = Array.isArray(value) ? value.join(',') : value;
-    const sliderKey = `${numericValue}`; 
-    
+    const sliderKey = `${numericValue}`;
+
 
     const useChange = (newValue: number[], clb?: (v: number | number[]) => void) => {
         if (ref.current) ref.current.dataset.tip = `${newValue[0]}`;
@@ -36,29 +35,22 @@ export default function SliderInput({
         if (Array.isArray(value)) clb(newValue);
         else clb(newValue[0]);
     }
-
     const borderVariant = useMemo(() => {
-        if (variant === 'dash') return {
-            borderStyle: 'dashed'
-        }
-        else if (variant === 'outline') return {
-            borderStyle: 'solid'
-        }
-        else return {};
+        if (variant === 'dash') return { borderStyle: 'dashed' };
+        if (variant === 'outline') return { borderStyle: 'solid' };
+        return {};
     }, [variant]);
     const styleTrack = useMemo(() => {
         const systemBg = styles?.input?.sliderTrackColor;
-
         const fontColorTheme = styles?.input?.fontColor;
         const colorContrast = plugins.contrast((variants[color] ?? color) ?? fontColorTheme);
-        
 
         let st = {
             borderStyle: variant === 'dash' ? 'dashed' : 'solid',
             backgroundColor: plugins.alpha((variants[color] ?? color) ?? systemBg, 0.4) ?? 'inherit',
             borderColor: plugins.alpha((variants[color] ?? color) ?? systemBg, 0.6),
             color: plugins.alpha(colorContrast, 0.6)
-        }
+        };
 
         if (variant === 'dash' || variant === 'outline') {
             st.backgroundColor = 'inherit';
@@ -70,25 +62,21 @@ export default function SliderInput({
     }, [color, variant, styles]);
     const styleRange = useMemo(() => {
         const systemBg = styles?.input?.sliderTrackColor;
-
-        return ({
+        return {
             borderColor: plugins.lighten((variants[color] ?? color) ?? systemBg, 0.3),
-            backgroundColor: (variants[color] ?? color) ?? systemBg, 
-        });
+            backgroundColor: (variants[color] ?? color) ?? systemBg,
+        };
     }, [color, variant, styles]);
     const styleThumb = useMemo(() => {
         const systemBg = styles?.input?.sliderTrackColor;
-
-        return ({
+        return {
             borderColor: plugins.lighten((variants[color] ?? color) ?? systemBg, 0.8),
             backgroundColor: plugins.lighten(
-                plugins.alpha(
-                    (variants[color] ?? color) 
-                        ?? systemBg, 1), 
-                0.35)
-        });
+                plugins.alpha((variants[color] ?? color) ?? systemBg, 1),
+                0.35
+            )
+        };
     }, [color, variant, styles]);
-
 
     return (
         <FormWrapper
@@ -96,7 +84,7 @@ export default function SliderInput({
             disabledVisibility={disableForm}
             variant={variant}
             color={color}
-            { ...props }
+            {...props}
         >
             <Slider.Root
                 key={sliderKey}
@@ -108,25 +96,25 @@ export default function SliderInput({
                 step={step}
                 className={cs(`
                     flex
-                    relative 
-                    items-center 
-                    select-none 
-                    touch-none 
+                    relative
+                    items-center
+                    select-none
+                    touch-none
                     w-full
                     cursor-pointer
                     mt-1
                 `)}
             >
-                <Slider.Track 
+                <Slider.Track
                     style={{
-                        height: `${styles?.input?.sliderTrackHeight}rem`,       //!
+                        height: `${styles?.input?.sliderTrackHeight}rem`,
                         ...styleTrack,
                         ...borderVariant,
                     }}
                     className={cs(`
-                        relative 
-                        grow 
-                        rounded-full 
+                        relative
+                        grow
+                        rounded-full
                     `)}
                 >
                     <Slider.Range
@@ -136,7 +124,7 @@ export default function SliderInput({
                         }}
                         className={cs(`
                             absolute
-                            rounded-full 
+                            rounded-full
                             h-full
                             top-1/2
                             -translate-y-1/2
@@ -144,23 +132,26 @@ export default function SliderInput({
                     />
                 </Slider.Track>
 
-                <Slider.Thumb 
-                    data-tip={ Array.isArray(value) ? value[0] : (value ?? 0) }
+                <Slider.Thumb
+                    data-radix-slider-thumb
+                    data-tip={Array.isArray(value) ? value[0] : (value ?? 0)}
                     ref={ref}
                     style={{
                         border: 0,
+                        width: "1rem",    // fallback размеры
+                        height: "1rem",
                         ...styleThumb
                     }}
                     className={cs(`
-                        block 
+                        block
                         tooltip
                         tooltip-primary
-                        bg-gray-200 
-                        border 
-                        border-gray-400 
-                        rounded-full 
-                        shadow 
-                        ${sizes.thumb[size] ?? autosizes.thumb}
+                        bg-gray-200
+                        border
+                        border-gray-400
+                        rounded-full
+                        shadow
+                        ${sizes.thumb[size] ?? autosizes.thumb ?? "w-4 h-4"}
                     `)}
                 />
             </Slider.Root>

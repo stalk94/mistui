@@ -7,7 +7,13 @@ import { FormWrapper } from './atomize';
 import ReactDOM from 'react-dom';
 import type { IconPickerProps } from './type';
 
-
+const sizes = {
+    xs: 14,
+    sm: 18,
+    md: 24,
+    lg: 24,
+    xl: 28
+}
 
 function IconPopUp({
     trigger,
@@ -168,7 +174,7 @@ export default function IconPicker({
                         setValue(undefined);
                     }}
                 >
-                    <MdDeleteForever size={26} />
+                    <MdDeleteForever size={sizes[size] ?? 18} />
                 </button>
             }
         >
@@ -183,7 +189,7 @@ export default function IconPicker({
                     <div className="hover:opacity-60 w-full transition cursor-pointer flex items-center">
                         {iconsList[val]?.({ size: 20 }) ?? (
                             <MdOutlineImage
-                                size={26}
+                                size={sizes[size] ?? 18}
                                 className="text-gray-400"
                             />
                         )}

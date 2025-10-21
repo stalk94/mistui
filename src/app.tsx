@@ -7,12 +7,14 @@ import { AlertProvider } from './components/alert';
 import SandBoxRoot from './editor';
 import SandBox from './editor/Render';
 import { ThemeProvider } from './components/theme';
-import { AppBar, Avatar, Flag, IconButton, SliderInput, IconPicker } from './index';
+import { Button, Avatar, Flag, IconButton, Fab } from './index';
 import { createStore } from 'statekit-lite';
 import ComponentsRoot from './editor/page/root-components';
 import Home from './editor/page';
 import NotFound from './editor/page/error';
 import Present from './presentation';
+import { IoChatbubblesOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 
 
 const IconComponent = () => (
@@ -123,12 +125,52 @@ const Test = () => {
     return (
         <ThemeProvider>
             <AlertProvider variant='outline'>
-                <div className='w-full'>
-                    <IconPicker
-                        color='primary'
-                        onChange={console.log}
-                    />
-                </div>
+                <Fab
+                    isFlower
+                    button={
+                        <IconButton
+                            isRounded
+                            color='info'
+                            children={<IoChatbubblesOutline />}
+                        />
+                    }
+                    buttonClose={
+                        <IconButton
+                            isRounded
+                            color='error'
+                            children={<IoMdClose />}
+                        />
+                    }
+                    children={
+                        <>
+                            <IconButton
+                                isRounded
+                                color='info'
+                                children={<IoChatbubblesOutline />}
+                            />
+                            <IconButton
+                                isRounded
+                                color='info'
+                                children={<IoChatbubblesOutline />}
+                            />
+                            <IconButton
+                                isRounded
+                                color='info'
+                                children={<IoChatbubblesOutline />}
+                            />
+                            <IconButton
+                                isRounded
+                                color='info'
+                                children={<IoChatbubblesOutline />}
+                            />
+                            <IconButton
+                                isRounded
+                                color='info'
+                                children={<IoChatbubblesOutline />}
+                            />
+                        </>
+                    }
+                />
             </AlertProvider>
         </ThemeProvider>
     );
@@ -137,4 +179,4 @@ const Test = () => {
 //------------------------------------------------------------------------
 const container = document.querySelector('.root');
 const root = createRoot(container);
-root.render(<Test />);
+root.render(<App />);

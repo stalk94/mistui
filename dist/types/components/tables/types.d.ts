@@ -45,7 +45,7 @@ export type TableProps = {
     children?: {
         header: React.ReactNode;
         field: string;
-        body?: (data: any) => React.ReactNode;
+        body?: (data: any, index: number) => React.ReactNode;
     }[];
     value: DataTableValueArray;
     className?: React.HTMLAttributes<HTMLDivElement>['className'];

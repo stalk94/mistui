@@ -1,4 +1,5 @@
 import type { Variants } from '../theme/default';
+import type { ButtonProps } from '../buttons/type';
 type Props = Pick<React.HTMLAttributes<HTMLDivElement>, 'className' | 'style'>;
 export type ModalProps = Props & {
     children?: React.ReactNode;
@@ -31,16 +32,22 @@ export type PopoverProps = Props & {
     /** element mount portal */
     portalContainer?: HTMLElement;
 };
-export type TooltipProps = {
-    /** wraparound component */
-    children?: string | React.ReactElement;
-    /** hint content */
-    content?: string;
-    size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type TooltipPlacement = "top" | "bottom" | "left" | "right";
+export interface TooltipProps {
+    content: React.ReactNode;
+    children: React.ReactNode;
+    placement?: TooltipPlacement;
+    className?: React.HTMLAttributes<HTMLDivElement>['className'];
+    delayShow?: number;
+    delayHide?: number;
     color?: Variants | (string & {});
-    style?: React.CSSProperties;
-    className?: Props['className'];
-    position?: 'top' | 'left' | 'right' | 'bottom';
-    variant?: 'contained' | 'outline' | 'dash' | 'soft' | 'ghost' | 'link';
+    borderColor?: Variants | (string & {});
+    textColor?: Variants | (string & {});
+}
+export type FabProps = {
+    children: React.ReactNode;
+    isFlower?: boolean;
+    button: React.ReactElement<ButtonProps>;
+    buttonClose: React.ReactElement<ButtonProps>;
 };
 export {};

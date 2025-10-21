@@ -28,23 +28,23 @@ export const fontFamilyVariants = {
 //      default settings constant         
 //////////////////////////////////////////////////////////////////////////
 const TYPOGRAPHY = {
-    h1: 'text-4xl sm:text-5xl md:text-6xl font-bold',
-    h2: 'text-3xl sm:text-4xl md:text-5xl font-semibold',
-    h3: 'text-2xl sm:text-3xl md:text-4xl font-semibold',
-    h4: 'text-xl sm:text-2xl md:text-3xl font-medium',
-    h5: 'text-lg sm:text-xl md:text-2xl font-medium',
-    h6: 'text-base sm:text-lg md:text-xl font-medium',
+    h1: 'text-[clamp(2.25rem,5cqw,3.75rem)] font-bold',       // 36px → 60px
+    h2: 'text-[clamp(1.875rem,4.5cqw,3rem)] font-semibold',   // 30px → 48px
+    h3: 'text-[clamp(1.5rem,4cqw,2.25rem)] font-semibold',    // 24px → 36px
+    h4: 'text-[clamp(1.25rem,3cqw,1.875rem)] font-medium',    // 20px → 30px
+    h5: 'text-[clamp(1.125rem,2.5cqw,1.5rem)] font-medium',   // 18px → 24px
+    h6: 'text-[clamp(1rem,2cqw,1.25rem)] font-medium',        // 16px → 20px
 
-    subtitle1: 'text-base sm:text-lg text-gray-400',
-    subtitle2: 'text-sm sm:text-base text-gray-500',
+    subtitle1: 'text-[clamp(1rem,2cqw,1.125rem)] text-gray-400',
+    subtitle2: 'text-[clamp(0.875rem,1.8cqw,1rem)] text-gray-500',
 
-    body1: 'text-base sm:text-base text-neutral-500',
-    body2: 'text-sm sm:text-sm text-neutral-500',
+    body1: 'text-[clamp(1rem,2cqw,1.125rem)] text-neutral-500',
+    body2: 'text-[clamp(0.875rem,1.8cqw,0.95rem)] text-neutral-500',
 
-    caption: 'text-xs sm:text-xs text-neutral-600 tracking-normal',
-    overline: 'text-[10px] sm:text-xs uppercase tracking-widest text-gray-500 leading-tight',
+    caption: 'text-[clamp(0.75rem,1.5cqw,0.8rem)] text-neutral-600 tracking-normal',
+    overline: 'text-[clamp(0.625rem,1.5cqw,0.75rem)] uppercase tracking-widest text-gray-500 leading-tight',
 
-    button: 'text-sm sm:text-base font-bold uppercase',
+    button: 'text-[clamp(0.875rem,1.8cqw,1rem)] font-bold uppercase'
 }
 const COLORS = {
     base: 'rgb(18, 18, 18)',

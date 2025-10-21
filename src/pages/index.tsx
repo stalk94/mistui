@@ -3,6 +3,7 @@ import Typography from './text/typography';
 import MarqueText from './text/marque';
 import Link from './text/link';
 import InfoButtons from './buttons/icon-buttons';
+import InfoFab from './buttons/fab';
 import InfoGroupButton from './buttons/group';
 import InfoGroupButtonFiltre from './buttons/f-group';
 import Avatar from './data-display/avatar';
@@ -81,7 +82,8 @@ const category = {
         Button: InfoButton, 
         IconButton: InfoButtons, 
         GroupButtons: InfoGroupButton, 
-        GroupButtonFiltre: InfoGroupButtonFiltre
+        GroupButtonFiltre: InfoGroupButtonFiltre,
+        Fab: InfoFab
     },
     inputs: {
         BaseInput: InputBase,

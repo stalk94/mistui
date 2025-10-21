@@ -72,6 +72,7 @@ const MarqueeText = forwardRef<HTMLDivElement, MarqueeTextProps>(function Marque
                         <Typography 
                             as="div" 
                             variant={variant ?? 'body1'}
+                            color={color}
                             { ...props }
                         >
                             { children }
